@@ -26,6 +26,11 @@ simonGame::~simonGame()
 	delete m_artsPlayer;
 }
 
+int simonGame::level() const
+{
+	return m_level;
+}
+
 simonGame::gamePhase simonGame::phase() const
 {
 	return m_phase;
@@ -40,7 +45,9 @@ void simonGame::clicked(color c)
 		
 		if (m_nextColor == m_sequence.end())
 		{
-			setPhase(waiting3);
+			m_sequenceLength++;
+			if (m_level == 1) setPhase(waiting3);
+			else setPhase(waiting2);
 			m_waitTimer -> start(1000);
 		}
 	}
@@ -61,8 +68,10 @@ void simonGame::setPhase(gamePhase p)
 void simonGame::start(int level)
 {
 	m_level = level;
+	m_sequenceLength = 2;
 	
-	setPhase(waiting3);
+	if (m_level == 1) setPhase(waiting3);
+	else setPhase(waiting2);
 	m_waitTimer -> start(1000);
 	
 	m_sequence.clear();
@@ -105,7 +114,12 @@ void simonGame::waiting()
 	{
 		m_waitTimer -> stop();
 		setPhase(simonGame::learningTheSequence);
-		m_sequence.append(generateColor());
+		if (m_level == 3) 
+		{
+			m_sequence.clear();
+			for (int i = 0; i < m_sequenceLength; i++) m_sequence.append(generateColor());
+		}
+		else m_sequence.append(generateColor());
 	
 		connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
 		m_nextColor = m_sequence.begin();
@@ -118,26 +132,28 @@ void simonGame::waiting()
 simonGame::color simonGame::generateColor()
 {
 	int r;
+	color c;
 
 	r = 1 + (int)(4.0 * kapp -> random() / (RAND_MAX + 1.0));
 	switch(r)
 	{
 		case 1:
-			return red;
+			c = red;
 		break;
 		
 		case 2:
-			return green;
+			c = green;
 		break;
 		
 		case 3:
-			return blue;
+			c = blue;
 		break;
 		
 		case 4:
-			return yellow;
+			c = yellow;
 		break;
 	}
+	return c;
 }
 
 #include "simongame.moc"

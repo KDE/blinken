@@ -170,7 +170,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			m_number1 = 0;
 			m_number2 = 0;
 			m_number3 = 0;
-			m_game.start(1);
+			m_game.start(level);
 		}
 	}
 	else if (m_game.phase() == simonGame::typingTheSequence)
@@ -297,11 +297,13 @@ void KSimon::drawStatusText(QPainter &p)
 		break;
 		
 		case simonGame::waiting2:
-			p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
+			if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
+			else p.drawText(0, 0, i18n("Next sequence in 2..."));
 		break;
 		
 		case simonGame::waiting1:
-			p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
+			if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
+			else p.drawText(0, 0, i18n("Next sequence in 2, 1..."));
 		break;
 		
 		case simonGame::learningTheSequence:

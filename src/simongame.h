@@ -26,6 +26,7 @@ Q_OBJECT
 		enum gamePhase { starting, choosingLevel, waiting3, waiting2, waiting1, learningTheSequence, typingTheSequence };
 		enum color { none, red, green, blue, yellow, all };
 		
+		int level() const;
 		gamePhase phase() const;
 		
 		void clicked(color c);
@@ -47,6 +48,7 @@ Q_OBJECT
 	
 		gamePhase m_phase;
 		int m_level;
+		int m_sequenceLength;
 		
 		QTimer *m_waitTimer;
 		
