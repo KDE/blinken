@@ -22,6 +22,7 @@ artsPlayer::artsPlayer() : m_playobj(0)
 	m_endChecker = new QTimer(this);
 	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
 	
+	m_allPath = locate("appdata","sounds/lose.wav");
 	m_greenPath = locate("appdata","sounds/1.wav");
 	m_redPath = locate("appdata","sounds/2.wav");
 	m_bluePath = locate("appdata","sounds/3.wav");
@@ -80,11 +81,11 @@ void artsPlayer::play()
 			path = m_yellowPath;
 		break;
 		
-		case simonGame::none:
+		case simonGame::all:
+			path = m_allPath;
 		break;
 		
-		case simonGame::all:
-			// TODO we need a sound for that
+		case simonGame::none:
 		break;
 	}
 	delete m_playobj;

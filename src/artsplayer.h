@@ -40,7 +40,7 @@ Q_OBJECT
 	private:
 		QValueList<simonGame::color> m_nextSounds;
 		
-		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath;
+		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath, m_allPath;
 		
 		QTimer *m_endChecker;
 		

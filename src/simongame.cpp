@@ -46,6 +46,7 @@ void simonGame::clicked(color c)
 	}
 	else
 	{
+		m_artsPlayer -> play(all, true);
 		emit highlight(all, true);
 		setPhase(starting);
 	}
