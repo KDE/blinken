@@ -40,7 +40,6 @@ Q_OBJECT
 		void drawScoreAndCounter(QPainter &p);
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
-		int fontSize(QPainter &p, const QString &s1, int w, int h);
 		void updateButtonHighlighting(const QPoint &p);
 		void unHighlightButtons();
 		

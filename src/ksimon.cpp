@@ -18,7 +18,10 @@
 #include <kstandarddirs.h>
 
 #include "ksimon.h"
+#include "counter.h"
+#include "fontutils.h"
 #include "number.h"
+#include "highscoredialog.h"
 
 KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overCentralText(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
@@ -49,6 +52,16 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(fal
 	
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
+	
+	QValueList< QPair<int, QString> > scores;
+	scores.append(qMakePair(15, QString("Idaril")));
+	scores.append(qMakePair(10, QString("TSDgeos")));
+	scores.append(qMakePair(5, QString("Dannya")));
+	scores.append(qMakePair(3, QString("Annma")));
+	scores.append(qMakePair(1, QString("Pino")));
+	
+	highScoreDialog *hsd = new highScoreDialog(this, scores);
+	hsd->exec();
 }
 
 KSimon::~KSimon()
@@ -220,7 +233,7 @@ void KSimon::drawMenuQuit(QPainter &p)
 void KSimon::drawCentralText(QPainter &p, const QString &text)
 {
 	QFont f = p.font();
-	f.setPointSize(fontSize(p, text, 190, 30));
+	f.setPointSize(fontUtils::fontSize(p, text, 190, 30));
 	p.setFont(f);
 	
 	m_centralTextRect = p.boundingRect(QRect(), Qt::AlignAuto, text);
@@ -240,15 +253,6 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 {
 	QColor c1, c2, c3;
 	p.translate(313, 125);
-	p.setPen(QPen(black, 3));
-	p.fillRect(-44, -13, 98, 48, m_fillColor);
-	p.drawRoundRect(-45, -15, 100, 50, 15, 15);
-	
-	if (m_game.phase() != simonGame::starting)
-	{
-		number n(m_game.score());
-		n.paint(p, 2);
-	}
 	
 	switch (m_game.phase())
 	{
@@ -277,16 +281,15 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 		break;
 	}
 	
-	p.fillRect(35, -6, 11, 9, c1);
-	p.fillRect(35, 6, 11, 9, c2);
-	p.fillRect(35, 18, 11, 9, c3);
+	counter::paint(p, m_game.phase() != simonGame::starting, m_game.score(), true, c1, c2, c3);
+	
 	p.translate(-313, -125);
 }
 
 void KSimon::drawStatusText(QPainter &p)
 {
 	QFont f = QFont("Steve");
-	f.setPointSize(20);
+	f.setPointSize(fontUtils::fontSize(p, "A", 1000, 25));
 	p.setFont(f);
 	
 	p.translate(25, 505);
@@ -336,7 +339,7 @@ void KSimon::drawLevel(QPainter &p)
 	
 	QFont oldFont, f = p.font();
 	oldFont = f;
-	f.setPointSize(fontSize(p, level, 190, 30));
+	f.setPointSize(fontUtils::fontSize(p, level, 190, 30));
 	f.setBold(true);
 	p.setFont(f);
 	p.setPen(m_fontColor);
@@ -364,18 +367,6 @@ void KSimon::drawLevel(QPainter &p)
 	}
 	
 	p.setFont(oldFont);
-}
-
-int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
-{
-	QRect aux1;
-	QFont f = p.font();
-	f.setPointSize(28);
-	p.setFont(f);
-	
-	aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
-	
-	return QMIN(w * 28 / aux1.width(), h * 28 / aux1.height());
 }
 
 void KSimon::updateButtonHighlighting(const QPoint &p)

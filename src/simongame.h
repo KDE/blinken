@@ -10,6 +10,7 @@
 #ifndef SIMONGAME_H
 #define SIMONGAME_H
 
+#include <qobject.h>
 #include <qvaluelist.h>
 
 class QTimer;
