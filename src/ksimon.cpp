@@ -17,6 +17,7 @@
 #include <kstandarddirs.h>
 
 #include "ksimon.h"
+#include "number.h"
 
 KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false), m_highlighted(simonGame::none)
 {
@@ -64,6 +65,10 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 		
 		default:
+			p.translate(327, 125);
+			number n(m_game.score());
+			n.paint(p, 2);
+			p.translate(-327, -125);
 		break;
 	}
 	

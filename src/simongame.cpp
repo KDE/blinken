@@ -36,6 +36,11 @@ simonGame::gamePhase simonGame::phase() const
 	return m_phase;
 }
 
+int simonGame::score() const
+{
+	return m_sequenceLength - 2;
+}
+
 void simonGame::clicked(color c)
 {
 	if (c == *m_nextColor)

@@ -28,6 +28,7 @@ Q_OBJECT
 		
 		int level() const;
 		gamePhase phase() const;
+		int score() const;
 		
 		void clicked(color c);
 		void setPhase(gamePhase p);
