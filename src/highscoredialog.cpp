@@ -152,7 +152,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 		p.drawRect(0, 0, w, h);
 		
 		f = QFont("Steve");
-		f.setPointSize(20);
+		f.setPointSize(fontUtils::fontSize(p, "A", 1000, 25));
 		p.setFont(f);
 		
 		p.translate(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin, r1.bottom() + counterMargin);
