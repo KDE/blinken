@@ -42,7 +42,7 @@ Q_OBJECT
 		void drawLevel(QPainter &p);
 		int fontSize(QPainter &p, const QString &s1, int w, int h);
 		
-		QPixmap *m_back, *m_number1, *m_number2, *m_number3, *m_blueh, *m_yellowh, *m_redh, *m_greenh;
+		QPixmap *m_back, *m_number1, *m_number2, *m_number3, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
 		bool m_overMenu, m_overQuit, m_overStart;
 		QRect m_menuRect, m_quitRect, m_startRect, m_number1Rect, m_number2Rect, m_number3Rect;
 		

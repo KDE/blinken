@@ -26,6 +26,14 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), 
 	m_yellowh = new QPixmap(locate("appdata", "images/yellowh.png"));
 	m_redh = new QPixmap(locate("appdata", "images/redh.png"));
 	m_greenh = new QPixmap(locate("appdata", "images/greenh.png"));
+	
+	m_menu = new QPixmap(locate("appdata", "images/menu.png"));
+	m_menuHover = new QPixmap(locate("appdata", "images/menu_hover.png"));
+	m_quit = new QPixmap(locate("appdata", "images/quit.png"));
+	m_quitHover = new QPixmap(locate("appdata", "images/quit_hover.png"));
+	m_menuRect = QRect(10, 10, 72, 73);
+	m_quitRect = QRect(560, 10, 72, 73);
+	
 	setMouseTracking(true);
 	setFixedSize(644, 525);
 	show();
@@ -232,30 +240,11 @@ void KSimon::unhighlight()
 
 void KSimon::drawMenuQuit(QPainter &p)
 {
-	int fs;
-	QString menu, quit;
+	if (!m_overMenu) p.drawPixmap(10, 10, *m_menu);
+	else p.drawPixmap(10, 10, *m_menuHover);
 	
-	menu = i18n("Menu");
-	quit = i18n("Quit");
-	
-	fs = QMIN(fontSize(p, menu, 100, 50), fontSize(p, quit, 100, 50));
-	QFont f = p.font();
-	f.setPointSize(fs);
-	p.setFont(f);
-	
-	if (!m_overMenu) p.setPen(Qt::red);
-	else p.setPen(Qt::blue);
-	m_menuRect = p.boundingRect(QRect(), Qt::AlignAuto, menu);
-	m_menuRect.moveBy(10, 10);
-	p.fillRect(m_menuRect, Qt::white);
-	p.drawText(m_menuRect, Qt::AlignAuto, menu);
-	
-	if (!m_overQuit) p.setPen(Qt::red);
-	else p.setPen(Qt::blue);
-	m_quitRect = p.boundingRect(QRect(), Qt::AlignAuto, quit);
-	m_quitRect.moveBy(width() - 10 - m_quitRect.width(), 10);
-	p.fillRect(m_quitRect, Qt::white);
-	p.drawText(m_quitRect, Qt::AlignAuto, quit);
+	if (!m_overQuit) p.drawPixmap(560, 10, *m_quit);
+	else p.drawPixmap(560, 10, *m_quitHover);
 }
 
 void KSimon::drawScoreAndCounter(QPainter &p)
