@@ -65,9 +65,10 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 		
 		default:
-			drawScoreAndCounter(p);
 		break;
 	}
+	
+	drawScoreAndCounter(p);
 	
 	switch(m_highlighted)
 	{
@@ -264,8 +265,12 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 	p.setPen(QPen(black, 3));
 	p.fillRect(-44, -13, 98, 48, QColor(40, 40, 40));
 	p.drawRoundRect(-45, -15, 100, 50, 15, 15);
-	number n(m_game.score());
-	n.paint(p, 2);
+	
+	if (m_game.phase() != simonGame::starting)
+	{
+		number n(m_game.score());
+		n.paint(p, 2);
+	}
 	
 	switch (m_game.phase())
 	{

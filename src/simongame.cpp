@@ -38,6 +38,7 @@ simonGame::gamePhase simonGame::phase() const
 
 int simonGame::score() const
 {
+	if (m_phase == starting || m_phase == choosingLevel) return 0;
 	return m_sequenceLength - 2;
 }
 
