@@ -19,7 +19,7 @@
 
 KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHelp(false), m_overQuit(false), m_overStart(false), m_gamePhase(0)
 {
-	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
+	m_back = new QPixmap(locate("appdata", "ksimon/images/ksimon.png"));
 	setMouseTracking(true);
 	setFixedSize(644, 525);
 	show();
