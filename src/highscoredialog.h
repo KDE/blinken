@@ -26,7 +26,7 @@ class highScoreDialog : public KDialog
 		void paintEvent(QPaintEvent *);
 	
 	private:
-		bool m_firstPaint, m_overClose;
+		bool m_overClose;
 		QValueList< QPair<int, QString> > m_scores;
 		QRect closeRect;
 };
