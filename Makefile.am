@@ -1,1 +1,1 @@
-SUBDIRS = src images
+SUBDIRS = src images icons

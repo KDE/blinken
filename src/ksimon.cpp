@@ -214,28 +214,16 @@ void KSimon::putFont(QPainter &p, const QString &s1, const QString &s2, int w, i
 	int fontSize;
 	QRect aux1, aux2;
 	QFont f = p.font();
-	f.setPointSize(35);
+	f.setPointSize(28);
 	p.setFont(f);
-	fontSize = 35;
 	
 	aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
 	aux2 = p.boundingRect(QRect(), Qt::AlignAuto, s2);
 	
-	while (aux1.width() < w && aux1.height() < h && aux2.width() < w && aux2.height() < h)
-	{
-		fontSize++;
-		f.setPointSize(fontSize);
-		p.setFont(f);
-		aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
-		aux2 = p.boundingRect(QRect(), Qt::AlignAuto, s2);
-	}
+	fontSize = QMIN(w * 28 / aux1.width(), w * 28 / aux2.width());
+	fontSize = QMIN(fontSize, h * 28 / aux1.height());
+	fontSize = QMIN(fontSize, h * 28 / aux2.height());
 	
-	while (aux1.width() > w || aux1.height() > h || aux2.width() > w || aux2.height() > h)
-	{
-		fontSize--;
-		f.setPointSize(fontSize);
-		p.setFont(f);
-		aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
-		aux2 = p.boundingRect(QRect(), Qt::AlignAuto, s2);
-	}
+	f.setPointSize(fontSize);
+	p.setFont(f);
 }
