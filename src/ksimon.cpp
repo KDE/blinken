@@ -15,26 +15,23 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 
+#include "artsplayer.h"
 #include "ksimon.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHelp(false), m_overQuit(false), m_overStart(false), m_gamePhase(0)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	setMouseTracking(true);
 	setFixedSize(644, 525);
 	show();
 	
-	m_dispatcher = new KArtsDispatcher;
-	m_server = new KArtsServer;
-	m_factory = new KDE::PlayObjectFactory(m_server->server());
+	m_artsPlayer = new artsPlayer;
 }
 
 KSimon::~KSimon()
 {
 	delete m_back;
-	delete m_factory;
-	delete m_server;
-	delete m_dispatcher;
+	delete m_artsPlayer;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -44,31 +41,32 @@ void KSimon::paintEvent(QPaintEvent *)
 	
 	p.drawPixmap(0, 0, *m_back);
 	
-	putFont(p, i18n("Help"), i18n("Quit"), 100, 50);
-	drawHelp(p);
-	drawQuit(p);
-	switch (m_gamePhase)
+	drawMenuQuit(p);
+	switch (m_game.phase())
 	{
-		case 0:
+		case simonGame::starting:
 			drawStart(p);
 		break;
 		
-		case 1:
+		case simonGame::choosingLevel:
 			drawLevel(p);
 		break;
+		
+		default:
+		break;
 	}
-	drawText(p);
+	drawStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
 }
 
 void KSimon::mouseMoveEvent(QMouseEvent *e)
 {
-	if (m_helpRect.contains(e -> pos()))
+	if (m_menuRect.contains(e -> pos()))
 	{
-		if (!m_overHelp)
+		if (!m_overMenu)
 		{
-			m_overHelp = true;
+			m_overMenu = true;
 			update();
 		}
 	}
@@ -80,7 +78,7 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 			update();
 		}
 	}
-	else if (m_gamePhase == 0 && m_startRect.contains(e -> pos()))
+	else if (m_game.phase() == 0 && m_startRect.contains(e -> pos()))
 	{
 		if (!m_overStart)
 		{
@@ -90,9 +88,9 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 	}
 	else
 	{
-		if (m_overHelp)
+		if (m_overMenu)
 		{
-			m_overHelp = false;
+			m_overMenu = false;
 			update();
 		}
 		if (m_overQuit)
@@ -100,7 +98,7 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 			m_overQuit = false;
 			update();
 		}
-		if (m_gamePhase == 0 && m_overStart)
+		if (m_game.phase() == 0 && m_overStart)
 		{
 			m_overStart = false;
 			update();
@@ -110,15 +108,36 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 
 void KSimon::mousePressEvent(QMouseEvent *e)
 {
-	if (m_overHelp) KMessageBox::information(this, i18n("This is a code mockup for KSimon project"), i18n("Help"));
+	if (m_overMenu) KMessageBox::information(this, i18n("This is a code mockup for KSimon project"), i18n("Help"));
 	else if (m_overQuit) kapp->quit();
-	else if (m_gamePhase == 0 && m_overStart)
+	else if (m_game.phase() == 0 && m_overStart)
 	{
 		m_overStart = false;
-		m_gamePhase = 1;
+		m_game.setPhase(simonGame::choosingLevel);
 		update();
 	}
-	else
+	else if (m_game.phase() == simonGame::choosingLevel)
+	{
+		if (m_number1Rect.contains(e -> pos()))
+		{
+			m_game.setPhase(simonGame::learningTheSequence);
+			m_game.start(1);
+			update();
+		}
+		else if (m_number2Rect.contains(e -> pos()))
+		{
+			m_game.setPhase(simonGame::learningTheSequence);
+			m_game.start(2);
+			update();
+		}
+		else if (m_number3Rect.contains(e -> pos()))
+		{
+			m_game.setPhase(simonGame::learningTheSequence);
+			m_game.start(3);
+			update();
+		}
+	}
+	else if (m_game.phase() == simonGame::typingTheSequence)
 	{
 		double x, y, x2, y2;
 		x = e -> x() - 319;
@@ -136,67 +155,72 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				// Outside the circle and inside the ellipse
 				if (x > 6 && y > 6)
 				{
-					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/1.wav"), true);
-					m_playobj -> play();
+					m_artsPlayer -> play(locate("appdata","sounds/1.wav"));
 				}
 				else if (x < -6 && y > 6)
 				{
-					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/2.wav"), true);
-					m_playobj -> play();
+					m_artsPlayer -> play(locate("appdata","sounds/2.wav"));
 				}
 				else if (x < -6 && y < -6)
 				{
-					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/3.wav"), true);
-					m_playobj -> play();
+					m_artsPlayer -> play(locate("appdata","sounds/3.wav"));
 				}
 				else if (x > 6 && y < -6)
 				{
-					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/4.wav"), true);
-					m_playobj -> play();
+					m_artsPlayer -> play(locate("appdata","sounds/4.wav"));
 				}
 			}
 		}
 	}
 }
 
-void KSimon::drawHelp(QPainter &p)
+void KSimon::drawMenuQuit(QPainter &p)
 {
-	if (!m_overHelp) p.setPen(Qt::red);
-	else p.setPen(Qt::blue);
+	int fs;
+	QString menu, quit;
 	
-	m_helpRect = p.boundingRect(QRect(), Qt::AlignAuto, i18n("Help"));
-	m_helpRect.moveBy(10, 10);
-	p.fillRect(m_helpRect, Qt::white);
-	p.drawText(m_helpRect, Qt::AlignAuto, i18n("Help"));
-}
-
-void KSimon::drawQuit(QPainter &p)
-{
+	menu = i18n("Menu");
+	quit = i18n("Quit");
+	
+	fs = QMIN(fontSize(p, menu, 100, 50), fontSize(p, quit, 100, 50));
+	QFont f = p.font();
+	f.setPointSize(fs);
+	p.setFont(f);
+	
+	if (!m_overMenu) p.setPen(Qt::red);
+	else p.setPen(Qt::blue);
+	m_menuRect = p.boundingRect(QRect(), Qt::AlignAuto, menu);
+	m_menuRect.moveBy(10, 10);
+	p.fillRect(m_menuRect, Qt::white);
+	p.drawText(m_menuRect, Qt::AlignAuto, menu);
+	
 	if (!m_overQuit) p.setPen(Qt::red);
 	else p.setPen(Qt::blue);
-	
-	m_quitRect = p.boundingRect(QRect(), Qt::AlignAuto, i18n("Quit"));
+	m_quitRect = p.boundingRect(QRect(), Qt::AlignAuto, quit);
 	m_quitRect.moveBy(width() - 10 - m_quitRect.width(), 10);
 	p.fillRect(m_quitRect, Qt::white);
-	p.drawText(m_quitRect, Qt::AlignAuto, i18n("Quit"));
+	p.drawText(m_quitRect, Qt::AlignAuto, quit);
 }
 
 void KSimon::drawStart(QPainter &p)
 {
+	QString start = i18n("Start");
+
 	QFont f = p.font();
-	f.setPointSize(25);
+	f.setPointSize(fontSize(p, start, 190, 30));
 	p.setFont(f);
+	p.setPen(Qt::red);
 	
 	if (!m_overStart) p.setPen(Qt::red);
 	else p.setPen(Qt::blue);
 	
-	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, i18n("Start"));
+	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, start);
 	m_startRect.moveBy(322 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
 	p.fillRect(m_startRect, Qt::white);
-	p.drawText(m_startRect, Qt::AlignAuto, i18n("Start"));
+	p.drawText(m_startRect, Qt::AlignAuto, start);
 }
 
-void KSimon::drawText(QPainter &p)
+void KSimon::drawStatusText(QPainter &p)
 {
 	QFont f = p.font();
 	f.setPointSize(20);
@@ -205,48 +229,69 @@ void KSimon::drawText(QPainter &p)
 	p.translate(25, 505);
 	p.rotate(-3.29);
 	p.setPen(black);
-	switch (m_gamePhase)
+	switch (m_game.phase())
 	{
-		case 0:
+		case simonGame::starting:
 			p.drawText(0, 0, i18n("Press Start to begin!"));
 		break;
 		
-		case 1:
+		case simonGame::choosingLevel:
 			p.drawText(0, 0, i18n("Set the Difficulty Level..."));
+		break;
+		
+		case simonGame::learningTheSequence:
+			p.drawText(0, 0, i18n("Remember this sequence..."));
+		break;
+		
+		case simonGame::typingTheSequence:
+			p.drawText(0, 0, i18n("Type the sequence!"));
 		break;
 	}
 }
 
 void KSimon::drawLevel(QPainter &p)
 {
+	QString level = i18n("Level");
+	
 	QFont f = p.font();
-	f.setPointSize(25);
+	f.setPointSize(fontSize(p, level, 190, 30));
 	p.setFont(f);
 	p.setPen(Qt::red);
 	
 	QRect aux;
-	
-	aux = p.boundingRect(QRect(), Qt::AlignAuto, i18n("Level"));
-	aux.moveBy(322 - aux.width() / 2, 275 - aux.height() / 2);
+	aux = p.boundingRect(QRect(), Qt::AlignAuto, level);
+	aux.moveBy(322 - aux.width() / 2, 285 - aux.height() / 2);
 	p.fillRect(aux, Qt::white);
-	p.drawText(aux, Qt::AlignAuto, i18n("Level"));
+	p.drawText(aux, Qt::AlignAuto, level);
+	
+	if (!m_number1)
+	{
+		m_number1 = new QPixmap(locate("appdata", "images/1.png"));
+		m_number2 = new QPixmap(locate("appdata", "images/2.png"));
+		m_number3 = new QPixmap(locate("appdata", "images/3.png"));
+	}
+	
+	int x2, x1, x3;
+	x2 = 319 - m_number2 -> width() / 2;
+	x1 = x2 - (int)(m_number1 -> width() * 1.5);
+	x3 = x2 + (int)(m_number3 -> width() * 1.5);
+	p.drawPixmap(x1, 305, *m_number1);
+	p.drawPixmap(x2, 305, *m_number2);
+	p.drawPixmap(x3, 305, *m_number3);
+	
+	m_number1Rect = QRect(x1, 305, m_number1 -> width(), m_number1 -> height());
+	m_number2Rect = QRect(x2, 305, m_number2 -> width(), m_number2 -> height());
+	m_number3Rect = QRect(x3, 305, m_number3 -> width(), m_number3 -> height());
 }
 
-void KSimon::putFont(QPainter &p, const QString &s1, const QString &s2, int w, int h)
+int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
 {
-	int fontSize;
-	QRect aux1, aux2;
+	QRect aux1;
 	QFont f = p.font();
 	f.setPointSize(28);
 	p.setFont(f);
 	
 	aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
-	aux2 = p.boundingRect(QRect(), Qt::AlignAuto, s2);
 	
-	fontSize = QMIN(w * 28 / aux1.width(), w * 28 / aux2.width());
-	fontSize = QMIN(fontSize, h * 28 / aux1.height());
-	fontSize = QMIN(fontSize, h * 28 / aux2.height());
-	
-	f.setPointSize(fontSize);
-	p.setFont(f);
+	return QMIN(w * 28 / aux1.width(), h * 28 / aux1.height());
 }

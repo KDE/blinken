@@ -12,10 +12,9 @@
 
 #include <qwidget.h>
 
-#include <arts/kartsdispatcher.h>
-#include <arts/kartsserver.h>
-#include <arts/kplayobject.h>
-#include <arts/kplayobjectfactory.h>
+#include "simongame.h"
+
+class artsPlayer;
 
 class KSimon : public QWidget
 {
@@ -29,24 +28,18 @@ class KSimon : public QWidget
 		void mousePressEvent(QMouseEvent *e);
 	
 	private:
-		void drawHelp(QPainter &p);
-		void drawQuit(QPainter &p);
+		void drawMenuQuit(QPainter &p);
 		void drawStart(QPainter &p);
-		void drawText(QPainter &p);
+		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
-		void putFont(QPainter &p, const QString &s1, const QString &s2, int w, int h);
+		int fontSize(QPainter &p, const QString &s1, int w, int h);
 		
-		QPixmap *m_back;
-		bool m_overHelp, m_overQuit, m_overStart;
-		QRect m_helpRect, m_quitRect, m_startRect;
-		// 0 Press Start
-		// 1 Choose Level
-		int m_gamePhase;
+		QPixmap *m_back, *m_number1, *m_number2, *m_number3;
+		bool m_overMenu, m_overQuit, m_overStart;
+		QRect m_menuRect, m_quitRect, m_startRect, m_number1Rect, m_number2Rect, m_number3Rect;
 		
-		KArtsDispatcher *m_dispatcher;
-		KArtsServer *m_server;
-		KDE::PlayObjectFactory *m_factory;
-		KDE::PlayObject *m_playobj;
+		artsPlayer *m_artsPlayer;
+		simonGame m_game;
 };
 
 #endif
