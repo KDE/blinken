@@ -52,6 +52,10 @@ KSimon::~KSimon()
 	delete m_greenh;
 	delete m_redh;
 	delete m_yellowh;
+	delete m_menu;
+	delete m_menuHover;
+	delete m_quit;
+	delete m_quitHover;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -361,6 +365,9 @@ void KSimon::drawStatusText(QPainter &p)
 void KSimon::drawLevel(QPainter &p)
 {
 	QString level = i18n("Level");
+	QString n1 = i18n("1");
+	QString n2 = i18n("2");
+	QString n3 = i18n("3");
 	
 	QFont oldFont, f = p.font();
 	oldFont = f;
@@ -374,7 +381,46 @@ void KSimon::drawLevel(QPainter &p)
 	aux.moveBy(322 - aux.width() / 2, 281 - aux.height() / 2);
 	p.drawText(aux, Qt::AlignAuto, level);
 	
-	if (!m_number1)
+	
+	m_number2Rect = p.boundingRect(QRect(), Qt::AlignAuto, n2);
+	m_number2Rect = QRect(0, 0, m_number2Rect.width() + 20, m_number2Rect.height() + 5);
+	m_number2Rect.moveBy(319 - m_number2Rect.width() / 2, 315 - m_number2Rect.height() / 2);
+	
+	p.fillRect(m_number2Rect, QColor(40, 40, 40));
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(m_number2Rect.left(), m_number2Rect.top(), m_number2Rect.width(), m_number2Rect.height(), 15, 15);
+	
+	if (!m_overStart) p.setPen(QColor(126, 126, 126));
+	else p.setPen(Qt::blue);
+	p.drawText(m_number2Rect, Qt::AlignCenter, n2);
+	
+	
+	m_number1Rect = p.boundingRect(QRect(), Qt::AlignAuto, n1);
+	m_number1Rect = QRect(0, 0, m_number1Rect.width() + 20, m_number1Rect.height() + 5);
+	m_number1Rect.moveBy(m_number2Rect.left() - m_number2Rect.width() - m_number1Rect.width() / 2, 315 - m_number1Rect.height() / 2);
+	
+	p.fillRect(m_number1Rect, QColor(40, 40, 40));
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(m_number1Rect.left(), m_number1Rect.top(), m_number1Rect.width(), m_number1Rect.height(), 15, 15);
+	
+	if (!m_overStart) p.setPen(QColor(126, 126, 126));
+	else p.setPen(Qt::blue);
+	p.drawText(m_number1Rect, Qt::AlignCenter, n1);
+	
+	
+	m_number3Rect = p.boundingRect(QRect(), Qt::AlignAuto, n3);
+	m_number3Rect = QRect(0, 0, m_number3Rect.width() + 20, m_number3Rect.height() + 5);
+	m_number3Rect.moveBy(m_number2Rect.left() + 2*m_number2Rect.width() - m_number3Rect.width() / 2, 315 - m_number3Rect.height() / 2);
+	
+	p.fillRect(m_number3Rect, QColor(40, 40, 40));
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(m_number3Rect.left(), m_number3Rect.top(), m_number3Rect.width(), m_number3Rect.height(), 15, 15);
+	
+	if (!m_overStart) p.setPen(QColor(126, 126, 126));
+	else p.setPen(Qt::blue);
+	p.drawText(m_number3Rect, Qt::AlignCenter, n3);
+	
+	/*if (!m_number1)
 	{
 		m_number1 = new QPixmap(locate("appdata", "images/1.png"));
 		m_number2 = new QPixmap(locate("appdata", "images/2.png"));
@@ -391,7 +437,7 @@ void KSimon::drawLevel(QPainter &p)
 	
 	m_number1Rect = QRect(x1, 297, m_number1 -> width(), m_number1 -> height());
 	m_number2Rect = QRect(x2, 297, m_number2 -> width(), m_number2 -> height());
-	m_number3Rect = QRect(x3, 297, m_number3 -> width(), m_number3 -> height());
+	m_number3Rect = QRect(x3, 297, m_number3 -> width(), m_number3 -> height());*/
 	
 	p.setFont(oldFont);
 }
