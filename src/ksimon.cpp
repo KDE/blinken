@@ -312,15 +312,18 @@ void KSimon::drawStart(QPainter &p)
 	QFont f = p.font();
 	f.setPointSize(fontSize(p, start, 190, 30));
 	p.setFont(f);
-	p.setPen(Qt::red);
+	
+	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, start);
+	m_startRect = QRect(0, 0, m_startRect.width() + 10, m_startRect.height() + 5);
+	m_startRect.moveBy(322 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
+	
+	p.fillRect(m_startRect, QColor(40, 40, 40));
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(m_startRect.left(), m_startRect.top(), m_startRect.width(), m_startRect.height(), 15, 15);
 	
 	if (!m_overStart) p.setPen(Qt::red);
 	else p.setPen(Qt::blue);
-	
-	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, start);
-	m_startRect.moveBy(322 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
-	p.fillRect(m_startRect, Qt::white);
-	p.drawText(m_startRect, Qt::AlignAuto, start);
+	p.drawText(m_startRect, Qt::AlignCenter, start);
 }
 
 void KSimon::drawStatusText(QPainter &p)
