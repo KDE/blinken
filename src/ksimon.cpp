@@ -230,7 +230,7 @@ void KSimon::drawStatusText(QPainter &p)
 		break;
 		
 		case simonGame::typingTheSequence:
-			p.drawText(0, 0, i18n("Type the sequence!"));
+			p.drawText(0, 0, i18n("Repeat the sequence!"));
 		break;
 	}
 }
