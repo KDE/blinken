@@ -20,7 +20,7 @@
 #include "ksimon.h"
 #include "number.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overCentralText(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -75,14 +75,19 @@ void KSimon::paintEvent(QPaintEvent *)
 	switch (m_game.phase())
 	{
 		case simonGame::starting:
-			drawStart(p);
+			drawCentralText(p, i18n("Start"));
 		break;
 		
 		case simonGame::choosingLevel:
 			drawLevel(p);
 		break;
 		
-		default:
+		case simonGame::waiting3:
+		case simonGame::waiting2:
+		case simonGame::waiting1:
+		case simonGame::learningTheSequence:
+		case simonGame::typingTheSequence:
+			drawCentralText(p, i18n("Restart"));
 		break;
 	}
 	
@@ -133,9 +138,10 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 {
 	if (m_overMenu) KMessageBox::information(this, i18n("This is a code mockup for KSimon project"), i18n("Help"));
 	else if (m_overQuit) kapp->quit();
-	else if (m_game.phase() == 0 && m_overStart)
+	else if (m_game.phase() != simonGame::choosingLevel && m_overCentralText)
 	{
-		m_overStart = false;
+		highlight(simonGame::none, true);
+		m_overCentralText = false;
 		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
 		m_game.setPhase(simonGame::choosingLevel);
 		m_updateButtonHighlighting = true;
@@ -211,6 +217,25 @@ void KSimon::drawMenuQuit(QPainter &p)
 	else p.drawPixmap(560, 10, *m_quitHover);
 }
 
+void KSimon::drawCentralText(QPainter &p, const QString &text)
+{
+	QFont f = p.font();
+	f.setPointSize(fontSize(p, text, 190, 30));
+	p.setFont(f);
+	
+	m_centralTextRect = p.boundingRect(QRect(), Qt::AlignAuto, text);
+	m_centralTextRect = QRect(0, 0, m_centralTextRect.width() + 10, m_centralTextRect.height() + 5);
+	m_centralTextRect.moveBy(318 - m_centralTextRect.width() / 2, 316 - m_centralTextRect.height() / 2);
+	
+	p.fillRect(m_centralTextRect, m_fillColor);
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(m_centralTextRect.left(), m_centralTextRect.top(), m_centralTextRect.width(), m_centralTextRect.height(), 15, 15);
+	
+	if (!m_overCentralText) p.setPen(m_fontColor);
+	else p.setPen(m_fontHighlightColor);
+	p.drawText(m_centralTextRect, Qt::AlignCenter, text);
+}
+
 void KSimon::drawScoreAndCounter(QPainter &p)
 {
 	QColor c1, c2, c3;
@@ -256,27 +281,6 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 	p.fillRect(35, 6, 11, 9, c2);
 	p.fillRect(35, 18, 11, 9, c3);
 	p.translate(-313, -125);
-}
-
-void KSimon::drawStart(QPainter &p)
-{
-	QString start = i18n("Start");
-
-	QFont f = p.font();
-	f.setPointSize(fontSize(p, start, 190, 30));
-	p.setFont(f);
-	
-	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, start);
-	m_startRect = QRect(0, 0, m_startRect.width() + 10, m_startRect.height() + 5);
-	m_startRect.moveBy(318 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
-	
-	p.fillRect(m_startRect, m_fillColor);
-	p.setPen(QPen(black, 3));
-	p.drawRoundRect(m_startRect.left(), m_startRect.top(), m_startRect.width(), m_startRect.height(), 15, 15);
-	
-	if (!m_overStart) p.setPen(m_fontColor);
-	else p.setPen(m_fontHighlightColor);
-	p.drawText(m_startRect, Qt::AlignCenter, start);
 }
 
 void KSimon::drawStatusText(QPainter &p)
@@ -376,7 +380,11 @@ int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
 
 void KSimon::updateButtonHighlighting(const QPoint &p)
 {
+	bool unhighlight;
 	m_updateButtonHighlighting = false;
+	
+	unhighlight = true;
+	
 	if (m_menuRect.contains(p))
 	{
 		if (!m_overMenu)
@@ -384,47 +392,55 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 			m_overMenu = true;
 			update();
 		}
+		unhighlight = false;
 	}
-	else if (m_quitRect.contains(p))
+	
+	if (m_quitRect.contains(p))
 	{
 		if (!m_overQuit)
 		{
 			m_overQuit = true;
 			update();
 		}
+		unhighlight = false;
 	}
-	else if (m_game.phase() == simonGame::starting && m_startRect.contains(p))
+	
+	switch (m_game.phase())
 	{
-		if (!m_overStart)
-		{
-			m_overStart = true;
-			update();
-		}
-	}
-	else if (m_game.phase() == simonGame::choosingLevel)
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			if (m_levelsRect[i].contains(p))
+		case simonGame::starting:
+		case simonGame::waiting3:
+		case simonGame::waiting2:
+		case simonGame::waiting1:
+		case simonGame::learningTheSequence:
+		case simonGame::typingTheSequence:
+			if (m_centralTextRect.contains(p))
 			{
-				if (!m_overLevels[i])
+				if (!m_overCentralText)
 				{
-					m_overLevels[i] = true;
+					m_overCentralText = true;
 					update();
 				}
+				unhighlight = false;
 			}
-			else
+		break;
+		
+		case simonGame::choosingLevel:
+			for (int i = 0; i < 3; i++)
 			{
-				if (m_overLevels[i])
+				if (m_levelsRect[i].contains(p))
 				{
-					m_overLevels[i] = false;
-					update();
+					if (!m_overLevels[i])
+					{
+						m_overLevels[i] = true;
+						update();
+					}
+					unhighlight = false;
 				}
-				else unHighlightButtons();
 			}
-		}
+		break;
 	}
-	else unHighlightButtons();
+
+	if (unhighlight) unHighlightButtons();
 }
 
 void KSimon::unHighlightButtons()
@@ -439,10 +455,32 @@ void KSimon::unHighlightButtons()
 		m_overQuit = false;
 		update();
 	}
-	if (m_game.phase() == 0 && m_overStart)
+	
+	switch (m_game.phase())
 	{
-		m_overStart = false;
-		update();
+		case simonGame::starting:
+		case simonGame::waiting3:
+		case simonGame::waiting2:
+		case simonGame::waiting1:
+		case simonGame::learningTheSequence:
+		case simonGame::typingTheSequence:
+			if (m_overCentralText)
+			{
+				m_overCentralText = false;
+				update();
+			}
+		break;
+		
+		case simonGame::choosingLevel:
+			for (int i = 0; i < 3; i++)
+			{
+				if (m_overLevels[i])
+				{
+					m_overLevels[i] = false;
+					update();
+				}
+			}
+		break;
 	}
 }
 

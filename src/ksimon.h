@@ -36,8 +36,8 @@ Q_OBJECT
 		
 	private:
 		void drawMenuQuit(QPainter &p);
+		void drawCentralText(QPainter &p, const QString &text);
 		void drawScoreAndCounter(QPainter &p);
-		void drawStart(QPainter &p);
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
 		int fontSize(QPainter &p, const QString &s1, int w, int h);
@@ -45,9 +45,9 @@ Q_OBJECT
 		void unHighlightButtons();
 		
 		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
-		bool m_overMenu, m_overQuit, m_overStart, m_overLevels[3];
+		bool m_overMenu, m_overQuit, m_overCentralText, m_overLevels[3];
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_menuRect, m_quitRect, m_startRect, m_levelsRect[3];
+		QRect m_menuRect, m_quitRect, m_centralTextRect, m_levelsRect[3];
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// if should update the highlighting after the next repaint

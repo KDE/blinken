@@ -59,12 +59,13 @@ void simonGame::clicked(color c)
 	{
 		m_artsPlayer -> play(all, true);
 		emit highlight(all, true);
-		setPhase(starting);
+		setPhase(choosingLevel);
 	}
 }
 
 void simonGame::setPhase(gamePhase p)
 {
+	if (p != waiting3 && p != waiting2 && p != waiting1) m_waitTimer -> stop();
 	m_phase = p;
 	emit phaseChanged();
 }
@@ -113,7 +114,6 @@ void simonGame::waiting()
 {
 	if (m_phase == waiting1)
 	{
-		m_waitTimer -> stop();
 		setPhase(simonGame::learningTheSequence);
 		if (m_level == 3) 
 		{
