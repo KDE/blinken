@@ -89,7 +89,7 @@ void highScoreDialog::mouseMoveEvent(QMouseEvent *e)
 	}
 }
 
-void highScoreDialog::mousePressEvent(QMouseEvent *e)
+void highScoreDialog::mousePressEvent(QMouseEvent *)
 {
 	if (m_overClose) close();
 }
@@ -170,8 +170,6 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	
 	closeRect = QRect(0, 0, closeRect.width() + 10, closeRect.height() + 2);
 	closeRect.moveBy(w / 2 - closeRect.width() / 2, (int)(h - 1.75 * closeRect.height()) + 2);
-	
-	m_firstPaint = false;
 	
 	f = font();
 	f.setBold(true);
