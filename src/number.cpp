@@ -98,15 +98,12 @@ void number::paint(QPainter &p, int digits) const
 
 void number::paintDigit(QPainter &p, int number) const
 {
-	const int *n;
+	// make gcc  happy
+	const int *n = m_number0;
 	int shape;
 	
 	switch (number)
 	{
-		case 0:
-			n = m_number0;
-		break;
-		
 		case 1:
 			n = m_number1;
 		break;

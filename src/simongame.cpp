@@ -39,7 +39,7 @@ simonGame::gamePhase simonGame::phase() const
 int simonGame::score() const
 {
 	if (m_phase == starting || m_phase == choosingLevel) return 0;
-	return m_sequenceLength - 2;
+	return m_sequenceLength - 1;
 }
 
 void simonGame::clicked(color c)
@@ -72,12 +72,11 @@ void simonGame::setPhase(gamePhase p)
 void simonGame::start(int level)
 {
 	m_level = level;
-	m_sequenceLength = 2;
+	m_sequenceLength = 1;
 	
 	nextRound();
 	
 	m_sequence.clear();
-	m_sequence.append(generateColor());
 }
 
 void simonGame::nextSound()
@@ -141,7 +140,8 @@ void simonGame::nextRound()
 simonGame::color simonGame::generateColor()
 {
 	int r;
-	color c;
+	// make the compiler happy :-D
+	color c = none;
 
 	r = 1 + (int)(4.0 * kapp -> random() / (RAND_MAX + 1.0));
 	switch(r)
