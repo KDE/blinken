@@ -262,6 +262,7 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 	QColor c1, c2, c3;
 	p.translate(313, 125);
 	p.setPen(QPen(black, 3));
+	p.fillRect(-44, -13, 98, 48, QColor(40, 40, 40));
 	p.drawRoundRect(-45, -15, 100, 50, 15, 15);
 	number n(m_game.score());
 	n.paint(p, 2);
@@ -275,27 +276,27 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 		break;
 		
 		case simonGame::waiting2:
-			c1 = gray;
+			c1 = QColor(55, 55, 55);
 			c2 = red;
 			c3 = red;
 		break;
 		
 		case simonGame::waiting1:
-			c1 = gray;
-			c2 = gray;
+			c1 = QColor(55, 55, 55);
+			c2 = c1;
 			c3 = red;
 		break;
 		
 		default:
-			c1 = gray;
-			c2 = gray;
-			c3 = gray;
+			c1 = QColor(55, 55, 55);
+			c2 = c1;
+			c3 = c1;
 		break;
 	}
 	
-	p.fillRect(35, -7, 9, 9, c1);
-	p.fillRect(35, 5, 9, 9, c2);
-	p.fillRect(35, 17, 9, 9, c3);
+	p.fillRect(35, -6, 11, 9, c1);
+	p.fillRect(35, 6, 11, 9, c2);
+	p.fillRect(35, 18, 11, 9, c3);
 	p.translate(-313, -125);
 }
 
