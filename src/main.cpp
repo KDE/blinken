@@ -10,7 +10,10 @@
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
+#include <kprocess.h>
+#include <kstandarddirs.h>
 
+#include "fontchecker.h"
 #include "ksimon.h"
 
 int main(int argc, char *argv[])
@@ -22,6 +25,15 @@ int main(int argc, char *argv[])
 	KApplication app;
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	
-	app.setTopWidget(new KSimon());
-	return app.exec();
+	if (!fontChecker::checkInstalled("Steve", locate("appdata", "fonts/steve.ttf")))
+	{
+		KProcess *proc = new KProcess;
+		for (int i = 0; i < argc; i++) *proc << argv[i];
+		proc->start();
+	}
+	else
+	{
+		app.setTopWidget(new KSimon());
+		return app.exec();
+	}
 }
