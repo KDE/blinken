@@ -30,6 +30,7 @@ artsPlayer::artsPlayer() : m_playobj(0)
 
 artsPlayer::~artsPlayer()
 {
+	delete m_playobj;
 	delete m_factory;
 	delete m_server;
 	delete m_dispatcher;
@@ -86,6 +87,7 @@ void artsPlayer::play()
 			// TODO we need a sound for that
 		break;
 	}
+	delete m_playobj;
 	m_playobj = m_factory -> createPlayObject(path, true);
 	m_playobj -> play();
 }

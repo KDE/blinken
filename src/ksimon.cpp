@@ -39,6 +39,10 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), 
 KSimon::~KSimon()
 {
 	delete m_back;
+	delete m_blueh;
+	delete m_greenh;
+	delete m_redh;
+	delete m_yellowh;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
