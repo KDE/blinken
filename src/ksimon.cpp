@@ -23,11 +23,18 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHelp(fal
 	setMouseTracking(true);
 	setFixedSize(644, 525);
 	show();
+	
+	m_dispatcher = new KArtsDispatcher;
+	m_server = new KArtsServer;
+	m_factory = new KDE::PlayObjectFactory(m_server->server());
 }
 
 KSimon::~KSimon()
 {
 	delete m_back;
+	delete m_factory;
+	delete m_server;
+	delete m_dispatcher;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -127,10 +134,26 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			if (x3 + y3 < 1)
 			{
 				// Outside the circle and inside the ellipse
-				if (x > 6 && y > 6) KMessageBox::information(this, i18n("Green"), i18n("Green"));
-				else if (x < -6 && y > 6) KMessageBox::information(this, i18n("Blue"), i18n("Blue"));
-				else if (x < -6 && y < -6) KMessageBox::information(this, i18n("Yellow"), i18n("Yellow"));
-				else if (x > 6 && y < -6) KMessageBox::information(this, i18n("Red"), i18n("Red"));
+				if (x > 6 && y > 6)
+				{
+					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/1.wav"), true);
+					m_playobj -> play();
+				}
+				else if (x < -6 && y > 6)
+				{
+					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/2.wav"), true);
+					m_playobj -> play();
+				}
+				else if (x < -6 && y < -6)
+				{
+					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/3.wav"), true);
+					m_playobj -> play();
+				}
+				else if (x > 6 && y < -6)
+				{
+					m_playobj = m_factory -> createPlayObject(locate("appdata", "sounds/4.wav"), true);
+					m_playobj -> play();
+				}
 			}
 		}
 	}

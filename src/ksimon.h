@@ -12,6 +12,11 @@
 
 #include <qwidget.h>
 
+#include <arts/kartsdispatcher.h>
+#include <arts/kartsserver.h>
+#include <arts/kplayobject.h>
+#include <arts/kplayobjectfactory.h>
+
 class KSimon : public QWidget
 {
 	public:
@@ -37,6 +42,11 @@ class KSimon : public QWidget
 		// 0 Press Start
 		// 1 Choose Level
 		int m_gamePhase;
+		
+		KArtsDispatcher *m_dispatcher;
+		KArtsServer *m_server;
+		KDE::PlayObjectFactory *m_factory;
+		KDE::PlayObject *m_playobj;
 };
 
 #endif
