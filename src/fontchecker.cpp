@@ -18,6 +18,7 @@ bool fontChecker::checkInstalled(const QString &fontName, const QString &fontPat
 {
 	QFont f(fontName);
 	QFontInfo fi(f);
+	// Works with Steve may need some tweaking to work with other fonts
 	if (fi.family().find(fontName) != 0)
 	{
 		KIO::NetAccess::copy(fontPath, "fonts:/Personal/", 0);
