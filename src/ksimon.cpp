@@ -199,6 +199,7 @@ void KSimon::drawLevel(QPainter &p)
 	QFont f = p.font();
 	f.setPointSize(25);
 	p.setFont(f);
+	p.setPen(Qt::red);
 	
 	QRect aux;
 	
