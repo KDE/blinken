@@ -46,9 +46,7 @@ void simonGame::clicked(color c)
 		if (m_nextColor == m_sequence.end())
 		{
 			m_sequenceLength++;
-			if (m_level == 1) setPhase(waiting3);
-			else setPhase(waiting2);
-			m_waitTimer -> start(1000);
+			nextRound();
 		}
 	}
 	else
@@ -70,9 +68,7 @@ void simonGame::start(int level)
 	m_level = level;
 	m_sequenceLength = 2;
 	
-	if (m_level == 1) setPhase(waiting3);
-	else setPhase(waiting2);
-	m_waitTimer -> start(1000);
+	nextRound();
 	
 	m_sequence.clear();
 	m_sequence.append(generateColor());
@@ -127,6 +123,13 @@ void simonGame::waiting()
 	}
 	else if (m_phase == waiting3) setPhase(waiting2);
 	else /* m_phase == waiting2 */ setPhase(waiting1);
+}
+
+void simonGame::nextRound()
+{
+	if (m_level == 1) setPhase(waiting3);
+	else setPhase(waiting2);
+	m_waitTimer -> start(1000);
 }
 
 simonGame::color simonGame::generateColor()

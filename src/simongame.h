@@ -44,6 +44,7 @@ Q_OBJECT
 		void waiting();
 		
 	private:
+		void nextRound();
 		color generateColor();
 	
 		gamePhase m_phase;
