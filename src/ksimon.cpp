@@ -83,6 +83,13 @@ void KSimon::paintEvent(QPaintEvent *)
 		case simonGame::green:
 			p.drawPixmap(322, 225, *m_greenh);
 		break;
+		
+		case simonGame::all:
+			p.drawPixmap(14, 225, *m_blueh);
+			p.drawPixmap(14, 16, *m_yellowh);
+			p.drawPixmap(322, 16, *m_redh);
+			p.drawPixmap(322, 225, *m_greenh);
+		break;
 	}
 	
 	drawStatusText(p);

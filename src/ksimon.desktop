@@ -1,8 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=KSimon
+Name[sv]=Ksimon
 Exec=ksimon
 Icon=ksimon
 Type=Application
+Comment=A memory enhancement game
 Terminal=false
 Categories=Qt;KDE;Education;

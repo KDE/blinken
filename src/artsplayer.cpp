@@ -81,6 +81,10 @@ void artsPlayer::play()
 		
 		case simonGame::none:
 		break;
+		
+		case simonGame::all:
+			// TODO we need a sound for that
+		break;
 	}
 	m_playobj = m_factory -> createPlayObject(path, true);
 	m_playobj -> play();

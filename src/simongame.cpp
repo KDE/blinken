@@ -38,9 +38,13 @@ void simonGame::clicked(color c)
 		
 		if (m_sequence.size() == 0)
 		{
-			m_phase = starting;
-			emit phaseChanged();
+			setPhase(starting);
 		}
+	}
+	else
+	{
+		emit highlight(all, true);
+		setPhase(starting);
 	}
 }
 

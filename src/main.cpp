@@ -15,8 +15,9 @@
 
 int main(int argc, char *argv[])
 {
-	KAboutData about("ksimon", I18N_NOOP("KSimon"), "0.1", 0, KAboutData::License_GPL);
-	about.addAuthor( "Albert Astals Cid", 0, "tsdgeos@terra.es" );
+	KAboutData about("ksimon", I18N_NOOP("KSimon"), "0.1", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL);
+	about.addAuthor("Albert Astals Cid", I18N_NOOP("Coding"), "tsdgeos@terra.es");
+	about.addAuthor( "Danny Allen", I18N_NOOP("Graphics and Sounds"), "dannya40uk@yahoo.co.uk");
 	KCmdLineArgs::init(argc, argv, &about);
 	KApplication app;
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));

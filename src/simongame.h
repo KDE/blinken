@@ -22,7 +22,7 @@ Q_OBJECT
 		~simonGame();
 		
 		enum gamePhase { starting, choosingLevel, learningTheSequence, typingTheSequence };
-		enum color { none, red, green, blue, yellow };
+		enum color { none, red, green, blue, yellow, all };
 		
 		gamePhase phase() const;
 		
