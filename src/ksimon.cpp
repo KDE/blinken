@@ -20,7 +20,7 @@
 #include "ksimon.h"
 #include "number.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_updateHighlight(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -121,12 +121,12 @@ void KSimon::paintEvent(QPaintEvent *)
 	
 	bitBlt(this, 0, 0, &buf);
 	
-	if (m_updateHighlight) updateHighlighting(mapFromGlobal(QCursor::pos()));
+	if (m_updateButtonHighlighting) updateButtonHighlighting(mapFromGlobal(QCursor::pos()));
 }
 
 void KSimon::mouseMoveEvent(QMouseEvent *e)
 {
-	updateHighlighting(e->pos());
+	updateButtonHighlighting(e->pos());
 }
 
 void KSimon::mousePressEvent(QMouseEvent *e)
@@ -138,7 +138,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		m_overStart = false;
 		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
 		m_game.setPhase(simonGame::choosingLevel);
-		m_updateHighlight = true;
+		m_updateButtonHighlighting = true;
 	}
 	else if (m_game.phase() == simonGame::choosingLevel)
 	{
@@ -374,9 +374,9 @@ int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
 	return QMIN(w * 28 / aux1.width(), h * 28 / aux1.height());
 }
 
-void KSimon::updateHighlighting(const QPoint &p)
+void KSimon::updateButtonHighlighting(const QPoint &p)
 {
-	m_updateHighlight = false;
+	m_updateButtonHighlighting = false;
 	if (m_menuRect.contains(p))
 	{
 		if (!m_overMenu)
@@ -420,26 +420,29 @@ void KSimon::updateHighlighting(const QPoint &p)
 					m_overLevels[i] = false;
 					update();
 				}
+				else unHighlightButtons();
 			}
 		}
 	}
-	else
+	else unHighlightButtons();
+}
+
+void KSimon::unHighlightButtons()
+{
+	if (m_overMenu)
 	{
-		if (m_overMenu)
-		{
-			m_overMenu = false;
-			update();
-		}
-		if (m_overQuit)
-		{
-			m_overQuit = false;
-			update();
-		}
-		if (m_game.phase() == 0 && m_overStart)
-		{
-			m_overStart = false;
-			update();
-		}
+		m_overMenu = false;
+		update();
+	}
+	if (m_overQuit)
+	{
+		m_overQuit = false;
+		update();
+	}
+	if (m_game.phase() == 0 && m_overStart)
+	{
+		m_overStart = false;
+		update();
 	}
 }
 

@@ -41,7 +41,8 @@ Q_OBJECT
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
 		int fontSize(QPainter &p, const QString &s1, int w, int h);
-		void updateHighlighting(const QPoint &p);
+		void updateButtonHighlighting(const QPoint &p);
+		void unHighlightButtons();
 		
 		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
 		bool m_overMenu, m_overQuit, m_overStart, m_overLevels[3];
@@ -50,7 +51,7 @@ Q_OBJECT
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// if should update the highlighting after the next repaint
-		bool m_updateHighlight;
+		bool m_updateButtonHighlighting;
 		
 		simonGame::color m_highlighted;
 		QTimer *m_unhighlighter;
