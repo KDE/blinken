@@ -36,6 +36,7 @@ Q_OBJECT
 		
 	private:
 		void drawMenuQuit(QPainter &p);
+		void drawScoreAndCounter(QPainter &p);
 		void drawStart(QPainter &p);
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);

@@ -65,10 +65,7 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 		
 		default:
-			p.translate(327, 125);
-			number n(m_game.score());
-			n.paint(p, 2);
-			p.translate(-327, -125);
+			drawScoreAndCounter(p);
 		break;
 	}
 	
@@ -258,6 +255,48 @@ void KSimon::drawMenuQuit(QPainter &p)
 	m_quitRect.moveBy(width() - 10 - m_quitRect.width(), 10);
 	p.fillRect(m_quitRect, Qt::white);
 	p.drawText(m_quitRect, Qt::AlignAuto, quit);
+}
+
+void KSimon::drawScoreAndCounter(QPainter &p)
+{
+	QColor c1, c2, c3;
+	p.translate(313, 125);
+	p.setPen(QPen(black, 3));
+	p.drawRoundRect(-45, -15, 100, 50, 15, 15);
+	number n(m_game.score());
+	n.paint(p, 2);
+	
+	switch (m_game.phase())
+	{
+		case simonGame::waiting3:
+			c1 = red;
+			c2 = red;
+			c3 = red;
+		break;
+		
+		case simonGame::waiting2:
+			c1 = gray;
+			c2 = red;
+			c3 = red;
+		break;
+		
+		case simonGame::waiting1:
+			c1 = gray;
+			c2 = gray;
+			c3 = red;
+		break;
+		
+		default:
+			c1 = gray;
+			c2 = gray;
+			c3 = gray;
+		break;
+	}
+	
+	p.fillRect(35, -7, 9, 9, c1);
+	p.fillRect(35, 5, 9, 9, c2);
+	p.fillRect(35, 17, 9, 9, c3);
+	p.translate(-313, -125);
 }
 
 void KSimon::drawStart(QPainter &p)
