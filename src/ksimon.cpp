@@ -7,6 +7,7 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include <qcursor.h>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtimer.h>
@@ -19,7 +20,7 @@
 #include "ksimon.h"
 #include "number.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_updateHighlight(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -119,74 +120,13 @@ void KSimon::paintEvent(QPaintEvent *)
 	drawStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
+	
+	if (m_updateHighlight) updateHighlighting(mapFromGlobal(QCursor::pos()));
 }
 
 void KSimon::mouseMoveEvent(QMouseEvent *e)
 {
-	if (m_menuRect.contains(e -> pos()))
-	{
-		if (!m_overMenu)
-		{
-			m_overMenu = true;
-			update();
-		}
-	}
-	else if (m_quitRect.contains(e -> pos()))
-	{
-		if (!m_overQuit)
-		{
-			m_overQuit = true;
-			update();
-		}
-	}
-	else if (m_game.phase() == simonGame::starting && m_startRect.contains(e -> pos()))
-	{
-		if (!m_overStart)
-		{
-			m_overStart = true;
-			update();
-		}
-	}
-	else if (m_game.phase() == simonGame::choosingLevel)
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			if (m_levelsRect[i].contains(e -> pos()))
-			{
-				if (!m_overLevels[i])
-				{
-					m_overLevels[i] = true;
-					update();
-				}
-			}
-			else
-			{
-				if (m_overLevels[i])
-				{
-					m_overLevels[i] = false;
-					update();
-				}
-			}
-		}
-	}
-	else
-	{
-		if (m_overMenu)
-		{
-			m_overMenu = false;
-			update();
-		}
-		if (m_overQuit)
-		{
-			m_overQuit = false;
-			update();
-		}
-		if (m_game.phase() == 0 && m_overStart)
-		{
-			m_overStart = false;
-			update();
-		}
-	}
+	updateHighlighting(e->pos());
 }
 
 void KSimon::mousePressEvent(QMouseEvent *e)
@@ -198,9 +138,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		m_overStart = false;
 		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
 		m_game.setPhase(simonGame::choosingLevel);
-		repaint(); // need it here so the page repaints, m_levelsRect gets defined and mouseMoveEvent(e); updates a button
-		           // if the mouse was left above a level button
-		mouseMoveEvent(e);
+		m_updateHighlight = true;
 	}
 	else if (m_game.phase() == simonGame::choosingLevel)
 	{
@@ -434,6 +372,75 @@ int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
 	aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
 	
 	return QMIN(w * 28 / aux1.width(), h * 28 / aux1.height());
+}
+
+void KSimon::updateHighlighting(const QPoint &p)
+{
+	m_updateHighlight = false;
+	if (m_menuRect.contains(p))
+	{
+		if (!m_overMenu)
+		{
+			m_overMenu = true;
+			update();
+		}
+	}
+	else if (m_quitRect.contains(p))
+	{
+		if (!m_overQuit)
+		{
+			m_overQuit = true;
+			update();
+		}
+	}
+	else if (m_game.phase() == simonGame::starting && m_startRect.contains(p))
+	{
+		if (!m_overStart)
+		{
+			m_overStart = true;
+			update();
+		}
+	}
+	else if (m_game.phase() == simonGame::choosingLevel)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (m_levelsRect[i].contains(p))
+			{
+				if (!m_overLevels[i])
+				{
+					m_overLevels[i] = true;
+					update();
+				}
+			}
+			else
+			{
+				if (m_overLevels[i])
+				{
+					m_overLevels[i] = false;
+					update();
+				}
+			}
+		}
+	}
+	else
+	{
+		if (m_overMenu)
+		{
+			m_overMenu = false;
+			update();
+		}
+		if (m_overQuit)
+		{
+			m_overQuit = false;
+			update();
+		}
+		if (m_game.phase() == 0 && m_overStart)
+		{
+			m_overStart = false;
+			update();
+		}
+	}
 }
 
 #include "ksimon.moc"
