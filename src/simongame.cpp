@@ -7,21 +7,42 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include <qtimer.h>
+
 #include <kapplication.h>
 
+#include "artsplayer.h"
 #include "simongame.h"
 
 simonGame::simonGame() : m_phase(starting)
 {
+	m_artsPlayer = new artsPlayer;
 }
 
 simonGame::~simonGame()
 {
+	delete m_artsPlayer;
 }
 
 simonGame::gamePhase simonGame::phase() const
 {
 	return m_phase;
+}
+
+void simonGame::clicked(color c)
+{
+	printf("%d %d\n", c, m_sequence.first());
+	if (c == m_sequence.first())
+	{
+		m_sequence.pop_front();
+		m_artsPlayer -> play(c);
+		
+		if (m_sequence.size() == 0)
+		{
+			m_phase = starting;
+			emit phaseChanged();
+		}
+	}
 }
 
 void simonGame::setPhase(gamePhase p)
@@ -34,6 +55,33 @@ void simonGame::start(int level)
 	m_level = level;
 	
 	generateSequence();
+	
+	connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
+	m_nextSound = m_sequence.begin();
+	soundEnded();
+}
+
+void simonGame::nextSound()
+{
+	printf("simonGame::nextSound\n");
+	if (m_nextSound != m_sequence.end())
+	{
+		color c;
+		c = *m_nextSound;
+		++m_nextSound;
+		m_artsPlayer -> play(c);
+	}
+	else
+	{
+		m_artsPlayer->disconnect();
+		m_phase = typingTheSequence;
+		emit phaseChanged();
+	}
+}
+
+void simonGame::soundEnded()
+{
+	QTimer::singleShot(100, this, SLOT(nextSound()));
 }
 
 void simonGame::generateSequence()
@@ -65,3 +113,5 @@ void simonGame::generateSequence()
 		}
 	}
 }
+
+#include "simongame.moc"

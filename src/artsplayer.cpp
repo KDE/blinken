@@ -9,6 +9,8 @@
 
 #include <qtimer.h>
 
+#include <kstandarddirs.h>
+
 #include "artsplayer.h"
 
 artsPlayer::artsPlayer() : m_playobj(0)
@@ -16,6 +18,14 @@ artsPlayer::artsPlayer() : m_playobj(0)
 	m_dispatcher = new KArtsDispatcher;
 	m_server = new KArtsServer;
 	m_factory = new KDE::PlayObjectFactory(m_server->server());
+	
+	m_endChecker = new QTimer(this);
+	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
+	
+	m_greenPath = locate("appdata","sounds/1.wav");
+	m_redPath = locate("appdata","sounds/2.wav");
+	m_bluePath = locate("appdata","sounds/3.wav");
+	m_yellowPath = locate("appdata","sounds/4.wav");
 }
 
 artsPlayer::~artsPlayer()
@@ -25,42 +35,61 @@ artsPlayer::~artsPlayer()
 	delete m_dispatcher;
 }
 
-void artsPlayer::play(const QString &path, bool stopCurrent)
+void artsPlayer::play(simonGame::color c, bool stopCurrent)
 {
 	if (m_playobj && m_playobj -> state() == Arts::posPlaying)
 	{
 		if (stopCurrent)
 		{
 			m_nextSounds.clear();
-			m_nextSounds.append(path);
+			m_nextSounds.append(c);
 			m_playobj -> halt();
 			play();
 		}
-		else
-		{
-			m_nextSounds.append(path);
-			QTimer::singleShot(150, this, SLOT(play()));
-		}
+		else m_nextSounds.append(c);
 	}
 	else
 	{
-		m_nextSounds.append(path);
+		m_nextSounds.append(c);
 		play();
 	}
+	if (!m_endChecker -> isActive()) m_endChecker -> start(50);
 }
 
 void artsPlayer::play()
 {
-	if (m_playobj && m_playobj -> state() == Arts::posPlaying)
+	QString path;
+	simonGame::color c = m_nextSounds.first();
+	m_nextSounds.pop_front();
+	switch (c)
 	{
-		QTimer::singleShot(150, this, SLOT(play()));
+		case simonGame::red:
+			path = m_redPath;
+		break;
+		
+		case simonGame::green:
+			path = m_greenPath;
+		break;
+		
+		case simonGame::blue:
+			path = m_bluePath;
+		break;
+		
+		case simonGame::yellow:
+			path = m_yellowPath;
+		break;
 	}
-	else
+	m_playobj = m_factory -> createPlayObject(path, true);
+	m_playobj -> play();
+}
+
+void artsPlayer::checkEnded()
+{
+	if (m_playobj -> state() != Arts::posPlaying)
 	{
-		QString path = m_nextSounds.first();
-		m_nextSounds.pop_front();
-		m_playobj = m_factory -> createPlayObject(path, true);
-		m_playobj -> play();
+		m_endChecker -> stop();
+		emit ended();
+		if (m_nextSounds.size() > 0) play();
 	}
 }
 

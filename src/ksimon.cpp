@@ -15,7 +15,6 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 
-#include "artsplayer.h"
 #include "ksimon.h"
 
 KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false)
@@ -25,13 +24,12 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), 
 	setFixedSize(644, 525);
 	show();
 	
-	m_artsPlayer = new artsPlayer;
+	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 }
 
 KSimon::~KSimon()
 {
 	delete m_back;
-	delete m_artsPlayer;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -153,22 +151,10 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			if (x3 + y3 < 1)
 			{
 				// Outside the circle and inside the ellipse
-				if (x > 6 && y > 6)
-				{
-					m_artsPlayer -> play(locate("appdata","sounds/1.wav"));
-				}
-				else if (x < -6 && y > 6)
-				{
-					m_artsPlayer -> play(locate("appdata","sounds/2.wav"));
-				}
-				else if (x < -6 && y < -6)
-				{
-					m_artsPlayer -> play(locate("appdata","sounds/3.wav"));
-				}
-				else if (x > 6 && y < -6)
-				{
-					m_artsPlayer -> play(locate("appdata","sounds/4.wav"));
-				}
+				if (x > 6 && y > 6) m_game.clicked(simonGame::green);
+				else if (x < -6 && y > 6) m_game.clicked(simonGame::blue);
+				else if (x < -6 && y < -6) m_game.clicked(simonGame::yellow);
+				else if (x > 6 && y < -6) m_game.clicked(simonGame::red);
 			}
 		}
 	}

@@ -12,8 +12,11 @@
 
 #include <qvaluelist.h>
 
-class simonGame
+class artsPlayer;
+
+class simonGame : public QObject
 {
+Q_OBJECT
 	public:
 		simonGame();
 		~simonGame();
@@ -23,16 +26,27 @@ class simonGame
 		
 		gamePhase phase() const;
 		
+		void clicked(color c);
 		void setPhase(gamePhase p);
 		void start(int level);
 	
+	signals:
+		// phaseChanges NOT caused by setPhase
+		void phaseChanged();
+		
+	private slots:
+		void nextSound();
+		void soundEnded();
+		
 	private:
 		void generateSequence();
 	
 		gamePhase m_phase;
 		int m_level;
 		
+		artsPlayer *m_artsPlayer;
 		QValueList<color> m_sequence;
+		QValueList<color>::const_iterator m_nextSound;
 };
 
 #endif

@@ -17,6 +17,10 @@
 
 #include <qvaluelist.h>
 
+#include "simongame.h"
+
+class QTimer;
+
 class artsPlayer : public QObject
 {
 Q_OBJECT
@@ -24,14 +28,22 @@ Q_OBJECT
 		artsPlayer();
 		~artsPlayer();
 		
-		void play(const QString &path, bool stopCurrent = false);
+		void play(simonGame::color c, bool stopCurrent = false);
 		
-	public slots:
+	signals:
+		void ended();
+		
+	private slots:
 		void play();
+		void checkEnded();
 		
 	private:
-		QValueList<QString> m_nextSounds;
-	
+		QValueList<simonGame::color> m_nextSounds;
+		
+		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath;
+		
+		QTimer *m_endChecker;
+		
 		KArtsDispatcher *m_dispatcher;
 		KArtsServer *m_server;
 		KDE::PlayObjectFactory *m_factory;
