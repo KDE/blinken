@@ -1,2 +1,2 @@
 imagesdir = $(kde_datadir)/ksimon/images
-images_DATA = ksimon.png 1.png 2.png 3.png redh.png blueh.png greenh.png yellowh.png quit.png quit_hover.png menu.png menu_hover.png
+images_DATA = ksimon.png redh.png blueh.png greenh.png yellowh.png quit.png quit_hover.png menu.png menu_hover.png
