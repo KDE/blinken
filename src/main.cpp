@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	about.addAuthor( "Albert Astals Cid", 0, "tsdgeos@terra.es" );
 	KCmdLineArgs::init(argc, argv, &about);
 	KApplication app;
+	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	
 	app.setTopWidget(new KSimon());
 	return app.exec();
