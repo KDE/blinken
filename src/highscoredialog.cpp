@@ -10,6 +10,8 @@
 #include <qpainter.h>
 #include <qpixmap.h>
 
+#include <kapplication.h>
+#include <kconfig.h>
 #include <klocale.h>
 
 #include "highscoredialog.h"
@@ -33,46 +35,65 @@ static const QString l2 = i18n("Level 2");
 static const QString l3 = i18n("Level ?");
 static const QString cl = i18n("Close");
 
-highScoreDialog::highScoreDialog(QWidget *parent, QValueList< QPair<int, QString> > scores) : KDialog(parent, 0, true, WNoAutoErase), m_overClose(false), m_scores(scores)
+highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent, 0, true, WNoAutoErase), m_overClose(false)
 {
 	setCaption("HighScores");
 	
-	int mw, mh, lt, th;
-	QRect r, r1, r2, r3, r4, r5;
-	QPainter p(this);
-	QFont f;
-	
-	r1 = p.boundingRect(QRect(), Qt::AlignAuto, hs);
-	r1 = p.boundingRect(QRect(), Qt::AlignAuto, l1);
-	r2 = p.boundingRect(QRect(), Qt::AlignAuto, l2);
-	r3 = p.boundingRect(QRect(), Qt::AlignAuto, l3);
-	r5 = p.boundingRect(QRect(), Qt::AlignAuto, cl);
-	
-	mw = blackFrameMargin + roundBoxMargin + roundBoxPen + minLevelSep + r1.width() + minLevelSep + r2.width() + minLevelSep + r3.width() + minLevelSep + roundBoxPen + roundBoxMargin + blackFrameMargin;
-	
-	f = QFont("Steve");
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
-	p.setFont(f);
-	lt = 0;
-	QValueList< QPair<int, QString> >::const_iterator it;
-	for (it = m_scores.begin(); it != m_scores.end(); ++it)
+	KConfig *cfg = kapp -> config();
+	for (int i = 1; i <= 3; i++)
 	{
-		r4 = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
-		lt = QMAX(lt, r4.width());
+		cfg -> setGroup(QString("Level%1").arg(i));
+		for (int j = 1; j <= 5; j++)
+		{
+			m_scores[i-1].append(qMakePair(cfg->readNumEntry(QString("Score%1").arg(j)), cfg->readEntry(QString("Name%1").arg(j))));
+		}
 	}
 	
-	mw = QMAX(mw, (blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin + textRight + lt + roundBoxPen + roundBoxMargin + blackFrameMargin));
+	calcSize();
+}
+
+bool highScoreDialog::scoreGoodEnough(int level, int score)
+{
+	level--;
+	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	it = m_scores[level].begin();
+	itEnd = m_scores[level].end();
+	while (it != itEnd && (*it).first >= score) it++;
 	
-	th = QMAX(r1.height(), r2.height());
-	th = QMAX(th, r3.height());
+	return (it != itEnd);
+}
+
+void highScoreDialog::addScore(int level, int score, const QString &name)
+{
+	level--;
+	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	it = m_scores[level].begin();
+	itEnd = m_scores[level].end();
+	while (it != itEnd && (*it).first >= score) it++;
 	
-	
-	
-	mh = blackFrameMargin + hsMargin + r.height() + hsMargin + roundBoxMargin + roundBoxPen + th + counterMargin + moveDown * m_scores.count() + roundBoxPen + roundBoxMargin + hsMargin + r5.height() + hsMargin + blackFrameMargin;
-	
-	setMinimumSize(mw, mh);
-	resize(mw, mh);
-	setMouseTracking(true);
+	if (it != itEnd)
+	{
+		m_scores[level].insert(it, qMakePair(score, name));
+		m_scores[level].remove(--m_scores[level].end());
+		calcSize();
+		
+		KConfig *cfg = kapp -> config();
+		cfg -> setGroup(QString("Level%1").arg(level + 1));
+		int j;
+		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
+		{
+			cfg->writeEntry(QString("Score%1").arg(j), (*it).first);
+			cfg->writeEntry(QString("Name%1").arg(j), (*it).second);
+		}
+		cfg -> sync();
+	}
+}
+
+void highScoreDialog::showLevel(int level)
+{
+	m_level = level - 1;
+	exec();
+	delete this;
 }
 
 void highScoreDialog::mouseMoveEvent(QMouseEvent *e)
@@ -129,8 +150,17 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	                h - r.bottom() - hsMargin - 2 * roundBoxMargin - blackFrameMargin - closeRect.height(), 10, 10);
 	
 	int textsWidth, tw, th;
+	if (m_level == 0) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	r1 = p.boundingRect(QRect(), Qt::AlignAuto, l1);
+	if (m_level == 1) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	r2 = p.boundingRect(QRect(), Qt::AlignAuto, l2);
+	if (m_level == 2) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	r3 = p.boundingRect(QRect(), Qt::AlignAuto, l3);
 	textsWidth = minLevelSep + r1.width() + minLevelSep + r2.width() + minLevelSep + r3.width() + minLevelSep;
 	
@@ -140,10 +170,19 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	th = QMAX(r1.height(), r2.height());
 	th = QMAX(th, r3.height());
 	r1.moveBy(blackFrameMargin + roundBoxMargin + tw / 2 - r1.width() / 2, r.bottom() + roundBoxMargin + th);
+	if (m_level == 0) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	p.drawText(r1, Qt::AlignCenter, l1);
 	r2.moveBy(blackFrameMargin + roundBoxMargin + tw + tw / 2 - r2.width() / 2, r.bottom() + roundBoxMargin + th);
+	if (m_level == 1) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	p.drawText(r2, Qt::AlignCenter, l2);
 	r3.moveBy(blackFrameMargin + roundBoxMargin + tw + tw + tw / 2 - r3.width() / 2, r.bottom() + roundBoxMargin + th);
+	if (m_level == 2) f.setBold(true);
+	else f.setBold(false);
+	p.setFont(f);
 	p.drawText(r3, Qt::AlignCenter, l3);
 	
 	// black frame
@@ -157,7 +196,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	p.translate(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin, r1.bottom() + counterMargin);
 	
 	QValueList< QPair<int, QString> >::const_iterator it;
-	for (it = m_scores.begin(); it != m_scores.end(); ++it)
+	for (it = m_scores[m_level].begin(); it != m_scores[m_level].end(); ++it)
 	{
 		counter::paint(p, true, (*it).first, false, QColor(), QColor(), QColor());
 		p.setPen(black);
@@ -165,7 +204,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 		p.translate(0, moveDown);
 	}
 	
-	p.translate(0, -(moveDown * (int)m_scores.count()));
+	p.translate(0, -(moveDown * 5));
 	p.translate(-(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin), -(r1.bottom() + counterMargin));
 	
 	closeRect = QRect(0, 0, closeRect.width() + 10, closeRect.height() + 2);
@@ -181,4 +220,47 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	p.drawText(closeRect, Qt::AlignCenter, cl);
 	
 	bitBlt(this, 0, 0, &buf);
+}
+
+void highScoreDialog::calcSize()
+{
+	int mw, mh, lt, th;
+	QRect r, r1, r2, r3, r4, r5;
+	QPainter p(this);
+	QFont f;
+	
+	f = p.font();
+	f.setBold(true);
+	p.setFont(f);
+	r1 = p.boundingRect(QRect(), Qt::AlignAuto, hs);
+	r1 = p.boundingRect(QRect(), Qt::AlignAuto, l1);
+	r2 = p.boundingRect(QRect(), Qt::AlignAuto, l2);
+	r3 = p.boundingRect(QRect(), Qt::AlignAuto, l3);
+	r5 = p.boundingRect(QRect(), Qt::AlignAuto, cl);
+	
+	mw = blackFrameMargin + roundBoxMargin + roundBoxPen + minLevelSep + r1.width() + minLevelSep + r2.width() + minLevelSep + r3.width() + minLevelSep + roundBoxPen + roundBoxMargin + blackFrameMargin;
+	
+	f = QFont("Steve");
+	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
+	p.setFont(f);
+	for (int i = 0; i < 3; i++)
+	{
+		lt = 0;
+		QValueList< QPair<int, QString> >::const_iterator it;
+		for (it = m_scores[i].begin(); it != m_scores[i].end(); ++it)
+		{
+			r4 = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
+			lt = QMAX(lt, r4.width());
+		}
+		mw = QMAX(mw, (blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin + textRight + lt + roundBoxPen + roundBoxMargin + blackFrameMargin));
+	}
+	
+	th = QMAX(r1.height(), r2.height());
+	th = QMAX(th, r3.height());
+	
+	mh = blackFrameMargin + hsMargin + r.height() + hsMargin + roundBoxMargin + roundBoxPen + th + counterMargin + moveDown * 5 + roundBoxPen + roundBoxMargin + hsMargin + r5.height() + hsMargin + blackFrameMargin;
+	
+	setMinimumSize(mw, mh);
+	resize(mw, mh);
+	setMouseTracking(true);
 }

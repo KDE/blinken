@@ -17,6 +17,7 @@
 class QTimer;
 
 class artsPlayer;
+class highScoreDialog;
 
 class KSimon : public QWidget
 {
@@ -31,6 +32,7 @@ Q_OBJECT
 		void mousePressEvent(QMouseEvent *e);
 		
 	private slots:
+		void checkHS();
 		void highlight(simonGame::color c, bool unhighlight);
 		void unhighlight();
 		
@@ -41,7 +43,6 @@ Q_OBJECT
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
 		void updateButtonHighlighting(const QPoint &p);
-		void unHighlightButtons();
 		
 		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
 		bool m_overMenu, m_overQuit, m_overCentralText, m_overLevels[3];
@@ -54,6 +55,8 @@ Q_OBJECT
 		
 		simonGame::color m_highlighted;
 		QTimer *m_unhighlighter;
+		
+		QString m_lastName;
 		
 		artsPlayer *m_artsPlayer;
 		simonGame m_game;

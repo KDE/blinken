@@ -59,6 +59,7 @@ void simonGame::clicked(color c)
 	{
 		m_artsPlayer -> play(all, true);
 		emit highlight(all, true);
+		emit gameEnded();
 		setPhase(choosingLevel);
 	}
 }

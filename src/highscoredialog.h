@@ -15,10 +15,14 @@
 
 #include <kdialog.h>
 
-class highScoreDialog : public KDialog
+class highScoreDialog : private KDialog
 {
 	public:
-		highScoreDialog(QWidget *parent, QValueList< QPair<int, QString> > scores);
+		highScoreDialog(QWidget *parent);
+		
+		bool scoreGoodEnough(int level, int score);
+		void addScore(int level, int score, const QString &name);
+		void showLevel(int level);
 	
 	protected:
 		void mouseMoveEvent(QMouseEvent *e);
@@ -26,8 +30,11 @@ class highScoreDialog : public KDialog
 		void paintEvent(QPaintEvent *);
 	
 	private:
+		void calcSize();
+	
+		int m_level;
 		bool m_overClose;
-		QValueList< QPair<int, QString> > m_scores;
+		QValueList< QPair<int, QString> > m_scores[3];
 		QRect closeRect;
 };
 

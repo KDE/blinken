@@ -36,6 +36,7 @@ Q_OBJECT
 		void start(int level);
 	
 	signals:
+		void gameEnded();
 		void phaseChanged();
 		void highlight(simonGame::color c, bool unhighlight);
 		

@@ -13,6 +13,7 @@
 #include <qtimer.h>
 
 #include <kapplication.h>
+#include <kinputdialog.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
@@ -50,18 +51,9 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(fal
 	m_unhighlighter = new QTimer(this);
 	connect(m_unhighlighter, SIGNAL(timeout()), this, SLOT(unhighlight()));
 	
+	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
-	
-	QValueList< QPair<int, QString> > scores;
-	scores.append(qMakePair(15, QString("Idaril")));
-	scores.append(qMakePair(10, QString("TSDgeos")));
-	scores.append(qMakePair(5, QString("Dannya")));
-	scores.append(qMakePair(3, QString("Annma")));
-	scores.append(qMakePair(1, QString("Pino")));
-	
-	highScoreDialog *hsd = new highScoreDialog(this, scores);
-	hsd->exec();
 }
 
 KSimon::~KSimon()
@@ -149,7 +141,13 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 
 void KSimon::mousePressEvent(QMouseEvent *e)
 {
-	if (m_overMenu) KMessageBox::information(this, i18n("This is a code mockup for KSimon project"), i18n("Help"));
+	if (m_overMenu)
+	{
+		highScoreDialog *hsd = new highScoreDialog(this);
+		hsd->showLevel(1);
+		m_updateButtonHighlighting = true;
+		update();
+	}
 	else if (m_overQuit) kapp->quit();
 	else if (m_game.phase() != simonGame::choosingLevel && m_overCentralText)
 	{
@@ -165,7 +163,11 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		if (m_levelsRect[1].contains(e -> pos())) level = 1;
 		else if (m_levelsRect[0].contains(e -> pos())) level = 2;
 		else if (m_levelsRect[2].contains(e -> pos())) level = 3;
-		if (level) m_game.start(level);
+		if (level) 
+		{
+			for(int i = 0; i < 3; i++) m_overLevels[i] = false;
+			m_game.start(level);
+		}
 	}
 	else if (m_game.phase() == simonGame::typingTheSequence)
 	{
@@ -206,6 +208,22 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			}
 		}
 	}
+}
+
+void KSimon::checkHS()
+{
+	highScoreDialog *hsd = new highScoreDialog(this);
+	if (hsd->scoreGoodEnough(m_game.level(), m_game.score()))
+	{
+		bool ok;
+		QString name = KInputDialog::getText(i18n("Enter your name"), i18n("Name:"), m_lastName, &ok);
+		if (!name.isNull() && ok)
+		{
+			m_lastName = name;
+			hsd->addScore(m_game.level(), m_game.score(), name);
+		}
+	}
+	hsd->showLevel(m_game.level());
 }
 
 void KSimon::highlight(simonGame::color c, bool unhighlight)
@@ -371,19 +389,22 @@ void KSimon::drawLevel(QPainter &p)
 
 void KSimon::updateButtonHighlighting(const QPoint &p)
 {
-	bool unhighlight;
+	bool haveToUpdate;
 	m_updateButtonHighlighting = false;
-	
-	unhighlight = true;
+	haveToUpdate = false;
 	
 	if (m_menuRect.contains(p))
 	{
 		if (!m_overMenu)
 		{
 			m_overMenu = true;
-			update();
+			haveToUpdate = true;
 		}
-		unhighlight = false;
+	}
+	else if (m_overMenu)
+	{
+		m_overMenu = false;
+		haveToUpdate = true;
 	}
 	
 	if (m_quitRect.contains(p))
@@ -391,9 +412,13 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		if (!m_overQuit)
 		{
 			m_overQuit = true;
-			update();
+			haveToUpdate = true;
 		}
-		unhighlight = false;
+	}
+	else if (m_overQuit)
+	{
+		m_overQuit = false;
+		haveToUpdate = true;
 	}
 	
 	switch (m_game.phase())
@@ -409,9 +434,13 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 				if (!m_overCentralText)
 				{
 					m_overCentralText = true;
-					update();
+					haveToUpdate = true;
 				}
-				unhighlight = false;
+			}
+			else if (m_overCentralText)
+			{
+				m_overCentralText = false;
+				haveToUpdate = true;
 			}
 		break;
 		
@@ -423,56 +452,19 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 					if (!m_overLevels[i])
 					{
 						m_overLevels[i] = true;
-						update();
+						haveToUpdate = true;
 					}
-					unhighlight = false;
 				}
-			}
-		break;
-	}
-
-	if (unhighlight) unHighlightButtons();
-}
-
-void KSimon::unHighlightButtons()
-{
-	if (m_overMenu)
-	{
-		m_overMenu = false;
-		update();
-	}
-	if (m_overQuit)
-	{
-		m_overQuit = false;
-		update();
-	}
-	
-	switch (m_game.phase())
-	{
-		case simonGame::starting:
-		case simonGame::waiting3:
-		case simonGame::waiting2:
-		case simonGame::waiting1:
-		case simonGame::learningTheSequence:
-		case simonGame::typingTheSequence:
-			if (m_overCentralText)
-			{
-				m_overCentralText = false;
-				update();
-			}
-		break;
-		
-		case simonGame::choosingLevel:
-			for (int i = 0; i < 3; i++)
-			{
-				if (m_overLevels[i])
+				else if (m_overLevels[i])
 				{
 					m_overLevels[i] = false;
-					update();
+					haveToUpdate = true;
 				}
 			}
 		break;
 	}
+
+	if (haveToUpdate) update();
 }
 
 #include "ksimon.moc"
