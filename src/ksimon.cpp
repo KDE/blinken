@@ -321,7 +321,7 @@ void KSimon::drawStart(QPainter &p)
 	p.setPen(QPen(black, 3));
 	p.drawRoundRect(m_startRect.left(), m_startRect.top(), m_startRect.width(), m_startRect.height(), 15, 15);
 	
-	if (!m_overStart) p.setPen(Qt::red);
+	if (!m_overStart) p.setPen(QColor(126, 126, 126));
 	else p.setPen(Qt::blue);
 	p.drawText(m_startRect, Qt::AlignCenter, start);
 }
@@ -373,15 +373,16 @@ void KSimon::drawLevel(QPainter &p)
 {
 	QString level = i18n("Level");
 	
-	QFont f = p.font();
+	QFont oldFont, f = p.font();
+	oldFont = f;
 	f.setPointSize(fontSize(p, level, 190, 30));
+	f.setBold(true);
 	p.setFont(f);
-	p.setPen(Qt::red);
+	p.setPen(QColor(126, 126, 126));
 	
 	QRect aux;
 	aux = p.boundingRect(QRect(), Qt::AlignAuto, level);
 	aux.moveBy(322 - aux.width() / 2, 285 - aux.height() / 2);
-	p.fillRect(aux, Qt::white);
 	p.drawText(aux, Qt::AlignAuto, level);
 	
 	if (!m_number1)
@@ -402,6 +403,8 @@ void KSimon::drawLevel(QPainter &p)
 	m_number1Rect = QRect(x1, 305, m_number1 -> width(), m_number1 -> height());
 	m_number2Rect = QRect(x2, 305, m_number2 -> width(), m_number2 -> height());
 	m_number3Rect = QRect(x3, 305, m_number3 -> width(), m_number3 -> height());
+	
+	p.setFont(oldFont);
 }
 
 int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
