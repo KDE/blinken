@@ -22,7 +22,7 @@ Q_OBJECT
 		~simonGame();
 		
 		enum gamePhase { starting, choosingLevel, learningTheSequence, typingTheSequence };
-		enum color { red, green, blue, yellow };
+		enum color { none, red, green, blue, yellow };
 		
 		gamePhase phase() const;
 		
@@ -31,12 +31,13 @@ Q_OBJECT
 		void start(int level);
 	
 	signals:
-		// phaseChanges NOT caused by setPhase
 		void phaseChanged();
+		void highlight(simonGame::color c, bool unhighlight);
 		
 	private slots:
 		void nextSound();
 		void soundEnded();
+		void unhighlight();
 		
 	private:
 		void generateSequence();

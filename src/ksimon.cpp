@@ -9,6 +9,7 @@
 
 #include <qpainter.h>
 #include <qpixmap.h>
+#include <qtimer.h>
 
 #include <kapplication.h>
 #include <klocale.h>
@@ -17,14 +18,22 @@
 
 #include "ksimon.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
+	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
+	m_yellowh = new QPixmap(locate("appdata", "images/yellowh.png"));
+	m_redh = new QPixmap(locate("appdata", "images/redh.png"));
+	m_greenh = new QPixmap(locate("appdata", "images/greenh.png"));
 	setMouseTracking(true);
 	setFixedSize(644, 525);
 	show();
 	
+	m_unhighlighter = new QTimer(this);
+	connect(m_unhighlighter, SIGNAL(timeout()), this, SLOT(unhighlight()));
+	
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
+	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
 }
 
 KSimon::~KSimon()
@@ -53,6 +62,29 @@ void KSimon::paintEvent(QPaintEvent *)
 		default:
 		break;
 	}
+	
+	switch(m_highlighted)
+	{
+		case simonGame::none:
+		break;
+		
+		case simonGame::blue:
+			p.drawPixmap(14, 225, *m_blueh);
+		break;
+		
+		case simonGame::yellow:
+			p.drawPixmap(14, 16, *m_yellowh);
+		break;
+		
+		case simonGame::red:
+			p.drawPixmap(322, 16, *m_redh);
+		break;
+		
+		case simonGame::green:
+			p.drawPixmap(322, 225, *m_greenh);
+		break;
+	}
+	
 	drawStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
@@ -112,27 +144,23 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 	{
 		m_overStart = false;
 		m_game.setPhase(simonGame::choosingLevel);
-		update();
 	}
 	else if (m_game.phase() == simonGame::choosingLevel)
 	{
-		if (m_number1Rect.contains(e -> pos()))
+		int level = 0;
+		if (m_number1Rect.contains(e -> pos())) level = 1;
+		else if (m_number2Rect.contains(e -> pos())) level = 2;
+		else if (m_number3Rect.contains(e -> pos())) level = 3;
+		if (level != 0)
 		{
 			m_game.setPhase(simonGame::learningTheSequence);
+			delete m_number1;
+			delete m_number2;
+			delete m_number3;
+			m_number1 = 0;
+			m_number2 = 0;
+			m_number3 = 0;
 			m_game.start(1);
-			update();
-		}
-		else if (m_number2Rect.contains(e -> pos()))
-		{
-			m_game.setPhase(simonGame::learningTheSequence);
-			m_game.start(2);
-			update();
-		}
-		else if (m_number3Rect.contains(e -> pos()))
-		{
-			m_game.setPhase(simonGame::learningTheSequence);
-			m_game.start(3);
-			update();
 		}
 	}
 	else if (m_game.phase() == simonGame::typingTheSequence)
@@ -151,13 +179,42 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			if (x3 + y3 < 1)
 			{
 				// Outside the circle and inside the ellipse
-				if (x > 6 && y > 6) m_game.clicked(simonGame::green);
-				else if (x < -6 && y > 6) m_game.clicked(simonGame::blue);
-				else if (x < -6 && y < -6) m_game.clicked(simonGame::yellow);
-				else if (x > 6 && y < -6) m_game.clicked(simonGame::red);
+				if (x > 6 && y > 6)
+				{
+					highlight(simonGame::green, true);
+					m_game.clicked(simonGame::green);
+				}
+				else if (x < -6 && y > 6)
+				{
+					highlight(simonGame::blue, true);
+					m_game.clicked(simonGame::blue);
+				}
+				else if (x < -6 && y < -6)
+				{
+					highlight(simonGame::yellow, true);
+					m_game.clicked(simonGame::yellow);
+				}
+				else if (x > 6 && y < -6)
+				{
+					highlight(simonGame::red, true);
+					m_game.clicked(simonGame::red);
+				}
 			}
 		}
 	}
+}
+
+void KSimon::highlight(simonGame::color c, bool unhighlight)
+{
+	m_highlighted = c;
+	update();
+	if (unhighlight) m_unhighlighter -> start(250);
+	else if (c == simonGame::none) m_unhighlighter -> stop();
+}
+
+void KSimon::unhighlight()
+{
+	highlight(simonGame::none, false);
 }
 
 void KSimon::drawMenuQuit(QPainter &p)
@@ -281,3 +338,5 @@ int KSimon::fontSize(QPainter &p, const QString &s1, int w, int h)
 	
 	return QMIN(w * 28 / aux1.width(), h * 28 / aux1.height());
 }
+
+#include "ksimon.moc"

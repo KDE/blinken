@@ -31,7 +31,6 @@ simonGame::gamePhase simonGame::phase() const
 
 void simonGame::clicked(color c)
 {
-	printf("%d %d\n", c, m_sequence.first());
 	if (c == m_sequence.first())
 	{
 		m_sequence.pop_front();
@@ -48,6 +47,7 @@ void simonGame::clicked(color c)
 void simonGame::setPhase(gamePhase p)
 {
 	m_phase = p;
+	emit phaseChanged();
 }
 
 void simonGame::start(int level)
@@ -63,25 +63,31 @@ void simonGame::start(int level)
 
 void simonGame::nextSound()
 {
-	printf("simonGame::nextSound\n");
 	if (m_nextSound != m_sequence.end())
 	{
 		color c;
 		c = *m_nextSound;
 		++m_nextSound;
 		m_artsPlayer -> play(c);
+		emit highlight(c, false);
 	}
 	else
 	{
+		emit highlight(none, false);
 		m_artsPlayer->disconnect();
-		m_phase = typingTheSequence;
-		emit phaseChanged();
+		setPhase(typingTheSequence);
 	}
 }
 
 void simonGame::soundEnded()
 {
 	QTimer::singleShot(100, this, SLOT(nextSound()));
+	QTimer::singleShot(50, this, SLOT(unhighlight()));
+}
+
+void simonGame::unhighlight()
+{
+	emit highlight(none, false);
 }
 
 void simonGame::generateSequence()

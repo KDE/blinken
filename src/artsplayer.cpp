@@ -78,6 +78,9 @@ void artsPlayer::play()
 		case simonGame::yellow:
 			path = m_yellowPath;
 		break;
+		
+		case simonGame::none:
+		break;
 	}
 	m_playobj = m_factory -> createPlayObject(path, true);
 	m_playobj -> play();
