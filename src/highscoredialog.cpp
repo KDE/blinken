@@ -22,7 +22,7 @@ static const int blackFrameMargin = 4;
 static const int hsMargin = 5;
 static const int roundBoxMargin = 13;
 static const int roundBoxPen = 4;
-static const int minLevelSep = 5;
+static const int minLevelSep = 15;
 static const int counterMargin = 25;
 static const int textDown = 20;
 static const int textRight = 37;
@@ -48,8 +48,6 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent, 0, true, WNo
 			m_scores[i-1].append(qMakePair(cfg->readNumEntry(QString("Score%1").arg(j)), cfg->readEntry(QString("Name%1").arg(j))));
 		}
 	}
-	
-	calcSize();
 }
 
 bool highScoreDialog::scoreGoodEnough(int level, int score)
@@ -75,7 +73,6 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 	{
 		m_scores[level].insert(it, qMakePair(score, name));
 		m_scores[level].remove(--m_scores[level].end());
-		calcSize();
 		
 		KConfig *cfg = kapp -> config();
 		cfg -> setGroup(QString("Level%1").arg(level + 1));
@@ -92,6 +89,7 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 void highScoreDialog::showLevel(int level)
 {
 	m_level = level - 1;
+	calcSize();
 	exec();
 	delete this;
 }
@@ -108,11 +106,59 @@ void highScoreDialog::mouseMoveEvent(QMouseEvent *e)
 		m_overClose = false;
 		update();
 	}
+	
+	if (level1Rect.contains(e-> pos()) && !m_overLevel1)
+	{
+		m_overLevel1 = true;
+		update();
+	}
+	else if (!level1Rect.contains(e-> pos()) && m_overLevel1)
+	{
+		m_overLevel1 = false;
+		update();
+	}
+	
+	if (level2Rect.contains(e-> pos()) && !m_overLevel2)
+	{
+		m_overLevel2 = true;
+		update();
+	}
+	else if (!level2Rect.contains(e-> pos()) && m_overLevel2)
+	{
+		m_overLevel2 = false;
+		update();
+	}
+	
+	if (level3Rect.contains(e-> pos()) && !m_overLevel3)
+	{
+		m_overLevel3 = true;
+		update();
+	}
+	else if (!level3Rect.contains(e-> pos()) && m_overLevel3)
+	{
+		m_overLevel3 = false;
+		update();
+	}
 }
 
 void highScoreDialog::mousePressEvent(QMouseEvent *)
 {
 	if (m_overClose) close();
+	if (m_overLevel1 && m_level != 0)
+	{
+		m_level = 0;
+		update();
+	}
+	if (m_overLevel2 && m_level != 1)
+	{
+		m_level = 1;
+		update();
+	}
+	if (m_overLevel3 && m_level != 2)
+	{
+		m_level = 2;
+		update();
+	}
 }
 
 void highScoreDialog::paintEvent(QPaintEvent *)
@@ -122,7 +168,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	QFont f;
 	QPixmap buf(w, h);
 	QPainter p(&buf);
-	QRect r, r1, r2, r3;
+	QRect r;
 	QColor bg = QColor(238, 238, 238);
  
 	// bg color
@@ -153,37 +199,46 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	if (m_level == 0) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	r1 = p.boundingRect(QRect(), Qt::AlignAuto, l1);
+	level1Rect = p.boundingRect(QRect(), Qt::AlignAuto, l1);
 	if (m_level == 1) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	r2 = p.boundingRect(QRect(), Qt::AlignAuto, l2);
+	level2Rect = p.boundingRect(QRect(), Qt::AlignAuto, l2);
 	if (m_level == 2) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	r3 = p.boundingRect(QRect(), Qt::AlignAuto, l3);
-	textsWidth = minLevelSep + r1.width() + minLevelSep + r2.width() + minLevelSep + r3.width() + minLevelSep;
+	level3Rect = p.boundingRect(QRect(), Qt::AlignAuto, l3);
+	textsWidth = minLevelSep + level1Rect.width() + minLevelSep + level2Rect.width() + minLevelSep + level3Rect.width() + minLevelSep;
 	
 	tw = (w - 2 * roundBoxMargin - 2 * blackFrameMargin) / 3;
 	
 	p.setPen(black);
-	th = QMAX(r1.height(), r2.height());
-	th = QMAX(th, r3.height());
-	r1.moveBy(blackFrameMargin + roundBoxMargin + tw / 2 - r1.width() / 2, r.bottom() + roundBoxMargin + th);
+	th = QMAX(level1Rect.height(), level2Rect.height());
+	th = QMAX(th, level3Rect.height());
+	
+	level1Rect = QRect(0, 0, level1Rect.width() + 10, level1Rect.height() + 2);
+	level1Rect.moveBy(blackFrameMargin + roundBoxMargin + tw / 2 - level1Rect.width() / 2, r.bottom() + roundBoxMargin + th);
 	if (m_level == 0) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	p.drawText(r1, Qt::AlignCenter, l1);
-	r2.moveBy(blackFrameMargin + roundBoxMargin + tw + tw / 2 - r2.width() / 2, r.bottom() + roundBoxMargin + th);
+	p.drawText(level1Rect, Qt::AlignCenter, l1);
+	if (m_overLevel1) p.drawRect(level1Rect);
+	
+	level2Rect = QRect(0, 0, level2Rect.width() + 10, level2Rect.height() + 2);
+	level2Rect.moveBy(blackFrameMargin + roundBoxMargin + tw + tw / 2 - level2Rect.width() / 2, r.bottom() + roundBoxMargin + th);
 	if (m_level == 1) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	p.drawText(r2, Qt::AlignCenter, l2);
-	r3.moveBy(blackFrameMargin + roundBoxMargin + tw + tw + tw / 2 - r3.width() / 2, r.bottom() + roundBoxMargin + th);
+	p.drawText(level2Rect, Qt::AlignCenter, l2);
+	if (m_overLevel2) p.drawRect(level2Rect);
+	
+	level3Rect = QRect(0, 0, level3Rect.width() + 10, level3Rect.height() + 2);
+	level3Rect.moveBy(blackFrameMargin + roundBoxMargin + tw + tw + tw / 2 - level3Rect.width() / 2, r.bottom() + roundBoxMargin + th);
 	if (m_level == 2) f.setBold(true);
 	else f.setBold(false);
 	p.setFont(f);
-	p.drawText(r3, Qt::AlignCenter, l3);
+	p.drawText(level3Rect, Qt::AlignCenter, l3);
+	if (m_overLevel3) p.drawRect(level3Rect);
 	
 	// black frame
 	p.setPen(QPen(black, 2 * blackFrameMargin));
@@ -193,7 +248,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
 	p.setFont(f);
 	
-	p.translate(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin, r1.bottom() + counterMargin);
+	p.translate(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin, level1Rect.bottom() + counterMargin);
 	
 	QValueList< QPair<int, QString> >::const_iterator it;
 	for (it = m_scores[m_level].begin(); it != m_scores[m_level].end(); ++it)
@@ -205,7 +260,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	}
 	
 	p.translate(0, -(moveDown * 5));
-	p.translate(-(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin), -(r1.bottom() + counterMargin));
+	p.translate(-(blackFrameMargin + roundBoxMargin + roundBoxPen + 2 * counterMargin), -(level1Rect.bottom() + counterMargin));
 	
 	closeRect = QRect(0, 0, closeRect.width() + 10, closeRect.height() + 2);
 	closeRect.moveBy(w / 2 - closeRect.width() / 2, (int)(h - 1.75 * closeRect.height()) + 2);
@@ -216,7 +271,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	p.setPen(QPen(black, 2));
 	if (m_overClose) p.setBrush(QColor(200, 200, 200));
 	else p.setBrush(bg);
-	p.drawRect(closeRect.left(), closeRect.top(), closeRect.width(), closeRect.height());
+	p.drawRect(closeRect);
 	p.drawText(closeRect, Qt::AlignCenter, cl);
 	
 	bitBlt(this, 0, 0, &buf);

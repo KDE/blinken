@@ -33,9 +33,9 @@ class highScoreDialog : private KDialog
 		void calcSize();
 	
 		int m_level;
-		bool m_overClose;
+		bool m_overClose, m_overLevel1, m_overLevel2, m_overLevel3;
 		QValueList< QPair<int, QString> > m_scores[3];
-		QRect closeRect;
+		QRect closeRect, level1Rect, level2Rect, level3Rect;
 };
 
 #endif
