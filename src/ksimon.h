@@ -42,9 +42,11 @@ Q_OBJECT
 		void drawLevel(QPainter &p);
 		int fontSize(QPainter &p, const QString &s1, int w, int h);
 		
-		QPixmap *m_back, *m_number1, *m_number2, *m_number3, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
-		bool m_overMenu, m_overQuit, m_overStart;
-		QRect m_menuRect, m_quitRect, m_startRect, m_number1Rect, m_number2Rect, m_number3Rect;
+		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
+		bool m_overMenu, m_overQuit, m_overStart, m_overLevels[3];
+		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
+		QRect m_menuRect, m_quitRect, m_startRect, m_levelsRect[3];
+		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		simonGame::color m_highlighted;
 		QTimer *m_unhighlighter;

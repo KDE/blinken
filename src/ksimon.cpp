@@ -19,7 +19,7 @@
 #include "ksimon.h"
 #include "number.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), m_number2(0), m_number3(0), m_overMenu(false), m_overQuit(false), m_overStart(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overStart(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -33,6 +33,11 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_number1(0), 
 	m_quitHover = new QPixmap(locate("appdata", "images/quit_hover.png"));
 	m_menuRect = QRect(10, 10, 72, 73);
 	m_quitRect = QRect(560, 10, 72, 73);
+	
+	m_fillColor = QColor(40, 40, 40);
+	m_fontColor = QColor(126, 126, 126);
+	m_fontHighlightColor  = QColor(230, 230, 230);
+	m_countDownColor = QColor(55, 55, 55);
 	
 	setMouseTracking(true);
 	setFixedSize(644, 525);
@@ -134,12 +139,34 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 			update();
 		}
 	}
-	else if (m_game.phase() == 0 && m_startRect.contains(e -> pos()))
+	else if (m_game.phase() == simonGame::starting && m_startRect.contains(e -> pos()))
 	{
 		if (!m_overStart)
 		{
 			m_overStart = true;
 			update();
+		}
+	}
+	else if (m_game.phase() == simonGame::choosingLevel)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (m_levelsRect[i].contains(e -> pos()))
+			{
+				if (!m_overLevels[i])
+				{
+					m_overLevels[i] = true;
+					update();
+				}
+			}
+			else
+			{
+				if (m_overLevels[i])
+				{
+					m_overLevels[i] = false;
+					update();
+				}
+			}
 		}
 	}
 	else
@@ -169,24 +196,19 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 	else if (m_game.phase() == 0 && m_overStart)
 	{
 		m_overStart = false;
+		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
 		m_game.setPhase(simonGame::choosingLevel);
+		repaint(); // need it here so the page repaints, m_levelsRect gets defined and mouseMoveEvent(e); updates a button
+		           // if the mouse was left above a level button
+		mouseMoveEvent(e);
 	}
 	else if (m_game.phase() == simonGame::choosingLevel)
 	{
 		int level = 0;
-		if (m_number1Rect.contains(e -> pos())) level = 1;
-		else if (m_number2Rect.contains(e -> pos())) level = 2;
-		else if (m_number3Rect.contains(e -> pos())) level = 3;
-		if (level != 0)
-		{
-			delete m_number1;
-			delete m_number2;
-			delete m_number3;
-			m_number1 = 0;
-			m_number2 = 0;
-			m_number3 = 0;
-			m_game.start(level);
-		}
+		if (m_levelsRect[1].contains(e -> pos())) level = 1;
+		else if (m_levelsRect[0].contains(e -> pos())) level = 2;
+		else if (m_levelsRect[2].contains(e -> pos())) level = 3;
+		if (level) m_game.start(level);
 	}
 	else if (m_game.phase() == simonGame::typingTheSequence)
 	{
@@ -256,7 +278,7 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 	QColor c1, c2, c3;
 	p.translate(313, 125);
 	p.setPen(QPen(black, 3));
-	p.fillRect(-44, -13, 98, 48, QColor(40, 40, 40));
+	p.fillRect(-44, -13, 98, 48, m_fillColor);
 	p.drawRoundRect(-45, -15, 100, 50, 15, 15);
 	
 	if (m_game.phase() != simonGame::starting)
@@ -274,19 +296,19 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 		break;
 		
 		case simonGame::waiting2:
-			c1 = QColor(55, 55, 55);
+			c1 = m_countDownColor;
 			c2 = red;
 			c3 = red;
 		break;
 		
 		case simonGame::waiting1:
-			c1 = QColor(55, 55, 55);
+			c1 = m_countDownColor;
 			c2 = c1;
 			c3 = red;
 		break;
 		
 		default:
-			c1 = QColor(55, 55, 55);
+			c1 = m_countDownColor;
 			c2 = c1;
 			c3 = c1;
 		break;
@@ -310,12 +332,12 @@ void KSimon::drawStart(QPainter &p)
 	m_startRect = QRect(0, 0, m_startRect.width() + 10, m_startRect.height() + 5);
 	m_startRect.moveBy(318 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
 	
-	p.fillRect(m_startRect, QColor(40, 40, 40));
+	p.fillRect(m_startRect, m_fillColor);
 	p.setPen(QPen(black, 3));
 	p.drawRoundRect(m_startRect.left(), m_startRect.top(), m_startRect.width(), m_startRect.height(), 15, 15);
 	
-	if (!m_overStart) p.setPen(QColor(126, 126, 126));
-	else p.setPen(Qt::blue);
+	if (!m_overStart) p.setPen(m_fontColor);
+	else p.setPen(m_fontHighlightColor);
 	p.drawText(m_startRect, Qt::AlignCenter, start);
 }
 
@@ -365,79 +387,39 @@ void KSimon::drawStatusText(QPainter &p)
 void KSimon::drawLevel(QPainter &p)
 {
 	QString level = i18n("Level");
-	QString n1 = i18n("1");
-	QString n2 = i18n("2");
-	QString n3 = i18n("3");
+	QString n[3];
+	n[0] = i18n("2");
+	n[1] = i18n("1");
+	n[2] = i18n("?");
 	
 	QFont oldFont, f = p.font();
 	oldFont = f;
 	f.setPointSize(fontSize(p, level, 190, 30));
 	f.setBold(true);
 	p.setFont(f);
-	p.setPen(QColor(126, 126, 126));
+	p.setPen(m_fontColor);
 	
 	QRect aux;
 	aux = p.boundingRect(QRect(), Qt::AlignAuto, level);
 	aux.moveBy(322 - aux.width() / 2, 281 - aux.height() / 2);
 	p.drawText(aux, Qt::AlignAuto, level);
 	
-	
-	m_number2Rect = p.boundingRect(QRect(), Qt::AlignAuto, n2);
-	m_number2Rect = QRect(0, 0, m_number2Rect.width() + 20, m_number2Rect.height() + 5);
-	m_number2Rect.moveBy(319 - m_number2Rect.width() / 2, 315 - m_number2Rect.height() / 2);
-	
-	p.fillRect(m_number2Rect, QColor(40, 40, 40));
-	p.setPen(QPen(black, 3));
-	p.drawRoundRect(m_number2Rect.left(), m_number2Rect.top(), m_number2Rect.width(), m_number2Rect.height(), 15, 15);
-	
-	if (!m_overStart) p.setPen(QColor(126, 126, 126));
-	else p.setPen(Qt::blue);
-	p.drawText(m_number2Rect, Qt::AlignCenter, n2);
-	
-	
-	m_number1Rect = p.boundingRect(QRect(), Qt::AlignAuto, n1);
-	m_number1Rect = QRect(0, 0, m_number1Rect.width() + 20, m_number1Rect.height() + 5);
-	m_number1Rect.moveBy(m_number2Rect.left() - m_number2Rect.width() - m_number1Rect.width() / 2, 315 - m_number1Rect.height() / 2);
-	
-	p.fillRect(m_number1Rect, QColor(40, 40, 40));
-	p.setPen(QPen(black, 3));
-	p.drawRoundRect(m_number1Rect.left(), m_number1Rect.top(), m_number1Rect.width(), m_number1Rect.height(), 15, 15);
-	
-	if (!m_overStart) p.setPen(QColor(126, 126, 126));
-	else p.setPen(Qt::blue);
-	p.drawText(m_number1Rect, Qt::AlignCenter, n1);
-	
-	
-	m_number3Rect = p.boundingRect(QRect(), Qt::AlignAuto, n3);
-	m_number3Rect = QRect(0, 0, m_number3Rect.width() + 20, m_number3Rect.height() + 5);
-	m_number3Rect.moveBy(m_number2Rect.left() + 2*m_number2Rect.width() - m_number3Rect.width() / 2, 315 - m_number3Rect.height() / 2);
-	
-	p.fillRect(m_number3Rect, QColor(40, 40, 40));
-	p.setPen(QPen(black, 3));
-	p.drawRoundRect(m_number3Rect.left(), m_number3Rect.top(), m_number3Rect.width(), m_number3Rect.height(), 15, 15);
-	
-	if (!m_overStart) p.setPen(QColor(126, 126, 126));
-	else p.setPen(Qt::blue);
-	p.drawText(m_number3Rect, Qt::AlignCenter, n3);
-	
-	/*if (!m_number1)
+	for (int i = 0; i < 3; i++)
 	{
-		m_number1 = new QPixmap(locate("appdata", "images/1.png"));
-		m_number2 = new QPixmap(locate("appdata", "images/2.png"));
-		m_number3 = new QPixmap(locate("appdata", "images/3.png"));
+		m_levelsRect[i] = p.boundingRect(QRect(), Qt::AlignAuto, n[i]);
+		m_levelsRect[i] = QRect(0, 0, m_levelsRect[i].width() + 20, m_levelsRect[i].height() + 5);
+		if (i == 0) m_levelsRect[0].moveBy(319 - m_levelsRect[0].width() / 2, 315 - m_levelsRect[0].height() / 2);
+		else if (i == 1) m_levelsRect[1].moveBy(m_levelsRect[0].left() - m_levelsRect[0].width() - m_levelsRect[1].width() / 2, 315 - m_levelsRect[1].height() / 2);
+		else if (i == 2) m_levelsRect[2].moveBy(m_levelsRect[0].left() + 2 * m_levelsRect[0].width() - m_levelsRect[2].width() / 2, 315 - m_levelsRect[2].height() / 2);
+	
+		p.fillRect(m_levelsRect[i], m_fillColor);
+		p.setPen(QPen(black, 3));
+		p.drawRoundRect(m_levelsRect[i].left(), m_levelsRect[i].top(), m_levelsRect[i].width(), m_levelsRect[i].height(), 15, 15);
+	
+		if (m_overLevels[i]) p.setPen(m_fontHighlightColor);
+		else p.setPen(m_fontColor);
+		p.drawText(m_levelsRect[i], Qt::AlignCenter, n[i]);
 	}
-	
-	int x2, x1, x3;
-	x2 = 319 - m_number2 -> width() / 2;
-	x1 = x2 - (int)(m_number1 -> width() * 1.5);
-	x3 = x2 + (int)(m_number3 -> width() * 1.5);
-	p.drawPixmap(x1, 297, *m_number1);
-	p.drawPixmap(x2, 297, *m_number2);
-	p.drawPixmap(x3, 297, *m_number3);
-	
-	m_number1Rect = QRect(x1, 297, m_number1 -> width(), m_number1 -> height());
-	m_number2Rect = QRect(x2, 297, m_number2 -> width(), m_number2 -> height());
-	m_number3Rect = QRect(x3, 297, m_number3 -> width(), m_number3 -> height());*/
 	
 	p.setFont(oldFont);
 }
