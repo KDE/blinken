@@ -1,1 +1,1 @@
-SUBDIRS = src images icons sounds
+SUBDIRS = src images icons sounds fonts

@@ -315,7 +315,7 @@ void KSimon::drawStart(QPainter &p)
 	
 	m_startRect = p.boundingRect(QRect(), Qt::AlignAuto, start);
 	m_startRect = QRect(0, 0, m_startRect.width() + 10, m_startRect.height() + 5);
-	m_startRect.moveBy(322 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
+	m_startRect.moveBy(318 - m_startRect.width() / 2, 316 - m_startRect.height() / 2);
 	
 	p.fillRect(m_startRect, QColor(40, 40, 40));
 	p.setPen(QPen(black, 3));
@@ -328,13 +328,13 @@ void KSimon::drawStart(QPainter &p)
 
 void KSimon::drawStatusText(QPainter &p)
 {
-	QFont f = p.font();
+	QFont f = QFont("Steve");
 	f.setPointSize(20);
 	p.setFont(f);
 	
 	p.translate(25, 505);
 	p.rotate(-3.29);
-	p.setPen(black);
+	p.setPen(blue);
 	switch (m_game.phase())
 	{
 		case simonGame::starting:
