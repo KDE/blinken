@@ -198,7 +198,7 @@ void highScoreDialog::paintEvent(QPaintEvent *)
 	QValueList< QPair<int, QString> >::const_iterator it;
 	for (it = m_scores[m_level].begin(); it != m_scores[m_level].end(); ++it)
 	{
-		counter::paint(p, true, (*it).first, false, QColor(), QColor(), QColor());
+		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor());
 		p.setPen(black);
 		p.drawText(textRight, textDown, (*it).second);
 		p.translate(0, moveDown);
