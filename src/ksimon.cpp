@@ -164,7 +164,6 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		else if (m_number3Rect.contains(e -> pos())) level = 3;
 		if (level != 0)
 		{
-			m_game.setPhase(simonGame::learningTheSequence);
 			delete m_number1;
 			delete m_number2;
 			delete m_number3;
@@ -291,6 +290,18 @@ void KSimon::drawStatusText(QPainter &p)
 		
 		case simonGame::choosingLevel:
 			p.drawText(0, 0, i18n("Set the Difficulty Level..."));
+		break;
+		
+		case simonGame::waiting3:
+			p.drawText(0, 0, i18n("Next sequence in 3..."));
+		break;
+		
+		case simonGame::waiting2:
+			p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
+		break;
+		
+		case simonGame::waiting1:
+			p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
 		break;
 		
 		case simonGame::learningTheSequence:

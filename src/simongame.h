@@ -12,6 +12,8 @@
 
 #include <qvaluelist.h>
 
+class QTimer;
+
 class artsPlayer;
 
 class simonGame : public QObject
@@ -21,7 +23,7 @@ Q_OBJECT
 		simonGame();
 		~simonGame();
 		
-		enum gamePhase { starting, choosingLevel, learningTheSequence, typingTheSequence };
+		enum gamePhase { starting, choosingLevel, waiting3, waiting2, waiting1, learningTheSequence, typingTheSequence };
 		enum color { none, red, green, blue, yellow, all };
 		
 		gamePhase phase() const;
@@ -38,12 +40,16 @@ Q_OBJECT
 		void nextSound();
 		void soundEnded();
 		void unhighlight();
+		void waiting();
 		
 	private:
 		void generateSequence();
 	
 		gamePhase m_phase;
 		int m_level;
+		int m_sequenceLength;
+		
+		QTimer *m_waitTimer;
 		
 		artsPlayer *m_artsPlayer;
 		QValueList<color> m_sequence;

@@ -17,6 +17,8 @@
 simonGame::simonGame() : m_phase(starting)
 {
 	m_artsPlayer = new artsPlayer;
+	m_waitTimer = new QTimer(this);
+	connect(m_waitTimer, SIGNAL(timeout()), this, SLOT(waiting()));
 }
 
 simonGame::~simonGame()
@@ -38,7 +40,9 @@ void simonGame::clicked(color c)
 		
 		if (m_sequence.size() == 0)
 		{
-			setPhase(starting);
+			m_sequenceLength++;
+			setPhase(waiting3);
+			m_waitTimer -> start(1000);
 		}
 	}
 	else
@@ -57,12 +61,10 @@ void simonGame::setPhase(gamePhase p)
 void simonGame::start(int level)
 {
 	m_level = level;
+	m_sequenceLength = 1;
 	
-	generateSequence();
-	
-	connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
-	m_nextSound = m_sequence.begin();
-	soundEnded();
+	setPhase(waiting3);
+	m_waitTimer -> start(1000);
 }
 
 void simonGame::nextSound()
@@ -94,13 +96,29 @@ void simonGame::unhighlight()
 	emit highlight(none, false);
 }
 
+void simonGame::waiting()
+{
+	if (m_phase == waiting1)
+	{
+		m_waitTimer -> stop();
+		setPhase(simonGame::learningTheSequence);
+		generateSequence();
+	
+		connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
+		m_nextSound = m_sequence.begin();
+		soundEnded();
+	}
+	else if (m_phase == waiting3) setPhase(waiting2);
+	else /* m_phase == waiting2 */ setPhase(waiting1);
+}
+
 void simonGame::generateSequence()
 {
 	m_sequence.clear();
 	
 	int r;
 	// TODO do something with the level :-D
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < m_sequenceLength; i++)
 	{
 		r = 1 + (int)(4.0 * kapp -> random() / (RAND_MAX + 1.0));
 		switch(r)
