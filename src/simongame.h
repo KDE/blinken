@@ -43,17 +43,16 @@ Q_OBJECT
 		void waiting();
 		
 	private:
-		void generateSequence();
+		color generateColor();
 	
 		gamePhase m_phase;
 		int m_level;
-		int m_sequenceLength;
 		
 		QTimer *m_waitTimer;
 		
 		artsPlayer *m_artsPlayer;
 		QValueList<color> m_sequence;
-		QValueList<color>::const_iterator m_nextSound;
+		QValueList<color>::const_iterator m_nextColor;
 };
 
 #endif
