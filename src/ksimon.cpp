@@ -382,7 +382,7 @@ void KSimon::drawLevel(QPainter &p)
 	
 	QRect aux;
 	aux = p.boundingRect(QRect(), Qt::AlignAuto, level);
-	aux.moveBy(322 - aux.width() / 2, 285 - aux.height() / 2);
+	aux.moveBy(322 - aux.width() / 2, 281 - aux.height() / 2);
 	p.drawText(aux, Qt::AlignAuto, level);
 	
 	if (!m_number1)
@@ -396,13 +396,13 @@ void KSimon::drawLevel(QPainter &p)
 	x2 = 319 - m_number2 -> width() / 2;
 	x1 = x2 - (int)(m_number1 -> width() * 1.5);
 	x3 = x2 + (int)(m_number3 -> width() * 1.5);
-	p.drawPixmap(x1, 305, *m_number1);
-	p.drawPixmap(x2, 305, *m_number2);
-	p.drawPixmap(x3, 305, *m_number3);
+	p.drawPixmap(x1, 297, *m_number1);
+	p.drawPixmap(x2, 297, *m_number2);
+	p.drawPixmap(x3, 297, *m_number3);
 	
-	m_number1Rect = QRect(x1, 305, m_number1 -> width(), m_number1 -> height());
-	m_number2Rect = QRect(x2, 305, m_number2 -> width(), m_number2 -> height());
-	m_number3Rect = QRect(x3, 305, m_number3 -> width(), m_number3 -> height());
+	m_number1Rect = QRect(x1, 297, m_number1 -> width(), m_number1 -> height());
+	m_number2Rect = QRect(x2, 297, m_number2 -> width(), m_number2 -> height());
+	m_number3Rect = QRect(x3, 297, m_number3 -> width(), m_number3 -> height());
 	
 	p.setFont(oldFont);
 }
