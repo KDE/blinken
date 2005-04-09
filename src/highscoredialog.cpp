@@ -37,7 +37,7 @@ static const QString cl = i18n("Close");
 
 highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent, 0, true, WNoAutoErase), m_overClose(false)
 {
-	setCaption("HighScores");
+	setCaption(i18n("HighScores"));
 	
 	KConfig *cfg = kapp -> config();
 	for (int i = 1; i <= 3; i++)
