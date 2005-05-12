@@ -19,5 +19,6 @@ Comment[pt]=Um jogo de exercício de memória
 Comment[pt_BR]=Um jogo de memória
 Comment[ru]=Программа тренировки памяти
 Comment[sv]=Ett minnesförbättringsspel
+Comment[tr]=Bir hafıza geliştirme oyunu
 Terminal=false
 Categories=Qt;KDE;Education;
