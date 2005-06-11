@@ -40,10 +40,10 @@ Q_OBJECT
 		
 	private:
 		void drawMenuQuit(QPainter &p);
-		void drawCentralText(QPainter &p, const QString &text);
 		void drawScoreAndCounter(QPainter &p);
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
+		void drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold);
 		void updateButtonHighlighting(const QPoint &p);
 		
 		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;

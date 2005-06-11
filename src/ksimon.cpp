@@ -95,7 +95,7 @@ void KSimon::paintEvent(QPaintEvent *)
 	switch (m_game.phase())
 	{
 		case simonGame::starting:
-			drawCentralText(p, i18n("Start"));
+			drawText(p, i18n("Start"), QPoint(318, 316), true, 10, 5, &m_centralTextRect, m_overCentralText, false);
 		break;
 		
 		case simonGame::choosingLevel:
@@ -107,7 +107,7 @@ void KSimon::paintEvent(QPaintEvent *)
 		case simonGame::waiting1:
 		case simonGame::learningTheSequence:
 		case simonGame::typingTheSequence:
-			drawCentralText(p, i18n("Restart"));
+			drawText(p, i18n("Restart"), QPoint(318, 316), true, 10, 5, &m_centralTextRect, m_overCentralText, false);
 		break;
 	}
 	
@@ -280,25 +280,6 @@ void KSimon::drawMenuQuit(QPainter &p)
 	}
 }
 
-void KSimon::drawCentralText(QPainter &p, const QString &text)
-{
-	QFont f = p.font();
-	f.setPointSize(fontUtils::fontSize(p, text, 190, 30));
-	p.setFont(f);
-	
-	m_centralTextRect = p.boundingRect(QRect(), Qt::AlignAuto, text);
-	m_centralTextRect = QRect(0, 0, m_centralTextRect.width() + 10, m_centralTextRect.height() + 5);
-	m_centralTextRect.moveBy(318 - m_centralTextRect.width() / 2, 316 - m_centralTextRect.height() / 2);
-	
-	p.fillRect(m_centralTextRect, m_fillColor);
-	p.setPen(QPen(black, 3));
-	p.drawRoundRect(m_centralTextRect.left(), m_centralTextRect.top(), m_centralTextRect.width(), m_centralTextRect.height(), 15, 15);
-	
-	if (!m_overCentralText) p.setPen(m_fontColor);
-	else p.setPen(m_fontHighlightColor);
-	p.drawText(m_centralTextRect, Qt::AlignCenter, text);
-}
-
 void KSimon::drawScoreAndCounter(QPainter &p)
 {
 	QColor c1, c2, c3;
@@ -399,43 +380,51 @@ void KSimon::drawStatusText(QPainter &p)
 
 void KSimon::drawLevel(QPainter &p)
 {
-	QString level = i18n("Level");
 	QString n[3];
 	n[0] = i18n("2");
 	n[1] = i18n("1");
 	n[2] = i18n("?");
 	
-	QFont oldFont, f = p.font();
-	oldFont = f;
-	f.setPointSize(fontUtils::fontSize(p, level, 190, 30));
-	f.setBold(true);
-	p.setFont(f);
-	p.setPen(m_fontColor);
+	drawText(p, i18n("Level"), QPoint(322, 281), false, 0, 0, 0, false, true);
 	
-	QRect aux;
-	aux = p.boundingRect(QRect(), Qt::AlignAuto, level);
-	aux.moveBy(322 - aux.width() / 2, 281 - aux.height() / 2);
-	p.drawText(aux, Qt::AlignAuto, level);
-	
+	QPoint cp;
 	for (int i = 0; i < 3; i++)
 	{
-		m_levelsRect[i] = p.boundingRect(QRect(), Qt::AlignAuto, n[i]);
-		m_levelsRect[i] = QRect(0, 0, m_levelsRect[i].width() + 20, m_levelsRect[i].height() + 5);
-		if (i == 0) m_levelsRect[0].moveBy(319 - m_levelsRect[0].width() / 2, 315 - m_levelsRect[0].height() / 2);
-		else if (i == 1) m_levelsRect[1].moveBy(m_levelsRect[0].left() - m_levelsRect[0].width() - m_levelsRect[1].width() / 2, 315 - m_levelsRect[1].height() / 2);
-		else if (i == 2) m_levelsRect[2].moveBy(m_levelsRect[0].left() + 2 * m_levelsRect[0].width() - m_levelsRect[2].width() / 2, 315 - m_levelsRect[2].height() / 2);
+		if (i == 0) cp = QPoint(319, 315);
+		else if (i == 1) cp = QPoint(m_levelsRect[0].left() - m_levelsRect[0].width(), 315);
+		else if (i == 2) cp = QPoint(m_levelsRect[0].right() + m_levelsRect[0].width(), 315);
+		drawText(p, n[i], cp, true, 20, 5, &(m_levelsRect[i]), m_overLevels[i], true);
+	}
+}
+
+void KSimon::drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold)
+{
+	QRect r;
+	QFont oldFont, f = p.font();
+	oldFont = f;
+	f.setPointSize(fontUtils::fontSize(p, text, 190, 30));
+	if (bold) f.setBold(true);
+	p.setFont(f);
 	
-		p.fillRect(m_levelsRect[i], m_fillColor);
+	r = p.boundingRect(QRect(), Qt::AlignAuto, text);
+	r = QRect(0, 0, r.width() + xMargin, r.height() + yMargin);
+	r.moveBy(center.x() - r.width() / 2, center.y() - r.height() / 2);
+	
+	if (withMargin)
+	{
+		p.fillRect(r, m_fillColor);
 		p.setPen(QPen(black, 3));
-		p.drawRoundRect(m_levelsRect[i].left(), m_levelsRect[i].top(), m_levelsRect[i].width(), m_levelsRect[i].height(), 15, 15);
-	
-		if (m_overLevels[i]) p.setPen(m_fontHighlightColor);
-		else p.setPen(m_fontColor);
-		p.drawText(m_levelsRect[i], Qt::AlignCenter, n[i]);
+		p.drawRoundRect(r.left(), r.top(), r.width(), r.height(), 15, 15);
 	}
 	
+	if (!highlight) p.setPen(m_fontColor);
+	else p.setPen(m_fontHighlightColor);
+	p.drawText(r, Qt::AlignCenter, text);
+	
+	if (rect) *rect = r;
 	p.setFont(oldFont);
 }
+
 
 void KSimon::updateButtonHighlighting(const QPoint &p)
 {
