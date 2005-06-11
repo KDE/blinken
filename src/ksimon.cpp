@@ -24,7 +24,7 @@
 #include "number.h"
 #include "highscoredialog.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(false), m_overQuit(false), m_overCentralText(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -32,12 +32,19 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overMenu(fal
 	m_redh = new QPixmap(locate("appdata", "images/redh.png"));
 	m_greenh = new QPixmap(locate("appdata", "images/greenh.png"));
 	
-	m_menu = new QPixmap(locate("appdata", "images/menu.png"));
-	m_menuHover = new QPixmap(locate("appdata", "images/menu_hover.png"));
+	m_highscore = new QPixmap(locate("appdata", "images/highscore.png"));
+	m_highscoreHover = new QPixmap(locate("appdata", "images/highscore_hover.png"));
 	m_quit = new QPixmap(locate("appdata", "images/quit.png"));
 	m_quitHover = new QPixmap(locate("appdata", "images/quit_hover.png"));
-	m_menuRect = QRect(10, 10, 72, 73);
+	m_menu = new QPixmap(locate("appdata", "images/menu.png"));
+	m_menuHover = new QPixmap(locate("appdata", "images/menu_hover.png"));
+	m_mark = new QPixmap(locate("appdata", "images/mark.png"));
+	m_highscoreRect = QRect(10, 10, 72, 72);
 	m_quitRect = QRect(560, 10, 72, 73);
+	m_menuRect = QRect(560, 443, 72, 72);
+	m_aboutKDERect = QRect(452, 461, 54, 54);
+	m_aboutKSimonRect = QRect(506, 461, 54, 54);
+	m_manualRect = QRect(578, 389, 54, 54);
 	
 	m_fillColor = QColor(40, 40, 40);
 	m_fontColor = QColor(126, 126, 126);
@@ -63,10 +70,13 @@ KSimon::~KSimon()
 	delete m_greenh;
 	delete m_redh;
 	delete m_yellowh;
-	delete m_menu;
-	delete m_menuHover;
+	delete m_highscore;
+	delete m_highscoreHover;
 	delete m_quit;
 	delete m_quitHover;
+	delete m_menu;
+	delete m_menuHover;
+	delete m_mark;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -141,7 +151,7 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 
 void KSimon::mousePressEvent(QMouseEvent *e)
 {
-	if (m_overMenu)
+	if (m_overHighscore)
 	{
 		highScoreDialog *hsd = new highScoreDialog(this);
 		hsd->showLevel(1);
@@ -241,11 +251,25 @@ void KSimon::unhighlight()
 
 void KSimon::drawMenuQuit(QPainter &p)
 {
-	if (!m_overMenu) p.drawPixmap(10, 10, *m_menu);
-	else p.drawPixmap(10, 10, *m_menuHover);
+	if (!m_overHighscore) p.drawPixmap(10, 10, *m_highscore);
+	else p.drawPixmap(10, 10, *m_highscoreHover);
 	
 	if (!m_overQuit) p.drawPixmap(560, 10, *m_quit);
 	else p.drawPixmap(560, 10, *m_quitHover);
+	
+	if (!m_overMenu) p.drawPixmap(560, 443, *m_menu);
+	else p.drawPixmap(452, 389, *m_menuHover);
+	
+	if (m_overAboutKDE) p.drawPixmap(462, 433, *m_mark);
+	else if (m_overAboutKSimon) p.drawPixmap(516, 433, *m_mark);
+	else if (m_overManual)
+	{
+		p.translate(550, 430);
+		p.rotate(-90.0);
+		p.drawPixmap(0, 0, *m_mark);
+		p.rotate(90.0);
+		p.translate(-550, -430);
+	}
 }
 
 void KSimon::drawCentralText(QPainter &p, const QString &text)
@@ -316,7 +340,7 @@ void KSimon::drawStatusText(QPainter &p)
 
 	QString restartText = i18n("Restart the game");
 	if (m_overQuit) p.drawText(0, 0, i18n("Quit KSimon"));
-	else if (m_overMenu) p.drawText(0, 0, i18n("View HighScore Table"));
+	else if (m_overHighscore) p.drawText(0, 0, i18n("View HighScore Table"));
 	else
 	{
 		switch (m_game.phase())
@@ -405,18 +429,78 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 	m_updateButtonHighlighting = false;
 	haveToUpdate = false;
 	
+	if (m_highscoreRect.contains(p))
+	{
+		if (!m_overHighscore)
+		{
+			m_overHighscore = true;
+			haveToUpdate = true;
+		}
+	}
+	else if (m_overHighscore)
+	{
+		m_overHighscore = false;
+		haveToUpdate = true;
+	}
+	
 	if (m_menuRect.contains(p))
 	{
 		if (!m_overMenu)
 		{
 			m_overMenu = true;
+			m_overAboutKDE = false;
+			m_overAboutKSimon = false;
+			m_overManual = false;
+			haveToUpdate = true;
+		}
+		else if (m_overAboutKDE || m_overAboutKSimon || m_overManual)
+		{
+			m_overAboutKDE = false;
+			m_overAboutKSimon = false;
+			m_overManual = false;
 			haveToUpdate = true;
 		}
 	}
 	else if (m_overMenu)
 	{
-		m_overMenu = false;
-		haveToUpdate = true;
+		if (m_aboutKDERect.contains(p))
+		{
+			if (!m_overAboutKDE)
+			{
+				m_overAboutKDE = true;
+				m_overAboutKSimon = false;
+				m_overManual = false;
+				haveToUpdate = true;
+			}
+		}
+		else if (m_aboutKSimonRect.contains(p))
+		{
+			if (!m_overAboutKSimon)
+			{
+				m_overAboutKDE = false;
+				m_overAboutKSimon = true;
+				m_overManual = false;
+				haveToUpdate = true;
+			}
+		}
+		else if (m_manualRect.contains(p))
+		{
+			if (!m_overManual)
+			{
+				m_overAboutKDE = false;
+				m_overAboutKSimon = false;
+				m_overManual = true;
+				haveToUpdate = true;
+			}
+		}
+		else
+		{
+			m_overMenu = false;
+			m_overAboutKDE = false;
+			m_overAboutKSimon = false;
+			m_overManual = false;
+			haveToUpdate = true;
+		}
 	}
 	
 	if (m_quitRect.contains(p))

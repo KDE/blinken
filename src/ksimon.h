@@ -44,10 +44,10 @@ Q_OBJECT
 		void drawLevel(QPainter &p);
 		void updateButtonHighlighting(const QPoint &p);
 		
-		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_menu, *m_menuHover, *m_quit, *m_quitHover;
-		bool m_overMenu, m_overQuit, m_overCentralText, m_overLevels[3];
+		QPixmap *m_back, *m_blueh, *m_yellowh, *m_redh, *m_greenh, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
+		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, 	m_overAboutKSimon, m_overManual, m_overLevels[3];
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_menuRect, m_quitRect, m_centralTextRect, m_levelsRect[3];
+		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutKSimonRect, m_manualRect, m_levelsRect[3];
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// if should update the highlighting after the next repaint
