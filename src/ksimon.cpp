@@ -13,9 +13,11 @@
 #include <qtimer.h>
 
 #include <kapplication.h>
+#include <khelpmenu.h>
 #include <kinputdialog.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kpopupmenu.h>
 #include <kstandarddirs.h>
 
 #include "ksimon.h"
@@ -61,6 +63,8 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
+	
+	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 }
 
 KSimon::~KSimon()
@@ -77,6 +81,7 @@ KSimon::~KSimon()
 	delete m_menu;
 	delete m_menuHover;
 	delete m_mark;
+	delete m_helpMenu;
 }
 
 void KSimon::paintEvent(QPaintEvent *)
@@ -159,6 +164,9 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		update();
 	}
 	else if (m_overQuit) kapp->quit();
+	else if (m_overAboutKSimon) m_helpMenu -> aboutApplication();
+	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
+	else if (m_overManual) m_helpMenu -> appHelpActivated();
 	else if (m_game.phase() != simonGame::choosingLevel && m_overCentralText)
 	{
 		highlight(simonGame::none, true);
@@ -341,6 +349,9 @@ void KSimon::drawStatusText(QPainter &p)
 	QString restartText = i18n("Restart the game");
 	if (m_overQuit) p.drawText(0, 0, i18n("Quit KSimon"));
 	else if (m_overHighscore) p.drawText(0, 0, i18n("View HighScore Table"));
+	else if (m_overAboutKSimon) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&"));
+	else if (m_overAboutKDE) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&"));
+	else if (m_overManual) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&"));
 	else
 	{
 		switch (m_game.phase())

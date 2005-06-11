@@ -16,6 +16,8 @@
 
 class QTimer;
 
+class KHelpMenu;
+
 class artsPlayer;
 class highScoreDialog;
 
@@ -60,6 +62,8 @@ Q_OBJECT
 		
 		artsPlayer *m_artsPlayer;
 		simonGame m_game;
+		
+		KHelpMenu *m_helpMenu;
 };
 
 #endif
