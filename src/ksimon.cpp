@@ -352,6 +352,9 @@ void KSimon::drawStatusText(QPainter &p)
 	else if (m_overAboutKSimon) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&"));
 	else if (m_overAboutKDE) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&"));
 	else if (m_overManual) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&"));
+	else if (m_overLevels[0]) p.drawText(0, 0, i18n("2nd Level"));
+	else if (m_overLevels[1]) p.drawText(0, 0, i18n("1st Level"));
+	else if (m_overLevels[2]) p.drawText(0, 0, i18n("Random Level"));
 	else
 	{
 		switch (m_game.phase())
