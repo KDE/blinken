@@ -12,6 +12,7 @@
 #include <qpixmap.h>
 #include <qtimer.h>
 
+#include <kaction.h>
 #include <kapplication.h>
 #include <khelpmenu.h>
 #include <kinputdialog.h>
@@ -26,7 +27,7 @@
 #include "number.h"
 #include "highscoredialog.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_showKeys(false), m_yellowClicked(false), m_redClicked(false), m_greenClicked(false), m_blueClicked(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
@@ -64,7 +65,16 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
 	
+	actionCollection()->setWidget(this);
+	
+	m_yellowAction = new KAction(QString::null, Qt::Key_1, this, SLOT(pressedYellow()), actionCollection(), "yellow");
+	m_redAction = new KAction(QString::null, Qt::Key_2, this, SLOT(pressedRed()), actionCollection(), "red");
+	m_greenAction = new KAction(QString::null, Qt::Key_4, this, SLOT(pressedGreen()), actionCollection(), "green");
+	m_blueAction = new KAction(QString::null, Qt::Key_3, this, SLOT(pressedBlue()), actionCollection(), "blue");
+	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
+	
+	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 }
 
 KSimon::~KSimon()
@@ -142,11 +152,68 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 	}
 	
+	if (m_showKeys)
+	{
+		drawText(p, m_yellowAction->shortcut().toString(), QPoint(115, 155), true, 20, 5, 0, m_yellowClicked, false);
+		drawText(p, m_redAction->shortcut().toString(), QPoint(520, 155), true, 20, 5, 0, m_redClicked, false);
+		drawText(p, m_greenAction->shortcut().toString(), QPoint(520, 285), true, 20, 5, 0, m_greenClicked, false);
+		drawText(p, m_blueAction->shortcut().toString(), QPoint(115, 285), true, 20, 5, 0, m_blueClicked, false);
+	}
+	
 	drawStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
 	
 	if (m_updateButtonHighlighting) updateButtonHighlighting(mapFromGlobal(QCursor::pos()));
+}
+
+void KSimon::keyPressEvent(QKeyEvent *e)
+{
+	if (m_showKeys)
+	{
+		if (m_yellowClicked)
+		{
+			m_yellowAction -> setShortcut(e -> key());
+			m_yellowClicked = false;
+			update();
+		}
+		else if (m_redClicked)
+		{
+			m_redAction -> setShortcut(e -> key());
+			m_redClicked = false;
+			update();
+		}
+		else if (m_greenClicked)
+		{
+			m_greenAction -> setShortcut(e -> key());
+			m_greenClicked = false;
+			update();
+		}
+		else if (m_blueClicked)
+		{
+			m_blueAction -> setShortcut(e -> key());
+			m_blueClicked = false;
+			update();
+		}
+	}
+	else if (e -> stateAfter() == Qt::ControlButton)
+	{
+		m_showKeys = true;
+		update();
+	}
+}
+
+void KSimon::keyReleaseEvent(QKeyEvent *e)
+{
+	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton)
+	{
+		m_showKeys = false;
+		m_yellowClicked = false;
+		m_redClicked = false;
+		m_greenClicked = false;
+		m_blueClicked = false;
+		update();
+	}
 }
 
 void KSimon::mouseMoveEvent(QMouseEvent *e)
@@ -205,23 +272,39 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				// Outside the circle and inside the ellipse
 				if (x > 6 && y > 6)
 				{
-					highlight(simonGame::green, true);
-					m_game.clicked(simonGame::green);
+					if (m_showKeys)
+					{
+						m_greenClicked = true;
+						update();
+					}
+					else pressedGreen();
 				}
 				else if (x < -6 && y > 6)
 				{
-					highlight(simonGame::blue, true);
-					m_game.clicked(simonGame::blue);
+					if (m_showKeys)
+					{
+						m_blueClicked = true;
+						update();
+					}
+					else pressedBlue();
 				}
 				else if (x < -6 && y < -6)
 				{
-					highlight(simonGame::yellow, true);
-					m_game.clicked(simonGame::yellow);
+					if (m_showKeys)
+					{
+						m_yellowClicked = true;
+						update();
+					}
+					else pressedYellow();
 				}
 				else if (x > 6 && y < -6)
 				{
-					highlight(simonGame::red, true);
-					m_game.clicked(simonGame::red);
+					if (m_showKeys)
+					{
+						m_redClicked = true;
+						update();
+					}
+					else pressedRed();
 				}
 			}
 		}
@@ -255,6 +338,30 @@ void KSimon::highlight(simonGame::color c, bool unhighlight)
 void KSimon::unhighlight()
 {
 	highlight(simonGame::none, false);
+}
+
+void KSimon::pressedYellow()
+{
+	highlight(simonGame::yellow, true);
+	m_game.clicked(simonGame::yellow);
+}
+
+void KSimon::pressedRed()
+{
+	highlight(simonGame::red, true);
+	m_game.clicked(simonGame::red);
+}
+
+void KSimon::pressedGreen()
+{
+	highlight(simonGame::green, true);
+	m_game.clicked(simonGame::green);
+}
+
+void KSimon::pressedBlue()
+{
+	highlight(simonGame::blue, true);
+	m_game.clicked(simonGame::blue);
 }
 
 void KSimon::drawMenuQuit(QPainter &p)
@@ -336,6 +443,8 @@ void KSimon::drawStatusText(QPainter &p)
 	else if (m_overLevels[0]) p.drawText(0, 0, i18n("2nd Level"));
 	else if (m_overLevels[1]) p.drawText(0, 0, i18n("1st Level"));
 	else if (m_overLevels[2]) p.drawText(0, 0, i18n("Random Level"));
+	else if (m_yellowClicked || m_redClicked || m_greenClicked || m_blueClicked) p.drawText(0, 0, i18n("Press the key for this button"));
+	else if (m_showKeys) p.drawText(0, 0, i18n("Click any button to change its key"));
 	else
 	{
 		switch (m_game.phase())

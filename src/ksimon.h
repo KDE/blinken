@@ -11,17 +11,19 @@
 #define KSIMON_H
 
 #include <qwidget.h>
+#include <kxmlguiclient.h>
 
 #include "simongame.h"
 
 class QTimer;
 
+class KAction;
 class KHelpMenu;
 
 class artsPlayer;
 class highScoreDialog;
 
-class KSimon : public QWidget
+class KSimon : public QWidget, public KXMLGUIClient
 {
 Q_OBJECT
 	public:
@@ -32,11 +34,18 @@ Q_OBJECT
 		void paintEvent(QPaintEvent *);
 		void mouseMoveEvent(QMouseEvent *e);
 		void mousePressEvent(QMouseEvent *e);
+		void keyPressEvent(QKeyEvent *e);
+		void keyReleaseEvent(QKeyEvent *e);
 		
 	private slots:
 		void checkHS();
 		void highlight(simonGame::color c, bool unhighlight);
 		void unhighlight();
+		
+		void pressedYellow();
+		void pressedRed();
+		void pressedGreen();
+		void pressedBlue();
 		
 	private:
 		void drawMenuQuit(QPainter &p);
@@ -52,6 +61,10 @@ Q_OBJECT
 		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutKSimonRect, m_manualRect, m_levelsRect[3];
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
+		// key setting handling
+		bool m_showKeys;
+		bool m_yellowClicked, m_redClicked, m_greenClicked, m_blueClicked;
+		
 		// if should update the highlighting after the next repaint
 		bool m_updateButtonHighlighting;
 		
@@ -62,6 +75,8 @@ Q_OBJECT
 		
 		artsPlayer *m_artsPlayer;
 		simonGame m_game;
+		
+		KAction *m_yellowAction, *m_redAction, *m_greenAction, *m_blueAction;
 		
 		KHelpMenu *m_helpMenu;
 };
