@@ -313,37 +313,49 @@ void KSimon::drawStatusText(QPainter &p)
 	p.translate(25, 505);
 	p.rotate(-3.29);
 	p.setPen(blue);
-	switch (m_game.phase())
+
+	QString restartText = i18n("Restart the game");
+	if (m_overQuit) p.drawText(0, 0, i18n("Quit KSimon"));
+	else if (m_overMenu) p.drawText(0, 0, i18n("View HighScore Table"));
+	else
 	{
-		case simonGame::starting:
-			p.drawText(0, 0, i18n("Press Start to begin!"));
-		break;
+		switch (m_game.phase())
+		{
+			case simonGame::starting:
+				p.drawText(0, 0, i18n("Press Start to begin!"));
+			break;
+			
+			case simonGame::choosingLevel:
+				p.drawText(0, 0, i18n("Set the Difficulty Level..."));
+			break;
+			
+			case simonGame::waiting3:
+				if (m_overCentralText) p.drawText(0, 0, restartText);
+				else p.drawText(0, 0, i18n("Next sequence in 3..."));
+			break;
+			
+			case simonGame::waiting2:
+				if (m_overCentralText) p.drawText(0, 0, restartText);
+				else if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
+				else p.drawText(0, 0, i18n("Next sequence in 2..."));
+			break;
 		
-		case simonGame::choosingLevel:
-			p.drawText(0, 0, i18n("Set the Difficulty Level..."));
-		break;
-		
-		case simonGame::waiting3:
-			p.drawText(0, 0, i18n("Next sequence in 3..."));
-		break;
-		
-		case simonGame::waiting2:
-			if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
-			else p.drawText(0, 0, i18n("Next sequence in 2..."));
-		break;
-		
-		case simonGame::waiting1:
-			if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
-			else p.drawText(0, 0, i18n("Next sequence in 2, 1..."));
-		break;
-		
-		case simonGame::learningTheSequence:
-			p.drawText(0, 0, i18n("Remember this sequence..."));
-		break;
-		
-		case simonGame::typingTheSequence:
-			p.drawText(0, 0, i18n("Repeat the sequence!"));
-		break;
+			case simonGame::waiting1:
+				if (m_overCentralText) p.drawText(0, 0, restartText);
+				else if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
+				else p.drawText(0, 0, i18n("Next sequence in 2, 1..."));
+			break;
+			
+			case simonGame::learningTheSequence:
+				if (m_overCentralText) p.drawText(0, 0, restartText);
+				else p.drawText(0, 0, i18n("Remember this sequence..."));
+			break;
+			
+			case simonGame::typingTheSequence:
+				if (m_overCentralText) p.drawText(0, 0, restartText);
+				else p.drawText(0, 0, i18n("Repeat the sequence!"));
+			break;
+		}
 	}
 }
 
