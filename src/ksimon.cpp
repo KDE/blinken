@@ -187,7 +187,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			m_game.start(level);
 		}
 	}
-	else if (m_game.phase() == simonGame::typingTheSequence)
+	else if (m_game.phase() == simonGame::typingTheSequence || m_game.phase() == simonGame::starting)
 	{
 		double x, y, x2, y2;
 		x = e -> x() - 319;

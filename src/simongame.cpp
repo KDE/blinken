@@ -44,6 +44,11 @@ int simonGame::score() const
 
 void simonGame::clicked(color c)
 {
+	if (m_phase == starting)
+	{
+		m_artsPlayer -> play(c);
+		return;
+	}
 	if (c == *m_nextColor)
 	{
 		++m_nextColor;
