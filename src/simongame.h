@@ -28,6 +28,7 @@ Q_OBJECT
 		enum color { none, red, green, blue, yellow, all };
 		
 		int level() const;
+		bool canType() const;
 		gamePhase phase() const;
 		int score() const;
 		

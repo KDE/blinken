@@ -14,6 +14,7 @@
 
 #include <kaction.h>
 #include <kapplication.h>
+#include <kconfig.h>
 #include <khelpmenu.h>
 #include <kinputdialog.h>
 #include <klocale.h>
@@ -67,10 +68,12 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	
 	actionCollection()->setWidget(this);
 	
-	m_yellowAction = new KAction(QString::null, Qt::Key_1, this, SLOT(pressedYellow()), actionCollection(), "yellow");
-	m_redAction = new KAction(QString::null, Qt::Key_2, this, SLOT(pressedRed()), actionCollection(), "red");
-	m_greenAction = new KAction(QString::null, Qt::Key_4, this, SLOT(pressedGreen()), actionCollection(), "green");
-	m_blueAction = new KAction(QString::null, Qt::Key_3, this, SLOT(pressedBlue()), actionCollection(), "blue");
+	KConfig *kc = kapp->config();
+	
+	m_yellowAction = new KAction(QString::null, kc->readNumEntry("yellow", Qt::Key_1), this, SLOT(pressedYellow()), actionCollection(), "yellow");
+	m_redAction = new KAction(QString::null, kc->readNumEntry("red", Qt::Key_2), this, SLOT(pressedRed()), actionCollection(), "red");
+	m_greenAction = new KAction(QString::null, kc->readNumEntry("green", Qt::Key_4), this, SLOT(pressedGreen()), actionCollection(), "green");
+	m_blueAction = new KAction(QString::null, kc->readNumEntry("blue", Qt::Key_3), this, SLOT(pressedBlue()), actionCollection(), "blue");
 	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 	
@@ -121,6 +124,14 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 	}
 	
+	if (m_showKeys)
+	{
+		drawText(p, m_yellowAction->shortcut().toString(), QPoint(115, 155), true, 20, 5, 0, m_yellowClicked, false);
+		drawText(p, m_redAction->shortcut().toString(), QPoint(520, 155), true, 20, 5, 0, m_redClicked, false);
+		drawText(p, m_greenAction->shortcut().toString(), QPoint(520, 285), true, 20, 5, 0, m_greenClicked, false);
+		drawText(p, m_blueAction->shortcut().toString(), QPoint(115, 285), true, 20, 5, 0, m_blueClicked, false);
+	}
+	
 	drawScoreAndCounter(p);
 	
 	switch(m_highlighted)
@@ -152,14 +163,6 @@ void KSimon::paintEvent(QPaintEvent *)
 		break;
 	}
 	
-	if (m_showKeys)
-	{
-		drawText(p, m_yellowAction->shortcut().toString(), QPoint(115, 155), true, 20, 5, 0, m_yellowClicked, false);
-		drawText(p, m_redAction->shortcut().toString(), QPoint(520, 155), true, 20, 5, 0, m_redClicked, false);
-		drawText(p, m_greenAction->shortcut().toString(), QPoint(520, 285), true, 20, 5, 0, m_greenClicked, false);
-		drawText(p, m_blueAction->shortcut().toString(), QPoint(115, 285), true, 20, 5, 0, m_blueClicked, false);
-	}
-	
 	drawStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
@@ -180,6 +183,10 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 				m_yellowAction -> setShortcut(e -> key());
 				m_yellowClicked = false;
 				update();
+				
+				KConfig *kc = kapp->config();
+				kc->writeEntry("yellow", m_yellowAction -> shortcut().keyCodeQt());
+				kc->sync();
 			}
 		}
 		else if (m_redClicked)
@@ -191,6 +198,9 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 				m_redAction -> setShortcut(e -> key());
 				m_redClicked = false;
 				update();
+				KConfig *kc = kapp->config();
+				kc->writeEntry("red", m_redAction -> shortcut().keyCodeQt());
+				kc->sync();
 			}
 		}
 		else if (m_greenClicked)
@@ -202,6 +212,9 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 				m_greenAction -> setShortcut(e -> key());
 				m_greenClicked = false;
 				update();
+				KConfig *kc = kapp->config();
+				kc->writeEntry("green", m_greenAction -> shortcut().keyCodeQt());
+				kc->sync();
 			}
 		}
 		else if (m_blueClicked)
@@ -213,6 +226,9 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 				m_blueAction -> setShortcut(e -> key());
 				m_blueClicked = false;
 				update();
+				KConfig *kc = kapp->config();
+				kc->writeEntry("blue", m_blueAction -> shortcut().keyCodeQt());
+				kc->sync();
 			}
 		}
 	}
@@ -274,90 +290,88 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			m_game.start(level);
 		}
 	}
-	else if (m_game.phase() == simonGame::typingTheSequence || m_game.phase() == simonGame::starting)
+	
+	double x, y, x2, y2;
+	x = e -> x() - 319;
+	y = e -> y() - 221.5;
+	x2 = x * x;
+	y2 = y * y;
+	if (x2 + y2 > 162.5 * 162.5)
 	{
-		double x, y, x2, y2;
-		x = e -> x() - 319;
-		y = e -> y() - 221.5;
-		x2 = x * x;
-		y2 = y * y;
-		if (x2 + y2 > 162.5 * 162.5)
+		// Outside the circle
+		double x3, y3;
+		x3 = x2 / (301 * 301);
+		y3 = y2 / (201 * 201);
+		if (x3 + y3 < 1)
 		{
-			// Outside the circle
-			double x3, y3;
-			x3 = x2 / (301 * 301);
-			y3 = y2 / (201 * 201);
-			if (x3 + y3 < 1)
+			// Outside the circle and inside the ellipse
+			if (x > 6 && y > 6)
 			{
-				// Outside the circle and inside the ellipse
-				if (x > 6 && y > 6)
+				if (m_showKeys)
 				{
-					if (m_showKeys)
+					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
 					{
-						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-						{
-							m_greenClicked = true;
-							update();
-						}
-						else if (m_greenClicked)
-						{
-							m_greenClicked = false;
-							update();
-						}
+						m_greenClicked = true;
+						update();
 					}
-					else pressedGreen();
+					else if (m_greenClicked)
+					{
+						m_greenClicked = false;
+						update();
+					}
 				}
-				else if (x < -6 && y > 6)
+				else pressedGreen();
+			}
+			else if (x < -6 && y > 6)
+			{
+				if (m_showKeys)
 				{
-					if (m_showKeys)
+					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
 					{
-						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-						{
-							m_blueClicked = true;
-							update();
-						}
-						else if (m_blueClicked)
-						{
-							m_blueClicked = false;
-							update();
-						}
+						m_blueClicked = true;
+						update();
 					}
-					else pressedBlue();
+					else if (m_blueClicked)
+					{
+						m_blueClicked = false;
+						update();
+					}
 				}
-				else if (x < -6 && y < -6)
+				else pressedBlue();
+			}
+			else if (x < -6 && y < -6)
+			{
+				if (m_showKeys)
 				{
-					if (m_showKeys)
+					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
 					{
-						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-						{
-							m_yellowClicked = true;
-							update();
-						}
-						else if (m_yellowClicked) 
-						{
-							m_yellowClicked = false;
-							update();
-						}
+						m_yellowClicked = true;
+						update();
 					}
-					else pressedYellow();
+					else if (m_yellowClicked) 
+					{
+						m_yellowClicked = false;
+						update();
+					}
 				}
-				else if (x > 6 && y < -6)
+				else pressedYellow();
+			}
+			else if (x > 6 && y < -6)
+			{
+				if (m_showKeys)
 				{
-					if (m_showKeys)
+					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
 					{
-						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-						{
-							m_redClicked = true;
-							update();
-						}
-						else if (m_redClicked)
-						{
-							m_redClicked = false;
-							update();
-						}
+						m_redClicked = true;
+						update();
 					}
-					else pressedRed();
+					else if (m_redClicked)
+					{
+						m_redClicked = false;
+						update();
+					}
 				}
+				else pressedRed();
 			}
 		}
 	}
@@ -394,26 +408,38 @@ void KSimon::unhighlight()
 
 void KSimon::pressedYellow()
 {
-	highlight(simonGame::yellow, true);
-	m_game.clicked(simonGame::yellow);
+	if (m_game.canType())
+	{
+		highlight(simonGame::yellow, true);
+		m_game.clicked(simonGame::yellow);
+	}
 }
 
 void KSimon::pressedRed()
 {
-	highlight(simonGame::red, true);
-	m_game.clicked(simonGame::red);
+	if (m_game.canType())
+	{
+		highlight(simonGame::red, true);
+		m_game.clicked(simonGame::red);
+	}
 }
 
 void KSimon::pressedGreen()
 {
-	highlight(simonGame::green, true);
-	m_game.clicked(simonGame::green);
+	if (m_game.canType())
+	{
+		highlight(simonGame::green, true);
+		m_game.clicked(simonGame::green);
+	}
 }
 
 void KSimon::pressedBlue()
 {
-	highlight(simonGame::blue, true);
-	m_game.clicked(simonGame::blue);
+	if (m_game.canType())
+	{
+		highlight(simonGame::blue, true);
+		m_game.clicked(simonGame::blue);
+	}
 }
 
 void KSimon::drawMenuQuit(QPainter &p)

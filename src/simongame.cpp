@@ -31,6 +31,11 @@ int simonGame::level() const
 	return m_level;
 }
 
+bool simonGame::canType() const
+{
+	return m_phase == typingTheSequence || m_phase == starting;
+}
+
 simonGame::gamePhase simonGame::phase() const
 {
 	return m_phase;
