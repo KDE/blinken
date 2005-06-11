@@ -173,27 +173,47 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 	{
 		if (m_yellowClicked)
 		{
-			m_yellowAction -> setShortcut(e -> key());
-			m_yellowClicked = false;
-			update();
+			if (e -> key() != m_redAction -> shortcut().keyCodeQt() && 
+			    e -> key() != m_greenAction -> shortcut().keyCodeQt() &&
+			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
+			{
+				m_yellowAction -> setShortcut(e -> key());
+				m_yellowClicked = false;
+				update();
+			}
 		}
 		else if (m_redClicked)
 		{
-			m_redAction -> setShortcut(e -> key());
-			m_redClicked = false;
-			update();
+			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
+			    e -> key() != m_greenAction -> shortcut().keyCodeQt() &&
+			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
+			{
+				m_redAction -> setShortcut(e -> key());
+				m_redClicked = false;
+				update();
+			}
 		}
 		else if (m_greenClicked)
 		{
-			m_greenAction -> setShortcut(e -> key());
-			m_greenClicked = false;
-			update();
+			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
+			    e -> key() != m_redAction -> shortcut().keyCodeQt() &&
+			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
+			{
+				m_greenAction -> setShortcut(e -> key());
+				m_greenClicked = false;
+				update();
+			}
 		}
 		else if (m_blueClicked)
 		{
-			m_blueAction -> setShortcut(e -> key());
-			m_blueClicked = false;
-			update();
+			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
+			    e -> key() != m_redAction -> shortcut().keyCodeQt() &&
+			    e -> key() != m_greenAction -> shortcut().keyCodeQt())
+			{
+				m_blueAction -> setShortcut(e -> key());
+				m_blueClicked = false;
+				update();
+			}
 		}
 	}
 	else if (e -> stateAfter() == Qt::ControlButton)
@@ -274,8 +294,16 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				{
 					if (m_showKeys)
 					{
-						m_greenClicked = true;
-						update();
+						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
+						{
+							m_greenClicked = true;
+							update();
+						}
+						else if (m_greenClicked)
+						{
+							m_greenClicked = false;
+							update();
+						}
 					}
 					else pressedGreen();
 				}
@@ -283,8 +311,16 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				{
 					if (m_showKeys)
 					{
-						m_blueClicked = true;
-						update();
+						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
+						{
+							m_blueClicked = true;
+							update();
+						}
+						else if (m_blueClicked)
+						{
+							m_blueClicked = false;
+							update();
+						}
 					}
 					else pressedBlue();
 				}
@@ -292,8 +328,16 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				{
 					if (m_showKeys)
 					{
-						m_yellowClicked = true;
-						update();
+						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
+						{
+							m_yellowClicked = true;
+							update();
+						}
+						else if (m_yellowClicked) 
+						{
+							m_yellowClicked = false;
+							update();
+						}
 					}
 					else pressedYellow();
 				}
@@ -301,8 +345,16 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 				{
 					if (m_showKeys)
 					{
-						m_redClicked = true;
-						update();
+						if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
+						{
+							m_redClicked = true;
+							update();
+						}
+						else if (m_redClicked)
+						{
+							m_redClicked = false;
+							update();
+						}
 					}
 					else pressedRed();
 				}
