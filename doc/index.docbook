@@ -1,0 +1,916 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd" [
+  <!ENTITY kapp "&ksimon;">
+  <!ENTITY package "kdeedu">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title>The &ksimon; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Danny</firstname>
+<othername></othername>
+<surname>Allen</surname>
+<affiliation>
+<address><email>danny@dannyallen.co.uk</email></address>
+</affiliation>
+</author>
+</authorgroup>
+
+
+<copyright>
+<year>2005</year>
+<holder>Danny Allen</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+
+<date>2005-06-14</date>
+<releaseinfo>1.0</releaseinfo>
+
+<abstract>
+<para>
+&ksimon; brings a retro electronic memory game from the 1970's to &kde;.
+</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeedu</keyword>
+<keyword>KSimon</keyword>
+<keyword>game</keyword>
+<keyword>child</keyword>
+<keyword>electronic</keyword>
+<keyword>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>
+&ksimon; is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning.
+
+The goal is to get a highscore - each step in the sequence is worth one point, so correct recollection of a sequence of 8 lights is worth 8 points on the highscore table.
+</para>
+
+</chapter>
+
+<chapter id="using-ksimon">
+<title>Using &ksimon;</title>
+
+<screenshot>
+<screeninfo>Here is the screen that is presented on startup of &ksimon;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon1.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+Here is the screen that is presented on startup of &ksimon;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, etc) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
+</para>
+
+<screenshot>
+<screeninfo>Highscores button</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon_highscoresbutton.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+The highscores button opens a dialog that displays the highscores table for each of the 3 difficulty levels. The highscores table can also be accessed by clicking on the score counter.
+</para>
+
+<screenshot>
+<screeninfo>Quit button</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon_quitbutton.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+The Quit button exits the application.
+</para>
+
+<screenshot>
+<screeninfo>Help button</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon_helpbutton.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+The help button is special, in that it reveals 3 sub-buttons. These buttons are shown when the help button is hovered over, and provide access to the &ksimon; handbook (this document), and the "About &ksimon;" and "About &kde;" dialogs.
+</para>
+
+<sect1 id="general-usage">
+<title>General usage</title>
+
+<!-- FIXME: A word can't really be displayed and hidden at the same time, -->
+<!-- although I can't think of a better way to phrase this -->
+<para>A word is displayed and its letters are hidden. You know how many letters there are in the
+word. You have to guess the word by trying one letter after another. You enter the letter in the text box and you either press the Enter key or click on the Guess button to see if the letter belongs or not to the word. </para>
+
+<para>The word
+is picked at random and it is not the same as the previous word.
+</para>
+
+<important><para>All words are nouns (no verbs, no adjectives, &etc;).</para></important>
+
+<para>
+Usually, it is not important whether you type in lowercase or uppercase. The program
+converts all input into lowercase except for German words which begin with an
+uppercase letter. The program does that automatically.
+</para>
+
+<para> 
+The current level and current language are displayed in the statusbar.
+</para>
+
+<para>
+Each time you guess a letter that is not in the word, another part of the
+hangman is drawn. You have 10 tries to guess the word. After that, the correct
+answer is displayed.
+</para>
+
+<para>
+There are 4 levels: easy, medium, hard and animals, plus levels for other
+topics in some languages. The program scans for all data files in all
+languages.
+ </para>
+ 
+<para>
+In the easy level, the words are quite simple and related to everyday life. It
+is suitable for children from 6 to 9.  The animals level contains only names of
+animals so they are easier to find. Some of them are easy, others are more
+difficult. In the medium level, the words are longer and more difficult. It is
+suitable for ages 9+. The hard level is just that, hard, &ie; the words are
+difficult to spell and not very well known. This level is challenging, even for
+adults.
+</para>
+
+<para>After a word is guessed (or the hangman is completed), you are
+prompted for another word and you can either use the
+<keycap>Y</keycap> or <keycap>N</keycap> keys or the mouse to answer
+yes or no. If you say <guilabel>No</guilabel>, the game quits. If you
+say <guilabel>Yes</guilabel>, another word is ready to be guessed.
+</para>
+
+<para>You type the letter you want to try in the text box (the mouse cursor is
+ready in the text box) and you hit the &Enter; key. If the letter belongs to the
+word, it takes its place, as many times as it appears in the word. If the
+letter does not belong to the word, it goes in the Misses field and a further
+part of the hangman is drawn on the right. You have ten tries and after that
+you lose and the correct word is displayed.
+</para>
+
+<para>During the game, you can choose to start a new game by going in the
+<guimenu>Game</guimenu> menu and choosing <guimenuitem>New</guimenuitem> or
+clicking on the <guiicon>New</guiicon> icon on the toolbar. You can also change
+the level with the level button on the toolbar (this will bring you a new word
+for the new level).</para>
+
+<para>
+Future improvement (in KDE 4) will allow you to create your own words file or to load a file different from the four included ones.
+</para>
+</sect1>
+
+<sect1 id="languages">
+<title>Playing in different languages</title>
+<para>
+You can play &ksimon; in twenty-two languages: Brazilian Portuguese, Bulgarian, Catalan, Czech, Danish, Dutch, English,
+Finnish, French, German, Hungarian, Irish (Gaelic), Italian, Norwegian (Bokm&#229;l), Norwegian (Nynorsk), Portuguese, Spanish, Serbian (Latin and Cyrillic), Slovenian, Tajik and Swedish. 
+</para>
+
+<para>
+By default, after the first installation of &ksimon;, only English and your &kde; language if it is one of the above and if you have the corresponding kde-i18n package will be installed. For example if you are a Danish user and if you have &kde; in Danish, &ksimon; and in <guimenu>Settings</guimenu> <guimenuitem>Configure &ksimon;..</guimenuitem> <guimenuitem>Advanced Settings</guimenuitem> <guimenuitem>Words are in:</guimenuitem> you will see two items: English and Danish and Danish will be the default.
+</para>
+
+<para>
+You can still play &ksimon; in other languages. It is very easy to add new data in &ksimon;. All you need is a working internet connection. 
+You click on the <guimenu>File</guimenu> menu and then on <guimenu>Get data in a new language...</guimenu>. A dialog appears, similar to this one:
+</para>
+
+<screenshot>
+<screeninfo>The Get Hot New Stuff dialog for &ksimon;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="getnewstuff.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>Get Hot New Stuff screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+Click on the language name you want to install and then on the Install button. A dialog will tell you when the language is installed by displaying: Successfully installed hot new stuff. You click on OK to close this information dialog then on Close to close the Get New Stuff dialog (if you want another language, you get repeat these steps). The new language is now available!
+</para>
+
+<para>
+You can then easily change the language by going in the <guimenu>Settings</guimenu> <guimenuitem>Configure &ksimon;...</guimenuitem> <guimenuitem>Advanced Settings</guimenuitem> <guimenuitem>Words are in:</guimenuitem> and choosing another language.
+</para>
+
+<para>
+Please note that you can now type the special characters in a language by displaying the <interface>Special Characters Toolbar</interface>.
+This toolbar holds buttons with an icon of each special character per language like &eacute; in French for example. Clicking on such a
+button will write the corresponding letter in the input line and you validate your choice with Enter. You can of course also use the keyboard layout corresponding to the language. This toolbar can be shown or hidden. The setting is restored next time you play &ksimon;.
+</para>
+
+<important><para>
+Please note that you need Arial and URW Bookman fonts in order to correctly display the special characters in some languages. Provided you have those fonts installed, &ksimon; will automatically use them. If you see small rectangles instead of letters, then you migh miss one of these fonts.
+</para></important>
+
+</sect1>
+<sect1 id="few-tips">
+<title>A few tips</title>
+<para>
+Try to guess the vowels first. Then have a go with the most common consonants:
+l, t, r, n, s
+</para>
+<para>
+When you see <quote>io</quote>, try n after that, in French and English.
+</para>
+<para>
+In Brazilian Portuguese, Catalan, Spanish and Portuguese, the accented
+vowels can be discovered when you type the non accented corresponding
+vowel. For example, all the accented <quote>a</quote> are displayed in
+the word when you type <quote>a</quote>. This is when
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &ksimon;</guimenuitem> <guimenuitem>Advanced Settings</guimenuitem> <guimenuitem>Type Accented
+Letters</guimenuitem></menuchoice> is not checked. When
+<guimenuitem>Type Accented
+Letters</guimenuitem> is checked, then you have to type
+the accented letters yourself. When you type <quote>a</quote>, only
+<quote>a</quote> is displayed and you have to type for example
+&atilde; for this letter to be displayed.
+</para>
+<para>
+Did you know? In English, the most common letter is e (12.7%), followed by t
+(9.1%) then a (8.2%), i (7.0%) and n (6.7%).
+</para>
+</sect1>
+
+
+</chapter>
+
+<chapter id="menus">
+<title>Menubar and toolbars</title>
+
+<sect1 id="mainwindow">
+<title>The Main &ksimon; Window</title>
+
+<para>The <guimenu>Game</guimenu> menu has 3 items:
+<guimenuitem>New</guimenuitem>, <guimenuitem>Get data in a new language</guimenuitem> and
+<guimenuitem>Quit</guimenuitem>.</para>
+
+<para><guimenuitem>New</guimenuitem> brings you a new game, &ie; a new
+word to guess, in the same level you already
+are. <guimenuitem>Get data in a new language</guimenuitem> will display the Get New Stuff dialog to allow you to download data in a new language. <guimenuitem>Quit</guimenuitem> quits the game by closing the
+main window and writing the actual settings in the configuration
+file.</para>
+
+<para>
+The <guimenu>Levels</guimenu> menu allows you to choose the level, &ie; the difficulty of the word to guess.
+</para>
+<para>
+The <guimenuitem>Settings</guimenuitem> menu allows you to configure
+&ksimon; easily.  First, <guimenuitem>Toolbars</guimenuitem> and
+<guimenuitem>Show Statusbar</guimenuitem> give you the possibility to
+hide/show the toolbars and statusbar.
+</para>
+
+<para>There are two toolbars: the main one which is the one on top
+with the buttons and combo boxes and the
+<interface>Characters</interface> toolbar which, when it is shown, is
+on the bottom. This toolbar has buttons with the special characters
+for each language: accented letters and other special characters. This
+allows users to easily play in another language without having to configure
+a new keyboard layout. You click on a special letter and it is
+displayed as the letter to try. Pressing &Enter; will make the program
+see if the letter is present in the word or not. The toolbar can be
+hidden if you don't want it. This is saved in the configuration file
+so if the toolbar is hidden, it will be hidden next time you run
+&ksimon;.
+</para>
+<tip>
+<para>
+It is of course possible to move the toolbars around. Put the mouse
+cursor on the small handle on the left of the toolbar, press the &LMB;
+and drag the toolbar to position it on the screen where you want
+it. If you point the mouse on one of the toolbars and press the right
+mouse button, a context menu appears to let you choose different
+options for the toolbar.
+</para>
+</tip>
+<para>
+<guimenuitem>Configure Shortcuts...</guimenuitem> is a standard &kde; setting that allows you to
+choose different shortcut keys for different actions. For example,
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo> is the
+standard shortcut for <guimenuitem>Quit</guimenuitem>.</para>
+<para><guimenuitem>Configure Toolbars...</guimenuitem> is also a
+standard &kde; menu item that allows you to add or suppress items from
+the toolbar. When <guimenuitem>Full-Screen Mode</guimenuitem> is
+checked, it brings you in full-screen mode, with only the toolbar on
+top and &ksimon; occupies the whole screen. On the main toolbar, the
+icon <guiicon>Back to Normal Size</guiicon> allows you to come back
+from full-screen mode to the window size you had before.</para>
+
+<screenshot>
+<screeninfo>&ksimon; blue theme</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="khangman2.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; blue theme</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para> Here you have &ksimon; with the Blue theme, transparent
+hangman pictures, Catalan language and level Easy. The
+<interface>Characters</interface> toolbar is shown here.</para>
+
+<para>The level is chosen with a combo box in the toolbar or via the <guimenu>Levels</guimenu> menu in the menubar. The available levels are easy, medium, animals and hard. Easy is related to common objects a child aged six
+or seven knows. Medium regards nouns a bit more challenging, hard is
+quite difficult and animals is only animals nouns. </para>
+
+<para> All words are nouns. No verbs, no adjectives. The chosen level
+ is  then displayed on the statusbar.</para>
+<para>Only letters are allowed to be typed in the text box.</para>
+</sect1>
+
+<sect1 id="settings">
+<title>Available Settings</title>
+<para>
+A toolbar is provided for quick access to some settings. You can click on a button to have a new game (i.e. a new word), to quit the game and to have full-screen mode (provided for low resolution screens and to play with several people). This user manual also will open if you click on the &ksimon; handbook icon. The level and the background are easily changed via 2 combo boxes on the toolbar.
+</para>
+<para>
+In <guimenu>Settings</guimenu>, <guimenu>Configure &ksimon;</guimenu> you will find two tabs. The first one is for Look And Feel. 
+</para>
+
+<sect2 id="normal-settings">
+<title>Look And Feel</title>
+
+<screenshot>
+<screeninfo>&ksimon; normal settings</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="normalsettings.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; normal settings</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>The HangMan Pictures section gives you the choice of having the hangman pictures <guimenuitem>Mild</guimenuitem> or <guimenuitem>Normal</guimenuitem>. <guimenuitem>Mild</guimenuitem> gives you the choice of having the last of the hangman pictures milder. Milder pictures mean that the man is not hanged but he is holding the rope with his hand. This is more suitable for younger children and is the default. If you choose <guimenuitem>Normal</guimenuitem>, the man is hanged by the neck.
+</para>
+
+<para>You can also set the background picture. <guimenu>No background</guimenu> leaves everything gray while if you check <guimenu>Blue theme</guimenu> or <guimenu>Nature theme</guimenu>, you will have a nice background pictures. 
+</para>
+
+<para>
+In the Sounds section, if you check <guimenu>Enable sounds</guimenu> then a sound will be played on new game and another sound will be played when you win a game.
+</para>
+
+</sect2>
+<sect2 id="advanced-settings">
+<title>Advanced Settings</title>
+
+<screenshot>
+<screeninfo>&ksimon; advanced settings</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="advancedsettings.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; advanced settings</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+The second tab deals with more advanced settings. Some settings are only available for a few languages and if not available in the language you are currently playing, these settings will then be disabled.
+</para>
+
+<para>The first setting let you choose the language for the words. This language will be your KDE language by default if available. Otherwise it will be English. English is shipped for everyone and all other data is shipped in the corresponding i18n module. Additionally you can download new languages using the <guimenu>Game</guimenu> <guimenuitem>Get Data in New Language...</guimenuitem> menu.
+</para>
+
+<para><guimenu>Type Accented Letters</guimenu> is available for Brazilian Portuguese, Catalan, Portuguese and Spanish. If you check <guimenu> Type Accented Letters</guimenu>  then you will have to type all accented vowels (like &atilde;). If this remains unchecked, when you type any vowel, all accented vowels will be displayed as well.
+</para>
+
+<para>
+Some languages also have hints to help you guess the word. The hint is shown by a right-click and gives a short definition of the word to guess. If this setting is enabled and if you check the option <guimenu>Show hints</guimenu>, you can &RMB; click anywhere on the game and get a hint shown for four seconds. This hint should help you to guess the word more easily.
+</para>
+
+<para>
+If it is checked, <guimenu>Require more guesses for duplicate letters</guimenu> will display only the first hidden instance of a letter if there are several same letters in the word. For example, if the word is 'potato' and you type 'o', then only the first 'o' will be displayed. You will have to type 'o' again to display the second instance of 'o' and a third 'o' will go to the missed letters. This increases the difficulty.
+</para>
+
+<para>
+If you check <guimenu>Do not display the "Congratulations! You Won" dialog</guimenu> then this dialog will not be shown when you win a game. Instead the word will be displayed for 4 seconds and a new game will then immediately start.
+</para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title>Command Reference</title>
+
+<sect1 id="khangman-mainwindow">
+<title>Menus and shortcut keys</title>
+
+<sect2>
+<title>The <guimenu>Game</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>New</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>New</action> game (&ie; new word)</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Get data in a new language...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Display</action> the KNewStuff dialog which lists all the data available in the different languages. </para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Quits</action> &ksimon;</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title>The <guimenu>Levels</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Levels</guimenu>
+<guimenuitem>Animals</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Choose</action> the list of animals words to guess</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Levels</guimenu>
+<guimenuitem>Easy</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Choose</action> the list of easy words to guess</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Levels</guimenu>
+<guimenuitem>Medium</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Choose</action> the list of medium difficulty words to guess</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Levels</guimenu>
+<guimenuitem>Hard</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Choose</action> the list of difficult words to guess</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Toolbars</guimenuitem>
+<guimenuitem>Show Main</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle</action> the Main Toolbar</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Toolbars</guimenuitem>
+<guimenuitem>Show Characters</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle</action> the Characters Toolbar</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Statusbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle</action> the statusbar</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Full-Screen Mode</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle</action> the full-screen mode
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Configure</action> the keyboard keys you use to access the different actions.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Configure</action> the items you want to put in the toolbar
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure &ksimon;...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Display</action> the &ksimon; settings dialog
+</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title>The <guimenu>Help</guimenu> Menu</title>
+&help.menu.documentation;
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title>Developer's Guide to &ksimon;</title>
+
+<sect1 id="changing-words">
+<title>How to add words in a new language for the game</title>
+
+<para>Thanks to Stefan AsserhÃ¤ll, it is very easy to add a new language
+directly to the game. The procedure described here can also be
+found in the <filename class="directory">khangman</filename> source folder
+in the file <filename>README.languages</filename>. Please follow the procedure and then send me the files tarred and gzipped to annemarie.mahfouf@free.fr.
+</para>
+<para>
+The twenty four available languages so far by code are: bg ca cs da de en es fr fi ga hu it nb nl nn pt pt_BR ru sl sr sr@Ltn sv tg and tr. If your language code is not among those, you can proceed further. 
+</para>
+<para>Most of this data should be completed to include <emphasis>hints</emphasis>, please see below. Complete data: bg fr en it only have hints so the other above languages must be updated as soon as possible.
+</para>
+<para>Be sure you are working with the latest cvs HEAD sources of KHangMan by issuing a
+<screen><userinput><command>
+cvs up -dPA khangman
+</command></userinput></screen>
+in the kdeedu module. Then 
+<screen><userinput><command>
+cd kdeedu/khangman
+</command></userinput></screen>
+</para>
+<para>The words are stored in 4 separate files, one for each level. The files are in
+<filename class="directory">/khangman/data/en</filename>. The file
+<filename>easy.txt</filename> is for level easy, the file
+<filename>medium.txt</filename> is for level medium, the file
+<filename>animals.txt</filename> is for level animals and the file
+<filename>hard.txt</filename> is for level hard.</para>
+<para>English is the default and thus the only language to be shipped with &ksimon;. All other languages data are put in the correct kde-i18n.
+</para>
+<procedure>
+<step><para>Enter the following commands in a &konsole; to create the folder
+   and files for the new language:</para>
+<!-- Do not wrap or indent the next line, it's white space sensitive -->
+<screen><userinput><command>./add_language <replaceable>language_code</replaceable></command></userinput></screen>
+<para>Here you must replace <replaceable>language_code</replaceable>
+with your language  code.</para>
+</step>
+<step>
+<para>The files now use the kvtml format. The tag <sgmltag class="starttag">o</sgmltag> is for the word and the tag <sgmltag class="starttag">t</sgmltag> is for the hint. Try to match the hint with the level of difficulty. The level 'Easy' will require an easy hint but the level 'Hard' will require the definition in the dictionary. Try not to use words of the same family in the hint, that would give the word away too easily! </para>
+<para>An example of a kvtml file is as follow:</para>
+<programlisting><markup>
+	&lt;?xml version="1.0"?&gt; 
+	&lt;!DOCTYPE kvtml SYSTEM "kvoctrain.dtd"&gt; 
+	&lt;kvtml&gt; 
+	&lt;e&gt; 
+	&lt;o&gt;cane&lt;/o&gt; 
+	&lt;t&gt;&egrave; il tuo animale domestico preferito&lt;/t&gt; 
+	&lt;/e&gt; 
+	...
+	...
+	&lt;/kvtml&gt;
+</markup></programlisting>
+</step>
+<step>
+<para>Edit all indicated text files in the new directory with a text editor,
+and replace each word inside the <sgmltag class="starttag">o</sgmltag> tag with a translated word and each hint inside a <sgmltag class="starttag">t</sgmltag> with a translated hint. It is not really important
+that the exact meaning is preserved, but try to keep the length and
+level of difficulty roughly the same.
+You can include words with white space or - in them, in that case the white space or the -
+will be shown instead of the _.
+Please contact Anne-Marie Mahfouf <email>annemarie DOT mahfouf AT free DOT fr</email> if there is anything special related to your language so I can adapt the code to it (especially the special and accented characters).</para> 
+	
+<para>You can just translate the words but you can also adapt them
+following the level and add new words if you want. For example,
+<quote>table</quote> is in level easy in English but in your language,
+it can be level medium. Feel free to adapt the files to your language
+needs. The number of words in a file is not important, you can add
+some if you want.</para>
+
+<para>Remember that all words are nouns.</para>
+
+<para> Note that you must use <emphasis role="bold">UTF-8 encoding</emphasis> when editing the
+files. If your editor cannot do this, try using &kwrite; or &kate;. When
+opening a file in &kwrite; or &kate; you can select utf8 encoding with
+the combo box at the top of the file open dialog.</para>
+
+<para>Please keep the actual English filenames in your
+<replaceable>language_code</replaceable> dir.</para>
+</step>
+
+<step>
+<para>Enter the following command to install the new data files:</para>
+<screen><userinput><command>make</command></userinput>
+<userinput><command>make install</command></userinput></screen>
+
+<para>You may have to become <systemitem
+class="username">root</systemitem> to run <command>make
+install</command>, depending on your installation.</para>
+</step>
+<step>
+<para>Run the game and check that your language has been added:</para>
+<screen><userinput><command>khangman</command></userinput></screen>
+</step>
+<step><para>Instead of committing your files, please sent them to Anne-Marie Mahfouf <email>annemarie DOT mahfouf AT free DOT fr</email> tarred and gzipped. As there are now twenty three languages, a wizard (KNewStuff) is now included in KHangMan to easily download and install new languages that are placed on the website. This is done to reduce the size of the kdeedu module and it will also be done in KLettres, KStars and maybe KTouch.
+Please contact Anne-Marie by email if you need further information.</para>
+<para>When you send me the files, please don't forget to mention any <emphasis role="bold">special characters</emphasis> used in your language (put them in a text file, one per line and add this file in the tarball) and please mention any other specificity.</para>
+<para><emphasis>Please never commit files in a BRANCH as it might break the game.</emphasis></para>
+</step>
+</procedure>
+<para>Many thanks for your contribution!</para>
+</sect1>
+
+<sect1 id="internal">
+<title>What is stored by &ksimon; and where</title>
+<para>
+When you get a new language via  <guimenu>Game </guimenu> ->  <guimenu>Get Data in New Language ...</guimenu>, the new language data is stored in <filename
+class="directory">$~/.kde/share/apps/khangman/data</filename> in the language code folder. The available language dir names are also stored in the &ksimon; config file in <filename>~/.kde/share/config/khangmanrc</filename>.
+</para>
+<para>
+The provider name (i.e. the address of the website where to download the new languages) is stored in <filename>$KDEDIR/share/apps/khangman/khangmanrc</filename>.
+</para>
+<para>
+The English language (default) and the user language from his i18n package(s) (if available) are stored in <filename class="directory">$KDEDIR/share/apps/khangman</filename>.
+</para>
+<para>
+In the configuration file, stored for each user in his <filename>~/.kde/share/config/khangmanrc</filename> are saved all the game settings such as the background, last level played, ... plus the files that were downloaded from the KNewStuff dialog.
+</para>
+</sect1>
+<sect1 id="planned-features">
+<title>Planned Features for &ksimon;</title>
+<para>
+A planned feature is of course to have more language data and also hints in every language. You can help for this in your own language if it is not done yet. Please contact me if you want to help with this, it's just a matter of translating the English words to your language (see <link linkend="changing-words">How to add words in a new language for the game</link>).
+</para>
+<para>
+What can also be done is to use other kvtml files like the ones that are on the
+KDE-Edu website to play &ksimon;. For example, imagine you can play the
+capitals of the world, the hint will tell you the country and you have to guess
+the capital. Or learn words in another language, the hint is the word in your
+language, the word to guess is the translation in the new language.
+</para>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title>Questions and Answers</title>
+
+&reporting.bugs;
+&updating.documentation;
+
+<qandaset id="faqlist">
+<qandaentry>
+<question>
+<para>I have an error message telling me the pictures cannot be found.</para>
+</question>
+<answer>
+<para>The game installs by default in <filename
+class="directory">/usr/local/kde</filename> so add <filename
+class="directory">/usr/local/kde/bin</filename> to your path and set
+the <envar>KDEDIR</envar> variable to <filename
+class="directory">/usr/local/kde</filename> before running the
+game. An easy way is to configure &ksimon; with the option
+<option>--prefix</option>=$<envar>KDEDIR</envar> where
+$<envar>KDEDIR</envar> is where the rest of &kde; is installed.  This
+could vary widely, depending on the distribution and operating system
+you.</para>
+</answer>
+</qandaentry>
+<qandaentry>
+<question>
+<para>&ksimon; does not start correctly after I upgraded to one of
+the &kde; 3.3 versions</para>
+</question>
+<answer>
+<para>
+There might be a problem due to the change of the configuration file. Please remove the <filename>khangmanrc</filename> file in your <filename class="directory">$HOME/.kde/share/config</filename> folder.
+</para>
+</answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+
+<para>
+&ksimon;
+</para>
+<para>
+Program copyright 2001-2004 Anne-Marie Mahfouf <email>annma AT kde DOT org</email>
+</para>
+<para>
+Contributors:
+<itemizedlist>
+<listitem><para>Hangman graphics: Renaud Blanchard
+<email>kisukuma AT chez DOT com</email></para> </listitem>
+<listitem><para>Sounds: Ludovic Grossard
+<email>ludovic.grossard AT libertysurf DOT fr</email></para> </listitem>
+<listitem><para>Blue theme, icons and code: Primoz Anzur
+<email>zerokode AT yahoo DOT com</email></para> </listitem>
+<listitem><para>Swedish data files, coding help, transparent pictures and i18n fixes: Stefan AsserhÃ¤ll
+<email>stefan DOT asserhall AT telia DOT com
+</email></para> </listitem>
+<listitem><para>Nature theme: Joe Bolin
+<email>jbolin AT users DOT sourceforge DOT net</email></para> </listitem>
+<listitem><para>Softer Hangman Pictures: Matt Howe
+<email>mdhowe AT bigfoot DOT com</email></para> </listitem>
+<listitem><para>Spanish data files: eXParTaKus
+<email>expartakus AT expartakus DOT com
+</email></para> </listitem>
+<listitem><para>Spanish data hints: Rafael Beccar
+<email>rafael DOT beccar AT kdemail DOT net
+</email></para> </listitem>
+<listitem><para>Danish data files: Erik Kjaer Pedersen
+<email>erik AT mpim-bonn DOT mpg DOT de
+</email></para> </listitem>
+<listitem><para>Finnish data files: Niko Lewman
+<email>niko DOT lewman AT edu DOT hel DOT fi
+</email></para> </listitem>
+<listitem><para>Brazilian Portuguese data files: JoÃ£o SebastiÃ£o de Oliveira Bueno
+<email>gwidion AT mpc DOT com DOT br
+</email></para> </listitem>
+<listitem><para>Catalan data files: Antoni Bella
+<email>bella5 AT teleline DOT es
+</email></para> </listitem>
+<listitem><para>Italian data files: Giovanni Venturi
+<email>jumpyj AT tiscali DOT it
+</email></para> </listitem>
+<listitem><para>Dutch data files: Rinse
+<email>rinse AT kde DOT nl
+</email></para> </listitem>
+<listitem><para>Portuguese data files: Pedro Morais
+<email>morais AT kde DOT org
+</email></para> </listitem>
+<listitem><para>Serbian (Cyrillic and Latin) data files: Chusslove Illich
+<email>chaslav AT sezampro DOT yu
+</email></para> </listitem>
+<listitem><para>Slovenian data files: Jure Repinc
+<email>jlp AT holodeck1 DOT com
+</email></para> </listitem>
+<listitem><para>Czech data files: Luk&aacute;&scaron; Tinkl
+<email>lukas AT kde DOT org
+</email></para> </listitem>
+<listitem><para>Tajik data files: Roger Kovacs
+<email>rkovacs AT khujand DOT org
+</email></para> </listitem>
+<listitem><para>Norwegian (Bokm&#229;l) data files: Torger &#197;ge Sinnes
+<email>torg-a-s AT online DOT no
+</email></para> </listitem>
+<listitem><para>Hungarian data files: Tamas Szanto
+<email>tszanto AT mol DOT hu
+</email></para> </listitem>
+<listitem><para>Norwegian (Nynorsk) data files: Gaute Hvoslef Kvalnes
+<email>gaute AT verdsveven DOT com
+</email></para> </listitem>
+<listitem><para>Turkish data files: Mehmet &Ouml;zel
+<email>mehmet_ozel2003 AT hotmail DOT com
+</email></para> </listitem>
+<listitem><para>Bulgarian data files: Radostin Radnev
+      <email>radnev AT yahoo DOT com
+</email></para> </listitem>
+<listitem><para>Irish (Gaelic) data files: Kevin Patrick Scannell
+    <email>scannell AT slu DOT edu
+</email></para> </listitem>
+
+<listitem><para>Coding help: Robert Gogolok
+<email>robertgogolok AT gmx DOT de</email></para> </listitem>
+<listitem><para>Coding help: Benjamin Meyer
+<email>ben AT meyerhome DOT net</email></para> </listitem>
+<listitem><para>Code fixes: Lubos Lun&agrave;k
+<email>l.lunak AT kde DOT org</email></para> </listitem>
+<listitem><para>Code fixes: Albert Astals Cid
+<email>tsdgeos AT terra DOT es</email></para> </listitem>
+<listitem><para>Usability study: Celeste Paul
+<email>seele AT obso1337 DOT org</email></para> </listitem>
+</itemizedlist>
+</para>
+
+<para>
+Documentation copyright 2001-2004 Anne-Marie Mahfouf <email>annma AT kde DOT org</email>
+</para>
+
+
+&underFDL;               <!-- FDL: do not remove -->
+&underGPL;        	 <!-- GPL License -->
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="getting-khangman">
+<title>How to obtain &ksimon;</title>
+
+&install.intro.documentation;
+
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and installation</title>
+
+&install.compile.documentation;
+
+</sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
