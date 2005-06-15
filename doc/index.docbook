@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+ <!ENTITY ksimon "<application>KSimon</application>">
  <!ENTITY kappname "&ksimon;">
- <!ENTITY package "kdeedu">
+ <!ENTITY package "playground-edu">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -620,9 +621,11 @@ Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email>
 </para>
 <para>
 Contributors:
+</para>
 <itemizedlist>
 <listitem><para>Hangman graphics: Renaud Blanchard
 <email>kisukuma AT chez DOT com</email></para> </listitem>
+</itemizedlist>
 
 <para>
 Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
