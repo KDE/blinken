@@ -138,7 +138,7 @@ To become familiar with the workings of the game, you can interact with the butt
 </para>
 
 <sect1 id="starting-game">
-<title>Starting A Game</title>
+<title>Starting a Game</title>
 
 <para>
 Once you are familiar with the workings of the application, a game can be started by pressing the "Start" button in the center of the screen. This "powers on" the device, as shown by the illuminated score counter. You can then choose the difficulty level that you want to attempt:
@@ -182,10 +182,10 @@ Level ? is the most difficult level of &ksimon;. It takes the timings from Level
 
 
 <sect1 id="enter-highscore">
-<title>Entering A Highscore</title>
+<title>Entering a New Highscore</title>
 
 <para>
-If you are lucky enough to get a high score, it will be entered into highscores table. A dialog will ask for a nickname to associate with your score in the table:
+If you are lucky enough to get a highscore, it will be entered into highscores table. A dialog will ask for a nickname to associate with your score in the table:
 </para>
 
 <screenshot>
