@@ -92,7 +92,7 @@ Here is the screen that is presented on startup of &ksimon;, showing the general
 	    <imagedata fileref="ksimon_highscoresbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>Highscores button</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -108,7 +108,7 @@ The highscores button opens a dialog that displays the highscores table for each
 	    <imagedata fileref="ksimon_quitbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>Quit button</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -124,7 +124,7 @@ The Quit button exits the application.
 	    <imagedata fileref="ksimon_helpbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>Help button</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -145,13 +145,13 @@ Once you are familiar with the workings of the application, a game can be starte
  </para>
 
 <screenshot>
-<screeninfo>Help button</screeninfo>
+<screeninfo>Select difficulty level</screeninfo>
 	<mediaobject>
 	  <imageobject>
 	    <imagedata fileref="ksimon2.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>Select difficulty level</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -187,6 +187,18 @@ Level ? Is the most difficult level of &ksimon;. It takes the timings from Level
 <para>
 If you are lucky enough to get a high score, it will be entered into highscores table. A dialog will ask for a nickname to associate with your score in the table:
 </para>
+
+<screenshot>
+<screeninfo>Highscore nickname prompt dialog</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon_nickprompt.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>Highscore nickname prompt dialog</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
 
 <para>
 Only 5 scores are kept for each level, so try not to be disappointed if you don't make it!
@@ -236,13 +248,13 @@ Alongside use of the mouse, &ksimon; also allows the user to operate the game us
 </para>
 
 <screenshot>
-<screeninfo>Help button</screeninfo>
+<screeninfo>&ksimon; access keys</screeninfo>
 	<mediaobject>
 	  <imageobject>
 	    <imagedata fileref="ksimon_accesskeys.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>&ksimon; access keys</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -265,14 +277,17 @@ To change the mapping of any button, click it using the mouse. It will then be h
 &ksimon;
 </para>
 <para>
-Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email>
+Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email> and Danny Allen <email>danny@dannyallen.co.uk</email>
 </para>
 <para>
 Contributors:
 </para>
 <itemizedlist>
-<listitem><para>Hangman graphics: Renaud Blanchard
-<email>kisukuma AT chez DOT com</email></para> </listitem>
+<listitem>
+<para>"Steve" font: Steve Jordi
+<email>fillme</email>
+</para>
+</listitem>
 </itemizedlist>
 
 <para>
