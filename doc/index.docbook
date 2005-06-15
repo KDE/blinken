@@ -53,6 +53,7 @@
 
 </bookinfo>
 
+
 <chapter id="introduction">
 <title>Introduction</title>
 
@@ -64,6 +65,7 @@ The goal is to get a highscore - each step in the sequence is worth one point, s
 
 </chapter>
 
+
 <chapter id="using-ksimon">
 <title>Using &ksimon;</title>
 
@@ -73,7 +75,7 @@ The goal is to get a highscore - each step in the sequence is worth one point, s
 	  <imageobject>
 	    <imagedata fileref="ksimon1.png" format="PNG"/>
 	  </imageobject>
-	    <textobject>
+	  <textobject>
 	    <phrase>&ksimon; screenshot</phrase>
 	  </textobject>
 	</mediaobject>
@@ -139,33 +141,92 @@ To become familiar with the workings of the game, you can interact with the butt
 <title>Starting A Game</title>
 
 <para>
-Once you are familiar with the workings of the application, a game can be started by pressing the "Start" button in the center of the screen. This "powers on" the device, as shown by the illuminated score counter. You can then choose the difficulty level that you want to attempt. There are 3 levels in &ksimon;:
-Level 1 is the easiest level, as it provides the longest time break between each sequence playback.
-Level 2 is the intermediate level. It is identical to the previous level, but has a smaller time break between each sequence playback.
-Level ? Is the most difficult level of &ksimon;. It takes the timings from Level 2, but each sequence is totally random, rather than following on from the previous sequence, as in the standard game type.
+Once you are familiar with the workings of the application, a game can be started by pressing the "Start" button in the center of the screen. This "powers on" the device, as shown by the illuminated score counter. You can then choose the difficulty level that you want to attempt:
  </para>
+
+<screenshot>
+<screeninfo>Help button</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon2.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+There are 3 levels in &ksimon;:
+ </para>
+
+<itemizedlist>
+<listitem>
+<para>
+Level 1 is the easiest level, as it provides the longest time break between each sequence playback.
+</para>
+</listitem>
+<listitem>
+<para>
+Level 2 is the intermediate level. It is identical to the previous level, but has a smaller time break between each sequence playback.
+</para>
+</listitem>
+<listitem>
+<para>
+Level ? Is the most difficult level of &ksimon;. It takes the timings from Level 2, but each sequence is totally random, rather than following on from the previous sequence, as in the standard game type.
+</para>
+</listitem>
+</itemizedlist>
+
 </sect1>
+
+
+<sect1 id="enter-highscore">
+<title>Entering A Highscore</title>
+
+<para>
+If you are lucky enough to get a high score, it will be entered into highscores table. A dialog will ask for a nickname to associate with your score in the table:
+</para>
+
+<para>
+Only 5 scores are kept for each level, so try not to be disappointed if you don't make it!
+</para>
+
+</sect1>
+
 
 <sect1 id="playing-tips">
 <title>Playing Tips</title>
 <para>
 &ksimon; is the ultimate memory game, though you need not possess the ultimate memory to be successful. These tips will help you in your pursuit of the best score:
 </para>
+
+<itemizedlist>
+<listitem>
 <para>
 If you have PC speakers, turn them on with the sound at a good level so that you can hear the tones alongside seeing the flashing lights.
 </para>
+</listitem>
+<listitem>
 <para>
 Experiment with both the mouse and keyboard interaction options, to see which one suites your memory best.
 </para>
+</listitem>
+<listitem>
 <para>
 Try remembering the sequence as a list of colors.
 </para>
+</listitem>
+<listitem>
 <para>
 Try remembering the sequence as positions on the screen.
 </para>
-</sect1>
+</listitem>
+</itemizedlist>
 
+</sect1>
 </chapter>
+
 
 <chapter id="accessibility">
 <title>Accessibility Features</title>
@@ -173,6 +234,18 @@ Try remembering the sequence as positions on the screen.
 <para>
 Alongside use of the mouse, &ksimon; also allows the user to operate the game using the keyboard. To display the current keymap settings, and to modify them to your preferences, hold in the <keycap>ctrl</keycap> key:
 </para>
+
+<screenshot>
+<screeninfo>Help button</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="ksimon_accesskeys.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase>&ksimon; screenshot</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
 
 <para>
 The keys are 1, 2, 3, 4 by default.
@@ -210,6 +283,7 @@ Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
 &underGPL;
 
 </chapter>
+
 
 <appendix id="installation">
 <title>Installation</title>
