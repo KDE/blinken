@@ -146,7 +146,7 @@ Level ? Is the most difficult level of &ksimon;. It takes the timings from Level
  </para>
 </sect1>
 
-<sect2 id="playing-tips">
+<sect1 id="playing-tips">
 <title>Playing Tips</title>
 <para>
 &ksimon; is the ultimate memory game, though you need not possess the ultimate memory to be successful. These tips will help you in your pursuit of the best score:
@@ -163,7 +163,9 @@ Try remembering the sequence as a list of colors.
 <para>
 Try remembering the sequence as positions on the screen.
 </para>
-</sect2>
+</sect1>
+
+</chapter>
 
 <chapter id="accessibility">
 <title>Accessibility Features</title>
