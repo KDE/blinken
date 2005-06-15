@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
- "dtd/kdex.dtd" [
-  <!ENTITY kapp "&ksimon;">
-  <!ENTITY package "kdeedu">
-  <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+ <!ENTITY kappname "&ksimon;">
+ <!ENTITY package "kdeedu">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
 <book lang="&language;">
@@ -131,13 +130,19 @@ The Quit button exits the application.
 The help button is special, in that it reveals 3 sub-buttons. These buttons are shown when the help button is hovered over, and provide access to the &ksimon; handbook (this document), and the "About &ksimon;" and "About &kde;" dialogs.
 </para>
 
-<sect1 id="general-usage">
-<title>General usage</title>
+<para>
+To become familiar with the workings of the game, you can interact with the buttons whilst on the main screen. The buttons will illuminate and produce a tone upon being pressed.
+</para>
 
-<!-- FIXME: A word can't really be displayed and hidden at the same time, -->
-<!-- although I can't think of a better way to phrase this -->
-<para>A word is displayed and its letters are hidden. You know how many letters there are in the
-word. You have to guess the word by trying one letter after another. You enter the letter in the text box and you either press the Enter key or click on the Guess button to see if the letter belongs or not to the word. </para>
+<sect1 id="starting-game">
+<title>Starting a game</title>
+
+<para>
+Once you are familiar with the workings of the application, a game can be started by pressing the "Start" button in the center of the screen. This "powers on" the device, as shown by the illuminated score counter. You can then choose the difficulty level that you want to attempt. There are 3 levels in &ksimon;:
+Level 1 is the easiest level, as it provides the longest time break between each sequence playback.
+Level 2 is the intermediate level. It is identical to the previous level, but has a smaller time break between each sequence playback.
+Level ? Is the most difficult level of &ksimon;. It takes the timings from Level 2, but each sequence is totally random, rather than following on from the previous sequence, as in the standard game type.
+ </para>
 
 <para>The word
 is picked at random and it is not the same as the previous word.
@@ -603,181 +608,6 @@ If you check <guimenu>Do not display the "Congratulations! You Won" dialog</guim
 </sect1>
 </chapter>
 
-<chapter id="developers">
-<title>Developer's Guide to &ksimon;</title>
-
-<sect1 id="changing-words">
-<title>How to add words in a new language for the game</title>
-
-<para>Thanks to Stefan AsserhÃ¤ll, it is very easy to add a new language
-directly to the game. The procedure described here can also be
-found in the <filename class="directory">khangman</filename> source folder
-in the file <filename>README.languages</filename>. Please follow the procedure and then send me the files tarred and gzipped to annemarie.mahfouf@free.fr.
-</para>
-<para>
-The twenty four available languages so far by code are: bg ca cs da de en es fr fi ga hu it nb nl nn pt pt_BR ru sl sr sr@Ltn sv tg and tr. If your language code is not among those, you can proceed further. 
-</para>
-<para>Most of this data should be completed to include <emphasis>hints</emphasis>, please see below. Complete data: bg fr en it only have hints so the other above languages must be updated as soon as possible.
-</para>
-<para>Be sure you are working with the latest cvs HEAD sources of KHangMan by issuing a
-<screen><userinput><command>
-cvs up -dPA khangman
-</command></userinput></screen>
-in the kdeedu module. Then 
-<screen><userinput><command>
-cd kdeedu/khangman
-</command></userinput></screen>
-</para>
-<para>The words are stored in 4 separate files, one for each level. The files are in
-<filename class="directory">/khangman/data/en</filename>. The file
-<filename>easy.txt</filename> is for level easy, the file
-<filename>medium.txt</filename> is for level medium, the file
-<filename>animals.txt</filename> is for level animals and the file
-<filename>hard.txt</filename> is for level hard.</para>
-<para>English is the default and thus the only language to be shipped with &ksimon;. All other languages data are put in the correct kde-i18n.
-</para>
-<procedure>
-<step><para>Enter the following commands in a &konsole; to create the folder
-   and files for the new language:</para>
-<!-- Do not wrap or indent the next line, it's white space sensitive -->
-<screen><userinput><command>./add_language <replaceable>language_code</replaceable></command></userinput></screen>
-<para>Here you must replace <replaceable>language_code</replaceable>
-with your language  code.</para>
-</step>
-<step>
-<para>The files now use the kvtml format. The tag <sgmltag class="starttag">o</sgmltag> is for the word and the tag <sgmltag class="starttag">t</sgmltag> is for the hint. Try to match the hint with the level of difficulty. The level 'Easy' will require an easy hint but the level 'Hard' will require the definition in the dictionary. Try not to use words of the same family in the hint, that would give the word away too easily! </para>
-<para>An example of a kvtml file is as follow:</para>
-<programlisting><markup>
-	&lt;?xml version="1.0"?&gt; 
-	&lt;!DOCTYPE kvtml SYSTEM "kvoctrain.dtd"&gt; 
-	&lt;kvtml&gt; 
-	&lt;e&gt; 
-	&lt;o&gt;cane&lt;/o&gt; 
-	&lt;t&gt;&egrave; il tuo animale domestico preferito&lt;/t&gt; 
-	&lt;/e&gt; 
-	...
-	...
-	&lt;/kvtml&gt;
-</markup></programlisting>
-</step>
-<step>
-<para>Edit all indicated text files in the new directory with a text editor,
-and replace each word inside the <sgmltag class="starttag">o</sgmltag> tag with a translated word and each hint inside a <sgmltag class="starttag">t</sgmltag> with a translated hint. It is not really important
-that the exact meaning is preserved, but try to keep the length and
-level of difficulty roughly the same.
-You can include words with white space or - in them, in that case the white space or the -
-will be shown instead of the _.
-Please contact Anne-Marie Mahfouf <email>annemarie DOT mahfouf AT free DOT fr</email> if there is anything special related to your language so I can adapt the code to it (especially the special and accented characters).</para> 
-	
-<para>You can just translate the words but you can also adapt them
-following the level and add new words if you want. For example,
-<quote>table</quote> is in level easy in English but in your language,
-it can be level medium. Feel free to adapt the files to your language
-needs. The number of words in a file is not important, you can add
-some if you want.</para>
-
-<para>Remember that all words are nouns.</para>
-
-<para> Note that you must use <emphasis role="bold">UTF-8 encoding</emphasis> when editing the
-files. If your editor cannot do this, try using &kwrite; or &kate;. When
-opening a file in &kwrite; or &kate; you can select utf8 encoding with
-the combo box at the top of the file open dialog.</para>
-
-<para>Please keep the actual English filenames in your
-<replaceable>language_code</replaceable> dir.</para>
-</step>
-
-<step>
-<para>Enter the following command to install the new data files:</para>
-<screen><userinput><command>make</command></userinput>
-<userinput><command>make install</command></userinput></screen>
-
-<para>You may have to become <systemitem
-class="username">root</systemitem> to run <command>make
-install</command>, depending on your installation.</para>
-</step>
-<step>
-<para>Run the game and check that your language has been added:</para>
-<screen><userinput><command>khangman</command></userinput></screen>
-</step>
-<step><para>Instead of committing your files, please sent them to Anne-Marie Mahfouf <email>annemarie DOT mahfouf AT free DOT fr</email> tarred and gzipped. As there are now twenty three languages, a wizard (KNewStuff) is now included in KHangMan to easily download and install new languages that are placed on the website. This is done to reduce the size of the kdeedu module and it will also be done in KLettres, KStars and maybe KTouch.
-Please contact Anne-Marie by email if you need further information.</para>
-<para>When you send me the files, please don't forget to mention any <emphasis role="bold">special characters</emphasis> used in your language (put them in a text file, one per line and add this file in the tarball) and please mention any other specificity.</para>
-<para><emphasis>Please never commit files in a BRANCH as it might break the game.</emphasis></para>
-</step>
-</procedure>
-<para>Many thanks for your contribution!</para>
-</sect1>
-
-<sect1 id="internal">
-<title>What is stored by &ksimon; and where</title>
-<para>
-When you get a new language via  <guimenu>Game </guimenu> ->  <guimenu>Get Data in New Language ...</guimenu>, the new language data is stored in <filename
-class="directory">$~/.kde/share/apps/khangman/data</filename> in the language code folder. The available language dir names are also stored in the &ksimon; config file in <filename>~/.kde/share/config/khangmanrc</filename>.
-</para>
-<para>
-The provider name (i.e. the address of the website where to download the new languages) is stored in <filename>$KDEDIR/share/apps/khangman/khangmanrc</filename>.
-</para>
-<para>
-The English language (default) and the user language from his i18n package(s) (if available) are stored in <filename class="directory">$KDEDIR/share/apps/khangman</filename>.
-</para>
-<para>
-In the configuration file, stored for each user in his <filename>~/.kde/share/config/khangmanrc</filename> are saved all the game settings such as the background, last level played, ... plus the files that were downloaded from the KNewStuff dialog.
-</para>
-</sect1>
-<sect1 id="planned-features">
-<title>Planned Features for &ksimon;</title>
-<para>
-A planned feature is of course to have more language data and also hints in every language. You can help for this in your own language if it is not done yet. Please contact me if you want to help with this, it's just a matter of translating the English words to your language (see <link linkend="changing-words">How to add words in a new language for the game</link>).
-</para>
-<para>
-What can also be done is to use other kvtml files like the ones that are on the
-KDE-Edu website to play &ksimon;. For example, imagine you can play the
-capitals of the world, the hint will tell you the country and you have to guess
-the capital. Or learn words in another language, the hint is the word in your
-language, the word to guess is the translation in the new language.
-</para>
-</sect1>
-</chapter>
-
-<chapter id="faq">
-<title>Questions and Answers</title>
-
-&reporting.bugs;
-&updating.documentation;
-
-<qandaset id="faqlist">
-<qandaentry>
-<question>
-<para>I have an error message telling me the pictures cannot be found.</para>
-</question>
-<answer>
-<para>The game installs by default in <filename
-class="directory">/usr/local/kde</filename> so add <filename
-class="directory">/usr/local/kde/bin</filename> to your path and set
-the <envar>KDEDIR</envar> variable to <filename
-class="directory">/usr/local/kde</filename> before running the
-game. An easy way is to configure &ksimon; with the option
-<option>--prefix</option>=$<envar>KDEDIR</envar> where
-$<envar>KDEDIR</envar> is where the rest of &kde; is installed.  This
-could vary widely, depending on the distribution and operating system
-you.</para>
-</answer>
-</qandaentry>
-<qandaentry>
-<question>
-<para>&ksimon; does not start correctly after I upgraded to one of
-the &kde; 3.3 versions</para>
-</question>
-<answer>
-<para>
-There might be a problem due to the change of the configuration file. Please remove the <filename>khangmanrc</filename> file in your <filename class="directory">$HOME/.kde/share/config</filename> folder.
-</para>
-</answer>
-</qandaentry>
-</qandaset>
-</chapter>
-
 <chapter id="credits">
 
 <title>Credits and License</title>
@@ -786,97 +616,16 @@ There might be a problem due to the change of the configuration file. Please rem
 &ksimon;
 </para>
 <para>
-Program copyright 2001-2004 Anne-Marie Mahfouf <email>annma AT kde DOT org</email>
+Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email>
 </para>
 <para>
 Contributors:
 <itemizedlist>
 <listitem><para>Hangman graphics: Renaud Blanchard
 <email>kisukuma AT chez DOT com</email></para> </listitem>
-<listitem><para>Sounds: Ludovic Grossard
-<email>ludovic.grossard AT libertysurf DOT fr</email></para> </listitem>
-<listitem><para>Blue theme, icons and code: Primoz Anzur
-<email>zerokode AT yahoo DOT com</email></para> </listitem>
-<listitem><para>Swedish data files, coding help, transparent pictures and i18n fixes: Stefan AsserhÃ¤ll
-<email>stefan DOT asserhall AT telia DOT com
-</email></para> </listitem>
-<listitem><para>Nature theme: Joe Bolin
-<email>jbolin AT users DOT sourceforge DOT net</email></para> </listitem>
-<listitem><para>Softer Hangman Pictures: Matt Howe
-<email>mdhowe AT bigfoot DOT com</email></para> </listitem>
-<listitem><para>Spanish data files: eXParTaKus
-<email>expartakus AT expartakus DOT com
-</email></para> </listitem>
-<listitem><para>Spanish data hints: Rafael Beccar
-<email>rafael DOT beccar AT kdemail DOT net
-</email></para> </listitem>
-<listitem><para>Danish data files: Erik Kjaer Pedersen
-<email>erik AT mpim-bonn DOT mpg DOT de
-</email></para> </listitem>
-<listitem><para>Finnish data files: Niko Lewman
-<email>niko DOT lewman AT edu DOT hel DOT fi
-</email></para> </listitem>
-<listitem><para>Brazilian Portuguese data files: JoÃ£o SebastiÃ£o de Oliveira Bueno
-<email>gwidion AT mpc DOT com DOT br
-</email></para> </listitem>
-<listitem><para>Catalan data files: Antoni Bella
-<email>bella5 AT teleline DOT es
-</email></para> </listitem>
-<listitem><para>Italian data files: Giovanni Venturi
-<email>jumpyj AT tiscali DOT it
-</email></para> </listitem>
-<listitem><para>Dutch data files: Rinse
-<email>rinse AT kde DOT nl
-</email></para> </listitem>
-<listitem><para>Portuguese data files: Pedro Morais
-<email>morais AT kde DOT org
-</email></para> </listitem>
-<listitem><para>Serbian (Cyrillic and Latin) data files: Chusslove Illich
-<email>chaslav AT sezampro DOT yu
-</email></para> </listitem>
-<listitem><para>Slovenian data files: Jure Repinc
-<email>jlp AT holodeck1 DOT com
-</email></para> </listitem>
-<listitem><para>Czech data files: Luk&aacute;&scaron; Tinkl
-<email>lukas AT kde DOT org
-</email></para> </listitem>
-<listitem><para>Tajik data files: Roger Kovacs
-<email>rkovacs AT khujand DOT org
-</email></para> </listitem>
-<listitem><para>Norwegian (Bokm&#229;l) data files: Torger &#197;ge Sinnes
-<email>torg-a-s AT online DOT no
-</email></para> </listitem>
-<listitem><para>Hungarian data files: Tamas Szanto
-<email>tszanto AT mol DOT hu
-</email></para> </listitem>
-<listitem><para>Norwegian (Nynorsk) data files: Gaute Hvoslef Kvalnes
-<email>gaute AT verdsveven DOT com
-</email></para> </listitem>
-<listitem><para>Turkish data files: Mehmet &Ouml;zel
-<email>mehmet_ozel2003 AT hotmail DOT com
-</email></para> </listitem>
-<listitem><para>Bulgarian data files: Radostin Radnev
-      <email>radnev AT yahoo DOT com
-</email></para> </listitem>
-<listitem><para>Irish (Gaelic) data files: Kevin Patrick Scannell
-    <email>scannell AT slu DOT edu
-</email></para> </listitem>
-
-<listitem><para>Coding help: Robert Gogolok
-<email>robertgogolok AT gmx DOT de</email></para> </listitem>
-<listitem><para>Coding help: Benjamin Meyer
-<email>ben AT meyerhome DOT net</email></para> </listitem>
-<listitem><para>Code fixes: Lubos Lun&agrave;k
-<email>l.lunak AT kde DOT org</email></para> </listitem>
-<listitem><para>Code fixes: Albert Astals Cid
-<email>tsdgeos AT terra DOT es</email></para> </listitem>
-<listitem><para>Usability study: Celeste Paul
-<email>seele AT obso1337 DOT org</email></para> </listitem>
-</itemizedlist>
-</para>
 
 <para>
-Documentation copyright 2001-2004 Anne-Marie Mahfouf <email>annma AT kde DOT org</email>
+Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
 </para>
 
 
@@ -908,9 +657,11 @@ Documentation copyright 2001-2004 Anne-Marie Mahfouf <email>annma AT kde DOT org
 <!--
 Local Variables:
 mode: sgml
-sgml-minimize-attributes: nil
-sgml-general-insert-case: lower
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
 sgml-indent-step:0
 sgml-indent-data:nil
 End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
 -->
