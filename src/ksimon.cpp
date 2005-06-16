@@ -168,12 +168,6 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 	}
 	else
 	{
-		if (e -> state() != Qt::ControlButton && e -> stateAfter() == Qt::ControlButton)
-		{
-			// TODO only let do key assigning in some stages
-			m_showKeys = true;
-			update();
-		}
 		if (e -> key() == m_buttons[0] -> key()) pressedBlue();
 		else if (e -> key() == m_buttons[1] -> key()) pressedYellow();
 		else if (e -> key() == m_buttons[2] -> key()) pressedRed();
@@ -187,7 +181,7 @@ void KSimon::keyReleaseEvent(QKeyEvent *e)
 	
 	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton)
 	{
-		m_showKeys = false;
+		m_showKeys = !m_showKeys;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
 		update();
 	}
