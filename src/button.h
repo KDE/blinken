@@ -18,28 +18,25 @@ class KAction;
 class KActionCollection;
 class KShortcut;
 
-class button : public QObject
+class button
 {
-Q_OBJECT
 	public:
-		button(simonGame::color c, KActionCollection *ac);
+		button(simonGame::color c);
 		~button();
 	
-		void setShortcut(const KShortcut &key);
+		void setShortcut(int key);
 		QString shortcut() const;
+		int key() const;
 		void setSelected(bool b);
 		bool selected() const;
 		QPixmap *pixmap() const;
-	
-	signals:
-		void pressed();
 	
 	private:
 		QString getColorString() const;
 		
 		QPixmap *m_highlighted;
 		bool m_selected;
-		KAction *m_action;
+		int m_key;
 		simonGame::color m_color;
 };
 

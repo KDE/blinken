@@ -11,7 +11,6 @@
 #define KSIMON_H
 
 #include <qwidget.h>
-#include <kxmlguiclient.h>
 
 #include "simongame.h"
 
@@ -24,7 +23,7 @@ class artsPlayer;
 class button;
 class highScoreDialog;
 
-class KSimon : public QWidget, public KXMLGUIClient
+class KSimon : public QWidget
 {
 Q_OBJECT
 	public:

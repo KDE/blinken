@@ -15,29 +15,28 @@
 
 #include "button.h"
 
-button::button(simonGame::color c, KActionCollection *ac) : m_selected(false), m_color(c)
+button::button(simonGame::color c) : m_selected(false), m_color(c)
 {
 	KConfig *kc = kapp->config();
-	int key = 0;
 	QString cs = getColorString();
 	QString pixmap = QString("images/%1h.png").arg(cs);
 	
 	switch (c)
 	{
 		case simonGame::blue:
-			key = kc->readNumEntry(cs, Qt::Key_3);
+			m_key = kc->readNumEntry(cs, Qt::Key_3);
 		break;
 		
 		case simonGame::yellow:
-			key = kc->readNumEntry(cs, Qt::Key_1);
+			m_key = kc->readNumEntry(cs, Qt::Key_1);
 		break;
 		
 		case simonGame::red:
-			key = kc->readNumEntry(cs, Qt::Key_2);
+			m_key = kc->readNumEntry(cs, Qt::Key_2);
 		break;
 		
 		case simonGame::green:
-			key = kc->readNumEntry(cs, Qt::Key_4);
+			m_key = kc->readNumEntry(cs, Qt::Key_4);
 		break;
 		
 		default:
@@ -46,7 +45,6 @@ button::button(simonGame::color c, KActionCollection *ac) : m_selected(false), m
 	}
 	
 	m_highlighted = new QPixmap(locate("appdata", pixmap));
-	m_action = new KAction(QString::null, key, this, SIGNAL(pressed()), ac, cs);
 }
 
 button::~button()
@@ -54,9 +52,9 @@ button::~button()
 	delete m_highlighted;
 }
 
-void button::setShortcut(const KShortcut &key)
+void button::setShortcut(int key)
 {
-	m_action -> setShortcut(key);
+	m_key = key;
 	m_selected = false;
 	
 	KConfig *kc = kapp->config();
@@ -66,7 +64,12 @@ void button::setShortcut(const KShortcut &key)
 
 QString button::shortcut() const
 {
-	return m_action -> shortcut().toString();
+	return KShortcut(m_key).toString();
+}
+
+int button::key() const
+{
+	return m_key;
 }
 
 void button::setSelected(bool b)

@@ -33,12 +33,10 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	
-	actionCollection()->setWidget(this);
-	
-	m_buttons[0] = new button(simonGame::blue, actionCollection());
-	m_buttons[1] = new button(simonGame::yellow, actionCollection());
-	m_buttons[2] = new button(simonGame::red, actionCollection());
-	m_buttons[3] = new button(simonGame::green, actionCollection());
+	m_buttons[0] = new button(simonGame::blue);
+	m_buttons[1] = new button(simonGame::yellow);
+	m_buttons[2] = new button(simonGame::red);
+	m_buttons[3] = new button(simonGame::green);
 	
 	m_highscore = new QPixmap(locate("appdata", "images/highscore.png"));
 	m_highscoreHover = new QPixmap(locate("appdata", "images/highscore_hover.png"));
@@ -69,11 +67,6 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
-	
-	connect(m_buttons[0], SIGNAL(pressed()), this, SLOT(pressedBlue()));
-	connect(m_buttons[1], SIGNAL(pressed()), this, SLOT(pressedYellow()));
-	connect(m_buttons[2], SIGNAL(pressed()), this, SLOT(pressedRed()));
-	connect(m_buttons[3], SIGNAL(pressed()), this, SLOT(pressedGreen()));
 	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 	
@@ -145,6 +138,8 @@ void KSimon::paintEvent(QPaintEvent *)
 
 void KSimon::keyPressEvent(QKeyEvent *e)
 {
+	if (e -> isAutoRepeat()) return;
+	
 	if (m_showKeys)
 	{
 		int i = 0;
@@ -171,19 +166,25 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 			}
 		}
 	}
-	else if (e -> stateAfter() == Qt::ControlButton)
+	else
 	{
-		// TODO only let do key assigning in some stages
-		if (!m_showKeys)
+		if (e -> state() != Qt::ControlButton && e -> stateAfter() == Qt::ControlButton)
 		{
+			// TODO only let do key assigning in some stages
 			m_showKeys = true;
 			update();
 		}
+		if (e -> key() == m_buttons[0] -> key()) pressedBlue();
+		else if (e -> key() == m_buttons[1] -> key()) pressedYellow();
+		else if (e -> key() == m_buttons[2] -> key()) pressedRed();
+		else if (e -> key() == m_buttons[3] -> key()) pressedGreen();
 	}
 }
 
 void KSimon::keyReleaseEvent(QKeyEvent *e)
 {
+	if (e -> isAutoRepeat()) return;
+	
 	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton)
 	{
 		m_showKeys = false;
