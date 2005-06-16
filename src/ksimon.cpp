@@ -23,18 +23,22 @@
 #include <kstandarddirs.h>
 
 #include "ksimon.h"
+#include "button.h"
 #include "counter.h"
 #include "fontutils.h"
 #include "number.h"
 #include "highscoredialog.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_showKeys(false), m_yellowClicked(false), m_redClicked(false), m_greenClicked(false), m_blueClicked(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
-	m_blueh = new QPixmap(locate("appdata", "images/blueh.png"));
-	m_yellowh = new QPixmap(locate("appdata", "images/yellowh.png"));
-	m_redh = new QPixmap(locate("appdata", "images/redh.png"));
-	m_greenh = new QPixmap(locate("appdata", "images/greenh.png"));
+	
+	actionCollection()->setWidget(this);
+	
+	m_buttons[0] = new button(simonGame::blue, actionCollection());
+	m_buttons[1] = new button(simonGame::yellow, actionCollection());
+	m_buttons[2] = new button(simonGame::red, actionCollection());
+	m_buttons[3] = new button(simonGame::green, actionCollection());
 	
 	m_highscore = new QPixmap(locate("appdata", "images/highscore.png"));
 	m_highscoreHover = new QPixmap(locate("appdata", "images/highscore_hover.png"));
@@ -66,14 +70,10 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
 	
-	actionCollection()->setWidget(this);
-	
-	KConfig *kc = kapp->config();
-	
-	m_yellowAction = new KAction(QString::null, kc->readNumEntry("yellow", Qt::Key_1), this, SLOT(pressedYellow()), actionCollection(), "yellow");
-	m_redAction = new KAction(QString::null, kc->readNumEntry("red", Qt::Key_2), this, SLOT(pressedRed()), actionCollection(), "red");
-	m_greenAction = new KAction(QString::null, kc->readNumEntry("green", Qt::Key_4), this, SLOT(pressedGreen()), actionCollection(), "green");
-	m_blueAction = new KAction(QString::null, kc->readNumEntry("blue", Qt::Key_3), this, SLOT(pressedBlue()), actionCollection(), "blue");
+	connect(m_buttons[0], SIGNAL(pressed()), this, SLOT(pressedBlue()));
+	connect(m_buttons[1], SIGNAL(pressed()), this, SLOT(pressedYellow()));
+	connect(m_buttons[2], SIGNAL(pressed()), this, SLOT(pressedRed()));
+	connect(m_buttons[3], SIGNAL(pressed()), this, SLOT(pressedGreen()));
 	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 	
@@ -83,10 +83,7 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 KSimon::~KSimon()
 {
 	delete m_back;
-	delete m_blueh;
-	delete m_greenh;
-	delete m_redh;
-	delete m_yellowh;
+	for (int i = 0; i < 4; i++) delete m_buttons[i];
 	delete m_highscore;
 	delete m_highscoreHover;
 	delete m_quit;
@@ -126,42 +123,18 @@ void KSimon::paintEvent(QPaintEvent *)
 	
 	if (m_showKeys)
 	{
-		drawText(p, m_yellowAction->shortcut().toString(), QPoint(115, 155), true, 20, 5, 0, m_yellowClicked, false);
-		drawText(p, m_redAction->shortcut().toString(), QPoint(520, 155), true, 20, 5, 0, m_redClicked, false);
-		drawText(p, m_greenAction->shortcut().toString(), QPoint(520, 285), true, 20, 5, 0, m_greenClicked, false);
-		drawText(p, m_blueAction->shortcut().toString(), QPoint(115, 285), true, 20, 5, 0, m_blueClicked, false);
+		drawText(p, m_buttons[0]->shortcut(), QPoint(115, 285), true, 20, 5, 0, m_buttons[0]->selected(), false);
+		drawText(p, m_buttons[1]->shortcut(), QPoint(115, 155), true, 20, 5, 0, m_buttons[1]->selected(), false);
+		drawText(p, m_buttons[2]->shortcut(), QPoint(520, 155), true, 20, 5, 0, m_buttons[2]->selected(), false);
+		drawText(p, m_buttons[3]->shortcut(), QPoint(520, 285), true, 20, 5, 0, m_buttons[3]->selected(), false);
 	}
 	
 	drawScoreAndCounter(p);
 	
-	switch(m_highlighted)
-	{
-		case simonGame::none:
-		break;
-		
-		case simonGame::blue:
-			p.drawPixmap(14, 225, *m_blueh);
-		break;
-		
-		case simonGame::yellow:
-			p.drawPixmap(14, 16, *m_yellowh);
-		break;
-		
-		case simonGame::red:
-			p.drawPixmap(322, 16, *m_redh);
-		break;
-		
-		case simonGame::green:
-			p.drawPixmap(322, 225, *m_greenh);
-		break;
-		
-		case simonGame::all:
-			p.drawPixmap(14, 225, *m_blueh);
-			p.drawPixmap(14, 16, *m_yellowh);
-			p.drawPixmap(322, 16, *m_redh);
-			p.drawPixmap(322, 225, *m_greenh);
-		break;
-	}
+	if (m_highlighted & simonGame::blue) p.drawPixmap(14, 225, *m_buttons[0] -> pixmap());
+	if (m_highlighted & simonGame::yellow) p.drawPixmap(14, 16, *m_buttons[1] -> pixmap());
+	if (m_highlighted & simonGame::red) p.drawPixmap(322, 16, *m_buttons[2] -> pixmap());
+	if (m_highlighted & simonGame::green) p.drawPixmap(322, 225, *m_buttons[3] -> pixmap());
 	
 	drawStatusText(p);
 	
@@ -174,68 +147,38 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 {
 	if (m_showKeys)
 	{
-		if (m_yellowClicked)
+		int i = 0;
+		while (i < 4 && !m_buttons[i] -> selected()) i++;
+	
+		if (i < 4)
 		{
-			if (e -> key() != m_redAction -> shortcut().keyCodeQt() && 
-			    e -> key() != m_greenAction -> shortcut().keyCodeQt() &&
-			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
+			KShortcut ks(e -> key());
+			if (!ks.toString().isEmpty())
 			{
-				m_yellowAction -> setShortcut(e -> key());
-				m_yellowClicked = false;
-				update();
-				
-				KConfig *kc = kapp->config();
-				kc->writeEntry("yellow", m_yellowAction -> shortcut().keyCodeQt());
-				kc->sync();
-			}
-		}
-		else if (m_redClicked)
-		{
-			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
-			    e -> key() != m_greenAction -> shortcut().keyCodeQt() &&
-			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
-			{
-				m_redAction -> setShortcut(e -> key());
-				m_redClicked = false;
-				update();
-				KConfig *kc = kapp->config();
-				kc->writeEntry("red", m_redAction -> shortcut().keyCodeQt());
-				kc->sync();
-			}
-		}
-		else if (m_greenClicked)
-		{
-			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
-			    e -> key() != m_redAction -> shortcut().keyCodeQt() &&
-			    e -> key() != m_blueAction -> shortcut().keyCodeQt())
-			{
-				m_greenAction -> setShortcut(e -> key());
-				m_greenClicked = false;
-				update();
-				KConfig *kc = kapp->config();
-				kc->writeEntry("green", m_greenAction -> shortcut().keyCodeQt());
-				kc->sync();
-			}
-		}
-		else if (m_blueClicked)
-		{
-			if (e -> key() != m_yellowAction -> shortcut().keyCodeQt() && 
-			    e -> key() != m_redAction -> shortcut().keyCodeQt() &&
-			    e -> key() != m_greenAction -> shortcut().keyCodeQt())
-			{
-				m_blueAction -> setShortcut(e -> key());
-				m_blueClicked = false;
-				update();
-				KConfig *kc = kapp->config();
-				kc->writeEntry("blue", m_blueAction -> shortcut().keyCodeQt());
-				kc->sync();
+				bool different = true;
+				int j = 0;
+				while (different && j < 4)
+				{
+					different = (ks.toString() != m_buttons[j] -> shortcut());
+					j++;
+				}
+			
+				if (different)
+				{
+					m_buttons[i] -> setShortcut(ks);
+					update();
+				}
 			}
 		}
 	}
 	else if (e -> stateAfter() == Qt::ControlButton)
 	{
-		m_showKeys = true;
-		update();
+		// TODO only let do key assigning in some stages
+		if (!m_showKeys)
+		{
+			m_showKeys = true;
+			update();
+		}
 	}
 }
 
@@ -244,10 +187,7 @@ void KSimon::keyReleaseEvent(QKeyEvent *e)
 	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton)
 	{
 		m_showKeys = false;
-		m_yellowClicked = false;
-		m_redClicked = false;
-		m_greenClicked = false;
-		m_blueClicked = false;
+		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
 		update();
 	}
 }
@@ -307,70 +247,22 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 			// Outside the circle and inside the ellipse
 			if (x > 6 && y > 6)
 			{
-				if (m_showKeys)
-				{
-					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-					{
-						m_greenClicked = true;
-						update();
-					}
-					else if (m_greenClicked)
-					{
-						m_greenClicked = false;
-						update();
-					}
-				}
+				if (m_showKeys) selectButton(3);
 				else pressedGreen();
 			}
 			else if (x < -6 && y > 6)
 			{
-				if (m_showKeys)
-				{
-					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-					{
-						m_blueClicked = true;
-						update();
-					}
-					else if (m_blueClicked)
-					{
-						m_blueClicked = false;
-						update();
-					}
-				}
+				if (m_showKeys) selectButton(0);
 				else pressedBlue();
 			}
 			else if (x < -6 && y < -6)
 			{
-				if (m_showKeys)
-				{
-					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-					{
-						m_yellowClicked = true;
-						update();
-					}
-					else if (m_yellowClicked) 
-					{
-						m_yellowClicked = false;
-						update();
-					}
-				}
+				if (m_showKeys) selectButton(1);
 				else pressedYellow();
 			}
 			else if (x > 6 && y < -6)
 			{
-				if (m_showKeys)
-				{
-					if (!m_yellowClicked && !m_redClicked && !m_greenClicked && !m_blueClicked)
-					{
-						m_redClicked = true;
-						update();
-					}
-					else if (m_redClicked)
-					{
-						m_redClicked = false;
-						update();
-					}
-				}
+				if (m_showKeys) selectButton(2);
 				else pressedRed();
 			}
 		}
@@ -439,6 +331,31 @@ void KSimon::pressedBlue()
 	{
 		highlight(simonGame::blue, true);
 		m_game.clicked(simonGame::blue);
+	}
+}
+
+void KSimon::selectButton(int button)
+{
+	int i = 0;
+	bool selected = false;
+	while (i < 4 && !selected)
+	{
+		selected = m_buttons[i] -> selected();
+		if (!selected) i++;
+	}
+	
+	if (selected)
+	{
+		if (i == button)
+		{
+			m_buttons[button] -> setSelected(false);
+			update();
+		}
+	}
+	else
+	{
+		m_buttons[button] -> setSelected(true);
+		update();
 	}
 }
 
@@ -521,7 +438,7 @@ void KSimon::drawStatusText(QPainter &p)
 	else if (m_overLevels[0]) p.drawText(0, 0, i18n("2nd Level"));
 	else if (m_overLevels[1]) p.drawText(0, 0, i18n("1st Level"));
 	else if (m_overLevels[2]) p.drawText(0, 0, i18n("Random Level"));
-	else if (m_yellowClicked || m_redClicked || m_greenClicked || m_blueClicked) p.drawText(0, 0, i18n("Press the key for this button"));
+	else if (m_buttons[0]->selected() || m_buttons[1]->selected() || m_buttons[2]->selected() || m_buttons[3]->selected()) p.drawText(0, 0, i18n("Press the key for this button"));
 	else if (m_showKeys) p.drawText(0, 0, i18n("Click any button to change its key"));
 	else
 	{
