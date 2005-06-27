@@ -147,21 +147,29 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 	
 		if (i < 4)
 		{
-			KShortcut ks(e -> key());
-			if (!ks.toString().isEmpty())
+			if (e -> key() == Qt::Key_Escape)
 			{
-				bool different = true;
-				int j = 0;
-				while (different && j < 4)
+				m_buttons[i] -> setSelected(false);
+				update();
+			}
+			else
+			{
+				KShortcut ks(e -> key());
+				if (!ks.toString().isEmpty())
 				{
-					different = (ks.toString() != m_buttons[j] -> shortcut());
-					j++;
-				}
-			
-				if (different)
-				{
-					m_buttons[i] -> setShortcut(ks);
-					update();
+					bool different = true;
+					int j = 0;
+					while (different && j < 4)
+					{
+						different = (ks.toString() != m_buttons[j] -> shortcut());
+						j++;
+					}
+				
+					if (different)
+					{
+						m_buttons[i] -> setShortcut(ks);
+						update();
+					}
 				}
 			}
 		}
