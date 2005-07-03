@@ -46,8 +46,8 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	m_menuHover = new QPixmap(locate("appdata", "images/menu_hover.png"));
 	m_mark = new QPixmap(locate("appdata", "images/mark.png"));
 	m_highscoreRect = QRect(10, 10, 72, 72);
-	m_quitRect = QRect(560, 10, 72, 73);
-	m_menuRect = QRect(560, 443, 72, 72);
+	m_quitRect = QRect(562, 10, 72, 73);
+	m_menuRect = QRect(562, 443, 72, 72);
 	m_aboutKDERect = QRect(452, 461, 54, 54);
 	m_aboutKSimonRect = QRect(506, 461, 54, 54);
 	m_manualRect = QRect(578, 389, 54, 54);
@@ -372,11 +372,11 @@ void KSimon::drawMenuQuit(QPainter &p)
 	if (!m_overHighscore) p.drawPixmap(10, 10, *m_highscore);
 	else p.drawPixmap(10, 10, *m_highscoreHover);
 	
-	if (!m_overQuit) p.drawPixmap(560, 10, *m_quit);
-	else p.drawPixmap(560, 10, *m_quitHover);
+	if (!m_overQuit) p.drawPixmap(562, 10, *m_quit);
+	else p.drawPixmap(562, 10, *m_quitHover);
 	
-	if (!m_overMenu) p.drawPixmap(560, 443, *m_menu);
-	else p.drawPixmap(452, 389, *m_menuHover);
+	if (!m_overMenu) p.drawPixmap(562, 443, *m_menu);
+	else p.drawPixmap(454, 389, *m_menuHover);
 	
 	if (m_overAboutKDE) p.drawPixmap(462, 433, *m_mark);
 	else if (m_overAboutKSimon) p.drawPixmap(516, 433, *m_mark);
