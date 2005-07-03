@@ -424,65 +424,67 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 
 void KSimon::drawStatusText(QPainter &p)
 {
-	QFont f = QFont("Steve");
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, 25));
-	p.setFont(f);
-	
 	p.translate(25, 505);
 	p.rotate(-3.29);
 	p.setPen(blue);
 
 	QString restartText = i18n("Restart the game");
-	if (m_overQuit) p.drawText(0, 0, i18n("Quit KSimon"));
-	else if (m_overHighscore) p.drawText(0, 0, i18n("View HighScore Table"));
-	else if (m_overAboutKSimon) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&"));
-	else if (m_overAboutKDE) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&"));
-	else if (m_overManual) p.drawText(0, 0, m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&"));
-	else if (m_overLevels[0]) p.drawText(0, 0, i18n("2nd Level"));
-	else if (m_overLevels[1]) p.drawText(0, 0, i18n("1st Level"));
-	else if (m_overLevels[2]) p.drawText(0, 0, i18n("Random Level"));
-	else if (m_buttons[0]->selected() || m_buttons[1]->selected() || m_buttons[2]->selected() || m_buttons[3]->selected()) p.drawText(0, 0, i18n("Press the key for this button"));
-	else if (m_showKeys) p.drawText(0, 0, i18n("Click any button to change its key"));
+	QString text;
+	if (m_overQuit) text = i18n("Quit KSimon");
+	else if (m_overHighscore) text = i18n("View HighScore Table");
+	else if (m_overAboutKSimon) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
+	else if (m_overAboutKDE) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&");
+	else if (m_overManual) text = m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&");
+	else if (m_overLevels[0]) text = i18n("2nd Level");
+	else if (m_overLevels[1]) text = i18n("1st Level");
+	else if (m_overLevels[2]) text = i18n("Random Level");
+	else if (m_buttons[0]->selected() || m_buttons[1]->selected() || m_buttons[2]->selected() || m_buttons[3]->selected()) text = i18n("Press the key for this button");
+	else if (m_showKeys) text = i18n("Click any button to change its key");
 	else
 	{
 		switch (m_game.phase())
 		{
 			case simonGame::starting:
-				p.drawText(0, 0, i18n("Press Start to begin!"));
+				text = i18n("Press Start to begin!");
 			break;
 			
 			case simonGame::choosingLevel:
-				p.drawText(0, 0, i18n("Set the Difficulty Level..."));
+				text = i18n("Set the Difficulty Level...");
 			break;
 			
 			case simonGame::waiting3:
-				if (m_overCentralText) p.drawText(0, 0, restartText);
-				else p.drawText(0, 0, i18n("Next sequence in 3..."));
+				if (m_overCentralText) text = restartText;
+				else text = i18n("Next sequence in 3...");
 			break;
 			
 			case simonGame::waiting2:
-				if (m_overCentralText) p.drawText(0, 0, restartText);
-				else if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2..."));
-				else p.drawText(0, 0, i18n("Next sequence in 2..."));
+				if (m_overCentralText) text = restartText;
+				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2...");
+				else text = i18n("Next sequence in 2...");
 			break;
 		
 			case simonGame::waiting1:
-				if (m_overCentralText) p.drawText(0, 0, restartText);
-				else if (m_game.level() == 1) p.drawText(0, 0, i18n("Next sequence in 3, 2, 1..."));
-				else p.drawText(0, 0, i18n("Next sequence in 2, 1..."));
+				if (m_overCentralText) text = restartText;
+				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2, 1...");
+				else text = i18n("Next sequence in 2, 1...");
 			break;
 			
 			case simonGame::learningTheSequence:
-				if (m_overCentralText) p.drawText(0, 0, restartText);
-				else p.drawText(0, 0, i18n("Remember this sequence..."));
+				if (m_overCentralText) text = restartText;
+				else text = i18n("Remember this sequence...");
 			break;
 			
 			case simonGame::typingTheSequence:
-				if (m_overCentralText) p.drawText(0, 0, restartText);
-				else p.drawText(0, 0, i18n("Repeat the sequence!"));
+				if (m_overCentralText) text = restartText;
+				else text = i18n("Repeat the sequence!");
 			break;
 		}
 	}
+	
+	QFont f = QFont("Steve");
+	f.setPointSize(fontUtils::fontSize(p, text, 380, 25));
+	p.setFont(f);
+	p.drawText(0, 0, text);
 }
 
 void KSimon::drawLevel(QPainter &p)
