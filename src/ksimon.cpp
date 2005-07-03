@@ -95,6 +95,10 @@ void KSimon::paintEvent(QPaintEvent *)
 	p.drawPixmap(0, 0, *m_back);
 	
 	drawMenuQuit(p);
+	QFont f1, f = p.font();
+	f1 = f;
+	f.setBold(true);
+	p.setFont(f);
 	switch (m_game.phase())
 	{
 		case simonGame::starting:
@@ -113,6 +117,7 @@ void KSimon::paintEvent(QPaintEvent *)
 			drawText(p, i18n("Restart"), QPoint(318, 316), true, 10, 5, &m_centralTextRect, m_overCentralText, false);
 		break;
 	}
+	p.setFont(f1);
 	
 	if (m_showKeys)
 	{
