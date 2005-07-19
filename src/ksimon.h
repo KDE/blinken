@@ -60,9 +60,9 @@ Q_OBJECT
 		
 		button *m_buttons[4];
 		QPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
-		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, 	m_overAboutKSimon, m_overManual, m_overLevels[3];
+		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, 	m_overAboutKSimon, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutKSimonRect, m_manualRect, m_levelsRect[3];
+		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutKSimonRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// key setting handling

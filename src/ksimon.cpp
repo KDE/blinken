@@ -29,7 +29,7 @@
 #include "number.h"
 #include "highscoredialog.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	
@@ -49,8 +49,10 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	m_quitRect = QRect(562, 10, 72, 73);
 	m_menuRect = QRect(562, 443, 72, 72);
 	m_aboutKDERect = QRect(452, 461, 54, 54);
-	m_aboutKSimonRect = QRect(506, 461, 54, 54);
+	m_aboutKSimonRect = QRect(506, 461, 56, 54);
 	m_manualRect = QRect(578, 389, 54, 54);
+	m_centralLettersRect = QRect(190, 190, 255, 80);
+	m_counterRect = QRect(268, 110, 102, 52);
 	
 	m_fillColor = QColor(40, 40, 40);
 	m_fontColor = QColor(126, 126, 126);
@@ -207,7 +209,7 @@ void KSimon::mouseMoveEvent(QMouseEvent *e)
 
 void KSimon::mousePressEvent(QMouseEvent *e)
 {
-	if (m_overHighscore)
+	if (m_overHighscore || m_overCounter)
 	{
 		highScoreDialog *hsd = new highScoreDialog(this);
 		hsd->showLevel(1);
@@ -215,7 +217,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		update();
 	}
 	else if (m_overQuit) kapp->quit();
-	else if (m_overAboutKSimon) m_helpMenu -> aboutApplication();
+	else if (m_overAboutKSimon || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
 	else if (m_game.phase() != simonGame::choosingLevel && m_overCentralText)
@@ -436,8 +438,8 @@ void KSimon::drawStatusText(QPainter &p)
 	QString restartText = i18n("Restart the game");
 	QString text;
 	if (m_overQuit) text = i18n("Quit KSimon");
-	else if (m_overHighscore) text = i18n("View HighScore Table");
-	else if (m_overAboutKSimon) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
+	else if (m_overHighscore || m_overCounter) text = i18n("View HighScore Table");
+	else if (m_overAboutKSimon || m_overCentralLetters) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
 	else if (m_overAboutKDE) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&");
 	else if (m_overManual) text = m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&");
 	else if (m_overLevels[0]) text = i18n("2nd Level");
@@ -618,6 +620,28 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 			m_overManual = false;
 			haveToUpdate = true;
 		}
+	}
+	
+	if (m_centralLettersRect.contains(p))
+	{
+		m_overCentralLetters = true;
+		haveToUpdate = true;
+	}
+	else if (m_overCentralLetters)
+	{
+		m_overCentralLetters = false;
+		haveToUpdate = true;
+	}
+	
+	if (m_counterRect.contains(p))
+	{
+		m_overCounter = true;
+		haveToUpdate = true;
+	}
+	else if (m_overCounter)
+	{
+		m_overCounter = false;
+		haveToUpdate = true;
 	}
 	
 	if (m_quitRect.contains(p))
