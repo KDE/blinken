@@ -15,6 +15,8 @@
 
 void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, QColor c1, QColor c2, QColor c3)
 {
+	p.save();
+	p.translate(45, 15);
 	p.setPen(QPen(Qt::black, 3));
 	p.setBrush(QColor(40, 40, 40));
 	if (drawTimer)
@@ -40,4 +42,16 @@ void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, QCol
 		p.fillRect(35, 6, 11, 9, c2);
 		p.fillRect(35, 18, 11, 9, c3);
 	}
+	p.restore();
+}
+
+int counter::width(bool drawTimer)
+{
+	if (drawTimer) return 100;
+	else return 73;
+}
+
+int counter::height()
+{
+	return 50;
 }

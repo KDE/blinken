@@ -395,7 +395,7 @@ void KSimon::drawMenuQuit(QPainter &p)
 void KSimon::drawScoreAndCounter(QPainter &p)
 {
 	QColor c1, c2, c3;
-	p.translate(313, 125);
+	p.translate(268, 110);
 	
 	switch (m_game.phase())
 	{
@@ -426,7 +426,7 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 	
 	counter::paint(p, m_game.phase() != simonGame::starting, m_game.score(), true, c1, c2, c3);
 	
-	p.translate(-313, -125);
+	p.translate(-268, -110);
 }
 
 void KSimon::drawStatusText(QPainter &p)

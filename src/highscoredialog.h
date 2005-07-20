@@ -13,9 +13,11 @@
 #include <qpair.h>
 #include <qvaluelist.h>
 
-#include <kdialog.h>
+#include <kdialogbase.h>
 
-class highScoreDialog : private KDialog
+class QTabWidget;
+
+class highScoreDialog : private KDialogBase
 {
 	public:
 		highScoreDialog(QWidget *parent);
@@ -24,18 +26,8 @@ class highScoreDialog : private KDialog
 		void addScore(int level, int score, const QString &name);
 		void showLevel(int level);
 	
-	protected:
-		void mouseMoveEvent(QMouseEvent *e);
-		void mousePressEvent(QMouseEvent *);
-		void paintEvent(QPaintEvent *);
-	
-	private:
-		void calcSize();
-	
-		int m_level;
-		bool m_overClose, m_overLevel1, m_overLevel2, m_overLevel3;
 		QValueList< QPair<int, QString> > m_scores[3];
-		QRect closeRect, level1Rect, level2Rect, level3Rect;
+		QTabWidget *m_tw;
 };
 
 #endif
