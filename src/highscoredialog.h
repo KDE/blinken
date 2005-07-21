@@ -15,7 +15,7 @@
 
 #include <kdialogbase.h>
 
-class QTabWidget;
+class myTabWidget;
 
 class highScoreDialog : private KDialogBase
 {
@@ -27,7 +27,7 @@ class highScoreDialog : private KDialogBase
 		void showLevel(int level);
 	
 		QValueList< QPair<int, QString> > m_scores[3];
-		QTabWidget *m_tw;
+		myTabWidget *m_tw;
 };
 
 #endif

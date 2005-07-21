@@ -9,6 +9,7 @@
 
 #include <qpainter.h>
 #include <qpixmap.h>
+#include <qtabbar.h>
 #include <qtabwidget.h>
 
 #include <kapplication.h>
@@ -29,7 +30,7 @@ class scoresWidget : public QWidget
 {
 	public:
 		scoresWidget(QWidget *parent, const QValueList< QPair<int, QString> > &scores);
-		void calcSize();
+		QSize calcSize();
 
 	protected:
 		void paintEvent(QPaintEvent *);
@@ -75,7 +76,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	bitBlt(this, 0, 0, &buf);
 }
 
-void scoresWidget::calcSize()
+QSize scoresWidget::calcSize()
 {
 	int mw, mh, lt;
 	QRect r;
@@ -99,16 +100,31 @@ void scoresWidget::calcSize()
 	mw = margin + counter::width(false) + 2 * smallMargin + lt + margin;
 	mh = margin * 2 + counter::height() * 5 + smallMargin * 4;
 	
-	setMinimumSize(mw, mh);
-	resize(mw, mh);
-	setMouseTracking(true);
+	QSize size(mw, mh);
+	setMinimumSize(size);
+	resize(size);
+	
+	return size;
 }
+
+/* myTabWidget */
+
+class myTabWidget : public QTabWidget
+{
+	public:
+		myTabWidget(QWidget *parent) : QTabWidget(parent) {}
+		
+		QSize tabBarSizeHint() const
+		{
+			return tabBar() -> sizeHint();
+		}
+};
 
 /* highScoreDialog */
 
 highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true, i18n("HighScores"), KDialogBase::Close)
 {
-	m_tw = new QTabWidget(this);
+	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
 	
 	KConfig *cfg = kapp -> config();
@@ -164,9 +180,15 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 
 void highScoreDialog::showLevel(int level)
 {
+	QSize max, aux;
 	m_tw -> setCurrentPage(level -1);
 	
-	for (int i = 0; i < 3; i++) static_cast<scoresWidget*>(m_tw -> page(i)) -> calcSize();
+	for (int i = 0; i < 3; i++)
+	{
+		aux = static_cast<scoresWidget*>(m_tw -> page(i)) -> calcSize();
+		max = max.expandedTo(aux);
+	}
+	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
 	
 	exec();
 	delete this;
