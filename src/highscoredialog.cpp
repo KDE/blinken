@@ -68,7 +68,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	{
 		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor());
 		p.setPen(black);
-		p.drawText(counter::width(false) + smallMargin, 30, (*it).second);
+		p.drawText(counter::width(false) + 2 * smallMargin, 30, (*it).second);
 		p.translate(0, counter::height() + smallMargin);
 	}
 	
@@ -96,7 +96,7 @@ void scoresWidget::calcSize()
 		}
 	}
 	
-	mw = margin + counter::width(false) + smallMargin + lt + margin;
+	mw = margin + counter::width(false) + 2 * smallMargin + lt + margin;
 	mh = margin * 2 + counter::height() * 5 + smallMargin * 4;
 	
 	setMinimumSize(mw, mh);
