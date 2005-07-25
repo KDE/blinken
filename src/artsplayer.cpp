@@ -9,36 +9,50 @@
 
 #include <qtimer.h>
 
+#include <config.h>
+
+#ifdef WITHOUT_ARTS
+#include <klocale.h>
+#include <kmessagebox.h>
+#endif
 #include <kstandarddirs.h>
 
 #include "artsplayer.h"
 
 artsPlayer::artsPlayer() : m_playobj(0)
 {
+	m_endChecker = new QTimer(this);
+	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
+	
+#ifndef WITHOUT_ARTS
 	m_dispatcher = new KArtsDispatcher;
 	m_server = new KArtsServer;
 	m_factory = new KDE::PlayObjectFactory(m_server->server());
-	
-	m_endChecker = new QTimer(this);
-	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
 	
 	m_allPath = locate("appdata","sounds/lose.wav");
 	m_greenPath = locate("appdata","sounds/1.wav");
 	m_redPath = locate("appdata","sounds/2.wav");
 	m_bluePath = locate("appdata","sounds/3.wav");
 	m_yellowPath = locate("appdata","sounds/4.wav");
+#else
+	KMessageBox::information(0, i18n("aRts was not found, therefore the sounds will be disabled."), i18n("Sounds disabled"), "infoaboutartsnotfound");
+#endif
 }
 
 artsPlayer::~artsPlayer()
 {
+#ifndef WITHOUT_ARTS
 	delete m_playobj;
 	delete m_factory;
 	delete m_server;
 	delete m_dispatcher;
+#endif
 }
 
 void artsPlayer::play(simonGame::color c, bool stopCurrent)
 {
+	int check;
+#ifndef WITHOUT_ARTS
 	if (m_playobj && m_playobj -> state() == Arts::posPlaying)
 	{
 		if (stopCurrent)
@@ -55,11 +69,19 @@ void artsPlayer::play(simonGame::color c, bool stopCurrent)
 		m_nextSounds.append(c);
 		play();
 	}
-	if (!m_endChecker -> isActive()) m_endChecker -> start(50);
+	check = 50;
+#else
+	//shut up gcc
+	(void)c;
+	(void)stopCurrent;
+	check = 250;
+#endif
+	if (!m_endChecker -> isActive()) m_endChecker -> start(check);
 }
 
 void artsPlayer::play()
 {
+#ifndef WITHOUT_ARTS
 	QString path;
 	simonGame::color c = m_nextSounds.first();
 	m_nextSounds.pop_front();
@@ -91,16 +113,22 @@ void artsPlayer::play()
 	delete m_playobj;
 	m_playobj = m_factory -> createPlayObject(path, true);
 	m_playobj -> play();
+#endif
 }
 
 void artsPlayer::checkEnded()
 {
+#ifndef WITHOUT_ARTS
 	if (m_playobj -> state() != Arts::posPlaying)
 	{
 		m_endChecker -> stop();
 		emit ended();
 		if (m_nextSounds.size() > 0) play();
 	}
+#else
+	m_endChecker -> stop();
+	emit ended();
+#endif
 }
 
 #include "artsplayer.moc"

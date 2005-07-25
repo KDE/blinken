@@ -10,10 +10,23 @@
 #ifndef ARTSPLAYER_H
 #define ARTSPLAYER_H
 
+#include <config.h>
+
+#ifdef WITHOUT_ARTS
+class KArtsDispatcher;
+class KArtsServer;
+
+namespace KDE
+{
+	class PlayObjectFactory;
+	class PlayObject;
+}
+#else
 #include <arts/kartsdispatcher.h>
 #include <arts/kartsserver.h>
 #include <arts/kplayobject.h>
 #include <arts/kplayobjectfactory.h>
+#endif
 
 #include <qvaluelist.h>
 
