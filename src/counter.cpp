@@ -13,7 +13,7 @@
 #include "counter.h"
 #include "number.h"
 
-void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, QColor c1, QColor c2, QColor c3)
+void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3)
 {
 	p.save();
 	p.translate(45, 15);
