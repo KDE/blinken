@@ -5,5 +5,7 @@ Exec=ksimon
 Icon=ksimon
 Type=Application
 Comment=A memory enhancement game
+Comment[et]=Mälu parandamise mäng
+Comment[pt]=Um programa de melhoria de memória
 Terminal=false
 Categories=Qt;KDE;Education;
