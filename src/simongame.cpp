@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include <stdlib.h> // for RAND_MAX
+
 #include <qtimer.h>
 
 #include <kapplication.h>
