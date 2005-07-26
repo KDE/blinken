@@ -21,8 +21,8 @@ bool fontChecker::checkInstalled(const QString &fontName, const QString &fontPat
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!fi.exactMatch())
 	{
-		KIO::NetAccess::copy(fontPath, "fonts:/Personal/", 0);
-		return false;
+		bool success = KIO::NetAccess::copy(fontPath, "fonts:/Personal/", 0);
+		return !success;
 	}
 	return true;
 }
