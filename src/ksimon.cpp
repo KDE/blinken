@@ -214,7 +214,6 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		highScoreDialog *hsd = new highScoreDialog(this);
 		hsd->showLevel(1);
 		m_updateButtonHighlighting = true;
-		update();
 	}
 	else if (m_overQuit) kapp->quit();
 	else if (m_overAboutKSimon || m_overCentralLetters) m_helpMenu -> aboutApplication();
@@ -701,6 +700,8 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		break;
 	}
 
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[0] || m_overLevels[0] || m_overCentralLetters || m_overCounter) setCursor(PointingHandCursor);
+	else setCursor(ArrowCursor);
 	if (haveToUpdate) update();
 }
 
