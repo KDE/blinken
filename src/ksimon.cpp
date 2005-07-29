@@ -240,41 +240,27 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		}
 	}
 	
-	double x, y, x2, y2;
-	x = e -> x() - 319;
-	y = e -> y() - 221.5;
-	x2 = x * x;
-	y2 = y * y;
-	if (x2 + y2 > 162.5 * 162.5)
+	QPoint p = e->pos();
+	p -= QPoint(319, 221);
+	if (insideGreen(p))
 	{
-		// Outside the circle
-		double x3, y3;
-		x3 = x2 / (301 * 301);
-		y3 = y2 / (201 * 201);
-		if (x3 + y3 < 1)
-		{
-			// Outside the circle and inside the ellipse
-			if (x > 6 && y > 6)
-			{
-				if (m_showKeys) selectButton(3);
-				else pressedGreen();
-			}
-			else if (x < -6 && y > 6)
-			{
-				if (m_showKeys) selectButton(0);
-				else pressedBlue();
-			}
-			else if (x < -6 && y < -6)
-			{
-				if (m_showKeys) selectButton(1);
-				else pressedYellow();
-			}
-			else if (x > 6 && y < -6)
-			{
-				if (m_showKeys) selectButton(2);
-				else pressedRed();
-			}
-		}
+		if (m_showKeys) selectButton(3);
+		else pressedGreen();
+	}
+	else if (insideBlue(p))
+	{
+		if (m_showKeys) selectButton(0);
+		else pressedBlue();
+	}
+	else if (insideYellow(p))
+	{
+		if (m_showKeys) selectButton(1);
+		else pressedYellow();
+	}
+	else if (insideRed(p))
+	{
+		if (m_showKeys) selectButton(2);
+		else pressedRed();
 	}
 }
 
@@ -299,7 +285,11 @@ void KSimon::highlight(simonGame::color c, bool unhighlight)
 	m_highlighted = c;
 	update();
 	if (unhighlight) m_unhighlighter -> start(250);
-	else if (c == simonGame::none) m_unhighlighter -> stop();
+	else if (c == simonGame::none)
+	{
+		m_unhighlighter -> stop();
+		updateCursor(mapFromGlobal(QCursor::pos()));
+	}
 }
 
 void KSimon::unhighlight()
@@ -366,6 +356,44 @@ void KSimon::selectButton(int button)
 		m_buttons[button] -> setSelected(true);
 		update();
 	}
+}
+
+bool KSimon::insideGreen(const QPoint &p) const
+{
+	return insideButtonsArea(p) && p.x() > 6 && p.y() > 6;
+}
+
+bool KSimon::insideBlue(const QPoint &p) const
+{
+	return insideButtonsArea(p) && p.x() < -6 && p.y() > 6;
+}
+
+bool KSimon::insideYellow(const QPoint &p) const
+{
+	return insideButtonsArea(p) && p.x() < -6 && p.y() < -6;
+}
+
+bool KSimon::insideRed(const QPoint &p) const
+{
+	return insideButtonsArea(p) && p.x() > 6 && p.y() < -6;
+}
+
+bool KSimon::insideButtonsArea(const QPoint &p) const
+{
+	double x, y, x2, y2;
+	x = (double)p.x();
+	y = (double)p.y();
+	x2 = x * x;
+	y2 = y * y;
+	if (x2 + y2 > 162.5 * 162.5)
+	{
+		// Outside the circle
+		double x3, y3;
+		x3 = x2 / (301 * 301);
+		y3 = y2 / (201 * 201);
+		if (x3 + y3 < 1) return true;
+	}
+	return false;
 }
 
 void KSimon::drawMenuQuit(QPainter &p)
@@ -700,9 +728,16 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		break;
 	}
 
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter) setCursor(PointingHandCursor);
-	else setCursor(ArrowCursor);
+	updateCursor(p);
 	if (haveToUpdate) update();
+}
+
+void KSimon::updateCursor(const QPoint &p)
+{
+	QPoint p2 = p - QPoint(319, 221);
+	
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2)))) setCursor(PointingHandCursor);
+	else setCursor(ArrowCursor);
 }
 
 #include "ksimon.moc"

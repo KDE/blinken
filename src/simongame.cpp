@@ -105,10 +105,10 @@ void simonGame::nextSound()
 	}
 	else
 	{
+		setPhase(typingTheSequence);
 		m_nextColor = m_sequence.begin();
 		emit highlight(none, false);
 		m_artsPlayer->disconnect();
-		setPhase(typingTheSequence);
 	}
 }
 

@@ -49,6 +49,12 @@ Q_OBJECT
 		
 	private:
 		void selectButton(int button);
+		bool insideGreen(const QPoint &p) const;
+		bool insideYellow(const QPoint &p) const;
+		bool insideRed(const QPoint &p) const;
+		bool insideBlue(const QPoint &p) const;
+		bool insideButtonsArea(const QPoint &p) const;
+		void updateCursor(const QPoint &p);
 	
 		void drawMenuQuit(QPainter &p);
 		void drawScoreAndCounter(QPainter &p);
