@@ -700,7 +700,7 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		break;
 	}
 
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[0] || m_overLevels[0] || m_overCentralLetters || m_overCounter) setCursor(PointingHandCursor);
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter) setCursor(PointingHandCursor);
 	else setCursor(ArrowCursor);
 	if (haveToUpdate) update();
 }
