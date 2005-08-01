@@ -15,18 +15,19 @@ int fontUtils::fontSize(QPainter &p, const QString &s1, int w, int h)
 {
 	int size;
 	QRect aux1;
+	bool done = false;
 	
 	size = 28;
 	
-	do
+	while (!done)
 	{
 		QFont f = p.font();
 		f.setPointSize(size);
 		p.setFont(f);
 		aux1 = p.boundingRect(QRect(), Qt::AlignAuto, s1);
-		size = QMIN(w * size / aux1.width(), h * size / aux1.height());
+		if (aux1.width() > w || aux1.height() > h) size = QMIN(w * size / aux1.width(), h * size / aux1.height());
+		else done = true;
 	}
-	while (aux1.width() > w || aux1.height() > h);
 	
 	return size;
 }

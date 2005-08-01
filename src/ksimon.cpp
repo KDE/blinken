@@ -516,6 +516,7 @@ void KSimon::drawStatusText(QPainter &p)
 	}
 	
 	QFont f = QFont("Steve");
+	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, text, 380, 25));
 	p.setFont(f);
 	p.drawText(0, 0, text);
