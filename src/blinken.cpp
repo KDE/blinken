@@ -22,21 +22,21 @@
 #include <kpopupmenu.h>
 #include <kstandarddirs.h>
 
-#include "ksimon.h"
+#include "blinken.h"
 #include "button.h"
 #include "counter.h"
 #include "fontutils.h"
 #include "number.h"
 #include "highscoredialog.h"
 
-KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutKSimon(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(simonGame::none)
+blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/ksimon.png"));
 	
-	m_buttons[0] = new button(simonGame::blue);
-	m_buttons[1] = new button(simonGame::yellow);
-	m_buttons[2] = new button(simonGame::red);
-	m_buttons[3] = new button(simonGame::green);
+	m_buttons[0] = new button(blinkenGame::blue);
+	m_buttons[1] = new button(blinkenGame::yellow);
+	m_buttons[2] = new button(blinkenGame::red);
+	m_buttons[3] = new button(blinkenGame::green);
 	
 	m_highscore = new QPixmap(locate("appdata", "images/highscore.png"));
 	m_highscoreHover = new QPixmap(locate("appdata", "images/highscore_hover.png"));
@@ -49,7 +49,7 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	m_quitRect = QRect(562, 10, 72, 73);
 	m_menuRect = QRect(562, 443, 72, 72);
 	m_aboutKDERect = QRect(452, 461, 54, 54);
-	m_aboutKSimonRect = QRect(506, 461, 56, 54);
+	m_aboutBlinkenRect = QRect(506, 461, 56, 54);
 	m_manualRect = QRect(578, 389, 54, 54);
 	m_centralLettersRect = QRect(190, 190, 255, 80);
 	m_counterRect = QRect(268, 110, 102, 52);
@@ -68,14 +68,14 @@ KSimon::KSimon() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscor
 	
 	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
-	connect(&m_game, SIGNAL(highlight(simonGame::color, bool)), this, SLOT(highlight(simonGame::color, bool)));
+	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
 	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 }
 
-KSimon::~KSimon()
+blinken::~blinken()
 {
 	delete m_back;
 	for (int i = 0; i < 4; i++) delete m_buttons[i];
@@ -89,7 +89,7 @@ KSimon::~KSimon()
 	delete m_helpMenu;
 }
 
-void KSimon::paintEvent(QPaintEvent *)
+void blinken::paintEvent(QPaintEvent *)
 {
 	QPixmap buf(width(), height());
 	QPainter p(&buf);
@@ -103,19 +103,19 @@ void KSimon::paintEvent(QPaintEvent *)
 	p.setFont(f);
 	switch (m_game.phase())
 	{
-		case simonGame::starting:
+		case blinkenGame::starting:
 			drawText(p, i18n("Start"), QPoint(318, 316), true, 10, 5, &m_centralTextRect, m_overCentralText, false);
 		break;
 		
-		case simonGame::choosingLevel:
+		case blinkenGame::choosingLevel:
 			drawLevel(p);
 		break;
 		
-		case simonGame::waiting3:
-		case simonGame::waiting2:
-		case simonGame::waiting1:
-		case simonGame::learningTheSequence:
-		case simonGame::typingTheSequence:
+		case blinkenGame::waiting3:
+		case blinkenGame::waiting2:
+		case blinkenGame::waiting1:
+		case blinkenGame::learningTheSequence:
+		case blinkenGame::typingTheSequence:
 			drawText(p, i18n("Restart"), QPoint(318, 316), true, 10, 5, &m_centralTextRect, m_overCentralText, false);
 		break;
 	}
@@ -131,10 +131,10 @@ void KSimon::paintEvent(QPaintEvent *)
 	
 	drawScoreAndCounter(p);
 	
-	if (m_highlighted & simonGame::blue) p.drawPixmap(14, 225, *m_buttons[0] -> pixmap());
-	if (m_highlighted & simonGame::yellow) p.drawPixmap(14, 16, *m_buttons[1] -> pixmap());
-	if (m_highlighted & simonGame::red) p.drawPixmap(322, 16, *m_buttons[2] -> pixmap());
-	if (m_highlighted & simonGame::green) p.drawPixmap(322, 225, *m_buttons[3] -> pixmap());
+	if (m_highlighted & blinkenGame::blue) p.drawPixmap(14, 225, *m_buttons[0] -> pixmap());
+	if (m_highlighted & blinkenGame::yellow) p.drawPixmap(14, 16, *m_buttons[1] -> pixmap());
+	if (m_highlighted & blinkenGame::red) p.drawPixmap(322, 16, *m_buttons[2] -> pixmap());
+	if (m_highlighted & blinkenGame::green) p.drawPixmap(322, 225, *m_buttons[3] -> pixmap());
 	
 	drawStatusText(p);
 	
@@ -143,7 +143,7 @@ void KSimon::paintEvent(QPaintEvent *)
 	if (m_updateButtonHighlighting) updateButtonHighlighting(mapFromGlobal(QCursor::pos()));
 }
 
-void KSimon::keyPressEvent(QKeyEvent *e)
+void blinken::keyPressEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
@@ -190,7 +190,7 @@ void KSimon::keyPressEvent(QKeyEvent *e)
 	}
 }
 
-void KSimon::keyReleaseEvent(QKeyEvent *e)
+void blinken::keyReleaseEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
@@ -202,12 +202,12 @@ void KSimon::keyReleaseEvent(QKeyEvent *e)
 	}
 }
 
-void KSimon::mouseMoveEvent(QMouseEvent *e)
+void blinken::mouseMoveEvent(QMouseEvent *e)
 {
 	updateButtonHighlighting(e->pos());
 }
 
-void KSimon::mousePressEvent(QMouseEvent *e)
+void blinken::mousePressEvent(QMouseEvent *e)
 {
 	if (m_overHighscore || m_overCounter)
 	{
@@ -216,18 +216,18 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 		m_updateButtonHighlighting = true;
 	}
 	else if (m_overQuit) kapp->quit();
-	else if (m_overAboutKSimon || m_overCentralLetters) m_helpMenu -> aboutApplication();
+	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
-	else if (m_game.phase() != simonGame::choosingLevel && m_overCentralText)
+	else if (m_game.phase() != blinkenGame::choosingLevel && m_overCentralText)
 	{
-		highlight(simonGame::none, true);
+		highlight(blinkenGame::none, true);
 		m_overCentralText = false;
 		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
-		m_game.setPhase(simonGame::choosingLevel);
+		m_game.setPhase(blinkenGame::choosingLevel);
 		m_updateButtonHighlighting = true;
 	}
-	else if (m_game.phase() == simonGame::choosingLevel)
+	else if (m_game.phase() == blinkenGame::choosingLevel)
 	{
 		int level = 0;
 		if (m_levelsRect[1].contains(e -> pos())) level = 1;
@@ -264,7 +264,7 @@ void KSimon::mousePressEvent(QMouseEvent *e)
 	}
 }
 
-void KSimon::checkHS()
+void blinken::checkHS()
 {
 	highScoreDialog *hsd = new highScoreDialog(this);
 	if (hsd->scoreGoodEnough(m_game.level(), m_game.score()))
@@ -280,60 +280,60 @@ void KSimon::checkHS()
 	hsd->showLevel(m_game.level());
 }
 
-void KSimon::highlight(simonGame::color c, bool unhighlight)
+void blinken::highlight(blinkenGame::color c, bool unhighlight)
 {
 	m_highlighted = c;
 	update();
 	if (unhighlight) m_unhighlighter -> start(250);
-	else if (c == simonGame::none)
+	else if (c == blinkenGame::none)
 	{
 		m_unhighlighter -> stop();
 		updateCursor(mapFromGlobal(QCursor::pos()));
 	}
 }
 
-void KSimon::unhighlight()
+void blinken::unhighlight()
 {
-	highlight(simonGame::none, false);
+	highlight(blinkenGame::none, false);
 }
 
-void KSimon::pressedYellow()
-{
-	if (m_game.canType())
-	{
-		highlight(simonGame::yellow, true);
-		m_game.clicked(simonGame::yellow);
-	}
-}
-
-void KSimon::pressedRed()
+void blinken::pressedYellow()
 {
 	if (m_game.canType())
 	{
-		highlight(simonGame::red, true);
-		m_game.clicked(simonGame::red);
+		highlight(blinkenGame::yellow, true);
+		m_game.clicked(blinkenGame::yellow);
 	}
 }
 
-void KSimon::pressedGreen()
+void blinken::pressedRed()
 {
 	if (m_game.canType())
 	{
-		highlight(simonGame::green, true);
-		m_game.clicked(simonGame::green);
+		highlight(blinkenGame::red, true);
+		m_game.clicked(blinkenGame::red);
 	}
 }
 
-void KSimon::pressedBlue()
+void blinken::pressedGreen()
 {
 	if (m_game.canType())
 	{
-		highlight(simonGame::blue, true);
-		m_game.clicked(simonGame::blue);
+		highlight(blinkenGame::green, true);
+		m_game.clicked(blinkenGame::green);
 	}
 }
 
-void KSimon::selectButton(int button)
+void blinken::pressedBlue()
+{
+	if (m_game.canType())
+	{
+		highlight(blinkenGame::blue, true);
+		m_game.clicked(blinkenGame::blue);
+	}
+}
+
+void blinken::selectButton(int button)
 {
 	int i = 0;
 	bool selected = false;
@@ -358,27 +358,27 @@ void KSimon::selectButton(int button)
 	}
 }
 
-bool KSimon::insideGreen(const QPoint &p) const
+bool blinken::insideGreen(const QPoint &p) const
 {
 	return insideButtonsArea(p) && p.x() > 6 && p.y() > 6;
 }
 
-bool KSimon::insideBlue(const QPoint &p) const
+bool blinken::insideBlue(const QPoint &p) const
 {
 	return insideButtonsArea(p) && p.x() < -6 && p.y() > 6;
 }
 
-bool KSimon::insideYellow(const QPoint &p) const
+bool blinken::insideYellow(const QPoint &p) const
 {
 	return insideButtonsArea(p) && p.x() < -6 && p.y() < -6;
 }
 
-bool KSimon::insideRed(const QPoint &p) const
+bool blinken::insideRed(const QPoint &p) const
 {
 	return insideButtonsArea(p) && p.x() > 6 && p.y() < -6;
 }
 
-bool KSimon::insideButtonsArea(const QPoint &p) const
+bool blinken::insideButtonsArea(const QPoint &p) const
 {
 	double x, y, x2, y2;
 	x = (double)p.x();
@@ -396,7 +396,7 @@ bool KSimon::insideButtonsArea(const QPoint &p) const
 	return false;
 }
 
-void KSimon::drawMenuQuit(QPainter &p)
+void blinken::drawMenuQuit(QPainter &p)
 {
 	if (!m_overHighscore) p.drawPixmap(10, 10, *m_highscore);
 	else p.drawPixmap(10, 10, *m_highscoreHover);
@@ -408,7 +408,7 @@ void KSimon::drawMenuQuit(QPainter &p)
 	else p.drawPixmap(454, 389, *m_menuHover);
 	
 	if (m_overAboutKDE) p.drawPixmap(462, 433, *m_mark);
-	else if (m_overAboutKSimon) p.drawPixmap(516, 433, *m_mark);
+	else if (m_overAboutBlinken) p.drawPixmap(516, 433, *m_mark);
 	else if (m_overManual)
 	{
 		p.translate(550, 430);
@@ -419,26 +419,26 @@ void KSimon::drawMenuQuit(QPainter &p)
 	}
 }
 
-void KSimon::drawScoreAndCounter(QPainter &p)
+void blinken::drawScoreAndCounter(QPainter &p)
 {
 	QColor c1, c2, c3;
 	p.translate(268, 110);
 	
 	switch (m_game.phase())
 	{
-		case simonGame::waiting3:
+		case blinkenGame::waiting3:
 			c1 = red;
 			c2 = red;
 			c3 = red;
 		break;
 		
-		case simonGame::waiting2:
+		case blinkenGame::waiting2:
 			c1 = m_countDownColor;
 			c2 = red;
 			c3 = red;
 		break;
 		
-		case simonGame::waiting1:
+		case blinkenGame::waiting1:
 			c1 = m_countDownColor;
 			c2 = c1;
 			c3 = red;
@@ -451,12 +451,12 @@ void KSimon::drawScoreAndCounter(QPainter &p)
 		break;
 	}
 	
-	counter::paint(p, m_game.phase() != simonGame::starting, m_game.score(), true, c1, c2, c3);
+	counter::paint(p, m_game.phase() != blinkenGame::starting, m_game.score(), true, c1, c2, c3);
 	
 	p.translate(-268, -110);
 }
 
-void KSimon::drawStatusText(QPainter &p)
+void blinken::drawStatusText(QPainter &p)
 {
 	p.translate(25, 505);
 	p.rotate(-3.29);
@@ -464,9 +464,9 @@ void KSimon::drawStatusText(QPainter &p)
 
 	QString restartText = i18n("Restart the game");
 	QString text;
-	if (m_overQuit) text = i18n("Quit KSimon");
+	if (m_overQuit) text = i18n("Quit blinKen");
 	else if (m_overHighscore || m_overCounter) text = i18n("View HighScore Table");
-	else if (m_overAboutKSimon || m_overCentralLetters) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
+	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
 	else if (m_overAboutKDE) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&");
 	else if (m_overManual) text = m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&");
 	else if (m_overLevels[0]) text = i18n("2nd Level");
@@ -478,37 +478,37 @@ void KSimon::drawStatusText(QPainter &p)
 	{
 		switch (m_game.phase())
 		{
-			case simonGame::starting:
+			case blinkenGame::starting:
 				text = i18n("Press Start to begin!");
 			break;
 			
-			case simonGame::choosingLevel:
+			case blinkenGame::choosingLevel:
 				text = i18n("Set the Difficulty Level...");
 			break;
 			
-			case simonGame::waiting3:
+			case blinkenGame::waiting3:
 				if (m_overCentralText) text = restartText;
 				else text = i18n("Next sequence in 3...");
 			break;
 			
-			case simonGame::waiting2:
+			case blinkenGame::waiting2:
 				if (m_overCentralText) text = restartText;
 				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2...");
 				else text = i18n("Next sequence in 2...");
 			break;
 		
-			case simonGame::waiting1:
+			case blinkenGame::waiting1:
 				if (m_overCentralText) text = restartText;
 				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2, 1...");
 				else text = i18n("Next sequence in 2, 1...");
 			break;
 			
-			case simonGame::learningTheSequence:
+			case blinkenGame::learningTheSequence:
 				if (m_overCentralText) text = restartText;
 				else text = i18n("Remember this sequence...");
 			break;
 			
-			case simonGame::typingTheSequence:
+			case blinkenGame::typingTheSequence:
 				if (m_overCentralText) text = restartText;
 				else text = i18n("Repeat the sequence!");
 			break;
@@ -522,7 +522,7 @@ void KSimon::drawStatusText(QPainter &p)
 	p.drawText(0, 0, text);
 }
 
-void KSimon::drawLevel(QPainter &p)
+void blinken::drawLevel(QPainter &p)
 {
 	QString n[3];
 	n[0] = i18n("2");
@@ -541,7 +541,7 @@ void KSimon::drawLevel(QPainter &p)
 	}
 }
 
-void KSimon::drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold)
+void blinken::drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold)
 {
 	QRect r;
 	QFont oldFont, f = p.font();
@@ -570,7 +570,7 @@ void KSimon::drawText(QPainter &p, const QString &text, const QPoint &center, bo
 }
 
 
-void KSimon::updateButtonHighlighting(const QPoint &p)
+void blinken::updateButtonHighlighting(const QPoint &p)
 {
 	bool haveToUpdate;
 	m_updateButtonHighlighting = false;
@@ -596,14 +596,14 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		{
 			m_overMenu = true;
 			m_overAboutKDE = false;
-			m_overAboutKSimon = false;
+			m_overAboutBlinken = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
-		else if (m_overAboutKDE || m_overAboutKSimon || m_overManual)
+		else if (m_overAboutKDE || m_overAboutBlinken || m_overManual)
 		{
 			m_overAboutKDE = false;
-			m_overAboutKSimon = false;
+			m_overAboutBlinken = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
@@ -615,17 +615,17 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 			if (!m_overAboutKDE)
 			{
 				m_overAboutKDE = true;
-				m_overAboutKSimon = false;
+				m_overAboutBlinken = false;
 				m_overManual = false;
 				haveToUpdate = true;
 			}
 		}
-		else if (m_aboutKSimonRect.contains(p))
+		else if (m_aboutBlinkenRect.contains(p))
 		{
-			if (!m_overAboutKSimon)
+			if (!m_overAboutBlinken)
 			{
 				m_overAboutKDE = false;
-				m_overAboutKSimon = true;
+				m_overAboutBlinken = true;
 				m_overManual = false;
 				haveToUpdate = true;
 			}
@@ -635,7 +635,7 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 			if (!m_overManual)
 			{
 				m_overAboutKDE = false;
-				m_overAboutKSimon = false;
+				m_overAboutBlinken = false;
 				m_overManual = true;
 				haveToUpdate = true;
 			}
@@ -644,7 +644,7 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 		{
 			m_overMenu = false;
 			m_overAboutKDE = false;
-			m_overAboutKSimon = false;
+			m_overAboutBlinken = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
@@ -688,12 +688,12 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 	
 	switch (m_game.phase())
 	{
-		case simonGame::starting:
-		case simonGame::waiting3:
-		case simonGame::waiting2:
-		case simonGame::waiting1:
-		case simonGame::learningTheSequence:
-		case simonGame::typingTheSequence:
+		case blinkenGame::starting:
+		case blinkenGame::waiting3:
+		case blinkenGame::waiting2:
+		case blinkenGame::waiting1:
+		case blinkenGame::learningTheSequence:
+		case blinkenGame::typingTheSequence:
 			if (m_centralTextRect.contains(p))
 			{
 				if (!m_overCentralText)
@@ -709,7 +709,7 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 			}
 		break;
 		
-		case simonGame::choosingLevel:
+		case blinkenGame::choosingLevel:
 			for (int i = 0; i < 3; i++)
 			{
 				if (m_levelsRect[i].contains(p))
@@ -733,12 +733,12 @@ void KSimon::updateButtonHighlighting(const QPoint &p)
 	if (haveToUpdate) update();
 }
 
-void KSimon::updateCursor(const QPoint &p)
+void blinken::updateCursor(const QPoint &p)
 {
 	QPoint p2 = p - QPoint(319, 221);
 	
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutKSimon || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2)))) setCursor(PointingHandCursor);
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2)))) setCursor(PointingHandCursor);
 	else setCursor(ArrowCursor);
 }
 
-#include "ksimon.moc"
+#include "blinken.moc"

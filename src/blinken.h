@@ -7,12 +7,12 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#ifndef KSIMON_H
-#define KSIMON_H
+#ifndef BLINKEN_H
+#define BLINKEN_H
 
 #include <qwidget.h>
 
-#include "simongame.h"
+#include "blinkengame.h"
 
 class QTimer;
 
@@ -23,12 +23,12 @@ class artsPlayer;
 class button;
 class highScoreDialog;
 
-class KSimon : public QWidget
+class blinken : public QWidget
 {
 Q_OBJECT
 	public:
-		KSimon();
-		~KSimon();
+		blinken();
+		~blinken();
 		
 	protected:
 		void paintEvent(QPaintEvent *);
@@ -39,7 +39,7 @@ Q_OBJECT
 		
 	private slots:
 		void checkHS();
-		void highlight(simonGame::color c, bool unhighlight);
+		void highlight(blinkenGame::color c, bool unhighlight);
 		void unhighlight();
 		
 		void pressedYellow();
@@ -66,9 +66,9 @@ Q_OBJECT
 		
 		button *m_buttons[4];
 		QPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
-		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, 	m_overAboutKSimon, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter;
+		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutKSimonRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
+		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// key setting handling
@@ -77,13 +77,13 @@ Q_OBJECT
 		// if should update the highlighting after the next repaint
 		bool m_updateButtonHighlighting;
 		
-		simonGame::color m_highlighted;
+		blinkenGame::color m_highlighted;
 		QTimer *m_unhighlighter;
 		
 		QString m_lastName;
 		
 		artsPlayer *m_artsPlayer;
-		simonGame m_game;
+		blinkenGame m_game;
 		
 		KHelpMenu *m_helpMenu;
 };

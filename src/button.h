@@ -12,7 +12,7 @@
 
 #include <qobject.h>
 
-#include "simongame.h"
+#include "blinkengame.h"
 
 class KAction;
 class KActionCollection;
@@ -21,7 +21,7 @@ class KShortcut;
 class button
 {
 	public:
-		button(simonGame::color c);
+		button(blinkenGame::color c);
 		~button();
 	
 		void setShortcut(int key);
@@ -37,7 +37,7 @@ class button
 		QPixmap *m_highlighted;
 		bool m_selected;
 		int m_key;
-		simonGame::color m_color;
+		blinkenGame::color m_color;
 };
 
 #endif

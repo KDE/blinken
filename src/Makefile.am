@@ -4,18 +4,18 @@ else
 artslib =
 endif
 
-bin_PROGRAMS = ksimon
+bin_PROGRAMS = blinken
 
 INCLUDES = $(all_includes)
 
-ksimon_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-ksimon_LDADD = $(LIB_KDEUI) $(LIB_KIO) $(artslib)
+blinken_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+blinken_LDADD = $(LIB_KDEUI) $(LIB_KIO) $(artslib)
 
-ksimon_SOURCES = main.cpp ksimon.cpp artsplayer.cpp simongame.cpp number.cpp highscoredialog.cpp counter.cpp fontutils.cpp fontchecker.cpp button.cpp
+blinken_SOURCES = main.cpp blinken.cpp artsplayer.cpp blinkengame.cpp number.cpp highscoredialog.cpp counter.cpp fontutils.cpp fontchecker.cpp button.cpp
 
 METASOURCES = AUTO
 
-xdg_apps_DATA = ksimon.desktop
+xdg_apps_DATA = blinken.desktop
 
 messages: rc.cpp
-	$(XGETTEXT) *.cpp -o $(podir)/ksimon.pot
+	$(XGETTEXT) *.cpp -o $(podir)/blinken.pot

@@ -30,7 +30,7 @@ namespace KDE
 
 #include <qvaluelist.h>
 
-#include "simongame.h"
+#include "blinkengame.h"
 
 class QTimer;
 
@@ -41,7 +41,7 @@ Q_OBJECT
 		artsPlayer();
 		~artsPlayer();
 		
-		void play(simonGame::color c, bool stopCurrent = false);
+		void play(blinkenGame::color c, bool stopCurrent = false);
 		
 	signals:
 		void ended();
@@ -51,7 +51,7 @@ Q_OBJECT
 		void checkEnded();
 		
 	private:
-		QValueList<simonGame::color> m_nextSounds;
+		QValueList<blinkenGame::color> m_nextSounds;
 		
 		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath, m_allPath;
 		

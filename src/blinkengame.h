@@ -7,8 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#ifndef SIMONGAME_H
-#define SIMONGAME_H
+#ifndef BLINKENGAME_H
+#define BLINKENGAME_H
 
 #include <qobject.h>
 #include <qvaluelist.h>
@@ -17,12 +17,12 @@ class QTimer;
 
 class artsPlayer;
 
-class simonGame : public QObject
+class blinkenGame : public QObject
 {
 Q_OBJECT
 	public:
-		simonGame();
-		~simonGame();
+		blinkenGame();
+		~blinkenGame();
 		
 		enum gamePhase { starting, choosingLevel, waiting3, waiting2, waiting1, learningTheSequence, typingTheSequence };
 		enum color
@@ -46,7 +46,7 @@ Q_OBJECT
 	signals:
 		void gameEnded();
 		void phaseChanged();
-		void highlight(simonGame::color c, bool unhighlight);
+		void highlight(blinkenGame::color c, bool unhighlight);
 		
 	private slots:
 		void nextSound();

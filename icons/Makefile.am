@@ -1,1 +1,1 @@
-KDE_ICON = ksimon
+KDE_ICON = blinken 

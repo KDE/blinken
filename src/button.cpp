@@ -15,7 +15,7 @@
 
 #include "button.h"
 
-button::button(simonGame::color c) : m_selected(false), m_color(c)
+button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
 	KConfig *kc = kapp->config();
 	QString cs = getColorString();
@@ -23,19 +23,19 @@ button::button(simonGame::color c) : m_selected(false), m_color(c)
 	
 	switch (c)
 	{
-		case simonGame::blue:
+		case blinkenGame::blue:
 			m_key = kc->readNumEntry(cs, Qt::Key_3);
 		break;
 		
-		case simonGame::yellow:
+		case blinkenGame::yellow:
 			m_key = kc->readNumEntry(cs, Qt::Key_1);
 		break;
 		
-		case simonGame::red:
+		case blinkenGame::red:
 			m_key = kc->readNumEntry(cs, Qt::Key_2);
 		break;
 		
-		case simonGame::green:
+		case blinkenGame::green:
 			m_key = kc->readNumEntry(cs, Qt::Key_4);
 		break;
 		
@@ -91,19 +91,19 @@ QString button::getColorString() const
 {
 	switch (m_color)
 	{
-		case simonGame::blue:
+		case blinkenGame::blue:
 			return "blue";
 		break;
 		
-		case simonGame::yellow:
+		case blinkenGame::yellow:
 			return "yellow";
 		break;
 		
-		case simonGame::red:
+		case blinkenGame::red:
 			return "red";
 		break;
 		
-		case simonGame::green:
+		case blinkenGame::green:
 			return "green";
 		break;
 		

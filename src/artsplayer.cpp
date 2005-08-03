@@ -49,7 +49,7 @@ artsPlayer::~artsPlayer()
 #endif
 }
 
-void artsPlayer::play(simonGame::color c, bool stopCurrent)
+void artsPlayer::play(blinkenGame::color c, bool stopCurrent)
 {
 	int check;
 #ifndef WITHOUT_ARTS
@@ -83,31 +83,31 @@ void artsPlayer::play()
 {
 #ifndef WITHOUT_ARTS
 	QString path;
-	simonGame::color c = m_nextSounds.first();
+	blinkenGame::color c = m_nextSounds.first();
 	m_nextSounds.pop_front();
 	switch (c)
 	{
-		case simonGame::red:
+		case blikenGame::red:
 			path = m_redPath;
 		break;
 		
-		case simonGame::green:
+		case blinkenGame::green:
 			path = m_greenPath;
 		break;
 		
-		case simonGame::blue:
+		case blinkenGame::blue:
 			path = m_bluePath;
 		break;
 		
-		case simonGame::yellow:
+		case blinkenGame::yellow:
 			path = m_yellowPath;
 		break;
 		
-		case simonGame::all:
+		case blinkenGame::all:
 			path = m_allPath;
 		break;
 		
-		case simonGame::none:
+		case blinkenGame::none:
 		break;
 	}
 	delete m_playobj;

@@ -14,42 +14,42 @@
 #include <kapplication.h>
 
 #include "artsplayer.h"
-#include "simongame.h"
+#include "blinkengame.h"
 
-simonGame::simonGame() : m_phase(starting)
+blinkenGame::blinkenGame() : m_phase(starting)
 {
 	m_artsPlayer = new artsPlayer;
 	m_waitTimer = new QTimer(this);
 	connect(m_waitTimer, SIGNAL(timeout()), this, SLOT(waiting()));
 }
 
-simonGame::~simonGame()
+blinkenGame::~blinkenGame()
 {
 	delete m_artsPlayer;
 }
 
-int simonGame::level() const
+int blinkenGame::level() const
 {
 	return m_level;
 }
 
-bool simonGame::canType() const
+bool blinkenGame::canType() const
 {
 	return m_phase == typingTheSequence || m_phase == starting;
 }
 
-simonGame::gamePhase simonGame::phase() const
+blinkenGame::gamePhase blinkenGame::phase() const
 {
 	return m_phase;
 }
 
-int simonGame::score() const
+int blinkenGame::score() const
 {
 	if (m_phase == starting || m_phase == choosingLevel) return 0;
 	return m_sequenceLength - 1;
 }
 
-void simonGame::clicked(color c)
+void blinkenGame::clicked(color c)
 {
 	if (m_phase == starting)
 	{
@@ -76,14 +76,14 @@ void simonGame::clicked(color c)
 	}
 }
 
-void simonGame::setPhase(gamePhase p)
+void blinkenGame::setPhase(gamePhase p)
 {
 	if (p != waiting3 && p != waiting2 && p != waiting1) m_waitTimer -> stop();
 	m_phase = p;
 	emit phaseChanged();
 }
 
-void simonGame::start(int level)
+void blinkenGame::start(int level)
 {
 	m_level = level;
 	m_sequenceLength = 1;
@@ -93,7 +93,7 @@ void simonGame::start(int level)
 	m_sequence.clear();
 }
 
-void simonGame::nextSound()
+void blinkenGame::nextSound()
 {
 	if (m_nextColor != m_sequence.end())
 	{
@@ -112,22 +112,22 @@ void simonGame::nextSound()
 	}
 }
 
-void simonGame::soundEnded()
+void blinkenGame::soundEnded()
 {
 	QTimer::singleShot(100, this, SLOT(nextSound()));
 	QTimer::singleShot(50, this, SLOT(unhighlight()));
 }
 
-void simonGame::unhighlight()
+void blinkenGame::unhighlight()
 {
 	emit highlight(none, false);
 }
 
-void simonGame::waiting()
+void blinkenGame::waiting()
 {
 	if (m_phase == waiting1)
 	{
-		setPhase(simonGame::learningTheSequence);
+		setPhase(blinkenGame::learningTheSequence);
 		if (m_level == 3) 
 		{
 			m_sequence.clear();
@@ -143,14 +143,14 @@ void simonGame::waiting()
 	else /* m_phase == waiting2 */ setPhase(waiting1);
 }
 
-void simonGame::nextRound()
+void blinkenGame::nextRound()
 {
 	if (m_level == 1) setPhase(waiting3);
 	else setPhase(waiting2);
 	m_waitTimer -> start(1000);
 }
 
-simonGame::color simonGame::generateColor()
+blinkenGame::color blinkenGame::generateColor()
 {
 	int r;
 	// make the compiler happy :-D
@@ -178,4 +178,4 @@ simonGame::color simonGame::generateColor()
 	return c;
 }
 
-#include "simongame.moc"
+#include "blinkengame.moc"

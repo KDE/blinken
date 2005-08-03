@@ -14,11 +14,11 @@
 #include <kstandarddirs.h>
 
 #include "fontchecker.h"
-#include "ksimon.h"
+#include "blinken.h"
 
 int main(int argc, char *argv[])
 {
-	KAboutData about("ksimon", I18N_NOOP("KSimon"), "0.1", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL, "© 2005 Albert Astals Cid\n© 2005 Danny Allen");
+	KAboutData about("blinken", I18N_NOOP("blinKen"), "0.1", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL, "© 2005 Albert Astals Cid\n© 2005 Danny Allen");
 	about.addAuthor("Albert Astals Cid", I18N_NOOP("Coding"), "tsdgeos@terra.es");
 	about.addAuthor("Danny Allen", I18N_NOOP("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
 	KCmdLineArgs::init(argc, argv, &about);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		app.setTopWidget(new KSimon());
+		app.setTopWidget(new blinken());
 		return app.exec();
 	}
 }
