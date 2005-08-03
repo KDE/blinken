@@ -87,7 +87,7 @@ void artsPlayer::play()
 	m_nextSounds.pop_front();
 	switch (c)
 	{
-		case blikenGame::red:
+		case blinkenGame::red:
 			path = m_redPath;
 		break;
 		
