@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
- <!ENTITY ksimon "<application>KSimon</application>">
- <!ENTITY kappname "&ksimon;">
+ <!ENTITY blinken "<application>blinKen</application>">
+ <!ENTITY kappname "&blinken;">
  <!ENTITY package "kdeedu">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE"><!-- change language only here -->
@@ -10,7 +10,7 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The &ksimon; Handbook</title>
+<title>The &blinken; Handbook</title>
 
 <authorgroup>
 <author>
@@ -36,14 +36,14 @@
 
 <abstract>
 <para>
-&ksimon; brings a retro electronic memory game from the 1970's to &kde;.
+&blinken; brings a retro electronic memory game from the 1970's to &kde;.
 </para>
 </abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
 <keyword>kdeedu</keyword>
-<keyword>KSimon</keyword>
+<keyword>blinKen</keyword>
 <keyword>game</keyword>
 <keyword>child</keyword>
 <keyword>electronic</keyword>
@@ -57,7 +57,7 @@
 <title>Introduction</title>
 
 <para>
-&ksimon; is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning.
+&blinken; is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning.
 
 The goal is to get a highscore - each step in the sequence is worth one point, so correct recollection of a sequence of 8 lights is worth 8 points on the highscore table.
 </para>
@@ -65,30 +65,30 @@ The goal is to get a highscore - each step in the sequence is worth one point, s
 </chapter>
 
 
-<chapter id="using-ksimon">
-<title>Using &ksimon;</title>
+<chapter id="using-blinken">
+<title>Using &blinken;</title>
 
 <screenshot>
-<screeninfo>Here is the screen that is presented on startup of &ksimon;</screeninfo>
+<screeninfo>Here is the screen that is presented on startup of &blinken;</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon1.png" format="PNG"/>
+	    <imagedata fileref="blinken1.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>&ksimon; screenshot</phrase>
+	    <phrase>&blinken; screenshot</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 
 <para>
-Here is the screen that is presented on startup of &ksimon;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, etc) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
+Here is the screen that is presented on startup of &blinken;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, etc) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
 </para>
 
 <screenshot>
 <screeninfo>Highscores button</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon_highscoresbutton.png" format="PNG"/>
+	    <imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
 	    <phrase>Highscores button</phrase>
@@ -104,7 +104,7 @@ The highscores button opens a dialog that displays the highscores table for each
 <screeninfo>Quit button</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon_quitbutton.png" format="PNG"/>
+	    <imagedata fileref="blinken_quitbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
 	    <phrase>Quit button</phrase>
@@ -120,7 +120,7 @@ The Quit button exits the application.
 <screeninfo>Help button</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon_helpbutton.png" format="PNG"/>
+	    <imagedata fileref="blinken_helpbutton.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
 	    <phrase>Help button</phrase>
@@ -129,7 +129,7 @@ The Quit button exits the application.
 </screenshot>
 
 <para>
-The help button is special, in that it reveals 3 sub-buttons. These buttons are shown when the help button is hovered over, and provide access to the &ksimon; handbook (this document), and the "About &ksimon;" and "About &kde;" dialogs.
+The help button is special, in that it reveals 3 sub-buttons. These buttons are shown when the help button is hovered over, and provide access to the &blinken; handbook (this document), and the "About &blinken;" and "About &kde;" dialogs.
 </para>
 
 <para>
@@ -147,7 +147,7 @@ Once you are familiar with the workings of the application, a game can be starte
 <screeninfo>Select difficulty level</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon2.png" format="PNG"/>
+	    <imagedata fileref="blinken2.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
 	    <phrase>Select difficulty level</phrase>
@@ -156,7 +156,7 @@ Once you are familiar with the workings of the application, a game can be starte
 </screenshot>
 
 <para>
-There are 3 levels in &ksimon;:
+There are 3 levels in &blinken;:
  </para>
 
 <itemizedlist>
@@ -172,7 +172,7 @@ Level 2 is the intermediate level. It is identical to the previous level, but ha
 </listitem>
 <listitem>
 <para>
-Level ? is the most difficult level of &ksimon;. It takes the timings from Level 2, but each sequence is totally random, rather than following on from the previous sequence, as in the standard game type.
+Level ? is the most difficult level of &blinken;. It takes the timings from Level 2, but each sequence is totally random, rather than following on from the previous sequence, as in the standard game type.
 </para>
 </listitem>
 </itemizedlist>
@@ -191,7 +191,7 @@ If you are lucky enough to get a highscore, it will be entered into highscores t
 <screeninfo>Highscore nickname prompt dialog</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon_nickprompt.png" format="PNG"/>
+	    <imagedata fileref="blinken_nickprompt.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
 	    <phrase>Highscore nickname prompt dialog</phrase>
@@ -209,7 +209,7 @@ Only 5 scores are kept for each level, so try not to be disappointed if you don'
 <sect1 id="playing-tips">
 <title>Playing Tips</title>
 <para>
-&ksimon; is the ultimate memory game, though you need not possess the ultimate memory to be successful. These tips will help you in your pursuit of the best score:
+&blinken; is the ultimate memory game, though you need not possess the ultimate memory to be successful. These tips will help you in your pursuit of the best score:
 </para>
 
 <itemizedlist>
@@ -243,17 +243,17 @@ Try remembering the sequence as positions on the screen.
 <title>Accessibility Features</title>
 
 <para>
-Alongside use of the mouse, &ksimon; also allows the user to operate the game using the keyboard. To display the current keymap settings, and to modify them to your preferences, hold in the <keycap>ctrl</keycap> key:
+Alongside use of the mouse, &blinken; also allows the user to operate the game using the keyboard. To display the current keymap settings, and to modify them to your preferences, hold in the <keycap>ctrl</keycap> key:
 </para>
 
 <screenshot>
-<screeninfo>&ksimon; access keys</screeninfo>
+<screeninfo>&blinken; access keys</screeninfo>
 	<mediaobject>
 	  <imageobject>
-	    <imagedata fileref="ksimon_accesskeys.png" format="PNG"/>
+	    <imagedata fileref="blinken_accesskeys.png" format="PNG"/>
 	  </imageobject>
 	    <textobject>
-	    <phrase>&ksimon; access keys</phrase>
+	    <phrase>&blinken; access keys</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -273,7 +273,7 @@ To change the mapping of any button, click it using the mouse. It will then be h
 <title>Credits and License</title>
 
 <para>
-&ksimon;
+&blinken;
 </para>
 <para>
 Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email> and Danny Allen <email>danny@dannyallen.co.uk</email>
@@ -302,8 +302,8 @@ Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
 <appendix id="installation">
 <title>Installation</title>
 
-<sect1 id="getting-ksimon">
-<title>How to obtain &ksimon;</title>
+<sect1 id="getting-blinken">
+<title>How to obtain &blinken;</title>
 
 &install.intro.documentation;
 
