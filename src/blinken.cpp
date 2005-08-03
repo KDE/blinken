@@ -51,7 +51,7 @@ blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighsc
 	m_aboutKDERect = QRect(452, 461, 54, 54);
 	m_aboutBlinkenRect = QRect(506, 461, 56, 54);
 	m_manualRect = QRect(578, 389, 54, 54);
-	m_centralLettersRect = QRect(190, 190, 255, 80);
+	m_centralLettersRect = QRect(192, 194, 254, 54);
 	m_counterRect = QRect(268, 110, 102, 52);
 	
 	m_fillColor = QColor(40, 40, 40);
@@ -517,7 +517,7 @@ void blinken::drawStatusText(QPainter &p)
 	
 	QFont f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, text, 380, 25));
+	f.setPointSize(fontUtils::fontSize(p, text, 380, 30));
 	p.setFont(f);
 	p.drawText(0, 0, text);
 }
