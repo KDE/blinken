@@ -4,8 +4,7 @@ on the target system, on first run blinKen uses the fonts:/ ioslave to copy it
 to the user's fonts location.
 
 This can cause problems, because if the program
-is user by 100 users there will be 100 copies of the font, one for
-each user.
+is used by 100 users there will be 100 copies of the font, one for each user.
 
 To solve that we suggest making a package with "Some Juicy Fonts"
 (http://www.sourceforge.net/projects/sjfonts) that includes the Steve font
