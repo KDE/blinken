@@ -1,0 +1,4 @@
+File=blinken.kcfg
+ClassName=blinkenSettings
+Singleton=true
+Mutators=true

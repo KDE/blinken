@@ -18,6 +18,7 @@
 #include <kstandarddirs.h>
 
 #include "artsplayer.h"
+#include "settings.h"
 
 artsPlayer::artsPlayer() : m_playobj(0)
 {
@@ -53,23 +54,27 @@ void artsPlayer::play(blinkenGame::color c, bool stopCurrent)
 {
 	int check;
 #ifndef WITHOUT_ARTS
-	if (m_playobj && m_playobj -> state() == Arts::posPlaying)
+	if (blinkenSettings::playSounds())
 	{
-		if (stopCurrent)
+		if (m_playobj && m_playobj -> state() == Arts::posPlaying)
 		{
-			m_nextSounds.clear();
+			if (stopCurrent)
+			{
+				m_nextSounds.clear();
+				m_nextSounds.append(c);
+				m_playobj -> halt();
+				play();
+			}
+			else m_nextSounds.append(c);
+		}
+		else
+		{
 			m_nextSounds.append(c);
-			m_playobj -> halt();
 			play();
 		}
-		else m_nextSounds.append(c);
+		check = 50;
 	}
-	else
-	{
-		m_nextSounds.append(c);
-		play();
-	}
-	check = 50;
+	else check = 250;
 #else
 	//shut up gcc
 	(void)c;
@@ -119,11 +124,19 @@ void artsPlayer::play()
 void artsPlayer::checkEnded()
 {
 #ifndef WITHOUT_ARTS
-	if (m_playobj -> state() != Arts::posPlaying)
+	if (blinkenSettings::playSounds())
+	{
+		if (m_playobj -> state() != Arts::posPlaying)
+		{
+			m_endChecker -> stop();
+			emit ended();
+			if (m_nextSounds.size() > 0) play();
+		}
+	}
+	else
 	{
 		m_endChecker -> stop();
 		emit ended();
-		if (m_nextSounds.size() > 0) play();
 	}
 #else
 	m_endChecker -> stop();

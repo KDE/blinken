@@ -66,13 +66,13 @@ Q_OBJECT
 		
 		button *m_buttons[4];
 		QPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
-		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter;
+		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter, m_overFont, m_overSound;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
+		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect, m_soundRect, m_fontRect;
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
-		// key setting handling
-		bool m_showKeys;
+		// Preferences setting handling
+		bool m_showPreferences;
 		
 		// if should update the highlighting after the next repaint
 		bool m_updateButtonHighlighting;

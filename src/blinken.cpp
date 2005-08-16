@@ -28,8 +28,9 @@
 #include "fontutils.h"
 #include "number.h"
 #include "highscoredialog.h"
+#include "settings.h"
 
-blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_showKeys(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/blinken.png"));
 	
@@ -53,6 +54,8 @@ blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighsc
 	m_manualRect = QRect(578, 389, 54, 54);
 	m_centralLettersRect = QRect(192, 194, 254, 54);
 	m_counterRect = QRect(268, 110, 102, 52);
+	m_soundRect = QRect(181, 209, 25, 25);
+	m_fontRect = QRect(432, 209, 25, 25);
 	
 	m_fillColor = QColor(40, 40, 40);
 	m_fontColor = QColor(126, 126, 126);
@@ -121,12 +124,66 @@ void blinken::paintEvent(QPaintEvent *)
 	}
 	p.setFont(f1);
 	
-	if (m_showKeys)
+	if (m_showPreferences)
 	{
+		// draw the current keys
 		drawText(p, m_buttons[0]->shortcut(), QPoint(115, 285), true, 20, 5, 0, m_buttons[0]->selected(), false);
 		drawText(p, m_buttons[1]->shortcut(), QPoint(115, 155), true, 20, 5, 0, m_buttons[1]->selected(), false);
 		drawText(p, m_buttons[2]->shortcut(), QPoint(520, 155), true, 20, 5, 0, m_buttons[2]->selected(), false);
 		drawText(p, m_buttons[3]->shortcut(), QPoint(520, 285), true, 20, 5, 0, m_buttons[3]->selected(), false);
+
+		const QPen &oPen = p.pen();
+		const QBrush &oBrush = p.brush();
+		const QFont &oFont = p.font();
+		
+		// draw the internal square plus a bit of ellipse on the sides and the
+		// two delimiter lines 
+		p.setPen(NoPen);
+		p.setBrush(m_fillColor);
+		p.drawPie(169, 192, 4, 58, 1440, 2880);
+		p.drawPie(465, 192, 4, 58, -1440, 2880);
+		p.setPen(QPen(Qt::black, 3));
+		p.fillRect(171, 192, 296, 58, m_fillColor);
+		p.drawLine(169, 192, 469, 192);
+		p.drawLine(169, 250, 469, 250);
+
+		// draw the two squares of the options
+		p.setPen(QPen(m_fontColor, 2, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+		p.drawRect(m_soundRect);
+		p.drawRect(m_fontRect);
+		if (blinkenSettings::playSounds())
+		{
+			p.drawLine(186, 214, 199, 227); 
+			p.drawLine(186, 227, 199, 214); 
+		}
+		if (blinkenSettings::customFont())
+		{
+			p.drawLine(437, 214, 450, 227); 
+			p.drawLine(437, 227, 450, 214); 
+		}
+
+		// draw the options' text
+		QFont f1 = QFont();
+		p.setFont(f1);
+		int size, sizeAux;
+		QRect area;
+		QString sounds = i18n("Sounds");
+		QString font = i18n("Font");
+		//TODO 380 is incorrect
+		size = fontUtils::fontSize(p, sounds, 380, 20);
+		sizeAux = fontUtils::fontSize(p, font, 380, 20);
+		if (sizeAux > size) size = sizeAux;
+		f1.setPointSize(size);
+		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
+		area.moveBy(210, 221 - (area.height() / 2));
+		p.drawText(area, Qt::AlignCenter, sounds);
+		area = p.boundingRect(QRect(), Qt::AlignAuto, font);
+		area.moveBy(428 - area.width(), 221 - (area.height() / 2));
+		p.drawText(area, Qt::AlignCenter, font);
+		
+		p.setFont(oFont);
+		p.setPen(oPen);
+		p.setBrush(oBrush);
 	}
 	
 	drawScoreAndCounter(p);
@@ -147,7 +204,7 @@ void blinken::keyPressEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
-	if (m_showKeys)
+	if (m_showPreferences)
 	{
 		int i = 0;
 		while (i < 4 && !m_buttons[i] -> selected()) i++;
@@ -194,10 +251,11 @@ void blinken::keyReleaseEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
-	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton)
+	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
 	{
-		m_showKeys = !m_showKeys;
+		m_showPreferences = !m_showPreferences;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
+		updateButtonHighlighting(mapFromGlobal(QCursor::pos()));
 		update();
 	}
 }
@@ -214,6 +272,18 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		highScoreDialog *hsd = new highScoreDialog(this);
 		hsd->showLevel(1);
 		m_updateButtonHighlighting = true;
+	}
+	else if (m_showPreferences && m_fontRect.contains(e -> pos()))
+	{
+		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
+		blinkenSettings::writeConfig();
+		update();
+	}
+	else if (m_showPreferences && m_soundRect.contains(e -> pos()))
+	{
+		blinkenSettings::setPlaySounds(!blinkenSettings::playSounds());
+		blinkenSettings::writeConfig();
+		update();
 	}
 	else if (m_overQuit) kapp->quit();
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
@@ -237,6 +307,8 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		{
 			for(int i = 0; i < 3; i++) m_overLevels[i] = false;
 			m_game.start(level);
+			if (m_showPreferences) m_showPreferences = false;
+			m_updateButtonHighlighting = true;
 		}
 	}
 	
@@ -244,22 +316,22 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	p -= QPoint(319, 221);
 	if (insideGreen(p))
 	{
-		if (m_showKeys) selectButton(3);
+		if (m_showPreferences) selectButton(3);
 		else pressedGreen();
 	}
 	else if (insideBlue(p))
 	{
-		if (m_showKeys) selectButton(0);
+		if (m_showPreferences) selectButton(0);
 		else pressedBlue();
 	}
 	else if (insideYellow(p))
 	{
-		if (m_showKeys) selectButton(1);
+		if (m_showPreferences) selectButton(1);
 		else pressedYellow();
 	}
 	else if (insideRed(p))
 	{
-		if (m_showKeys) selectButton(2);
+		if (m_showPreferences) selectButton(2);
 		else pressedRed();
 	}
 }
@@ -473,7 +545,7 @@ void blinken::drawStatusText(QPainter &p)
 	else if (m_overLevels[1]) text = i18n("1st Level");
 	else if (m_overLevels[2]) text = i18n("Random Level");
 	else if (m_buttons[0]->selected() || m_buttons[1]->selected() || m_buttons[2]->selected() || m_buttons[3]->selected()) text = i18n("Press the key for this button");
-	else if (m_showKeys) text = i18n("Click any button to change its key");
+	else if (m_showPreferences) text = i18n("Click any button to change its key");
 	else
 	{
 		switch (m_game.phase())
@@ -515,7 +587,8 @@ void blinken::drawStatusText(QPainter &p)
 		}
 	}
 	
-	QFont f = QFont("Steve");
+	QFont f;
+	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, text, 380, 30));
 	p.setFont(f);
@@ -650,7 +723,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 		}
 	}
 	
-	if (m_centralLettersRect.contains(p))
+	if (!m_showPreferences && m_centralLettersRect.contains(p))
 	{
 		m_overCentralLetters = true;
 		haveToUpdate = true;
@@ -658,6 +731,28 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 	else if (m_overCentralLetters)
 	{
 		m_overCentralLetters = false;
+		haveToUpdate = true;
+	}
+	
+	if (m_showPreferences && m_soundRect.contains(p))
+	{
+		m_overSound = true;
+		haveToUpdate = true;
+	}
+	else if (m_overSound)
+	{
+		m_overSound = false;
+		haveToUpdate = true;
+	}
+	
+	if (m_showPreferences && m_fontRect.contains(p))
+	{
+		m_overFont = true;
+		haveToUpdate = true;
+	}
+	else if (m_overFont)
+	{
+		m_overFont = false;
 		haveToUpdate = true;
 	}
 	
@@ -737,7 +832,7 @@ void blinken::updateCursor(const QPoint &p)
 {
 	QPoint p2 = p - QPoint(319, 221);
 	
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2)))) setCursor(PointingHandCursor);
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(PointingHandCursor);
 	else setCursor(ArrowCursor);
 }
 

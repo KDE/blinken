@@ -19,6 +19,7 @@
 #include "highscoredialog.h"
 #include "counter.h"
 #include "fontutils.h"
+#include "settings.h"
 
 static const int margin = 15;
 static const int smallMargin = 5;
@@ -58,7 +59,8 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	p.setPen(black);
 	
-	f = QFont("Steve");
+	if (blinkenSettings::customFont()) f = QFont("Steve");
+	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
 	p.setFont(f);
 	
@@ -83,7 +85,8 @@ QSize scoresWidget::calcSize()
 	QPainter p(this);
 	QFont f;
 	
-	f = QFont("Steve");
+	if (blinkenSettings::customFont()) f = QFont("Steve");
+	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
 	p.setFont(f);
 	for (int i = 0; i < 3; i++)
