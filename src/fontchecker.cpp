@@ -14,10 +14,9 @@
 
 #include "fontchecker.h"
 
-bool fontChecker::checkInstalled(const QString &fontName, const QString &fontPath)
+bool fontChecker::checkInstalled(const QFont &font, const QString &fontPath)
 {
-	QFont f(fontName);
-	QFontInfo fi(f);
+	QFontInfo fi(font);
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!fi.exactMatch())
 	{

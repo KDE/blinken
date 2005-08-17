@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 	KApplication app;
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
 	
-	if (!fontChecker::checkInstalled("Steve", locate("appdata", "fonts/steve.ttf")))
+	QFont f("Steve", 12, QFont::Normal, true);
+	if (!fontChecker::checkInstalled(f, locate("appdata", "fonts/steve.ttf")))
 	{
 		KProcess *proc = new KProcess;
 		for (int i = 0; i < argc; i++) *proc << argv[i];

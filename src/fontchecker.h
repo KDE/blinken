@@ -10,12 +10,12 @@
 #ifndef FONTCHECKER_H
 #define FONTCHECKER_H
 
-class QString;
+class QFont;
 
 class fontChecker
 {
 	public:
-		static bool checkInstalled(const QString &fontName, const QString &fontPath);
+		static bool checkInstalled(const QFont &font, const QString &fontPath);
 };
 
 #endif
