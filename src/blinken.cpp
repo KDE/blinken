@@ -176,10 +176,10 @@ void blinken::paintEvent(QPaintEvent *)
 		if (sizeAux > size) size = sizeAux;
 		f1.setPointSize(size);
 		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
-		area.moveBy(210, 221 - (area.height() / 2));
+		area.moveBy(212, 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
 		area = p.boundingRect(QRect(), Qt::AlignAuto, font);
-		area.moveBy(428 - area.width(), 221 - (area.height() / 2));
+		area.moveBy(426 - area.width(), 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, font);
 		
 		p.setFont(oFont);
