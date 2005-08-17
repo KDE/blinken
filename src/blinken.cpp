@@ -54,8 +54,6 @@ blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighsc
 	m_manualRect = QRect(578, 389, 54, 54);
 	m_centralLettersRect = QRect(192, 194, 254, 54);
 	m_counterRect = QRect(268, 110, 102, 52);
-	m_soundRect = QRect(181, 209, 25, 25);
-	m_fontRect = QRect(432, 209, 25, 25);
 	
 	m_fillColor = QColor(40, 40, 40);
 	m_fontColor = QColor(126, 126, 126);
@@ -149,6 +147,9 @@ void blinken::paintEvent(QPaintEvent *)
 
 		// draw the two squares of the options
 		p.setPen(QPen(m_fontColor, 2, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+
+		m_soundRect = QRect(181, 209, 25, 25);
+		m_fontRect = QRect(432, 209, 25, 25);
 #ifndef WITHOUT_ARTS
 		p.drawRect(m_soundRect);
 		if (blinkenSettings::playSounds())
@@ -178,9 +179,11 @@ void blinken::paintEvent(QPaintEvent *)
 		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
 		area.moveBy(212, 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
+		m_soundRect = m_soundRect.unite(area);
 		area = p.boundingRect(QRect(), Qt::AlignAuto, font);
 		area.moveBy(426 - area.width(), 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, font);
+		m_fontRect = m_fontRect.unite(area);
 		
 		p.setFont(oFont);
 		p.setPen(oPen);
