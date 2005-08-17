@@ -149,13 +149,15 @@ void blinken::paintEvent(QPaintEvent *)
 
 		// draw the two squares of the options
 		p.setPen(QPen(m_fontColor, 2, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+#ifndef WITHOUT_ARTS
 		p.drawRect(m_soundRect);
-		p.drawRect(m_fontRect);
 		if (blinkenSettings::playSounds())
 		{
 			p.drawLine(186, 214, 199, 227); 
 			p.drawLine(186, 227, 199, 214); 
 		}
+#endif
+		p.drawRect(m_fontRect);
 		if (blinkenSettings::customFont())
 		{
 			p.drawLine(437, 214, 450, 227); 
@@ -169,9 +171,8 @@ void blinken::paintEvent(QPaintEvent *)
 		QRect area;
 		QString sounds = i18n("Sounds");
 		QString font = i18n("Font");
-		//TODO 380 is incorrect
-		size = fontUtils::fontSize(p, sounds, 380, 20);
-		sizeAux = fontUtils::fontSize(p, font, 380, 20);
+		size = fontUtils::fontSize(p, sounds, 95, 20);
+		sizeAux = fontUtils::fontSize(p, font, 95, 20);
 		if (sizeAux > size) size = sizeAux;
 		f1.setPointSize(size);
 		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
