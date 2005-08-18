@@ -262,7 +262,7 @@ To view and modify the accessibility options of &blinken;, press the <keycap>ctr
 To return to the game screen, press the <keycap>ctrl</keycap> key again.
 </para>
 
-<sect2 id="keyboard-control">
+<sect1 id="keyboard-control">
 <title>Keyboard Control</title>
 
 <para>
@@ -277,9 +277,9 @@ The keys are <keycap>1</keycap>, <keycap>2</keycap>, <keycap>3</keycap>, <keycap
 To change the mapping of any button, click it using the mouse. It will then be highlighted, waiting for input. Press the desired key on the keyboard to change the currently assigned key.
 </para>
 
-</sect2>
+</sect1>
 
-<sect2 id="other-options">
+<sect1 id="other-options">
 <title>Other Options</title>
 
 <para>
@@ -288,7 +288,7 @@ By unchecking the <interface>sounds</interface> checkbox, the &blinken; sound ef
 By unchecking the <interface>font</interface> checkbox, a standard font will be used for status text instead of the default handwriting font.
 </para>
 
-</sect2>
+</sect1>
 </chapter>
 
 
