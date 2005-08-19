@@ -30,17 +30,17 @@ static const int namesFontSize = 25;
 class scoresWidget : public QWidget
 {
 	public:
-		scoresWidget(QWidget *parent, const QValueList< QPair<int, QString> > &scores);
+		scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores);
 		QSize calcSize();
 
 	protected:
 		void paintEvent(QPaintEvent *);
 	
 	private:
-		const QValueList< QPair<int, QString> > &m_scores;
+		const QList< QPair<int, QString> > &m_scores;
 };
 
-scoresWidget::scoresWidget(QWidget *parent, const QValueList< QPair<int, QString> > &scores) : QWidget(parent, 0, WStaticContents | WNoAutoErase), m_scores(scores)
+scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent, 0, Qt::WStaticContents | Qt::WNoAutoErase), m_scores(scores)
 {
 }
 
@@ -57,7 +57,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	// bg color
 	p.fillRect(0, 0, w, h, bg);
 	
-	p.setPen(black);
+	p.setPen(Qt::black);
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
@@ -66,11 +66,11 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	p.translate(margin, margin);
 	
-	QValueList< QPair<int, QString> >::const_iterator it;
+	QList< QPair<int, QString> >::const_iterator it;
 	for (it = m_scores.begin(); it != m_scores.end(); ++it)
 	{
 		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor());
-		p.setPen(black);
+		p.setPen(Qt::black);
 		p.drawText(counter::width(false) + 2 * smallMargin, 30, (*it).second);
 		p.translate(0, counter::height() + smallMargin);
 	}
@@ -92,7 +92,7 @@ QSize scoresWidget::calcSize()
 	for (int i = 0; i < 3; i++)
 	{
 		lt = 0;
-		QValueList< QPair<int, QString> >::const_iterator it;
+		QList< QPair<int, QString> >::const_iterator it;
 		for (it = m_scores.begin(); it != m_scores.end(); ++it)
 		{
 			r = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
@@ -148,7 +148,7 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true,
 bool highScoreDialog::scoreGoodEnough(int level, int score)
 {
 	level--;
-	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	QList< QPair<int, QString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
 	while (it != itEnd && (*it).first >= score) it++;
@@ -159,7 +159,7 @@ bool highScoreDialog::scoreGoodEnough(int level, int score)
 void highScoreDialog::addScore(int level, int score, const QString &name)
 {
 	level--;
-	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	QList< QPair<int, QString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
 	while (it != itEnd && (*it).first >= score) it++;

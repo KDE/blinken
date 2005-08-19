@@ -11,7 +11,7 @@
 #define HIGHSCOREDIALOG_H
 
 #include <qpair.h>
-#include <qvaluelist.h>
+#include <qlist.h>
 
 #include <kdialogbase.h>
 
@@ -26,7 +26,7 @@ class highScoreDialog : private KDialogBase
 		void addScore(int level, int score, const QString &name);
 		void showLevel(int level);
 	
-		QValueList< QPair<int, QString> > m_scores[3];
+		QList< QPair<int, QString> > m_scores[3];
 		myTabWidget *m_tw;
 };
 

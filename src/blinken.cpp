@@ -8,6 +8,7 @@
  ***************************************************************************/
 
 #include <qcursor.h>
+#include <qevent.h>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtimer.h>
@@ -30,7 +31,7 @@
 #include "highscoredialog.h"
 #include "settings.h"
 
-blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : QWidget(0, 0, Qt::WStaticContents | Qt::WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_back = new QPixmap(locate("appdata", "images/blinken.png"));
 	
@@ -136,7 +137,7 @@ void blinken::paintEvent(QPaintEvent *)
 		
 		// draw the internal square plus a bit of ellipse on the sides and the
 		// two delimiter lines 
-		p.setPen(NoPen);
+		p.setPen(Qt::NoPen);
 		p.setBrush(m_fillColor);
 		p.drawPie(169, 192, 4, 58, 1440, 2880);
 		p.drawPie(465, 192, 4, 58, -1440, 2880);
@@ -505,21 +506,21 @@ void blinken::drawScoreAndCounter(QPainter &p)
 	switch (m_game.phase())
 	{
 		case blinkenGame::waiting3:
-			c1 = red;
-			c2 = red;
-			c3 = red;
+			c1 = Qt::red;
+			c2 = Qt::red;
+			c3 = Qt::red;
 		break;
 		
 		case blinkenGame::waiting2:
 			c1 = m_countDownColor;
-			c2 = red;
-			c3 = red;
+			c2 = Qt::red;
+			c3 = Qt::red;
 		break;
 		
 		case blinkenGame::waiting1:
 			c1 = m_countDownColor;
 			c2 = c1;
-			c3 = red;
+			c3 = Qt::red;
 		break;
 		
 		default:
@@ -538,7 +539,7 @@ void blinken::drawStatusText(QPainter &p)
 {
 	p.translate(25, 505);
 	p.rotate(-3.29);
-	p.setPen(blue);
+	p.setPen(Qt::blue);
 
 	QString restartText = i18n("Restart the game");
 	QString text;
@@ -636,7 +637,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPoint &center, b
 	if (withMargin)
 	{
 		p.fillRect(r, m_fillColor);
-		p.setPen(QPen(black, 3));
+		p.setPen(QPen(Qt::black, 3));
 		p.drawRoundRect(r.left(), r.top(), r.width(), r.height(), 15, 15);
 	}
 	
@@ -838,8 +839,8 @@ void blinken::updateCursor(const QPoint &p)
 {
 	QPoint p2 = p - QPoint(319, 221);
 	
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(PointingHandCursor);
-	else setCursor(ArrowCursor);
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
+	else setCursor(Qt::ArrowCursor);
 }
 
 #include "blinken.moc"
