@@ -81,7 +81,7 @@ The goal is to get a highscore - each step in the sequence is worth one point, s
 </screenshot>
 
 <para>
-Here is the screen that is presented on startup of &blinken;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, etc) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
+Here is the screen that is presented on startup of &blinken;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, &etc;) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
 </para>
 
 <screenshot>
