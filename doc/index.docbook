@@ -240,10 +240,13 @@ Try remembering the sequence as positions on the screen.
 
 
 <chapter id="accessibility">
-<title>Accessibility Features</title>
+<title>Accessibility Options</title>
 
 <para>
-To view and modify the accessibility options of &blinken;, press the <keycap>&Ctrl;</keycap> key:
+To allow &blinken; to be more easily enjoyed by certain users, there are several accessibility options built into &blinken;.
+</para>
+<para>
+To view and modify the accessibility options of &blinken;, press the <keycap>&Ctrl;</keycap> key (whilst a game is not in progress):
 </para>
 
 <screenshot>
@@ -262,7 +265,7 @@ To view and modify the accessibility options of &blinken;, press the <keycap>&Ct
 To return to the game screen, press the <keycap>&Ctrl;</keycap> key again.
 </para>
 
-<sect1 id="keyboard-control">
+<sect2 id="keyboard-control">
 <title>Keyboard Control</title>
 
 <para>
@@ -277,18 +280,29 @@ The keys are <keycap>1</keycap>, <keycap>2</keycap>, <keycap>3</keycap>, <keycap
 To change the mapping of any button, click it using the mouse. It will then be highlighted, waiting for input. Press the desired key on the keyboard to change the currently assigned key.
 </para>
 
-</sect1>
+</sect2>
 
-<sect1 id="other-options">
+<sect2 id="other-options">
 <title>Other Options</title>
 
 <para>
-There are other options available in the middle of the device: <interface>sounds</interface> and <interface>font</interface>.
-By unchecking the <interface>sounds</interface> checkbox, the &blinken; sound effects will be suppressed.
-By unchecking the <interface>font</interface> checkbox, a standard font will be used for status text instead of the default handwriting font.
+There are other options available in the middle of the window: <interface>sounds</interface> and <interface>font</interface>.
 </para>
 
-</sect1>
+<itemizedlist>
+<listitem>
+<para>
+By unchecking the <interface>sounds</interface> checkbox, the &blinken; sound effects will be suppressed.
+</para>
+</listitem>
+<listitem>
+<para>
+By unchecking the <interface>font</interface> checkbox, a standard font will be used for status text instead of the default handwriting font.
+</para>
+</listitem>
+</itemizedlist>
+
+</sect2>
 </chapter>
 
 
