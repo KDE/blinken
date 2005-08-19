@@ -243,7 +243,7 @@ Try remembering the sequence as positions on the screen.
 <title>Accessibility Features</title>
 
 <para>
-To view and modify the accessibility options of &blinken;, press the <keycap>ctrl</keycap> key:
+To view and modify the accessibility options of &blinken;, press the <keycap>&Ctrl;</keycap> key:
 </para>
 
 <screenshot>
@@ -259,7 +259,7 @@ To view and modify the accessibility options of &blinken;, press the <keycap>ctr
 </screenshot>
 
 <para>
-To return to the game screen, press the <keycap>ctrl</keycap> key again.
+To return to the game screen, press the <keycap>&Ctrl;</keycap> key again.
 </para>
 
 <sect1 id="keyboard-control">
