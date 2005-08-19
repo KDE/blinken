@@ -242,6 +242,9 @@ Try remembering the sequence as positions on the screen.
 <chapter id="accessibility">
 <title>Accessibility Options</title>
 
+<sect1 id="inner_accessibility">
+<title>Accessibility Options</title>
+
 <para>
 To allow &blinken; to be more easily enjoyed by certain users, there are several accessibility options built into &blinken;.
 </para>
@@ -303,6 +306,8 @@ By unchecking the <interface>font</interface> checkbox, a standard font will be 
 </itemizedlist>
 
 </sect2>
+
+</sect1>
 </chapter>
 
 
