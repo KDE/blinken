@@ -59,7 +59,7 @@
 <para>
 &blinken; is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning.
 
-The goal is to get a highscore - each step in the sequence is worth one point, so correct recollection of a sequence of 8 lights is worth 8 points on the highscore table.
+The goal is to get a highscore - each step in the sequence is worth one point, so correct entry of a sequence of 8 lights is worth 8 points on the highscore table.
 </para>
 
 </chapter>
@@ -242,9 +242,6 @@ Try remembering the sequence as positions on the screen.
 <chapter id="accessibility">
 <title>Accessibility Options</title>
 
-<sect1 id="inner_accessibility">
-<title>Accessibility Options</title>
-
 <para>
 To allow &blinken; to be more easily enjoyed by certain users, there are several accessibility options built into &blinken;.
 </para>
@@ -268,9 +265,6 @@ To view and modify the accessibility options of &blinken;, press the <keycap>&Ct
 To return to the game screen, press the <keycap>&Ctrl;</keycap> key again.
 </para>
 
-<sect2 id="keyboard-control">
-<title>Keyboard Control</title>
-
 <para>
 Alongside use of the mouse, &blinken; also allows the user to operate the game using the keyboard.
 </para>
@@ -282,11 +276,6 @@ The keys are <keycap>1</keycap>, <keycap>2</keycap>, <keycap>3</keycap>, <keycap
 <para>
 To change the mapping of any button, click it using the mouse. It will then be highlighted, waiting for input. Press the desired key on the keyboard to change the currently assigned key.
 </para>
-
-</sect2>
-
-<sect2 id="other-options">
-<title>Other Options</title>
 
 <para>
 There are other options available in the middle of the window: <interface>sounds</interface> and <interface>font</interface>.
@@ -305,9 +294,6 @@ By unchecking the <interface>font</interface> checkbox, a standard font will be 
 </listitem>
 </itemizedlist>
 
-</sect2>
-
-</sect1>
 </chapter>
 
 
