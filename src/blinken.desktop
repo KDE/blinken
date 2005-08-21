@@ -6,6 +6,5 @@ Exec=blinken
 Icon=blinken
 Type=Application
 Comment=A retro memory enhancement game
-Comment[ru]=Программа для развития памяти
 Terminal=false
 Categories=Qt;KDE;Education;
