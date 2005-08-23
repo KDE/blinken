@@ -355,8 +355,9 @@ void blinken::checkHS()
 			m_lastName = name;
 			hsd->addScore(m_game.level(), m_game.score(), name);
 		}
+		hsd->showLevel(m_game.level());
 	}
-	hsd->showLevel(m_game.level());
+	delete hsd;
 }
 
 void blinken::highlight(blinkenGame::color c, bool unhighlight)
@@ -544,7 +545,7 @@ void blinken::drawStatusText(QPainter &p)
 	QString restartText = i18n("Restart the game");
 	QString text;
 	if (m_overQuit) text = i18n("Quit blinKen");
-	else if (m_overHighscore || m_overCounter) text = i18n("View HighScore Table");
+	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
 	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
 	else if (m_overAboutKDE) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&");
 	else if (m_overManual) text = m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&");

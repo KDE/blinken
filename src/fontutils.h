@@ -13,6 +13,6 @@
 namespace fontUtils
 {
 	int fontSize(QPainter &p, const QString &s1, int w, int h);
-};
+}
 
 #endif
