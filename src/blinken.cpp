@@ -354,8 +354,9 @@ void blinken::checkHS()
 			m_lastName = name;
 			hsd->addScore(m_game.level(), m_game.score(), name);
 		}
+		hsd->showLevel(m_game.level());
 	}
-	hsd->showLevel(m_game.level());
+	delete hsd;
 }
 
 void blinken::highlight(blinkenGame::color c, bool unhighlight)
