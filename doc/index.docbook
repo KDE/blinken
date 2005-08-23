@@ -135,7 +135,7 @@ The <guiicon>Help</guiicon> button is special, in that it <action>reveals 3 sub-
 To become familiar with the workings of the game, you can interact with the <interface>colored buttons</interface> whilst on the main screen. The buttons will illuminate and produce a tone upon being pressed.
 </para>
 
-<note>You need to have aRts support in kdelibs to hear the sounds.</note>
+<note><para>You need to have aRts support in kdelibs to hear the sounds.</para></note>
 <sect1 id="starting-game">
 <title>Starting a Game</title>
 
