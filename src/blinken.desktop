@@ -1,10 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=blinKen
+Name[xx]=xxblinKenxx
 GenericName=Simon Says Game
+GenericName[xx]=xxSimon Says Gamexx
 Exec=blinken
 Icon=blinken
 Type=Application
 Comment=A retro memory enhancement game
+Comment[xx]=xxA retro memory enhancement gamexx
 Terminal=false
 Categories=Qt;KDE;Education;
