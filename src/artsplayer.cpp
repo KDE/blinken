@@ -36,7 +36,7 @@ artsPlayer::artsPlayer() : m_playobj(0)
 	m_bluePath = locate("appdata","sounds/3.wav");
 	m_yellowPath = locate("appdata","sounds/4.wav");
 #else
-	KMessageBox::information(0, i18n("aRts was not found, therefore the sounds will be disabled."), i18n("Sounds disabled"), "infoaboutartsnotfound");
+	KMessageBox::information(0, i18n("aRts was not found, therefore the sounds will be disabled."), i18n("Sounds Disabled"), "infoaboutartsnotfound");
 #endif
 }
 
