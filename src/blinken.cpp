@@ -349,7 +349,7 @@ void blinken::checkHS()
 	if (hsd->scoreGoodEnough(m_game.level(), m_game.score()))
 	{
 		bool ok;
-		QString name = KInputDialog::getText(i18n("Enter your name"), i18n("Name:"), m_lastName, &ok);
+		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18n("Name:"), m_lastName, &ok);
 		if (!name.isNull() && ok)
 		{
 			m_lastName = name;
