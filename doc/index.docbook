@@ -15,12 +15,12 @@
 <authorgroup>
 <author>
 <firstname>Danny</firstname>
-<othername></othername>
 <surname>Allen</surname>
 <affiliation>
 <address><email>danny@dannyallen.co.uk</email></address>
 </affiliation>
 </author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
 <copyright>
@@ -30,9 +30,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-
-<date>2005-06-14</date>
-<releaseinfo>0.1</releaseinfo>
+<date>2005-08-20</date>
+<releaseinfo>1.0</releaseinfo>
 
 <abstract>
 <para>
@@ -59,7 +58,7 @@
 <para>
 &blinken; is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning.
 
-The goal is to get a highscore - each step in the sequence is worth one point, so correct recollection of a sequence of 8 lights is worth 8 points on the highscore table.
+The goal is to get a high score - each step in the sequence is worth one point, so correct entry of a sequence of 8 lights is worth 8 points on the high score table.
 </para>
 
 </chapter>
@@ -68,96 +67,97 @@ The goal is to get a highscore - each step in the sequence is worth one point, s
 <chapter id="using-blinken">
 <title>Using &blinken;</title>
 
+<para>
+Here is the screen that is presented on startup of &blinken;, showing the general interface to the application. Most of the screen is taken up by the <interface>device</interface>, with the <interface>4 colored buttons</interface>, with the device controls (<interface>score counter</interface>, <guibutton>Start</guibutton> button, &etc;) in the center of the screen. The current status of the application is displayed on the <interface>piece of paper</interface> under the device. In the corners of the application, there are 3 buttons:
+</para>
+
 <screenshot>
 <screeninfo>Here is the screen that is presented on startup of &blinken;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken1.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>&blinken; screenshot</phrase>
-	  </textobject>
-	</mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Here is the screen that is presented on startup of &blinken;</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
-Here is the screen that is presented on startup of &blinken;, showing the general interface to the application. Most of the screen is taken up by the device, with the 4 color buttons, with the device controls (score counter, start button, etc) in the center of the screen. The current status of the application is displayed on the piece of paper under the device. In the corners of the application, there are 3 buttons:
+The <guiicon>Highscores</guiicon> button <action>opens a dialog that displays the <guilabel>Highscores table</guilabel></action> for each of the 3 difficulty levels (the <guilabel>Highscores</guilabel> table can also be accessed by <action>clicking on the <interface>score counter</interface>)</action>:
 </para>
 
 <screenshot>
-<screeninfo>Highscores button</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>Highscores button</phrase>
-	  </textobject>
-	</mediaobject>
+<screeninfo><guiicon>Highscores</guiicon> button</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase><guiicon>Highscores</guiicon> button</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
-The highscores button opens a dialog that displays the highscores table for each of the 3 difficulty levels. The highscores table can also be accessed by clicking on the score counter.
+The <guiicon>Quit</guiicon> button <action>closes the application</action>:
 </para>
 
 <screenshot>
-<screeninfo>Quit button</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken_quitbutton.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>Quit button</phrase>
-	  </textobject>
-	</mediaobject>
+<screeninfo><guiicon>Quit</guiicon> button</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase><guiicon>Quit</guiicon> button</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
-The Quit button exits the application.
+The <guiicon>Help</guiicon> button is special, in that it <action>reveals 3 sub-buttons</action>. These buttons are shown when the <guiicon>Help</guiicon> button is <action>hovered over</action>, and provide access to the <guilabel>&blinken; handbook</guilabel> (this document), and the <guilabel>About &blinken;</guilabel> and <guilabel>About &kde;</guilabel> dialogs:
 </para>
 
 <screenshot>
-<screeninfo>Help button</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken_helpbutton.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>Help button</phrase>
-	  </textobject>
-	</mediaobject>
+<screeninfo><guiicon>Help</guiicon> button</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase><guiicon>Help</guiicon> button</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
-The help button is special, in that it reveals 3 sub-buttons. These buttons are shown when the help button is hovered over, and provide access to the &blinken; handbook (this document), and the "About &blinken;" and "About &kde;" dialogs.
+To become familiar with the workings of the game, you can interact with the <interface>colored buttons</interface> whilst on the main screen. The buttons will illuminate and produce a tone upon being pressed.
 </para>
 
-<para>
-To become familiar with the workings of the game, you can interact with the buttons whilst on the main screen. The buttons will illuminate and produce a tone upon being pressed.
-</para>
-
+<note><para>You need to have &arts; support in kdelibs to hear the sounds.</para></note>
 <sect1 id="starting-game">
 <title>Starting a Game</title>
 
 <para>
-Once you are familiar with the workings of the application, a game can be started by pressing the "Start" button in the center of the screen. This "powers on" the device, as shown by the illuminated score counter. You can then choose the difficulty level that you want to attempt:
+Once you are familiar with the workings of the application, a game can be started by pressing the <guibutton>Start</guibutton> button in the center of the screen. This <quote>powers on</quote> the device, as shown by the illuminated <interface>score counter</interface>. You can then <action>choose the difficulty level</action> that you want to attempt:
  </para>
 
 <screenshot>
 <screeninfo>Select difficulty level</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken2.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>Select difficulty level</phrase>
-	  </textobject>
-	</mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Select difficulty level</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
 There are 3 levels in &blinken;:
- </para>
+</para>
 
 <itemizedlist>
 <listitem>
@@ -179,24 +179,23 @@ Level ? is the most difficult level of &blinken;. It takes the timings from Leve
 
 </sect1>
 
-
 <sect1 id="enter-highscore">
 <title>Entering a New Highscore</title>
 
 <para>
-If you are lucky enough to get a highscore, it will be entered into highscores table. A dialog will ask for a nickname to associate with your score in the table:
+If you are lucky enough to get a highscore, it will be entered into the <guilabel>Highscores</guilabel> table. A dialog will ask for a name to associate with your score in the table:
 </para>
 
 <screenshot>
 <screeninfo>Highscore nickname prompt dialog</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken_nickprompt.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>Highscore nickname prompt dialog</phrase>
-	  </textobject>
-	</mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Highscore nickname prompt dialog</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
@@ -220,7 +219,8 @@ If you have PC speakers, turn them on with the sound at a good level so that you
 </listitem>
 <listitem>
 <para>
-Experiment with both the mouse and keyboard interaction methods, to see which one suites your memory best.
+Experiment with both the mouse and <link
+linkend="accessibility">keyboard</link> interaction methods, to see which one suites your memory best.
 </para>
 </listitem>
 <listitem>
@@ -240,30 +240,30 @@ Try remembering the sequence as positions on the screen.
 
 
 <chapter id="accessibility">
-<title>Accessibility Features</title>
+<title>Accessibility Options</title>
 
 <para>
-To view and modify the accessibility options of &blinken;, press the <keycap>ctrl</keycap> key:
+To allow &blinken; to be more easily enjoyed by certain users, there are several accessibility options built into &blinken;.
+</para>
+<para>
+To view and modify the accessibility options of &blinken;, press the <keycap>&Ctrl;</keycap> key (whilst a game is not in progress):
 </para>
 
 <screenshot>
 <screeninfo>&blinken; access keys</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="blinken_accesskeys.png" format="PNG"/>
-	  </imageobject>
-	    <textobject>
-	    <phrase>&blinken; access keys</phrase>
-	  </textobject>
-	</mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>&blinken; access keys</phrase>
+</textobject>
+</mediaobject>
 </screenshot>
 
 <para>
-To return to the game screen, press the <keycap>ctrl</keycap> key again.
+To return to the game screen, press the <keycap>&Ctrl;</keycap> key again.
 </para>
-
-<sect1 id="keyboard-control">
-<title>Keyboard Control</title>
 
 <para>
 Alongside use of the mouse, &blinken; also allows the user to operate the game using the keyboard.
@@ -277,18 +277,23 @@ The keys are <keycap>1</keycap>, <keycap>2</keycap>, <keycap>3</keycap>, <keycap
 To change the mapping of any button, click it using the mouse. It will then be highlighted, waiting for input. Press the desired key on the keyboard to change the currently assigned key.
 </para>
 
-</sect1>
-
-<sect1 id="other-options">
-<title>Other Options</title>
-
 <para>
-There are other options available in the middle of the device: <interface>sounds</interface> and <interface>font</interface>.
-By unchecking the <interface>sounds</interface> checkbox, the &blinken; sound effects will be suppressed.
-By unchecking the <interface>font</interface> checkbox, a standard font will be used for status text instead of the default handwriting font.
+There are other options available in the middle of the window: <interface>sounds</interface> and <interface>font</interface>.
 </para>
 
-</sect1>
+<itemizedlist>
+<listitem>
+<para>
+By unchecking the <interface>sounds</interface> checkbox, the &blinken; sound effects will be suppressed.
+</para>
+</listitem>
+<listitem>
+<para>
+By unchecking the <interface>font</interface> checkbox, a standard font will be used for status text instead of the default handwriting font.
+</para>
+</listitem>
+</itemizedlist>
+
 </chapter>
 
 
@@ -315,6 +320,8 @@ Contributors:
 <para>
 Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
 </para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underGPL;
