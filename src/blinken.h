@@ -19,7 +19,6 @@ class QTimer;
 class KAction;
 class KHelpMenu;
 
-class artsPlayer;
 class button;
 class highScoreDialog;
 
@@ -82,7 +81,6 @@ Q_OBJECT
 		
 		QString m_lastName;
 		
-		artsPlayer *m_artsPlayer;
 		blinkenGame m_game;
 		
 		KHelpMenu *m_helpMenu;
