@@ -356,7 +356,6 @@ void blinken::checkHS()
 		}
 		hsd->showLevel(m_game.level());
 	}
-	delete hsd;
 }
 
 void blinken::highlight(blinkenGame::color c, bool unhighlight)
