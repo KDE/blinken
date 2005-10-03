@@ -10,6 +10,7 @@
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
+#include <klocale.h>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 
