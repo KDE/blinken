@@ -12,12 +12,13 @@
 #include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
+#include <kglobal.h>
 
 #include "button.h"
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
-	KConfig *kc = kapp->config();
+	KConfig *kc = KGlobal::config();
 	QString cs = getColorString();
 	QString pixmap = QString("images/%1h.png").arg(cs);
 	
@@ -57,7 +58,7 @@ void button::setShortcut(int key)
 	m_key = key;
 	m_selected = false;
 	
-	KConfig *kc = kapp->config();
+	KConfig *kc = KGlobal::config();
 	kc->writeEntry(getColorString(), key);
 	kc->sync();
 }
