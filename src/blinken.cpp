@@ -258,7 +258,7 @@ void blinken::keyReleaseEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
-	if (e -> state() == Qt::ControlButton && e -> stateAfter() != Qt::ControlButton && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
+	if (e -> state() == Qt::ControlModifier && e -> stateAfter() != Qt::ControlButton && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
 	{
 		m_showPreferences = !m_showPreferences;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
