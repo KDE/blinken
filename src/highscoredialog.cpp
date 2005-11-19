@@ -130,7 +130,7 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true,
 	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
 	
-	KConfig *cfg = kapp -> sessionConfig();
+	KConfig *cfg = KGlobal::config();
 	for (int i = 1; i <= 3; i++)
 	{
 		cfg -> setGroup(QString("Level%1").arg(i));
@@ -169,7 +169,7 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 		m_scores[level].insert(it, qMakePair(score, name));
 		m_scores[level].remove(--m_scores[level].end());
 		
-		KConfig *cfg = kapp -> sessionConfig();
+		KConfig *cfg = KGlobal::config();
 		cfg -> setGroup(QString("Level%1").arg(level + 1));
 		int j;
 		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
