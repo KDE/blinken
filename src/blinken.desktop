@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=blinKen
+DocPath=blinken/index.html
 Exec=blinken
 Icon=blinken
 Type=Application
