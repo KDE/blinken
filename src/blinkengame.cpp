@@ -11,7 +11,7 @@
 
 #include <qtimer.h>
 
-#include <kapplication.h>
+#include <krandom.h>
 
 #include "artsplayer.h"
 #include "blinkengame.h"
@@ -156,7 +156,7 @@ blinkenGame::color blinkenGame::generateColor()
 	// make the compiler happy :-D
 	color c = none;
 
-	r = 1 + (int)(4.0 * kapp -> random() / (RAND_MAX + 1.0));
+	r = 1 + (int)(4.0 * KRandom::random() / (RAND_MAX + 1.0));
 	switch(r)
 	{
 		case 1:

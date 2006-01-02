@@ -25,19 +25,19 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 	switch (c)
 	{
 		case blinkenGame::blue:
-			m_key = kc->readNumEntry(cs, Qt::Key_3);
+			m_key = kc->readEntry(cs, Qt::Key_3).toInt();
 		break;
 		
 		case blinkenGame::yellow:
-			m_key = kc->readNumEntry(cs, Qt::Key_1);
+			m_key = kc->readEntry(cs, Qt::Key_1).toInt();
 		break;
 		
 		case blinkenGame::red:
-			m_key = kc->readNumEntry(cs, Qt::Key_2);
+			m_key = kc->readEntry(cs, Qt::Key_2).toInt();
 		break;
 		
 		case blinkenGame::green:
-			m_key = kc->readNumEntry(cs, Qt::Key_4);
+			m_key = kc->readEntry(cs, Qt::Key_4).toInt();
 		break;
 		
 		default:

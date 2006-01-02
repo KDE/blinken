@@ -136,7 +136,7 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true,
 		cfg -> setGroup(QString("Level%1").arg(i));
 		for (int j = 1; j <= 5; j++)
 		{
-			m_scores[i-1].append(qMakePair(cfg->readNumEntry(QString("Score%1").arg(j)), cfg->readEntry(QString("Name%1").arg(j))));
+			m_scores[i-1].append(qMakePair(cfg->readEntry(QString("Score%1").arg(j), QVariant(0)).toInt(), cfg->readEntry(QString("Name%1").arg(j), QString::null)));
 		}
 	}
 	
