@@ -114,5 +114,5 @@ QString button::getColorString() const
 	}
 	
 	// never happens
-	return QString::null;
+	return QString();
 }
