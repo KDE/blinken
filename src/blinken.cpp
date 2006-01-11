@@ -545,10 +545,9 @@ void blinken::drawStatusText(QPainter &p)
 	QString text;
 	if (m_overQuit) text = i18n("Quit blinKen");
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
-	//TODO fix this, it should display tooltip in the text area - disabled to build 10th January 2006 annma
-	//else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutApp).remove("&");
-	//else if (m_overAboutKDE) text = m_helpMenu -> menu() -> text(KHelpMenu::menuAboutKDE).remove("&");
-	//else if (m_overManual) text = m_helpMenu -> menu() -> text(KHelpMenu::menuHelpContents).remove("&");
+	else if (m_overAboutBlinken || m_overCentralLetters) text = i18n("About blinKen");
+	else if (m_overAboutKDE) text = i18n("About KDE");
+	else if (m_overManual) text = i18n("blinKen Handbook");
 	else if (m_overLevels[0]) text = i18n("2nd Level");
 	else if (m_overLevels[1]) text = i18n("1st Level");
 	else if (m_overLevels[2]) text = i18n("Random Level");
