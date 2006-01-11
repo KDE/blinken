@@ -544,6 +544,7 @@ void blinken::drawStatusText(QPainter &p)
 	QString restartText = i18n("Restart the game");
 	QString text;
 	if (m_overQuit) text = i18n("Quit blinKen");
+#warning this is a sucky solution, i want my khelpmenu features back!!!
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
 	else if (m_overAboutBlinken || m_overCentralLetters) text = i18n("About blinKen");
 	else if (m_overAboutKDE) text = i18n("About KDE");
