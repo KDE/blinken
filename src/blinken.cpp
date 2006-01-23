@@ -73,6 +73,7 @@ blinken::blinken() : QWidget(0, 0, Qt::WStaticContents | Qt::WNoAutoErase), m_ov
 	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
 	
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
+	m_helpMenu->menu(); // ensures the actions are created
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 }
@@ -95,6 +96,7 @@ void blinken::paintEvent(QPaintEvent *)
 {
 	QPixmap buf(width(), height());
 	QPainter p(&buf);
+	p.setRenderHint(QPainter::Antialiasing, true);
 	
 	p.drawPixmap(0, 0, *m_back);
 	
@@ -544,11 +546,10 @@ void blinken::drawStatusText(QPainter &p)
 	QString restartText = i18n("Restart the game");
 	QString text;
 	if (m_overQuit) text = i18n("Quit blinKen");
-#warning this is a sucky solution, i want my khelpmenu features back!!!
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
-	else if (m_overAboutBlinken || m_overCentralLetters) text = i18n("About blinKen");
-	else if (m_overAboutKDE) text = i18n("About KDE");
-	else if (m_overManual) text = i18n("blinKen Handbook");
+	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove("&");
+	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove("&"); 
+	else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove("&");
 	else if (m_overLevels[0]) text = i18n("2nd Level");
 	else if (m_overLevels[1]) text = i18n("1st Level");
 	else if (m_overLevels[2]) text = i18n("Random Level");
