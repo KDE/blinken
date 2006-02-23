@@ -76,6 +76,9 @@ Q_OBJECT
 		// if should update the highlighting after the next repaint
 		bool m_updateButtonHighlighting;
 		
+		// use always the non-cool font?
+		bool m_alwaysUseNonCoolFont;
+		
 		blinkenGame::color m_highlighted;
 		QTimer *m_unhighlighter;
 		

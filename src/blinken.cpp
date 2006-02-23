@@ -74,6 +74,10 @@ blinken::blinken() : QWidget(0, 0, WStaticContents | WNoAutoErase), m_overHighsc
 	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
+	
+	QString aux = i18n("If the Steve font that is used by bliken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
+	
+	m_alwaysUseNonCoolFont = aux == "1";
 }
 
 blinken::~blinken()
@@ -158,11 +162,14 @@ void blinken::paintEvent(QPaintEvent *)
 			p.drawLine(186, 227, 199, 214); 
 		}
 #endif
-		p.drawRect(m_fontRect);
-		if (blinkenSettings::customFont())
+		if (!m_alwaysUseNonCoolFont)
 		{
-			p.drawLine(437, 214, 450, 227); 
-			p.drawLine(437, 227, 450, 214); 
+			p.drawRect(m_fontRect);
+			if (blinkenSettings::customFont())
+			{
+				p.drawLine(437, 214, 450, 227); 
+				p.drawLine(437, 227, 450, 214); 
+			}
 		}
 
 		// draw the options' text
@@ -182,10 +189,13 @@ void blinken::paintEvent(QPaintEvent *)
 		p.drawText(area, Qt::AlignCenter, sounds);
 		m_soundRect = m_soundRect.unite(area);
 #endif
-		area = p.boundingRect(QRect(), Qt::AlignAuto, font);
-		area.moveBy(426 - area.width(), 221 - (area.height() / 2));
-		p.drawText(area, Qt::AlignCenter, font);
-		m_fontRect = m_fontRect.unite(area);
+		if (!m_alwaysUseNonCoolFont)
+		{
+			area = p.boundingRect(QRect(), Qt::AlignAuto, font);
+			area.moveBy(426 - area.width(), 221 - (area.height() / 2));
+			p.drawText(area, Qt::AlignCenter, font);
+			m_fontRect = m_fontRect.unite(area);
+		}
 		
 		p.setFont(oFont);
 		p.setPen(oPen);
@@ -279,7 +289,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		hsd->showLevel(1);
 		m_updateButtonHighlighting = true;
 	}
-	else if (m_showPreferences && m_fontRect.contains(e -> pos()))
+	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
 		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
 		blinkenSettings::writeConfig();
@@ -594,7 +604,7 @@ void blinken::drawStatusText(QPainter &p)
 	}
 	
 	QFont f;
-	if (blinkenSettings::customFont()) f = QFont("Steve");
+	if (blinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont("Steve");
 	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, text, 380, 30));
 	p.setFont(f);
@@ -751,7 +761,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_showPreferences && m_fontRect.contains(p))
+	if (m_showPreferences && m_fontRect.contains(p) && !m_alwaysUseNonCoolFont)
 	{
 		m_overFont = true;
 		haveToUpdate = true;
