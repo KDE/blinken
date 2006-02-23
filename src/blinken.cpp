@@ -181,12 +181,12 @@ void blinken::paintEvent(QPaintEvent *)
 		f1.setPointSize(size);
 #ifndef WITHOUT_ARTS
 		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
-		area.moveBy(212, 221 - (area.height() / 2));
+		area.translate(212, 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
 		m_soundRect = m_soundRect.unite(area);
 #endif
 		area = p.boundingRect(QRect(), Qt::AlignAuto, font);
-		area.moveBy(426 - area.width(), 221 - (area.height() / 2));
+		area.translate(426 - area.width(), 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, font);
 		m_fontRect = m_fontRect.unite(area);
 		
@@ -634,7 +634,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPoint &center, b
 	
 	r = p.boundingRect(QRect(), Qt::AlignAuto, text);
 	r = QRect(0, 0, r.width() + xMargin, r.height() + yMargin);
-	r.moveBy(center.x() - r.width() / 2, center.y() - r.height() / 2);
+	r.translate(center.x() - r.width() / 2, center.y() - r.height() / 2);
 	
 	if (withMargin)
 	{
