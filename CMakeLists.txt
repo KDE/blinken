@@ -1,4 +1,5 @@
 kde4_header()
+project(blinken)
 
 add_subdirectory( src ) 
 add_subdirectory( images ) 
