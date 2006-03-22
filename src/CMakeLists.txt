@@ -23,7 +23,7 @@ kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
-target_link_libraries(blinken  ${QT_AND_KDECORE_LIBS} kdeui kio )
+target_link_libraries(blinken  ${KDE4_KDECORE_LIBS} kdeui kio )
 
 install_targets(/bin blinken )
 
