@@ -40,7 +40,7 @@ class scoresWidget : public QWidget
 		const QList< QPair<int, QString> > &m_scores;
 };
 
-scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent, 0, Qt::WStaticContents | Qt::WNoAutoErase), m_scores(scores)
+scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent, Qt::WStaticContents | Qt::WNoAutoErase), m_scores(scores)
 {
 }
 
@@ -167,7 +167,7 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 	if (it != itEnd)
 	{
 		m_scores[level].insert(it, qMakePair(score, name));
-		m_scores[level].remove(--m_scores[level].end());
+		m_scores[level].erase(--m_scores[level].end());
 		
 		KConfig *cfg = KGlobal::config();
 		cfg -> setGroup(QString("Level%1").arg(level + 1));
@@ -184,11 +184,11 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 void highScoreDialog::showLevel(int level)
 {
 	QSize max, aux;
-	m_tw -> setCurrentPage(level -1);
+	m_tw -> setCurrentIndex(level -1);
 	
 	for (int i = 0; i < 3; i++)
 	{
-		aux = static_cast<scoresWidget*>(m_tw -> page(i)) -> calcSize();
+		aux = static_cast<scoresWidget*>(m_tw -> widget(i)) -> calcSize();
 		max = max.expandedTo(aux);
 	}
 	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
