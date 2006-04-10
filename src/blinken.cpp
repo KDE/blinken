@@ -250,7 +250,7 @@ void blinken::keyPressEvent(QKeyEvent *e)
 				
 					if (different)
 					{
-						m_buttons[i] -> setShortcut(ks);
+						m_buttons[i] -> setShortcut(e->key());
 						update();
 					}
 				}
