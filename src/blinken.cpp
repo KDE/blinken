@@ -77,7 +77,7 @@ blinken::blinken() : QWidget(0, Qt::WStaticContents | Qt::WNoAutoErase), m_overH
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 	
-	QString aux = i18n("If the Steve font that is used by bliken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
+	QString aux = i18nc("If the Steve font that is used by bliken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
 	
 	m_alwaysUseNonCoolFont = aux == "1";
 }
