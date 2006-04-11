@@ -96,7 +96,7 @@ QSize scoresWidget::calcSize()
 		for (it = m_scores.begin(); it != m_scores.end(); ++it)
 		{
 			r = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
-			lt = QMAX(lt, r.width());
+			lt = qMax(lt, r.width());
 		}
 	}
 	
