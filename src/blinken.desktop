@@ -1,9 +1,11 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=blinKen
+Name[bn]=ব্লিনকেন
 DocPath=blinken/index.html
 GenericName=Simon Says Game
 GenericName[bg]=Игра за паметта
+GenericName[bn]=সায়মনের কথা খেলা
 GenericName[ca]=Joc del Simon Diu
 GenericName[cs]=Hra Kuba řekl
 GenericName[cy]=Gêm Dewi yn Dweud
@@ -36,6 +38,7 @@ Icon=blinken
 Type=Application
 Comment=A retro memory enhancement game
 Comment[bg]=Игра за упражнение на паметта
+Comment[bn]=পুরনো দিনের স্মৃতিবর্ধক খেলা
 Comment[ca]=Un joc per millorar la memòria amb aspecte retro
 Comment[cs]=Hra k procvičování paměti
 Comment[cy]=Gêm oes-a-fu i wella eich cof
