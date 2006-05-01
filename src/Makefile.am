@@ -19,5 +19,3 @@ xdg_apps_DATA = blinken.desktop
 
 kde_kcfg_DATA = blinken.kcfg
 
-messages: rc.cpp
-	$(XGETTEXT) *.cpp -o $(podir)/blinken.pot
