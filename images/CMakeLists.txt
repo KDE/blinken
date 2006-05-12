@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/blinken/images FILES blinken.png redh.png blueh.png greenh.png yellowh.png quit.png quit_hover.png menu.png menu_hover.png highscore.png highscore_hover.png mark.png )
 
-kde4_footer()
 
 
 

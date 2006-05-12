@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -33,7 +32,6 @@ install_targets(/bin blinken )
 install_files( ${XDG_APPS_DIR} FILES blinken.desktop )
 install_files( ${KCFG_INSTALL_DIR} FILES blinken.kcfg )
 
-kde4_footer()
 
 
 

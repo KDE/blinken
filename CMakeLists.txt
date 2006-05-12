@@ -1,4 +1,3 @@
-kde4_header()
 project(blinken)
 
 add_subdirectory( src ) 
@@ -14,7 +13,6 @@ add_subdirectory( fonts )
 
 install_files( ${DATA_INSTALL_DIR}/blinken/ FILES README.packagers )
 
-kde4_footer()
 
 
 

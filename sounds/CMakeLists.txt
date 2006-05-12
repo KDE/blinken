@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/blinken/sounds FILES 1.wav 2.wav 3.wav 4.wav lose.wav )
 
-kde4_footer()
 
 
 
