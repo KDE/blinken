@@ -570,7 +570,7 @@ void blinken::drawStatusText(QPainter &p)
 		switch (m_game.phase())
 		{
 			case blinkenGame::starting:
-				text = i18n("Press Start to begin!");
+				text = i18n("Press Start to begin");
 			break;
 			
 			case blinkenGame::choosingLevel:
@@ -601,7 +601,7 @@ void blinken::drawStatusText(QPainter &p)
 			
 			case blinkenGame::typingTheSequence:
 				if (m_overCentralText) text = restartText;
-				else text = i18n("Repeat the sequence!");
+				else text = i18n("Repeat the sequence");
 			break;
 		}
 	}
