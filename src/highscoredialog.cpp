@@ -125,8 +125,11 @@ class myTabWidget : public QTabWidget
 
 /* highScoreDialog */
 
-highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true, i18n("Highscores"), KDialogBase::Close)
+highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent)
 {
+	setCaption(i18n("Highscores"));
+	setButtons(Close);
+
 	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
 	

@@ -13,11 +13,11 @@
 #include <qpair.h>
 #include <qlist.h>
 
-#include <kdialogbase.h>
+#include <kdialog.h>
 
 class myTabWidget;
 
-class highScoreDialog : private KDialogBase
+class highScoreDialog : private KDialog
 {
 	public:
 		highScoreDialog(QWidget *parent);
