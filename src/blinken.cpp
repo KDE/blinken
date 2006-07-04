@@ -41,7 +41,7 @@ blinken::blinken() : QWidget(0, Qt::WStaticContents | Qt::WNoAutoErase), m_overH
 	m_buttons[3] = new button(blinkenGame::green);
 	
 	m_highscore = new QPixmap(KStandardDirs::locate("appdata", "images/highscore.png"));
-	m_highscoreHover = new QPixmap(locate("appdata", "images/highscore_hover.png"));
+	m_highscoreHover = new QPixmap(KStandardDirs::locate("appdata", "images/highscore_hover.png"));
 	m_quit = new QPixmap(locate("appdata", "images/quit.png"));
 	m_quitHover = new QPixmap(locate("appdata", "images/quit_hover.png"));
 	m_menu = new QPixmap(locate("appdata", "images/menu.png"));
