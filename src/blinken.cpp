@@ -42,11 +42,11 @@ blinken::blinken() : QWidget(0, Qt::WStaticContents | Qt::WNoAutoErase), m_overH
 	
 	m_highscore = new QPixmap(KStandardDirs::locate("appdata", "images/highscore.png"));
 	m_highscoreHover = new QPixmap(KStandardDirs::locate("appdata", "images/highscore_hover.png"));
-	m_quit = new QPixmap(locate("appdata", "images/quit.png"));
-	m_quitHover = new QPixmap(locate("appdata", "images/quit_hover.png"));
-	m_menu = new QPixmap(locate("appdata", "images/menu.png"));
-	m_menuHover = new QPixmap(locate("appdata", "images/menu_hover.png"));
-	m_mark = new QPixmap(locate("appdata", "images/mark.png"));
+	m_quit = new QPixmap(KStandardDirs::locate("appdata", "images/quit.png"));
+	m_quitHover = new QPixmap(KStandardDirs::locate("appdata", "images/quit_hover.png"));
+	m_menu = new QPixmap(KStandardDirs::locate("appdata", "images/menu.png"));
+	m_menuHover = new QPixmap(KStandardDirs::locate("appdata", "images/menu_hover.png"));
+	m_mark = new QPixmap(KStandardDirs::locate("appdata", "images/mark.png"));
 	m_highscoreRect = QRect(10, 10, 72, 72);
 	m_quitRect = QRect(562, 10, 72, 73);
 	m_menuRect = QRect(562, 443, 72, 72);

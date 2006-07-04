@@ -29,8 +29,8 @@ install_targets(/bin blinken )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES blinken.desktop )
-install_files( ${KCFG_INSTALL_DIR} FILES blinken.kcfg )
+install( FILES blinken.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 
 
 

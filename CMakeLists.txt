@@ -11,7 +11,7 @@ add_subdirectory( fonts )
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/blinken/ FILES README.packagers )
+install( FILES README.packagers  DESTINATION  ${DATA_INSTALL_DIR}/blinken/ )
 
 
 

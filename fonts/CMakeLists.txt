@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/blinken/fonts FILES steve.ttf )
+install( FILES steve.ttf  DESTINATION  ${DATA_INSTALL_DIR}/blinken/fonts )
 
 
 
