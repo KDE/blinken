@@ -33,7 +33,7 @@
 
 blinken::blinken() : QWidget(0, Qt::WStaticContents | Qt::WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
-	m_back = new QPixmap(locate("appdata", "images/blinken.png"));
+	m_back = new QPixmap(KStandardDirs::locate("appdata", "images/blinken.png"));
 	
 	m_buttons[0] = new button(blinkenGame::blue);
 	m_buttons[1] = new button(blinkenGame::yellow);

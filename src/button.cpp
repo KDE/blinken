@@ -45,7 +45,7 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 		break;
 	}
 	
-	m_highlighted = new QPixmap(locate("appdata", pixmap));
+	m_highlighted = new QPixmap(KStandardDirs::locate("appdata", pixmap));
 }
 
 button::~button()
