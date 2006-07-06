@@ -24,7 +24,7 @@ kde4_add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken  ${KDE4_KDECORE_LIBS} kdeui kio )
 
-install_targets(/bin blinken )
+install(TARGETS blinken  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
