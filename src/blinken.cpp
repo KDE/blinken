@@ -31,8 +31,9 @@
 #include "highscoredialog.h"
 #include "settings.h"
 
-blinken::blinken() : QWidget(0, Qt::WStaticContents | Qt::WNoAutoErase), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : QWidget(0), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
+	setAttribute(Qt::WA_StaticContents);
 	m_back = new QPixmap(KStandardDirs::locate("appdata", "images/blinken.png"));
 	
 	m_buttons[0] = new button(blinkenGame::blue);
@@ -187,14 +188,14 @@ void blinken::paintEvent(QPaintEvent *)
 		if (sizeAux > size) size = sizeAux;
 		f1.setPointSize(size);
 #ifndef WITHOUT_ARTS
-		area = p.boundingRect(QRect(), Qt::AlignAuto, sounds);
+		area = p.boundingRect(QRect(), Qt::AlignLeft, sounds);
 		area.translate(212, 221 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
 		m_soundRect = m_soundRect.unite(area);
 #endif
 		if (!m_alwaysUseNonCoolFont)
 		{
-			area = p.boundingRect(QRect(), Qt::AlignAuto, font);
+			area = p.boundingRect(QRect(), Qt::AlignLeft, font);
 			area.translate(426 - area.width(), 221 - (area.height() / 2));
 			p.drawText(area, Qt::AlignCenter, font);
 			m_fontRect = m_fontRect.unite(area);
@@ -214,7 +215,8 @@ void blinken::paintEvent(QPaintEvent *)
 	
 	drawStatusText(p);
 	
-	bitBlt(this, 0, 0, &buf);
+	QPainter p2(this);
+	p2.drawPixmap(0, 0, buf);
 	
 	if (m_updateButtonHighlighting) updateButtonHighlighting(mapFromGlobal(QCursor::pos()));
 }
@@ -270,7 +272,7 @@ void blinken::keyReleaseEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
-	if (e -> state() == Qt::ControlModifier && e -> stateAfter() != Qt::ControlButton && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
+	if ( (e -> key() == Qt::Key_Control) && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
 	{
 		m_showPreferences = !m_showPreferences;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
@@ -642,7 +644,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPoint &center, b
 	if (bold) f.setBold(true);
 	p.setFont(f);
 	
-	r = p.boundingRect(QRect(), Qt::AlignAuto, text);
+	r = p.boundingRect(QRect(), Qt::AlignLeft, text);
 	r = QRect(0, 0, r.width() + xMargin, r.height() + yMargin);
 	r.translate(center.x() - r.width() / 2, center.y() - r.height() / 2);
 	

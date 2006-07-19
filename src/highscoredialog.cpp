@@ -40,8 +40,9 @@ class scoresWidget : public QWidget
 		const QList< QPair<int, QString> > &m_scores;
 };
 
-scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent, Qt::WStaticContents | Qt::WNoAutoErase), m_scores(scores)
+scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent), m_scores(scores)
 {
+	setAttribute(Qt::WA_StaticContents);
 }
 
 void scoresWidget::paintEvent(QPaintEvent *)
@@ -52,7 +53,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	QPixmap buf(w, h);
 	QPainter p(&buf);
 	QRect r;
-	QColor bg = paletteBackgroundColor();
+	QColor bg = palette().window().color();
  
 	// bg color
 	p.fillRect(0, 0, w, h, bg);
@@ -75,14 +76,17 @@ void scoresWidget::paintEvent(QPaintEvent *)
 		p.translate(0, counter::height() + smallMargin);
 	}
 	
-	bitBlt(this, 0, 0, &buf);
+	QPainter p2(this);
+	p2.drawPixmap(0, 0, buf);
 }
+
 
 QSize scoresWidget::calcSize()
 {
 	int mw, mh, lt;
 	QRect r;
-	QPainter p(this);
+	QPixmap dummyPixmap(2000, 2000);
+	QPainter p(&dummyPixmap);
 	QFont f;
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
@@ -95,7 +99,7 @@ QSize scoresWidget::calcSize()
 		QList< QPair<int, QString> >::const_iterator it;
 		for (it = m_scores.begin(); it != m_scores.end(); ++it)
 		{
-			r = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
+			r = p.boundingRect(QRect(), Qt::AlignLeft, (*it).second);
 			lt = qMax(lt, r.width());
 		}
 	}
@@ -143,9 +147,9 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent)
 		}
 	}
 	
-	m_tw -> addTab(new scoresWidget(m_tw, m_scores[0]), i18n("Level 1"));
-	m_tw -> addTab(new scoresWidget(m_tw, m_scores[1]), i18n("Level 2"));
-	m_tw -> addTab(new scoresWidget(m_tw, m_scores[2]), i18n("Level ?"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[0]), i18n("Level 1"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[1]), i18n("Level 2"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[2]), i18n("Level ?"));
 }
 
 bool highScoreDialog::scoreGoodEnough(int level, int score)
