@@ -1,8 +1,8 @@
 
-
-
-
 ########### next target ###############
+
+remove_definitions(-DQT3_SUPPORT_WARNINGS)
+remove_definitions(-DQT3_SUPPORT)
 
 set(blinken_SRCS 
    main.cpp 
@@ -26,37 +26,8 @@ target_link_libraries(blinken  ${KDE4_KDECORE_LIBS} kdeui kio )
 
 install(TARGETS blinken  DESTINATION ${BIN_INSTALL_DIR} )
 
-
 ########### install files ###############
 
 install( FILES blinken.desktop  DESTINATION  ${XDG_APPS_DIR} )
 install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 
-
-
-
-#original Makefile.am contents follow:
-
-#if include_ARTS
-#artslib = -lartskde
-#else
-#artslib =
-#endif
-#
-#bin_PROGRAMS = blinken
-#
-#INCLUDES = $(all_includes)
-#
-#blinken_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-#blinken_LDADD = $(LIB_KDEUI) $(LIB_KIO) $(artslib)
-#
-#blinken_SOURCES = main.cpp blinken.cpp artsplayer.cpp blinkengame.cpp number.cpp highscoredialog.cpp counter.cpp fontutils.cpp fontchecker.cpp button.cpp settings.kcfgc
-#
-#METASOURCES = AUTO
-#
-#xdg_apps_DATA = blinken.desktop
-#
-#kde_kcfg_DATA = blinken.kcfg
-#
-#messages: rc.cpp
-#	$(XGETTEXT) *.cpp -o $(podir)/blinken.pot
