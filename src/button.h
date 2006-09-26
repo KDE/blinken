@@ -21,7 +21,7 @@ class KShortcut;
 class button
 {
 	public:
-		button(blinkenGame::color c);
+		explicit button(blinkenGame::color c);
 		~button();
 	
 		void setShortcut(int key);

@@ -20,7 +20,7 @@ class myTabWidget;
 class highScoreDialog : private KDialog
 {
 	public:
-		highScoreDialog(QWidget *parent);
+		explicit highScoreDialog(QWidget *parent);
 		
 		bool scoreGoodEnough(int level, int score);
 		void addScore(int level, int score, const QString &name);

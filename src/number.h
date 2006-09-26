@@ -15,7 +15,7 @@ class QPainter;
 class number
 {
 	public:
-		number(int n);
+		explicit number(int n);
 		
 		void paint(QPainter &p, int digits) const;
 	
