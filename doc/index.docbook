@@ -17,7 +17,7 @@
 <firstname>Danny</firstname>
 <surname>Allen</surname>
 <affiliation>
-<address><email>danny@dannyallen.co.uk</email></address>
+<address>&Danny.Allen.mail;</address>
 </affiliation>
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -25,7 +25,7 @@
 
 <copyright>
 <year>2005</year>
-<holder>Danny Allen</holder>
+<holder>&Danny.Allen;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -304,7 +304,7 @@ By unchecking the <interface>font</interface> checkbox, a standard font will be 
 &blinken;
 </para>
 <para>
-Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email> and Danny Allen <email>danny@dannyallen.co.uk</email>
+Program copyright 2005 Albert Astals Cid <email>tsdgeos@terra.es</email> and &Danny.Allen; &Danny.Allen.mail;
 </para>
 <para>
 Contributors:
@@ -318,7 +318,7 @@ Contributors:
 </itemizedlist>
 
 <para>
-Documentation copyright 2005 Danny Allen <email>danny@dannyallen.co.uk</email>
+Documentation copyright 2005 &Danny.Allen; &Danny.Allen.mail;
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
