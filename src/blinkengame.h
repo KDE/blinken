@@ -15,7 +15,7 @@
 
 class QTimer;
 
-class artsPlayer;
+class soundsPlayer;
 
 class blinkenGame : public QObject
 {
@@ -64,7 +64,7 @@ Q_OBJECT
 		
 		QTimer *m_waitTimer;
 		
-		artsPlayer *m_artsPlayer;
+		soundsPlayer *m_artsPlayer;
 		QList<color> m_sequence;
 		QList<color>::const_iterator m_nextColor;
 };

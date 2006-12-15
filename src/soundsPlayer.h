@@ -17,12 +17,12 @@
 
 #include "blinkengame.h"
 
-class artsPlayer : public QObject
+class soundsPlayer : public QObject
 {
 Q_OBJECT
 	public:
-		artsPlayer();
-		~artsPlayer();
+		soundsPlayer();
+		~soundsPlayer();
 		
 		void play(blinkenGame::color c);
 		

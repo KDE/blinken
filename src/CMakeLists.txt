@@ -7,7 +7,7 @@ remove_definitions(-DQT3_SUPPORT)
 set(blinken_SRCS 
    main.cpp 
    blinken.cpp 
-   artsplayer.cpp 
+   soundsplayer.cpp 
    blinkengame.cpp 
    number.cpp 
    highscoredialog.cpp 

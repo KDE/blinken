@@ -13,10 +13,10 @@
 #include <phonon/audiopath.h>
 #include <phonon/audiooutput.h>
 
-#include "artsplayer.h"
+#include "soundsplayer.h"
 #include "settings.h"
 
-artsPlayer::artsPlayer() : m_currentSound(0)
+soundsPlayer::soundsPlayer() : m_currentSound(0)
 {
 	Phonon::AudioPath* audioPath = new Phonon::AudioPath( this );
 	Phonon::AudioOutput* audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
@@ -45,11 +45,11 @@ artsPlayer::artsPlayer() : m_currentSound(0)
 	m_warnTimer.setSingleShot(true);
 }
 
-artsPlayer::~artsPlayer()
+soundsPlayer::~soundsPlayer()
 {
 }
 
-void artsPlayer::play(blinkenGame::color c)
+void soundsPlayer::play(blinkenGame::color c)
 {
 	if (blinkenSettings::playSounds())
 	{
@@ -87,7 +87,7 @@ void artsPlayer::play(blinkenGame::color c)
 	}
 }
 
-void artsPlayer::playEnded()
+void soundsPlayer::playEnded()
 {
 	if (blinkenSettings::playSounds())
 	{
@@ -96,4 +96,4 @@ void artsPlayer::playEnded()
 	}
 }
 
-#include "artsplayer.moc"
+#include "soundsplayer.moc"

@@ -13,19 +13,19 @@
 
 #include <krandom.h>
 
-#include "artsplayer.h"
+#include "soundsplayer.h"
 #include "blinkengame.h"
 
 blinkenGame::blinkenGame() : m_phase(starting)
 {
-	m_artsPlayer = new artsPlayer;
+	m_soundsPlayer = new soundsPlayer;
 	m_waitTimer = new QTimer(this);
 	connect(m_waitTimer, SIGNAL(timeout()), this, SLOT(waiting()));
 }
 
 blinkenGame::~blinkenGame()
 {
-	delete m_artsPlayer;
+	delete m_soundsPlayer;
 }
 
 int blinkenGame::level() const
@@ -53,13 +53,13 @@ void blinkenGame::clicked(color c)
 {
 	if (m_phase == starting)
 	{
-		m_artsPlayer -> play(c);
+		m_soundsPlayer -> play(c);
 		return;
 	}
 	if (c == *m_nextColor)
 	{
 		++m_nextColor;
-		m_artsPlayer -> play(c);
+		m_soundsPlayer -> play(c);
 		
 		if (m_nextColor == m_sequence.end())
 		{
@@ -69,7 +69,7 @@ void blinkenGame::clicked(color c)
 	}
 	else
 	{
-		m_artsPlayer -> play(all);
+		m_soundsPlayer -> play(all);
 		emit highlight(all, true);
 		emit gameEnded();
 		setPhase(choosingLevel);
@@ -100,7 +100,7 @@ void blinkenGame::nextSound()
 		color c;
 		c = *m_nextColor;
 		++m_nextColor;
-		m_artsPlayer -> play(c);
+		m_soundsPlayer -> play(c);
 		emit highlight(c, false);
 	}
 	else
@@ -108,7 +108,7 @@ void blinkenGame::nextSound()
 		setPhase(typingTheSequence);
 		m_nextColor = m_sequence.begin();
 		emit highlight(none, false);
-		m_artsPlayer->disconnect();
+		m_soundsPlayer->disconnect();
 	}
 }
 
@@ -135,7 +135,7 @@ void blinkenGame::waiting()
 		}
 		else m_sequence.append(generateColor());
 	
-		connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
+		connect(m_soundsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
 		m_nextColor = m_sequence.begin();
 		soundEnded();
 	}
