@@ -10,29 +10,12 @@
 #ifndef ARTSPLAYER_H
 #define ARTSPLAYER_H
 
-#include <config.h>
+#include <phonon/mediaobject.h>
 
-#ifdef WITHOUT_ARTS
-class KArtsDispatcher;
-class KArtsServer;
-
-namespace KDE
-{
-	class PlayObjectFactory;
-	class PlayObject;
-}
-#else
-#include <arts/kartsdispatcher.h>
-#include <arts/kartsserver.h>
-#include <arts/kplayobject.h>
-#include <arts/kplayobjectfactory.h>
-#endif
-
-#include <qlist.h>
+#include <QList>
+#include <QTimer>
 
 #include "blinkengame.h"
-
-class QTimer;
 
 class artsPlayer : public QObject
 {
@@ -41,26 +24,19 @@ Q_OBJECT
 		artsPlayer();
 		~artsPlayer();
 		
-		void play(blinkenGame::color c, bool stopCurrent = false);
+		void play(blinkenGame::color c);
 		
 	signals:
 		void ended();
 		
 	private slots:
-		void play();
-		void checkEnded();
+		void playEnded();
 		
 	private:
-		QList<blinkenGame::color> m_nextSounds;
+		Phonon::MediaObject m_greenSound, m_redSound, m_blueSound, m_yellowSound, m_allSound;
+		Phonon::MediaObject *m_currentSound;
 		
-		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath, m_allPath;
-		
-		QTimer *m_endChecker;
-		
-		KArtsDispatcher *m_dispatcher;
-		KArtsServer *m_server;
-		KDE::PlayObjectFactory *m_factory;
-		KDE::PlayObject *m_playobj;
+		QTimer m_warnTimer;
 };
 
 #endif

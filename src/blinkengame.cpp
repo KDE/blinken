@@ -69,7 +69,7 @@ void blinkenGame::clicked(color c)
 	}
 	else
 	{
-		m_artsPlayer -> play(all, true);
+		m_artsPlayer -> play(all);
 		emit highlight(all, true);
 		emit gameEnded();
 		setPhase(choosingLevel);

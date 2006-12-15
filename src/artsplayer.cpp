@@ -7,141 +7,93 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qtimer.h>
-
-#include <config.h>
-
-#ifdef WITHOUT_ARTS
 #include <klocale.h>
-#include <kmessagebox.h>
-#endif
 #include <kstandarddirs.h>
+
+#include <phonon/audiopath.h>
+#include <phonon/audiooutput.h>
 
 #include "artsplayer.h"
 #include "settings.h"
 
-artsPlayer::artsPlayer() : m_playobj(0)
+artsPlayer::artsPlayer() : m_currentSound(0)
 {
-	m_endChecker = new QTimer(this);
-	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
+	Phonon::AudioPath* audioPath = new Phonon::AudioPath( this );
+	Phonon::AudioOutput* audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
+	audioOutput->setVolume( 0.8f );
+	audioPath->addOutput( audioOutput );
+
+	m_allSound.setUrl(KStandardDirs::locate("appdata","sounds/lose.wav"));
+	m_greenSound.setUrl(KStandardDirs::locate("appdata","sounds/1.wav"));
+	m_redSound.setUrl(KStandardDirs::locate("appdata","sounds/2.wav"));
+	m_blueSound.setUrl(KStandardDirs::locate("appdata","sounds/3.wav"));
+	m_yellowSound.setUrl(KStandardDirs::locate("appdata","sounds/4.wav"));
 	
-#ifndef WITHOUT_ARTS
-	m_dispatcher = new KArtsDispatcher;
-	m_server = new KArtsServer;
-	m_factory = new KDE::PlayObjectFactory(m_server->server());
+	m_allSound.addAudioPath( audioPath );
+	m_greenSound.addAudioPath( audioPath );
+	m_redSound.addAudioPath( audioPath );
+	m_blueSound.addAudioPath( audioPath );
+	m_yellowSound.addAudioPath( audioPath );
 	
-	m_allPath = locate("appdata","sounds/lose.wav");
-	m_greenPath = locate("appdata","sounds/1.wav");
-	m_redPath = locate("appdata","sounds/2.wav");
-	m_bluePath = locate("appdata","sounds/3.wav");
-	m_yellowPath = locate("appdata","sounds/4.wav");
-#else
-	KMessageBox::information(0, i18n("aRts was not found, therefore the sounds will be disabled."), i18n("Sounds Disabled"), "infoaboutartsnotfound");
-#endif
+	connect(&m_allSound, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_greenSound, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_redSound, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_blueSound, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_yellowSound, SIGNAL(finished()), this, SLOT(playEnded()));
+	
+	connect(&m_warnTimer, SIGNAL(timeout()), this, SIGNAL(ended()));
+	m_warnTimer.setSingleShot(true);
 }
 
 artsPlayer::~artsPlayer()
 {
-#ifndef WITHOUT_ARTS
-	delete m_playobj;
-	delete m_factory;
-	delete m_server;
-	delete m_dispatcher;
-#endif
 }
 
-void artsPlayer::play(blinkenGame::color c, bool stopCurrent)
+void artsPlayer::play(blinkenGame::color c)
 {
-	int check;
-#ifndef WITHOUT_ARTS
 	if (blinkenSettings::playSounds())
 	{
-		if (m_playobj && m_playobj -> state() == Arts::posPlaying)
+		switch (c)
 		{
-			if (stopCurrent)
-			{
-				m_nextSounds.clear();
-				m_nextSounds.append(c);
-				m_playobj -> halt();
-				play();
-			}
-			else m_nextSounds.append(c);
+			case blinkenGame::red:
+				m_currentSound = &m_redSound;
+			break;
+			
+			case blinkenGame::green:
+				m_currentSound = &m_greenSound;
+			break;
+			
+			case blinkenGame::blue:
+				m_currentSound = &m_blueSound;
+			break;
+			
+			case blinkenGame::yellow:
+				m_currentSound = &m_yellowSound;
+			break;
+			
+			case blinkenGame::all:
+				m_currentSound = &m_allSound;
+			break;
+			
+			case blinkenGame::none:
+				m_currentSound = 0;
+			break;
 		}
-		else
-		{
-			m_nextSounds.append(c);
-			play();
-		}
-		check = 50;
-	}
-	else check = 250;
-#else
-	//shut up gcc
-	(void)c;
-	(void)stopCurrent;
-	check = 250;
-#endif
-	if (!m_endChecker -> isActive()) m_endChecker -> start(check);
-}
-
-void artsPlayer::play()
-{
-#ifndef WITHOUT_ARTS
-	QString path;
-	blinkenGame::color c = m_nextSounds.first();
-	m_nextSounds.pop_front();
-	switch (c)
-	{
-		case blinkenGame::red:
-			path = m_redPath;
-		break;
-		
-		case blinkenGame::green:
-			path = m_greenPath;
-		break;
-		
-		case blinkenGame::blue:
-			path = m_bluePath;
-		break;
-		
-		case blinkenGame::yellow:
-			path = m_yellowPath;
-		break;
-		
-		case blinkenGame::all:
-			path = m_allPath;
-		break;
-		
-		case blinkenGame::none:
-		break;
-	}
-	delete m_playobj;
-	m_playobj = m_factory -> createPlayObject(path, true);
-	m_playobj -> play();
-#endif
-}
-
-void artsPlayer::checkEnded()
-{
-#ifndef WITHOUT_ARTS
-	if (blinkenSettings::playSounds())
-	{
-		if (m_playobj -> state() != Arts::posPlaying)
-		{
-			m_endChecker -> stop();
-			emit ended();
-			if (m_nextSounds.size() > 0) play();
-		}
+		if (m_currentSound) m_currentSound -> play();
 	}
 	else
 	{
-		m_endChecker -> stop();
-		emit ended();
+		m_warnTimer.start(250);
 	}
-#else
-	m_endChecker -> stop();
-	emit ended();
-#endif
+}
+
+void artsPlayer::playEnded()
+{
+	if (blinkenSettings::playSounds())
+	{
+		m_currentSound = NULL;
+		m_warnTimer.start(250);
+	}
 }
 
 #include "artsplayer.moc"
