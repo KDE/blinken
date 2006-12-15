@@ -64,7 +64,7 @@ Q_OBJECT
 		
 		QTimer *m_waitTimer;
 		
-		soundsPlayer *m_artsPlayer;
+		soundsPlayer *m_soundsPlayer;
 		QList<color> m_sequence;
 		QList<color>::const_iterator m_nextColor;
 };
