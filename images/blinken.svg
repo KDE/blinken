@@ -16,7 +16,7 @@
    sodipodi:version="0.32"
    inkscape:version="0.44"
    sodipodi:docname="blinken.svg"
-   sodipodi:docbase="/home/kdesvn/kdeedu/blinken/images">
+   sodipodi:docbase="/home/kde4/svn/kdeedu/blinken/images">
   <metadata
      id="metadata127">
     <rdf:RDF>
@@ -29,20 +29,20 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-height="956"
-     inkscape:window-width="1280"
+     inkscape:window-height="714"
+     inkscape:window-width="1024"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      guidetolerance="10.0"
      gridtolerance="10.0"
      objecttolerance="10.0"
      borderopacity="1.0"
      bordercolor="#666666"
-     pagecolor="#ffffff"
+     pagecolor="#ff61ff"
      id="base"
-     inkscape:zoom="4.4022444"
-     inkscape:cx="917.06925"
-     inkscape:cy="79.158034"
+     inkscape:zoom="0.6189235"
+     inkscape:cx="956.44394"
+     inkscape:cy="30.10528"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:current-layer="svg1" />
@@ -593,689 +593,631 @@
        id="path3924" />
   </g>
   <g
-     id="one"
-     transform="translate(392.2217,-314.7007)"
-     style="fill:red;fill-opacity:1">
-    <path
-       id="path2994"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path2996"
-       d="M 533.4911,838.48784 L 533.4911,830.98784 L 540.9911,830.98784 L 540.9911,838.48784 L 533.4911,838.48784 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path2998"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path3000"
-       d="M 533.4911,856.06219 L 533.4911,848.56219 L 540.9911,848.56219 L 540.9911,856.06219 L 533.4911,856.06219 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       sodipodi:nodetypes="cccccc"
-       id="path2978"
-       d="M 524.704,829.70067 L 524.704,825.95067 L 528.454,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path3045"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
-       style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path3060"
-       d="M 516.59501,829.66424 L 516.59501,822.16424 L 524.09501,822.16424 L 524.09501,829.66424 L 516.59501,829.66424 z "
-       style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-    <path
-       id="path3062"
-       d="M 507.80781,829.66424 L 507.80781,822.16424 L 515.30781,822.16424 L 515.30781,829.66424 L 507.80781,829.66424 z "
-       style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
-  </g>
-  <g
-     id="zero"
-     style="fill:red;fill-opacity:1"
-     transform="translate(264.2217,-314.7007)">
+     id="zero">
     <path
        id="path3957"
-       d="M 604.704,829.70067 L 604.704,822.20067 L 612.204,822.20067 L 612.204,829.70067 L 604.704,829.70067 z "
+       d="M 868.9257,514.99997 L 868.9257,507.49997 L 876.4257,507.49997 L 876.4257,514.99997 L 868.9257,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3965"
-       d="M 613.4911,829.70067 L 613.4911,822.20067 L 620.9911,822.20067 L 620.9911,829.70067 L 613.4911,829.70067 z "
+       d="M 877.7128,514.99997 L 877.7128,507.49997 L 885.2128,507.49997 L 885.2128,514.99997 L 877.7128,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3969"
-       d="M 622.2783,847.27501 L 622.2783,839.77501 L 629.7783,839.77501 L 629.7783,847.27501 L 622.2783,847.27501 z "
+       d="M 886.5,532.57431 L 886.5,525.07431 L 894,525.07431 L 894,532.57431 L 886.5,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3971"
-       d="M 622.2783,838.48784 L 622.2783,830.98784 L 629.7783,830.98784 L 629.7783,838.48784 L 622.2783,838.48784 z "
+       d="M 886.5,523.78714 L 886.5,516.28714 L 894,516.28714 L 894,523.78714 L 886.5,523.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3973"
-       d="M 622.2783,829.70067 L 622.2783,822.20067 L 626.0283,822.20067 L 629.7783,825.95067 L 629.7783,829.70067 L 622.2783,829.70067 z "
+       d="M 886.5,514.99997 L 886.5,507.49997 L 890.25,507.49997 L 894,511.24997 L 894,514.99997 L 886.5,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3975"
-       d="M 622.2783,856.06219 L 622.2783,848.56219 L 629.7783,848.56219 L 629.7783,856.06219 L 622.2783,856.06219 z "
+       d="M 886.5,541.36149 L 886.5,533.86149 L 894,533.86149 L 894,541.36149 L 886.5,541.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3977"
-       d="M 595.9168,847.27501 L 595.9168,839.77501 L 603.4168,839.77501 L 603.4168,847.27501 L 595.9168,847.27501 z "
+       d="M 860.1385,532.57431 L 860.1385,525.07431 L 867.6385,525.07431 L 867.6385,532.57431 L 860.1385,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3979"
-       d="M 595.9168,838.48784 L 595.9168,830.98784 L 603.4168,830.98784 L 603.4168,838.48784 L 595.9168,838.48784 z "
+       d="M 860.1385,523.78714 L 860.1385,516.28714 L 867.6385,516.28714 L 867.6385,523.78714 L 860.1385,523.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3981"
-       d="M 595.9168,829.70067 L 595.9168,825.95067 L 599.6668,822.20067 L 603.4168,822.20067 L 603.4168,829.70067 L 595.9168,829.70067 z "
+       d="M 860.1385,514.99997 L 860.1385,511.24997 L 863.8885,507.49997 L 867.6385,507.49997 L 867.6385,514.99997 L 860.1385,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3983"
-       d="M 595.9168,856.06219 L 595.9168,848.56219 L 603.4168,848.56219 L 603.4168,856.06219 L 595.9168,856.06219 z "
+       d="M 860.1385,541.36149 L 860.1385,533.86149 L 867.6385,533.86149 L 867.6385,541.36149 L 860.1385,541.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3985"
-       d="M 604.704,864.84937 L 604.704,857.34937 L 612.204,857.34937 L 612.204,864.84937 L 604.704,864.84937 z "
+       d="M 868.9257,550.14867 L 868.9257,542.64867 L 876.4257,542.64867 L 876.4257,550.14867 L 868.9257,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3987"
-       d="M 613.4911,864.84937 L 613.4911,857.34937 L 620.9911,857.34937 L 620.9911,864.84937 L 613.4911,864.84937 z "
+       d="M 877.7128,550.14867 L 877.7128,542.64867 L 885.2128,542.64867 L 885.2128,550.14867 L 877.7128,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3989"
-       d="M 622.2783,864.84937 L 622.2783,857.34937 L 629.7783,857.34937 L 629.7783,861.09937 L 626.0283,864.84937 L 622.2783,864.84937 z "
+       d="M 886.5,550.14867 L 886.5,542.64867 L 894,542.64867 L 894,546.39867 L 890.25,550.14867 L 886.5,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3991"
-       d="M 595.9168,861.09937 L 595.9168,857.34937 L 603.4168,857.34937 L 603.4168,864.84937 L 599.6668,864.84937 L 595.9168,861.09937 z "
+       d="M 860.1385,546.39867 L 860.1385,542.64867 L 867.6385,542.64867 L 867.6385,550.14867 L 863.8885,550.14867 L 860.1385,546.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="all_off"
-     transform="translate(464.2217,-194.7007)"
-     style="fill:#373737;fill-opacity:1">
+     id="all_off">
     <path
        id="path2984"
-       d="M 484.704,847.27501 L 484.704,839.77501 L 492.204,839.77501 L 492.204,847.27501 L 484.704,847.27501 z "
+       d="M 948.9257,652.57431 L 948.9257,645.07431 L 956.4257,645.07431 L 956.4257,652.57431 L 948.9257,652.57431 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2986"
-       d="M 484.704,838.48784 L 484.704,830.98784 L 492.204,830.98784 L 492.204,838.48784 L 484.704,838.48784 z "
+       d="M 948.9257,643.78714 L 948.9257,636.28714 L 956.4257,636.28714 L 956.4257,643.78714 L 948.9257,643.78714 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2988"
-       d="M 484.704,829.70067 L 484.704,822.20067 L 492.204,822.20067 L 492.204,829.70067 L 484.704,829.70067 z "
+       d="M 948.9257,634.99997 L 948.9257,627.49997 L 956.4257,627.49997 L 956.4257,634.99997 L 948.9257,634.99997 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2990"
-       d="M 484.704,856.06219 L 484.704,848.56219 L 492.204,848.56219 L 492.204,856.06219 L 484.704,856.06219 z "
+       d="M 948.9257,661.36149 L 948.9257,653.86149 L 956.4257,653.86149 L 956.4257,661.36149 L 948.9257,661.36149 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4005"
-       d="M 493.4911,847.27501 L 493.4911,839.77501 L 500.9911,839.77501 L 500.9911,847.27501 L 493.4911,847.27501 z "
+       d="M 957.7128,652.57431 L 957.7128,645.07431 L 965.2128,645.07431 L 965.2128,652.57431 L 957.7128,652.57431 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4007"
-       d="M 493.4911,838.48784 L 493.4911,830.98784 L 500.9911,830.98784 L 500.9911,838.48784 L 493.4911,838.48784 z "
+       d="M 957.7128,643.78714 L 957.7128,636.28714 L 965.2128,636.28714 L 965.2128,643.78714 L 957.7128,643.78714 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4009"
-       d="M 493.4911,829.70067 L 493.4911,822.20067 L 500.9911,822.20067 L 500.9911,829.70067 L 493.4911,829.70067 z "
+       d="M 957.7128,634.99997 L 957.7128,627.49997 L 965.2128,627.49997 L 965.2128,634.99997 L 957.7128,634.99997 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4011"
-       d="M 493.4911,856.06219 L 493.4911,848.56219 L 500.9911,848.56219 L 500.9911,856.06219 L 493.4911,856.06219 z "
+       d="M 957.7128,661.36149 L 957.7128,653.86149 L 965.2128,653.86149 L 965.2128,661.36149 L 957.7128,661.36149 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3004"
-       d="M 502.2783,847.27501 L 502.2783,839.77501 L 509.7783,839.77501 L 509.7783,847.27501 L 502.2783,847.27501 z "
+       d="M 966.5,652.57431 L 966.5,645.07431 L 974,645.07431 L 974,652.57431 L 966.5,652.57431 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3006"
-       d="M 502.2783,838.48784 L 502.2783,830.98784 L 509.7783,830.98784 L 509.7783,838.48784 L 502.2783,838.48784 z "
+       d="M 966.5,643.78714 L 966.5,636.28714 L 974,636.28714 L 974,643.78714 L 966.5,643.78714 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3008"
-       d="M 502.2783,829.70067 L 502.2783,822.20067 L 506.0283,822.20067 L 509.7783,825.95067 L 509.7783,829.70067 L 502.2783,829.70067 z "
+       d="M 966.5,634.99997 L 966.5,627.49997 L 970.25,627.49997 L 974,631.24997 L 974,634.99997 L 966.5,634.99997 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3010"
-       d="M 502.2783,856.06219 L 502.2783,848.56219 L 509.7783,848.56219 L 509.7783,856.06219 L 502.2783,856.06219 z "
+       d="M 966.5,661.36149 L 966.5,653.86149 L 974,653.86149 L 974,661.36149 L 966.5,661.36149 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2974"
-       d="M 475.9168,847.27501 L 475.9168,839.77501 L 483.4168,839.77501 L 483.4168,847.27501 L 475.9168,847.27501 z "
+       d="M 940.1385,652.57431 L 940.1385,645.07431 L 947.6385,645.07431 L 947.6385,652.57431 L 940.1385,652.57431 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2976"
-       d="M 475.9168,838.48784 L 475.9168,830.98784 L 483.4168,830.98784 L 483.4168,838.48784 L 475.9168,838.48784 z "
+       d="M 940.1385,643.78714 L 940.1385,636.28714 L 947.6385,636.28714 L 947.6385,643.78714 L 940.1385,643.78714 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4019"
-       d="M 475.9168,829.70067 L 475.9168,825.95067 L 479.6668,822.20067 L 483.4168,822.20067 L 483.4168,829.70067 L 475.9168,829.70067 z "
+       d="M 940.1385,634.99997 L 940.1385,631.24997 L 943.8885,627.49997 L 947.6385,627.49997 L 947.6385,634.99997 L 940.1385,634.99997 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path2980"
-       d="M 475.9168,856.06219 L 475.9168,848.56219 L 483.4168,848.56219 L 483.4168,856.06219 L 475.9168,856.06219 z "
+       d="M 940.1385,661.36149 L 940.1385,653.86149 L 947.6385,653.86149 L 947.6385,661.36149 L 940.1385,661.36149 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3043"
-       d="M 484.704,864.84937 L 484.704,857.34937 L 492.204,857.34937 L 492.204,864.84937 L 484.704,864.84937 z "
+       d="M 948.9257,670.14867 L 948.9257,662.64867 L 956.4257,662.64867 L 956.4257,670.14867 L 948.9257,670.14867 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4023"
-       d="M 493.4911,864.84937 L 493.4911,857.34937 L 500.9911,857.34937 L 500.9911,864.84937 L 493.4911,864.84937 z "
+       d="M 957.7128,670.14867 L 957.7128,662.64867 L 965.2128,662.64867 L 965.2128,670.14867 L 957.7128,670.14867 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3047"
-       d="M 502.2783,864.84937 L 502.2783,857.34937 L 509.7783,857.34937 L 509.7783,861.09937 L 506.0283,864.84937 L 502.2783,864.84937 z "
+       d="M 966.5,670.14867 L 966.5,662.64867 L 974,662.64867 L 974,666.39867 L 970.25,670.14867 L 966.5,670.14867 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path3049"
-       d="M 475.9168,861.09937 L 475.9168,857.34937 L 483.4168,857.34937 L 483.4168,864.84937 L 479.6668,864.84937 L 475.9168,861.09937 z "
+       d="M 940.1385,666.39867 L 940.1385,662.64867 L 947.6385,662.64867 L 947.6385,670.14867 L 943.8885,670.14867 L 940.1385,666.39867 z "
        style="color:black;fill:#373737;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="two"
-     transform="translate(424.2217,-314.7007)"
-     style="fill:red;fill-opacity:1">
+     id="two">
     <path
        id="path4051"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 948.9257,532.57431 L 948.9257,525.07431 L 956.4257,525.07431 L 956.4257,532.57431 L 948.9257,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4055"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 948.9257,514.99997 L 948.9257,507.49997 L 956.4257,507.49997 L 956.4257,514.99997 L 948.9257,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4059"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 957.7128,532.57431 L 957.7128,525.07431 L 965.2128,525.07431 L 965.2128,532.57431 L 957.7128,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4063"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 957.7128,514.99997 L 957.7128,507.49997 L 965.2128,507.49997 L 965.2128,514.99997 L 957.7128,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4067"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 966.5,532.57431 L 966.5,525.07431 L 974,525.07431 L 974,532.57431 L 966.5,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4069"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 966.5,523.78714 L 966.5,516.28714 L 974,516.28714 L 974,523.78714 L 966.5,523.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4071"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 966.5,514.99997 L 966.5,507.49997 L 970.25,507.49997 L 974,511.24997 L 974,514.99997 L 966.5,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4075"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 940.1385,532.57431 L 940.1385,525.07431 L 947.6385,525.07431 L 947.6385,532.57431 L 940.1385,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4079"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 940.1385,514.99997 L 940.1385,511.24997 L 943.8885,507.49997 L 947.6385,507.49997 L 947.6385,514.99997 L 940.1385,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4081"
-       d="M 515.9168,856.06219 L 515.9168,848.56219 L 523.4168,848.56219 L 523.4168,856.06219 L 515.9168,856.06219 z "
+       d="M 940.1385,541.36149 L 940.1385,533.86149 L 947.6385,533.86149 L 947.6385,541.36149 L 940.1385,541.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4083"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 948.9257,550.14867 L 948.9257,542.64867 L 956.4257,542.64867 L 956.4257,550.14867 L 948.9257,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4085"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 957.7128,550.14867 L 957.7128,542.64867 L 965.2128,542.64867 L 965.2128,550.14867 L 957.7128,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4087"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 966.5,550.14867 L 966.5,542.64867 L 974,542.64867 L 974,546.39867 L 970.25,550.14867 L 966.5,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4089"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 940.1385,546.39867 L 940.1385,542.64867 L 947.6385,542.64867 L 947.6385,550.14867 L 943.8885,550.14867 L 940.1385,546.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="three"
-     transform="translate(464.2217,-314.7007)"
-     style="fill:red;fill-opacity:1">
+     id="three">
     <path
        id="path4129"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 988.9257,532.57431 L 988.9257,525.07431 L 996.4257,525.07431 L 996.4257,532.57431 L 988.9257,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4133"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 988.9257,514.99997 L 988.9257,507.49997 L 996.4257,507.49997 L 996.4257,514.99997 L 988.9257,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4137"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 997.7128,532.57431 L 997.7128,525.07431 L 1005.2128,525.07431 L 1005.2128,532.57431 L 997.7128,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4141"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 997.7128,514.99997 L 997.7128,507.49997 L 1005.2128,507.49997 L 1005.2128,514.99997 L 997.7128,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4145"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 1006.5,532.57431 L 1006.5,525.07431 L 1014,525.07431 L 1014,532.57431 L 1006.5,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4147"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 1006.5,523.78714 L 1006.5,516.28714 L 1014,516.28714 L 1014,523.78714 L 1006.5,523.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4149"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 1006.5,514.99997 L 1006.5,507.49997 L 1010.25,507.49997 L 1014,511.24997 L 1014,514.99997 L 1006.5,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4151"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 1006.5,541.36149 L 1006.5,533.86149 L 1014,533.86149 L 1014,541.36149 L 1006.5,541.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4153"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 980.1385,532.57431 L 980.1385,525.07431 L 987.6385,525.07431 L 987.6385,532.57431 L 980.1385,532.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4157"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 980.1385,514.99997 L 980.1385,511.24997 L 983.8885,507.49997 L 987.6385,507.49997 L 987.6385,514.99997 L 980.1385,514.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4161"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 988.9257,550.14867 L 988.9257,542.64867 L 996.4257,542.64867 L 996.4257,550.14867 L 988.9257,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4163"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 997.7128,550.14867 L 997.7128,542.64867 L 1005.2128,542.64867 L 1005.2128,550.14867 L 997.7128,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4165"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 1006.5,550.14867 L 1006.5,542.64867 L 1014,542.64867 L 1014,546.39867 L 1010.25,550.14867 L 1006.5,550.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4167"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 980.1385,546.39867 L 980.1385,542.64867 L 987.6385,542.64867 L 987.6385,550.14867 L 983.8885,550.14867 L 980.1385,546.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="four"
-     transform="translate(344.2217,-254.7007)"
-     style="fill:red;fill-opacity:1">
+     id="four">
     <path
        id="path4213"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 868.9257,592.57431 L 868.9257,585.07431 L 876.4257,585.07431 L 876.4257,592.57431 L 868.9257,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4221"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 877.7128,592.57431 L 877.7128,585.07431 L 885.2128,585.07431 L 885.2128,592.57431 L 877.7128,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4223"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 886.5,592.57431 L 886.5,585.07431 L 894,585.07431 L 894,592.57431 L 886.5,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4225"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 886.5,583.78714 L 886.5,576.28714 L 894,576.28714 L 894,583.78714 L 886.5,583.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4227"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 886.5,574.99997 L 886.5,567.49997 L 890.25,567.49997 L 894,571.24997 L 894,574.99997 L 886.5,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4229"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 886.5,601.36149 L 886.5,593.86149 L 894,593.86149 L 894,601.36149 L 886.5,601.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4231"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 860.1385,592.57431 L 860.1385,585.07431 L 867.6385,585.07431 L 867.6385,592.57431 L 860.1385,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4233"
-       d="M 515.9168,838.48784 L 515.9168,830.98784 L 523.4168,830.98784 L 523.4168,838.48784 L 515.9168,838.48784 z "
+       d="M 860.1385,583.78714 L 860.1385,576.28714 L 867.6385,576.28714 L 867.6385,583.78714 L 860.1385,583.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4235"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 860.1385,574.99997 L 860.1385,571.24997 L 863.8885,567.49997 L 867.6385,567.49997 L 867.6385,574.99997 L 860.1385,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4243"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 886.5,610.14867 L 886.5,602.64867 L 894,602.64867 L 894,606.39867 L 890.25,610.14867 L 886.5,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="five"
-     transform="translate(384.2217,-254.7007)"
-     style="fill:red;fill-opacity:1">
+     id="five">
     <path
        id="path4287"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 908.9257,592.57431 L 908.9257,585.07431 L 916.4257,585.07431 L 916.4257,592.57431 L 908.9257,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4291"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 908.9257,574.99997 L 908.9257,567.49997 L 916.4257,567.49997 L 916.4257,574.99997 L 908.9257,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4295"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 917.7128,592.57431 L 917.7128,585.07431 L 925.2128,585.07431 L 925.2128,592.57431 L 917.7128,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4299"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 917.7128,574.99997 L 917.7128,567.49997 L 925.2128,567.49997 L 925.2128,574.99997 L 917.7128,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4303"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 926.5,592.57431 L 926.5,585.07431 L 934,585.07431 L 934,592.57431 L 926.5,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4307"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 926.5,574.99997 L 926.5,567.49997 L 930.25,567.49997 L 934,571.24997 L 934,574.99997 L 926.5,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4309"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 926.5,601.36149 L 926.5,593.86149 L 934,593.86149 L 934,601.36149 L 926.5,601.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4311"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 900.1385,592.57431 L 900.1385,585.07431 L 907.6385,585.07431 L 907.6385,592.57431 L 900.1385,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4313"
-       d="M 515.9168,838.48784 L 515.9168,830.98784 L 523.4168,830.98784 L 523.4168,838.48784 L 515.9168,838.48784 z "
+       d="M 900.1385,583.78714 L 900.1385,576.28714 L 907.6385,576.28714 L 907.6385,583.78714 L 900.1385,583.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4315"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 900.1385,574.99997 L 900.1385,571.24997 L 903.8885,567.49997 L 907.6385,567.49997 L 907.6385,574.99997 L 900.1385,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4319"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 908.9257,610.14867 L 908.9257,602.64867 L 916.4257,602.64867 L 916.4257,610.14867 L 908.9257,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4321"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 917.7128,610.14867 L 917.7128,602.64867 L 925.2128,602.64867 L 925.2128,610.14867 L 917.7128,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4323"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 926.5,610.14867 L 926.5,602.64867 L 934,602.64867 L 934,606.39867 L 930.25,610.14867 L 926.5,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4325"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 900.1385,606.39867 L 900.1385,602.64867 L 907.6385,602.64867 L 907.6385,610.14867 L 903.8885,610.14867 L 900.1385,606.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="six"
-     transform="translate(424.2217,-254.7007)"
-     style="fill:red;fill-opacity:1">
+     id="six">
     <path
        id="path4365"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 948.9257,592.57431 L 948.9257,585.07431 L 956.4257,585.07431 L 956.4257,592.57431 L 948.9257,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4369"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 948.9257,574.99997 L 948.9257,567.49997 L 956.4257,567.49997 L 956.4257,574.99997 L 948.9257,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4373"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 957.7128,592.57431 L 957.7128,585.07431 L 965.2128,585.07431 L 965.2128,592.57431 L 957.7128,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4377"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 957.7128,574.99997 L 957.7128,567.49997 L 965.2128,567.49997 L 965.2128,574.99997 L 957.7128,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4382"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 966.5,592.57431 L 966.5,585.07431 L 974,585.07431 L 974,592.57431 L 966.5,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4386"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 966.5,574.99997 L 966.5,567.49997 L 970.25,567.49997 L 974,571.24997 L 974,574.99997 L 966.5,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4388"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 966.5,601.36149 L 966.5,593.86149 L 974,593.86149 L 974,601.36149 L 966.5,601.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4390"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 940.1385,592.57431 L 940.1385,585.07431 L 947.6385,585.07431 L 947.6385,592.57431 L 940.1385,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4392"
-       d="M 515.9168,838.48784 L 515.9168,830.98784 L 523.4168,830.98784 L 523.4168,838.48784 L 515.9168,838.48784 z "
+       d="M 940.1385,583.78714 L 940.1385,576.28714 L 947.6385,576.28714 L 947.6385,583.78714 L 940.1385,583.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4394"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 940.1385,574.99997 L 940.1385,571.24997 L 943.8885,567.49997 L 947.6385,567.49997 L 947.6385,574.99997 L 940.1385,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4396"
-       d="M 515.9168,856.06219 L 515.9168,848.56219 L 523.4168,848.56219 L 523.4168,856.06219 L 515.9168,856.06219 z "
+       d="M 940.1385,601.36149 L 940.1385,593.86149 L 947.6385,593.86149 L 947.6385,601.36149 L 940.1385,601.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4398"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 948.9257,610.14867 L 948.9257,602.64867 L 956.4257,602.64867 L 956.4257,610.14867 L 948.9257,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4400"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 957.7128,610.14867 L 957.7128,602.64867 L 965.2128,602.64867 L 965.2128,610.14867 L 957.7128,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4402"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 966.5,610.14867 L 966.5,602.64867 L 974,602.64867 L 974,606.39867 L 970.25,610.14867 L 966.5,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4404"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 940.1385,606.39867 L 940.1385,602.64867 L 947.6385,602.64867 L 947.6385,610.14867 L 943.8885,610.14867 L 940.1385,606.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="seven"
-     transform="translate(464.2217,-254.7007)"
-     style="fill:red;fill-opacity:1">
+     id="seven">
     <path
        id="path4449"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 988.9257,574.99997 L 988.9257,567.49997 L 996.4257,567.49997 L 996.4257,574.99997 L 988.9257,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4457"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 997.7128,574.99997 L 997.7128,567.49997 L 1005.2128,567.49997 L 1005.2128,574.99997 L 997.7128,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4461"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 1006.5,592.57431 L 1006.5,585.07431 L 1014,585.07431 L 1014,592.57431 L 1006.5,592.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4463"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 1006.5,583.78714 L 1006.5,576.28714 L 1014,576.28714 L 1014,583.78714 L 1006.5,583.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4465"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 1006.5,574.99997 L 1006.5,567.49997 L 1010.25,567.49997 L 1014,571.24997 L 1014,574.99997 L 1006.5,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4467"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 1006.5,601.36149 L 1006.5,593.86149 L 1014,593.86149 L 1014,601.36149 L 1006.5,601.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4473"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 980.1385,574.99997 L 980.1385,571.24997 L 983.8885,567.49997 L 987.6385,567.49997 L 987.6385,574.99997 L 980.1385,574.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4481"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 1006.5,610.14867 L 1006.5,602.64867 L 1014,602.64867 L 1014,606.39867 L 1010.25,610.14867 L 1006.5,610.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="eight"
-     transform="translate(344.2217,-194.7007)"
-     style="fill:red;fill-opacity:1">
+     id="eight">
     <path
        id="path4517"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 868.9257,652.57431 L 868.9257,645.07431 L 876.4257,645.07431 L 876.4257,652.57431 L 868.9257,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4521"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 868.9257,634.99997 L 868.9257,627.49997 L 876.4257,627.49997 L 876.4257,634.99997 L 868.9257,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4525"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 877.7128,652.57431 L 877.7128,645.07431 L 885.2128,645.07431 L 885.2128,652.57431 L 877.7128,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4529"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 877.7128,634.99997 L 877.7128,627.49997 L 885.2128,627.49997 L 885.2128,634.99997 L 877.7128,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4533"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 886.5,652.57431 L 886.5,645.07431 L 894,645.07431 L 894,652.57431 L 886.5,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4535"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 886.5,643.78714 L 886.5,636.28714 L 894,636.28714 L 894,643.78714 L 886.5,643.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4537"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 886.5,634.99997 L 886.5,627.49997 L 890.25,627.49997 L 894,631.24997 L 894,634.99997 L 886.5,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4539"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 886.5,661.36149 L 886.5,653.86149 L 894,653.86149 L 894,661.36149 L 886.5,661.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4541"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 860.1385,652.57431 L 860.1385,645.07431 L 867.6385,645.07431 L 867.6385,652.57431 L 860.1385,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4543"
-       d="M 515.9168,838.48784 L 515.9168,830.98784 L 523.4168,830.98784 L 523.4168,838.48784 L 515.9168,838.48784 z "
+       d="M 860.1385,643.78714 L 860.1385,636.28714 L 867.6385,636.28714 L 867.6385,643.78714 L 860.1385,643.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4545"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 860.1385,634.99997 L 860.1385,631.24997 L 863.8885,627.49997 L 867.6385,627.49997 L 867.6385,634.99997 L 860.1385,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4547"
-       d="M 515.9168,856.06219 L 515.9168,848.56219 L 523.4168,848.56219 L 523.4168,856.06219 L 515.9168,856.06219 z "
+       d="M 860.1385,661.36149 L 860.1385,653.86149 L 867.6385,653.86149 L 867.6385,661.36149 L 860.1385,661.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4549"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 868.9257,670.14867 L 868.9257,662.64867 L 876.4257,662.64867 L 876.4257,670.14867 L 868.9257,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4551"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 877.7128,670.14867 L 877.7128,662.64867 L 885.2128,662.64867 L 885.2128,670.14867 L 877.7128,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4553"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 886.5,670.14867 L 886.5,662.64867 L 894,662.64867 L 894,666.39867 L 890.25,670.14867 L 886.5,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4555"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 860.1385,666.39867 L 860.1385,662.64867 L 867.6385,662.64867 L 867.6385,670.14867 L 863.8885,670.14867 L 860.1385,666.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <g
-     id="nine"
-     transform="translate(384.2217,-194.7007)"
-     style="fill:red;fill-opacity:1">
+     id="nine">
     <path
        id="path4597"
-       d="M 524.704,847.27501 L 524.704,839.77501 L 532.204,839.77501 L 532.204,847.27501 L 524.704,847.27501 z "
+       d="M 908.9257,652.57431 L 908.9257,645.07431 L 916.4257,645.07431 L 916.4257,652.57431 L 908.9257,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4601"
-       d="M 524.704,829.70067 L 524.704,822.20067 L 532.204,822.20067 L 532.204,829.70067 L 524.704,829.70067 z "
+       d="M 908.9257,634.99997 L 908.9257,627.49997 L 916.4257,627.49997 L 916.4257,634.99997 L 908.9257,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4605"
-       d="M 533.4911,847.27501 L 533.4911,839.77501 L 540.9911,839.77501 L 540.9911,847.27501 L 533.4911,847.27501 z "
+       d="M 917.7128,652.57431 L 917.7128,645.07431 L 925.2128,645.07431 L 925.2128,652.57431 L 917.7128,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4610"
-       d="M 533.4911,829.70067 L 533.4911,822.20067 L 540.9911,822.20067 L 540.9911,829.70067 L 533.4911,829.70067 z "
+       d="M 917.7128,634.99997 L 917.7128,627.49997 L 925.2128,627.49997 L 925.2128,634.99997 L 917.7128,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4614"
-       d="M 542.2783,847.27501 L 542.2783,839.77501 L 549.7783,839.77501 L 549.7783,847.27501 L 542.2783,847.27501 z "
+       d="M 926.5,652.57431 L 926.5,645.07431 L 934,645.07431 L 934,652.57431 L 926.5,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4616"
-       d="M 542.2783,838.48784 L 542.2783,830.98784 L 549.7783,830.98784 L 549.7783,838.48784 L 542.2783,838.48784 z "
+       d="M 926.5,643.78714 L 926.5,636.28714 L 934,636.28714 L 934,643.78714 L 926.5,643.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4618"
-       d="M 542.2783,829.70067 L 542.2783,822.20067 L 546.0283,822.20067 L 549.7783,825.95067 L 549.7783,829.70067 L 542.2783,829.70067 z "
+       d="M 926.5,634.99997 L 926.5,627.49997 L 930.25,627.49997 L 934,631.24997 L 934,634.99997 L 926.5,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4620"
-       d="M 542.2783,856.06219 L 542.2783,848.56219 L 549.7783,848.56219 L 549.7783,856.06219 L 542.2783,856.06219 z "
+       d="M 926.5,661.36149 L 926.5,653.86149 L 934,653.86149 L 934,661.36149 L 926.5,661.36149 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4622"
-       d="M 515.9168,847.27501 L 515.9168,839.77501 L 523.4168,839.77501 L 523.4168,847.27501 L 515.9168,847.27501 z "
+       d="M 900.1385,652.57431 L 900.1385,645.07431 L 907.6385,645.07431 L 907.6385,652.57431 L 900.1385,652.57431 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4624"
-       d="M 515.9168,838.48784 L 515.9168,830.98784 L 523.4168,830.98784 L 523.4168,838.48784 L 515.9168,838.48784 z "
+       d="M 900.1385,643.78714 L 900.1385,636.28714 L 907.6385,636.28714 L 907.6385,643.78714 L 900.1385,643.78714 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4626"
-       d="M 515.9168,829.70067 L 515.9168,825.95067 L 519.6668,822.20067 L 523.4168,822.20067 L 523.4168,829.70067 L 515.9168,829.70067 z "
+       d="M 900.1385,634.99997 L 900.1385,631.24997 L 903.8885,627.49997 L 907.6385,627.49997 L 907.6385,634.99997 L 900.1385,634.99997 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4630"
-       d="M 524.704,864.84937 L 524.704,857.34937 L 532.204,857.34937 L 532.204,864.84937 L 524.704,864.84937 z "
+       d="M 908.9257,670.14867 L 908.9257,662.64867 L 916.4257,662.64867 L 916.4257,670.14867 L 908.9257,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path4632"
-       d="M 533.4911,864.84937 L 533.4911,857.34937 L 540.9911,857.34937 L 540.9911,864.84937 L 533.4911,864.84937 z "
+       d="M 917.7128,670.14867 L 917.7128,662.64867 L 925.2128,662.64867 L 925.2128,670.14867 L 917.7128,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4634"
-       d="M 542.2783,864.84937 L 542.2783,857.34937 L 549.7783,857.34937 L 549.7783,861.09937 L 546.0283,864.84937 L 542.2783,864.84937 z "
+       d="M 926.5,670.14867 L 926.5,662.64867 L 934,662.64867 L 934,666.39867 L 930.25,670.14867 L 926.5,670.14867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path4636"
-       d="M 515.9168,861.09937 L 515.9168,857.34937 L 523.4168,857.34937 L 523.4168,864.84937 L 519.6668,864.84937 L 515.9168,861.09937 z "
+       d="M 900.1385,666.39867 L 900.1385,662.64867 L 907.6385,662.64867 L 907.6385,670.14867 L 903.8885,670.14867 L 900.1385,666.39867 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
   <path
@@ -1289,100 +1231,138 @@
      id="led_off"
      sodipodi:nodetypes="ccccc" />
   <g
-     id="all_on"
-     transform="translate(504.2217,-194.9278)"
-     style="fill:red;fill-opacity:1">
+     id="all_on">
     <path
        id="path6515"
-       d="M 484.704,847.27501 L 484.704,839.77501 L 492.204,839.77501 L 492.204,847.27501 L 484.704,847.27501 z "
+       d="M 988.9257,652.34721 L 988.9257,644.84721 L 996.4257,644.84721 L 996.4257,652.34721 L 988.9257,652.34721 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6517"
-       d="M 484.704,838.48784 L 484.704,830.98784 L 492.204,830.98784 L 492.204,838.48784 L 484.704,838.48784 z "
+       d="M 988.9257,643.56004 L 988.9257,636.06004 L 996.4257,636.06004 L 996.4257,643.56004 L 988.9257,643.56004 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6519"
-       d="M 484.704,829.70067 L 484.704,822.20067 L 492.204,822.20067 L 492.204,829.70067 L 484.704,829.70067 z "
+       d="M 988.9257,634.77287 L 988.9257,627.27287 L 996.4257,627.27287 L 996.4257,634.77287 L 988.9257,634.77287 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6521"
-       d="M 484.704,856.06219 L 484.704,848.56219 L 492.204,848.56219 L 492.204,856.06219 L 484.704,856.06219 z "
+       d="M 988.9257,661.13439 L 988.9257,653.63439 L 996.4257,653.63439 L 996.4257,661.13439 L 988.9257,661.13439 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6523"
-       d="M 493.4911,847.27501 L 493.4911,839.77501 L 500.9911,839.77501 L 500.9911,847.27501 L 493.4911,847.27501 z "
+       d="M 997.7128,652.34721 L 997.7128,644.84721 L 1005.2128,644.84721 L 1005.2128,652.34721 L 997.7128,652.34721 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6525"
-       d="M 493.4911,838.48784 L 493.4911,830.98784 L 500.9911,830.98784 L 500.9911,838.48784 L 493.4911,838.48784 z "
+       d="M 997.7128,643.56004 L 997.7128,636.06004 L 1005.2128,636.06004 L 1005.2128,643.56004 L 997.7128,643.56004 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6527"
-       d="M 493.4911,829.70067 L 493.4911,822.20067 L 500.9911,822.20067 L 500.9911,829.70067 L 493.4911,829.70067 z "
+       d="M 997.7128,634.77287 L 997.7128,627.27287 L 1005.2128,627.27287 L 1005.2128,634.77287 L 997.7128,634.77287 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6529"
-       d="M 493.4911,856.06219 L 493.4911,848.56219 L 500.9911,848.56219 L 500.9911,856.06219 L 493.4911,856.06219 z "
+       d="M 997.7128,661.13439 L 997.7128,653.63439 L 1005.2128,653.63439 L 1005.2128,661.13439 L 997.7128,661.13439 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6531"
-       d="M 502.2783,847.27501 L 502.2783,839.77501 L 509.7783,839.77501 L 509.7783,847.27501 L 502.2783,847.27501 z "
+       d="M 1006.5,652.34721 L 1006.5,644.84721 L 1014,644.84721 L 1014,652.34721 L 1006.5,652.34721 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6533"
-       d="M 502.2783,838.48784 L 502.2783,830.98784 L 509.7783,830.98784 L 509.7783,838.48784 L 502.2783,838.48784 z "
+       d="M 1006.5,643.56004 L 1006.5,636.06004 L 1014,636.06004 L 1014,643.56004 L 1006.5,643.56004 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path6535"
-       d="M 502.2783,829.70067 L 502.2783,822.20067 L 506.0283,822.20067 L 509.7783,825.95067 L 509.7783,829.70067 L 502.2783,829.70067 z "
+       d="M 1006.5,634.77287 L 1006.5,627.27287 L 1010.25,627.27287 L 1014,631.02287 L 1014,634.77287 L 1006.5,634.77287 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6537"
-       d="M 502.2783,856.06219 L 502.2783,848.56219 L 509.7783,848.56219 L 509.7783,856.06219 L 502.2783,856.06219 z "
+       d="M 1006.5,661.13439 L 1006.5,653.63439 L 1014,653.63439 L 1014,661.13439 L 1006.5,661.13439 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6539"
-       d="M 475.9168,847.27501 L 475.9168,839.77501 L 483.4168,839.77501 L 483.4168,847.27501 L 475.9168,847.27501 z "
+       d="M 980.1385,652.34721 L 980.1385,644.84721 L 987.6385,644.84721 L 987.6385,652.34721 L 980.1385,652.34721 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6541"
-       d="M 475.9168,838.48784 L 475.9168,830.98784 L 483.4168,830.98784 L 483.4168,838.48784 L 475.9168,838.48784 z "
+       d="M 980.1385,643.56004 L 980.1385,636.06004 L 987.6385,636.06004 L 987.6385,643.56004 L 980.1385,643.56004 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path6543"
-       d="M 475.9168,829.70067 L 475.9168,825.95067 L 479.6668,822.20067 L 483.4168,822.20067 L 483.4168,829.70067 L 475.9168,829.70067 z "
+       d="M 980.1385,634.77287 L 980.1385,631.02287 L 983.8885,627.27287 L 987.6385,627.27287 L 987.6385,634.77287 L 980.1385,634.77287 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6545"
-       d="M 475.9168,856.06219 L 475.9168,848.56219 L 483.4168,848.56219 L 483.4168,856.06219 L 475.9168,856.06219 z "
+       d="M 980.1385,661.13439 L 980.1385,653.63439 L 987.6385,653.63439 L 987.6385,661.13439 L 980.1385,661.13439 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6547"
-       d="M 484.704,864.84937 L 484.704,857.34937 L 492.204,857.34937 L 492.204,864.84937 L 484.704,864.84937 z "
+       d="M 988.9257,669.92157 L 988.9257,662.42157 L 996.4257,662.42157 L 996.4257,669.92157 L 988.9257,669.92157 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path6549"
-       d="M 493.4911,864.84937 L 493.4911,857.34937 L 500.9911,857.34937 L 500.9911,864.84937 L 493.4911,864.84937 z "
+       d="M 997.7128,669.92157 L 997.7128,662.42157 L 1005.2128,662.42157 L 1005.2128,669.92157 L 997.7128,669.92157 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path6551"
-       d="M 502.2783,864.84937 L 502.2783,857.34937 L 509.7783,857.34937 L 509.7783,861.09937 L 506.0283,864.84937 L 502.2783,864.84937 z "
+       d="M 1006.5,669.92157 L 1006.5,662.42157 L 1014,662.42157 L 1014,666.17157 L 1010.25,669.92157 L 1006.5,669.92157 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        sodipodi:nodetypes="cccccc"
        id="path6553"
-       d="M 475.9168,861.09937 L 475.9168,857.34937 L 483.4168,857.34937 L 483.4168,864.84937 L 479.6668,864.84937 L 475.9168,861.09937 z "
+       d="M 980.1385,666.17157 L 980.1385,662.42157 L 987.6385,662.42157 L 987.6385,669.92157 L 983.8885,669.92157 L 980.1385,666.17157 z "
        style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
+  </g>
+  <g
+     id="one">
+    <g
+       transform="translate(-16.7872,0)"
+       id="g3091">
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 925.7128,532.57431 L 925.7128,525.07431 L 933.2128,525.07431 L 933.2128,532.57431 L 925.7128,532.57431 z "
+         id="path2994" />
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 925.7128,523.78714 L 925.7128,516.28714 L 933.2128,516.28714 L 933.2128,523.78714 L 925.7128,523.78714 z "
+         id="path2996" />
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 925.7128,514.99997 L 925.7128,507.49997 L 933.2128,507.49997 L 933.2128,514.99997 L 925.7128,514.99997 z "
+         id="path2998" />
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 925.7128,541.36149 L 925.7128,533.86149 L 933.2128,533.86149 L 933.2128,541.36149 L 925.7128,541.36149 z "
+         id="path3000" />
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 916.9257,514.99997 L 916.9257,511.24997 L 920.6757,507.49997 L 924.4257,507.49997 L 924.4257,514.99997 L 916.9257,514.99997 z "
+         id="path2978"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="color:black;fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         d="M 925.7128,550.14867 L 925.7128,542.64867 L 933.2128,542.64867 L 933.2128,550.14867 L 925.7128,550.14867 z "
+         id="path3045" />
+    </g>
     <path
-       id="path2170"
-       d="M 404.06308,709.66423 L 404.06308,702.16423 L 411.56308,702.16423 L 411.56308,709.66423 L 404.06308,709.66423 z "
+       id="path3060"
+       d="M 908.81671,514.96354 L 908.81671,507.46354 L 916.31671,507.46354 L 916.31671,514.96354 L 908.81671,514.96354 z "
+       style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
+    <path
+       id="path3062"
+       d="M 900.02951,514.96354 L 900.02951,507.46354 L 907.52951,507.46354 L 907.52951,514.96354 L 900.02951,514.96354 z "
        style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
     <path
        id="path3058"
-       d="M 395.88544,709.66424 L 395.88544,702.16424 L 403.38544,702.16424 L 403.38544,709.66424 L 395.88544,709.66424 z "
+       d="M 917.7128,514.99997 L 917.7128,507.49997 L 925.2128,507.49997 L 925.2128,514.99997 L 917.7128,514.99997 z "
+       style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
+    <path
+       id="path2170"
+       d="M 926.5,514.99997 L 926.5,507.49997 L 934,507.49997 L 934,514.99997 L 926.5,514.99997 z "
        style="color:black;fill:red;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
   </g>
 </svg>
