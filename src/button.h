@@ -29,12 +29,10 @@ class button
 		int key() const;
 		void setSelected(bool b);
 		bool selected() const;
-		QPixmap *pixmap() const;
 	
 	private:
 		QString getColorString() const;
 		
-		QPixmap *m_highlighted;
 		bool m_selected;
 		int m_key;
 		blinkenGame::color m_color;

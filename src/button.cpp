@@ -20,7 +20,6 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
 	KConfig *kc = KGlobal::config();
 	QString cs = getColorString();
-	QString pixmap = QString("images/%1h.png").arg(cs);
 	
 	switch (c)
 	{
@@ -44,13 +43,10 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 			// never happens
 		break;
 	}
-	
-	m_highlighted = new QPixmap(KStandardDirs::locate("appdata", pixmap));
 }
 
 button::~button()
 {
-	delete m_highlighted;
 }
 
 void button::setShortcut(int key)
@@ -81,11 +77,6 @@ void button::setSelected(bool b)
 bool button::selected() const
 {
 	return m_selected;
-}
-
-QPixmap *button::pixmap() const
-{
-	return m_highlighted;
 }
 
 QString button::getColorString() const

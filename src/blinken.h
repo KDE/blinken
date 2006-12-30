@@ -14,6 +14,7 @@
 
 #include "blinkengame.h"
 
+class QSvgRenderer;
 class QTimer;
 
 class KAction;
@@ -48,26 +49,27 @@ Q_OBJECT
 		
 	private:
 		void selectButton(int button);
-		bool insideGreen(const QPoint &p) const;
-		bool insideYellow(const QPoint &p) const;
-		bool insideRed(const QPoint &p) const;
-		bool insideBlue(const QPoint &p) const;
-		bool insideButtonsArea(const QPoint &p) const;
+		bool insideGreen(const QPointF &p) const;
+		bool insideYellow(const QPointF &p) const;
+		bool insideRed(const QPointF &p) const;
+		bool insideBlue(const QPointF &p) const;
+		bool insideButtonsArea(const QPointF &p) const;
 		void updateCursor(const QPoint &p);
 	
 		void drawMenuQuit(QPainter &p);
 		void drawScoreAndCounter(QPainter &p);
 		void drawStatusText(QPainter &p);
 		void drawLevel(QPainter &p);
-		void drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold);
+		void drawText(QPainter &p, const QString &text, const QPointF &center, bool withMargin, double xMargin, double yMargin, QRectF *rect, bool highlight, bool bold);
 		void updateButtonHighlighting(const QPoint &p);
 		
 		
 		button *m_buttons[4];
-		QPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
+		QSvgRenderer *m_renderer;
 		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter, m_overFont, m_overSound;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect, m_soundRect, m_fontRect;
+		QRect m_highscoreRect, m_quitRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_soundRect, m_fontRect;
+		QRectF m_centralTextRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// Preferences setting handling

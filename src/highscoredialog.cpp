@@ -31,7 +31,7 @@ static const int namesFontSize = 25;
 class scoresWidget : public QWidget
 {
 	public:
-		scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores);
+		scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores, QSvgRenderer *renderer);
 		QSize calcSize();
 
 	protected:
@@ -39,9 +39,11 @@ class scoresWidget : public QWidget
 	
 	private:
 		const QList< QPair<int, QString> > &m_scores;
+		QSvgRenderer *m_renderer;
 };
 
-scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores) : QWidget(parent), m_scores(scores)
+scoresWidget::scoresWidget(QWidget *parent, const QList< QPair<int, QString> > &scores, QSvgRenderer *renderer)
+ : QWidget(parent), m_scores(scores), m_renderer(renderer)
 {
 	setAttribute(Qt::WA_StaticContents);
 }
@@ -71,7 +73,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	QList< QPair<int, QString> >::const_iterator it;
 	for (it = m_scores.begin(); it != m_scores.end(); ++it)
 	{
-		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor());
+		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor(), m_renderer);
 		p.setPen(Qt::black);
 		p.drawText(counter::width(false) + 2 * smallMargin, 30, (*it).second);
 		p.translate(0, counter::height() + smallMargin);
@@ -130,7 +132,7 @@ class myTabWidget : public QTabWidget
 
 /* highScoreDialog */
 
-highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent)
+highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDialog(parent)
 {
 	setCaption(i18n("Highscores"));
 	setButtons(Close);
@@ -148,9 +150,9 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialog(parent)
 		}
 	}
 	
-	m_tw -> addTab(new scoresWidget(0, m_scores[0]), i18n("Level 1"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[1]), i18n("Level 2"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[2]), i18n("Level ?"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[0], renderer), i18n("Level 1"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[1], renderer), i18n("Level 2"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[2], renderer), i18n("Level ?"));
 }
 
 bool highScoreDialog::scoreGoodEnough(int level, int score)
