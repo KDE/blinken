@@ -31,6 +31,15 @@
 #include "highscoredialog.h"
 #include "settings.h"
 
+static const double centerX = 2.022;
+static const double centerY = 2.365;
+static const double ellipseSmallAxisX = 3.98;
+static const double ellipseSmallAxisY = 3.25;
+static const double ellipseBigAxisX = 2.16;
+static const double ellipseBigAxisY = 2.61;
+static const double nonButtonRibbonX = 150.0;
+static const double nonButtonRibbonY = 125.0;
+
 blinken::blinken() : QWidget(0), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_renderer = new QSvgRenderer(KStandardDirs::locate("appdata", "images/blinken.svg"));
@@ -74,14 +83,14 @@ blinken::~blinken()
 
 void blinken::paintEvent(QPaintEvent *)
 {
-	m_centralLettersRect = QRectF((double)width() / 3.354,
-	                              (double)height() / 2.706,
-	                              (double)width() / 2.535,
-	                              (double)height() / 9.722);
-	m_counterRect = QRectF((double)width() / 2.403,
-	                              (double)height() / 4.773,
-	                              (double)width() / 6.314,
-	                              (double)height() / 10.096);
+	m_centralLettersRect = QRectF((double)width() / 3.35,
+	                              (double)height() / 2.68,
+	                              (double)width() / 2.54,
+	                              (double)height() / 10.0);
+	m_counterRect = QRectF((double)width() / 2.42,
+	                              (double)height() / 4.85,
+	                              (double)width() / 6.22,
+	                              (double)height() / 9.8);
 
 	QPainter p(this);
 	p.setRenderHint(QPainter::Antialiasing, true);
@@ -349,7 +358,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	}
 	
 	QPointF p = e->pos();
-	p -= QPointF((double)width()/2.038, (double)height()/2.3756);
+	p -= QPointF((double)width() / centerX, (double)height() / centerY);
 	if (insideGreen(p))
 	{
 		if (m_showPreferences) selectButton(3);
@@ -468,22 +477,31 @@ void blinken::selectButton(int button)
 
 bool blinken::insideGreen(const QPointF &p) const
 {
-	return insideButtonsArea(p) && p.x() > 6 && p.y() > 6;
+	// nonButtonRibbon is used so that the buttons are not clickable in the gray space that is in between the buttons
+	return insideButtonsArea(p) &&
+	       p.x() > (double)width()/nonButtonRibbonX &&
+	       p.y() > (double)height()/nonButtonRibbonY;
 }
 
 bool blinken::insideBlue(const QPointF &p) const
 {
-	return insideButtonsArea(p) && p.x() < -6 && p.y() > 6;
+	return insideButtonsArea(p) &&
+	       p.x() < -(double)width()/nonButtonRibbonX &&
+	       p.y() > (double)height()/nonButtonRibbonY;
 }
 
 bool blinken::insideYellow(const QPointF &p) const
 {
-	return insideButtonsArea(p) && p.x() < -6 && p.y() < -6;
+	return insideButtonsArea(p) &&
+	       p.x() < -(double)width()/nonButtonRibbonX &&
+	       p.y() < -(double)height()/nonButtonRibbonY;
 }
 
 bool blinken::insideRed(const QPointF &p) const
 {
-	return insideButtonsArea(p) && p.x() > 6 && p.y() < -6;
+	return insideButtonsArea(p) &&
+	       p.x() > (double)width()/nonButtonRibbonX &&
+	       p.y() < -(double)height()/nonButtonRibbonY;
 }
 
 bool blinken::insideButtonsArea(const QPointF &p) const
@@ -494,16 +512,16 @@ bool blinken::insideButtonsArea(const QPointF &p) const
 	x2 = x * x;
 	y2 = y * y;
 	double x3, y3;
-	double smallaxis1 = (double)width() / 3.96307692307692307692;
-	double smallaxis2 = (double)height() / 3.23076923076923076923;
+	double smallaxis1 = (double)width() / ellipseSmallAxisX;
+	double smallaxis2 = (double)height() / ellipseSmallAxisY;
 	x3 = x2 / (smallaxis1 * smallaxis1);
 	y3 = y2 / (smallaxis2 * smallaxis2);
 	if (x3 + y3 > 1)
 	{
 		// Outside the inner ellipse
 		double x4, y4;
-		double bigaxis1 = (double)width() / 2.13953488372093023256;
-		double bigaxis2 = (double)height() / 2.61194029850746268657;
+		double bigaxis1 = (double)width() / ellipseBigAxisX;
+		double bigaxis2 = (double)height() / ellipseBigAxisY;
 		x4 = x2 / (bigaxis1 * bigaxis1);
 		y4 = y2 / (bigaxis2 * bigaxis2);
 		if (x4 + y4 < 1) return true;
@@ -948,7 +966,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 
 void blinken::updateCursor(const QPoint &p)
 {
-	QPointF p2 = p - QPointF((double)width()/2.038, (double)height()/2.3756);;
+	QPointF p2 = p - QPointF((double)width() / centerX, (double)height() / centerY);
 	
 	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
 	else setCursor(Qt::ArrowCursor);
