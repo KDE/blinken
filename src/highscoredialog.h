@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by Albert Astals Cid <tsdgeos@terra.es>            *
+ *   Copyright (C) 2005-2006 by Albert Astals Cid <aacid@kde.org>          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -15,12 +15,14 @@
 
 #include <kdialog.h>
 
+class QSvgRenderer;
+
 class myTabWidget;
 
 class highScoreDialog : private KDialog
 {
 	public:
-		explicit highScoreDialog(QWidget *parent);
+		highScoreDialog(QWidget *parent, QSvgRenderer *renderer);
 		
 		bool scoreGoodEnough(int level, int score);
 		void addScore(int level, int score, const QString &name);

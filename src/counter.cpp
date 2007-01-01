@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by Albert Astals Cid <tsdgeos@terra.es>            *
+ *   Copyright (C) 2005-2006 by Albert Astals Cid <aacid@kde.org>          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -13,7 +13,7 @@
 #include "counter.h"
 #include "number.h"
 
-void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3)
+void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3, QSvgRenderer *renderer)
 {
 	p.save();
 	p.translate(45, 15);
@@ -30,18 +30,20 @@ void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, cons
 		p.drawRoundRect(-45, -15, 73, 50, 15, 15);
 	}
 	
-	if (drawScore)
-	{
-		number n(score);
-		n.paint(p, 2);
-	}
-	
 	if (drawTimer)
 	{
 		p.fillRect(35, -6, 11, 9, c1);
 		p.fillRect(35, 6, 11, 9, c2);
 		p.fillRect(35, 18, 11, 9, c3);
 	}
+	
+	if (drawScore)
+	{
+		p.translate(-5, -5);
+		number n(score);
+		n.paint(p, 2, renderer);
+	}
+	
 	p.restore();
 }
 

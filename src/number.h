@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by Albert Astals Cid <tsdgeos@terra.es>            *
+ *   Copyright (C) 2005-2006 by Albert Astals Cid <aacid@kde.org>          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -11,29 +11,19 @@
 #define NUMBER_H
 
 class QPainter;
+class QSvgRenderer;
 
 class number
 {
 	public:
 		explicit number(int n);
 		
-		void paint(QPainter &p, int digits) const;
+		void paint(QPainter &p, int digits, QSvgRenderer *renderer) const;
 	
 	private:
-		void paintDigit(QPainter &p, int n) const;
+		void paintDigit(QPainter &p, int n, QSvgRenderer *renderer) const;
 		
 		int m_number;
-		
-		static const int m_number0[20];
-		static const int m_number1[20];
-		static const int m_number2[20];
-		static const int m_number3[20];
-		static const int m_number4[20];
-		static const int m_number5[20];
-		static const int m_number6[20];
-		static const int m_number7[20];
-		static const int m_number8[20];
-		static const int m_number9[20];
 };
 
 #endif

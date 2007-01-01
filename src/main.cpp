@@ -19,7 +19,7 @@
 
 int main(int argc, char *argv[])
 {
-	KAboutData about("blinken", I18N_NOOP("blinKen"), "0.1", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL, "© 2005 Albert Astals Cid\n© 2005 Danny Allen");
+	KAboutData about("blinken", I18N_NOOP("blinKen"), "0.2", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL, "© 2005 Albert Astals Cid\n© 2005 Danny Allen");
 	about.addAuthor("Albert Astals Cid", I18N_NOOP("Coding"), "tsdgeos@terra.es");
 	about.addAuthor("Danny Allen", I18N_NOOP("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
 	about.addCredit("Steve Jordi", I18N_NOOP("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
