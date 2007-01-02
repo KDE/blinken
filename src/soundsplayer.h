@@ -7,8 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#ifndef ARTSPLAYER_H
-#define ARTSPLAYER_H
+#ifndef SOUNDSPLAYER_H
+#define SOUNDSPLAYER_H
 
 #include <phonon/mediaobject.h>
 
