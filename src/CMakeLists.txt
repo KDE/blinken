@@ -1,9 +1,6 @@
 
 ########### next target ###############
 
-remove_definitions(-DQT3_SUPPORT_WARNINGS)
-remove_definitions(-DQT3_SUPPORT)
-
 set(blinken_SRCS 
    main.cpp 
    blinken.cpp 
