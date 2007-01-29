@@ -18,7 +18,7 @@
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
-	KConfig *kc = KGlobal::config();
+	KSharedConfig::Ptr kc = KGlobal::config();
 	QString cs = getColorString();
 	
 	switch (c)
@@ -54,7 +54,7 @@ void button::setShortcut(int key)
 	m_key = key;
 	m_selected = false;
 	
-	KConfig *kc = KGlobal::config();
+	KSharedConfig::Ptr kc = KGlobal::config();
 	kc->writeEntry(getColorString(), key);
 	kc->sync();
 }

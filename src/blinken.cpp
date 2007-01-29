@@ -64,7 +64,7 @@ blinken::blinken() : QWidget(0), m_overHighscore(false), m_overQuit(false), m_ov
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
 	
-	m_helpMenu = new KHelpMenu(this, kapp->aboutData());
+	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData());
 	m_helpMenu->menu(); // ensures the actions are created
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
