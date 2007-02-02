@@ -9,6 +9,7 @@
 
 #include <klocale.h>
 #include <kstandarddirs.h>
+#include <kurl.h>
 
 #include <phonon/audiopath.h>
 #include <phonon/audiooutput.h>
