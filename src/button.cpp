@@ -18,6 +18,7 @@
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
 	KConfig *kc = kapp->config();
+	kc->setGroup("General");
 	QString cs = getColorString();
 	QString pixmap = QString("images/%1h.png").arg(cs);
 	
@@ -58,6 +59,7 @@ void button::setShortcut(int key)
 	m_selected = false;
 	
 	KConfig *kc = kapp->config();
+	kc->setGroup("General");
 	kc->writeEntry(getColorString(), key);
 	kc->sync();
 }
