@@ -140,13 +140,12 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDia
 	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
 	
-	KSharedConfig::Ptr cfg = KGlobal::config();
 	for (int i = 1; i <= 3; i++)
 	{
-		cfg -> setGroup(QString("Level%1").arg(i));
+		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(i));  
 		for (int j = 1; j <= 5; j++)
 		{
-			m_scores[i-1].append(qMakePair(cfg->readEntry(QString("Score%1").arg(j), QVariant(0)).toInt(), cfg->readEntry(QString("Name%1").arg(j), QString())));
+			m_scores[i-1].append(qMakePair(cfg.readEntry(QString("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QString("Name%1").arg(j),QString())));
 		}
 	}
 	
@@ -179,15 +178,14 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 		m_scores[level].insert(it, qMakePair(score, name));
 		m_scores[level].erase(--m_scores[level].end());
 		
-		KSharedConfig::Ptr cfg = KGlobal::config();
-		cfg -> setGroup(QString("Level%1").arg(level + 1));
+		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(level + 1)); 
 		int j;
 		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
 		{
-			cfg->writeEntry(QString("Score%1").arg(j), (*it).first);
-			cfg->writeEntry(QString("Name%1").arg(j), (*it).second);
+			cfg.writeEntry(QString("Score%1").arg(j), (*it).first);
+			cfg.writeEntry(QString("Name%1").arg(j), (*it).second);
 		}
-		cfg -> sync();
+		cfg.sync();
 	}
 }
 
