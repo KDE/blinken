@@ -7,9 +7,9 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <kaction.h>
-#include <kapplication.h>
 #include <kconfig.h>
+#include <ksharedconfig.h>
+#include <kshortcut.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kglobal.h>

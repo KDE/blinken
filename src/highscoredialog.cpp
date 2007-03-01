@@ -12,7 +12,6 @@
 #include <qtabbar.h>
 #include <qtabwidget.h>
 
-#include <kapplication.h>
 #include <kconfig.h>
 #include <klocale.h>
 #include <kglobal.h>
