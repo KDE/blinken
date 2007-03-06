@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=blinKen
+Name[ne]=ब्लिनकेन
 Name[x-test]=xxblinKenxx
 DocPath=blinken/index.html
 Exec=blinken
