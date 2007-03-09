@@ -8,6 +8,7 @@ Exec=blinken
 Icon=blinken
 Type=Application
 Comment=A memory enhancement game
+Comment[el]=Ένα παιχνίδι βελτίωσης της μνήμης
 Comment[x-test]=xxA memory enhancement gamexx
 Terminal=false
 Categories=Qt;KDE;Education;
