@@ -11,7 +11,7 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kstandarddirs.h>
 
 #include "fontchecker.h"
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	QFont f("Steve", 12, QFont::Normal, true);
 	if (!fontChecker::checkInstalled(f, KStandardDirs::locate("appdata", "fonts/steve.ttf")))
 	{
-		KProcess *proc = new KProcess;
+		K3Process *proc = new K3Process;
 		for (int i = 0; i < argc; i++) *proc << argv[i];
 		proc->start();
 	}
