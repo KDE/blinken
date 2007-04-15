@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=blinKen
 Name[ne]=ब्लिनकेन
+Name[pa]=ਬਲਿਨਕਿਨ
 Name[x-test]=xxblinKenxx
 DocPath=blinken/index.html
 Exec=blinken
@@ -9,6 +10,7 @@ Icon=blinken
 Type=Application
 Comment=A memory enhancement game
 Comment[el]=Ένα παιχνίδι βελτίωσης της μνήμης
+Comment[pa]=ਯਾਦਾਸ਼ਤ ਵਧਾਉਣ ਵਾਲੀ ਖੇਡ
 Comment[x-test]=xxA memory enhancement gamexx
 Terminal=false
 Categories=Qt;KDE;Education;
