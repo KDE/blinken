@@ -7,10 +7,11 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "counter.h"
+
 #include <qcolor.h>
 #include <qpainter.h>
 
-#include "counter.h"
 #include "number.h"
 
 void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3, QSvgRenderer *renderer)

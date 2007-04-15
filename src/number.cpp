@@ -7,10 +7,10 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "number.h"
+
 #include <qpainter.h>
 #include <qsvgrenderer.h>
-
-#include "number.h"
 
 number::number(int n)
 {

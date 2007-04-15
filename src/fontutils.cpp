@@ -7,9 +7,9 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qpainter.h>
-
 #include "fontutils.h"
+
+#include <qpainter.h>
 
 int fontUtils::fontSize(QPainter &p, const QString &s1, int w, int h)
 {

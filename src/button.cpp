@@ -7,14 +7,14 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "button.h"
+
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <kshortcut.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kglobal.h>
-
-#include "button.h"
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {

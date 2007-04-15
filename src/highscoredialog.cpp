@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "highscoredialog.h"
+
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtabbar.h>
@@ -16,7 +18,6 @@
 #include <klocale.h>
 #include <kglobal.h>
 
-#include "highscoredialog.h"
 #include "counter.h"
 #include "fontutils.h"
 #include "settings.h"

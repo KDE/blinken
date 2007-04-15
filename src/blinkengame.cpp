@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "blinkengame.h"
+
 #include <stdlib.h> // for RAND_MAX
 
 #include <qtimer.h>
@@ -14,7 +16,6 @@
 #include <krandom.h>
 
 #include "soundsplayer.h"
-#include "blinkengame.h"
 
 blinkenGame::blinkenGame() : m_phase(starting)
 {

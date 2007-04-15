@@ -7,12 +7,12 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "fontchecker.h"
+
 #include <qfont.h>
 #include <qfontinfo.h>
 
 #include <kio/netaccess.h>
-
-#include "fontchecker.h"
 
 bool fontChecker::checkInstalled(const QFont &font, const QString &fontPath)
 {

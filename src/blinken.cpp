@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "blinken.h"
+
 #include <qcursor.h>
 #include <qevent.h>
 #include <qpainter.h>
@@ -23,7 +25,6 @@
 #include <kmenu.h>
 #include <kstandarddirs.h>
 
-#include "blinken.h"
 #include "button.h"
 #include "counter.h"
 #include "fontutils.h"

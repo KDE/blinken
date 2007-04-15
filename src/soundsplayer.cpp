@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "soundsplayer.h"
+
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kurl.h>
@@ -14,7 +16,6 @@
 #include <phonon/audiopath.h>
 #include <phonon/audiooutput.h>
 
-#include "soundsplayer.h"
 #include "settings.h"
 
 soundsPlayer::soundsPlayer() : m_currentSound(0)
