@@ -10,6 +10,8 @@
 #ifndef FONTUTILS_H
 #define FONTUTILS_H
 
+class QPainter;
+class QString;
 namespace fontUtils
 {
 	int fontSize(QPainter &p, const QString &s1, int w, int h);

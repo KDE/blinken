@@ -11,7 +11,7 @@
 #define FONTCHECKER_H
 
 class QFont;
-
+class QString;
 class fontChecker
 {
 	public:

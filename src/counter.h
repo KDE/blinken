@@ -12,7 +12,7 @@
 
 class QPainter;
 class QSvgRenderer;
-
+class QColor;
 class counter
 {
 	public:
