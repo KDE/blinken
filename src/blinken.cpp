@@ -14,9 +14,9 @@
 #include <qpainter.h>
 #include <qsvgrenderer.h>
 #include <qtimer.h>
+#include <QApplication>
 
 #include <kaction.h>
-#include <kapplication.h>
 #include <kconfig.h>
 #include <khelpmenu.h>
 #include <kinputdialog.h>
@@ -24,6 +24,7 @@
 #include <kmessagebox.h>
 #include <kmenu.h>
 #include <kstandarddirs.h>
+#include <KComponentData>
 
 #include "button.h"
 #include "counter.h"
@@ -331,7 +332,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		blinkenSettings::writeConfig();
 		update();
 	}
-	else if (m_overQuit) kapp->quit();
+	else if (m_overQuit) qApp->quit();
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
