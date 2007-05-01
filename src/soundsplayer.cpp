@@ -25,11 +25,11 @@ soundsPlayer::soundsPlayer() : m_currentSound(0)
 	audioOutput->setVolume( 0.8f );
 	audioPath->addOutput( audioOutput );
 
-	m_allSound.setUrl(KStandardDirs::locate("appdata","sounds/lose.wav"));
-	m_greenSound.setUrl(KStandardDirs::locate("appdata","sounds/1.wav"));
-	m_redSound.setUrl(KStandardDirs::locate("appdata","sounds/2.wav"));
-	m_blueSound.setUrl(KStandardDirs::locate("appdata","sounds/3.wav"));
-	m_yellowSound.setUrl(KStandardDirs::locate("appdata","sounds/4.wav"));
+	m_allSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/lose.wav"));
+	m_greenSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/1.wav"));
+	m_redSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/2.wav"));
+	m_blueSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/3.wav"));
+	m_yellowSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/4.wav"));
 	
 	m_allSound.addAudioPath( audioPath );
 	m_greenSound.addAudioPath( audioPath );
