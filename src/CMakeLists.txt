@@ -19,7 +19,7 @@ kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
-target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} )
+target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} )
 
 install(TARGETS blinken  DESTINATION ${BIN_INSTALL_DIR} )
 
