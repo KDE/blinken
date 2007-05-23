@@ -323,13 +323,13 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
 		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
-		blinkenSettings::writeConfig();
+		blinkenSettings::self()->writeConfig();
 		update();
 	}
 	else if (m_showPreferences && m_soundRect.contains(e -> pos()))
 	{
 		blinkenSettings::setPlaySounds(!blinkenSettings::playSounds());
-		blinkenSettings::writeConfig();
+		blinkenSettings::self()->writeConfig();
 		update();
 	}
 	else if (m_overQuit) qApp->quit();
