@@ -15,8 +15,6 @@
 #include "blinkengame.h"
 
 class KAction;
-class KActionCollection;
-class KShortcut;
 
 class button
 {

@@ -17,11 +17,9 @@
 class QSvgRenderer;
 class QTimer;
 
-class KAction;
 class KHelpMenu;
 
 class button;
-class highScoreDialog;
 
 class blinken : public QWidget
 {
