@@ -10,7 +10,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <k3process.h>
+#include <kprocess.h>
 #include <kstandarddirs.h>
 #include <kapplication.h>
 
@@ -30,8 +30,9 @@ int main(int argc, char *argv[])
 	QFont f("Steve", 12, QFont::Normal, true);
 	if (!fontChecker::checkInstalled(f, KStandardDirs::locate("appdata", "fonts/steve.ttf")))
 	{
-		K3Process *proc = new K3Process;
-		for (int i = 0; i < argc; i++) *proc << argv[i];
+		KProcess *proc = new KProcess;
+		for (int i = 0; i < argc; i++)
+		    *proc << argv[i];
 		proc->start();
 	}
 	else
