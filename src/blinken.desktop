@@ -15,5 +15,6 @@ Comment[ja]=記憶力増強ゲーム
 Comment[pa]=ਯਾਦਾਸ਼ਤ ਵਧਾਉਣ ਵਾਲੀ ਖੇਡ
 Comment[sv]=Ett spel för att förbättra minnet
 Comment[x-test]=xxA memory enhancement gamexx
+Comment[zh_TW]=加強記憶力的遊戲
 Terminal=false
 Categories=Qt;KDE;Education;
