@@ -19,10 +19,10 @@
 
 int main(int argc, char *argv[])
 {
-	KAboutData about("blinken", I18N_NOOP("blinKen"), "0.2", I18N_NOOP("A memory enhancement game"), KAboutData::License_GPL, "© 2005 Albert Astals Cid\n© 2005 Danny Allen");
-	about.addAuthor("Albert Astals Cid", I18N_NOOP("Coding"), "tsdgeos@terra.es");
-	about.addAuthor("Danny Allen", I18N_NOOP("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
-	about.addCredit("Steve Jordi", I18N_NOOP("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
+	KAboutData about("blinken", 0, ki18n("blinKen"), "0.2", ki18n("A memory enhancement game"), KAboutData::License_GPL, ki18n("© 2005 Albert Astals Cid\n© 2005 Danny Allen"));
+	about.addAuthor(ki18n("Albert Astals Cid"), ki18n("Coding"), "tsdgeos@terra.es");
+	about.addAuthor(ki18n("Danny Allen"), ki18n("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
+	about.addCredit(ki18n("Steve Jordi"), ki18n("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
 	KCmdLineArgs::init(argc, argv, &about);
 	KApplication app;
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
