@@ -13,7 +13,6 @@ set(blinken_SRCS
    fontchecker.cpp 
    button.cpp )
 
-kde4_automoc(${blinken_SRCS})
 
 kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
