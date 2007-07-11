@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=blinKen
-Name[ne]=ब्लिनकेन
+Name[ne]=झिमझिम
 Name[pa]=ਬਲਿਨਕਿਨ
 Name[x-test]=xxblinKenxx
 DocPath=blinken/index.html
@@ -12,6 +12,7 @@ Comment=A memory enhancement game
 Comment[el]=Ένα παιχνίδι βελτίωσης της μνήμης
 Comment[es]=Un juego para mejorar la memoria
 Comment[fa]=بازی تقویت حافظه
+Comment[ga]=Cluiche feabhsaithe cuimhne
 Comment[ja]=記憶力増強ゲーム
 Comment[pa]=ਯਾਦਾਸ਼ਤ ਵਧਾਉਣ ਵਾਲੀ ਖੇਡ
 Comment[sv]=Ett spel för att förbättra minnet
