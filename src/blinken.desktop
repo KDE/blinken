@@ -9,6 +9,7 @@ Exec=blinken
 Icon=blinken
 Type=Application
 Comment=A memory enhancement game
+Comment[bg]=Игра за упражнение на паметта
 Comment[el]=Ένα παιχνίδι βελτίωσης της μνήμης
 Comment[es]=Un juego para mejorar la memoria
 Comment[fa]=بازی تقویت حافظه
