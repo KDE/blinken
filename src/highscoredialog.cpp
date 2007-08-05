@@ -149,9 +149,9 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDia
 		}
 	}
 	
-	m_tw -> addTab(new scoresWidget(0, m_scores[0], renderer), i18n("Level 1"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[1], renderer), i18n("Level 2"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[2], renderer), i18n("Level ?"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[0], renderer), i18nc("@title:group first level high scores", "Level 1"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[1], renderer), i18nc("@title:group second level high scores", "Level 2"));
+	m_tw -> addTab(new scoresWidget(0, m_scores[2], renderer), i18nc("@title:group all other level high scores", "Level ?"));
 }
 
 bool highScoreDialog::scoreGoodEnough(int level, int score)

@@ -389,7 +389,7 @@ void blinken::checkHS()
 	if (hsd->scoreGoodEnough(m_game.level(), m_game.score()))
 	{
 		bool ok;
-		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18n("Name:"), m_lastName, &ok);
+		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18nc("@label:textbox refers to the user's name", "Name:"), m_lastName, &ok);
 		if (!name.isNull() && ok)
 		{
 			m_lastName = name;
@@ -733,7 +733,7 @@ void blinken::drawLevel(QPainter &p)
 	
 	double posX = (double)width() / 2.0;
 	double posY = (double)height() / 1.868;
-	drawText(p, i18n("Level"), QPointF(posX, posY), false, 0, 0, 0, false, true);
+	drawText(p, i18nc("@label:chooser which level is currently being played", "Level"), QPointF(posX, posY), false, 0, 0, 0, false, true);
 	
 	QPointF cp;
 	for (int i = 0; i < 3; i++)
