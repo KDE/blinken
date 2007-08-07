@@ -134,7 +134,7 @@ class myTabWidget : public QTabWidget
 
 highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDialog(parent)
 {
-	setCaption(i18n("Highscores"));
+	setCaption(i18nc("@title:window the highest scores for each level are shown", "Highscores"));
 	setButtons(Close);
 
 	m_tw = new myTabWidget(this);
