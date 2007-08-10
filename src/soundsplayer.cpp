@@ -13,29 +13,27 @@
 #include <kstandarddirs.h>
 #include <kurl.h>
 
-#include <phonon/audiopath.h>
-#include <phonon/audiooutput.h>
+#include <Phonon/Path>
+#include <Phonon/AudioOutput>
 
 #include "settings.h"
 
 soundsPlayer::soundsPlayer() : m_currentSound(0)
 {
-	Phonon::AudioPath* audioPath = new Phonon::AudioPath( this );
 	Phonon::AudioOutput* audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
 	audioOutput->setVolume( 0.8f );
-	audioPath->addOutput( audioOutput );
 
 	m_allSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/lose.wav"));
 	m_greenSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/1.wav"));
 	m_redSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/2.wav"));
 	m_blueSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/3.wav"));
 	m_yellowSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/4.wav"));
-	
-	m_allSound.addAudioPath( audioPath );
-	m_greenSound.addAudioPath( audioPath );
-	m_redSound.addAudioPath( audioPath );
-	m_blueSound.addAudioPath( audioPath );
-	m_yellowSound.addAudioPath( audioPath );
+
+	Phonon::createPath(&m_allSound, audioOutput);
+	Phonon::createPath(&m_greenSound, audioOutput);
+	Phonon::createPath(&m_redSound, audioOutput);
+	Phonon::createPath(&m_blueSound, audioOutput);
+	Phonon::createPath(&m_yellowSound, audioOutput);
 	
 	connect(&m_allSound, SIGNAL(finished()), this, SLOT(playEnded()));
 	connect(&m_greenSound, SIGNAL(finished()), this, SLOT(playEnded()));
