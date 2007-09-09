@@ -536,9 +536,6 @@ void blinken::drawMenuQuit(QPainter &p)
 	double xScaleSquareButtons = 90.0 / 814.062;
 	double yScaleSquareButtons = 90.0 / 664.062;
 	
-	double xScaleSmallSquareButtons = 68.0 / 814.062;
-	double yScaleSmallSquareButtons = 68.0 / 664.062;
-	
 	// Highscore button
 	p.resetMatrix();
 	p.translate( (double)width() / 50.875, (double)height() / 30);
@@ -606,18 +603,12 @@ void blinken::drawMenuQuit(QPainter &p)
 				qRound((double)height() / 1.2),
 				qRound((double)width() * xScaleSquareButtons),
 				qRound((double)height() * yScaleSquareButtons));
-	m_aboutKDERect = QRect(qRound((double)width() / 1.421),
-				qRound((double)height() / 1.153),
-				qRound((double)width() * xScaleSmallSquareButtons),
-				qRound((double)height() * yScaleSmallSquareButtons));
-	m_aboutBlinkenRect = QRect(qRound((double)width() / 1.271),
-					qRound((double)height() / 1.153),
-					qRound((double)width() * xScaleSmallSquareButtons),
-					qRound((double)height() * yScaleSmallSquareButtons));
-	m_manualRect = QRect(qRound((double)width() / 1.1146),
-				qRound((double)height() / 1.3667),
-				qRound((double)width() * xScaleSmallSquareButtons),
-				qRound((double)height() * yScaleSmallSquareButtons));
+	m_aboutBlinkenRect = QRect(QPoint(qRound((double)width() / 1.271), qRound((double)height() / 1.153)),
+	                           QPoint(m_menuRect.left(), m_menuRect.bottom()));
+	m_manualRect = QRect(QPoint(qRound((double)width() / 1.1146), qRound((double)height() / 1.3667)),
+	                     QPoint(m_menuRect.right(), m_menuRect.top()));
+	m_aboutKDERect = QRect(QPoint(qRound((double)width() / 1.421), qRound((double)height() / 1.153)),
+	                       QPoint(m_aboutBlinkenRect.left(), m_aboutBlinkenRect.bottom()));
 }
 
 void blinken::drawScoreAndCounter(QPainter &p)
