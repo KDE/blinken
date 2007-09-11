@@ -167,16 +167,16 @@ void blinken::paintEvent(QPaintEvent *)
 		p.drawRect(m_soundRect);
 		if (blinkenSettings::playSounds())
 		{
-			p.drawLine(186, 214, 199, 227); 
-			p.drawLine(186, 227, 199, 214); 
+			p.drawLine(186, 214, 201, 229);
+			p.drawLine(186, 229, 201, 214);
 		}
 		if (!m_alwaysUseNonCoolFont)
 		{
 			p.drawRect(m_fontRect);
 			if (blinkenSettings::customFont())
 			{
-				p.drawLine(437, 214, 450, 227); 
-				p.drawLine(437, 227, 450, 214); 
+				p.drawLine(437, 214, 452, 229);
+				p.drawLine(437, 229, 452, 214);
 			}
 		}
 
