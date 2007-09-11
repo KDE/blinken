@@ -97,40 +97,59 @@ void blinken::paintEvent(QPaintEvent *)
 	QPainter p(this);
 	p.setRenderHint(QPainter::Antialiasing, true);
 	
+	if (m_lastSize != size())
+	{
+		m_pixmapCache.clear();
+		m_lastSize = size();
+	}
+	
 	// Base
-	m_renderer->render(&p, "blinkenBase");
+	p.drawPixmap(0, 0, getPixmap("blinkenBase", size()));
 	
 	double xScaleButtons = 374.625 / 814.062;
 	double yScaleButtons = 250.344 / 664.062;
 	
 	// Red button
-	p.translate( (double)width() / 2, (double)height() / 25);
-	p.scale(xScaleButtons, yScaleButtons);
-	if (m_highlighted & blinkenGame::red) m_renderer->render(&p, "red_highlight");
-	else m_renderer->render(&p, "red_normal");
+	QSize sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
+	if (m_highlighted & blinkenGame::red)
+	{
+		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 25), getPixmap("red_highlight", sz));
+	}
+	else
+	{
+		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 25), getPixmap("red_normal", sz));
+	}
 	
 	// Green button
-	p.resetMatrix();
-	p.translate( (double)width() / 2, (double)height() / 2.339);
-	p.scale(xScaleButtons, yScaleButtons);
-	if (m_highlighted & blinkenGame::green) m_renderer->render(&p, "green_highlight");
-	else m_renderer->render(&p, "green_normal");
+	if (m_highlighted & blinkenGame::green)
+	{
+		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 2.339), getPixmap("green_highlight", sz));
+	}
+	else
+	{
+		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 2.339), getPixmap("green_normal", sz));
+	}
 	
 	// Yellow button
-	p.resetMatrix();
-	p.translate( (double)width() / 33.5, (double)height() / 25);
-	p.scale(xScaleButtons, yScaleButtons);
-	if (m_highlighted & blinkenGame::yellow) m_renderer->render(&p, "yellow_highlight");
-	else m_renderer->render(&p, "yellow_normal");
+	if (m_highlighted & blinkenGame::yellow)
+	{
+		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 25), getPixmap("yellow_highlight", sz));
+	}
+	else
+	{
+		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 25), getPixmap("yellow_normal", sz));
+	}
 	
 	// Blue button
-	p.resetMatrix();
-	p.translate( (double)width() / 33.5, (double)height() / 2.339);
-	p.scale(xScaleButtons, yScaleButtons);
-	if (m_highlighted & blinkenGame::blue) m_renderer->render(&p, "blue_highlight");
-	else m_renderer->render(&p, "blue_normal");
+	if (m_highlighted & blinkenGame::blue)
+	{
+		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 2.339), getPixmap("blue_highlight", sz));
+	}
+	else
+	{
+		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 2.339), getPixmap("blue_normal", sz));
+	}
 	
-	p.resetMatrix();
 	drawMenuQuit(p);
 	p.resetMatrix();
 	
@@ -963,6 +982,20 @@ void blinken::updateCursor(const QPoint &p)
 	
 	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
 	else setCursor(Qt::ArrowCursor);
+}
+
+QPixmap blinken::getPixmap(const QString &element, const QSize &imageSize)
+{
+	QMap<QString, QPixmap>::const_iterator it = m_pixmapCache.constFind(element);
+	if (it == m_pixmapCache.constEnd())
+	{
+		QPixmap pix(imageSize);
+		pix.fill(Qt::transparent);
+		QPainter p(&pix);
+		m_renderer->render(&p, element);
+		it = m_pixmapCache.insert(element, pix);
+	}
+	return it.value();
 }
 
 #include "blinken.moc"

@@ -10,6 +10,7 @@
 #ifndef BLINKEN_H
 #define BLINKEN_H
 
+#include <qmap.h>
 #include <qwidget.h>
 
 #include "blinkengame.h"
@@ -60,6 +61,7 @@ Q_OBJECT
 		void drawLevel(QPainter &p);
 		void drawText(QPainter &p, const QString &text, const QPointF &center, bool withMargin, double xMargin, double yMargin, QRectF *rect, bool highlight, bool bold);
 		void updateButtonHighlighting(const QPoint &p);
+		QPixmap getPixmap(const QString &element, const QSize &imageSize);
 		
 		
 		button *m_buttons[4];
@@ -87,6 +89,9 @@ Q_OBJECT
 		blinkenGame m_game;
 		
 		KHelpMenu *m_helpMenu;
+		
+		QSize m_lastSize;
+		QMap<QString, QPixmap> m_pixmapCache;
 };
 
 #endif
