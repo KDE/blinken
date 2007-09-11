@@ -104,7 +104,8 @@ void blinken::paintEvent(QPaintEvent *)
 	}
 	
 	// Base
-	p.drawPixmap(0, 0, getPixmap("blinkenBase", size()));
+	// This -1 +1 suck but without them i got blank lines on borders
+	p.drawPixmap(-1, 0, getPixmap("blinkenBase", size()+QSize(1,1)));
 	
 	double xScaleButtons = 374.625 / 814.062;
 	double yScaleButtons = 250.344 / 664.062;
