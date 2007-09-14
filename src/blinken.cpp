@@ -42,7 +42,7 @@ static const double ellipseBigAxisY = 2.61;
 static const double nonButtonRibbonX = 150.0;
 static const double nonButtonRibbonY = 125.0;
 
-blinken::blinken() : QWidget(0), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : KMainWindow(), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_renderer = new QSvgRenderer(KStandardDirs::locate("appdata", "images/blinken.svg"));
 	
@@ -74,6 +74,7 @@ blinken::blinken() : QWidget(0), m_overHighscore(false), m_overQuit(false), m_ov
 	QString aux = i18nc("If the Steve font that is used by blinKen by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
 	
 	m_alwaysUseNonCoolFont = aux == "1";
+	setAutoSaveSettings();
 }
 
 blinken::~blinken()
@@ -81,6 +82,11 @@ blinken::~blinken()
 	delete m_renderer;
 	for (int i = 0; i < 4; i++) delete m_buttons[i];
 	delete m_helpMenu;
+}
+
+QSize blinken::sizeHint() const
+{
+	return QSize(600, 490);
 }
 
 void blinken::paintEvent(QPaintEvent *)
@@ -352,7 +358,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		blinkenSettings::self()->writeConfig();
 		update();
 	}
-	else if (m_overQuit) qApp->quit();
+	else if (m_overQuit) close();
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();

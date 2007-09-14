@@ -11,7 +11,7 @@
 #define BLINKEN_H
 
 #include <qmap.h>
-#include <qwidget.h>
+#include <kmainwindow.h>
 
 #include "blinkengame.h"
 
@@ -22,12 +22,14 @@ class KHelpMenu;
 
 class button;
 
-class blinken : public QWidget
+class blinken : public KMainWindow
 {
 Q_OBJECT
 	public:
 		blinken();
 		~blinken();
+
+		virtual QSize sizeHint() const;
 		
 	protected:
 		void paintEvent(QPaintEvent *);
