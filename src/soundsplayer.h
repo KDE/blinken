@@ -10,7 +10,7 @@
 #ifndef SOUNDSPLAYER_H
 #define SOUNDSPLAYER_H
 
-#include <phonon/mediaobject.h>
+#include <phonon/audiooutput.h>
 
 #include <QList>
 #include <QTimer>
@@ -33,8 +33,8 @@ Q_OBJECT
 		void playEnded();
 		
 	private:
-		Phonon::MediaObject m_greenSound, m_redSound, m_blueSound, m_yellowSound, m_allSound;
-		Phonon::MediaObject *m_currentSound;
+		QString m_greenSound, m_redSound, m_blueSound, m_yellowSound, m_allSound;
+		Phonon::AudioOutput *m_audioOutput;
 		
 		QTimer m_warnTimer;
 };

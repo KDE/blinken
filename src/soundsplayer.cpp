@@ -14,33 +14,21 @@
 #include <kurl.h>
 
 #include <Phonon/Path>
-#include <Phonon/AudioOutput>
+#include <Phonon/MediaObject>
 
 #include "settings.h"
 
-soundsPlayer::soundsPlayer() : m_currentSound(0)
+soundsPlayer::soundsPlayer()
 {
-	Phonon::AudioOutput* audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
-	audioOutput->setVolume( 0.8f );
+	m_audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
+	m_audioOutput->setVolume( 0.8f );
 
-	m_allSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/lose.wav"));
-	m_greenSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/1.wav"));
-	m_redSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/2.wav"));
-	m_blueSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/3.wav"));
-	m_yellowSound.setCurrentSource(KStandardDirs::locate("appdata","sounds/4.wav"));
+	m_allSound = KStandardDirs::locate("appdata","sounds/lose.wav");
+	m_greenSound = KStandardDirs::locate("appdata","sounds/1.wav");
+	m_redSound = KStandardDirs::locate("appdata","sounds/2.wav");
+	m_blueSound = KStandardDirs::locate("appdata","sounds/3.wav");
+	m_yellowSound = KStandardDirs::locate("appdata","sounds/4.wav");
 
-	Phonon::createPath(&m_allSound, audioOutput);
-	Phonon::createPath(&m_greenSound, audioOutput);
-	Phonon::createPath(&m_redSound, audioOutput);
-	Phonon::createPath(&m_blueSound, audioOutput);
-	Phonon::createPath(&m_yellowSound, audioOutput);
-	
-	connect(&m_allSound, SIGNAL(finished()), this, SLOT(playEnded()));
-	connect(&m_greenSound, SIGNAL(finished()), this, SLOT(playEnded()));
-	connect(&m_redSound, SIGNAL(finished()), this, SLOT(playEnded()));
-	connect(&m_blueSound, SIGNAL(finished()), this, SLOT(playEnded()));
-	connect(&m_yellowSound, SIGNAL(finished()), this, SLOT(playEnded()));
-	
 	connect(&m_warnTimer, SIGNAL(timeout()), this, SIGNAL(ended()));
 	m_warnTimer.setSingleShot(true);
 }
@@ -53,33 +41,40 @@ void soundsPlayer::play(blinkenGame::color c)
 {
 	if (blinkenSettings::playSounds())
 	{
+		QString soundFile;
 		switch (c)
 		{
 			case blinkenGame::red:
-				m_currentSound = &m_redSound;
+				soundFile = m_redSound;
 			break;
 			
 			case blinkenGame::green:
-				m_currentSound = &m_greenSound;
+				soundFile = m_greenSound;
 			break;
 			
 			case blinkenGame::blue:
-				m_currentSound = &m_blueSound;
+				soundFile = m_blueSound;
 			break;
 			
 			case blinkenGame::yellow:
-				m_currentSound = &m_yellowSound;
+				soundFile = m_yellowSound;
 			break;
 			
 			case blinkenGame::all:
-				m_currentSound = &m_allSound;
+				soundFile = m_allSound;
 			break;
 			
-			case blinkenGame::none:
-				m_currentSound = 0;
+			default:
 			break;
 		}
-		if (m_currentSound) m_currentSound -> play();
+		if (!soundFile.isEmpty())
+		{
+			Phonon::MediaObject *sound = new Phonon::MediaObject();
+			sound->setCurrentSource(soundFile);
+			Phonon::createPath(sound, m_audioOutput);
+			connect(sound, SIGNAL(finished()), this, SLOT(playEnded()));
+			sound->play();
+		}
 	}
 	else
 	{
@@ -91,7 +86,7 @@ void soundsPlayer::playEnded()
 {
 	if (blinkenSettings::playSounds())
 	{
-		m_currentSound = NULL;
+		sender()->deleteLater(); // delete the MediaObject
 		m_warnTimer.start(250);
 	}
 }
