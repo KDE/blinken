@@ -14,14 +14,15 @@
 #include <kurl.h>
 
 #include <Phonon/Path>
-#include <Phonon/MediaObject>
 
 #include "settings.h"
 
 soundsPlayer::soundsPlayer()
+    : m_audioOutput(Phonon::GameCategory)
 {
-	m_audioOutput = new Phonon::AudioOutput( Phonon::MusicCategory, this );
-	m_audioOutput->setVolume( 0.8f );
+	m_audioOutput.setVolume( 0.8f );
+	Phonon::createPath(&m_mediaObject, &m_audioOutput);
+	connect(&m_mediaObject, SIGNAL(finished()), this, SLOT(playEnded()));
 
 	m_allSound = KStandardDirs::locate("appdata","sounds/lose.wav");
 	m_greenSound = KStandardDirs::locate("appdata","sounds/1.wav");
@@ -69,11 +70,8 @@ void soundsPlayer::play(blinkenGame::color c)
 		}
 		if (!soundFile.isEmpty())
 		{
-			Phonon::MediaObject *sound = new Phonon::MediaObject();
-			sound->setCurrentSource(soundFile);
-			Phonon::createPath(sound, m_audioOutput);
-			connect(sound, SIGNAL(finished()), this, SLOT(playEnded()));
-			sound->play();
+			m_mediaObject.setCurrentSource(soundFile);
+			m_mediaObject.play();
 		}
 	}
 	else
@@ -86,7 +84,6 @@ void soundsPlayer::playEnded()
 {
 	if (blinkenSettings::playSounds())
 	{
-		sender()->deleteLater(); // delete the MediaObject
 		m_warnTimer.start(250);
 	}
 }
