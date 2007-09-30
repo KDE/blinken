@@ -1,6 +1,6 @@
-blinKen uses a special handwriting font called Steve that is in the
+Blinken uses a special handwriting font called Steve that is in the
 fonts directory to show the status text. If this font is not currently installed
-on the target system, on first run blinKen uses the fonts:/ ioslave to copy it
+on the target system, on first run Blinken uses the fonts:/ ioslave to copy it
 to the user's fonts location.
 
 This can cause problems, because if the program
@@ -8,9 +8,9 @@ is used by 100 users there will be 100 copies of the font, one for each user.
 
 To solve that we suggest making a package with "Some Juicy Fonts"
 (http://www.sourceforge.net/projects/sjfonts) that includes the Steve font
-and make the blinKen package depend on it.
+and make the Blinken package depend on it.
 
-If you do not want/cannot do that, please make blinKen depend on
+If you do not want/cannot do that, please make Blinken depend on
 having kdebase installed as the fonts:/ ioslave is there.
 
-- blinKen developers
+- Blinken developers

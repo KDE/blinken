@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2006 by Albert Astals Cid <aacid@kde.org>          *
+ *   Copyright (C) 2005-2007 by Albert Astals Cid <aacid@kde.org>          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -71,7 +71,7 @@ blinken::blinken() : KMainWindow(), m_overHighscore(false), m_overQuit(false), m
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 	
-	QString aux = i18nc("If the Steve font that is used by blinKen by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
+	QString aux = i18nc("If the Steve font that is used by Blinken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
 	
 	m_alwaysUseNonCoolFont = aux == "1";
 	setAutoSaveSettings();
@@ -682,7 +682,7 @@ void blinken::drawStatusText(QPainter &p)
 
 	QString restartText = i18n("Restart the game");
 	QString text;
-	if (m_overQuit) text = i18n("Quit blinKen");
+	if (m_overQuit) text = i18n("Quit Blinken");
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
 	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove("&");
 	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove("&"); 
