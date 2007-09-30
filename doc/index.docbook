@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
- <!ENTITY blinken "<application>blinKen</application>">
+ <!ENTITY blinken "<application>Blinken</application>">
  <!ENTITY kappname "&blinken;">
  <!ENTITY package "kdeedu">
  <!ENTITY % addindex "IGNORE">
@@ -42,7 +42,7 @@
 <keywordset>
 <keyword>KDE</keyword>
 <keyword>kdeedu</keyword>
-<keyword>blinKen</keyword>
+<keyword>Blinken</keyword>
 <keyword>game</keyword>
 <keyword>child</keyword>
 <keyword>electronic</keyword>
