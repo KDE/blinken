@@ -15,6 +15,7 @@
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kglobal.h>
+#include <kconfiggroup.h>
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
