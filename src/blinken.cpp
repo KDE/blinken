@@ -28,7 +28,7 @@
 
 #include "button.h"
 #include "counter.h"
-#include "fontutils.h"
+#include "libkdeedu/kdeeduui/kedufontutils.h"
 #include "number.h"
 #include "highscoredialog.h"
 #include "settings.h"

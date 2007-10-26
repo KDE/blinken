@@ -9,7 +9,6 @@ set(blinken_SRCS
    number.cpp 
    highscoredialog.cpp 
    counter.cpp 
-   fontutils.cpp 
    fontchecker.cpp 
    button.cpp )
 
@@ -18,7 +17,7 @@ kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
-target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} )
+target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} kdeeduui )
 
 install(TARGETS blinken  DESTINATION ${BIN_INSTALL_DIR} )
 
