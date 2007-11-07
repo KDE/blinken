@@ -14,6 +14,13 @@ set(blinken_SRCS
 
 
 kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
+if(MSVC)
+  set(blinken_SRCS ${blinken_SRCS} blinken.rc)
+endif(MSVC)
+
+if(MINGW)
+   KDE_ADD_RESOURCES2(blinken_SRCS blinken.rc)
+endif(MINGW)
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
