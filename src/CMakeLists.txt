@@ -14,14 +14,29 @@ set(blinken_SRCS
 
 
 kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
-if(MSVC)
-  set(blinken_SRCS ${blinken_SRCS} blinken.rc)
-endif(MSVC)
-
-if(MINGW)
-   KDE_ADD_RESOURCES2(blinken_SRCS blinken.rc)
-endif(MINGW)
-
+#uncomment this if oxygen icons for blinken are available
+#set(blinken_icons
+#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/16x16/apps/blinken.png
+#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/32x32/apps/blinken.png
+#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/48x48/apps/blinken.png
+#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/64x64/apps/blinken.png
+#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/blinken.png
+#)
+set(blinken_icons
+    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi16-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi32-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi48-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi64-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi128-app-blinken.png
+)
+kde4_add_win32_app_icon(blinken ${blinken_icons})
+if(WIN32)
+    if(MINGW)
+        list(APPEND blinken_SRCS ${CMAKE_CURRENT_BINARY_DIR}/blinken_res.o)
+    else(MINGW)
+        list(APPEND blinken_SRCS ${CMAKE_CURRENT_BINARY_DIR}/blinken.rc)
+    endif(MINGW)
+endif(WIN32)
 kde4_add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} kdeeduui )
