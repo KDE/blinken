@@ -11,6 +11,9 @@
 
 #include <qfont.h>
 #include <qfontinfo.h>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 
 #include <kio/netaccess.h>
 
@@ -20,8 +23,13 @@ bool fontChecker::checkInstalled(const QFont &font, const QString &fontPath)
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!fi.exactMatch())
 	{
+#ifdef Q_OS_WIN
+    int iAdded = AddFontResourceW((LPCWSTR)fontPath.utf16());
+    return iAdded != 0;
+#else
 		bool success = KIO::NetAccess::file_copy(KUrl::fromPath(fontPath), KUrl("fonts:/Personal/"), (QWidget*)0);
 		return !success;
+#endif
 	}
 	return true;
 }
