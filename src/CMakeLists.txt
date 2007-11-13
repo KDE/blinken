@@ -29,7 +29,7 @@ set(blinken_icons
     ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi64-app-blinken.png
     ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi128-app-blinken.png
 )
-kde4_add_win32_app_icon(blinken ${blinken_icons})
+kde4_add_win32_app_icon(blinken_SRCS ${blinken_icons})
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
