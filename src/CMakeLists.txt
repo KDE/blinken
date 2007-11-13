@@ -30,13 +30,7 @@ set(blinken_icons
     ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi128-app-blinken.png
 )
 kde4_add_win32_app_icon(blinken ${blinken_icons})
-if(WIN32)
-    if(MINGW)
-        list(APPEND blinken_SRCS ${CMAKE_CURRENT_BINARY_DIR}/blinken_res.o)
-    else(MINGW)
-        list(APPEND blinken_SRCS ${CMAKE_CURRENT_BINARY_DIR}/blinken.rc)
-    endif(MINGW)
-endif(WIN32)
+
 kde4_add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} kdeeduui )
