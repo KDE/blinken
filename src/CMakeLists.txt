@@ -23,11 +23,11 @@ kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 #    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/blinken.png
 #)
 set(blinken_icons
-    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi16-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi32-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi48-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi64-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/blinken/icons/hi128-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi16-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi32-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi48-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi64-app-blinken.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi128-app-blinken.png
 )
 kde4_add_win32_app_icon(blinken_SRCS ${blinken_icons})
 
