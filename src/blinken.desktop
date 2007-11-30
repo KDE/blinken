@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Blinken
+Name[sl]=BlinKen
 Name[x-test]=xxBlinkenxx
 Name[zh_TW]=BlinKen
 X-DocPath=blinken/index.html
@@ -23,8 +24,10 @@ Comment[ne]=स्मृति बढाउने खेल
 Comment[nl]=Een geheugenoefenspel
 Comment[nn]=Ei hugsetreningsspel
 Comment[pa]=ਯਾਦਾਸ਼ਤ ਵਧਾਉਣ ਵਾਲੀ ਖੇਡ
+Comment[pl]=Znana gra na ćwiczenie pamięci
 Comment[pt]=Um jogo antigo para melhorar a memória
 Comment[pt_BR]=Um jogo para melhorar a memória
+Comment[sl]=Igra za izboljšanje spomina
 Comment[sv]=Ett spel för att förbättra minnet
 Comment[uk]=Гра для розвитку пам'яті
 Comment[x-test]=xxA memory enhancement gamexx
