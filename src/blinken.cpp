@@ -213,8 +213,8 @@ void blinken::paintEvent(QPaintEvent *)
 		QRect area;
 		QString sounds = i18n("Sounds");
 		QString font = i18n("Font");
-		size = fontUtils::fontSize(p, sounds, 95, 20);
-		sizeAux = fontUtils::fontSize(p, font, 95, 20);
+		size = fontUtils::fontSize(p, sounds, 95, 20, fontUtils::DoNotAllowWordWrap);
+		sizeAux = fontUtils::fontSize(p, font, 95, 20, fontUtils::DoNotAllowWordWrap);
 		if (sizeAux > size) size = sizeAux;
 		f1.setPointSize(size);
 		area = p.boundingRect(QRect(), Qt::AlignLeft, sounds);
@@ -736,7 +736,7 @@ void blinken::drawStatusText(QPainter &p)
 	QFont f;
 	if (blinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, text, 380, 30));
+	f.setPointSize(fontUtils::fontSize(p, text, 380, 30, fontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	p.drawText(0, 0, text);
 }
@@ -773,7 +773,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPointF &center, 
 	oldFont = f;
 	double aux1 = (double)width() / 3.389;
 	double aux2 = (double)height() / 17.5;
-	f.setPointSize(fontUtils::fontSize(p, text, qRound(aux1), qRound(aux2)));
+	f.setPointSize(fontUtils::fontSize(p, text, qRound(aux1), qRound(aux2), fontUtils::DoNotAllowWordWrap));
 	if (bold) f.setBold(true);
 	p.setFont(f);
 	

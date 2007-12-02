@@ -65,7 +65,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
+	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize, fontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	
 	p.translate(margin, margin);
@@ -94,7 +94,7 @@ QSize scoresWidget::calcSize()
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
+	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize, fontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	for (int i = 0; i < 3; i++)
 	{
