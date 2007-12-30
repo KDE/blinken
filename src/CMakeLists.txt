@@ -14,22 +14,10 @@ set(blinken_SRCS
 
 
 kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
+
 #uncomment this if oxygen icons for blinken are available
-#set(blinken_icons
-#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/16x16/apps/blinken.png
-#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/32x32/apps/blinken.png
-#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/48x48/apps/blinken.png
-#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/64x64/apps/blinken.png
-#    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/blinken.png
-#)
-set(blinken_icons
-    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi16-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi32-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi48-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi64-app-blinken.png
-    ${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi128-app-blinken.png
-)
-kde4_add_win32_app_icon(blinken_SRCS ${blinken_icons})
+#kde4_add_app_icon(blinken_SRCS "${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/*/apps/blinken.png")
+kde4_add_app_icon(blinken_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-app-blinken.png")
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
