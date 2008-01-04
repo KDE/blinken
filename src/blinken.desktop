@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Blinken
 Name[hi]=ब्लिंकन
+Name[ne]=झिम्केको
 Name[x-test]=xxBlinkenxx
 Name[zh_TW]=BlinKen
 X-DocPath=blinken/index.html
@@ -10,6 +11,7 @@ Type=Application
 Comment=A memory enhancement game
 Comment[bg]=Игра за упражнение на паметта
 Comment[ca]=Un joc per millorar la memòria
+Comment[csb]=Gra wspierająca pamiãc
 Comment[de]=Ein Spiel zum Training Ihres Gedächtnisses
 Comment[el]=Ένα παιχνίδι βελτίωσης της μνήμης
 Comment[eo]=Ludo por plibonigi sian memoron
@@ -21,6 +23,7 @@ Comment[ga]=Cluiche feabhsaithe cuimhne
 Comment[hi]=याददाश्त बढ़ाने का एक खेल
 Comment[it]=Un gioco per esercitare la memoria
 Comment[ja]=記憶力増強ゲーム
+Comment[km]=ល្បែង​បង្កើន​សតិ
 Comment[ko]=기억력 향상 게임
 Comment[lv]=Atmiņas uzlabošanas spēle
 Comment[nb]=Et hukommelsesspill
