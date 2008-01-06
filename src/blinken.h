@@ -65,12 +65,14 @@ Q_OBJECT
 		void updateButtonHighlighting(const QPoint &p);
 		QPixmap getPixmap(const QString &element, const QSize &imageSize);
 		
+		void togglePreferences();
+		
 		
 		button *m_buttons[4];
 		QSvgRenderer *m_renderer;
-		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter, m_overFont, m_overSound;
+		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overSettings, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter, m_overFont, m_overSound;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_soundRect, m_fontRect;
+		QRect m_highscoreRect, m_quitRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_settingsRect, m_manualRect, m_soundRect, m_fontRect;
 		QRectF m_centralTextRect, m_levelsRect[3], m_centralLettersRect, m_counterRect;
 		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		

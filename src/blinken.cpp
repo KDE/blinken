@@ -33,16 +33,16 @@
 #include "highscoredialog.h"
 #include "settings.h"
 
-static const double centerX = 2.022;
-static const double centerY = 2.365;
+static const double centerX = 2.0;
+static const double centerY = 2.5;
 static const double ellipseSmallAxisX = 3.98;
-static const double ellipseSmallAxisY = 3.25;
+static const double ellipseSmallAxisY = 3.41;
 static const double ellipseBigAxisX = 2.16;
-static const double ellipseBigAxisY = 2.61;
+static const double ellipseBigAxisY = 2.74;
 static const double nonButtonRibbonX = 150.0;
 static const double nonButtonRibbonY = 125.0;
 
-blinken::blinken() : KMainWindow(), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : KMainWindow(), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_renderer = new QSvgRenderer(KStandardDirs::locate("appdata", "images/blinken.svg"));
 	
@@ -114,47 +114,47 @@ void blinken::paintEvent(QPaintEvent *)
 	p.drawPixmap(-1, 0, getPixmap("blinkenBase", size()+QSize(1,1)));
 	
 	double xScaleButtons = 374.625 / 814.062;
-	double yScaleButtons = 250.344 / 664.062;
+	double yScaleButtons = 250.344 / 696.5;
 	
 	// Red button
 	QSize sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
 	if (m_highlighted & blinkenGame::red)
 	{
-		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 25), getPixmap("red_highlight", sz));
+		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap("red_highlight", sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 25), getPixmap("red_normal", sz));
+		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap("red_normal", sz));
 	}
 	
 	// Green button
 	if (m_highlighted & blinkenGame::green)
 	{
-		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 2.339), getPixmap("green_highlight", sz));
+		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap("green_highlight", sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 2, (double)height() / 2.339), getPixmap("green_normal", sz));
+		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap("green_normal", sz));
 	}
 	
 	// Yellow button
 	if (m_highlighted & blinkenGame::yellow)
 	{
-		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 25), getPixmap("yellow_highlight", sz));
+		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap("yellow_highlight", sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 25), getPixmap("yellow_normal", sz));
+		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap("yellow_normal", sz));
 	}
 	
 	// Blue button
 	if (m_highlighted & blinkenGame::blue)
 	{
-		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 2.339), getPixmap("blue_highlight", sz));
+		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap("blue_highlight", sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 33.5, (double)height() / 2.339), getPixmap("blue_normal", sz));
+		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap("blue_normal", sz));
 	}
 	
 	drawMenuQuit(p);
@@ -178,31 +178,31 @@ void blinken::paintEvent(QPaintEvent *)
 		// two delimiter lines
 		p.setPen(Qt::NoPen);
 		p.setBrush(m_fillColor);
-		p.drawPie(169, 192, 6, 58, 1440, 2880);
-		p.drawPie(463, 192, 6, 58, -1440, 2880);
+		p.drawPie(173, 180, 6, 58, 1440, 2880);
+		p.drawPie(470, 180, 6, 58, -1440, 2880);
 		p.setPen(QPen(Qt::black, 3));
-		p.fillRect(171, 192, 296, 58, m_fillColor);
-		p.drawLine(171, 192, 467, 192);
-		p.drawLine(171, 250, 467, 250);
+		p.fillRect(175, 180, 299, 58, m_fillColor);
+		p.drawLine(175, 180, 472, 180);
+		p.drawLine(175, 238, 472, 238);
 
 		// draw the two squares of the options
 		p.setPen(QPen(m_fontColor, 2, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
 
-		m_soundRect = QRect(181, 209, 25, 25);
-		m_fontRect = QRect(432, 209, 25, 25);
+		m_soundRect = QRect(181, 197, 25, 25);
+		m_fontRect = QRect(432, 197, 25, 25);
 		p.drawRect(m_soundRect);
 		if (blinkenSettings::playSounds())
 		{
-			p.drawLine(186, 214, 201, 229);
-			p.drawLine(186, 229, 201, 214);
+			p.drawLine(186, 202, 201, 217);
+			p.drawLine(186, 217, 201, 202);
 		}
 		if (!m_alwaysUseNonCoolFont)
 		{
 			p.drawRect(m_fontRect);
 			if (blinkenSettings::customFont())
 			{
-				p.drawLine(437, 214, 452, 229);
-				p.drawLine(437, 229, 452, 214);
+				p.drawLine(437, 202, 452, 217);
+				p.drawLine(437, 217, 452, 202);
 			}
 		}
 
@@ -218,13 +218,13 @@ void blinken::paintEvent(QPaintEvent *)
 		if (sizeAux > size) size = sizeAux;
 		f1.setPointSize(size);
 		area = p.boundingRect(QRect(), Qt::AlignLeft, sounds);
-		area.translate(212, 221 - (area.height() / 2));
+		area.translate(212, 209 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
 		m_soundRect = m_soundRect.unite(area);
 		if (!m_alwaysUseNonCoolFont)
 		{
 			area = p.boundingRect(QRect(), Qt::AlignLeft, font);
-			area.translate(426 - area.width(), 221 - (area.height() / 2));
+			area.translate(426 - area.width(), 209 - (area.height() / 2));
 			p.drawText(area, Qt::AlignCenter, font);
 			m_fontRect = m_fontRect.unite(area);
 		}
@@ -324,7 +324,15 @@ void blinken::keyReleaseEvent(QKeyEvent *e)
 {
 	if (e -> isAutoRepeat()) return;
 	
-	if ( (e -> key() == Qt::Key_Control) && (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel))
+	if (e -> key() == Qt::Key_Control)
+	{
+		togglePreferences();
+	}
+}
+
+void blinken::togglePreferences()
+{
+	if (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel)
 	{
 		m_showPreferences = !m_showPreferences;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
@@ -361,6 +369,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	else if (m_overQuit) close();
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
+	else if (m_overSettings) togglePreferences();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
 	else if (m_game.phase() != blinkenGame::choosingLevel && m_overCentralText)
 	{
@@ -560,7 +569,7 @@ bool blinken::insideButtonsArea(const QPointF &p) const
 void blinken::drawMenuQuit(QPainter &p)
 {
 	double xScaleSquareButtons = 90.0 / 814.062;
-	double yScaleSquareButtons = 90.0 / 664.062;
+	double yScaleSquareButtons = 90.0 / 696.5;
 	
 	// Highscore button
 	p.resetMatrix();
@@ -569,9 +578,9 @@ void blinken::drawMenuQuit(QPainter &p)
 	if (m_overHighscore) m_renderer->render(&p, "highscore_hover");
 	else m_renderer->render(&p, "highscore_normal");
 	m_highscoreRect = QRect(qRound((double)width() / 50.875),
-				qRound((double)height() / 30.0),
-				qRound((double)width() * xScaleSquareButtons),
-				qRound((double)height() * yScaleSquareButtons));
+	                        qRound((double)height() / 30.0),
+	                        qRound((double)width() * xScaleSquareButtons),
+	                        qRound((double)height() * yScaleSquareButtons));
 	
 	// Quit button
 	p.resetMatrix();
@@ -580,26 +589,26 @@ void blinken::drawMenuQuit(QPainter &p)
 	if (m_overQuit) m_renderer->render(&p, "quit_hover");
 	else m_renderer->render(&p, "quit_normal");
 	m_quitRect = QRect(qRound((double)width() / 1.15),
-				qRound((double)height() / 30.0),
-				qRound((double)width() * xScaleSquareButtons),
-				qRound((double)height() * yScaleSquareButtons));
+	                   qRound((double)height() / 30.0),
+	                   qRound((double)width() * xScaleSquareButtons),
+	                   qRound((double)height() * yScaleSquareButtons));
 	
 	// Help button
 	p.resetMatrix();
 	if (m_overMenu)
 	{
 		double xScaleHoverHelpButton = 225.0 / 814.062;
-		double yScaleHoverHelpButton = 157.7 / 664.062;
-		p.translate( (double)width() / 1.425, (double)height() / 1.375 );
+		double yScaleHoverHelpButton = 225.0 / 696.5;
+		p.translate( (double)width() / 1.42, (double)height() / 1.56 );
 		p.scale(xScaleHoverHelpButton, yScaleHoverHelpButton);
 		m_renderer->render(&p, "help_hover");
 		
 		p.resetMatrix();
 		double xScaleArrowButton1 = 40.0 / 814.062;
-		double yScaleArrowButton1 = 27.5 / 664.062;
+		double yScaleArrowButton1 = 27.5 / 696.5;
 		
 		double xScaleArrowButton2 = 27.5 / 814.062;
-		double yScaleArrowButton2 = 40.0 / 664.062;
+		double yScaleArrowButton2 = 40.0 / 696.5;
 		if (m_overAboutKDE)
 		{
 			p.translate((double)width() / 1.3877, (double)height() / 1.23);
@@ -612,9 +621,15 @@ void blinken::drawMenuQuit(QPainter &p)
 			p.scale(xScaleArrowButton1, yScaleArrowButton1);
 			m_renderer->render(&p, "arrow_down");
 		}
-		else if (m_overManual)
+		else if (m_overSettings)
 		{
 			p.translate((double)width() / 1.174, (double)height() / 1.345);
+			p.scale(xScaleArrowButton2, yScaleArrowButton2);
+			m_renderer->render(&p, "arrow_right");
+		}
+		else if (m_overManual)
+		{
+			p.translate((double)width() / 1.174, (double)height() / 1.5);
 			p.scale(xScaleArrowButton2, yScaleArrowButton2);
 			m_renderer->render(&p, "arrow_right");
 		}
@@ -626,13 +641,15 @@ void blinken::drawMenuQuit(QPainter &p)
 		m_renderer->render(&p, "help_normal");
 	}
 	m_menuRect = QRect(qRound((double)width() / 1.15),
-				qRound((double)height() / 1.2),
-				qRound((double)width() * xScaleSquareButtons),
-				qRound((double)height() * yScaleSquareButtons));
+	                   qRound((double)height() / 1.2),
+	                   qRound((double)width() * xScaleSquareButtons),
+	                   qRound((double)height() * yScaleSquareButtons));
 	m_aboutBlinkenRect = QRect(QPoint(qRound((double)width() / 1.271), qRound((double)height() / 1.153)),
 	                           QPoint(m_menuRect.left(), m_menuRect.bottom()));
-	m_manualRect = QRect(QPoint(qRound((double)width() / 1.1146), qRound((double)height() / 1.3667)),
+	m_settingsRect = QRect(QPoint(qRound((double)width() / 1.1146), qRound((double)height() / 1.3667)),
 	                     QPoint(m_menuRect.right(), m_menuRect.top()));
+	m_manualRect = QRect(QPoint(qRound((double)width() / 1.1146), qRound((double)height() / 1.55)),
+	                     QPoint(m_menuRect.right(), m_settingsRect.top()));
 	m_aboutKDERect = QRect(QPoint(qRound((double)width() / 1.421), qRound((double)height() / 1.153)),
 	                       QPoint(m_aboutBlinkenRect.left(), m_aboutBlinkenRect.bottom()));
 }
@@ -686,6 +703,11 @@ void blinken::drawStatusText(QPainter &p)
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
 	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove("&");
 	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove("&"); 
+	else if (m_overSettings)
+	{
+		if (!m_showPreferences) text = i18n("Show Settings");
+		else text = i18n("Hide Settings");
+	}
 	else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove("&");
 	else if (m_overLevels[0]) text = i18n("2nd Level");
 	else if (m_overLevels[1]) text = i18n("1st Level");
@@ -825,13 +847,15 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			m_overMenu = true;
 			m_overAboutKDE = false;
 			m_overAboutBlinken = false;
+			m_overSettings = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
-		else if (m_overAboutKDE || m_overAboutBlinken || m_overManual)
+		else if (m_overAboutKDE || m_overAboutBlinken || m_overManual || m_overSettings)
 		{
 			m_overAboutKDE = false;
 			m_overAboutBlinken = false;
+			m_overSettings = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
@@ -844,6 +868,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			{
 				m_overAboutKDE = true;
 				m_overAboutBlinken = false;
+				m_overSettings = false;
 				m_overManual = false;
 				haveToUpdate = true;
 			}
@@ -854,6 +879,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			{
 				m_overAboutKDE = false;
 				m_overAboutBlinken = true;
+				m_overSettings = false;
 				m_overManual = false;
 				haveToUpdate = true;
 			}
@@ -864,7 +890,19 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			{
 				m_overAboutKDE = false;
 				m_overAboutBlinken = false;
+				m_overSettings = false;
 				m_overManual = true;
+				haveToUpdate = true;
+			}
+		}
+		else if (m_settingsRect.contains(p))
+		{
+			if (!m_overSettings)
+			{
+				m_overAboutKDE = false;
+				m_overAboutBlinken = false;
+				m_overSettings = true;
+				m_overManual = false;
 				haveToUpdate = true;
 			}
 		}
@@ -873,6 +911,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			m_overMenu = false;
 			m_overAboutKDE = false;
 			m_overAboutBlinken = false;
+			m_overSettings = false;
 			m_overManual = false;
 			haveToUpdate = true;
 		}
@@ -987,7 +1026,7 @@ void blinken::updateCursor(const QPoint &p)
 {
 	QPointF p2 = p - QPointF((double)width() / centerX, (double)height() / centerY);
 	
-	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual  || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
+	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual || m_overSettings || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
 	else setCursor(Qt::ArrowCursor);
 }
 
