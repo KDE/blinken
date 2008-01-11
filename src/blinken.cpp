@@ -254,7 +254,7 @@ void blinken::paintEvent(QPaintEvent *)
 	switch (m_game.phase())
 	{
 		case blinkenGame::starting:
-			drawText(p, i18nc("@action:Start a new game", "Start"), QPointF(aux1, aux2), true, aux3, aux4, &m_centralTextRect, m_overCentralText, true);
+			drawText(p, i18nc("@action:button Start a new game", "Start"), QPointF(aux1, aux2), true, aux3, aux4, &m_centralTextRect, m_overCentralText, true);
 		break;
 		
 		case blinkenGame::choosingLevel:
