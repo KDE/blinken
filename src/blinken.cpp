@@ -701,14 +701,14 @@ void blinken::drawStatusText(QPainter &p)
 	QString text;
 	if (m_overQuit) text = i18n("Quit Blinken");
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
-	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove("&");
-	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove("&"); 
+	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove('&');
+	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove('&'); 
 	else if (m_overSettings)
 	{
 		if (!m_showPreferences) text = i18n("Show Settings");
 		else text = i18n("Hide Settings");
 	}
-	else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove("&");
+	else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove('&');
 	else if (m_overLevels[0]) text = i18n("2nd Level");
 	else if (m_overLevels[1]) text = i18n("1st Level");
 	else if (m_overLevels[2]) text = i18n("Random Level");
