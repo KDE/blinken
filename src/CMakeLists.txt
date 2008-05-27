@@ -23,7 +23,7 @@ kde4_add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} kdeeduui )
 
-install(TARGETS blinken  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
