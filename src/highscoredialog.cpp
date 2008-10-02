@@ -160,7 +160,7 @@ bool highScoreDialog::scoreGoodEnough(int level, int score)
 	QList< QPair<int, QString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
-	while (it != itEnd && (*it).first >= score) it++;
+	while (it != itEnd && (*it).first >= score) ++it;
 	
 	return (it != itEnd);
 }
@@ -171,7 +171,7 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 	QList< QPair<int, QString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
-	while (it != itEnd && (*it).first >= score) it++;
+	while (it != itEnd && (*it).first >= score) ++it;
 	
 	if (it != itEnd)
 	{
