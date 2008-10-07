@@ -12,11 +12,11 @@
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtabbar.h>
-#include <qtabwidget.h>
 
 #include <kconfig.h>
 #include <klocale.h>
 #include <kglobal.h>
+#include <ktabwidget.h>
 
 #include "counter.h"
 #include "libkdeedu/kdeeduui/kedufontutils.h"
@@ -119,10 +119,10 @@ QSize scoresWidget::calcSize()
 
 /* myTabWidget */
 
-class myTabWidget : public QTabWidget
+class myTabWidget : public KTabWidget
 {
 	public:
-		myTabWidget(QWidget *parent) : QTabWidget(parent) {}
+		myTabWidget(QWidget *parent) : KTabWidget(parent) {}
 		
 		QSize tabBarSizeHint() const
 		{
