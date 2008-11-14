@@ -15,6 +15,7 @@ GenericName[pt]=Jogo de Estímulo da Memória
 GenericName[pt_BR]=Jogo de Estímulo da Memória
 GenericName[sv]=Spel för att förbättra minnet
 GenericName[uk]=Гра для розвитку пам'яті
+GenericName[zh_TW]=加強記憶力的遊戲
 X-DocPath=blinken/index.html
 Exec=blinken
 Icon=blinken
