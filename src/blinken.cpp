@@ -1032,8 +1032,8 @@ void blinken::updateCursor(const QPoint &p)
 
 QPixmap blinken::getPixmap(const QString &element, const QSize &imageSize)
 {
-	QMap<QString, QPixmap>::const_iterator it = m_pixmapCache.constFind(element);
-	if (it == m_pixmapCache.constEnd())
+	QMap<QString, QPixmap>::Iterator it = m_pixmapCache.find(element);
+	if (it == m_pixmapCache.end())
 	{
 		QPixmap pix(imageSize);
 		pix.fill(Qt::transparent);

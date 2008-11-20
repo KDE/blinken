@@ -62,7 +62,7 @@ void blinkenGame::clicked(color c)
 		++m_nextColor;
 		m_soundsPlayer -> play(c);
 		
-		if (m_nextColor == m_sequence.end())
+		if (m_nextColor == m_sequence.constEnd())
 		{
 			m_sequenceLength++;
 			nextRound();
@@ -96,7 +96,7 @@ void blinkenGame::start(int level)
 
 void blinkenGame::nextSound()
 {
-	if (m_nextColor != m_sequence.end())
+	if (m_nextColor != m_sequence.constEnd())
 	{
 		color c;
 		c = *m_nextColor;
@@ -107,7 +107,7 @@ void blinkenGame::nextSound()
 	else
 	{
 		setPhase(typingTheSequence);
-		m_nextColor = m_sequence.begin();
+		m_nextColor = m_sequence.constBegin();
 		emit highlight(none, false);
 		m_soundsPlayer->disconnect();
 	}
@@ -137,7 +137,7 @@ void blinkenGame::waiting()
 		else m_sequence.append(generateColor());
 	
 		connect(m_soundsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
-		m_nextColor = m_sequence.begin();
+		m_nextColor = m_sequence.constBegin();
 		soundEnded();
 	}
 	else if (m_phase == waiting3) setPhase(waiting2);
