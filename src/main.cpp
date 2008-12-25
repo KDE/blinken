@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#include "blinken.h"
+
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
@@ -14,8 +16,8 @@
 #include <kstandarddirs.h>
 #include <kapplication.h>
 
-#include "fontchecker.h"
-#include "blinken.h"
+#include <QFontDatabase>
+#include <QFontInfo>
 
 int main(int argc, char *argv[])
 {
@@ -26,18 +28,14 @@ int main(int argc, char *argv[])
 	KCmdLineArgs::init(argc, argv, &about);
 	KApplication app;
 	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
-	
+
 	QFont f("Steve", 12, QFont::Normal, true);
-	if (!fontChecker::checkInstalled(f, KStandardDirs::locate("appdata", "fonts/steve.ttf")))
+	// Works with Steve may need some tweaking to work with other fonts
+	if (!QFontInfo(f).exactMatch())
 	{
-		KProcess *proc = new KProcess;
-		for (int i = 0; i < argc; i++)
-		    *proc << argv[i];
-		proc->start();
+		QFontDatabase::addApplicationFont(KStandardDirs::locate("appdata", "fonts/steve.ttf"));
 	}
-	else
-	{
-		app.setTopWidget(new blinken());
-		return app.exec();
-	}
+
+	app.setTopWidget(new blinken());
+	return app.exec();
 }

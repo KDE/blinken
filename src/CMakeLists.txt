@@ -9,7 +9,6 @@ set(blinken_SRCS
    number.cpp 
    highscoredialog.cpp 
    counter.cpp 
-   fontchecker.cpp 
    button.cpp )
 
 
