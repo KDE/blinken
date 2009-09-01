@@ -313,6 +313,33 @@ void blinken::keyPressEvent(QKeyEvent *e)
 	}
 	else
 	{
+		if (m_game.phase() == blinkenGame::starting)
+		{
+			if (e -> key() == Qt::Key_Return || e -> key() == Qt::Key_Enter)
+			{
+				startGamePressed();
+				return;
+			}
+		}
+		else if (m_game.phase() == blinkenGame::choosingLevel)
+		{
+			if (e -> key() == Qt::Key_1)
+			{
+				startGameAtLevel(1);
+				return;
+			}
+			else if (e -> key() == Qt::Key_2)
+			{
+				startGameAtLevel(2);
+				return;
+			}
+			else if (e -> key() == Qt::Key_3)
+			{
+				startGameAtLevel(3);
+				return;
+			}
+		}
+		
 		if (e -> key() == m_buttons[0] -> key()) pressedBlue();
 		else if (e -> key() == m_buttons[1] -> key()) pressedYellow();
 		else if (e -> key() == m_buttons[2] -> key()) pressedRed();
@@ -373,11 +400,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
 	else if (m_game.phase() != blinkenGame::choosingLevel && m_overCentralText)
 	{
-		highlight(blinkenGame::none, true);
-		m_overCentralText = false;
-		for(int i = 0; i < 3; i++) m_overLevels[i] = false;
-		m_game.setPhase(blinkenGame::choosingLevel);
-		m_updateButtonHighlighting = true;
+		startGamePressed();
 	}
 	else if (m_game.phase() == blinkenGame::choosingLevel)
 	{
@@ -387,10 +410,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		else if (m_levelsRect[2].contains(e -> pos())) level = 3;
 		if (level) 
 		{
-			for(int i = 0; i < 3; i++) m_overLevels[i] = false;
-			m_game.start(level);
-			if (m_showPreferences) m_showPreferences = false;
-			m_updateButtonHighlighting = true;
+			startGameAtLevel(level);
 		}
 	}
 	
@@ -485,6 +505,23 @@ void blinken::pressedBlue()
 		highlight(blinkenGame::blue, true);
 		m_game.clicked(blinkenGame::blue);
 	}
+}
+
+void blinken::startGamePressed()
+{
+	highlight(blinkenGame::none, true);
+	m_overCentralText = false;
+	for(int i = 0; i < 3; i++) m_overLevels[i] = false;
+	m_game.setPhase(blinkenGame::choosingLevel);
+	m_updateButtonHighlighting = true;
+}
+
+void blinken::startGameAtLevel(int level)
+{
+	for(int i = 0; i < 3; i++) m_overLevels[i] = false;
+	m_game.start(level);
+	if (m_showPreferences) m_showPreferences = false;
+	m_updateButtonHighlighting = true;
 }
 
 void blinken::selectButton(int button)

@@ -49,6 +49,8 @@ Q_OBJECT
 		void pressedBlue();
 		
 	private:
+		void startGamePressed();
+		void startGameAtLevel(int level);
 		void selectButton(int button);
 		bool insideGreen(const QPointF &p) const;
 		bool insideYellow(const QPointF &p) const;
