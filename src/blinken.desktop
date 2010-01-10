@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Blinken
 Name[ca]=Blinken
+Name[ca@valencia]=Blinken
 Name[cs]=Blinken
 Name[csb]=Blinken
 Name[da]=Blinken
@@ -49,6 +50,7 @@ Name[zh_CN]=Blinken
 Name[zh_TW]=BlinKen
 GenericName=Memory Enhancement Game
 GenericName[ca]=Un Joc per Millorar la Memòria
+GenericName[ca@valencia]=Un Joc per Millorar la Memòria
 GenericName[cs]=Hra k procvičování paměti
 GenericName[da]=Et spil til hukommelsestræning
 GenericName[de]=Spiel zum Gedächtnistraining
@@ -94,6 +96,7 @@ Type=Application
 Comment=A memory enhancement game
 Comment[bg]=Игра за упражнение на паметта
 Comment[ca]=Un joc per millorar la memòria
+Comment[ca@valencia]=Un joc per millorar la memòria
 Comment[cs]=Hra k procvičování paměti
 Comment[csb]=Gra wspierająca pamiãc
 Comment[da]=Et spil til hukommelsestræning
