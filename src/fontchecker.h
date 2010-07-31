@@ -15,7 +15,7 @@ class QFont;
 class fontChecker
 {
 	public:
-		static bool checkInstalled(const QFont &font, const QString &fontPath);
+		static bool checkInstalled(const TQFont &font, const TQString &fontPath);
 };
 
 #endif

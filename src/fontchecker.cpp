@@ -7,16 +7,16 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qfont.h>
-#include <qfontinfo.h>
+#include <tqfont.h>
+#include <tqfontinfo.h>
 
 #include <kio/netaccess.h>
 
 #include "fontchecker.h"
 
-bool fontChecker::checkInstalled(const QFont &font, const QString &fontPath)
+bool fontChecker::checkInstalled(const TQFont &font, const TQString &fontPath)
 {
-	QFontInfo fi(font);
+	TQFontInfo fi(font);
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!fi.exactMatch())
 	{

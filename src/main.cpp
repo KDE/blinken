@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
 	about.addCredit("Steve Jordi", I18N_NOOP("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
 	KCmdLineArgs::init(argc, argv, &about);
 	KApplication app;
-	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
+	app.connect(&app, TQT_SIGNAL(lastWindowClosed()), &app, TQT_SLOT(quit()));
 	
-	QFont f("Steve", 12, QFont::Normal, true);
+	TQFont f("Steve", 12, TQFont::Normal, true);
 	if (!fontChecker::checkInstalled(f, locate("appdata", "fonts/steve.ttf")))
 	{
 		KProcess *proc = new KProcess;

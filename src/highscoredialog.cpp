@@ -7,10 +7,10 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qpainter.h>
-#include <qpixmap.h>
-#include <qtabbar.h>
-#include <qtabwidget.h>
+#include <tqpainter.h>
+#include <tqpixmap.h>
+#include <tqtabbar.h>
+#include <tqtabwidget.h>
 
 #include <kapplication.h>
 #include <kconfig.h>
@@ -30,46 +30,46 @@ static const int namesFontSize = 25;
 class scoresWidget : public QWidget
 {
 	public:
-		scoresWidget(QWidget *parent, const QValueList< QPair<int, QString> > &scores);
-		QSize calcSize();
+		scoresWidget(TQWidget *parent, const TQValueList< QPair<int, TQString> > &scores);
+		TQSize calcSize();
 
 	protected:
-		void paintEvent(QPaintEvent *);
+		void paintEvent(TQPaintEvent *);
 	
 	private:
-		const QValueList< QPair<int, QString> > &m_scores;
+		const TQValueList< QPair<int, TQString> > &m_scores;
 };
 
-scoresWidget::scoresWidget(QWidget *parent, const QValueList< QPair<int, QString> > &scores) : QWidget(parent, 0, WStaticContents | WNoAutoErase), m_scores(scores)
+scoresWidget::scoresWidget(TQWidget *parent, const TQValueList< QPair<int, TQString> > &scores) : TQWidget(parent, 0, WStaticContents | WNoAutoErase), m_scores(scores)
 {
 }
 
-void scoresWidget::paintEvent(QPaintEvent *)
+void scoresWidget::paintEvent(TQPaintEvent *)
 {
 	int w = width();
 	int h = height();
-	QFont f;
-	QPixmap buf(w, h);
-	QPainter p(&buf);
-	QRect r;
-	QColor bg = paletteBackgroundColor();
+	TQFont f;
+	TQPixmap buf(w, h);
+	TQPainter p(&buf);
+	TQRect r;
+	TQColor bg = paletteBackgroundColor();
  
 	// bg color
 	p.fillRect(0, 0, w, h, bg);
 	
 	p.setPen(black);
 	
-	if (blinkenSettings::customFont()) f = QFont("Steve");
+	if (blinkenSettings::customFont()) f = TQFont("Steve");
 	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
 	p.setFont(f);
 	
 	p.translate(margin, margin);
 	
-	QValueList< QPair<int, QString> >::const_iterator it;
+	TQValueList< QPair<int, TQString> >::const_iterator it;
 	for (it = m_scores.begin(); it != m_scores.end(); ++it)
 	{
-		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, QColor(), QColor(), QColor());
+		counter::paint(p, !(*it).second.isEmpty(), (*it).first, false, TQColor(), TQColor(), TQColor());
 		p.setPen(black);
 		p.drawText(counter::width(false) + 2 * smallMargin, 30, (*it).second);
 		p.translate(0, counter::height() + smallMargin);
@@ -78,24 +78,24 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	bitBlt(this, 0, 0, &buf);
 }
 
-QSize scoresWidget::calcSize()
+TQSize scoresWidget::calcSize()
 {
 	int mw, mh, lt;
-	QRect r;
-	QPainter p(this);
-	QFont f;
+	TQRect r;
+	TQPainter p(this);
+	TQFont f;
 	
-	if (blinkenSettings::customFont()) f = QFont("Steve");
+	if (blinkenSettings::customFont()) f = TQFont("Steve");
 	p.setFont(f);
 	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize));
 	p.setFont(f);
 	for (int i = 0; i < 3; i++)
 	{
 		lt = 0;
-		QValueList< QPair<int, QString> >::const_iterator it;
+		TQValueList< QPair<int, TQString> >::const_iterator it;
 		for (it = m_scores.begin(); it != m_scores.end(); ++it)
 		{
-			r = p.boundingRect(QRect(), Qt::AlignAuto, (*it).second);
+			r = p.boundingRect(TQRect(), Qt::AlignAuto, (*it).second);
 			lt = QMAX(lt, r.width());
 		}
 	}
@@ -103,7 +103,7 @@ QSize scoresWidget::calcSize()
 	mw = margin + counter::width(false) + 2 * smallMargin + lt + margin;
 	mh = margin * 2 + counter::height() * 5 + smallMargin * 4;
 	
-	QSize size(mw, mh);
+	TQSize size(mw, mh);
 	setMinimumSize(size);
 	resize(size);
 	
@@ -115,9 +115,9 @@ QSize scoresWidget::calcSize()
 class myTabWidget : public QTabWidget
 {
 	public:
-		myTabWidget(QWidget *parent) : QTabWidget(parent) {}
+		myTabWidget(TQWidget *parent) : TQTabWidget(parent) {}
 		
-		QSize tabBarSizeHint() const
+		TQSize tabBarSizeHint() const
 		{
 			return tabBar() -> sizeHint();
 		}
@@ -125,7 +125,7 @@ class myTabWidget : public QTabWidget
 
 /* highScoreDialog */
 
-highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true, i18n("Highscores"), KDialogBase::Close)
+highScoreDialog::highScoreDialog(TQWidget *parent) : KDialogBase(parent, 0, true, i18n("Highscores"), KDialogBase::Close)
 {
 	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
@@ -133,10 +133,10 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true,
 	KConfig *cfg = kapp -> config();
 	for (int i = 1; i <= 3; i++)
 	{
-		cfg -> setGroup(QString("Level%1").arg(i));
+		cfg -> setGroup(TQString("Level%1").arg(i));
 		for (int j = 1; j <= 5; j++)
 		{
-			m_scores[i-1].append(qMakePair(cfg->readNumEntry(QString("Score%1").arg(j)), cfg->readEntry(QString("Name%1").arg(j))));
+			m_scores[i-1].append(qMakePair(cfg->readNumEntry(TQString("Score%1").arg(j)), cfg->readEntry(TQString("Name%1").arg(j))));
 		}
 	}
 	
@@ -148,7 +148,7 @@ highScoreDialog::highScoreDialog(QWidget *parent) : KDialogBase(parent, 0, true,
 bool highScoreDialog::scoreGoodEnough(int level, int score)
 {
 	level--;
-	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	TQValueList< QPair<int, TQString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
 	while (it != itEnd && (*it).first >= score) it++;
@@ -156,10 +156,10 @@ bool highScoreDialog::scoreGoodEnough(int level, int score)
 	return (it != itEnd);
 }
 
-void highScoreDialog::addScore(int level, int score, const QString &name)
+void highScoreDialog::addScore(int level, int score, const TQString &name)
 {
 	level--;
-	QValueList< QPair<int, QString> >::iterator it, itEnd;
+	TQValueList< QPair<int, TQString> >::iterator it, itEnd;
 	it = m_scores[level].begin();
 	itEnd = m_scores[level].end();
 	while (it != itEnd && (*it).first >= score) it++;
@@ -170,12 +170,12 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 		m_scores[level].remove(--m_scores[level].end());
 		
 		KConfig *cfg = kapp -> config();
-		cfg -> setGroup(QString("Level%1").arg(level + 1));
+		cfg -> setGroup(TQString("Level%1").arg(level + 1));
 		int j;
 		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
 		{
-			cfg->writeEntry(QString("Score%1").arg(j), (*it).first);
-			cfg->writeEntry(QString("Name%1").arg(j), (*it).second);
+			cfg->writeEntry(TQString("Score%1").arg(j), (*it).first);
+			cfg->writeEntry(TQString("Name%1").arg(j), (*it).second);
 		}
 		cfg -> sync();
 	}
@@ -183,7 +183,7 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 
 void highScoreDialog::showLevel(int level)
 {
-	QSize max, aux;
+	TQSize max, aux;
 	m_tw -> setCurrentPage(level -1);
 	
 	for (int i = 0; i < 3; i++)

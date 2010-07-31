@@ -7,7 +7,7 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qtimer.h>
+#include <tqtimer.h>
 
 #include <config.h>
 
@@ -22,8 +22,8 @@
 
 artsPlayer::artsPlayer() : m_playobj(0)
 {
-	m_endChecker = new QTimer(this);
-	connect(m_endChecker, SIGNAL(timeout()), this, SLOT(checkEnded()));
+	m_endChecker = new TQTimer(this);
+	connect(m_endChecker, TQT_SIGNAL(timeout()), this, TQT_SLOT(checkEnded()));
 	
 #ifndef WITHOUT_ARTS
 	m_dispatcher = new KArtsDispatcher;
@@ -87,7 +87,7 @@ void artsPlayer::play(blinkenGame::color c, bool stopCurrent)
 void artsPlayer::play()
 {
 #ifndef WITHOUT_ARTS
-	QString path;
+	TQString path;
 	blinkenGame::color c = m_nextSounds.first();
 	m_nextSounds.pop_front();
 	switch (c)

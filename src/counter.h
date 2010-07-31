@@ -15,7 +15,7 @@ class QPainter;
 class counter
 {
 	public:
-		static void paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3);
+		static void paint(TQPainter &p, bool drawScore, int score, bool drawTimer, const TQColor &c1, const TQColor &c2, const TQColor &c3);
 		static int width(bool drawTimer);
 		static int height();
 };

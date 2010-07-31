@@ -28,7 +28,7 @@ namespace KDE
 #include <arts/kplayobjectfactory.h>
 #endif
 
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 
 #include "blinkengame.h"
 
@@ -51,11 +51,11 @@ Q_OBJECT
 		void checkEnded();
 		
 	private:
-		QValueList<blinkenGame::color> m_nextSounds;
+		TQValueList<blinkenGame::color> m_nextSounds;
 		
-		QString m_greenPath, m_redPath, m_bluePath, m_yellowPath, m_allPath;
+		TQString m_greenPath, m_redPath, m_bluePath, m_yellowPath, m_allPath;
 		
-		QTimer *m_endChecker;
+		TQTimer *m_endChecker;
 		
 		KArtsDispatcher *m_dispatcher;
 		KArtsServer *m_server;

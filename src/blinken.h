@@ -10,7 +10,7 @@
 #ifndef BLINKEN_H
 #define BLINKEN_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 #include "blinkengame.h"
 
@@ -30,11 +30,11 @@ Q_OBJECT
 		~blinken();
 		
 	protected:
-		void paintEvent(QPaintEvent *);
-		void mouseMoveEvent(QMouseEvent *e);
-		void mousePressEvent(QMouseEvent *e);
-		void keyPressEvent(QKeyEvent *e);
-		void keyReleaseEvent(QKeyEvent *e);
+		void paintEvent(TQPaintEvent *);
+		void mouseMoveEvent(TQMouseEvent *e);
+		void mousePressEvent(TQMouseEvent *e);
+		void keyPressEvent(TQKeyEvent *e);
+		void keyReleaseEvent(TQKeyEvent *e);
 		
 	private slots:
 		void checkHS();
@@ -48,27 +48,27 @@ Q_OBJECT
 		
 	private:
 		void selectButton(int button);
-		bool insideGreen(const QPoint &p) const;
-		bool insideYellow(const QPoint &p) const;
-		bool insideRed(const QPoint &p) const;
-		bool insideBlue(const QPoint &p) const;
-		bool insideButtonsArea(const QPoint &p) const;
-		void updateCursor(const QPoint &p);
+		bool insideGreen(const TQPoint &p) const;
+		bool insideYellow(const TQPoint &p) const;
+		bool insideRed(const TQPoint &p) const;
+		bool insideBlue(const TQPoint &p) const;
+		bool insideButtonsArea(const TQPoint &p) const;
+		void updateCursor(const TQPoint &p);
 	
-		void drawMenuQuit(QPainter &p);
-		void drawScoreAndCounter(QPainter &p);
-		void drawStatusText(QPainter &p);
-		void drawLevel(QPainter &p);
-		void drawText(QPainter &p, const QString &text, const QPoint &center, bool withMargin, int xMargin, int yMargin, QRect *rect, bool highlight, bool bold);
-		void updateButtonHighlighting(const QPoint &p);
+		void drawMenuQuit(TQPainter &p);
+		void drawScoreAndCounter(TQPainter &p);
+		void drawStatusText(TQPainter &p);
+		void drawLevel(TQPainter &p);
+		void drawText(TQPainter &p, const TQString &text, const TQPoint &center, bool withMargin, int xMargin, int yMargin, TQRect *rect, bool highlight, bool bold);
+		void updateButtonHighlighting(const TQPoint &p);
 		
 		
 		button *m_buttons[4];
-		QPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
+		TQPixmap *m_back, *m_highscore, *m_highscoreHover, *m_quit, *m_quitHover, *m_menu, *m_menuHover, *m_mark;
 		bool m_overHighscore, m_overQuit, m_overCentralText, m_overMenu, m_overAboutKDE, m_overAboutBlinken, m_overManual, m_overLevels[3], m_overCentralLetters, m_overCounter, m_overFont, m_overSound;
 		// i obviously suck but m_levelsRect[0] is 2, m_levelsRect[1] is 1 and m_levelsRect[3] is ?
-		QRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect, m_soundRect, m_fontRect;
-		QColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
+		TQRect m_highscoreRect, m_quitRect, m_centralTextRect, m_menuRect, m_aboutKDERect, m_aboutBlinkenRect, m_manualRect, m_levelsRect[3], m_centralLettersRect, m_counterRect, m_soundRect, m_fontRect;
+		TQColor m_fillColor, m_fontColor, m_fontHighlightColor, m_countDownColor;
 		
 		// Preferences setting handling
 		bool m_showPreferences;
@@ -80,9 +80,9 @@ Q_OBJECT
 		bool m_alwaysUseNonCoolFont;
 		
 		blinkenGame::color m_highlighted;
-		QTimer *m_unhighlighter;
+		TQTimer *m_unhighlighter;
 		
-		QString m_lastName;
+		TQString m_lastName;
 		
 		blinkenGame m_game;
 		

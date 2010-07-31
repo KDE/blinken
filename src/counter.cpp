@@ -7,18 +7,18 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qcolor.h>
-#include <qpainter.h>
+#include <tqcolor.h>
+#include <tqpainter.h>
 
 #include "counter.h"
 #include "number.h"
 
-void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, const QColor &c1, const QColor &c2, const QColor &c3)
+void counter::paint(TQPainter &p, bool drawScore, int score, bool drawTimer, const TQColor &c1, const TQColor &c2, const TQColor &c3)
 {
 	p.save();
 	p.translate(45, 15);
-	p.setPen(QPen(Qt::black, 3));
-	p.setBrush(QColor(40, 40, 40));
+	p.setPen(TQPen(Qt::black, 3));
+	p.setBrush(TQColor(40, 40, 40));
 	if (drawTimer)
 	{
 		p.fillRect(-44, -13, 98, 48, p.brush());

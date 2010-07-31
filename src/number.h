@@ -17,10 +17,10 @@ class number
 	public:
 		number(int n);
 		
-		void paint(QPainter &p, int digits) const;
+		void paint(TQPainter &p, int digits) const;
 	
 	private:
-		void paintDigit(QPainter &p, int n) const;
+		void paintDigit(TQPainter &p, int n) const;
 		
 		int m_number;
 		

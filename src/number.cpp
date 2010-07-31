@@ -7,9 +7,9 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#include <qbrush.h>
-#include <qcolor.h>
-#include <qpainter.h>
+#include <tqbrush.h>
+#include <tqcolor.h>
+#include <tqpainter.h>
 
 #include "number.h"
 
@@ -79,7 +79,7 @@ number::number(int n)
 	m_number = n;
 }
 
-void number::paint(QPainter &p, int digits) const
+void number::paint(TQPainter &p, int digits) const
 {
 	int nDigits, digit, number;
 	nDigits = 0;
@@ -96,7 +96,7 @@ void number::paint(QPainter &p, int digits) const
 	p.translate(30 * nDigits, 0);
 }
 
-void number::paintDigit(QPainter &p, int number) const
+void number::paintDigit(TQPainter &p, int number) const
 {
 	// make gcc  happy
 	const int *n = m_number0;

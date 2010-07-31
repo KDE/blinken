@@ -10,8 +10,8 @@
 #ifndef BLINKENGAME_H
 #define BLINKENGAME_H
 
-#include <qobject.h>
-#include <qvaluelist.h>
+#include <tqobject.h>
+#include <tqvaluelist.h>
 
 class QTimer;
 
@@ -62,11 +62,11 @@ Q_OBJECT
 		int m_level;
 		int m_sequenceLength;
 		
-		QTimer *m_waitTimer;
+		TQTimer *m_waitTimer;
 		
 		artsPlayer *m_artsPlayer;
-		QValueList<color> m_sequence;
-		QValueList<color>::const_iterator m_nextColor;
+		TQValueList<color> m_sequence;
+		TQValueList<color>::const_iterator m_nextColor;
 };
 
 #endif

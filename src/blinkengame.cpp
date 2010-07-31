@@ -9,7 +9,7 @@
 
 #include <stdlib.h> // for RAND_MAX
 
-#include <qtimer.h>
+#include <tqtimer.h>
 
 #include <kapplication.h>
 
@@ -19,8 +19,8 @@
 blinkenGame::blinkenGame() : m_phase(starting)
 {
 	m_artsPlayer = new artsPlayer;
-	m_waitTimer = new QTimer(this);
-	connect(m_waitTimer, SIGNAL(timeout()), this, SLOT(waiting()));
+	m_waitTimer = new TQTimer(this);
+	connect(m_waitTimer, TQT_SIGNAL(timeout()), this, TQT_SLOT(waiting()));
 }
 
 blinkenGame::~blinkenGame()
@@ -114,8 +114,8 @@ void blinkenGame::nextSound()
 
 void blinkenGame::soundEnded()
 {
-	QTimer::singleShot(100, this, SLOT(nextSound()));
-	QTimer::singleShot(50, this, SLOT(unhighlight()));
+	TQTimer::singleShot(100, this, TQT_SLOT(nextSound()));
+	TQTimer::singleShot(50, this, TQT_SLOT(unhighlight()));
 }
 
 void blinkenGame::unhighlight()
@@ -135,7 +135,7 @@ void blinkenGame::waiting()
 		}
 		else m_sequence.append(generateColor());
 	
-		connect(m_artsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
+		connect(m_artsPlayer, TQT_SIGNAL(ended()), this, TQT_SLOT(soundEnded()));
 		m_nextColor = m_sequence.begin();
 		soundEnded();
 	}

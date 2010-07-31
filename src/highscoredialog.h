@@ -10,8 +10,8 @@
 #ifndef HIGHSCOREDIALOG_H
 #define HIGHSCOREDIALOG_H
 
-#include <qpair.h>
-#include <qvaluelist.h>
+#include <tqpair.h>
+#include <tqvaluelist.h>
 
 #include <kdialogbase.h>
 
@@ -20,13 +20,13 @@ class myTabWidget;
 class highScoreDialog : private KDialogBase
 {
 	public:
-		highScoreDialog(QWidget *parent);
+		highScoreDialog(TQWidget *parent);
 		
 		bool scoreGoodEnough(int level, int score);
-		void addScore(int level, int score, const QString &name);
+		void addScore(int level, int score, const TQString &name);
 		void showLevel(int level);
 	
-		QValueList< QPair<int, QString> > m_scores[3];
+		TQValueList< QPair<int, TQString> > m_scores[3];
 		myTabWidget *m_tw;
 };
 

@@ -12,7 +12,7 @@
 
 namespace fontUtils
 {
-	int fontSize(QPainter &p, const QString &s1, int w, int h);
+	int fontSize(TQPainter &p, const TQString &s1, int w, int h);
 }
 
 #endif

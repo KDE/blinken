@@ -19,8 +19,8 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
 	KConfig *kc = kapp->config();
 	kc->setGroup("General");
-	QString cs = getColorString();
-	QString pixmap = QString("images/%1h.png").arg(cs);
+	TQString cs = getColorString();
+	TQString pixmap = TQString("images/%1h.png").arg(cs);
 	
 	switch (c)
 	{
@@ -45,7 +45,7 @@ button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 		break;
 	}
 	
-	m_highlighted = new QPixmap(locate("appdata", pixmap));
+	m_highlighted = new TQPixmap(locate("appdata", pixmap));
 }
 
 button::~button()
@@ -64,7 +64,7 @@ void button::setShortcut(int key)
 	kc->sync();
 }
 
-QString button::shortcut() const
+TQString button::shortcut() const
 {
 	return KShortcut(m_key).toString();
 }
@@ -84,12 +84,12 @@ bool button::selected() const
 	return m_selected;
 }
 
-QPixmap *button::pixmap() const
+TQPixmap *button::pixmap() const
 {
 	return m_highlighted;
 }
 
-QString button::getColorString() const
+TQString button::getColorString() const
 {
 	switch (m_color)
 	{
@@ -115,5 +115,5 @@ QString button::getColorString() const
 	}
 	
 	// never happens
-	return QString::null;
+	return TQString::null;
 }
