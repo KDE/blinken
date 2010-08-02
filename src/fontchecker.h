@@ -10,7 +10,7 @@
 #ifndef FONTCHECKER_H
 #define FONTCHECKER_H
 
-class QFont;
+class TQFont;
 
 class fontChecker
 {

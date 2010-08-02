@@ -32,7 +32,7 @@ namespace KDE
 
 #include "blinkengame.h"
 
-class QTimer;
+class TQTimer;
 
 class artsPlayer : public QObject
 {

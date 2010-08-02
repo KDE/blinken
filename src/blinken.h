@@ -14,7 +14,7 @@
 
 #include "blinkengame.h"
 
-class QTimer;
+class TQTimer;
 
 class KAction;
 class KHelpMenu;

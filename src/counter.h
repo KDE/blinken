@@ -10,7 +10,7 @@
 #ifndef COUNTER_H
 #define COUNTER_H
 
-class QPainter;
+class TQPainter;
 
 class counter
 {

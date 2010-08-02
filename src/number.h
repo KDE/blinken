@@ -10,7 +10,7 @@
 #ifndef NUMBER_H
 #define NUMBER_H
 
-class QPainter;
+class TQPainter;
 
 class number
 {

@@ -13,7 +13,7 @@
 #include <tqobject.h>
 #include <tqvaluelist.h>
 
-class QTimer;
+class TQTimer;
 
 class artsPlayer;
 
