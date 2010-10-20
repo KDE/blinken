@@ -26,6 +26,6 @@ install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 
