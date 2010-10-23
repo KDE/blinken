@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Blinken
+Name[ast]=Blinken
 Name[ca]=Blinken
 Name[ca@valencia]=Blinken
 Name[cs]=Blinken
@@ -49,6 +50,7 @@ Name[x-test]=xxBlinkenxx
 Name[zh_CN]=Blinken
 Name[zh_TW]=BlinKen
 GenericName=Memory Enhancement Game
+GenericName[ast]=Xuegu p'ameyorar la memoria
 GenericName[ca]=Un Joc per Millorar la Memòria
 GenericName[ca@valencia]=Un Joc per Millorar la Memòria
 GenericName[cs]=Hra k procvičování paměti
@@ -94,6 +96,7 @@ Exec=blinken
 Icon=blinken
 Type=Application
 Comment=A memory enhancement game
+Comment[ast]=Un xuegu p'ameyorar la memoria
 Comment[bg]=Игра за упражнение на паметта
 Comment[ca]=Un joc per millorar la memòria
 Comment[ca@valencia]=Un joc per millorar la memòria
