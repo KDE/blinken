@@ -19,7 +19,7 @@
 #include <ktabwidget.h>
 
 #include "counter.h"
-#include <kedufontutils.h>
+#include "libkdeedu/kdeeduui/kedufontutils.h"
 #include "settings.h"
 
 static const int margin = 15;
