@@ -1,3 +1,4 @@
+include_directories( ${LIBKDEEDU_INCLUDE_DIR} )
 
 ########### next target ###############
 
@@ -20,7 +21,7 @@ kde4_add_app_icon(blinken_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-app-bli
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
-target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} kdeeduui )
+target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS} ${LIBKDEEDU_KDEEDUUI_LIBRARIES} )
 
 install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
