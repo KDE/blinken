@@ -57,7 +57,7 @@ Q_OBJECT
 	
 		void drawMenuQuit(TQPainter &p);
 		void drawScoreAndCounter(TQPainter &p);
-		void drawStatusText(TQPainter &p);
+		void drawtqStatusText(TQPainter &p);
 		void drawLevel(TQPainter &p);
 		void drawText(TQPainter &p, const TQString &text, const TQPoint &center, bool withMargin, int xMargin, int yMargin, TQRect *rect, bool highlight, bool bold);
 		void updateButtonHighlighting(const TQPoint &p);
@@ -73,7 +73,7 @@ Q_OBJECT
 		// Preferences setting handling
 		bool m_showPreferences;
 		
-		// if should update the highlighting after the next repaint
+		// if should update the highlighting after the next tqrepaint
 		bool m_updateButtonHighlighting;
 		
 		// use always the non-cool font?

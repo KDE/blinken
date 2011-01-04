@@ -209,7 +209,7 @@ void blinken::paintEvent(TQPaintEvent *)
 	if (m_highlighted & blinkenGame::red) p.drawPixmap(322, 16, *m_buttons[2] -> pixmap());
 	if (m_highlighted & blinkenGame::green) p.drawPixmap(322, 225, *m_buttons[3] -> pixmap());
 	
-	drawStatusText(p);
+	drawtqStatusText(p);
 	
 	bitBlt(this, 0, 0, &buf);
 	
@@ -289,13 +289,13 @@ void blinken::mousePressEvent(TQMouseEvent *e)
 		hsd->showLevel(1);
 		m_updateButtonHighlighting = true;
 	}
-	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
+	else if (m_showPreferences && m_fontRect.tqcontains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
 		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
 		blinkenSettings::writeConfig();
 		update();
 	}
-	else if (m_showPreferences && m_soundRect.contains(e -> pos()))
+	else if (m_showPreferences && m_soundRect.tqcontains(e -> pos()))
 	{
 		blinkenSettings::setPlaySounds(!blinkenSettings::playSounds());
 		blinkenSettings::writeConfig();
@@ -316,9 +316,9 @@ void blinken::mousePressEvent(TQMouseEvent *e)
 	else if (m_game.phase() == blinkenGame::choosingLevel)
 	{
 		int level = 0;
-		if (m_levelsRect[1].contains(e -> pos())) level = 1;
-		else if (m_levelsRect[0].contains(e -> pos())) level = 2;
-		else if (m_levelsRect[2].contains(e -> pos())) level = 3;
+		if (m_levelsRect[1].tqcontains(e -> pos())) level = 1;
+		else if (m_levelsRect[0].tqcontains(e -> pos())) level = 2;
+		else if (m_levelsRect[2].tqcontains(e -> pos())) level = 3;
 		if (level) 
 		{
 			for(int i = 0; i < 3; i++) m_overLevels[i] = false;
@@ -544,7 +544,7 @@ void blinken::drawScoreAndCounter(TQPainter &p)
 	p.translate(-268, -110);
 }
 
-void blinken::drawStatusText(TQPainter &p)
+void blinken::drawtqStatusText(TQPainter &p)
 {
 	p.translate(25, 505);
 	p.rotate(-3.29);
@@ -665,7 +665,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 	m_updateButtonHighlighting = false;
 	haveToUpdate = false;
 	
-	if (m_highscoreRect.contains(p))
+	if (m_highscoreRect.tqcontains(p))
 	{
 		if (!m_overHighscore)
 		{
@@ -679,7 +679,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_menuRect.contains(p))
+	if (m_menuRect.tqcontains(p))
 	{
 		if (!m_overMenu)
 		{
@@ -699,7 +699,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 	}
 	else if (m_overMenu)
 	{
-		if (m_aboutKDERect.contains(p))
+		if (m_aboutKDERect.tqcontains(p))
 		{
 			if (!m_overAboutKDE)
 			{
@@ -709,7 +709,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 				haveToUpdate = true;
 			}
 		}
-		else if (m_aboutBlinkenRect.contains(p))
+		else if (m_aboutBlinkenRect.tqcontains(p))
 		{
 			if (!m_overAboutBlinken)
 			{
@@ -719,7 +719,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 				haveToUpdate = true;
 			}
 		}
-		else if (m_manualRect.contains(p))
+		else if (m_manualRect.tqcontains(p))
 		{
 			if (!m_overManual)
 			{
@@ -739,7 +739,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		}
 	}
 	
-	if (!m_showPreferences && m_centralLettersRect.contains(p))
+	if (!m_showPreferences && m_centralLettersRect.tqcontains(p))
 	{
 		m_overCentralLetters = true;
 		haveToUpdate = true;
@@ -750,7 +750,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_showPreferences && m_soundRect.contains(p))
+	if (m_showPreferences && m_soundRect.tqcontains(p))
 	{
 		m_overSound = true;
 		haveToUpdate = true;
@@ -761,7 +761,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_showPreferences && m_fontRect.contains(p) && !m_alwaysUseNonCoolFont)
+	if (m_showPreferences && m_fontRect.tqcontains(p) && !m_alwaysUseNonCoolFont)
 	{
 		m_overFont = true;
 		haveToUpdate = true;
@@ -772,7 +772,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_counterRect.contains(p))
+	if (m_counterRect.tqcontains(p))
 	{
 		m_overCounter = true;
 		haveToUpdate = true;
@@ -783,7 +783,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		haveToUpdate = true;
 	}
 	
-	if (m_quitRect.contains(p))
+	if (m_quitRect.tqcontains(p))
 	{
 		if (!m_overQuit)
 		{
@@ -805,7 +805,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		case blinkenGame::waiting1:
 		case blinkenGame::learningTheSequence:
 		case blinkenGame::typingTheSequence:
-			if (m_centralTextRect.contains(p))
+			if (m_centralTextRect.tqcontains(p))
 			{
 				if (!m_overCentralText)
 				{
@@ -823,7 +823,7 @@ void blinken::updateButtonHighlighting(const TQPoint &p)
 		case blinkenGame::choosingLevel:
 			for (int i = 0; i < 3; i++)
 			{
-				if (m_levelsRect[i].contains(p))
+				if (m_levelsRect[i].tqcontains(p))
 				{
 					if (!m_overLevels[i])
 					{

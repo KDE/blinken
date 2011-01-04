@@ -100,7 +100,7 @@ void number::paintDigit(TQPainter &p, int number) const
 {
 	// make gcc  happy
 	const int *n = m_number0;
-	int shape;
+	int tqshape;
 	
 	switch (number)
 	{
@@ -147,25 +147,25 @@ void number::paintDigit(TQPainter &p, int number) const
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			shape = n[j + i * 4];
-			if (shape == 0)
+			tqshape = n[j + i * 4];
+			if (tqshape == 0)
 			{
 				p.fillRect(7 * (j-1), 7 * (i-1), 6, 6, Qt::red);
 			}
-			else if (shape != 5)
+			else if (tqshape != 5)
 			{
-				if (shape == 1) p.translate(7 * (j-1), 7 * (i-1));
-				else if (shape == 2)
+				if (tqshape == 1) p.translate(7 * (j-1), 7 * (i-1));
+				else if (tqshape == 2)
 				{
 					p.translate(7 * j - 2, 7 * (i-1));
 					p.rotate(90);
 				}
-				else if (shape == 3)
+				else if (tqshape == 3)
 				{
 					p.translate(7 * j - 2, 7 * i - 2);
 					p.rotate(180);
 				}
-				else if (shape == 4)
+				else if (tqshape == 4)
 				{
 					p.translate(7 * (j-1), 7 * i - 2);
 					p.rotate(270);
@@ -173,19 +173,19 @@ void number::paintDigit(TQPainter &p, int number) const
 				
 				p.drawPie(0, 0, 11, 11, 90 * 16, 16 * 90);
 				
-				if (shape == 1) p.translate(-7 * (j-1), -7 * (i-1));
-				else if (shape == 2)
+				if (tqshape == 1) p.translate(-7 * (j-1), -7 * (i-1));
+				else if (tqshape == 2)
 				{
 					p.rotate(-90);
 					p.translate(-(7 * j - 2), -7 * (i-1));
 
 				}
-				else if (shape == 3)
+				else if (tqshape == 3)
 				{
 					p.rotate(-180);
 					p.translate(-(7 * j - 2), -(7 * i - 2));
 				}
-				else if (shape == 4)
+				else if (tqshape == 4)
 				{
 					p.rotate(-270);
 					p.translate(- (7 * (j-1)), -(7 * i - 2));
