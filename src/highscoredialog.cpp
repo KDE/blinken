@@ -119,7 +119,7 @@ class myTabWidget : public QTabWidget
 		
 		TQSize tabBarSizeHint() const
 		{
-			return tabBar() -> tqsizeHint();
+			return tabBar() -> sizeHint();
 		}
 };
 
