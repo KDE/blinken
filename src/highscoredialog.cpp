@@ -14,12 +14,12 @@
 #include <qtabbar.h>
 
 #include <kconfig.h>
+#include <kfontutils.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include <ktabwidget.h>
 
 #include "counter.h"
-#include "libkdeedu/kdeeduui/kedufontutils.h"
 #include "settings.h"
 
 static const int margin = 15;
@@ -65,7 +65,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize, fontUtils::DoNotAllowWordWrap));
+	f.setPointSize(KFontUtils::adaptFontSize(p, "A", 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	
 	p.translate(margin, margin);
@@ -94,7 +94,7 @@ QSize scoresWidget::calcSize()
 	
 	if (blinkenSettings::customFont()) f = QFont("Steve");
 	p.setFont(f);
-	f.setPointSize(fontUtils::fontSize(p, "A", 1000, namesFontSize, fontUtils::DoNotAllowWordWrap));
+	f.setPointSize(KFontUtils::adaptFontSize(p, "A", 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	for (int i = 0; i < 3; i++)
 	{
