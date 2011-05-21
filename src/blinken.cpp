@@ -28,10 +28,14 @@
 
 #include "button.h"
 #include "counter.h"
-#include "libkdeedu/kedufontutils.h"
 #include "number.h"
 #include "highscoredialog.h"
 #include "settings.h"
+#ifdef USE_UNINSTALLED_LIBKDEEDU
+# include "libkdeedu/kdeeduui/kedufontutils.h"
+#else
+# include <kedufontutils.h>
+#endif
 
 static const double centerX = 2.0;
 static const double centerY = 2.5;
