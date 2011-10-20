@@ -13,7 +13,7 @@
 #include <kstandarddirs.h>
 #include <kurl.h>
 
-#include <Phonon/Path>
+#include <phonon/Path>
 
 #include "settings.h"
 

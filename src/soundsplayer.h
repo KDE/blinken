@@ -10,7 +10,7 @@
 #ifndef SOUNDSPLAYER_H
 #define SOUNDSPLAYER_H
 
-#include <Phonon/MediaObject>
+#include <phonon/MediaObject>
 #include <phonon/audiooutput.h>
 
 #include <QList>
