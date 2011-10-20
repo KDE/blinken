@@ -1081,4 +1081,3 @@ QPixmap blinken::getPixmap(const QString &element, const QSize &imageSize)
 	return it.value();
 }
 
-#include "blinken.moc"

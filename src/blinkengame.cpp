@@ -179,4 +179,3 @@ blinkenGame::color blinkenGame::generateColor()
 	return c;
 }
 
-#include "blinkengame.moc"
