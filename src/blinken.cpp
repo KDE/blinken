@@ -393,7 +393,7 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		blinkenSettings::self()->writeConfig();
 		update();
 	}
-	else if (m_overQuit) close();
+	else if (m_overQuit) qApp->quit();
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overSettings) togglePreferences();
