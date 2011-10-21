@@ -42,7 +42,7 @@ static const double ellipseBigAxisY = 2.74;
 static const double nonButtonRibbonX = 150.0;
 static const double nonButtonRibbonY = 125.0;
 
-blinken::blinken() : KMainWindow(), m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
 	m_renderer = new QSvgRenderer(KStandardDirs::locate("appdata", "images/blinken.svg"));
 	
