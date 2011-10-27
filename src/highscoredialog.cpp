@@ -26,6 +26,8 @@ static const int margin = 15;
 static const int smallMargin = 5;
 static const int namesFontSize = 25;
 
+static QSet<highScoreManager *> s_allHSM;
+
 /* scoresWidget */
 
 class scoresWidget : public QWidget
@@ -38,7 +40,7 @@ class scoresWidget : public QWidget
 		void paintEvent(QPaintEvent *);
 	
 	private:
-		const QList< QPair<int, QString> > &m_scores;
+		const QList< QPair<int, QString> > m_scores;
 		QSvgRenderer *m_renderer;
 };
 
@@ -140,21 +142,43 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDia
 	m_tw = new myTabWidget(this);
 	setMainWidget(m_tw);
 	
-	for (int i = 1; i <= 3; i++)
-	{
-		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(i));  
-		for (int j = 1; j <= 5; j++)
-		{
-			m_scores[i-1].append(qMakePair(cfg.readEntry(QString("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QString("Name%1").arg(j),QString())));
-		}
-	}
+	highScoreManager hsm;
 	
-	m_tw -> addTab(new scoresWidget(0, m_scores[0], renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[1], renderer), i18nc("@title:group High scores Level 2 tab title", "Level 2"));
-	m_tw -> addTab(new scoresWidget(0, m_scores[2], renderer), i18nc("@title:group High scores Level ? tab tible", "Level ?"));
+	m_tw -> addTab(new scoresWidget(0, hsm.scores(0), renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
+	m_tw -> addTab(new scoresWidget(0, hsm.scores(1), renderer), i18nc("@title:group High scores Level 2 tab title", "Level 2"));
+	m_tw -> addTab(new scoresWidget(0, hsm.scores(2), renderer), i18nc("@title:group High scores Level ? tab tible", "Level ?"));
 }
 
-bool highScoreDialog::scoreGoodEnough(int level, int score)
+void highScoreDialog::showLevel(int level)
+{
+	QSize max, aux;
+	m_tw -> setCurrentIndex(level -1);
+	
+	for (int i = 0; i < 3; i++)
+	{
+		aux = static_cast<scoresWidget*>(m_tw -> widget(i)) -> calcSize();
+		max = max.expandedTo(aux);
+	}
+	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
+	
+	exec();
+	delete this;
+}
+
+/* highScoreManager */
+
+highScoreManager::highScoreManager()
+{
+	s_allHSM << this;
+	update();
+}
+
+highScoreManager::~highScoreManager()
+{
+	s_allHSM.remove(this);
+}
+
+bool highScoreManager::scoreGoodEnough(int level, int score)
 {
 	level--;
 	QList< QPair<int, QString> >::iterator it, itEnd;
@@ -165,7 +189,7 @@ bool highScoreDialog::scoreGoodEnough(int level, int score)
 	return (it != itEnd);
 }
 
-void highScoreDialog::addScore(int level, int score, const QString &name)
+void highScoreManager::addScore(int level, int score, const QString &name)
 {
 	level--;
 	QList< QPair<int, QString> >::iterator it, itEnd;
@@ -186,21 +210,44 @@ void highScoreDialog::addScore(int level, int score, const QString &name)
 			cfg.writeEntry(QString("Name%1").arg(j), (*it).second);
 		}
 		cfg.sync();
+
+		foreach(highScoreManager *hsm, s_allHSM)
+		{
+			if (hsm != this)
+			{
+				hsm->update();
+			}
+		}
 	}
 }
 
-void highScoreDialog::showLevel(int level)
+void highScoreManager::update()
 {
-	QSize max, aux;
-	m_tw -> setCurrentIndex(level -1);
-	
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; ++i)
 	{
-		aux = static_cast<scoresWidget*>(m_tw -> widget(i)) -> calcSize();
-		max = max.expandedTo(aux);
+		m_scores[i].clear();
 	}
-	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
-	
-	exec();
-	delete this;
+	for (int i = 1; i <= 3; i++)
+	{
+		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(i));
+		for (int j = 1; j <= 5; j++)
+		{
+			m_scores[i-1].append(qMakePair(cfg.readEntry(QString("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QString("Name%1").arg(j),QString())));
+		}
+	}
+}
+
+QList< QPair<int, QString> > highScoreManager::scores(int level) const
+{
+	return m_scores[level];
+}
+
+int highScoreManager::score(int level, int position) const
+{
+	return m_scores[level][position].first;
+}
+
+QString highScoreManager::name(int level, int position) const
+{
+	return m_scores[level][position].second;
 }

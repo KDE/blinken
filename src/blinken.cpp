@@ -440,16 +440,17 @@ void blinken::mousePressEvent(QMouseEvent *e)
 
 void blinken::checkHS()
 {
-	highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
-	if (hsd->scoreGoodEnough(m_game.level(), m_game.score()))
+	highScoreManager hsm;
+	if (hsm.scoreGoodEnough(m_game.level(), m_game.score()))
 	{
 		bool ok;
 		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18nc("@label:textbox refers to the user's name", "Name:"), m_lastName, &ok);
 		if (!name.isNull() && ok)
 		{
 			m_lastName = name;
-			hsd->addScore(m_game.level(), m_game.score(), name);
+			hsm.addScore(m_game.level(), m_game.score(), name);
 		}
+		highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
 		hsd->showLevel(m_game.level());
 	}
 }

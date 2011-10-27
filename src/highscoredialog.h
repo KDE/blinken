@@ -24,12 +24,30 @@ class highScoreDialog : private KDialog
 	public:
 		highScoreDialog(QWidget *parent, QSvgRenderer *renderer);
 		
-		bool scoreGoodEnough(int level, int score);
-		void addScore(int level, int score, const QString &name);
 		void showLevel(int level);
 	
-		QList< QPair<int, QString> > m_scores[3];
 		myTabWidget *m_tw;
+};
+
+class highScoreManager : public QObject
+{
+Q_OBJECT
+	public:
+		highScoreManager();
+		~highScoreManager();
+
+		bool scoreGoodEnough(int level, int score);
+		void addScore(int level, int score, const QString &name);
+
+		QList< QPair<int, QString> > scores(int level) const;
+
+		Q_INVOKABLE int score(int level, int position) const;
+		Q_INVOKABLE QString name(int level, int position) const;
+
+	private:
+		void update();
+
+		QList< QPair<int, QString> > m_scores[3];
 };
 
 #endif
