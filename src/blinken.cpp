@@ -613,8 +613,14 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.resetMatrix();
 	p.translate( (double)width() / 50.875, (double)height() / 30);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
-	if (m_overHighscore) m_renderer->render(&p, "highscore_hover");
-	else m_renderer->render(&p, "highscore_normal");
+	if (m_overHighscore)
+	{
+		m_renderer->render(&p, "highscore_hover");
+	}
+	else
+	{
+		m_renderer->render(&p, "highscore_normal");
+	}
 	m_highscoreRect = QRect(qRound((double)width() / 50.875),
 	                        qRound((double)height() / 30.0),
 	                        qRound((double)width() * xScaleSquareButtons),
@@ -624,8 +630,14 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.resetMatrix();
 	p.translate( (double)width() / 1.15, (double)height() / 30.0);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
-	if (m_overQuit) m_renderer->render(&p, "quit_hover");
-	else m_renderer->render(&p, "quit_normal");
+	if (m_overQuit)
+	{
+		m_renderer->render(&p, "quit_hover");
+	}
+	else
+	{
+		m_renderer->render(&p, "quit_normal");
+	}
 	m_quitRect = QRect(qRound((double)width() / 1.15),
 	                   qRound((double)height() / 30.0),
 	                   qRound((double)width() * xScaleSquareButtons),
@@ -765,30 +777,72 @@ void blinken::drawStatusText(QPainter &p)
 			break;
 			
 			case blinkenGame::waiting3:
-				if (m_overCentralText) text = restartText;
-				else text = i18n("Next sequence in 3...");
+				if (m_overCentralText)
+				{
+					text = restartText;
+				}
+				else
+				{
+					text = i18n("Next sequence in 3...");
+				}
 			break;
 			
 			case blinkenGame::waiting2:
-				if (m_overCentralText) text = restartText;
-				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2...");
-				else text = i18n("Next sequence in 2...");
+				if (m_overCentralText)
+				{
+					text = restartText;
+				}
+				else
+				{
+					if (m_game.level() == 1)
+					{
+						text = i18n("Next sequence in 3, 2...");
+					}
+					else
+					{
+						text = i18n("Next sequence in 2...");
+					}
+				}
 			break;
 		
 			case blinkenGame::waiting1:
-				if (m_overCentralText) text = restartText;
-				else if (m_game.level() == 1) text = i18n("Next sequence in 3, 2, 1...");
-				else text = i18n("Next sequence in 2, 1...");
+				if (m_overCentralText)
+				{
+					text = restartText;
+				}
+				else
+				{
+					if (m_game.level() == 1)
+					{
+						text = i18n("Next sequence in 3, 2, 1...");
+					}
+					else
+					{
+						text = i18n("Next sequence in 2, 1...");
+					}
+				}
 			break;
 			
 			case blinkenGame::learningTheSequence:
-				if (m_overCentralText) text = restartText;
-				else text = i18n("Remember this sequence...");
+				if (m_overCentralText)
+				{
+					text = restartText;
+				}
+				else
+				{
+					text = i18n("Remember this sequence...");
+				}
 			break;
 			
 			case blinkenGame::typingTheSequence:
-				if (m_overCentralText) text = restartText;
-				else text = i18n("Repeat the sequence");
+				if (m_overCentralText)
+				{
+					text = restartText;
+				}
+				else
+				{
+					text = i18n("Repeat the sequence");
+				}
 			break;
 		}
 	}
@@ -848,8 +902,14 @@ void blinken::drawText(QPainter &p, const QString &text, const QPointF &center, 
 		p.drawRoundRect(r, 15, 15);
 	}
 	
-	if (!highlight) p.setPen(m_fontColor);
-	else p.setPen(m_fontHighlightColor);
+	if (highlight)
+	{
+		p.setPen(m_fontHighlightColor);
+	}
+	else
+	{
+		p.setPen(m_fontColor);
+	}
 	p.drawText(r, Qt::AlignCenter, text);
 	
 	if (rect) *rect = p.worldMatrix().mapRect(r);
