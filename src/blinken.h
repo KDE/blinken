@@ -22,7 +22,11 @@ class KHelpMenu;
 
 class button;
 
+#ifdef HARMATTAN_BUILD
+class blinken : public QWidget
+#else
 class blinken : public KMainWindow
+#endif
 {
 Q_OBJECT
 	public:
@@ -30,7 +34,7 @@ Q_OBJECT
 		~blinken();
 
 		virtual QSize sizeHint() const;
-		
+
 	protected:
 		void paintEvent(QPaintEvent *);
 		void mouseMoveEvent(QMouseEvent *e);
@@ -68,7 +72,18 @@ Q_OBJECT
 		QPixmap getPixmap(const QString &element, const QSize &imageSize);
 		
 		void togglePreferences();
-		
+
+#ifdef HARMATTAN_BUILD
+		friend class BlinkenProxyWidget;
+
+	signals:
+		void askForName(const QString &lastName, int level, int score);
+		void showHighScoreDialog(int level);
+		void showAbout();
+
+	private:
+		void setHighScore(const QString &name, int level, int score);
+#endif
 		
 		button *m_buttons[4];
 		QSvgRenderer *m_renderer;

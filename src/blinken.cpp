@@ -18,7 +18,9 @@
 
 #include <kaction.h>
 #include <kconfig.h>
+#ifndef HARMATTAN_BUILD
 #include <khelpmenu.h>
+#endif
 #include <kinputdialog.h>
 #include <kfontutils.h>
 #include <klocale.h>
@@ -57,7 +59,9 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	m_countDownColor = QColor(55, 55, 55);
 	
 	setMouseTracking(true);
+#ifndef HARMATTAN_BUILD
 	show();
+#endif
 	
 	m_unhighlighter = new QTimer(this);
 	connect(m_unhighlighter, SIGNAL(timeout()), this, SLOT(unhighlight()));
@@ -66,22 +70,28 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
 	
+#ifndef HARMATTAN_BUILD
 	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData());
 	m_helpMenu->menu(); // ensures the actions are created
+#endif
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
 	
 	QString aux = i18nc("If the Steve font that is used by Blinken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
 	
 	m_alwaysUseNonCoolFont = aux == "1";
+#ifndef HARMATTAN_BUILD
 	setAutoSaveSettings();
+#endif
 }
 
 blinken::~blinken()
 {
 	delete m_renderer;
 	for (int i = 0; i < 4; i++) delete m_buttons[i];
+#ifndef HARMATTAN_BUILD
 	delete m_helpMenu;
+#endif
 }
 
 QSize blinken::sizeHint() const
@@ -91,6 +101,28 @@ QSize blinken::sizeHint() const
 
 void blinken::paintEvent(QPaintEvent *)
 {
+#ifdef HARMATTAN_BUILD
+	// In harmattan there is a weird painting/sizing issue at startup
+	// so we wait until the size is stable to really repaint
+	const int kAssumedStable = 4;
+	static QSize lastSize;
+	static int stablePaintEvents = 0;
+	if (stablePaintEvents < kAssumedStable)
+	{
+		if (size() != lastSize)
+		{
+			lastSize = size();
+			stablePaintEvents = 0;
+		}
+		else
+		{
+			++stablePaintEvents;
+		}
+		update();
+		return;
+	}
+#endif
+
 	m_centralLettersRect = QRectF((double)width() / 3.35,
 	                              (double)height() / 2.68,
 	                              (double)width() / 2.54,
@@ -368,6 +400,19 @@ void blinken::togglePreferences()
 	}
 }
 
+#ifdef HARMATTAN_BUILD
+void blinken::setHighScore(const QString &name, int level, int score)
+{
+	if (!name.isEmpty())
+	{
+		highScoreManager hsm;
+		m_lastName = name;
+		hsm.addScore(level, score, name);
+	}
+	emit showHighScoreDialog(m_game.level() - 1);
+}
+#endif
+
 void blinken::mouseMoveEvent(QMouseEvent *e)
 {
 	updateButtonHighlighting(e->pos());
@@ -377,9 +422,13 @@ void blinken::mousePressEvent(QMouseEvent *e)
 {
 	if (m_overHighscore || m_overCounter)
 	{
+#ifdef HARMATTAN_BUILD
+		emit showHighScoreDialog(0);
+#else
 		highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
 		hsd->showLevel(1);
 		m_updateButtonHighlighting = true;
+#endif
 	}
 	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
@@ -394,10 +443,14 @@ void blinken::mousePressEvent(QMouseEvent *e)
 		update();
 	}
 	else if (m_overQuit) qApp->quit();
+#ifdef HARMATTAN_BUILD
+	else if (m_overMenu) emit showAbout();
+#else
 	else if (m_overAboutBlinken || m_overCentralLetters) m_helpMenu -> aboutApplication();
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overSettings) togglePreferences();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
+#endif
 	else if (m_game.phase() != blinkenGame::choosingLevel && m_overCentralText)
 	{
 		startGamePressed();
@@ -443,6 +496,9 @@ void blinken::checkHS()
 	highScoreManager hsm;
 	if (hsm.scoreGoodEnough(m_game.level(), m_game.score()))
 	{
+#ifdef HARMATTAN_BUILD
+		emit askForName(m_lastName, m_game.level(), m_game.score());
+#else
 		bool ok;
 		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18nc("@label:textbox refers to the user's name", "Name:"), m_lastName, &ok);
 		if (!name.isNull() && ok)
@@ -452,6 +508,7 @@ void blinken::checkHS()
 		}
 		highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
 		hsd->showLevel(m_game.level());
+#endif
 	}
 }
 
@@ -613,11 +670,13 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.resetMatrix();
 	p.translate( (double)width() / 50.875, (double)height() / 30);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
+#ifndef HARMATTAN_BUILD
 	if (m_overHighscore)
 	{
 		m_renderer->render(&p, "highscore_hover");
 	}
 	else
+#endif
 	{
 		m_renderer->render(&p, "highscore_normal");
 	}
@@ -630,11 +689,13 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.resetMatrix();
 	p.translate( (double)width() / 1.15, (double)height() / 30.0);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
+#ifndef HARMATTAN_BUILD
 	if (m_overQuit)
 	{
 		m_renderer->render(&p, "quit_hover");
 	}
 	else
+#endif
 	{
 		m_renderer->render(&p, "quit_normal");
 	}
@@ -645,6 +706,7 @@ void blinken::drawMenuQuit(QPainter &p)
 	
 	// Help button
 	p.resetMatrix();
+#ifndef HARMATTAN_BUILD
 	if (m_overMenu)
 	{
 		double xScaleHoverHelpButton = 225.0 / 814.062;
@@ -685,6 +747,7 @@ void blinken::drawMenuQuit(QPainter &p)
 		}
 	}
 	else
+#endif
 	{
 		p.translate( (double)width() / 1.15, (double)height() / 1.2 );
 		p.scale(xScaleSquareButtons, yScaleSquareButtons);
@@ -749,6 +812,7 @@ void blinken::drawStatusText(QPainter &p)
 
 	QString restartText = i18n("Restart the game");
 	QString text;
+#ifndef HARMATTAN_BUILD
 	if (m_overQuit) text = i18n("Quit Blinken");
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
 	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove('&');
@@ -765,6 +829,7 @@ void blinken::drawStatusText(QPainter &p)
 	else if (m_buttons[0]->selected() || m_buttons[1]->selected() || m_buttons[2]->selected() || m_buttons[3]->selected()) text = i18n("Press the key for this button");
 	else if (m_showPreferences) text = i18n("Click any button to change its key");
 	else
+#endif
 	{
 		switch (m_game.phase())
 		{
@@ -777,22 +842,26 @@ void blinken::drawStatusText(QPainter &p)
 			break;
 			
 			case blinkenGame::waiting3:
+#ifndef HARMATTAN_BUILD
 				if (m_overCentralText)
 				{
 					text = restartText;
 				}
 				else
+#endif
 				{
 					text = i18n("Next sequence in 3...");
 				}
 			break;
 			
 			case blinkenGame::waiting2:
+#ifndef HARMATTAN_BUILD
 				if (m_overCentralText)
 				{
 					text = restartText;
 				}
 				else
+#endif
 				{
 					if (m_game.level() == 1)
 					{
@@ -806,11 +875,13 @@ void blinken::drawStatusText(QPainter &p)
 			break;
 		
 			case blinkenGame::waiting1:
+#ifndef HARMATTAN_BUILD
 				if (m_overCentralText)
 				{
 					text = restartText;
 				}
 				else
+#endif
 				{
 					if (m_game.level() == 1)
 					{
@@ -824,22 +895,26 @@ void blinken::drawStatusText(QPainter &p)
 			break;
 			
 			case blinkenGame::learningTheSequence:
+#ifndef HARMATTAN_BUILD
 				if (m_overCentralText)
 				{
 					text = restartText;
 				}
 				else
+#endif
 				{
 					text = i18n("Remember this sequence...");
 				}
 			break;
 			
 			case blinkenGame::typingTheSequence:
+#ifndef HARMATTAN_BUILD
 				if (m_overCentralText)
 				{
 					text = restartText;
 				}
 				else
+#endif
 				{
 					text = i18n("Repeat the sequence");
 				}
@@ -902,11 +977,13 @@ void blinken::drawText(QPainter &p, const QString &text, const QPointF &center, 
 		p.drawRoundRect(r, 15, 15);
 	}
 	
+#ifndef HARMATTAN_BUILD
 	if (highlight)
 	{
 		p.setPen(m_fontHighlightColor);
 	}
 	else
+#endif
 	{
 		p.setPen(m_fontColor);
 	}
@@ -937,7 +1014,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 		m_overHighscore = false;
 		haveToUpdate = true;
 	}
-	
+
 	if (m_menuRect.contains(p))
 	{
 		if (!m_overMenu)
@@ -1122,10 +1199,12 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 
 void blinken::updateCursor(const QPoint &p)
 {
+#ifndef HARMATTAN_BUILD
 	QPointF p2 = p - QPointF((double)width() / centerX, (double)height() / centerY);
 	
 	if (m_overHighscore || m_overQuit || m_overCentralText || m_overMenu || m_overAboutKDE || m_overAboutBlinken || m_overManual || m_overSettings || m_overLevels[0] || m_overLevels[1] || m_overLevels[2] || m_overCentralLetters || m_overCounter || (m_game.canType() && (insideGreen(p2) || insideRed(p2) || insideBlue(p2) || insideYellow(p2))) || m_overFont || m_overSound) setCursor(Qt::PointingHandCursor);
 	else setCursor(Qt::ArrowCursor);
+#endif
 }
 
 QPixmap blinken::getPixmap(const QString &element, const QSize &imageSize)

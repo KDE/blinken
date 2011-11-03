@@ -1,0 +1,13 @@
+Source: blinken
+Section: user/other
+Priority: optional
+Maintainer: Albert Astals Cid <tsdgeos@yahoo.es>
+Build-Depends: debhelper (>= 5), libqt4-dev
+Standards-Version: 3.7.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: blinken
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Press the colors in sequence!
+XSBC-Maemo-Display-Name: Blinken

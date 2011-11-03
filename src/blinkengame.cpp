@@ -13,9 +13,26 @@
 
 #include <qtimer.h>
 
-#include <krandom.h>
 #include <KDebug>
 #include "soundsplayer.h"
+
+#ifdef HARMATTAN_BUILD
+namespace KRandom
+{
+static int random()
+{
+	static bool init = false;
+	if (!init)
+	{
+		qsrand(time(NULL));
+		init = true;
+	}
+	return qrand();
+}
+}
+#else
+#include <krandom.h>
+#endif
 
 blinkenGame::blinkenGame() : m_phase(starting)
 {
