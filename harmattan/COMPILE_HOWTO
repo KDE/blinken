@@ -21,8 +21,12 @@
      git checkout harmattan_kdelibs
  * Create the build dir
      mkdir build; cd build
+ * Learn your sysroot path, call this path sysroot
+     sh -c 'source $maddepath/targets/harmattan_10.2011.34-1/config.sh; echo $SYSROOT_DIR'
+       For me this is 
+         /home/tsdgeos/QtSDK/Madde/sysroots/harmattan_sysroot_10.2011.34-1_slim
  * Run qmake
-     $maddepath/bin/mad -t $maddetarget qmake ../harmattan/blinken.pro
+     $maddepath/bin/mad -t $maddetarget qmake ../harmattan/blinken.pro "PATHTOSYSROOT = $sysroot"
  * Copy the debian folder to your build dir
      cp -R ../harmattan/qtc_packaging/debian_harmattan/ debian
  * Build the debian package

@@ -1,7 +1,3 @@
-
-# Define here your path to the Madde sysroot
-PATHTOSYSROOT = /home/tsdgeos/QtSDK/Madde/sysroots/harmattan_sysroot_10.2011.34-1_slim
-
 TEMPLATE = app
 TARGET =
 DEPENDPATH += .
