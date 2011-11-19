@@ -22,7 +22,7 @@
  * Create the build dir
      mkdir build; cd build
  * Learn your sysroot path, call this path sysroot
-     bash -c 'source $maddepath/targets/harmattan_10.2011.34-1/config.sh; echo $SYSROOT_DIR'
+     bash -c 'source $maddepath/targets/$maddetarget/config.sh; echo $SYSROOT_DIR'
        For me this is 
          /home/tsdgeos/QtSDK/Madde/sysroots/harmattan_sysroot_10.2011.34-1_slim
  * Run qmake
