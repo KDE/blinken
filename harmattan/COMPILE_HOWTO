@@ -1,7 +1,7 @@
  * Make sure you have Madde installed somewhere (get QtSDK)
-     let's call this path maddepath
- * Learn your target name
-     let's call this maddetarget
+     let's call this path maddepath (for me this is /home/tsdgeos/QtSDK/Madde)
+ * Learn your target name, you can use $maddepath/bin/mad list for this
+     let's call this maddetarget (for me this is harmattan_10.2011.34-1)
  * Make sure you have the dependencies installed
      At the moment you can get them from 
        http://repo.pub.meego.com/home:/rzr:/harmattan/MeeGo_1.2_Harmattan_Maemo.org_MeeGo_1.2_Harmattan_standard/armel/
