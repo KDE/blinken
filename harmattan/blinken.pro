@@ -1,6 +1,6 @@
 
-# Define here your path to the root containing libkok
-PATHTOLIBKOKROOT = /home/tsdgeos/devel/libkok/
+# Define here your path to the Madde sysroot
+PATHTOSYSROOT = /home/tsdgeos/QtSDK/Madde/sysroots/harmattan_sysroot_10.2011.34-1_slim
 
 TEMPLATE = app
 TARGET =
@@ -8,8 +8,8 @@ DEPENDPATH += .
 INCLUDEPATH += . ../src
 QT += svg phonon declarative
 
-INCLUDEPATH += $${PATHTOLIBKOKROOT}/usr/include $${PATHTOLIBKOKROOT}/usr/include/KDE
-LIBS += -L $${PATHTOLIBKOKROOT}/usr/lib -lkok
+INCLUDEPATH += $${PATHTOSYSROOT}/usr/include/KDE
+LIBS += -lkdecore -lkdeui
 
 KCONFIG_COMPILER_INPUT = ../src/blinken.kcfg
 
@@ -36,8 +36,7 @@ SOURCES += blinkenproxywidget.cpp \
            ../src/highscoredialog.cpp \
            ../src/main.cpp \
            ../src/number.cpp \
-           ../src/soundsplayer.cpp \
-           kfontutils.cpp
+           ../src/soundsplayer.cpp
 
 DEFINES += HARMATTAN_BUILD
 
@@ -71,6 +70,14 @@ INSTALLS += desktopicon
 copying.files = ../COPYING
 copying.path = /opt/blinken/
 INSTALLS += copying
+
+shell.files = blinken.sh
+shell.path = /opt/blinken/bin/
+INSTALLS += shell
+
+libss.files = $${PATHTOSYSROOT}/usr/lib/libkdecore.so.5 $${PATHTOSYSROOT}/usr/lib/libdlrestrictions.so.1 $${PATHTOSYSROOT}/usr/lib/libkdeui.so.5 $${PATHTOSYSROOT}/usr/lib/libdbusmenu-qt.so.2
+libss.path = /opt/blinken/bin
+INSTALLS += libss
 
 evil_hack_to_fool_lupdate {
     SOURCES += qml/main.qml
