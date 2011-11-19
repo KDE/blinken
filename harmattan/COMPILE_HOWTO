@@ -13,7 +13,13 @@
      $maddepath/bin/mad-admin -t $maddetarget xdpkg -i kdelibs5_4.7-0_armel.deb 
      $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdbusmenu-qt2_0.8.0-3_armel.deb 
      $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdbusmenu-qt-dev_0.8.0-3_armel.deb 
- * Go to blinken sources dir and create a build dir
+ * Download blinken
+     git clone git://anongit.kde.org/blinken
+ * Go to blinken sources dir
+     cd blinken
+ * Get the harmattan_kdelibs branch
+     git checkout harmattan_kdelibs
+ * Create the build dir
      mkdir build; cd build
  * Run qmake
      $maddepath/bin/mad -t $maddetarget qmake ../harmattan/blinken.pro
