@@ -1,0 +1,30 @@
+ * You need a hacked up kde cmake files, so at the moment until we publish them, this howto is worthless for you >)
+
+ * Make sure you have Madde installed somewhere (get QtSDK)
+     let's call this path maddepath (for me this is /home/tsdgeos/QtSDK/Madde)
+ * Learn your target name, you can use $maddepath/bin/mad list for this
+     let's call this maddetarget (for me this is harmattan_10.2011.34-1)
+ * Make sure you have the dependencies installed
+     At the moment you can get them from 
+       http://repo.pub.meego.com/home:/rzr:/harmattan/MeeGo_1.2_Harmattan_Maemo.org_MeeGo_1.2_Harmattan_standard/armel/
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i kdelibs5-dev_4.7-0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libkdecore5_4.7-0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdlrestrictions1_0.14.0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdlrestrictions-dev_0.14.0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libkdeui5_4.7-0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i kdelibs5_4.7-0_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdbusmenu-qt2_0.8.0-3_armel.deb 
+     $maddepath/bin/mad-admin -t $maddetarget xdpkg -i libdbusmenu-qt-dev_0.8.0-3_armel.deb 
+ * Download blinken
+     git clone git://anongit.kde.org/blinken
+ * Go to blinken sources dir
+     cd blinken
+ * Get the harmattan_kdelibs branch
+     git checkout harmattan_kdelibs
+ * Create the build dir
+     mkdir build; cd build
+ * Copy the debian folder to your build dir
+     cp -R ../harmattan/qtc_packaging/debian_harmattan_cmake/ debian
+ * Build the debian package
+     $maddepath/bin/mad -t $maddetarget dpkg-buildpackage
+ * You end up with the .deb files in .. of the build dir

@@ -11,6 +11,9 @@ set(blinken_SRCS
    counter.cpp 
    button.cpp )
 
+if (HARMATTAN)
+set(blinken_SRCS ${blinken_SRCS} ../harmattan/blinkenproxywidget.cpp)
+endif (HARMATTAN)
 
 kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
@@ -20,12 +23,19 @@ kde4_add_app_icon(blinken_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-app-bli
 
 kde4_add_executable(blinken ${blinken_SRCS})
 
-target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS})
+target_link_libraries(blinken ${KDE4_PHONON_LIBS})
 
-install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+if (HARMATTAN)
+target_link_libraries(blinken ${KDE4_KDEUI_LIBS} ${QT_QTDECLARATIVE_LIBRARY})
+else (HARMATTAN)
+target_link_libraries(blinken ${KDE4_KIO_LIBS})
+endif (HARMATTAN)
 
-########### install files ###############
-
-install( PROGRAMS blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+if (HARMATTAN)
+  install(TARGETS blinken DESTINATION ${DATA_INSTALL_DIR}/blinken/bin )
+else (HARMATTAN)
+  install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+  install( PROGRAMS blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+  install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+endif (HARMATTAN)
 
