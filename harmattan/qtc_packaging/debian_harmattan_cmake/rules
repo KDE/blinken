@@ -46,10 +46,10 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k 
-	dh_installdirs
+	dh_installdirs 
 
 	# Add here commands to install the package into debian/blinken.
-	$(MAKE) INSTALL_ROOT="$(CURDIR)"/debian/blinken install
+	GCCWRAPPER_PATHMANGLE=/usr $(MAKE) INSTALL_ROOT="$(CURDIR)"/debian/blinken install
 	cp ${SYSROOT_DIR}/usr/lib/libkdecore.so.5 "$(CURDIR)"/debian/blinken/opt/blinken/bin
 	cp ${SYSROOT_DIR}/usr/lib/libkdeui.so.5 "$(CURDIR)"/debian/blinken/opt/blinken/bin
 	cp ${SYSROOT_DIR}/usr/lib/libdlrestrictions.so.1 "$(CURDIR)"/debian/blinken/opt/blinken/bin
