@@ -16,7 +16,7 @@
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-	GCCWRAPPER_PATHMANGLE=/usr ~/QtSDK/Madde/bin/mad -t harmattan_10.2011.34-1 cmake .. -DHARMATTAN=1 -DKDE4_DATA_DIR=${SYSROOT_DIR}/usr/share/kde4/apps/ -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/blinken -DDATA_INSTALL_DIR=$(CURDIR)/debian/blinken/opt
+	GCCWRAPPER_PATHMANGLE=/usr cmake .. -DHARMATTAN=1 -DKDE4_DATA_DIR=${SYSROOT_DIR}/usr/share/kde4/apps/ -DCMAKE_INSTALL_PREFIX=$(CURDIR)/debian/blinken -DDATA_INSTALL_DIR=$(CURDIR)/debian/blinken/opt
 
 	touch configure-stamp
 
