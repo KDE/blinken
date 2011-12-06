@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Version=1.0.0
+Version=1.0.1
 Type=Application
 Terminal=false
 Name=Blinken
-Exec=/opt/blinken/bin/blinken
+Exec=/usr/bin/invoker --type=d -s /opt/blinken/bin/blinken
 Icon=/usr/share/icons/hicolor/80x80/apps/blinken80.png
 X-Window-Icon=
 X-HildonDesk-ShowInToolbar=true

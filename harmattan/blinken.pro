@@ -7,6 +7,7 @@ TARGET =
 DEPENDPATH += .
 INCLUDEPATH += . ../src
 QT += svg phonon declarative
+CONFIG += qdeclarative-boostable
 
 INCLUDEPATH += $${PATHTOLIBKOKROOT}/usr/include $${PATHTOLIBKOKROOT}/usr/include/KDE
 LIBS += -L $${PATHTOLIBKOKROOT}/usr/lib -lkok
