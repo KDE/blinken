@@ -25,7 +25,7 @@ PageStackWindow
     QueryDialog
     {
         id: aboutDialog
-        message: qsTr("Blinken for Meego Harmattan 1.0.1<br><br>tsdgeos@yahoo.es<br><br>This software is GPLv2+ licensed")
+        message: qsTr("Blinken for Meego Harmattan 1.0.2<br><br>tsdgeos@yahoo.es<br><br>This software is GPLv2+ licensed")
     }
 
     Dialog
