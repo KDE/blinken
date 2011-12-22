@@ -26,7 +26,7 @@
 #include <QtDeclarative/QDeclarativeView>
 #endif
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
 	KAboutData about("blinken", 0, ki18n("Blinken"), "0.2", ki18n("A memory enhancement game"), KAboutData::License_GPL, ki18n("© 2005-2007 Albert Astals Cid\n© 2005-2007 Danny Allen"));
 	about.addAuthor(ki18n("Albert Astals Cid"), ki18n("Coding"), "tsdgeos@terra.es");
