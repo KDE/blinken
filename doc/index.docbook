@@ -7,9 +7,9 @@
  <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
-<book lang="&language;">
+<book id="blinken" lang="&language;">
 
-<bookinfo>
+<book id="blinken"info>
 <title>The &blinken; Handbook</title>
 
 <authorgroup>
