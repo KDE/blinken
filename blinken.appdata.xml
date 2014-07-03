@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>Blinken</name>
   <name xml:lang="cs">Blinken</name>
+  <name xml:lang="da">Blinken</name>
   <name xml:lang="fi">Blinken</name>
   <name xml:lang="nds">Blinken</name>
   <name xml:lang="nl">Blinken</name>
@@ -18,6 +19,7 @@
   <name xml:lang="zh-TW">記憶_BlinKen</name>
   <summary>Memory Enhancement Game</summary>
   <summary xml:lang="cs">Hra k procvičování paměti</summary>
+  <summary xml:lang="da">Spil til hukommelsestræning</summary>
   <summary xml:lang="fi">Muistipeli</summary>
   <summary xml:lang="nds">Speel för't Verbetern vun't Behollen</summary>
   <summary xml:lang="nl">Geheugenoefenspel</summary>
