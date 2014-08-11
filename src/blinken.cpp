@@ -22,8 +22,7 @@
 #include <kconfig.h>
 #include <khelpmenu.h>
 #include <kfontutils.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <klocalizedstring.h>
 #include <KAboutData>
 
 #include "button.h"

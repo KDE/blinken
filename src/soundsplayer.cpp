@@ -9,7 +9,6 @@
 
 #include "soundsplayer.h"
 
-#include <klocale.h>
 #include <kurl.h>
 
 #include <phonon/Path>

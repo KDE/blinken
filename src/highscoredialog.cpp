@@ -18,7 +18,7 @@
 
 #include <kconfig.h>
 #include <kfontutils.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <ksharedconfig.h>
 
 #include "counter.h"
