@@ -10,14 +10,14 @@
 #ifndef HIGHSCOREDIALOG_H
 #define HIGHSCOREDIALOG_H
 
+#include <qdialog.h>
+
 #include <qpair.h>
 #include <qlist.h>
 
-#include <qdialog.h>
-
 class QSvgRenderer;
-class myTabWidget;
 
+class myTabWidget;
 
 class highScoreDialog : private QDialog
 {

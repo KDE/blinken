@@ -9,11 +9,9 @@
 
 #include "soundsplayer.h"
 
-#include <kurl.h>
-
-#include <phonon/Path>
-
 #include "settings.h"
+
+#include <QStandardPaths>
 
 soundsPlayer::soundsPlayer()
     : m_audioOutput(Phonon::GameCategory)
