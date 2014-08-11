@@ -18,12 +18,14 @@
 
 #include <kaction.h>
 #include <kconfig.h>
+#include <kglobal.h>
 #include <khelpmenu.h>
 #include <kinputdialog.h>
 #include <kfontutils.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmenu.h>
+#include <kshortcut.h>
 #include <kstandarddirs.h>
 #include <KComponentData>
 
@@ -66,7 +68,7 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
 	
-	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData());
+	m_helpMenu = new KHelpMenu(this, KAboutData::applicationData());
 	m_helpMenu->menu(); // ensures the actions are created
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;

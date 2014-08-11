@@ -9,14 +9,16 @@
 
 #include "highscoredialog.h"
 
+#include <qdialogbuttonbox.h>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qtabbar.h>
+#include <QVBoxLayout>
 
 #include <kconfig.h>
 #include <kfontutils.h>
 #include <klocale.h>
-#include <kglobal.h>
+#include <ksharedconfig.h>
 #include <ktabwidget.h>
 
 #include "counter.h"
@@ -134,14 +136,17 @@ class myTabWidget : public KTabWidget
 
 /* highScoreDialog */
 
-highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : KDialog(parent)
+highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : QDialog(parent)
 {
-	setCaption(i18nc("@title:window the highest scores for each level are shown", "Highscores"));
-	setButtons(Close);
+	setWindowTitle(i18nc("@title:window the highest scores for each level are shown", "Highscores"));
 
+	setLayout(new QVBoxLayout(this));
 	m_tw = new myTabWidget(this);
-	setMainWidget(m_tw);
-	
+	layout()->addWidget(m_tw);
+	QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(close()));
+	layout()->addWidget(buttonBox);
+
 	highScoreManager hsm;
 	
 	m_tw -> addTab(new scoresWidget(0, hsm.scores(0), renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
@@ -202,7 +207,7 @@ void highScoreManager::addScore(int level, int score, const QString &name)
 		m_scores[level].insert(it, qMakePair(score, name));
 		m_scores[level].erase(--m_scores[level].end());
 		
-		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(level + 1)); 
+		KConfigGroup cfg(KSharedConfig::openConfig(), QString("Level%1").arg(level + 1));
 		int j;
 		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
 		{
@@ -229,7 +234,7 @@ void highScoreManager::update()
 	}
 	for (int i = 1; i <= 3; i++)
 	{
-		KConfigGroup cfg(KGlobal::config(), QString("Level%1").arg(i));
+		KConfigGroup cfg(KSharedConfig::openConfig(), QString("Level%1").arg(i));
 		for (int j = 1; j <= 5; j++)
 		{
 			m_scores[i-1].append(qMakePair(cfg.readEntry(QString("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QString("Name%1").arg(j),QString())));
