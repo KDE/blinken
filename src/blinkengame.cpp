@@ -14,7 +14,6 @@
 #include <qtimer.h>
 
 #include <krandom.h>
-#include <KDebug>
 #include "soundsplayer.h"
 
 blinkenGame::blinkenGame() : m_phase(starting)

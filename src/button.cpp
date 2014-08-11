@@ -11,10 +11,9 @@
 
 #include <kconfig.h>
 #include <ksharedconfig.h>
-#include <kshortcut.h>
-#include <kstandarddirs.h>
-#include <kdebug.h>
 #include <kconfiggroup.h>
+
+#include <QKeySequence>
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
@@ -61,7 +60,7 @@ void button::setShortcut(int key)
 
 QString button::shortcut() const
 {
-	return KShortcut(m_key).toString();
+	return QKeySequence(m_key).toString();
 }
 
 int button::key() const

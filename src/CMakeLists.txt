@@ -11,17 +11,17 @@ set(blinken_SRCS
    counter.cpp 
    button.cpp )
 
+include_directories(${PHONON_INCLUDES})
 
 kconfig_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
 add_executable(blinken ${blinken_SRCS})
 
-MESSAGE(${PHONON_LIBRARIES})
 target_link_libraries(blinken
     KF5::I18n
     KF5::XmlGui
+    KF5::GuiAddons
     Qt5::Svg
-    ${KDE4_KDEUI_LIBS}
     ${PHONON_LIBRARIES}
     )
 

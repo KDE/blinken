@@ -11,12 +11,12 @@
 
 #include <kaboutdata.h>
 #include <klocalizedstring.h>
-#include <kstandarddirs.h>
 #include <qapplication.h>
 #include <qcommandlineparser.h>
 
 #include <QFontDatabase>
 #include <QFontInfo>
+#include <QStandardPaths>
 
 int main(int argc, char *argv[])
 {
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!QFontInfo(f).exactMatch())
 	{
-		QFontDatabase::addApplicationFont(KStandardDirs::locate("appdata", "fonts/steve.ttf"));
+		QFontDatabase::addApplicationFont(QStandardPaths::locate(QStandardPaths::DataLocation, "fonts/steve.ttf"));
 	}
 
 	new blinken();

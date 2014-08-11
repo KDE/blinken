@@ -16,8 +16,8 @@
 #include <qdialog.h>
 
 class QSvgRenderer;
-
 class myTabWidget;
+
 
 class highScoreDialog : private QDialog
 {
