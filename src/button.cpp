@@ -14,12 +14,11 @@
 #include <kshortcut.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
-#include <kglobal.h>
 #include <kconfiggroup.h>
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
-	KConfigGroup kc(KGlobal::config(), "General");
+	KConfigGroup kc(KSharedConfig::openConfig(), "General");
 	QString cs = getColorString();
 	
 	switch (c)
@@ -55,7 +54,7 @@ void button::setShortcut(int key)
 	m_key = key;
 	m_selected = false;
 	
-	KConfigGroup kc(KGlobal::config(), "General");
+	KConfigGroup kc(KSharedConfig::openConfig(), "General");
 	kc.writeEntry(getColorString(), key);
 	kc.sync();
 }

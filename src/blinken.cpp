@@ -18,7 +18,6 @@
 
 #include <kaction.h>
 #include <kconfig.h>
-#include <kglobal.h>
 #include <khelpmenu.h>
 #include <kinputdialog.h>
 #include <kfontutils.h>
