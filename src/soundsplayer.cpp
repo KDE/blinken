@@ -18,7 +18,7 @@ soundsPlayer::soundsPlayer()
 {
 	m_audioOutput.setVolume( 0.8f );
 	Phonon::createPath(&m_mediaObject, &m_audioOutput);
-	connect(&m_mediaObject, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_mediaObject, &Phonon::MediaObject::finished, this, &soundsPlayer::playEnded);
 
 	m_allSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/lose.wav");
 	m_greenSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/1.wav");
@@ -26,7 +26,7 @@ soundsPlayer::soundsPlayer()
 	m_blueSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/3.wav");
 	m_yellowSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/4.wav");
 
-	connect(&m_warnTimer, SIGNAL(timeout()), this, SIGNAL(ended()));
+	connect(&m_warnTimer, &QTimer::timeout, this, &soundsPlayer::ended);
 	m_warnTimer.setSingleShot(true);
 }
 

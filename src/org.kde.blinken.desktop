@@ -171,3 +171,4 @@ Comment[zh_CN]=记忆强化游戏
 Comment[zh_TW]=加強記憶力的遊戲
 Terminal=false
 Categories=Qt;KDE;Education;Game;KidsGame;
+X-DBUS-ServiceName=org.kde.blinken

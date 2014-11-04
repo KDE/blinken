@@ -20,7 +20,7 @@ blinkenGame::blinkenGame() : m_phase(starting)
 {
 	m_soundsPlayer = new soundsPlayer;
 	m_waitTimer = new QTimer(this);
-	connect(m_waitTimer, SIGNAL(timeout()), this, SLOT(waiting()));
+	connect(m_waitTimer, &QTimer::timeout, this, &blinkenGame::waiting);
 }
 
 blinkenGame::~blinkenGame()
@@ -135,7 +135,7 @@ void blinkenGame::waiting()
 		}
 		else m_sequence.append(generateColor());
 	
-		connect(m_soundsPlayer, SIGNAL(ended()), this, SLOT(soundEnded()));
+		connect(m_soundsPlayer, &soundsPlayer::ended, this, &blinkenGame::soundEnded);
 		m_nextColor = m_sequence.constBegin();
 		soundEnded();
 	}

@@ -12,8 +12,6 @@
 
 #include "blinkengame.h"
 
-class KAction;
-
 class button
 {
 	public:

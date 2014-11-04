@@ -30,6 +30,6 @@ install(TARGETS blinken EXPORT blinken ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 

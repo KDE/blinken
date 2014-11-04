@@ -144,7 +144,7 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : QDia
 	m_tw = new myTabWidget(this);
 	layout()->addWidget(m_tw);
 	QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-	connect(buttonBox, SIGNAL(rejected()), this, SLOT(close()));
+	connect(buttonBox, &QDialogButtonBox::rejected, this, &highScoreDialog::close);
 	layout()->addWidget(buttonBox);
 
 	highScoreManager hsm;

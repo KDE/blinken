@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.2.0")
 
 # ECM
-find_package (ECM 0.0.9 REQUIRED NO_MODULE)
+find_package (ECM 1.3.0 REQUIRED NO_MODULE)
 
 # where to look first for cmake modules
 set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
