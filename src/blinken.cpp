@@ -58,11 +58,11 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	show();
 	
 	m_unhighlighter = new QTimer(this);
-	connect(m_unhighlighter, SIGNAL(timeout()), this, SLOT(unhighlight()));
+	connect(m_unhighlighter, &QTimer::timeout, this, &blinken::unhighlight);
 	
-	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
-	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
-	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
+	connect(&m_game, &blinkenGame::gameEnded, this, &blinken::checkHS);
+        connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
+	connect(&m_game, &blinkenGame::highlight, this, &blinken::highlight);
 	
 	m_helpMenu = new KHelpMenu(this, KAboutData::applicationData());
 	m_helpMenu->menu(); // ensures the actions are created
