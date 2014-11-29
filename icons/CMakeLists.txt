@@ -6,6 +6,6 @@ ecm_install_icons( ICONS
 	hi48-apps-blinken.png
 	hi64-apps-blinken.png
 	hisc-apps-blinken.svgz
-	DESTINATION apps
+	DESTINATION ${ICON_INSTALL_DIR}
 )
 
