@@ -31,10 +31,11 @@ int main(int argc, char *argv[])
 	KAboutData::setApplicationData(about);
 
 	QCommandLineParser parser;
-	parser.addVersionOption();
 	about.setupCommandLine(&parser);
 	parser.process(app);
 	about.processCommandLine(&parser);
+
+	app.setWindowIcon(QIcon::fromTheme(QLatin1String("blinken")));
 
 	QFont f("Steve", 12, QFont::Normal, true);
 	// Works with Steve may need some tweaking to work with other fonts

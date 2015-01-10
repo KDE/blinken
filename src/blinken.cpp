@@ -61,7 +61,7 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	connect(m_unhighlighter, &QTimer::timeout, this, &blinken::unhighlight);
 	
 	connect(&m_game, &blinkenGame::gameEnded, this, &blinken::checkHS);
-        connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
+	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
 	connect(&m_game, &blinkenGame::highlight, this, &blinken::highlight);
 	
 	m_helpMenu = new KHelpMenu(this, KAboutData::applicationData());
