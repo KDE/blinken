@@ -13,7 +13,6 @@
 #include <phonon/MediaObject>
 #include <phonon/audiooutput.h>
 
-#include <QList>
 #include <QTimer>
 
 #include "blinkengame.h"

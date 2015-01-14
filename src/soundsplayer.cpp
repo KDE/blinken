@@ -9,28 +9,24 @@
 
 #include "soundsplayer.h"
 
-#include <klocale.h>
-#include <kstandarddirs.h>
-#include <kurl.h>
-
-#include <phonon/Path>
-
 #include "settings.h"
+
+#include <QStandardPaths>
 
 soundsPlayer::soundsPlayer()
     : m_audioOutput(Phonon::GameCategory)
 {
 	m_audioOutput.setVolume( 0.8f );
 	Phonon::createPath(&m_mediaObject, &m_audioOutput);
-	connect(&m_mediaObject, SIGNAL(finished()), this, SLOT(playEnded()));
+	connect(&m_mediaObject, &Phonon::MediaObject::finished, this, &soundsPlayer::playEnded);
 
-	m_allSound = KStandardDirs::locate("appdata","sounds/lose.wav");
-	m_greenSound = KStandardDirs::locate("appdata","sounds/1.wav");
-	m_redSound = KStandardDirs::locate("appdata","sounds/2.wav");
-	m_blueSound = KStandardDirs::locate("appdata","sounds/3.wav");
-	m_yellowSound = KStandardDirs::locate("appdata","sounds/4.wav");
+	m_allSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/lose.wav");
+	m_greenSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/1.wav");
+	m_redSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/2.wav");
+	m_blueSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/3.wav");
+	m_yellowSound = QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/4.wav");
 
-	connect(&m_warnTimer, SIGNAL(timeout()), this, SIGNAL(ended()));
+	connect(&m_warnTimer, &QTimer::timeout, this, &soundsPlayer::ended);
 	m_warnTimer.setSingleShot(true);
 }
 
@@ -70,7 +66,7 @@ void soundsPlayer::play(blinkenGame::color c)
 		}
 		if (!soundFile.isEmpty())
 		{
-			m_mediaObject.setCurrentSource(soundFile);
+			m_mediaObject.setCurrentSource(QUrl::fromLocalFile(soundFile));
 			m_mediaObject.play();
 		}
 	}

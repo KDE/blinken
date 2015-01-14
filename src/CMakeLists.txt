@@ -11,21 +11,25 @@ set(blinken_SRCS
    counter.cpp 
    button.cpp )
 
+include_directories(${PHONON_INCLUDES})
 
-kde4_add_kcfg_files(blinken_SRCS settings.kcfgc )
+kconfig_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
-#uncomment this if oxygen icons for blinken are available
-#kde4_add_app_icon(blinken_SRCS "${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/*/apps/blinken.png")
-kde4_add_app_icon(blinken_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-app-blinken.png")
+add_executable(blinken ${blinken_SRCS})
 
-kde4_add_executable(blinken ${blinken_SRCS})
+target_link_libraries(blinken
+    KF5::I18n
+    KF5::XmlGui
+    KF5::GuiAddons
+    Qt5::Svg
+    ${PHONON_LIBRARIES}
+    )
 
-target_link_libraries(blinken  ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBS})
+install(TARGETS blinken EXPORT blinken ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-install(TARGETS blinken  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 

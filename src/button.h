@@ -10,11 +10,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <qobject.h>
-
 #include "blinkengame.h"
-
-class KAction;
 
 class button
 {

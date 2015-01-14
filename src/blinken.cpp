@@ -14,18 +14,16 @@
 #include <qpainter.h>
 #include <qsvgrenderer.h>
 #include <qtimer.h>
+#include <QAction>
 #include <QApplication>
+#include <QInputDialog>
+#include <QKeySequence>
 
-#include <kaction.h>
 #include <kconfig.h>
 #include <khelpmenu.h>
-#include <kinputdialog.h>
 #include <kfontutils.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kmenu.h>
-#include <kstandarddirs.h>
-#include <KComponentData>
+#include <klocalizedstring.h>
+#include <KAboutData>
 
 #include "button.h"
 #include "counter.h"
@@ -44,7 +42,7 @@ static const double nonButtonRibbonY = 125.0;
 
 blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
-	m_renderer = new QSvgRenderer(KStandardDirs::locate("appdata", "images/blinken.svg"));
+	m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, "images/blinken.svg"));
 	
 	m_buttons[0] = new button(blinkenGame::blue);
 	m_buttons[1] = new button(blinkenGame::yellow);
@@ -60,13 +58,13 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	show();
 	
 	m_unhighlighter = new QTimer(this);
-	connect(m_unhighlighter, SIGNAL(timeout()), this, SLOT(unhighlight()));
+	connect(m_unhighlighter, &QTimer::timeout, this, &blinken::unhighlight);
 	
-	connect(&m_game, SIGNAL(gameEnded()), this, SLOT(checkHS()));
+	connect(&m_game, &blinkenGame::gameEnded, this, &blinken::checkHS);
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
-	connect(&m_game, SIGNAL(highlight(blinkenGame::color, bool)), this, SLOT(highlight(blinkenGame::color, bool)));
+	connect(&m_game, &blinkenGame::highlight, this, &blinken::highlight);
 	
-	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData());
+	m_helpMenu = new KHelpMenu(this, KAboutData::applicationData());
 	m_helpMenu->menu(); // ensures the actions are created
 	
 	for (int i = 0; i < 3; i++) m_overLevels[i] = false;
@@ -220,13 +218,13 @@ void blinken::paintEvent(QPaintEvent *)
 		area = p.boundingRect(QRect(), Qt::AlignLeft, sounds);
 		area.translate(212, 209 - (area.height() / 2));
 		p.drawText(area, Qt::AlignCenter, sounds);
-		m_soundRect = m_soundRect.unite(area);
+		m_soundRect = m_soundRect.united(area);
 		if (!m_alwaysUseNonCoolFont)
 		{
 			area = p.boundingRect(QRect(), Qt::AlignLeft, font);
 			area.translate(426 - area.width(), 209 - (area.height() / 2));
 			p.drawText(area, Qt::AlignCenter, font);
-			m_fontRect = m_fontRect.unite(area);
+			m_fontRect = m_fontRect.united(area);
 		}
 		
 		p.setFont(oFont);
@@ -291,7 +289,7 @@ void blinken::keyPressEvent(QKeyEvent *e)
 			}
 			else
 			{
-				KShortcut ks(e -> key());
+				QKeySequence ks(e -> key());
 				if (!ks.toString().isEmpty())
 				{
 					bool different = true;
@@ -384,13 +382,13 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
 		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
-		blinkenSettings::self()->writeConfig();
+		blinkenSettings::self()->save();
 		update();
 	}
 	else if (m_showPreferences && m_soundRect.contains(e -> pos()))
 	{
 		blinkenSettings::setPlaySounds(!blinkenSettings::playSounds());
-		blinkenSettings::self()->writeConfig();
+		blinkenSettings::self()->save();
 		update();
 	}
 	else if (m_overQuit) qApp->quit();
@@ -444,7 +442,7 @@ void blinken::checkHS()
 	if (hsm.scoreGoodEnough(m_game.level(), m_game.score()))
 	{
 		bool ok;
-		QString name = KInputDialog::getText(i18n("Enter Your Name"), i18nc("@label:textbox refers to the user's name", "Name:"), m_lastName, &ok);
+		const QString name = QInputDialog::getText(this, i18n("Enter Your Name"), i18nc("@label:textbox refers to the user's name", "Name:"), QLineEdit::Normal, m_lastName, &ok);
 		if (!name.isNull() && ok)
 		{
 			m_lastName = name;

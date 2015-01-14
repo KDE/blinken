@@ -10,31 +10,40 @@
 #include "blinken.h"
 
 #include <kaboutdata.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kstandarddirs.h>
-#include <kapplication.h>
+#include <klocalizedstring.h>
+#include <qapplication.h>
+#include <qcommandlineparser.h>
 
 #include <QFontDatabase>
 #include <QFontInfo>
+#include <QStandardPaths>
 
 int main(int argc, char *argv[])
 {
-	KAboutData about("blinken", 0, ki18n("Blinken"), "0.3", ki18n("A memory enhancement game"), KAboutData::License_GPL, ki18n("© 2005-2007 Albert Astals Cid\n© 2005-2007 Danny Allen"));
-	about.addAuthor(ki18n("Albert Astals Cid"), ki18n("Coding"), "aacid@kde.org");
-	about.addAuthor(ki18n("Danny Allen"), ki18n("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
-	about.addCredit(ki18n("Steve Jordi"), ki18n("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
-	KCmdLineArgs::init(argc, argv, &about);
-	KApplication app;
-	app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
+	KLocalizedString::setApplicationDomain("blinken");
+
+	QApplication app(argc, argv);
+	KAboutData about("blinken", i18n("Blinken"), "0.3", i18n("A memory enhancement game"), KAboutLicense::GPL, i18n("© 2005-2007 Albert Astals Cid\n© 2005-2007 Danny Allen"));
+	about.addAuthor(i18n("Albert Astals Cid"), i18n("Coding"), "aacid@kde.org");
+	about.addAuthor(i18n("Danny Allen"), i18n("Design, Graphics and Sounds"), "danny@dannyallen.co.uk");
+	about.addCredit(i18n("Steve Jordi"), i18n("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
+
+	KAboutData::setApplicationData(about);
+
+	QCommandLineParser parser;
+	about.setupCommandLine(&parser);
+	parser.process(app);
+	about.processCommandLine(&parser);
+
+	app.setWindowIcon(QIcon::fromTheme(QLatin1String("blinken")));
 
 	QFont f("Steve", 12, QFont::Normal, true);
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!QFontInfo(f).exactMatch())
 	{
-		QFontDatabase::addApplicationFont(KStandardDirs::locate("appdata", "fonts/steve.ttf"));
+		QFontDatabase::addApplicationFont(QStandardPaths::locate(QStandardPaths::DataLocation, "fonts/steve.ttf"));
 	}
 
-	app.setTopWidget(new blinken());
+	new blinken();
 	return app.exec();
 }
