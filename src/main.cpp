@@ -11,6 +11,9 @@
 
 #include <kaboutdata.h>
 #include <klocalizedstring.h>
+#include <KDBusService>
+#include <kdelibs4configmigrator.h>
+
 #include <qapplication.h>
 #include <qcommandlineparser.h>
 
@@ -30,6 +33,11 @@ int main(int argc, char *argv[])
 
 	KAboutData::setApplicationData(about);
 
+	Kdelibs4ConfigMigrator migrate(QStringLiteral("blinken"));
+	migrate.setConfigFiles(QStringList() << QStringLiteral("blinkenrc"));
+	migrate.migrate();
+
+
 	QCommandLineParser parser;
 	about.setupCommandLine(&parser);
 	parser.process(app);
@@ -43,7 +51,7 @@ int main(int argc, char *argv[])
 	{
 		QFontDatabase::addApplicationFont(QStandardPaths::locate(QStandardPaths::DataLocation, "fonts/steve.ttf"));
 	}
-
+	KDBusService service;
 	new blinken();
 	return app.exec();
 }

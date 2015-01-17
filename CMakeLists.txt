@@ -14,7 +14,7 @@ set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 find_package (Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
 find_package (KF5 REQUIRED COMPONENTS
-    I18n XmlGui GuiAddons DocTools
+    I18n XmlGui GuiAddons DocTools DBusAddons
 )
 
 find_package (Phonon4Qt5)
