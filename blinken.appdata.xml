@@ -14,6 +14,7 @@
   <name xml:lang="fi">Blinken</name>
   <name xml:lang="fr">Blinken</name>
   <name xml:lang="it">Blinken</name>
+  <name xml:lang="lt">Blinken</name>
   <name xml:lang="nds">Blinken</name>
   <name xml:lang="nl">Blinken</name>
   <name xml:lang="pl">Blinken</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="fi">Muistipeli</summary>
   <summary xml:lang="fr">Jeu pour améliorer la mémoire</summary>
   <summary xml:lang="it">Gioco per esercitare la memoria</summary>
+  <summary xml:lang="lt">Atminties gerinimo žaidimas</summary>
   <summary xml:lang="nds">Speel för't Verbetern vun't Behollen</summary>
   <summary xml:lang="nl">Geheugenoefenspel</summary>
   <summary xml:lang="pl">Gra na ćwiczenie pamięci</summary>
