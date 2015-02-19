@@ -42,3 +42,5 @@ add_subdirectory( fonts )
 install( FILES README.packagers  DESTINATION  ${DATA_INSTALL_DIR}/blinken/ )
 install( FILES blinken.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/ )
 
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
