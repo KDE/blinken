@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.2.0")
 
 # ECM
-find_package (ECM 1.3.0 REQUIRED NO_MODULE)
+find_package (ECM 1.7.0 REQUIRED NO_MODULE)
 
 # where to look first for cmake modules
 set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -23,6 +23,7 @@ include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
 include(FeatureSummary)
+include(ECMAddAppIcon)
 include(ECMInstallIcons)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
@@ -39,8 +40,8 @@ add_subdirectory( fonts )
 
 ########### install files ###############
 
-install( FILES README.packagers  DESTINATION  ${DATA_INSTALL_DIR}/blinken/ )
-install( FILES blinken.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/ )
+install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
+install( FILES blinken.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/ )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

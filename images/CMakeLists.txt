@@ -1,2 +1,2 @@
-install( FILES blinken.svg DESTINATION  ${DATA_INSTALL_DIR}/blinken/images )
+install( FILES blinken.svg DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/images )
 

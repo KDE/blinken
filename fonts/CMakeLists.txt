@@ -1,2 +1,2 @@
-install( FILES steve.ttf  DESTINATION  ${DATA_INSTALL_DIR}/blinken/fonts )
+install( FILES steve.ttf  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/fonts )
 

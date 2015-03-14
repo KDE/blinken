@@ -26,11 +26,11 @@ target_link_libraries(blinken
     ${PHONON_LIBRARIES}
     )
 
-install(TARGETS blinken EXPORT blinken ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS blinken EXPORT blinken ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.blinken.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES blinken.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+install( PROGRAMS org.kde.blinken.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES blinken.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
 
