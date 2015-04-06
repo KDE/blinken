@@ -4,7 +4,6 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Blinken</name>
-  <name xml:lang="ast">Blinken</name>
   <name xml:lang="bs">Blinken</name>
   <name xml:lang="ca">Blinken</name>
   <name xml:lang="cs">Blinken</name>
@@ -30,7 +29,6 @@
   <name xml:lang="zh-CN">Blinken</name>
   <name xml:lang="zh-TW">記憶_BlinKen</name>
   <summary>Memory Enhancement Game</summary>
-  <summary xml:lang="ast">Xuegu p'ameyorar la memoria</summary>
   <summary xml:lang="bs">Igra za poboljšanje pamćenja</summary>
   <summary xml:lang="ca">Un joc per millorar la memòria</summary>
   <summary xml:lang="cs">Hra k procvičování paměti</summary>
