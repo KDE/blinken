@@ -11,6 +11,7 @@
 
 #include <kaboutdata.h>
 #include <klocalizedstring.h>
+#include <KCrash>
 #include <KDBusService>
 #include <kdelibs4configmigrator.h>
 
@@ -32,6 +33,8 @@ int main(int argc, char *argv[])
 	about.addCredit(i18n("Steve Jordi"), i18n("GPL'ed his 'Steve' font so that we could use it"), "steve@sjordi.com");
 
 	KAboutData::setApplicationData(about);
+
+	KCrash::initialize();
 
 	Kdelibs4ConfigMigrator migrate(QStringLiteral("blinken"));
 	migrate.setConfigFiles(QStringList() << QStringLiteral("blinkenrc"));
