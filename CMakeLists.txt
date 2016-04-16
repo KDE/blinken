@@ -20,7 +20,7 @@ find_package (KF5 REQUIRED COMPONENTS
 find_package (Phonon4Qt5)
 
 include(KDEInstallDirs)
-include(KDECompilerSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(FeatureSummary)
 include(ECMAddAppIcon)
