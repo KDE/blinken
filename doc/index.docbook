@@ -2,7 +2,6 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
  <!ENTITY blinken "<application>Blinken</application>">
  <!ENTITY kappname "&blinken;">
- <!ENTITY package "kdeedu">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -30,8 +29,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-08-23</date>
-<releaseinfo>0.2 (&kde; 4.1.2)</releaseinfo>
+<date>2016-04-26</date>
+<releaseinfo>0.4 (Applications 16.04)</releaseinfo>
 
 <abstract>
 <para>
@@ -326,25 +325,6 @@ Documentation copyright 2005 &Danny.Allen; &Danny.Allen.mail;
 &underGPL;
 
 </chapter>
-
-
-<appendix id="installation">
-<title>Installation</title>
-
-<sect1 id="getting-blinken">
-<title>How to obtain &blinken;</title>
-
-&install.intro.documentation;
-
-</sect1>
-
-<sect1 id="compilation">
-<title>Compilation and installation</title>
-
-&install.compile.documentation;
-
-</sect1>
-</appendix>
 
 &documentation.index;
 </book>
