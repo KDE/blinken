@@ -41,7 +41,7 @@ add_subdirectory( fonts )
 ########### install files ###############
 
 install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
-install( FILES blinken.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/ )
+install( FILES blinken.appdata.xml DESTINATION ${KDE_INSTALL_METAINFO} )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
