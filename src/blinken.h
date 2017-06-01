@@ -29,14 +29,14 @@ Q_OBJECT
 		blinken();
 		~blinken();
 
-		virtual QSize sizeHint() const;
+		QSize sizeHint() const Q_DECL_OVERRIDE;
 		
 	protected:
-		void paintEvent(QPaintEvent *);
-		void mouseMoveEvent(QMouseEvent *e);
-		void mousePressEvent(QMouseEvent *e);
-		void keyPressEvent(QKeyEvent *e);
-		void keyReleaseEvent(QKeyEvent *e);
+		void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+		void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+		void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+		void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+		void keyReleaseEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 		
 	private slots:
 		void checkHS();
