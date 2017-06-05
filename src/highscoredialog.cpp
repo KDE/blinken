@@ -39,7 +39,7 @@ class scoresWidget : public QWidget
 		QSize calcSize();
 
 	protected:
-		void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+		void paintEvent(QPaintEvent *) override;
 	
 	private:
 		const QList< QPair<int, QString> > m_scores;
