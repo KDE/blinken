@@ -17,7 +17,7 @@ find_package (KF5 REQUIRED COMPONENTS
     I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
-find_package (Phonon4Qt5)
+find_package (Phonon4Qt5 REQUIRED)
 
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
