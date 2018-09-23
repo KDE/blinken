@@ -26,10 +26,10 @@ Q_OBJECT
 		
 		void play(blinkenGame::color c);
 		
-	signals:
+	Q_SIGNALS:
 		void ended();
 		
-	private slots:
+	private Q_SLOTS:
 		void playEnded();
 		
 	private:

@@ -38,7 +38,7 @@ Q_OBJECT
 		void keyPressEvent(QKeyEvent *e) override;
 		void keyReleaseEvent(QKeyEvent *e) override;
 		
-	private slots:
+	private Q_SLOTS:
 		void checkHS();
 		void highlight(blinkenGame::color c, bool unhighlight);
 		void unhighlight();

@@ -43,12 +43,12 @@ Q_OBJECT
 		void setPhase(gamePhase p);
 		void start(int level);
 	
-	signals:
+	Q_SIGNALS:
 		void gameEnded();
 		void phaseChanged();
 		void highlight(blinkenGame::color c, bool unhighlight);
 		
-	private slots:
+	private Q_SLOTS:
 		void nextSound();
 		void soundEnded();
 		void unhighlight();

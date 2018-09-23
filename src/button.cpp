@@ -83,19 +83,19 @@ QString button::getColorString() const
 	switch (m_color)
 	{
 		case blinkenGame::blue:
-			return "blue";
+            return QStringLiteral("blue");
 		break;
 		
 		case blinkenGame::yellow:
-			return "yellow";
+            return QStringLiteral("yellow");
 		break;
 		
 		case blinkenGame::red:
-			return "red";
+            return QStringLiteral("red");
 		break;
 		
 		case blinkenGame::green:
-			return "green";
+            return QStringLiteral("green");
 		break;
 		
 		default:

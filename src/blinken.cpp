@@ -42,7 +42,7 @@ static const double nonButtonRibbonY = 125.0;
 
 blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
-	m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, "images/blinken.svg"));
+    m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("images/blinken.svg")));
 	
 	m_buttons[0] = new button(blinkenGame::blue);
 	m_buttons[1] = new button(blinkenGame::yellow);
@@ -71,7 +71,7 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	
 	QString aux = i18nc("If the Steve font that is used by Blinken by default to show status messages does not support any of the characters of your language, please translate that message to 1 and KDE standard font will be used to show the texts, if not translate it to 0", "0");
 	
-	m_alwaysUseNonCoolFont = aux == "1";
+    m_alwaysUseNonCoolFont = aux == QStringLiteral("1");
 	setAutoSaveSettings();
 }
 
@@ -109,7 +109,7 @@ void blinken::paintEvent(QPaintEvent *)
 	
 	// Base
 	// This -1 +1 suck but without them i got blank lines on borders
-	p.drawPixmap(-1, 0, getPixmap("blinkenBase", size()+QSize(1,1)));
+    p.drawPixmap(-1, 0, getPixmap(QStringLiteral("blinkenBase"), size()+QSize(1,1)));
 	
 	double xScaleButtons = 374.625 / 814.062;
 	double yScaleButtons = 250.344 / 696.5;
@@ -118,41 +118,41 @@ void blinken::paintEvent(QPaintEvent *)
 	QSize sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
 	if (m_highlighted & blinkenGame::red)
 	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap("red_highlight", sz));
+        p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap(QStringLiteral("red_highlight"), sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap("red_normal", sz));
+        p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap(QStringLiteral("red_normal"), sz));
 	}
 	
 	// Green button
 	if (m_highlighted & blinkenGame::green)
 	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap("green_highlight", sz));
+        p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap(QStringLiteral("green_highlight"), sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap("green_normal", sz));
+        p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap(QStringLiteral("green_normal"), sz));
 	}
 	
 	// Yellow button
 	if (m_highlighted & blinkenGame::yellow)
 	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap("yellow_highlight", sz));
+        p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap(QStringLiteral("yellow_highlight"), sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap("yellow_normal", sz));
+        p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap(QStringLiteral("yellow_normal"), sz));
 	}
 	
 	// Blue button
 	if (m_highlighted & blinkenGame::blue)
 	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap("blue_highlight", sz));
+        p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap(QStringLiteral("blue_highlight"), sz));
 	}
 	else
 	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap("blue_normal", sz));
+        p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap(QStringLiteral("blue_normal"), sz));
 	}
 	
 	drawMenuQuit(p);
@@ -613,11 +613,11 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
 	if (m_overHighscore)
 	{
-		m_renderer->render(&p, "highscore_hover");
+        m_renderer->render(&p, QStringLiteral("highscore_hover"));
 	}
 	else
 	{
-		m_renderer->render(&p, "highscore_normal");
+        m_renderer->render(&p, QStringLiteral("highscore_normal"));
 	}
 	m_highscoreRect = QRect(qRound((double)width() / 50.875),
 	                        qRound((double)height() / 30.0),
@@ -630,11 +630,11 @@ void blinken::drawMenuQuit(QPainter &p)
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
 	if (m_overQuit)
 	{
-		m_renderer->render(&p, "quit_hover");
+        m_renderer->render(&p, QStringLiteral("quit_hover"));
 	}
 	else
 	{
-		m_renderer->render(&p, "quit_normal");
+        m_renderer->render(&p, QStringLiteral("quit_normal"));
 	}
 	m_quitRect = QRect(qRound((double)width() / 1.15),
 	                   qRound((double)height() / 30.0),
@@ -649,7 +649,7 @@ void blinken::drawMenuQuit(QPainter &p)
 		double yScaleHoverHelpButton = 225.0 / 696.5;
 		p.translate( (double)width() / 1.42, (double)height() / 1.56 );
 		p.scale(xScaleHoverHelpButton, yScaleHoverHelpButton);
-		m_renderer->render(&p, "help_hover");
+        m_renderer->render(&p, QStringLiteral("help_hover"));
 		
 		p.resetMatrix();
 		double xScaleArrowButton1 = 40.0 / 814.062;
@@ -661,32 +661,32 @@ void blinken::drawMenuQuit(QPainter &p)
 		{
 			p.translate((double)width() / 1.3877, (double)height() / 1.23);
 			p.scale(xScaleArrowButton1, yScaleArrowButton1);
-			m_renderer->render(&p, "arrow_down");
+            m_renderer->render(&p, QStringLiteral("arrow_down"));
 		}
 		else if (m_overAboutBlinken)
 		{
 			p.translate((double)width() / 1.2445, (double)height() / 1.23);
 			p.scale(xScaleArrowButton1, yScaleArrowButton1);
-			m_renderer->render(&p, "arrow_down");
+            m_renderer->render(&p, QStringLiteral("arrow_down"));
 		}
 		else if (m_overSettings)
 		{
 			p.translate((double)width() / 1.174, (double)height() / 1.345);
 			p.scale(xScaleArrowButton2, yScaleArrowButton2);
-			m_renderer->render(&p, "arrow_right");
+            m_renderer->render(&p, QStringLiteral("arrow_right"));
 		}
 		else if (m_overManual)
 		{
 			p.translate((double)width() / 1.174, (double)height() / 1.5);
 			p.scale(xScaleArrowButton2, yScaleArrowButton2);
-			m_renderer->render(&p, "arrow_right");
+            m_renderer->render(&p, QStringLiteral("arrow_right"));
 		}
 	}
 	else
 	{
 		p.translate( (double)width() / 1.15, (double)height() / 1.2 );
 		p.scale(xScaleSquareButtons, yScaleSquareButtons);
-		m_renderer->render(&p, "help_normal");
+        m_renderer->render(&p, QStringLiteral("help_normal"));
 	}
 	m_menuRect = QRect(qRound((double)width() / 1.15),
 	                   qRound((double)height() / 1.2),
@@ -749,14 +749,14 @@ void blinken::drawStatusText(QPainter &p)
 	QString text;
 	if (m_overQuit) text = i18n("Quit Blinken");
 	else if (m_overHighscore || m_overCounter) text = i18n("View Highscore Table");
-	else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove('&');
-	else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove('&'); 
+    else if (m_overAboutBlinken || m_overCentralLetters) text = m_helpMenu->action( KHelpMenu::menuAboutApp )->text().remove(QLatin1Char('&'));
+    else if (m_overAboutKDE) text = m_helpMenu->action( KHelpMenu::menuAboutKDE )->text().remove(QLatin1Char('&'));
 	else if (m_overSettings)
 	{
 		if (!m_showPreferences) text = i18n("Show Settings");
 		else text = i18n("Hide Settings");
 	}
-	else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove('&');
+    else if (m_overManual) text = m_helpMenu->action( KHelpMenu::menuHelpContents )->text().remove(QLatin1Char('&'));
 	else if (m_overLevels[0]) text = i18n("2nd Level");
 	else if (m_overLevels[1]) text = i18n("1st Level");
 	else if (m_overLevels[2]) text = i18n("Random Level");
@@ -846,7 +846,7 @@ void blinken::drawStatusText(QPainter &p)
 	}
 	
 	QFont f;
-	if (blinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont("Steve");
+    if (blinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
 	f.setPointSize(KFontUtils::adaptFontSize(p, text, 380, 30, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
