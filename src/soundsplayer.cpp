@@ -20,11 +20,11 @@ soundsPlayer::soundsPlayer()
 	Phonon::createPath(&m_mediaObject, &m_audioOutput);
 	connect(&m_mediaObject, &Phonon::MediaObject::finished, this, &soundsPlayer::playEnded);
 
-    m_allSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/lose.wav"));
-    m_greenSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/1.wav"));
-    m_redSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/2.wav"));
-    m_blueSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/3.wav"));
-    m_yellowSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/4.wav"));
+	m_allSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/lose.wav"));
+	m_greenSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/1.wav"));
+	m_redSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/2.wav"));
+	m_blueSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/3.wav"));
+	m_yellowSound = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("sounds/4.wav"));
 
 	connect(&m_warnTimer, &QTimer::timeout, this, &soundsPlayer::ended);
 	m_warnTimer.setSingleShot(true);

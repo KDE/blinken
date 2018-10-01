@@ -67,9 +67,9 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	p.setPen(Qt::black);
 	
-    if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
+	if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
-    f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
+	f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	
 	p.translate(margin, margin);
@@ -96,9 +96,9 @@ QSize scoresWidget::calcSize()
 	QPainter p(&dummyPixmap);
 	QFont f;
 	
-    if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
+	if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
-    f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
+	f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
 	for (int i = 0; i < 3; i++)
 	{
@@ -207,12 +207,12 @@ void highScoreManager::addScore(int level, int score, const QString &name)
 		m_scores[level].insert(it, qMakePair(score, name));
 		m_scores[level].erase(--m_scores[level].end());
 		
-        KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(level + 1));
+		KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(level + 1));
 		int j;
 		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
 		{
-            cfg.writeEntry(QStringLiteral("Score%1").arg(j), (*it).first);
-            cfg.writeEntry(QStringLiteral("Name%1").arg(j), (*it).second);
+			cfg.writeEntry(QStringLiteral("Score%1").arg(j), (*it).first);
+			cfg.writeEntry(QStringLiteral("Name%1").arg(j), (*it).second);
 		}
 		cfg.sync();
 
@@ -234,10 +234,10 @@ void highScoreManager::update()
 	}
 	for (int i = 1; i <= 3; i++)
 	{
-        KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(i));
+		KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(i));
 		for (int j = 1; j <= 5; j++)
 		{
-            m_scores[i-1].append(qMakePair(cfg.readEntry(QStringLiteral("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QStringLiteral("Name%1").arg(j),QString())));
+			m_scores[i-1].append(qMakePair(cfg.readEntry(QStringLiteral("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QStringLiteral("Name%1").arg(j),QString())));
 		}
 	}
 }

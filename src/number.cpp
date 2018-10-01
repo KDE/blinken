@@ -37,44 +37,44 @@ void number::paint(QPainter &p, int digits, QSvgRenderer *renderer) const
 void number::paintDigit(QPainter &p, int number, QSvgRenderer *renderer) const
 {
 	// make gcc  happy
-    QString n = QStringLiteral("zero");
+	QString n = QStringLiteral("zero");
 	
 	switch (number)
 	{
 		case 1:
-            n = QStringLiteral("one");
+			n = QStringLiteral("one");
 		break;
 		
 		case 2:
-            n = QStringLiteral("two");
+			n = QStringLiteral("two");
 		break;
 		
 		case 3:
-            n = QStringLiteral("three");
+			n = QStringLiteral("three");
 		break;
 		
 		case 4:
-            n = QStringLiteral("four");
+			n = QStringLiteral("four");
 		break;
 		
 		case 5:
-            n = QStringLiteral("five");
+			n = QStringLiteral("five");
 		break;
 		
 		case 6:
-            n = QStringLiteral("six");
+			n = QStringLiteral("six");
 		break;
 		
 		case 7:
-            n = QStringLiteral("seven");
+			n = QStringLiteral("seven");
 		break;
 		
 		case 8:
-            n = QStringLiteral("eight");
+			n = QStringLiteral("eight");
 		break;
 		
 		case 9:
-            n = QStringLiteral("nine");
+			n = QStringLiteral("nine");
 		break;
 	}
 	
