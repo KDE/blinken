@@ -149,9 +149,9 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : QDia
 
 	highScoreManager hsm;
 	
-	m_tw -> addTab(new scoresWidget(0, hsm.scores(0), renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
-	m_tw -> addTab(new scoresWidget(0, hsm.scores(1), renderer), i18nc("@title:group High scores Level 2 tab title", "Level 2"));
-	m_tw -> addTab(new scoresWidget(0, hsm.scores(2), renderer), i18nc("@title:group High scores Level ? tab tible", "Level ?"));
+	m_tw -> addTab(new scoresWidget(nullptr, hsm.scores(0), renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
+	m_tw -> addTab(new scoresWidget(nullptr, hsm.scores(1), renderer), i18nc("@title:group High scores Level 2 tab title", "Level 2"));
+	m_tw -> addTab(new scoresWidget(nullptr, hsm.scores(2), renderer), i18nc("@title:group High scores Level ? tab tible", "Level ?"));
 }
 
 void highScoreDialog::showLevel(int level)
