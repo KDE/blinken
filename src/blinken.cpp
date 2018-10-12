@@ -113,48 +113,20 @@ void blinken::paintEvent(QPaintEvent *)
 	
 	double xScaleButtons = 374.625 / 814.062;
 	double yScaleButtons = 250.344 / 696.5;
-	
-	// Red button
-	QSize sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
-	if (m_highlighted & blinkenGame::red)
-	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap(QStringLiteral("red_highlight"), sz));
-	}
-	else
-	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 28.0), getPixmap(QStringLiteral("red_normal"), sz));
-	}
-	
-	// Green button
-	if (m_highlighted & blinkenGame::green)
-	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap(QStringLiteral("green_highlight"), sz));
-	}
-	else
-	{
-		p.drawPixmap(QPointF( (double)width() / 1.975, (double)height() / 2.45), getPixmap(QStringLiteral("green_normal"), sz));
-	}
-	
-	// Yellow button
-	if (m_highlighted & blinkenGame::yellow)
-	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap(QStringLiteral("yellow_highlight"), sz));
-	}
-	else
-	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 28.0), getPixmap(QStringLiteral("yellow_normal"), sz));
-	}
-	
-	// Blue button
-	if (m_highlighted & blinkenGame::blue)
-	{
- 		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap(QStringLiteral("blue_highlight"), sz));
-	}
-	else
-	{
-		p.drawPixmap(QPointF( (double)width() / 30.0, (double)height() / 2.45), getPixmap(QStringLiteral("blue_normal"), sz));
-	}
-	
+
+	const auto sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
+
+	auto getPixmapFor = [this, sz](blinkenGame::color color, const QString& pixmapName) -> QPixmap {
+		return getPixmap( m_highlighted & color ?
+			QStringLiteral("%1_highlight").arg(pixmapName) :
+			QStringLiteral("%1_normal").arg(pixmapName), sz);
+	};
+
+	p.drawPixmap(QPointF(width() / 1.975, height() / 28.0), getPixmapFor(blinkenGame::red, QStringLiteral("red")));
+	p.drawPixmap(QPointF(width() / 1.975, height() / 2.45), getPixmapFor(blinkenGame::green, QStringLiteral("green")));
+	p.drawPixmap(QPointF(width() / 30.0, height() / 28.0), getPixmapFor(blinkenGame::yellow, QStringLiteral("yellow")));
+	p.drawPixmap(QPointF(width() / 30.0, height() / 2.45), getPixmapFor(blinkenGame::blue, QStringLiteral("blue")));
+
 	drawMenuQuit(p);
 	p.resetMatrix();
 	
