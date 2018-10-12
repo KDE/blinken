@@ -310,10 +310,10 @@ void blinken::keyPressEvent(QKeyEvent *e)
 			}
 		}
 		
-		if (e -> key() == m_buttons[0] -> key()) pressedBlue();
-		else if (e -> key() == m_buttons[1] -> key()) pressedYellow();
-		else if (e -> key() == m_buttons[2] -> key()) pressedRed();
-		else if (e -> key() == m_buttons[3] -> key()) pressedGreen();
+		if (e -> key() == m_buttons[0] -> key()) pressedColor(blinkenGame::color::blue);
+		else if (e -> key() == m_buttons[1] -> key()) pressedColor(blinkenGame::color::yellow);
+		else if (e -> key() == m_buttons[2] -> key()) pressedColor(blinkenGame::color::red);
+		else if (e -> key() == m_buttons[3] -> key()) pressedColor(blinkenGame::color::green);
 	}
 }
 
@@ -389,22 +389,22 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	if (insideGreen(p))
 	{
 		if (m_showPreferences) selectButton(3);
-		else pressedGreen();
+		else pressedColor(blinkenGame::color::green);
 	}
 	else if (insideBlue(p))
 	{
 		if (m_showPreferences) selectButton(0);
-		else pressedBlue();
+		else pressedColor(blinkenGame::color::blue);
 	}
 	else if (insideYellow(p))
 	{
 		if (m_showPreferences) selectButton(1);
-		else pressedYellow();
+		else pressedColor(blinkenGame::color::yellow);
 	}
 	else if (insideRed(p))
 	{
 		if (m_showPreferences) selectButton(2);
-		else pressedRed();
+		else pressedColor(blinkenGame::color::red);
 	}
 }
 
@@ -442,39 +442,12 @@ void blinken::unhighlight()
 	highlight(blinkenGame::none, false);
 }
 
-void blinken::pressedYellow()
+void blinken::pressedColor(blinkenGame::color color)
 {
 	if (m_game.canType())
 	{
-		highlight(blinkenGame::yellow, true);
-		m_game.clicked(blinkenGame::yellow);
-	}
-}
-
-void blinken::pressedRed()
-{
-	if (m_game.canType())
-	{
-		highlight(blinkenGame::red, true);
-		m_game.clicked(blinkenGame::red);
-	}
-}
-
-void blinken::pressedGreen()
-{
-	if (m_game.canType())
-	{
-		highlight(blinkenGame::green, true);
-		m_game.clicked(blinkenGame::green);
-	}
-}
-
-void blinken::pressedBlue()
-{
-	if (m_game.canType())
-	{
-		highlight(blinkenGame::blue, true);
-		m_game.clicked(blinkenGame::blue);
+		highlight(color, true);
+		m_game.clicked(color);
 	}
 }
 

@@ -43,11 +43,8 @@ Q_OBJECT
 		void highlight(blinkenGame::color c, bool unhighlight);
 		void unhighlight();
 		
-		void pressedYellow();
-		void pressedRed();
-		void pressedGreen();
-		void pressedBlue();
-		
+		void pressedColor(blinkenGame::color c);
+
 	private:
 		void startGamePressed();
 		void startGameAtLevel(int level);
