@@ -4,17 +4,17 @@ cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 
 # minimal Qt requirement
 set(QT_MIN_VERSION "5.9.0")
-set(KF5_VERSION "5.46.0")
+set(KF5_MIN_VERSION "5.46.0")
 
 # ECM
-find_package (ECM ${KF5_VERSION} REQUIRED NO_MODULE)
+find_package (ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 
 # where to look first for cmake modules
 set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 find_package (Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
-find_package (KF5 ${KF5_VERSION} REQUIRED COMPONENTS
+find_package (KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
