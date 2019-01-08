@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	parser.process(app);
 	about.processCommandLine(&parser);
 
-	app.setWindowIcon(QIcon::fromTheme(QLatin1String("blinken")));
+	app.setWindowIcon(QIcon::fromTheme(QStringLiteral("blinken")));
 
  	QFont f(QStringLiteral("Steve"), 12, QFont::Normal, true);
 	// Works with Steve may need some tweaking to work with other fonts

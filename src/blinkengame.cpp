@@ -114,8 +114,8 @@ void blinkenGame::nextSound()
 
 void blinkenGame::soundEnded()
 {
-	QTimer::singleShot(100, this, SLOT(nextSound()));
-	QTimer::singleShot(50, this, SLOT(unhighlight()));
+	QTimer::singleShot(100, this, &blinkenGame::nextSound);
+	QTimer::singleShot(50, this, &blinkenGame::unhighlight);
 }
 
 void blinkenGame::unhighlight()

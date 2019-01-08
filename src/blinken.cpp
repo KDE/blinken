@@ -135,10 +135,10 @@ void blinken::paintEvent(QPaintEvent *)
 	if (m_showPreferences)
 	{
 		// draw the current keys
-		drawText(p, m_buttons[0]->shortcut(), QPoint(115, 285), true, 20, 5, 0, m_buttons[0]->selected(), false);
-		drawText(p, m_buttons[1]->shortcut(), QPointF(115, 155), true, 20, 5, 0, m_buttons[1]->selected(), false);
-		drawText(p, m_buttons[2]->shortcut(), QPointF(520, 155), true, 20, 5, 0, m_buttons[2]->selected(), false);
-		drawText(p, m_buttons[3]->shortcut(), QPointF(520, 285), true, 20, 5, 0, m_buttons[3]->selected(), false);
+		drawText(p, m_buttons[0]->shortcut(), QPoint(115, 285), true, 20, 5, nullptr, m_buttons[0]->selected(), false);
+		drawText(p, m_buttons[1]->shortcut(), QPointF(115, 155), true, 20, 5, nullptr, m_buttons[1]->selected(), false);
+		drawText(p, m_buttons[2]->shortcut(), QPointF(520, 155), true, 20, 5, nullptr, m_buttons[2]->selected(), false);
+		drawText(p, m_buttons[3]->shortcut(), QPointF(520, 285), true, 20, 5, nullptr, m_buttons[3]->selected(), false);
 
 		const QPen &oPen = p.pen();
 		const QBrush &oBrush = p.brush();
@@ -807,7 +807,7 @@ void blinken::drawLevel(QPainter &p)
 	
 	double posX = (double)width() / 2.0;
 	double posY = (double)height() / 1.868;
-	drawText(p, i18nc("@label:chooser which level is currently being played", "Level"), QPointF(posX, posY), false, 0, 0, 0, false, true);
+	drawText(p, i18nc("@label:chooser which level is currently being played", "Level"), QPointF(posX, posY), false, 0, 0, nullptr, false, true);
 	
 	QPointF cp;
 	for (int i = 0; i < 3; i++)
