@@ -128,7 +128,7 @@ void blinken::paintEvent(QPaintEvent *)
 	p.drawPixmap(QPointF(width() / 30.0, height() / 2.45), getPixmapFor(blinkenGame::blue, QStringLiteral("blue")));
 
 	drawMenuQuit(p);
-	p.resetMatrix();
+	p.resetTransform();
 	
 	// 644 525 are fixed size of preSVG blinken
 	p.scale((double)width()/644.0, (double)height()/525.0);
@@ -212,7 +212,7 @@ void blinken::paintEvent(QPaintEvent *)
 	
 	drawStatusText(p);
 	
-	p.resetMatrix();
+	p.resetTransform();
 	p.setFont(QFont()); //Go back to normal font
 	// Start / Restart button
 	// We don't use the scale matrix because this way we get a better font
@@ -553,7 +553,7 @@ void blinken::drawMenuQuit(QPainter &p)
 	double yScaleSquareButtons = 90.0 / 696.5;
 	
 	// Highscore button
-	p.resetMatrix();
+	p.resetTransform();
 	p.translate( (double)width() / 50.875, (double)height() / 30);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
 	if (m_overHighscore)
@@ -570,7 +570,7 @@ void blinken::drawMenuQuit(QPainter &p)
 	                        qRound((double)height() * yScaleSquareButtons));
 	
 	// Quit button
-	p.resetMatrix();
+	p.resetTransform();
 	p.translate( (double)width() / 1.15, (double)height() / 30.0);
 	p.scale(xScaleSquareButtons, yScaleSquareButtons);
 	if (m_overQuit)
@@ -587,7 +587,7 @@ void blinken::drawMenuQuit(QPainter &p)
 	                   qRound((double)height() * yScaleSquareButtons));
 	
 	// Help button
-	p.resetMatrix();
+	p.resetTransform();
 	if (m_overMenu)
 	{
 		double xScaleHoverHelpButton = 225.0 / 814.062;
@@ -596,7 +596,7 @@ void blinken::drawMenuQuit(QPainter &p)
 		p.scale(xScaleHoverHelpButton, yScaleHoverHelpButton);
 		m_renderer->render(&p, QStringLiteral("help_hover"));
 		
-		p.resetMatrix();
+		p.resetTransform();
 		double xScaleArrowButton1 = 40.0 / 814.062;
 		double yScaleArrowButton1 = 27.5 / 696.5;
 		
