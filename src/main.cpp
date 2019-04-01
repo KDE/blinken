@@ -15,8 +15,8 @@
 #include <KDBusService>
 #include <kdelibs4configmigrator.h>
 
-#include <qapplication.h>
-#include <qcommandlineparser.h>
+#include <QApplication>
+#include <QCommandLineParser>
 
 #include <QFontDatabase>
 #include <QFontInfo>

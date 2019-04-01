@@ -10,7 +10,7 @@
 #ifndef BLINKEN_H
 #define BLINKEN_H
 
-#include <qmap.h>
+#include <QMap>
 #include <kmainwindow.h>
 
 #include "blinkengame.h"

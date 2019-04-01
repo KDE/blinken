@@ -10,10 +10,10 @@
 #ifndef HIGHSCOREDIALOG_H
 #define HIGHSCOREDIALOG_H
 
-#include <qdialog.h>
+#include <QDialog>
 
-#include <qpair.h>
-#include <qlist.h>
+#include <QPair>
+#include <QList>
 
 class QSvgRenderer;
 

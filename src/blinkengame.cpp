@@ -11,7 +11,7 @@
 
 #include <stdlib.h> // for RAND_MAX
 
-#include <qtimer.h>
+#include <QTimer>
 
 #include <krandom.h>
 #include "soundsplayer.h"

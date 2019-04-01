@@ -9,8 +9,8 @@
 
 #include "number.h"
 
-#include <qpainter.h>
-#include <qsvgrenderer.h>
+#include <QPainter>
+#include <QSvgRenderer>
 
 number::number(int n)
 {

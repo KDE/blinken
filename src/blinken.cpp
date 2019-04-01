@@ -9,15 +9,16 @@
 
 #include "blinken.h"
 
-#include <qcursor.h>
-#include <qevent.h>
-#include <qpainter.h>
-#include <qsvgrenderer.h>
-#include <qtimer.h>
+#include <QCursor>
+#include <QEvent>
+#include <QPainter>
+#include <QSvgRenderer>
+#include <QTimer>
 #include <QAction>
 #include <QApplication>
 #include <QInputDialog>
 #include <QKeySequence>
+#include <QMouseEvent>
 
 #include <kconfig.h>
 #include <khelpmenu.h>

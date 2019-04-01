@@ -9,8 +9,8 @@
 
 #include "counter.h"
 
-#include <qcolor.h>
-#include <qpainter.h>
+#include <QColor>
+#include <QPainter>
 
 #include "number.h"
 

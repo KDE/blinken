@@ -9,10 +9,10 @@
 
 #include "highscoredialog.h"
 
-#include <qdialogbuttonbox.h>
-#include <qpainter.h>
-#include <qpixmap.h>
-#include <qtabbar.h>
+#include <QDialogButtonBox>
+#include <QPainter>
+#include <QPixmap>
+#include <QTabBar>
 #include <QTabWidget>
 #include <QVBoxLayout>
 

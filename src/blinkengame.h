@@ -10,8 +10,8 @@
 #ifndef BLINKENGAME_H
 #define BLINKENGAME_H
 
-#include <qobject.h>
-#include <qlist.h>
+#include <QObject>
+#include <QList>
 
 class QTimer;
 
