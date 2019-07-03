@@ -23,12 +23,12 @@ void counter::paint(QPainter &p, bool drawScore, int score, bool drawTimer, cons
 	if (drawTimer)
 	{
 		p.fillRect(-44, -13, 98, 48, p.brush());
-		p.drawRoundRect(-45, -15, 100, 50, 15, 15);
+		p.drawRoundedRect(-45, -15, 100, 50, 15, 15, Qt::RelativeSize);
 	}
 	else
 	{
 		p.fillRect(-44, -13, 70, 48, p.brush());
-		p.drawRoundRect(-45, -15, 73, 50, 15, 15);
+		p.drawRoundedRect(-45, -15, 73, 50, 15, 15, Qt::RelativeSize);
 	}
 	
 	if (drawTimer)

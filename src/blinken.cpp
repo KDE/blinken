@@ -843,7 +843,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPointF &center, 
 	{
 		p.fillRect(r, m_fillColor);
 		p.setPen(QPen(Qt::black, 3));
-		p.drawRoundRect(r, 15, 15);
+		p.drawRoundedRect(r, 15, 15, Qt::RelativeSize);
 	}
 	
 	if (highlight)
