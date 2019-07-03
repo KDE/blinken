@@ -205,8 +205,8 @@ void blinken::paintEvent(QPaintEvent *)
 		p.setBrush(oBrush);
 		
 		// store the "real" rect
-		m_fontRect = p.worldMatrix().mapRect(m_fontRect);
-		m_soundRect = p.worldMatrix().mapRect(m_soundRect);
+		m_fontRect = p.worldTransform().mapRect(m_fontRect);
+		m_soundRect = p.worldTransform().mapRect(m_soundRect);
 	}
 	
 	drawScoreAndCounter(p);
@@ -856,7 +856,7 @@ void blinken::drawText(QPainter &p, const QString &text, const QPointF &center, 
 	}
 	p.drawText(r, Qt::AlignCenter, text);
 	
-	if (rect) *rect = p.worldMatrix().mapRect(r);
+	if (rect) *rect = p.worldTransform().mapRect(r);
 	
 	p.setFont(oldFont);
 }
