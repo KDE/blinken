@@ -17,6 +17,8 @@ include_directories(${PHONON_INCLUDES})
 
 kconfig_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
+file(GLOB ICON_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/*-apps-blinken.png")
+ecm_add_app_icon(blinken_SRCS ICONS ${ICON_SRCS})
 add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken
