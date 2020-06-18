@@ -35,6 +35,7 @@
   <name xml:lang="sv">Blinken</name>
   <name xml:lang="tr">Blinken</name>
   <name xml:lang="uk">Blinken</name>
+  <name xml:lang="x-test">xxBlinkenxx</name>
   <name xml:lang="zh-CN">Blinken</name>
   <name xml:lang="zh-TW">記憶_BlinKen</name>
   <summary>Memory Enhancement Game</summary>
@@ -69,6 +70,7 @@
   <summary xml:lang="sv">Minnesförbättringsspel</summary>
   <summary xml:lang="tr">Bellek Geliştirme Oyunu</summary>
   <summary xml:lang="uk">Гра для розвитку пам'яті</summary>
+  <summary xml:lang="x-test">xxMemory Enhancement Gamexx</summary>
   <summary xml:lang="zh-CN">记忆强化游戏</summary>
   <summary xml:lang="zh-TW">加強記憶力的遊戲</summary>
   <description>
@@ -100,6 +102,7 @@
     <p xml:lang="sv">Blinken är baserat på ett elektroniskt spel, utgivet 1978, som utmanar spelare att komma ihåg sekvenser av ökande längd. På apparatens framsida finns fyra olika färgade knappar, var och en med ett eget karakteristiskt ljud. De fyra knapparna lyser upp slumpmässigt, och skapar sekvensen som spelaren därefter måste komma ihåg. Om spelaren lyckas komma ihåg sekvensen av ljus i rätt ordning, går han vidare till nästa nivå, där en identisk sekvens med ytterligare ett steg presenteras. Om spelaren har fel, förloras spelet, och spelaren måste börja om från början igen. Målet är att få högsta poäng: Varje steg i sekvensen är värt ett poäng, och att skriva in en sekvens med åtta ljus är alltså värt 8 poäng i tabellen med högsta poäng.</p>
     <p xml:lang="tr">Blinken, 1978'de geliştirilen oyuncuların artan uzunluktaki dizileri hatırlamaya zorlayan bir elektronik oyununa dayanmaktadır. Aygıtın yüzünde her birinin kendi ayırt edici sesi olan 4 farklı renkte düğme vardır. Bu düğmeler kullanıcının daha sonra hatırlaması gereken bir sırayla rasgele yanarlar. Eğer oyuncu bu sıralamayı hatırlamakta başarılı olursa aynı sıralamaya bir ilave yapılan bir sonraki aşamaya geçer. Oyuncu başarısız olduğunda oyun biter ve baştan başlamak gerekir. Amaç en yüksek puanı toplamaktır - dizideki her adım bir puan değerindedir, yani 8 ışıklık bir dizi puan tablosunda 8 puan demektir.</p>
     <p xml:lang="uk">Blinken засновано на електронній грі, випущеній у 1978, у якій гравці мали запам’ятовувати послідовності зі зростаючою довжиною. На передній панелі приладу знаходяться чотири кнопки різних кольорів, кожній з яких відповідає певний звук. Ці кнопки підсвічувалися у певній випадковій послідовності, утворюючи послідовність, яку гравець мав потім відтворити. Якщо гравець запам’ятовував послідовність у правильному порядку, він переходив на наступний рівень гри, де до послідовності додавався ще один додатковий крок. Якщо гравець робив помилку, гра вважалася програною, і гравець мав продовжувати її з початку. Метою гри є отримання максимальної кількості очок — кожен крок послідовності оцінювався у одне очко, отже, правильне введення послідовності з 8 елементів дає 8 залікових очок.</p>
+    <p xml:lang="x-test">xxBlinken is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length. On the face of the device, there are 4 different color buttons, each one with their own distinctive sound. These buttons light up randomly, creating the sequence that the player must then recall. If the player is successful in remembering the sequence of lights in the correct order, they advance to the next stage, where an identical sequence with one extra step is presented. If they are incorrect, the game is lost, and the player must start again from the beginning. The goal is to get a high score - each step in the sequence is worth one point, so correct entry of a sequence of 8 lights is worth 8 points on the high score table.xx</p>
     <p xml:lang="zh-TW">Blinken 是基於一套 1978 年發行的遊戲而來。該遊戲可以挑戰玩家的記憶力，並不斷增加長度與難度。一開始，有四個不同顏色的按鈕，每個鈕有自己不同的聲音。這些按鈕會隨機亮起，產生一組讓玩家記憶的序列。如果玩家成功記住這樣的序列順序，則可以進到下一關。若是失敗，則要從頭開始。得分越高越好。</p>
   </description>
   <url type="homepage">https://edu.kde.org/blinken/</url>
@@ -132,6 +135,7 @@
       <caption xml:lang="sl">Igra Blinken</caption>
       <caption xml:lang="sv">Spela Blinken</caption>
       <caption xml:lang="uk">Гра у Blinken</caption>
+      <caption xml:lang="x-test">xxPlaying Blinkenxx</caption>
       <caption xml:lang="zh-CN">正在玩 Blinken</caption>
       <caption xml:lang="zh-TW">BlinKen 遊玩畫面</caption>
       <image>https://cdn.kde.org/screenshots/blinken/blinken.png</image>
