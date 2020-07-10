@@ -20,10 +20,10 @@
 #include <QKeySequence>
 #include <QMouseEvent>
 
-#include <kconfig.h>
-#include <khelpmenu.h>
-#include <kfontutils.h>
-#include <klocalizedstring.h>
+#include <KConfig>
+#include <KHelpMenu>
+#include <KFontUtils>
+#include <KLocalizedString>
 #include <KAboutData>
 
 #include "button.h"

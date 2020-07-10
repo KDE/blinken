@@ -16,10 +16,10 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 
-#include <kconfig.h>
-#include <kfontutils.h>
-#include <klocalizedstring.h>
-#include <ksharedconfig.h>
+#include <KConfig>
+#include <KFontUtils>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
 #include "counter.h"
 #include "settings.h"

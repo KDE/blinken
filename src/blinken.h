@@ -11,7 +11,7 @@
 #define BLINKEN_H
 
 #include <QMap>
-#include <kmainwindow.h>
+#include <KMainWindow>
 
 #include "blinkengame.h"
 

@@ -13,7 +13,7 @@
 
 #include <QTimer>
 
-#include <krandom.h>
+#include <KRandom>
 #include "soundsplayer.h"
 
 blinkenGame::blinkenGame() : m_phase(starting)

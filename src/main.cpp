@@ -11,11 +11,11 @@
 
 #include "blinken_version.h"
 
-#include <kaboutdata.h>
-#include <klocalizedstring.h>
+#include <KAboutData>
+#include <KLocalizedString>
 #include <KCrash>
 #include <KDBusService>
-#include <kdelibs4configmigrator.h>
+#include <Kdelibs4ConfigMigrator>
 
 #include <QApplication>
 #include <QCommandLineParser>
