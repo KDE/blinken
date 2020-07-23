@@ -9,11 +9,9 @@
 
 #include "blinkengame.h"
 
-#include <stdlib.h> // for RAND_MAX
-
+#include <QRandomGenerator>
 #include <QTimer>
 
-#include <KRandom>
 #include "soundsplayer.h"
 
 blinkenGame::blinkenGame() : m_phase(starting)
@@ -152,11 +150,10 @@ void blinkenGame::nextRound()
 
 blinkenGame::color blinkenGame::generateColor()
 {
-	int r;
 	// make the compiler happy :-D
 	color c = none;
 
-	r = 1 + (int)(4.0 * KRandom::random() / (RAND_MAX + 1.0));
+	const int r = QRandomGenerator::global()->bounded(1, 5); // rand [1, 5)
 	switch(r)
 	{
 		case 1:
