@@ -47,6 +47,7 @@ add_subdirectory( fonts )
 
 ########### install files ###############
 
+ki18n_install(po)
 install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
 install( FILES org.kde.blinken.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} )
 
