@@ -29,6 +29,7 @@
   <name xml:lang="pl">Blinken</name>
   <name xml:lang="pt">Blinken</name>
   <name xml:lang="pt-BR">Blinken</name>
+  <name xml:lang="ro">Blinken</name>
   <name xml:lang="ru">Blinken</name>
   <name xml:lang="sk">Blinken</name>
   <name xml:lang="sl">Blinken</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="pl">Gra na ćwiczenie pamięci</summary>
   <summary xml:lang="pt">Jogo de Exercícios de Memória</summary>
   <summary xml:lang="pt-BR">Jogo para desenvolvimento da memória</summary>
+  <summary xml:lang="ro">Joc de îmbunătățire a memoriei</summary>
   <summary xml:lang="ru">Игра для развития памяти</summary>
   <summary xml:lang="sk">Hra na zlepšenie pamäte</summary>
   <summary xml:lang="sl">Igra za izboljšanje spomina</summary>
@@ -134,6 +136,7 @@
       <caption xml:lang="pl">Granie w Blinken</caption>
       <caption xml:lang="pt">A jogar ao Blinken</caption>
       <caption xml:lang="pt-BR">Jogando Blinken</caption>
+      <caption xml:lang="ro">Joacă Blinken</caption>
       <caption xml:lang="ru">Игровой процесс Blinken</caption>
       <caption xml:lang="sl">Igra Blinken</caption>
       <caption xml:lang="sv">Spela Blinken</caption>
