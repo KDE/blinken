@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
  <!ENTITY blinken "<application>Blinken</application>">
- <!ENTITY kappname "&blinken;">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -12,13 +11,7 @@
 <title>The &blinken; Handbook</title>
 
 <authorgroup>
-<author>
-<firstname>Danny</firstname>
-<surname>Allen</surname>
-<affiliation>
-<address>&Danny.Allen.mail;</address>
-</affiliation>
-</author>
+<author>&Danny.Allen; &Danny.Allen.mail;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
@@ -29,8 +22,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2016-04-26</date>
-<releaseinfo>0.4 (Applications 16.04)</releaseinfo>
+<date>2020-12-10</date>
+<releaseinfo>Applications 20.12.0</releaseinfo>
 
 <abstract>
 <para>
@@ -83,49 +76,49 @@ Here is the screen that is presented on startup of &blinken;, showing the genera
 </screenshot>
 
 <para>
-The <guiicon>Highscores</guiicon> button <action>opens a dialog that displays the <guilabel>Highscores table</guilabel></action> for each of the 3 difficulty levels (the <guilabel>Highscores</guilabel> table can also be accessed by <action>clicking on the <interface>score counter</interface>)</action>:
+The <guibutton>Highscores</guibutton> button <action>opens a dialog that displays the <guilabel>Highscores</guilabel> table</action> for each of the 3 difficulty levels (the <guilabel>Highscores</guilabel> table can also be accessed by <action>clicking on the <interface>score counter</interface>)</action>:
 </para>
 
 <screenshot>
-<screeninfo><guiicon>Highscores</guiicon> button</screeninfo>
+<screeninfo><guibutton>Highscores</guibutton> button</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase><guiicon>Highscores</guiicon> button</phrase>
+<phrase><guibutton>Highscores</guibutton> button</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para>
-The <guiicon>Quit</guiicon> button <action>closes the application</action>:
+The <guibutton>Quit</guibutton> button <action>closes the application</action>:
 </para>
 
 <screenshot>
-<screeninfo><guiicon>Quit</guiicon> button</screeninfo>
+<screeninfo><guibutton>Quit</guibutton> button</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="blinken_quitbutton.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase><guiicon>Quit</guiicon> button</phrase>
+<phrase><guibutton>Quit</guibutton> button</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para>
-The <guiicon>Help</guiicon> button is special, in that it <action>reveals 4 sub-buttons</action>. These buttons are shown when the <guiicon>Help</guiicon> button is <action>hovered over</action>, and provide access to the <guilabel>&blinken; Handbook</guilabel> (this document), <guilabel>Show/Hide Settings</guilabel>, and the <guilabel>About &blinken;</guilabel> and <guilabel>About &kde;</guilabel> dialogs:
+The <guibutton>Help</guibutton> button is special, in that it <action>reveals 4 sub-buttons</action>. These buttons are shown when the <guibutton>Help</guibutton> button is <action>hovered over</action>, and provide access to the <guilabel>&blinken; Handbook</guilabel> (this document), <guilabel>Show/Hide Settings</guilabel>, and the <guilabel>About &blinken;</guilabel> and <guilabel>About &kde;</guilabel> dialogs:
 </para>
 
 <screenshot>
-<screeninfo><guiicon>Help</guiicon> button</screeninfo>
+<screeninfo><guibutton>Help</guibutton> button</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="blinken_helpbutton.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase><guiicon>Help</guiicon> button</phrase>
+<phrase><guibutton>Help</guibutton> button</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
