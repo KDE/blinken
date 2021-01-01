@@ -5,7 +5,8 @@ Copyright Holder: Steve JORDI steve @ sjordi.com
 License:
 
 SJFonts are licensed under the GNU General Public License version 2 or
-later (see COPYING file) but with the following exception:
+later (see LICENSES/GPL-2.0-or-later.txt file) but with the following
+exception:
 
 As a special exception, if you create a document which uses this font,
 and embed this font or unaltered portions of this font into the document,
