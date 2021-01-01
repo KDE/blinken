@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: KDE Translators <kde-i18n-doc@kde.org>
+SPDX-License-Identifier: CC0-1.0
+-->
 <component type="desktop">
   <id>org.kde.blinken.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <name>Blinken</name>
   <name xml:lang="bs">Blinken</name>
   <name xml:lang="ca">Blinken</name>
