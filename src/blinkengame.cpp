@@ -65,8 +65,8 @@ void blinkenGame::clicked(color c)
 	else
 	{
 		m_soundsPlayer -> play(all);
-		Q_EMIT highlight(all, true);
-		Q_EMIT gameEnded();
+		emit highlight(all, true);
+		emit gameEnded();
 		setPhase(choosingLevel);
 	}
 }
@@ -75,7 +75,7 @@ void blinkenGame::setPhase(gamePhase p)
 {
 	if (p != waiting3 && p != waiting2 && p != waiting1) m_waitTimer -> stop();
 	m_phase = p;
-	Q_EMIT phaseChanged();
+	emit phaseChanged();
 }
 
 void blinkenGame::start(int level)
@@ -96,13 +96,13 @@ void blinkenGame::nextSound()
 		c = *m_nextColor;
 		++m_nextColor;
 		m_soundsPlayer -> play(c);
-		Q_EMIT highlight(c, false);
+		emit highlight(c, false);
 	}
 	else
 	{
 		setPhase(typingTheSequence);
 		m_nextColor = m_sequence.constBegin();
-		Q_EMIT highlight(none, false);
+		emit highlight(none, false);
 		m_soundsPlayer->disconnect();
 	}
 }
@@ -115,7 +115,7 @@ void blinkenGame::soundEnded()
 
 void blinkenGame::unhighlight()
 {
-	Q_EMIT highlight(none, false);
+	emit highlight(none, false);
 }
 
 void blinkenGame::waiting()
