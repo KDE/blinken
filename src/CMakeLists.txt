@@ -25,7 +25,7 @@ target_link_libraries(blinken
     KF5::I18n
     KF5::XmlGui
     KF5::GuiAddons
-    Qt5::Svg
+    Qt::Svg
     KF5::DBusAddons
     KF5::Crash
     ${PHONON_LIBRARIES}

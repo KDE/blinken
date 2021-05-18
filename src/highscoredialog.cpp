@@ -213,7 +213,7 @@ void highScoreManager::addScore(int level, int score, const QString &name)
 		}
 		cfg.sync();
 
-		foreach(highScoreManager *hsm, s_allHSM)
+        for(highScoreManager *hsm : qAsConst(s_allHSM))
 		{
 			if (hsm != this)
 			{
