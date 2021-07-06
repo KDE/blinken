@@ -23,6 +23,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="fr">Blinken</name>
   <name xml:lang="gl">Blinken</name>
   <name xml:lang="hi">ब्लिंकेन </name>
+  <name xml:lang="ia">Blinken</name>
   <name xml:lang="id">Blinken</name>
   <name xml:lang="it">Blinken</name>
   <name xml:lang="ko">Blinken</name>
@@ -59,6 +60,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="fr">Jeu pour améliorer la mémoire</summary>
   <summary xml:lang="gl">Xogo para mellorar a memoria</summary>
   <summary xml:lang="hi">दिमाग बढाने वाला खेल</summary>
+  <summary xml:lang="ia">Joco de melioration de memoria</summary>
   <summary xml:lang="id">Permainan Melatih Ingatan</summary>
   <summary xml:lang="it">Gioco per esercitare la memoria</summary>
   <summary xml:lang="ko">기억력 향상 게임</summary>
@@ -133,6 +135,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="fi">Pelataan Blinkeniä</caption>
       <caption xml:lang="fr">Partie de Blinken en cours</caption>
       <caption xml:lang="gl">Xogando a Blinken</caption>
+      <caption xml:lang="ia">Jocar a Blinken</caption>
       <caption xml:lang="id">Memainkan Blinken</caption>
       <caption xml:lang="it">Giocare con Blinken</caption>
       <caption xml:lang="ko">Blinken 플레이</caption>
