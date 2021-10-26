@@ -19,7 +19,7 @@ class soundsPlayer : public QObject
 Q_OBJECT
 	public:
 		soundsPlayer();
-		~soundsPlayer();
+		~soundsPlayer() override;
 		
 		void play(blinkenGame::color c);
 		

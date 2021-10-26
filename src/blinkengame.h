@@ -19,7 +19,7 @@ class blinkenGame : public QObject
 Q_OBJECT
 	public:
 		blinkenGame();
-		~blinkenGame();
+		~blinkenGame() override;
 		
 		enum gamePhase { starting, choosingLevel, waiting3, waiting2, waiting1, learningTheSequence, typingTheSequence };
 		enum color

@@ -31,7 +31,7 @@ class highScoreManager : public QObject
 Q_OBJECT
 	public:
 		highScoreManager();
-		~highScoreManager();
+		~highScoreManager() override;
 
 		bool scoreGoodEnough(int level, int score);
 		void addScore(int level, int score, const QString &name);

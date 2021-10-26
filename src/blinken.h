@@ -24,7 +24,7 @@ class blinken : public KMainWindow
 Q_OBJECT
 	public:
 		blinken();
-		~blinken();
+		~blinken() override;
 
 		QSize sizeHint() const override;
 		
