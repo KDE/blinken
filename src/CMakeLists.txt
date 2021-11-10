@@ -4,14 +4,21 @@
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX BLINKEN VERSION_HEADER blinken_version.h)
 
 set(blinken_SRCS 
-   main.cpp 
-   blinken.cpp 
-   soundsplayer.cpp 
-   blinkengame.cpp 
-   number.cpp 
-   highscoredialog.cpp 
-   counter.cpp 
-   button.cpp )
+    blinken.cpp
+    blinkengame.cpp
+    blinkengame.h
+    blinken.h
+    button.cpp
+    button.h
+    counter.cpp
+    counter.h
+    highscoredialog.cpp
+    highscoredialog.h
+    main.cpp
+    number.cpp
+    number.h
+    soundsplayer.cpp
+    soundsplayer.h )
 
 include_directories(${PHONON_INCLUDES})
 
