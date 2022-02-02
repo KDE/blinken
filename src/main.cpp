@@ -12,7 +12,9 @@
 #include <KLocalizedString>
 #include <KCrash>
 #include <KDBusService>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <Kdelibs4ConfigMigrator>
+#endif
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -34,10 +36,11 @@ int main(int argc, char *argv[])
 	KAboutData::setApplicationData(about);
 
 	KCrash::initialize();
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	Kdelibs4ConfigMigrator migrate(QStringLiteral("blinken"));
 	migrate.setConfigFiles(QStringList() << QStringLiteral("blinkenrc"));
 	migrate.migrate();
+#endif
 
 
 	QCommandLineParser parser;
@@ -51,7 +54,7 @@ int main(int argc, char *argv[])
 	// Works with Steve may need some tweaking to work with other fonts
 	if (!QFontInfo(f).exactMatch())
 	{
-		QFontDatabase::addApplicationFont(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("fonts/steve.ttf")));
+		QFontDatabase::addApplicationFont(QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("fonts/steve.ttf")));
 	}
 	KDBusService service;
 	new blinken();

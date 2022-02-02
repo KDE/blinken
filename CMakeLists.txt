@@ -10,7 +10,7 @@ project(blinken VERSION ${RELEASE_SERVICE_VERSION})
 
 # minimal Qt requirement
 set(QT_MIN_VERSION "5.15.0")
-set(KF5_MIN_VERSION "5.85.0")
+set(KF5_MIN_VERSION "5.90.0")
 
 # ECM
 find_package (ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -27,13 +27,13 @@ include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(FeatureSummary)
 
-find_package (Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
+find_package (Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
 find_package (KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
-find_package (Phonon4Qt5 REQUIRED)
+find_package (Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})

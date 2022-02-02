@@ -40,7 +40,7 @@ static const double nonButtonRibbonY = 125.0;
 
 blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
 {
-	m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("images/blinken.svg")));
+	m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("images/blinken.svg")));
 	
 	m_buttons[0] = new button(blinkenGame::blue);
 	m_buttons[1] = new button(blinkenGame::yellow);
