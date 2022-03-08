@@ -30,7 +30,7 @@ include(FeatureSummary)
 find_package (Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
 find_package (KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
-    I18n XmlGui GuiAddons DocTools DBusAddons Crash
+    CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
 find_package (Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
