@@ -345,8 +345,8 @@ void blinken::mousePressEvent(QMouseEvent *e)
 {
 	if (m_overHighscore || m_overCounter)
 	{
-		highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
-		hsd->showLevel(1);
+		highScoreDialog hsd(this, m_renderer);
+		hsd.showLevel(1);
 		m_updateButtonHighlighting = true;
 	}
 	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
@@ -418,8 +418,8 @@ void blinken::checkHS()
 			m_lastName = name;
 			hsm.addScore(m_game.level(), m_game.score(), name);
 		}
-		highScoreDialog *hsd = new highScoreDialog(this, m_renderer);
-		hsd->showLevel(m_game.level());
+		highScoreDialog hsd(this, m_renderer);
+		hsd.showLevel(m_game.level());
 	}
 }
 

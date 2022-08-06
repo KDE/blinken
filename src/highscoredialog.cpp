@@ -164,7 +164,6 @@ void highScoreDialog::showLevel(int level)
 	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
 	
 	exec();
-	delete this;
 }
 
 /* highScoreManager */
