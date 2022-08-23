@@ -178,6 +178,5 @@ Comment[uk]=Гра для розвитку пам'яті
 Comment[x-test]=xxA memory enhancement gamexx
 Comment[zh_CN]=记忆力锻炼游戏
 Comment[zh_TW]=加強記憶力的遊戲
-Terminal=false
 Categories=Qt;KDE;Education;Game;KidsGame;
 X-DBUS-ServiceName=org.kde.blinken
