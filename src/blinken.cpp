@@ -7,17 +7,15 @@
 #include "blinken.h"
 
 #include <QCursor>
-#include <QEvent>
 #include <QPainter>
 #include <QSvgRenderer>
 #include <QTimer>
-#include <QAction>
 #include <QApplication>
 #include <QInputDialog>
 #include <QKeySequence>
 #include <QMouseEvent>
+#include <QAction>
 
-#include <KConfig>
 #include <KHelpMenu>
 #include <KFontUtils>
 #include <KLocalizedString>
