@@ -1,0 +1,431 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % German "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Das Handbuch zu &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+><firstname
+>Thomas</firstname
+><surname
+>Reitelbach</surname
+><affiliation
+><address
+><email
+>tr@erdfunkstelle.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-10</date>
+<releaseinfo
+>Anwendungen 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>Mit &blinken; holt &kde; ein elektronisches Spiel aus den 70ern zurück in die Gegenwart. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>Spiel</keyword>
+<keyword
+>Kinder</keyword>
+<keyword
+>elektronisch</keyword>
+<keyword
+>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Einleitung</title>
+
+<para
+>Die Idee zu &blinken; gründet auf einem alten elektronischen Spiel aus dem Jahre 1978: der Spieler musste sich immer länger werdende Tasten- bzw. Tonfolgen merken. Auf dem Spielgerät von &blinken; finden Sie 4 verschiedenfarbige Knöpfe und jeder hat seinen eigenen individuellen Ton. Während dem Spiel leuchten diese Knöpfe in zufälliger Reihenfolge, die der Spieler sich merken und wiederholen muss. Wenn der Spieler es schafft, die Sequenz in der richtigen Reihenfolge wiederzugeben, erreicht er die nächste Spielstufe, in der er die gleiche Sequenz plus einer weiteren Taste wiedergeben muss. Wenn die Reihenfolge einmal falsch ist, hat der Spieler verloren und muss von vorne beginnen. Das Ziel des Spiels ist es, möglichst viele Punkte zu erreichen. Jede erfolgreiche Runde bringt einen Punkt, eine erfolgreiche Folge von 8 Knöpfen ergibt also 8 Punkte in der Bestenliste. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Wie man &blinken; benutzt</title>
+
+<para
+>Hier sehen Sie &blinken; direkt nach dem Programmstart. Der größte Teil wird durch das <interface
+>Spielgerät</interface
+> mit den <interface
+>4 farbigen Knöpfen</interface
+> eingenommen; die Kontrollen (<interface
+>Punktezähler</interface
+> und <guibutton
+>Start</guibutton
+>-Knopf) befinden sich in der Mitte. Der aktuelle Spielstatus ist auf dem Stück <interface
+>Papier links unten</interface
+> zu sehen. In den verbleibenden Ecken befinden sich drei Knöpfe: </para>
+
+<screenshot>
+<screeninfo
+>Dies ist die Programmoberfläche nach dem Start von &blinken;.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Dies ist die Programmoberfläche nach dem Start von &blinken;.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Der Knopf <guibutton
+>Bestenliste</guibutton
+> <action
+>öffnet das Fenster mit der <guilabel
+>Bestenliste</guilabel
+></action
+> für jede der drei Schwierigkeitsstufen. Sie können die Bestenliste auch aufrufen, indem Sie auf den <action
+><interface
+>Punktezähler</interface
+> in der Mitte klicken</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knopf <guibutton
+>Bestenliste</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knopf <guibutton
+>Bestenliste</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Der Knopf <guibutton
+>Beenden</guibutton
+> <action
+>beendet</action
+> das Spiel: </para>
+
+<screenshot>
+<screeninfo
+><guibutton
+>Beenden</guibutton
+>-Knopf</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+><guibutton
+>Beenden</guibutton
+>-Knopf</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Der <guibutton
+>Hilfe</guibutton
+>-Knopf funktioniert auf besondere Weise, denn sobald man den Mauszeiger darüber positioniert werden vier weitere Knöpfe sichtbar. Mit diesen Knöpfen erreichen Sie das <guilabel
+>Handbuch zu &blinken;</guilabel
+> (welches Sie gerade lesen), <guilabel
+>Einstellungen anzeigen/ausblenden</guilabel
+>, das Fenster <guilabel
+>Über &blinken;</guilabel
+> und das Fenster <guilabel
+>Über &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+><guibutton
+>Hilfe</guibutton
+>-Knopf</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+><guibutton
+>Hilfe</guibutton
+>-Knopf</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Machen Sie sich mit dem Spiel ein wenig vertraut und drücken Sie einfach mal die <interface
+>farbigen Knöpfe</interface
+>. Die Knöpfe werden leuchten und einen Ton von sich geben. </para>
+
+<sect1 id="starting-game">
+<title
+>Ein Spiel starten</title>
+
+<para
+>Wenn Sie sich mit dem Spiel vertraut gemacht haben, drücken Sie den Knopf <guibutton
+>Start</guibutton
+> in der Spielmitte. Dadurch wird das Gerät <quote
+>eingeschaltet</quote
+> und der <interface
+>Punktezähler</interface
+> in der Mitte leuchtet auf. Nun können Sie die Schwierigkeitsstufe wählen: </para>
+
+<screenshot>
+<screeninfo
+>Wählen der Schwierigkeitsstufe</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Wählen der Schwierigkeitsstufe</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>In &blinken; haben Sie drei Stufen zur Auswahl: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Stufe 1 ist die einfachste Stufe, weil es hier die längsten Spielpausen zwischen den Tonfolgen gibt. </para>
+</listitem>
+<listitem>
+<para
+>Stufe 2 ist die mittelschwere Stufe. Sie ist mit der ersten Stufe identisch, hat aber kürzere Pausen. </para>
+</listitem>
+<listitem>
+<para
+>Die Stufe ? ist die schwierigste Stufe in &blinken;. Es gelten die Pausenzeiten von Stufe 2, aber jede Tonfolge ist zufällig anstatt immer wieder die vorigen Tonfolgen zu wiederholen. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Eingabe einer neuen Höchstpunktzahl</title>
+
+<para
+>Falls Sie das Glück haben, eine Höchstpunktzahl zu erreichen, so werden Sie in die <guilabel
+>Bestenliste</guilabel
+> aufgenommen. Ein Fenster wird Sie nach dem Namen fragen, der in der Bestenliste erscheinen soll: </para>
+
+<screenshot>
+<screeninfo
+>Fenster zum Eingeben des Namens</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Fenster zum Eingeben des Namens</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Für jede Spielstufe merkt sich &blinken; nur die jeweils 5 höchsten Punktzahlen. Seien Sie nicht enttäuscht, falls Sie es nicht in die oberen 5 schaffen ;-) </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Spiel-Tipps</title>
+<para
+>&blinken; ist zwar ein Gedächtnistrainer, aber neben einem guten Gedächtnis könnten auch diese Tipps für Sie nützlich sein: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Wenn Sie PC-Lautsprecher haben, so schalten Sie sie ein, damit Sie die Töne der farbigen Knöpfe hören können. </para>
+</listitem>
+<listitem>
+<para
+>Probieren Sie sowohl die Steuerung mit der Maus als auch mit der <link linkend="accessibility"
+>Tastatur</link
+> und finden Sie heraus, wie Sie am besten klarkommen. </para>
+</listitem>
+<listitem>
+<para
+>Versuchen Sie, sich die Sequenzen als eine Liste von Farben zu merken. </para>
+</listitem>
+<listitem>
+<para
+>Versuchen Sie, sich die Sequenzen als Positionen auf dem Bildschirm zu merken. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Zugangshilfen</title>
+
+<para
+>&blinken; kann auch von Menschen mit körperlicher Beeinträchtigung gespielt werden. Zu diesem Zweck wurden einige nützliche Zugangshilfen in &blinken; eingebaut. </para>
+<para
+>Um die Einstellungen der Zugangshilfen anzusehen und zu ändern, drücken Sie die &Ctrl;-Taste (nicht während das Spiel läuft): </para>
+
+<screenshot>
+<screeninfo
+>Zugangshilfen für &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Zugangshilfen für &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Um wieder das normale Spielfeld zu sehen, drücken Sie die &Ctrl;-Taste erneut. </para>
+
+<para
+>Neben der Bedienung mit der Maus können Sie auch die Tastatur zum Spielen von &blinken; benutzen. </para>
+
+<para
+>Die voreingestellten Tasten sind <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+> und <keycap
+>4</keycap
+>. </para>
+
+<para
+>Um die Tastenzuordnung zu ändern, klicken Sie mit der Maus auf einen Knopf. Dadurch wird der Bereich hervorgehoben und wartet auf Ihre Eingabe. Drücken Sie die gewünschte Taste, um die Zuordnung zu ändern. </para>
+
+<para
+>In der Mitte des Fensters haben Sie noch weitere Einstellmöglichkeiten: <interface
+>Töne</interface
+> und <interface
+>Schriftart</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Wenn Sie das <interface
+>Töne</interface
+>-Ankreuzfeld abwählen, wird &blinken; keine Töne mehr von sich geben. </para>
+</listitem>
+<listitem>
+<para
+>Wenn Sie das Ankreuzfeld <interface
+>Schriftart</interface
+> abwählen, wird anstelle der Handschrift-Schriftart eine ganz normale Standardschrift verwendet. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Danksagungen und Lizenz</title>
+
+<para
+>&blinken; </para>
+<para
+>Programm-Copyright 2005 Albert Astals Cid &Albert.Astals.Cid.mail; und &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Mitwirkende: </para>
+<itemizedlist>
+<listitem>
+<para
+><quote
+>Steve</quote
+>-Schriftart: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Copyright der Dokumentation 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>Übersetzung Thomas Reitelbach<email
+>tr@erdfunkstelle.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

@@ -1,0 +1,440 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Ukrainian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Підручник з &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>10 грудня 2010 року</date>
+<releaseinfo
+>Програми 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>&blinken; — реалізація електронної гри для розвитку пам’яті, написаної у 1970-х, для &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>гра</keyword>
+<keyword
+>дитина</keyword>
+<keyword
+>електроніка</keyword>
+<keyword
+>ретро</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Вступ</title>
+
+<para
+>&blinken; засновано на електронній грі, випущеній у 1978, у якій гравці мали запам’ятовувати послідовності зі зростаючою довжиною. На передній панелі приладу знаходяться чотири кнопки різних кольорів, кожній з яких відповідає певний звук. Ці кнопки підсвічувалися у певній випадковій послідовності, утворюючи послідовність, яку гравець мав потім відтворити. Якщо гравець запам’ятовував послідовність у правильному порядку, він переходив на наступний рівень гри, де до послідовності додавався ще один додатковий крок. Якщо гравець робив помилку, гра вважалася програною, і гравець мав продовжувати її з початку. Метою гри є отримання максимальної кількості очок — кожен крок послідовності оцінювався у одне очко, отже, правильне введення послідовності з 8 елементів дає 8 залікових очок. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Користування &blinken;</title>
+
+<para
+>Ось так виглядає вікно програми &blinken; одразу після початку гри, на ньому показано загальний інтерфейс програми. Більшу частину екрана займають <interface
+>пристрій</interface
+> з <interface
+>4 кольоровими кнопками</interface
+> з боків та елементами керування пристроєм (<interface
+>лічильником очок</interface
+>, кнопкою <guibutton
+>Почати</guibutton
+> тощо) по центру екрана. Поточний стан гри показано на <interface
+>листі паперу</interface
+> під <quote
+>пристроєм</quote
+>. У кутах вікна програми розташовано три кнопки: </para>
+
+<screenshot>
+<screeninfo
+>Так виглядає вікно програми одразу після запуску &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Так виглядає вікно програми одразу після запуску &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Найкращі результати</guibutton
+> <action
+>відкриває вікно, у якому показано <guilabel
+>Таблицю найкращих результатів</guilabel
+></action
+> для кожного з трьох рівнів складності (таблицю <guilabel
+>Найкращих результатів</guilabel
+> також можна відкрити за допомогою <action
+>натискання на <interface
+>лічильник очок</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Найкращі результати</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Найкращі результати</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Вийти</guibutton
+> <action
+>закриває програму</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Вийти</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Вийти</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Довідка</guibutton
+> є особливою, у ній <action
+>містяться ще 4 додаткових кнопки</action
+>. Ці кнопки з’являться, якщо <action
+>навести</action
+> на кнопку <guibutton
+>Довідка</guibutton
+> вказівник миші, і надають доступ до <guilabel
+>Підручника з &blinken;</guilabel
+> (цього документа), пункту <guilabel
+>Показати/Сховати Параметри</guilabel
+> та вікон <guilabel
+>Про програму &blinken;</guilabel
+> та <guilabel
+>Про &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Довідка</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Довідка</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Щоб краще познайомитися тим, як працює гра, ви можете відпрацювати роботу з <interface
+>кольоровими кнопками</interface
+>, розміщеними на головному екрані. Кнопки буде підсвічуватимуться і видаватимуть певний звук, якщо ви на них натискатимете. </para>
+
+<sect1 id="starting-game">
+<title
+>Початок гри</title>
+
+<para
+>Тільки-но ви призвичаїтеся до інтерфейсу гри, можна почати гратися натисканням кнопки <guibutton
+>Почати</guibutton
+> в центрі екрана. Ця кнопка <quote
+>увімкне</quote
+> пристрій, що буде вказано підсвічуванням <interface
+>лічильника очок</interface
+>. Після цього ви зможете <action
+>вибрати рівень складності</action
+>, на якому ви будете грати: </para>
+
+<screenshot>
+<screeninfo
+>Вибір рівня складності</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Вибір рівня складності</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>У &blinken; є 3 рівня складності: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Рівень 1 є найлегшим, оскільки на цьому рівні паузи між показом послідовностей є найдовшими. </para>
+</listitem>
+<listitem>
+<para
+>Рівень 2 є проміжним. Він подібний до попереднього рівня, але паузи між послідовностями на цьому рівні є коротшими. </para>
+</listitem>
+<listitem>
+<para
+>Рівень ? є найскладнішим у &blinken;. Час між послідовностями є таким самим, як і на Рівні 2, але кожна послідовність є випадковою, а не доповненою попередньою послідовністю, так само, як це зроблено і у оригінальній грі. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Встановлення найвищого результату</title>
+
+<para
+>Якщо вам поталанить встановити найкращий результат, він потрапить до таблиці <guilabel
+>Найкращих результатів</guilabel
+>. У вікні, що відкриється, вам буде запропоновано ввести ваше ім’я, що відповідатиме запису у таблиці: </para>
+
+<screenshot>
+<screeninfo
+>Вікно введення псевдоніма гравця</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Вікно введення псевдоніма гравця</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Для кожного рівня зберігається лише 5 найкращих результатів, тож не втрачайте надії, якщо ви не одразу туди потрапите! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Поради щодо гри</title>
+<para
+>Не обов’язково мати абсолютну пам’ять, щоб досягти успіху у &blinken;. Ось поради, що допоможуть вам покращити свій результат: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Якщо до вашого комп’ютера приєднано гучномовці, увімкніть їх, щоб звук було добре чути, і ви змогли розпізнавати підсвічування певної кнопки ще й за відповідним звуком. </para>
+</listitem>
+<listitem>
+<para
+>Поекспериментуйте з використанням у грі миші і <link linkend="accessibility"
+>клавіатури</link
+>, щоб визначити метод введення, що пасує до ваших уподобань. </para>
+</listitem>
+<listitem>
+<para
+>Спробуйте запам’ятовувати послідовність у вигляді списку кольорів. </para>
+</listitem>
+<listitem>
+<para
+>Спробуйте запам’ятовувати послідовність як позиції на екрані. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Параметри доступності</title>
+
+<para
+>Щоб зробити програму &blinken; зручнішою для користувачів, у цю програму вбудовано декілька параметрів доступності, які можна налаштувати. </para>
+<para
+>Щоб переглянути і налаштувати параметри доступності &blinken;, натисніть клавішу &Ctrl; (до того часу, як почнете гру): </para>
+
+<screenshot>
+<screeninfo
+>Клавіші &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Клавіші &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Щоб повернутися до екрана гри, ще раз натисніть клавішу &Ctrl;. </para>
+
+<para
+>Окрім можливості гри за допомогою миші, програма &blinken; також надає вам можливість керувати грою за допомогою клавіатури. </para>
+
+<para
+>Типовими клавішами, що відповідають <interface
+>кольоровим кнопкам</interface
+>, є <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+> і <keycap
+>4</keycap
+>. </para>
+
+<para
+>Щоб змінити клавіші для кожної з кнопок, натисніть її за допомогою вказівника миші. Кнопку буде підсвічено, вона очікуватиме на введення. Натисніть бажану клавішу, щоб змінити попередньо призначену кнопці клавішу. </para>
+
+<para
+>В центрі вікна ви матимете змогу налаштувати <interface
+>Звуки</interface
+> і <interface
+>Шрифт</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Якщо зняти позначку з поля <interface
+>Звуки</interface
+>, всі звукові ефекти у &blinken; буде вимкнено. </para>
+</listitem>
+<listitem>
+<para
+>Якщо зняти позначку з поля <interface
+>Шрифт</interface
+>, для виведення повідомлень про стан буде використано типовий шрифт, що імітує рукописний текст. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Подяки і ліцензія</title>
+
+<para
+>&blinken; </para>
+<para
+>Авторські права на програму Albert Astals Cid &Albert.Astals.Cid.mail; та &Danny.Allen; &Danny.Allen.mail;, ©2005 </para>
+<para
+>Учасники розробки: </para>
+<itemizedlist>
+<listitem>
+<para
+>Шрифт «Steve»: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Авторські права на документацію &Danny.Allen; &Danny.Allen.mail;, ©2005 </para>
+
+<para
+>Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

@@ -1,0 +1,439 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-10</date>
+<releaseinfo
+>Program 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>Programmet &blinken; bringar ett gammaldags elektroniskt minnesspel från 1970-talet till &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>spel</keyword>
+<keyword
+>barn</keyword>
+<keyword
+>elektronisk</keyword>
+<keyword
+>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<para
+>Programmet &blinken; är baserat på ett elektroniskt minnesspel, utgivet 1978, som utmanar spelare att komma ihåg sekvenser av ökande längd. På apparatens framsida finns fyra olika färgade knappar, var och en med ett eget karakteristiskt ljud. De fyra knapparna lyser upp slumpmässigt, och skapar sekvensen som spelaren därefter måste komma ihåg. Om spelaren lyckas komma ihåg sekvensen av ljus i rätt ordning, går han vidare till nästa nivå, där en identisk sekvens med ytterligare ett steg presenteras. Om spelaren har fel, förloras spelet, och spelaren måste börja om från början igen. Målet är att få högsta poäng: Varje steg i sekvensen är värt ett poäng, och att skriva in en sekvens med åtta ljus är alltså värt 8 poäng i tabellen med högsta poäng. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Använda &blinken;</title>
+
+<para
+>Här är skärmen som presenteras vid start av &blinken;, där programmets allmänna gränssnitt visas. Den största delen av skärmen upptas av <interface
+>apparaten</interface
+> med de <interface
+>fyra färgade knapparna</interface
+>, och med apparatens styrknappar (<interface
+>poängräknaren</interface
+>, <guibutton
+>startknappen</guibutton
+>, etc.) mitt på skärmen. Programmets nuvarande status visas på <interface
+>papperslappen</interface
+> under apparaten. I programmets hörn finns tre knappar: </para>
+
+<screenshot>
+<screeninfo
+>Här är skärmen som visas vid start av &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Här är skärmen som visas vid start av &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Knappen <guibutton
+>Högsta poäng</guibutton
+> <action
+>öppnar en dialogruta som visar tabellen <guilabel
+>Högsta poäng</guilabel
+></action
+> för var och en av de tre svårighetsnivåerna (tabellen <guilabel
+>Högsta poäng</guilabel
+> kan också kommas åt genom att <action
+>klicka på <interface
+>poängräknaren</interface
+>)</action
+>. </para>
+
+<screenshot>
+<screeninfo
+>Knappen <guibutton
+>Högsta poäng</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knappen <guibutton
+>Högsta poäng</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Knappen <guibutton
+>Avsluta</guibutton
+> <action
+>stänger programmet</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knappen <guibutton
+>Avsluta</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knappen <guibutton
+>Avsluta</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Knappen <guibutton
+>Hjälp</guibutton
+> är speciell, eftersom den <action
+>avslöjar fyra andra knappar</action
+>. Dessa knappar visas när <action
+>musen hålls över</action
+> knappen <guibutton
+>Hjälp</guibutton
+>, och ger möjlighet att komma åt <guilabel
+>Handbok &blinken;</guilabel
+> (det här dokumentet), <guilabel
+>Visa/Dölj inställningar</guilabel
+> och dialogrutorna <guilabel
+>Om &blinken;</guilabel
+> och <guilabel
+>Om &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knappen <guibutton
+>Hjälp</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knappen <guibutton
+>Hjälp</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>För att bli bekant med hur spelet fungerar, kan du använda de <interface
+>färgade knapparna</interface
+> medan du är på huvudskärmen. Knapparna lyser upp och avger en ton när de klickas. </para>
+
+<sect1 id="starting-game">
+<title
+>Starta ett spel</title>
+
+<para
+>När du väl är bekant med hur programmet fungerar, kan ett spel startas genom att klicka på knappen <guibutton
+>Starta</guibutton
+> i mitten av skärmen. Det <quote
+>sätter på</quote
+> apparaten, som visas av den upplysta <interface
+>poängräknaren</interface
+>. Därefter kan du välja <action
+>svårighetsnivå</action
+> som du vill försöka med: </para>
+
+<screenshot>
+<screeninfo
+>Ställ in svårighetsnivå</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ställ in svårighetsnivå</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Det finns tre nivåer i &blinken;: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Nivå 1 är den lättaste nivån, eftersom den ger det längsta tidsavståndet i uppspelningen av varje sekvens. </para>
+</listitem>
+<listitem>
+<para
+>Nivå 2 är den mellanliggande nivån. Den är identisk med föregående nivå, men har en kortare tidsavstånd i uppspelningen av varje sekvens. </para>
+</listitem>
+<listitem>
+<para
+>Nivå ? är den svåraste nivån i &blinken;. Det tar tiden från nivå 2, men varje sekvens är fullständigt slumpmässig, istället för att fortsätta från den föregående sekvensen, som i den vanliga speltypen. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Skriva in nya högsta poäng</title>
+
+<para
+>Om du är tursam nog att få ett av de högsta poängen, skrivs det in i tabellen <guilabel
+>Högsta poäng</guilabel
+>. En dialogruta frågar efter ett namn som ska höra ihop med dina poäng i tabellen. </para>
+
+<screenshot>
+<screeninfo
+>Frågedialogrutan för smeknamn vid högsta poäng</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Frågedialogrutan för smeknamn vid högsta poäng</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Bara de fem högsta poängen sparas i varje nivå, så bli inte alltför besviken om du inte klarar det! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Speltips</title>
+<para
+>&blinken; är det ultimata minnesspelet, även om du inte måste ha det ultimata minnet för att lyckas. Följande tips hjälper dig i din jakt på det bästa resultatet: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Om du har datorhögtalare, sätt på dem med ljudet på en bra nivå så att du kan höra tonerna samtidigt som du ser de blinkande ljusen. </para>
+</listitem>
+<listitem>
+<para
+>Experimentera både med användning av musen och <link linkend="accessibility"
+>tangentbordet</link
+>, för att se vilket som passar ditt minne bäst. </para>
+</listitem>
+<listitem>
+<para
+>Försök att komma ihåg sekvensen som en lista med färger. </para>
+</listitem>
+<listitem>
+<para
+>Försök komma ihåg sekvensen som positioner på skärmen. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Åtkomstalternativ</title>
+
+<para
+>För att lättare låta vissa användare kunna glädja sig åt &blinken;, finns det flera åtkomstalternativ inbyggda i &blinken;. </para>
+<para
+>För att visa och ändra åtkomstinställningarna i &blinken;, tryck på tangenten &Ctrl; (när inget spel pågår): </para>
+
+<screenshot>
+<screeninfo
+>Åtkomsttangenter i &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Åtkomsttangenter i &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>För att återgå till spelskärmen, tryck på tangenten &Ctrl; igen. </para>
+
+<para
+>Förutom användning av musen, låter &blinken; användaren också sköta spelet med tangentbordet. </para>
+
+<para
+>Tangenterna är normalt <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+>, <keycap
+>4</keycap
+>. </para>
+
+<para
+>För att ändra funktionen hos någon knapp, klicka på den med musen. Den blir då markerad, och väntar på inmatning. Tryck på önskad tangent på tangentbordet för att ändra tangenten som för närvarande är tilldelad. </para>
+
+<para
+>Det finns andra alternativ, tillgängliga mitt i fönstret: <interface
+>Ljud</interface
+> och <interface
+>Teckensnitt</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Genom att avmarkera kryssrutan <interface
+>Ljud</interface
+>, stängs ljudeffekterna i &blinken; av. </para>
+</listitem>
+<listitem>
+<para
+>Genom att avmarkera kryssrutan <interface
+>Teckensnitt</interface
+>, används ett standardteckensnitt för statustexten istället för det förvalda handskrivna teckensnittet. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Tack till och licens</title>
+
+<para
+>&blinken; </para>
+<para
+>Program copyright 2005 Albert Astals Cid &Albert.Astals.Cid.mail; och &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Bidragsgivare: </para>
+<itemizedlist>
+<listitem>
+<para
+>Teckensnittet "Steve": Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Dokumentation copyright 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

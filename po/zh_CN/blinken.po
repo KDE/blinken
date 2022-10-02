@@ -1,0 +1,272 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/blinken/blinken.pot\n"
+"X-Crowdin-File-ID: 5118\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国, yuanjiayj, Guo Yunhe, Tyson Tan"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"kde-china@kde.org,yuanjiayj@gmail.com,i@guoyunhe.me,tysontan@tysontan.com"
+
+#: blinken.cpp:68
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr "0"
+
+#: blinken.cpp:180
+#, kde-format
+msgid "Sounds"
+msgstr "音效"
+
+#: blinken.cpp:181
+#, kde-format
+msgid "Font"
+msgstr "字体"
+
+#: blinken.cpp:223
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr "开始"
+
+#: blinken.cpp:235
+#, kde-format
+msgid "Restart"
+msgstr "重新开始"
+
+#: blinken.cpp:413
+#, kde-format
+msgid "Enter Your Name"
+msgstr "输入您的名字"
+
+#: blinken.cpp:413
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr "名字:"
+
+#: blinken.cpp:689
+#, kde-format
+msgid "Restart the game"
+msgstr "重新启动本游戏"
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Quit Blinken"
+msgstr "关闭 Blinken"
+
+#: blinken.cpp:692
+#, kde-format
+msgid "View Highscore Table"
+msgstr "查看高分榜"
+
+#: blinken.cpp:697
+#, kde-format
+msgid "Show Settings"
+msgstr "显示设置"
+
+#: blinken.cpp:698
+#, kde-format
+msgid "Hide Settings"
+msgstr "隐藏设置"
+
+#: blinken.cpp:701
+#, kde-format
+msgid "2nd Level"
+msgstr "第二关"
+
+#: blinken.cpp:702
+#, kde-format
+msgid "1st Level"
+msgstr "第一关"
+
+#: blinken.cpp:703
+#, kde-format
+msgid "Random Level"
+msgstr "随机关"
+
+#: blinken.cpp:704
+#, kde-format
+msgid "Press the key for this button"
+msgstr "请按下此按钮的按键"
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Click any button to change its key"
+msgstr "点击任意按钮可以改变按键"
+
+#: blinken.cpp:711
+#, kde-format
+msgid "Press Start to begin"
+msgstr "点击开始启动游戏"
+
+#: blinken.cpp:715
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr "设定难度…"
+
+#: blinken.cpp:725
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr "下一关马上开始：3…"
+
+#: blinken.cpp:738
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr "下一关马上开始：3, 2…"
+
+#: blinken.cpp:742
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr "下一关马上开始：2…"
+
+#: blinken.cpp:756
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr "下一关马上开始：3, 2, 1…"
+
+#: blinken.cpp:760
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr "下一关马上开始：2, 1…"
+
+#: blinken.cpp:772
+#, kde-format
+msgid "Remember this sequence..."
+msgstr "请记住这一序列…"
+
+#: blinken.cpp:783
+#, kde-format
+msgid "Repeat the sequence"
+msgstr "请重复这一序列"
+
+#: blinken.cpp:800
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#: blinken.cpp:801
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#: blinken.cpp:802
+#, kde-format
+msgid "?"
+msgstr "?"
+
+#: blinken.cpp:806
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr "关"
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr "播放声音"
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr "使用自定义的字体显示状态文本"
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr "高分榜"
+
+#: highscoredialog.cpp:149
+#, kde-format
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr "第 1 关"
+
+#: highscoredialog.cpp:150
+#, kde-format
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr "第 2 关"
+
+#: highscoredialog.cpp:151
+#, kde-format
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr "第 ? 关"
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr "Blinken"
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr "记忆力锻炼游戏"
+
+#: main.cpp:31
+#, kde-format
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr "编写程序"
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr "Danny Allen"
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr "设计，图形及音效"
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr "Steve Jordi"
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr "以 GPL 协议发表了他的 Steve 字体，我们使用这一字体"

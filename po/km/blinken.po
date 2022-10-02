@@ -1,0 +1,275 @@
+# translation of blinken.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2007, 2008, 2009.
+# Auk Piseth <piseth_dv@khmeros.info>, 2007, 2008.
+# Eng Vannak <evannak@khmeros.info>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: blinken\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"PO-Revision-Date: 2009-06-01 11:10+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#: blinken.cpp:68
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr "០"
+
+#: blinken.cpp:180
+#, kde-format
+msgid "Sounds"
+msgstr "សំឡេង"
+
+#: blinken.cpp:181
+#, kde-format
+msgid "Font"
+msgstr "ពុម្ពអក្សរ"
+
+#: blinken.cpp:223
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr "ចាប់ផ្ដើម"
+
+#: blinken.cpp:235
+#, kde-format
+msgid "Restart"
+msgstr "ចាប់​ផ្ដើម​ឡើង​វិញ"
+
+#: blinken.cpp:413
+#, kde-format
+msgid "Enter Your Name"
+msgstr "បញ្ចូល​ឈ្មោះ​របស់​អ្នក"
+
+#: blinken.cpp:413
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr "ឈ្មោះ ៖"
+
+#: blinken.cpp:689
+#, kde-format
+msgid "Restart the game"
+msgstr "ចាប់​ផ្ដើម​ល្បែង​ឡើងវិញ"
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Quit Blinken"
+msgstr "ចេញ​ពី Blinken"
+
+#: blinken.cpp:692
+#, kde-format
+msgid "View Highscore Table"
+msgstr "មើល​តារាង​ពិន្ទុ​ខ្ពស់"
+
+#: blinken.cpp:697
+#, kde-format
+msgid "Show Settings"
+msgstr "បង្ហាញ​ការ​កំណត់"
+
+#: blinken.cpp:698
+#, kde-format
+msgid "Hide Settings"
+msgstr "លាក់​ការ​កំណត់"
+
+#: blinken.cpp:701
+#, kde-format
+msgid "2nd Level"
+msgstr "កម្រិត​ទី ២"
+
+#: blinken.cpp:702
+#, kde-format
+msgid "1st Level"
+msgstr "កម្រិត​ទី ១"
+
+#: blinken.cpp:703
+#, kde-format
+msgid "Random Level"
+msgstr "កម្រិត​ចៃដន្យ"
+
+#: blinken.cpp:704
+#, kde-format
+msgid "Press the key for this button"
+msgstr "ចុច​គ្រាប់​ចុច​​សម្រាប់​ប៊ូតុង​នេះ"
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Click any button to change its key"
+msgstr "ចុច​ប៊ូតុង​ណា​មួយ​ដើម្បី​ផ្លាស់ប្ដូរ​គ្រាប់​ចុច​របស់​វា"
+
+#: blinken.cpp:711
+#, kde-format
+msgid "Press Start to begin"
+msgstr "ចុច​ ចាប់ផ្ដើម ដើម្បី​ចាប់ផ្ដើម"
+
+#: blinken.cpp:715
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr "កំណត់​កម្រិត​លំបាក..."
+
+#: blinken.cpp:725
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr "លំដាប់​បន្ទាប់ពី ៣..."
+
+#: blinken.cpp:738
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr "លំដាប់​បន្ទាប់ពី ៣, ២..."
+
+#: blinken.cpp:742
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr "លំដាប់​បន្ទាប់ពី ២..."
+
+#: blinken.cpp:756
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr "លំដាប់​បន្ទាប់ពី ៣, ២, ១..."
+
+#: blinken.cpp:760
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr "លំដាប់​បន្ទាប់ពី ២, ១...."
+
+#: blinken.cpp:772
+#, kde-format
+msgid "Remember this sequence..."
+msgstr "ចងចាំ​លំដាប់​នេះ..."
+
+#: blinken.cpp:783
+#, kde-format
+msgid "Repeat the sequence"
+msgstr "ធ្វើ​លំដាប់​នេះ​ម្ដងទៀត"
+
+#: blinken.cpp:800
+#, kde-format
+msgid "2"
+msgstr "២"
+
+#: blinken.cpp:801
+#, kde-format
+msgid "1"
+msgstr "១"
+
+#: blinken.cpp:802
+#, kde-format
+msgid "?"
+msgstr "?"
+
+#: blinken.cpp:806
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr "កម្រិត"
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr "ចាក់​សំឡេង"
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr "ប្រើ​ពុម្ពអក្សរ​ផ្ទាល់​ខ្លួន​សម្រាប់​អត្ថបទ​ស្ថានភាព"
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr "ពិន្ទុ​ខ្ពស់"
+
+#: highscoredialog.cpp:149
+#, kde-format
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr "កម្រិត ១"
+
+#: highscoredialog.cpp:150
+#, kde-format
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr "កម្រិត ២"
+
+#: highscoredialog.cpp:151
+#, kde-format
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr "កម្រិត ?"
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr "Blinken"
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr "ល្បែង​បង្កើន​សតិ"
+
+#: main.cpp:31
+#, fuzzy, kde-format
+#| msgid ""
+#| "© 2005-2007 Albert Astals Cid\n"
+#| "© 2005-2007 Danny Allen"
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+"រក្សាសិទ្ធិ​ឆ្នាំ ២​០​០​៥-២​០​០​៧ ដោយ Albert Astals Cid\n"
+"រក្សាសិទ្ធិ​ឆ្នាំ ២​០​០​៥-២​០​០​៧ ដោយ Danny Allen"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr "សរសេរកូដ"
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr "Danny Allen"
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr "រចនា ក្រាហ្វិក និង​​សំឡេង"
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr "Steve Jordi"
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr "ពុម្ពអក្សរ GPL'ed his 'Steve' ដូច្នេះ​យើង​អាច​ប្រើ​វា​បាន"

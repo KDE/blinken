@@ -1,0 +1,433 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek voor &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+&Freek.de.Kruijf;<othercredit role="translator"
+><firstname
+>Jaap</firstname
+><surname
+>Woldringh</surname
+><affiliation
+><address
+><email
+>jjh punt woldringh op planet punt nl</email
+></address
+></affiliation
+><contrib
+>Vertaling</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-10</date>
+<releaseinfo
+>Applications 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>&blinken; is een oud geheugenspelletje uit de jaren 1970, nu uitgebracht voor &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>spelletje</keyword>
+<keyword
+>kind</keyword>
+<keyword
+>elektronisch</keyword>
+<keyword
+>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<para
+>&blinken; is gebaseerd op een elektronisch spelletje uit 1978, waarin de spelers steeds langere reeksen moeten onthouden. Op het apparaat zijn 4 verschillend gekleurde knoppen aanwezig, elk met een eigen geluid. Deze knoppen lichten op in een willekeurige volgorde, waarmee een reeks wordt gemaakt, die de speler moet onthouden. Als de speler erin slaagt zich de reeks te herinneren, in de juiste volgorde, gaat hij/zij naar het volgende niveau, waar een soortgelijke reeks, maar een stap langer, wordt aangeboden. Indien dit niet lukt, heeft hij/zij het spel verloren, en moet hij/zij weer helemaal van voren af aan beginnen. Het doel is een hoge score te behalen - elke stap in de reeks is een punt waard, dus een goede invoer van een reeks van 8 lichtjes is 8 punten waard op de tabel van de hoogste scores. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Met &blinken; spelen</title>
+
+<para
+>Dit is het scherm bij het starten van &blinken;, met het algemene beeld van de toepassing. Het grootste deel van het scherm wordt in beslag genomen door het <interface
+>apparaat</interface
+>, met de <interface
+>4 gekleurde knoppen</interface
+>, en met de besturing (<interface
+>scoreteller</interface
+>, <guibutton
+>Start</guibutton
+>-knop, &etc;) in het midden. De huidige status van het spel wordt getoond op een <interface
+>velletje papier</interface
+> onder het apparaat. In de hoeken van de toepassing zijn drie knoppen: </para>
+
+<screenshot>
+<screeninfo
+>Dit is het scherm bij het starten van &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Dit is het scherm bij het starten van &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Met de knop <guibutton
+>Topscores tonen</guibutton
+> wordt <action
+>een dialoog geopend waarin de tabel <guilabel
+>Topscores</guilabel
+> wordt getoond</action
+> voor elk van de 3 moeilijkheidsgraden (u kunt de tabel met de <guilabel
+>Topscores</guilabel
+> ook vinden door te <action
+>klikken op de <interface
+>scoreteller</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knop <guibutton
+>Topscores</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knop <guibutton
+>Topscores</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Met de knop <guibutton
+>Afsluiten</guibutton
+> <action
+>wordt de toepassing afgesloten</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knop <guibutton
+>Afsluiten</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knop <guibutton
+>Afsluiten</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>De knop <guibutton
+>Help</guibutton
+> is speciaal, doordat <action
+>er 4 knoppen onder liggen</action
+>, die zichtbaar worden als de muis boven de knop <guibutton
+>Help</guibutton
+> wordt<action
+>gehouden</action
+>. Ze geven toegang tot het <guilabel
+>Handboek van &blinken;</guilabel
+> (dit document), <guilabel
+>Instellingen  tonen/verbergen</guilabel
+>, en <guilabel
+>Informatie over &blinken;</guilabel
+> en <guilabel
+>over &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Knop <guibutton
+>Help</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Knop <guibutton
+>Help</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Je kunt even uitproberen hoe het spel werkt, door op de <interface
+>gekleurde knoppen</interface
+> te klikken in het hoofdscherm. De knoppen lichten dan op, en je hoort bij elk ervan een andere toon. </para>
+
+<sect1 id="starting-game">
+<title
+>Een spelletje starten</title>
+
+<para
+>Als je eenmaal weet hoe het werkt, kan je een spelletje beginnen door op de <guibutton
+>Startknop</guibutton
+> in het midden te klikken. Hierdoor wordt het apparaat <quote
+>aangezet</quote
+>, wat is te zien aan de <interface
+>scoreteller</interface
+>. </para>
+
+<screenshot>
+<screeninfo
+>Spelniveau instellen</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Spelniveau instellen</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Er zijn 3 spelniveaus in &blinken;: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Niveau 1 is het gemakkelijkste, omdat je dan de meeste tijd krijgt. </para>
+</listitem>
+<listitem>
+<para
+>Niveau 2 is het tussenliggende niveau, en is hetzelfde als niveau 1, maar je krijgt wat minder tijd. </para>
+</listitem>
+<listitem>
+<para
+>Niveau ? is het moeilijkste niveau van &blinken;.  Je krijgt net zoveel tijd als in niveau 2, maar elke reeks is geheel willekeurig, en niet een voortzetting van de vorige reeks, zoals in de andere niveaus. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Een nieuwe topscore invoeren</title>
+
+<para
+>Als je erin slaagt een topscore te bereiken, dan komt die in de tabel voor de <guilabel
+>Topscores</guilabel
+>. In een dialoog kun je je naam invullen voor de score in de tabel: </para>
+
+<screenshot>
+<screeninfo
+>Dialoog voor het invullen van je naam</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Dialoog voor het invullen van je naam</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Er worden voor elk niveau alleen de 5 hoogste scores bijgehouden, dus wees niet teleurgesteld als het je niet lukt om op de lijst te komen! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Enkele tips</title>
+<para
+>&blinken; is een erg goed geheugenspelletje, maar je hoeft niet  echt een goed geheugen te hebben om er mee te kunnen spelen. Met behulp van de volgende tips kun je heus wel goede scores behalen: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Als je PC luidsprekers heeft, kun je die zo hard aanzetten dat je de tonen goed kunt horen bij het oplichten van de gekleurde knoppen. </para>
+</listitem>
+<listitem>
+<para
+>Experimenteer met de muis en met het <link linkend="accessibility"
+>toetsenbord</link
+>, om na te gaan wat je het beste bevalt. </para>
+</listitem>
+<listitem>
+<para
+>Probeer je een reeks te herinneren als een reeks van kleuren. </para>
+</listitem>
+<listitem>
+<para
+>Probeer je een reeks te herinneren als posities op het scherm. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Opties voor toegankelijkheid</title>
+
+<para
+>Om het bepaalde gebruikers mogelijk te maken met &blinken; te spelen, zijn er diverse toegangsmogelijkheden in &blinken; ingebouwd. </para>
+<para
+>Om de toegankelijkheidsopties van &blinken; te kunnen zien en wijzigen, klikt u op de &Ctrl;-toets (als er geen spelletje actief is): </para>
+
+<screenshot>
+<screeninfo
+>Toetsen voor &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Toetsen voor &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Keer terug naar het scherm voor het spel door opnieuw de &Ctrl;-toets in te drukken. </para>
+
+<para
+>Behalve met de muis, kan &blinken; ook met het toetsenbord worden gespeeld. </para>
+
+<para
+>De standaard toetsen hiervoor zijn de toetsen <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+>, <keycap
+>4</keycap
+>. </para>
+
+<para
+>U kunt de toetsen wijzigen door op de knop te klikken met de muis. Deze licht dan op, en wacht op invoer. Klik op de gewenste toets op het toetsenbord, deze wordt dan de aan deze knop gekoppelde toets. </para>
+
+<para
+>Meer opties zijn beschikbaar in het midden van het venster: <interface
+>Geluid</interface
+> en <interface
+>Lettertype</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Door het kruisje van <interface
+>Geluid</interface
+> weg te halen, wordt in &blinken; het geluid uitgezet. </para>
+</listitem>
+<listitem>
+<para
+>Door het kruisje van <interface
+>Lettertype</interface
+> weg te halen, wordt een standaard lettertype gebruikt voor het weergeven van de status, in plaats van het standaard handgeschreven lettertype. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&blinken; </para>
+<para
+>Program copyright 2005 Albert Astals Cid &Albert.Astals.Cid.mail; and &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Medewerkers: </para>
+<itemizedlist>
+<listitem>
+<para
+>"Steve" lettertype: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Documentatie copyright 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+&meld.fouten;&vertaling.freek;&vertaling.jaap; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

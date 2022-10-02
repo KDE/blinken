@@ -1,0 +1,272 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011.
+# Vit Pelcak <vpelcak@suse.cz>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: blinken\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"PO-Revision-Date: 2021-03-22 15:52+0100\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Klára Cihlářová,Jakub Friedl,David Kolibáč"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "koty@seznam.cz,jfriedl@suse.cz,david@kolibac.cz"
+
+#: blinken.cpp:68
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr "0"
+
+#: blinken.cpp:180
+#, kde-format
+msgid "Sounds"
+msgstr "Zvuky"
+
+#: blinken.cpp:181
+#, kde-format
+msgid "Font"
+msgstr "Písmo"
+
+#: blinken.cpp:223
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr "Start"
+
+#: blinken.cpp:235
+#, kde-format
+msgid "Restart"
+msgstr "Restartovat"
+
+#: blinken.cpp:413
+#, kde-format
+msgid "Enter Your Name"
+msgstr "Zadejte své jméno"
+
+#: blinken.cpp:413
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr "Jméno:"
+
+#: blinken.cpp:689
+#, kde-format
+msgid "Restart the game"
+msgstr "Znovu začít tuto hru"
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Quit Blinken"
+msgstr "Ukončit Blinken"
+
+#: blinken.cpp:692
+#, kde-format
+msgid "View Highscore Table"
+msgstr "Zobrazit žebříček výsledků"
+
+#: blinken.cpp:697
+#, kde-format
+msgid "Show Settings"
+msgstr "Zobrazit nastavení"
+
+#: blinken.cpp:698
+#, kde-format
+msgid "Hide Settings"
+msgstr "Skrýt nastavení"
+
+#: blinken.cpp:701
+#, kde-format
+msgid "2nd Level"
+msgstr "2. úroveň"
+
+#: blinken.cpp:702
+#, kde-format
+msgid "1st Level"
+msgstr "1. úroveň"
+
+#: blinken.cpp:703
+#, kde-format
+msgid "Random Level"
+msgstr "Náhodné úrovně"
+
+#: blinken.cpp:704
+#, kde-format
+msgid "Press the key for this button"
+msgstr "Stiskněte klávesu pro toto tlačítko"
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Click any button to change its key"
+msgstr "Klikněte na libovolné tlačítko pro změnu jeho klávesy"
+
+#: blinken.cpp:711
+#, kde-format
+msgid "Press Start to begin"
+msgstr "Hru spustíte stisknutím Start"
+
+#: blinken.cpp:715
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr "Nastavení obtížnosti úrovně..."
+
+#: blinken.cpp:725
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr "Následující sekvence v 3..."
+
+#: blinken.cpp:738
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr "Následující sekvence v 3, 2..."
+
+#: blinken.cpp:742
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr "Následující sekvence v 2..."
+
+#: blinken.cpp:756
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr "Následující sekvence v 3, 2, 1..."
+
+#: blinken.cpp:760
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr "Následující sekvence v 2, 1..."
+
+#: blinken.cpp:772
+#, kde-format
+msgid "Remember this sequence..."
+msgstr "Pamatovat si tuto sekvenci..."
+
+#: blinken.cpp:783
+#, kde-format
+msgid "Repeat the sequence"
+msgstr "Opakovat sekvenci"
+
+#: blinken.cpp:800
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#: blinken.cpp:801
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#: blinken.cpp:802
+#, kde-format
+msgid "?"
+msgstr "?"
+
+#: blinken.cpp:806
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr "Úroveň"
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr "Hrát zvuky"
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr "Pro stav použít vlastní písmo"
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr "Nejvyšší skóre"
+
+#: highscoredialog.cpp:149
+#, kde-format
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr "Úroveň 1"
+
+#: highscoredialog.cpp:150
+#, kde-format
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr "Úroveň 2"
+
+#: highscoredialog.cpp:151
+#, kde-format
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr "Úroveň ?"
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr "Blinken"
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr "Hra k procvičování paměti"
+
+#: main.cpp:31
+#, kde-format
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr "Kód"
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr "Danny Allen"
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr "Design, grafika a zvuky"
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr "Steve Cable"
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr "Poskytl své písmo 'Steve' pod GPL, takže jsme jej mohli použít"

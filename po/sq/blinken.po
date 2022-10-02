@@ -1,0 +1,283 @@
+# Albanian translation for kdeedu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdeedu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeedu\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"PO-Revision-Date: 2009-07-30 12:05+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2011-04-21 22:09+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE Shqip, Launchpad Contributions: Vilson Gjeci"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-shqip@yahoogroups.com,vilsongjeci@gmail.com"
+
+#: blinken.cpp:68
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr "0"
+
+#: blinken.cpp:180
+#, kde-format
+msgid "Sounds"
+msgstr "Zërat"
+
+#: blinken.cpp:181
+#, kde-format
+msgid "Font"
+msgstr "Fonti"
+
+#: blinken.cpp:223
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr "Nis"
+
+#: blinken.cpp:235
+#, kde-format
+msgid "Restart"
+msgstr "Rinis"
+
+#: blinken.cpp:413
+#, kde-format
+msgid "Enter Your Name"
+msgstr "Fut Emrin Tënd"
+
+#: blinken.cpp:413
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr "Emri:"
+
+#: blinken.cpp:689
+#, kde-format
+msgid "Restart the game"
+msgstr "Rinis lojën"
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Quit Blinken"
+msgstr "Largohu nga Blinken"
+
+#: blinken.cpp:692
+#, kde-format
+msgid "View Highscore Table"
+msgstr "Shfaq Tabelën e Pikëve më të Larta"
+
+#: blinken.cpp:697
+#, kde-format
+msgid "Show Settings"
+msgstr "Shfaq Parametrat"
+
+#: blinken.cpp:698
+#, kde-format
+msgid "Hide Settings"
+msgstr "Fsheh Parametrat"
+
+#: blinken.cpp:701
+#, kde-format
+msgid "2nd Level"
+msgstr "Niveli i 2-të"
+
+#: blinken.cpp:702
+#, kde-format
+msgid "1st Level"
+msgstr "Niveli i 1-rë"
+
+#: blinken.cpp:703
+#, kde-format
+msgid "Random Level"
+msgstr "Nivel i Zgjedhur nga Kompjuteri"
+
+#: blinken.cpp:704
+#, kde-format
+msgid "Press the key for this button"
+msgstr "Shtypni butonin për këtë funksion"
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Click any button to change its key"
+msgstr "Klikoni çdo buton për të ndryshuar funksionin"
+
+#: blinken.cpp:711
+#, kde-format
+msgid "Press Start to begin"
+msgstr "Klikoni Nis për të filluar"
+
+#: blinken.cpp:715
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr "Zgjidh Nivelin e Vështirësisë..."
+
+#: blinken.cpp:725
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr "Sekuenca tjetër për 3..."
+
+#: blinken.cpp:738
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr "Sekuenca tjetër për 3, 2..."
+
+#: blinken.cpp:742
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr "Sekuenca tjetër për 2..."
+
+#: blinken.cpp:756
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr "Sekuenca tjetër për 3, 2, 1..."
+
+#: blinken.cpp:760
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr "Sekuenca tjetër për 2, 1..."
+
+#: blinken.cpp:772
+#, kde-format
+msgid "Remember this sequence..."
+msgstr "Mba mend këtë sekuencë..."
+
+#: blinken.cpp:783
+#, kde-format
+msgid "Repeat the sequence"
+msgstr "Përsërit sekuencën"
+
+#: blinken.cpp:800
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#: blinken.cpp:801
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#: blinken.cpp:802
+#, kde-format
+msgid "?"
+msgstr "?"
+
+#: blinken.cpp:806
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr "Niveli"
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr "Luaj zërat"
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr "Përdor një font sipas dëshirës për tekstin e gjendjes"
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr "Pikët më të larta"
+
+#: highscoredialog.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@title:group level high scores"
+#| msgid "Level %1"
+#| msgid_plural "Level %1"
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr "Niveli %1"
+
+#: highscoredialog.cpp:150
+#, fuzzy, kde-format
+#| msgctxt "@title:group all other level high scores"
+#| msgid "Level ?"
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr "Niveli ?"
+
+#: highscoredialog.cpp:151
+#, fuzzy, kde-format
+#| msgctxt "@title:group all other level high scores"
+#| msgid "Level ?"
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr "Niveli ?"
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr "Blinken"
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr "Një lojë për forcimin e kujtesës"
+
+#: main.cpp:31
+#, fuzzy, kde-format
+#| msgid ""
+#| "© 2005-2007 Albert Astals Cid\n"
+#| "© 2005-2007 Danny Allen"
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+"© 2005-2007 Albert Astals Cid\n"
+"© 2005-2007 Danny Allen"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr "Kodimi"
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr "Danny Allen"
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr "Dizenjimi, Grafikët dhe Zërat"
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr "Steve Jordi"
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr "E ktheu në GPL fontin e tij 'Steve' që të mund ta përdorte"

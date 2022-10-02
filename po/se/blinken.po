@@ -1,0 +1,271 @@
+# Translation of blinken to Northern Sami
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: blinken\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-03 00:39+0000\n"
+"PO-Revision-Date: 2007-09-11 22:44+0200\n"
+"Last-Translator: Northern Sami translation team <i18n-sme@lister.ping.uio."
+"no>\n"
+"Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
+"Language: se\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: blinken.cpp:70
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr ""
+
+#: blinken.cpp:182
+#, kde-format
+msgid "Sounds"
+msgstr ""
+
+#: blinken.cpp:183
+#, kde-format
+msgid "Font"
+msgstr ""
+
+#: blinken.cpp:225
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr ""
+
+#: blinken.cpp:237
+#, kde-format
+msgid "Restart"
+msgstr ""
+
+#: blinken.cpp:415
+#, kde-format
+msgid "Enter Your Name"
+msgstr ""
+
+#: blinken.cpp:415
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr ""
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Restart the game"
+msgstr ""
+
+#: blinken.cpp:693
+#, kde-format
+msgid "Quit Blinken"
+msgstr ""
+
+#: blinken.cpp:694
+#, kde-format
+msgid "View Highscore Table"
+msgstr ""
+
+#: blinken.cpp:699
+#, kde-format
+msgid "Show Settings"
+msgstr ""
+
+#: blinken.cpp:700
+#, kde-format
+msgid "Hide Settings"
+msgstr ""
+
+#: blinken.cpp:703
+#, kde-format
+msgid "2nd Level"
+msgstr ""
+
+#: blinken.cpp:704
+#, kde-format
+msgid "1st Level"
+msgstr ""
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Random Level"
+msgstr ""
+
+#: blinken.cpp:706
+#, kde-format
+msgid "Press the key for this button"
+msgstr ""
+
+#: blinken.cpp:707
+#, kde-format
+msgid "Click any button to change its key"
+msgstr ""
+
+#: blinken.cpp:713
+#, kde-format
+msgid "Press Start to begin"
+msgstr ""
+
+#: blinken.cpp:717
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr ""
+
+#: blinken.cpp:727
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr ""
+
+#: blinken.cpp:740
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr ""
+
+#: blinken.cpp:744
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr ""
+
+#: blinken.cpp:758
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr ""
+
+#: blinken.cpp:762
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr ""
+
+#: blinken.cpp:774
+#, kde-format
+msgid "Remember this sequence..."
+msgstr ""
+
+#: blinken.cpp:785
+#, kde-format
+msgid "Repeat the sequence"
+msgstr ""
+
+#: blinken.cpp:802
+#, kde-format
+msgid "2"
+msgstr ""
+
+#: blinken.cpp:803
+#, kde-format
+msgid "1"
+msgstr ""
+
+#: blinken.cpp:804
+#, kde-format
+msgid "?"
+msgstr ""
+
+#: blinken.cpp:808
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr ""
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr ""
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr ""
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr ""
+
+#: highscoredialog.cpp:149
+#, kde-format
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr ""
+
+#: highscoredialog.cpp:150
+#, kde-format
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr ""
+
+#: highscoredialog.cpp:151
+#, kde-format
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr ""
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr ""
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr ""
+
+#: main.cpp:31
+#, kde-format
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr ""
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr ""
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr ""

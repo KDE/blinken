@@ -1,0 +1,275 @@
+# translation of blinken.po to Punjabi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2007, 2009, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: blinken\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"PO-Revision-Date: 2011-06-29 06:44+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aalam@users.sf.net"
+
+#: blinken.cpp:68
+#, kde-format
+msgctxt ""
+"If the Steve font that is used by Blinken by default to show status messages "
+"does not support any of the characters of your language, please translate "
+"that message to 1 and KDE standard font will be used to show the texts, if "
+"not translate it to 0"
+msgid "0"
+msgstr "0"
+
+#: blinken.cpp:180
+#, kde-format
+msgid "Sounds"
+msgstr "ਸਾਊਂਡ"
+
+#: blinken.cpp:181
+#, kde-format
+msgid "Font"
+msgstr "ਫੋਂਟ"
+
+#: blinken.cpp:223
+#, kde-format
+msgctxt "@action:button Start a new game"
+msgid "Start"
+msgstr "ਸ਼ੁਰੂ"
+
+#: blinken.cpp:235
+#, kde-format
+msgid "Restart"
+msgstr "ਮੁੜ-ਚਾਲੂ"
+
+#: blinken.cpp:413
+#, kde-format
+msgid "Enter Your Name"
+msgstr "ਆਪਣਾ ਨਾਂ ਦਿਓ"
+
+#: blinken.cpp:413
+#, kde-format
+msgctxt "@label:textbox refers to the user's name"
+msgid "Name:"
+msgstr "ਨਾਂ:"
+
+#: blinken.cpp:689
+#, kde-format
+msgid "Restart the game"
+msgstr "ਖੇਡ ਮੁੜ-ਸ਼ੁਰੂ ਕਰੋ"
+
+#: blinken.cpp:691
+#, kde-format
+msgid "Quit Blinken"
+msgstr "ਬਲੀਕਿੰਨ ਬੰਦ ਕਰੋ"
+
+#: blinken.cpp:692
+#, kde-format
+msgid "View Highscore Table"
+msgstr "ਉੱਚ-ਸਕੋਰ ਟੇਬਲ ਵੇਖੋ"
+
+#: blinken.cpp:697
+#, kde-format
+msgid "Show Settings"
+msgstr "ਸੈਟਿੰਗ ਵੇਖੋ"
+
+#: blinken.cpp:698
+#, kde-format
+msgid "Hide Settings"
+msgstr "ਸੈਟਿੰਗ ਓਹਲੇ"
+
+#: blinken.cpp:701
+#, kde-format
+msgid "2nd Level"
+msgstr "2ਜਾ ਲੈਵਲ"
+
+#: blinken.cpp:702
+#, kde-format
+msgid "1st Level"
+msgstr "1ਲਾਂ ਲੈਵਲ"
+
+#: blinken.cpp:703
+#, kde-format
+msgid "Random Level"
+msgstr "ਰਲਵਾਂ ਲੈਵਲ"
+
+#: blinken.cpp:704
+#, kde-format
+msgid "Press the key for this button"
+msgstr "ਇਹ ਬਟਨ ਲਈ ਸਵਿੱਚ ਦੱਬੋ"
+
+#: blinken.cpp:705
+#, kde-format
+msgid "Click any button to change its key"
+msgstr "ਇਹ ਸਵਿੱਚ ਬਦਲਣ ਲਈ ਕੋਈ ਵੀ ਬਟਨ ਕਲਿੱਕ ਕਰੋ"
+
+#: blinken.cpp:711
+#, kde-format
+msgid "Press Start to begin"
+msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਦਬਾਓ"
+
+#: blinken.cpp:715
+#, kde-format
+msgid "Set the Difficulty Level..."
+msgstr "ਔਖਾ ਲੈਵਲ ਸੈੱਟ ਕਰੋ..."
+
+#: blinken.cpp:725
+#, kde-format
+msgid "Next sequence in 3..."
+msgstr "3 ਵਿੱਚ ਅਗਲਾ ਕ੍ਰਮ..."
+
+#: blinken.cpp:738
+#, kde-format
+msgid "Next sequence in 3, 2..."
+msgstr "3, 2 ਵਿੱਚ ਅਗਲਾ ਕ੍ਰਮ..."
+
+#: blinken.cpp:742
+#, kde-format
+msgid "Next sequence in 2..."
+msgstr "2 ਵਿੱਚ ਅਗਲਾ ਕ੍ਰਮ..."
+
+#: blinken.cpp:756
+#, kde-format
+msgid "Next sequence in 3, 2, 1..."
+msgstr "3, 2, 1 ਵਿੱਚ ਅਗਲਾ ਕ੍ਰਮ..."
+
+#: blinken.cpp:760
+#, kde-format
+msgid "Next sequence in 2, 1..."
+msgstr "2, 1 ਵਿੱਚ ਅਗਲਾ ਕ੍ਰਮ..."
+
+#: blinken.cpp:772
+#, kde-format
+msgid "Remember this sequence..."
+msgstr "ਇਹ ਕ੍ਰਮ ਯਾਦ ਰੱਖੋ..."
+
+#: blinken.cpp:783
+#, kde-format
+msgid "Repeat the sequence"
+msgstr "ਕ੍ਰਮ ਦੁਹਰਾਓ"
+
+#: blinken.cpp:800
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#: blinken.cpp:801
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#: blinken.cpp:802
+#, kde-format
+msgid "?"
+msgstr "?"
+
+#: blinken.cpp:806
+#, kde-format
+msgctxt "@label:chooser which level is currently being played"
+msgid "Level"
+msgstr "ਲੈਵਲ"
+
+#. i18n: ectx: label, entry (playSounds), group (general)
+#: blinken.kcfg:9
+#, kde-format
+msgid "Play sounds"
+msgstr "ਸਾਊਂਡ ਚਲਾਓ"
+
+#. i18n: ectx: label, entry (customFont), group (general)
+#: blinken.kcfg:13
+#, kde-format
+msgid "Use custom font for status text"
+msgstr "ਹਾਲਤ ਟੈਕਸਟ ਲਈ ਪਸੰਦੀਦਾ ਫੋਂਟ ਵਰਤੋਂ"
+
+#: highscoredialog.cpp:138
+#, kde-format
+msgctxt "@title:window the highest scores for each level are shown"
+msgid "Highscores"
+msgstr "ਉੱਚ ਸਕੋਰ"
+
+#: highscoredialog.cpp:149
+#, kde-format
+msgctxt "@title:group High scores Level 1 tab title"
+msgid "Level 1"
+msgstr "ਲੈਵਲ 1"
+
+#: highscoredialog.cpp:150
+#, kde-format
+msgctxt "@title:group High scores Level 2 tab title"
+msgid "Level 2"
+msgstr "ਲੈਵਲ 2"
+
+#: highscoredialog.cpp:151
+#, kde-format
+msgctxt "@title:group High scores Level ? tab tible"
+msgid "Level ?"
+msgstr "ਲੈਵਲ ?"
+
+#: main.cpp:31
+#, kde-format
+msgid "Blinken"
+msgstr "ਬਲੀਕਿੰਨ"
+
+#: main.cpp:31
+#, kde-format
+msgid "A memory enhancement game"
+msgstr "ਇੱਕ ਮੈਮੋਰੀ ਵਧਾਉਣ ਵਾਲੀ ਖੇਡ"
+
+#: main.cpp:31
+#, fuzzy, kde-format
+#| msgid ""
+#| "© 2005-2007 Albert Astals Cid\n"
+#| "© 2005-2007 Danny Allen"
+msgid ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+msgstr ""
+"© 2005-2007 Albert Astals Cid\n"
+"© 2005-2007 Danny Allen"
+
+#: main.cpp:32
+#, kde-format
+msgid "Albert Astals Cid"
+msgstr "ਅਲਬਰਟ ਅਸਟਾਲਸ ਸਿਡ"
+
+#: main.cpp:32
+#, kde-format
+msgid "Coding"
+msgstr "ਕੋਡਿੰਗ"
+
+#: main.cpp:33
+#, kde-format
+msgid "Danny Allen"
+msgstr "ਡੈਨੀ ਅੱਲੀਨ"
+
+#: main.cpp:33
+#, kde-format
+msgid "Design, Graphics and Sounds"
+msgstr "ਡਿਜ਼ਾਇਨ, ਗਰਾਫਿਕਸ ਅਤੇ ਸਾਊਂਡ"
+
+#: main.cpp:34
+#, kde-format
+msgid "Steve Jordi"
+msgstr "ਸਟੀਵੀ ਜੋਰਡੀ"
+
+#: main.cpp:34
+#, kde-format
+msgid "GPL'ed his 'Steve' font so that we could use it"
+msgstr "GPL ਕੀਤੇ 'Steve' ਫੋਂਟ, ਜੋ ਕਿ ਅਸੀਂ ਵਰਤੇ ਚੁੱਕੇ ਹਾਂ"

@@ -1,0 +1,462 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY kappname "&blinken;">
+ <!ENTITY package "kdeedu">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Estonian  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>&blinken;i käsiraamat</title>
+
+<authorgroup>
+<author
+><firstname
+>Danny</firstname
+> <surname
+>Allen</surname
+> <affiliation
+> <address
+>&Danny.Allen.mail;</address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2008-08-23</date>
+<releaseinfo
+>0.2 (&kde; 4.1.2)</releaseinfo>
+
+<abstract>
+<para
+>&blinken; toob &kde; rüppe juba 1970. aastail populaarse meelespidamismängu. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>mäng</keyword>
+<keyword
+>lapsed</keyword>
+<keyword
+>eletrooniline</keyword>
+<keyword
+>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+
+<para
+>&blinken;i eeskujuks on 1978. aastal ilmavalgust näinud elektrooniline mäng, milles mängijad peavad meeles pidama aina pikemaks muutuvaid jadasid. Seadme esiküljel on neli erinevat värvi nuppu, igaüks omaenda heliga. Need löövad juhuslikus järjekorras heledaks, tekitades jada, mille mängija peab meelde jätma. Kui mängija suudab valgusjada õiges järjekorras meelde jätta, suundub ta järgmisele tasemele, kus teda ootab ees samasugune, kuid ühe liikme võrra pikem jada. Kui järjekord jääb valesti meelde, on mäng kaotatud ning tuleb alustada taas algusest. Eesmärk on mõistagi saavutada rekord. Jada iga samm on ühe punkti vääriline, nii et näiteks 8 sammust koosneva jada korrektne meeldejätmine teenib 8 punkti. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>&blinken;i kasutamine</title>
+
+<para
+>Sellist pilti näeb &blinken;i käivitamisel. Enamiku aknast hõlmab nelja värvilise nupuga <interface
+>seade</interface
+> <interface
+>4 värvilise nupuga</interface
+> ning juhtelementidega (<interface
+>tulemuste arvestamine</interface
+>, <guibutton
+>alusta</guibutton
+>misnupp jne.) ekraani keskel. Rakenduse hetkeolekut näeb seadme all paikneval <interface
+>paberitükil</interface
+>. Akna nurkades on kolm nuppu: </para>
+
+<screenshot>
+<screeninfo
+>Sellist pilti näeb &blinken;i käivitamisel</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Sellist pilti näeb &blinken;i käivitamisel</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guiicon
+>Rekord</guiicon
+>inupp <action
+>avab dialoogi, kus näeb <guilabel
+>rekordite tabel</guilabel
+></action
+>it kõigi kolme raskusastme kohta. <guilabel
+>Rekordite tabelit</guilabel
+> saab avada ka <action
+>klõpsuga <interface
+>tulemuste arvestamise</interface
+> väljale</action
+>. </para>
+
+<screenshot>
+<screeninfo
+><guiicon
+>Rekord</guiicon
+>inupp</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+><guiicon
+>Rekord</guiicon
+>inupp</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guiicon
+>Välju</guiicon
+>misnupp <action
+>lõpetab rakenduse töö</action
+>. </para>
+
+<screenshot>
+<screeninfo
+><guiicon
+>Välju</guiicon
+>misnupp</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+><guiicon
+>Välju</guiicon
+>misnupp</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guiicon
+>Abi</guiicon
+>nupp on omamoodi eriline, sest sellel on <action
+>neli alamnuppu</action
+>. Neid näeb, kui jätta hiir <guiicon
+>abi</guiicon
+>nupu kohale <action
+>hetkeks seisma</action
+>, ning nende abil saab näha <guilabel
+>&blinken;i käsiraamat</guilabel
+>ut (sedasama, mida sa praegu loed), lasta <guilabel
+>seadistusi näidata/peita</guilabel
+>, näha <guilabel
+>&blinken;i info</guilabel
+>t ja <guilabel
+>&kde; info</guilabel
+>t. </para>
+
+<screenshot>
+<screeninfo
+><guiicon
+>Abi</guiicon
+>nupp</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+><guiicon
+>Abi</guiicon
+>nupp</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Mänguga tutvumiseks proovi peaaknas, mida <interface
+>värvilised nupud</interface
+> teevad. Klõpsamisel muutuvad nupud heledaks ja kuuldavale tuleb teatud heli. </para>
+
+<sect1 id="starting-game">
+<title
+>Mängu alustamine</title>
+
+<para
+>Kui oled rakendusega esmatutvuse sõlminud, saad alustada mängu, klõpsates keset akent asuvale nupule <guibutton
+>Alusta</guibutton
+>. Seade <quote
+>lülitub sisse</quote
+>, mida näitab käivituv <interface
+>tulemuste arvestaja</interface
+>. Nüüd saad <action
+>valida raskusastme</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Raskusastme valimine</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Raskusastme valimine</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&blinken; pakub kolme raskusastet: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>1. tase on lihtsaim, jättes suurima vahe iga jada esitamise vahele. </para>
+</listitem>
+<listitem>
+<para
+>2. tase on keskmise raskusastmega. Üldiselt sarnaneb see esimesele tasemele, kuid jadade esitamise intervall on kiirem. </para>
+</listitem>
+<listitem>
+<para
+>Tase ? on &blinken;i raskeim tase. Intervall on küll sama teise tasemega, kuid jadad on täiesti juhuslikud, mitte kindlas järjekorras, nagu standardse mängu korral. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Uue rekordi sisestamine</title>
+
+<para
+>Kui sul õnnestub rekord püstitada, lisatakse see <guilabel
+>rekordite tabel</guilabel
+>isse. Ühtlasi ilmub dialoog, mis soovib teada nime, mida uue rekordiga seostada: </para>
+
+<screenshot>
+<screeninfo
+>Rekordiomaniku nime küsimine</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Rekordiomaniku nime küsimine</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Iga taseme kohta säilitatakse ainult viis parimat tulemust, nii et ära kurvasta, kui sa kohe rekordit ei püstita! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Nõuanded</title>
+<para
+>&blinken; on täiuslik meelespidamismäng, kuigi edu saavutamiseks pole just vajalik täiuslik meelespidamine. Järgmised nõuanded aitavad sul loodetavasti häid tulemusi saavutada ja rekordeid püstitada: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Kui sinu arvutil on kõlarid, lülita need sisse ja määra helitugevus päris korralikuks, et võiksid lisaks valgusmängule ka helisid kuulda. </para>
+</listitem>
+<listitem>
+<para
+>Proovi tegutsemist nii hiirega kui <link linkend="accessibility"
+>klaviatuurilt</link
+>, et selgitada, milline neist annab sinu puhul paremaid tulemusi. </para>
+</listitem>
+<listitem>
+<para
+>Püüa jada meelde jätta värvide reana. </para>
+</listitem>
+<listitem>
+<para
+>Püüa jada meelde jätta asukohtade järgi aknas. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Hõlbustusvõimalused</title>
+
+<para
+>Et &blinken;it võiksid nautida võimalikult paljud inimesed, pakub &blinken; mitmesuguseid hõlbustusvõimalusi. </para>
+<para
+>&blinken;i hõlbustusvõimaluste vaatamiseks ja muutmiseks vajuta klahvi &Ctrl; (ajal, mis mäng parajasti ei käi). </para>
+
+<screenshot>
+<screeninfo
+>&blinken;i liikumisklahvid</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>&blinken;i liikumisklahvid</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Ekraanile naasmiseks vajuta uuesti klahvi &Ctrl;. </para>
+
+<para
+>Lisaks hiirele lubab &blinken; kasutajal tegutseda ka ainult klaviatuuri kasutades. </para>
+
+<para
+>Klahvid on vaikimisi <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+> ja <keycap
+>4</keycap
+>. </para>
+
+<para
+>Suvalise nupu klahviseose muutmiseks klõpsa sellele hiirega. Nupp tõstetakse esile ja oodatakse sinu järgmist sammu. Klahviseose muutmiseks vajuta nüüd lihtsalt klaviatuuril sobivat klahvi. </para>
+
+<para
+>Akna keskel on ootel veel mõned võimalused: <interface
+>helid</interface
+> ja <interface
+>font</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Eemaldades märke kastist <interface
+>helid</interface
+>, ei too &blinken; enam mingeid helisid kuuldavale. </para>
+</listitem>
+<listitem>
+<para
+>Eemaldades märke kastist <interface
+>font</interface
+>, kasutatakse olekuteksti näitamiseks standardset fonti, mitte rakenduses muidu pruugitavat käekirja moodi fonti. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Autorid ja litsents</title>
+
+<para
+>&blinken; </para>
+<para
+>Rakenduse autoriõigus 2005: Albert Astals Cid &Albert.Astals.Cid.mail; ja &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Kaasautorid: </para>
+<itemizedlist>
+<listitem>
+<para
+>"Steve'i" font: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Dokumentatsiooni autoriõigus 2005: &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>Tõlge eesti keelde Marek Laane <email
+>bald@starman.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="getting-blinken">
+<title
+>&blinken;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

@@ -1,0 +1,423 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Catalan  "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>El manual del &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>10 de desembre de 2020</date>
+<releaseinfo
+>Aplicacions 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>El &blinken; ens porta un joc retro de memòria electrònica de la dècada de 1970 al &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>joc</keyword>
+<keyword
+>canalla</keyword>
+<keyword
+>electrònica</keyword>
+<keyword
+>retro</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<para
+>El &blinken; es basa en un joc electrònic llançat el 1978, el qual desafia als jugadors a recordar seqüències incrementant-les cada vegada. A la cara del dispositiu hi ha 4 botons de colors diferents, cadascun amb el seu propi so distintiu. Aquests botons s'encenen a l'atzar, creant la seqüència que el jugador ha de recordar. Si el jugador té èxit recordant la seqüència de llums en l'ordre correcte, avançarà a la següent etapa, on se li presentarà una seqüència idèntica amb un pas addicional. Si són incorrectes, es perdrà en el joc, i el jugador haurà de començar de nou des del començament. L'objectiu és aconseguir una alta puntuació: cada pas en la seqüència val un punt, de manera que encertar una seqüència de 8 llums valdrà 8 punts a la taula de puntuació. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Ús del &blinken;</title>
+
+<para
+>Aquesta és la pantalla que es presenta en iniciar el &blinken;, mostra la interfície general de l'aplicació. La major part de la pantalla està ocupada pel <interface
+>dispositiu</interface
+>, amb els <interface
+>4 botons de color</interface
+>, amb els controls del dispositiu (<interface
+>comptador de puntuació</interface
+>, el botó <guibutton
+>Inicia</guibutton
+>, &etc;) al centre de la pantalla. L'estat actual de l'aplicació es mostra en el <interface
+>full de paper</interface
+> a sota del dispositiu. A les cantonades de l'aplicació, hi ha 3 botons: </para>
+
+<screenshot>
+<screeninfo
+>Aquesta és la pantalla que es presenta a l'inici del &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Aquesta és la pantalla que es presenta a l'inici del &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botó <guibutton
+>Puntuacions màximes</guibutton
+> <action
+>obre un diàleg que mostra la taula de <guilabel
+>Puntuacions màximes</guilabel
+></action
+> per a cadascun dels 3 nivells de dificultat (també es pot accedir a la taula <guilabel
+>Puntuacions màximes</guilabel
+> <action
+>fent clic al <interface
+>comptador de la puntuació</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botó <guibutton
+>Puntuacions màximes</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botó <guibutton
+>Puntuacions màximes</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botó <guibutton
+>Surt</guibutton
+> <action
+>tanca l'aplicació</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botó <guibutton
+>Surt</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botó <guibutton
+>Surt</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botó <guibutton
+>Ajuda</guibutton
+> és especial, ja que <action
+>desplega quatre subbotons</action
+>. Aquests botons es mostren quan <action
+>passeu per sobre</action
+> del botó <guibutton
+>Ajuda</guibutton
+>, i facilita l'accés al <guilabel
+>Manual del &blinken;</guilabel
+> (aquest document), <guilabel
+>Mostra/Oculta la configuració</guilabel
+>, i als diàlegs <guilabel
+>Quant al &blinken;</guilabel
+> i <guilabel
+>Quant al &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botó <guibutton
+>Ajuda</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botó <guibutton
+>Ajuda</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Per a familiaritzar-vos amb el funcionament del joc, podeu interactuar amb els <interface
+>botons de color</interface
+> que hi ha a la pantalla principal. Els botons s'il·luminen i produeixen un so en prémer-los. </para>
+
+<sect1 id="starting-game">
+<title
+>Començar una partida</title>
+
+<para
+>Una vegada familiaritzat amb el funcionament de l'aplicació, podeu iniciar un joc prement el botó <guibutton
+>Inicia</guibutton
+> al centre de la pantalla. Aquest <quote
+>encendrà el dispositiu</quote
+>, mostrant el <interface
+>comptador de la puntuació</interface
+> il·luminat. Llavors podreu <action
+>triar el nivell de dificultat</action
+> amb el que voleu provar: </para>
+
+<screenshot>
+<screeninfo
+>Triant el nivell de dificultat</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Triant el nivell de dificultat</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En el &blinken; hi ha 3 nivells: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>El nivell 1 és el nivell més senzill, ja que proporciona el descans més llarg entre cada seqüència de sons. </para>
+</listitem>
+<listitem>
+<para
+>El nivell 2 és el nivell intermedi. És idèntic al del nivell anterior, però té un temps de descans petit entre cada seqüència de sons. </para>
+</listitem>
+<listitem>
+<para
+>El nivell ? és el nivell més difícil del &blinken;. Porta els temps del Nivell 2, però cada seqüència és totalment aleatòria, en lloc de continuar amb la seqüència anterior, com en el tipus de joc estàndard. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Introduir una puntuació màxima nova</title>
+
+<para
+>Si teniu la sort d'aconseguir una puntuació màxima, serà introduïda a la taula de <guilabel
+>Puntuacions màximes</guilabel
+>. Un diàleg us demanarà per un nom a associar amb la vostra puntuació a la taula: </para>
+
+<screenshot>
+<screeninfo
+>El diàleg de sol·licitud de sobrenom de la puntuació màxima</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El diàleg de sol·licitud de sobrenom de la puntuació màxima</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Només es mantenen 5 puntuacions per a cada nivell, de manera que no us sentireu decebut si no la feu! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Consells de joc</title>
+<para
+>El &blinken; és el joc de memòria final, encara que no necessiteu posseir la memòria final per a tenir èxit. Aquests consells us ajudaran en la cerca de la millor puntuació: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Si teniu altaveus al PC, augmenteu el so a un bon nivell per a poder escoltar els tons mentre veieu els llums intermitents. </para>
+</listitem>
+<listitem>
+<para
+>Experimenteu amb els mètodes d'interacció amb el ratolí i del <link linkend="accessibility"
+>teclat</link
+>, per a veure quin s'adapta millor amb la vostra memòria. </para>
+</listitem>
+<listitem>
+<para
+>Intenteu recordant la seqüència com una llista de colors. </para>
+</listitem>
+<listitem>
+<para
+>Intenteu recordant la seqüència com a posicions a la pantalla. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Opcions d'accessibilitat</title>
+
+<para
+>Per a permetre que el &blinken; sigui més fàcil de gaudir per a certs usuaris, hi ha diverses opcions d'accessibilitat incorporades en el &blinken;. </para>
+<para
+>Per a veure i modificar les opcions d'accessibilitat del &blinken;, premeu la tecla &Ctrl; (mentre no s'està jugant): </para>
+
+<screenshot>
+<screeninfo
+>Tecles d'accés al &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tecles d'accés al &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Per a tornar a la pantalla de joc, premeu una altra vegada la tecla &Ctrl;. </para>
+
+<para
+>Juntament amb l'ús del ratolí, el &blinken; també permet a l'usuari operar amb el joc utilitzant el teclat. </para>
+
+<para
+>Les tecles predeterminades són <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+> i <keycap
+>4</keycap
+>. </para>
+
+<para
+>Per a canviar l'assignació d'un botó, feu-hi clic amb el ratolí. A continuació, es ressaltarà, a l'espera per una entrada. Premeu la tecla desitjada en el teclat per a canviar la tecla actualment assignada. </para>
+
+<para
+>Hi ha altres opcions disponibles al centre de la finestra: <interface
+>Sons</interface
+> i <interface
+>Tipus de lletra</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Desmarcant la casella de selecció <interface
+>Sons</interface
+>, se suprimiran els efectes de so al &blinken;. </para>
+</listitem>
+<listitem>
+<para
+>Desmarcant la casella de selecció <interface
+>Tipus de lletra</interface
+>, s'utilitzarà un tipus de lletra estàndard per al text d'estat en comptes del tipus de lletra predeterminat escrit a mà. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Crèdits i llicència</title>
+
+<para
+>&blinken; </para>
+<para
+>Copyright del programa 2005 Albert Astals Cid &Albert.Astals.Cid.mail; i &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Col·laboradors: </para>
+<itemizedlist>
+<listitem>
+<para
+>Tipus de lletra «Steve»: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Copyright de la documentació 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

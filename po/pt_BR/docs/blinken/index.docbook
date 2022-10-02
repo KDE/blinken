@@ -1,0 +1,464 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY kappname "&blinken;">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Brazilian-Portuguese "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Manual do &blinken;</title>
+
+<authorgroup>
+<author
+><firstname
+>Danny</firstname
+> <surname
+>Allen</surname
+> <affiliation
+> <address
+>&Danny.Allen.mail;</address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Luiz Fernando</firstname
+><surname
+>Ranghetti</surname
+><affiliation
+><address
+><email
+>elchevive@opensuse.org</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Frederico</firstname
+> <surname
+>Guimarães</surname
+><affiliation
+><address
+> <email
+>frederico@teia.bio.br</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>26/04/2016</date>
+<releaseinfo
+>0.4 (Applications 16.04)</releaseinfo>
+
+<abstract>
+<para
+>O &blinken; traz um jogo de memória eletrônico dos anos 1970 para o &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>jogo</keyword>
+<keyword
+>criança</keyword>
+<keyword
+>eletrônico</keyword>
+<keyword
+>retrô</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Introdução</title>
+
+<para
+>O &blinken; é baseado num jogo eletrônico lançado em 1978, que desafia os jogadores a lembrar de sequências de comprimento crescente. Na face do dispositivo existem 4 diferentes botões coloridos, cada um com seu som distinto. Estes botões se iluminam aleatoriamente, criando uma sequência que o jogador deverá repetir. Se o jogador conseguir se lembrar da sequência das luzes na ordem correta, ele avança para o próximo estágio, onde uma sequência idêntica, com um passo a mais, é apresentada. Se ela estiver incorreta, o jogo termina e o jogador deverá iniciar novamente desde o começo. O objetivo é fazer um recorde - cada passo na sequência equivale a um ponto, portanto lembrar a sequência correta de 8 luzes equivale a 8 pontos na tabela de recordes. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Usando o &blinken;</title>
+
+<para
+>Esta é a tela que é apresentada ao iniciar o &blinken;, exibindo a interface geral do aplicativo. A maior parte da tela é utilizada pelo <interface
+>dispositivo</interface
+>, com os <interface
+>4 botões coloridos</interface
+>, os controles do dispositivos (<interface
+>contador de pontos</interface
+>e botão <guibutton
+>Iniciar</guibutton
+>, &etc;) no centro da tela. O status atual do aplicativo é exibido na <interface
+>folha de papel</interface
+> sob o dispositivo. Nos cantos do aplicativo existem 3 botões: </para>
+
+<screenshot>
+<screeninfo
+>Esta e a tela que é apresentada na inicialização do &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Esta e a tela que é apresentada na inicialização do &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>O botão <guiicon
+>Recordes</guiicon
+> <action
+>abre o diálogo que exibe a <guilabel
+>Tabela de Recordes</guilabel
+></action
+> para cada um dos 3 níveis de dificuldade (a <guilabel
+>Tabela de Recordes</guilabel
+> também pode ser acessada <action
+>clicando no <interface
+>contador de pontos</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>O botão <guiicon
+>Recordes</guiicon
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>O botão <guiicon
+>Recordes</guiicon
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>O botão <guiicon
+>Sair</guiicon
+> <action
+>fecha o aplicativo</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>O botão <guiicon
+>Sair</guiicon
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Botão <guiicon
+>Sair</guiicon
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>O botão <guiicon
+>Ajuda</guiicon
+> é diferente, uma vez que ele <action
+> exibe 4 novos botões</action
+>. Estes botões são exibidos ao <action
+>parar a seta do mouse</action
+> sobre o botão <guiicon
+>Ajuda</guiicon
+>  e dão acesso ao <guilabel
+>Manual do &blinken;</guilabel
+> (este documento), <guilabel
+>à Exibição/Ocultação das configurações</guilabel
+> e às caixas de diálogo <guilabel
+>Sobre o &blinken;</guilabel
+> e <guilabel
+>Sobre o &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Botão <guiicon
+>Ajuda</guiicon
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Botão <guiicon
+>Ajuda</guiicon
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para se familiarizar com o funcionamento do jogo, você pode interagir com os <interface
+>botões coloridos</interface
+> na tela principal. Os botões se acenderão  e produzirão um tom ao serem pressionados. </para>
+
+<sect1 id="starting-game">
+<title
+>Começando um jogo</title>
+
+<para
+>Uma vez familiarizado com o funcionamento do aplicativo, você pode iniciar um novo jogo pressionando o botão <guibutton
+>Iniciar</guibutton
+> no centro da tela. Este <quote
+>liga</quote
+> o dispositivo, conforme exibido pelo <interface
+>contador de pontos</interface
+> iluminado. Você pode então <action
+>escolher o nível de dificuldade</action
+> que deseja tentar: </para>
+
+<screenshot>
+<screeninfo
+>Selecionar o nível de dificuldade</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Selecionar o nível de dificuldade</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Existem 3 níveis no &blinken;: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>O nível 1 é o mais fácil, já que fornece a maior pausa entre cada sequência. </para>
+</listitem>
+<listitem>
+<para
+>O nível 2 é o nível intermediário. É idêntico ao nível anterior, mas tem uma pausa menor entre cada sequência. </para>
+</listitem>
+<listitem>
+<para
+>O nível ? é o mais difícil do &blinken;. Ele usa o tempo de pausa do nível 2 mas cada sequência é totalmente aleatória, ao invés de seguir a ordem da sequência anterior, como no jogo padrão. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Digitando um novo recorde</title>
+
+<para
+>Se você tiver sorte o bastante para fazer um recorde, ele será exibido na tabela <guilabel
+>Recordes</guilabel
+>. Será solicitado um nome a ser associado com o seu recorde na tabela: </para>
+
+<screenshot>
+<screeninfo
+>Janela de solicitação de nome para os Recordes</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Janela de solicitação de nome para os Recordes</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Somente 5 recordes são mantidos para cada nível, portanto não fique desapontado se você não fizer um recorde! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Dicas de jogo</title>
+<para
+>O &blinken; é o jogo de memória definitivo, mas você não precisa possuir a memória excelente para se sair bem. Estas dicas irão ajudar você na procura pelo recorde: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Se você tem alto-falantes no computador, ligue-os com o som num bom nível para que você possa escutar os tons juntamente com as luzes piscando. </para>
+</listitem>
+<listitem>
+<para
+>Experimente interagir com o jogo usando tanto o mouse quanto o <link linkend="accessibility"
+>teclado</link
+>, para ver qual dos dois se adapta melhor à sua memória. </para>
+</listitem>
+<listitem>
+<para
+>Tente se lembrar da sequência como uma lista de cores. </para>
+</listitem>
+<listitem>
+<para
+>Tente se lembrar da sequência como posições na tela. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Opções de acessibilidade</title>
+
+<para
+>Para permitir ao &blinken; ser mais facilmente apreciado por determinadosusuários, existem várias opções de acessibilidade embutidas no programa. </para>
+<para
+>Para ver e modificar as opções de acessibilidade do &blinken;, pressione a tecla &Ctrl; (enquanto um jogo não estiver em andamento): </para>
+
+<screenshot>
+<screeninfo
+>Teclas de acesso do &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Teclas de acesso do &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para voltar a tela do jogo, pressione a tecla &Ctrl; novamente. </para>
+
+<para
+>Juntamente com o mouse, o &blinken; também permite ao usuário operar o jogo usando o teclado. </para>
+
+<para
+>As teclas padrão são <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+>, <keycap
+>4</keycap
+>. </para>
+
+<para
+>Para alterar o mapeamento de qualquer botão, clique nele usando o mouse. Ele então será realçado aguardando pela entrada. Pressione a tecla desejada no teclado para altera a tecla atualmente atribuída. </para>
+
+<para
+>Existem outras opções disponíveis no meio da janela: <interface
+>Sons</interface
+> e <interface
+>Fonte</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Ao desmarcar a opção <interface
+>Sons</interface
+>, os efeitos sonoros do &blinken; serão suprimidos. </para>
+</listitem>
+<listitem>
+<para
+>Ao desmarcar a opção <interface
+>Fonte</interface
+>, uma fonte padrão será utilizada para o texto do status ao invés da fonte manuscrita padrão. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Créditos e licença</title>
+
+<para
+>&blinken; </para>
+<para
+>Direitos autorais do programa 2005 Albert Astals Cid &Albert.Astals.Cid.mail; &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Colaboradores: </para>
+<itemizedlist>
+<listitem>
+<para
+>Fonte "Steve": Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Direitos autorais da documentação 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>Traduzido por:</para
+> <para
+>Luiz Fernando Ranghetti <email
+>elchevive@opensuse.org</email
+></para
+> <para
+>Frederico Gonçalves Guimarães <email
+>frederico@teia.bio.br</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

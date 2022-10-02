@@ -1,0 +1,449 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Spanish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>El manual de &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traducción</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Santiago</firstname
+> <surname
+>Fernández Sancho</surname
+> <affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-10</date>
+<releaseinfo
+>Aplicaciones 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>&blinken; nos introduce en un juego de memoria electrónica de los años 70 para &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken;</keyword>
+<keyword
+>juego</keyword>
+<keyword
+>niño</keyword>
+<keyword
+>electrónico</keyword>
+<keyword
+>antiguo</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Introducción</title>
+
+<para
+>&blinken; se basa en un juego electrónico que salió en 1978, que desafía a los jugadores a recordar secuencias cuya longitud se va incrementando. Por parte del dispositivo, existen 4 botones de colores diferentes, cada uno con su propio sonido distintivo. Estos botones se iluminan aleatoriamente, creando la secuencia que el jugador debe recordar. Si el jugador recuerda la secuencia de luces en el orden correcto, avanza al siguiente nivel, en el que se presentará una secuencia idéntica con un paso adicional. Si es incorrecta, se pierde el juego y el jugador debe comenzar de nuevo desde el principio. El objetivo es conseguir la mejor puntuación. Cada paso en la secuencia vale un punto, por tanto introducir correctamente una secuencia de 8 luces vale 8 puntos. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Utilizar &blinken;</title>
+
+<para
+>La siguiente pantalla representa el inicio de &blinken;, mostrando la interfaz general de la aplicación. La mayor parte de la pantalla lo ocupa el <interface
+>dispositivo</interface
+>, con los <interface
+>4 botones de colores</interface
+>, con los controles del dispositivo (<interface
+>contador de puntuación</interface
+>, botón <guibutton
+>Inicio</guibutton
+>, &etc;) en el centro de la pantalla. El estado actual de la aplicación se muestra en el <interface
+>trozo de papel</interface
+> bajo el dispositivo. En las esquinas de la aplicación encontramos 3 botones: </para>
+
+<screenshot>
+<screeninfo
+>Esta captura de pantalla muestra el inicio de &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Esta captura de pantalla muestra el inicio de &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botón <guibutton
+>Mejores puntuaciones</guibutton
+> <action
+>abre un diálogo que muestra la tabla de <guilabel
+>mejores puntuaciones</guilabel
+></action
+> para cada uno de los 3 niveles de dificultad (también puede accederse a la tabla <guilabel
+>Mejores puntuaciones</guilabel
+> <action
+>pulsando en el <interface
+>contador de puntuación</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botón de <guibutton
+>Mejores puntuaciones</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botón de <guibutton
+>Mejores puntuaciones</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botón <guibutton
+>Salir</guibutton
+> <action
+>cierra la aplicación</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botón <guibutton
+>Salir</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botón <guibutton
+>Salir</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El botón <guibutton
+>Ayuda</guibutton
+> es especial, ya que <action
+>muestra 4 sub-botones</action
+>. Estos botones se muestran cuando se <action
+>desplaza sobre</action
+> el botón <guibutton
+>Ayuda</guibutton
+>, y proporcionan acceso al <guilabel
+>Manual de &blinken;</guilabel
+> (este documento), y a los diálogos <guilabel
+>Acerca de &blinken;</guilabel
+> y <guilabel
+>Acerca de &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>El botón <guibutton
+>Ayuda</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El botón <guibutton
+>Ayuda</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para familiarizarse con el funcionamiento del juego, puede interactuar con los <interface
+>botones coloreados</interface
+> situados en la pantalla principal. Los botones se iluminarán y generarán un sonido cuando se pulsen. </para>
+
+<sect1 id="starting-game">
+<title
+>Iniciar un juego</title>
+
+<para
+>Una vez que se haya familiarizado con el funcionamiento de la aplicación, puede comenzar a jugar pulsando el botón <guibutton
+>Inicio</guibutton
+> situado en el centro de la pantalla. Esto «encenderá» el dispositivo, lo que se muestra iluminando el <interface
+>contador de puntuación</interface
+>. A continuación puede <action
+>elegir el nivel de dificultad</action
+> que desee: </para>
+
+<screenshot>
+<screeninfo
+>Seleccionar el nivel de dificultad</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Seleccionar el nivel de dificultad</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Existen 3 niveles en &blinken;: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>El nivel 1 es el más sencillo, porque ofrece más tiempo entre la reproducción de cada secuencia. </para>
+</listitem>
+<listitem>
+<para
+>El nivel 2 es un nivel intermedio. Es idéntico al nivel anterior, pero tiene un tiempo más reducido entre la reproducción de cada secuencia. </para>
+</listitem>
+<listitem>
+<para
+>El nivel ? es el nivel más difícil de &blinken;. Utiliza los tiempos del nivel 2, pero cada secuencia es totalmente aleatoria, en lugar de seguir la secuencia anterior, como sucede en un juego normal. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Introducir una nueva mejor puntuación</title>
+
+<para
+>Si tuviera la suerte de alcanzar una de las mejores puntuaciones, se introducirá en la tabla de <guilabel
+>Mejores puntuaciones</guilabel
+>. Un diálogo le pedirá un nombre para asociarlo con su puntuación en la tabla: </para>
+
+<screenshot>
+<screeninfo
+>Diálogo de petición de apodo para las mejores puntuaciones</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Diálogo de petición de apodo para las mejores puntuaciones</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Solo se mantienen 5 puntuaciones para cada nivel, por tanto ¡no se decepcione si no lo consigue! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Consejos para jugar</title>
+<para
+>&blinken; es el mejor juego de memoria, en el que no necesita tener la mejor memoria para ganar. Estos consejos le ayudarán para conseguir la mejor puntuación: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Si tiene altavoces de PC, enciéndalos con el volumen a un nivel adecuado de forma que pueda oír los sonidos en cuanto se enciendan las luces. </para>
+</listitem>
+<listitem>
+<para
+>Experimente con los métodos de interacción del <link linkend="accessibility"
+>teclado</link
+> y del ratón, para comprobar cuál es el que se adecúa mejor a su memoria. </para>
+</listitem>
+<listitem>
+<para
+>Intente recordar la secuencia como una lista de colores. </para>
+</listitem>
+<listitem>
+<para
+>Intente recordar la secuencia como posiciones en la pantalla. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Opciones de accesibilidad</title>
+
+<para
+>Para permitir que &blinken; pueda disfrutarse mejor por parte de ciertos usuarios, existen varias opciones de accesibilidad incorporadas en &blinken;. </para>
+<para
+>Para ver y modificar las opciones de accesibilidad de &blinken;, pulse la tecla &Ctrl; (si no se está jugando): </para>
+
+<screenshot>
+<screeninfo
+>teclas de acceso de &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>teclas de acceso de &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para volver a la pantalla del juego, pulse la tecla &Ctrl; de nuevo. </para>
+
+<para
+>Además de utilizar el ratón, &blinken; también permite al usuario utilizar el teclado. </para>
+
+<para
+>Las teclas predeterminadas son <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+>, <keycap
+>4</keycap
+>. </para>
+
+<para
+>Para modificar la configuración de cualquier botón, púlselo utilizando el botón. Entonces se iluminará, esperando una entrada. Pulse la tecla deseada en el teclado para cambiar la tecla que esté asignada. </para>
+
+<para
+>Hay otras opciones disponibles en el centro de la ventana: <interface
+>Sonidos</interface
+> y <interface
+>Tipo de letra</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Quitando la marca de <interface
+>Sonidos</interface
+> se suprimirán los efectos de sonido de &blinken;. </para>
+</listitem>
+<listitem>
+<para
+>Quitando la marca de <interface
+>Tipos de letra</interface
+> se usará un tipo de letra estándar, utilizado para el texto del estado en lugar del tipo de letra de escritura manual. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Créditos y licencia</title>
+
+<para
+>&blinken; </para>
+<para
+>Derechos de autor del programa 2005:  Albert Astals Cid &Albert.Astals.Cid.mail; y &Danny.Allen; &Danny.Allen.mail; </para>
+<para
+>Colaboradores: </para>
+<itemizedlist>
+<listitem>
+<para
+>Tipo de letra «Steve»: Steve Jordi <email
+>steve@sjordi.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Derechos de autor de la documentación 2005. &Danny.Allen; &Danny.Allen.mail;- </para>
+
+<para
+>Traducido por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+>, Santiago Fernández Sancho <email
+>santi@kde-es.org</email
+> Mauricio José Adonis Carrasco<email
+>mike.alfa.2007@gmail.com</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->
