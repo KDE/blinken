@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-03 00:39+0000\n"
+"POT-Creation-Date: 2022-10-02 00:41+0000\n"
 "PO-Revision-Date: 2011-01-13 15:19+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bjornst@skogkatt.homelinux.org"
 
-#: blinken.cpp:70
+#: blinken.cpp:68
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -39,149 +39,149 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:182
+#: blinken.cpp:180
 #, kde-format
 msgid "Sounds"
 msgstr "Lyder"
 
-#: blinken.cpp:183
+#: blinken.cpp:181
 #, kde-format
 msgid "Font"
 msgstr "Skrift"
 
-#: blinken.cpp:225
+#: blinken.cpp:223
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "Start"
 
-#: blinken.cpp:237
+#: blinken.cpp:235
 #, kde-format
 msgid "Restart"
 msgstr "Start på nytt"
 
-#: blinken.cpp:415
+#: blinken.cpp:413
 #, kde-format
 msgid "Enter Your Name"
 msgstr "Oppgi navnet ditt"
 
-#: blinken.cpp:415
+#: blinken.cpp:413
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "Navn:"
 
-#: blinken.cpp:691
+#: blinken.cpp:689
 #, kde-format
 msgid "Restart the game"
 msgstr "Start spillet på nytt"
 
-#: blinken.cpp:693
+#: blinken.cpp:691
 #, kde-format
 msgid "Quit Blinken"
 msgstr "Avslutt Blinken"
 
-#: blinken.cpp:694
+#: blinken.cpp:692
 #, kde-format
 msgid "View Highscore Table"
 msgstr "Vis lista over toppresultater"
 
-#: blinken.cpp:699
+#: blinken.cpp:697
 #, kde-format
 msgid "Show Settings"
 msgstr "Vis innstillinger"
 
-#: blinken.cpp:700
+#: blinken.cpp:698
 #, kde-format
 msgid "Hide Settings"
 msgstr "Skjul innstillinger"
 
-#: blinken.cpp:703
+#: blinken.cpp:701
 #, kde-format
 msgid "2nd Level"
 msgstr "Andre nivå"
 
-#: blinken.cpp:704
+#: blinken.cpp:702
 #, kde-format
 msgid "1st Level"
 msgstr "Første nivå"
 
-#: blinken.cpp:705
+#: blinken.cpp:703
 #, kde-format
 msgid "Random Level"
 msgstr "Tilfeldig nivå"
 
-#: blinken.cpp:706
+#: blinken.cpp:704
 #, kde-format
 msgid "Press the key for this button"
 msgstr "Trykk tasten for denne knappen"
 
-#: blinken.cpp:707
+#: blinken.cpp:705
 #, kde-format
 msgid "Click any button to change its key"
 msgstr "Trykk en knapp for å endre tasten"
 
-#: blinken.cpp:713
+#: blinken.cpp:711
 #, kde-format
 msgid "Press Start to begin"
 msgstr "Trykk Start for å begynne"
 
-#: blinken.cpp:717
+#: blinken.cpp:715
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "Velg vanskelighetsgrad ..."
 
-#: blinken.cpp:727
+#: blinken.cpp:725
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "Neste rekkefølge i 3 ..."
 
-#: blinken.cpp:740
+#: blinken.cpp:738
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "Neste rekkefølge i 3, 2 ..."
 
-#: blinken.cpp:744
+#: blinken.cpp:742
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "Neste rekkefølge i 2 ..."
 
-#: blinken.cpp:758
+#: blinken.cpp:756
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "Neste rekkefølge i 3, 2, 1 ..."
 
-#: blinken.cpp:762
+#: blinken.cpp:760
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "Neste rekkefølge i 2, 1 ..."
 
-#: blinken.cpp:774
+#: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "Husk denne rekkefølgen ..."
 
-#: blinken.cpp:785
+#: blinken.cpp:783
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "Gjenta rekkefølgen"
 
-#: blinken.cpp:802
+#: blinken.cpp:800
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:803
+#: blinken.cpp:801
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:804
+#: blinken.cpp:802
 #, kde-format
 msgid "?"
 msgstr "?"
 
-#: blinken.cpp:808
+#: blinken.cpp:806
 #, kde-format
 msgctxt "@label:chooser which level is currently being played"
 msgid "Level"
