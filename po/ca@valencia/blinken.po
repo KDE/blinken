@@ -121,7 +121,7 @@ msgstr "Premeu la tecla per a este botó"
 #: blinken.cpp:705
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Feu clic a qualsevol botó per a canviar la seua tecla"
+msgstr "Feu clic en qualsevol botó per a canviar la seua tecla"
 
 #: blinken.cpp:711
 #, kde-format
