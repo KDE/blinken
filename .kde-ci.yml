@@ -12,3 +12,6 @@ Dependencies:
     'frameworks/kdbusaddons': '@stable'
     'frameworks/kcrash': '@stable'
     'libraries/phonon' : '@stable'
+
+Options:
+  require-passing-tests-on: [ '@all' ]
