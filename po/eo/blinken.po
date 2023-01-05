@@ -1,11 +1,15 @@
+# translation of blinken.pot to Esperanto
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-02 00:41+0000\n"
-"PO-Revision-Date: 2009-11-03 04:16-0500\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-01-04 22:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -202,19 +206,19 @@ msgid "Highscores"
 msgstr "Rekordoj"
 
 #: highscoredialog.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
-msgstr "Nivelo %1"
+msgstr "Nivelo 1"
 
 #: highscoredialog.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "Nivelo 2"
 
 #: highscoredialog.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Nivelo ?"
@@ -230,16 +234,13 @@ msgid "A memory enhancement game"
 msgstr "Memora Ludo"
 
 #: main.cpp:31
-#, fuzzy, kde-format
-#| msgid ""
-#| "© 2005-2007 Albert Astals Cid\n"
-#| "© 2005-2007 Danny Allen"
+#, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
-"© 2005-2007 Danny Allen"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
 #: main.cpp:32
 #, kde-format
