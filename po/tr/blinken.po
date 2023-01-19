@@ -10,13 +10,13 @@
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-02 00:41+0000\n"
-"PO-Revision-Date: 2022-05-06 14:21+0300\n"
+"PO-Revision-Date: 2023-01-18 22:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -108,12 +108,12 @@ msgstr "Ayarları Gizle"
 #: blinken.cpp:701
 #, kde-format
 msgid "2nd Level"
-msgstr "2 nci Seviye"
+msgstr "2. Düzey"
 
 #: blinken.cpp:702
 #, kde-format
 msgid "1st Level"
-msgstr "1 nci Seviye"
+msgstr "1. Düzey"
 
 #: blinken.cpp:703
 #, kde-format
@@ -143,37 +143,37 @@ msgstr "Zorluk Düzeyini Ayarla..."
 #: blinken.cpp:725
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Sonraki diziye 3..."
+msgstr "Sonraki sıralamaya 3..."
 
 #: blinken.cpp:738
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Sonraki diziye 3, 2..."
+msgstr "Sonraki sıralamaya 3, 2..."
 
 #: blinken.cpp:742
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Sonraki diziye 2..."
+msgstr "Sonraki sıralamaya 2..."
 
 #: blinken.cpp:756
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Sonraki diziye 3, 2, 1..."
+msgstr "Sonraki sıralamaya 3, 2, 1..."
 
 #: blinken.cpp:760
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Sonraki diziye 2,1..."
+msgstr "Sonraki sıralamaya 2,1..."
 
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Bu diziyi hatırla..."
+msgstr "Bu sıralamayı anımsa..."
 
 #: blinken.cpp:783
 #, kde-format
 msgid "Repeat the sequence"
-msgstr "Diziyi yinele"
+msgstr "Sıralamayı yinele"
 
 #: blinken.cpp:800
 #, kde-format
