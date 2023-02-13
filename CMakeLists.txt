@@ -57,7 +57,7 @@ add_subdirectory( fonts )
 ########### install files ###############
 
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
 endif()
 install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
