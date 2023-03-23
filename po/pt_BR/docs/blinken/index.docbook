@@ -3,11 +3,14 @@
  <!ENTITY blinken "<application
 >Blinken</application
 >">
- <!ENTITY kappname "&blinken;">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % Brazilian-Portuguese "INCLUDE"
 ><!-- change language only here -->
 ]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 
 <book id="blinken" lang="&language;">
 
@@ -17,15 +20,7 @@
 
 <authorgroup>
 <author
-><firstname
->Danny</firstname
-> <surname
->Allen</surname
-> <affiliation
-> <address
->&Danny.Allen.mail;</address>
-</affiliation>
-</author>
+>&Danny.Allen; &Danny.Allen.mail;</author>
 <othercredit role="translator"
 ><firstname
 >Luiz Fernando</firstname
@@ -68,9 +63,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->26/04/2016</date>
+>10/12/2020</date>
 <releaseinfo
->0.4 (Applications 16.04)</releaseinfo>
+>Applications 20.12.0</releaseinfo>
 
 <abstract>
 <para
@@ -139,11 +134,11 @@
 </screenshot>
 
 <para
->O botão <guiicon
->Recordes</guiicon
+>O botão <guibutton
+>Recordes</guibutton
 > <action
->abre o diálogo que exibe a <guilabel
->Tabela de Recordes</guilabel
+>abre o diálogo que exibe a tabela de <guilabel
+>Recordes</guilabel
 ></action
 > para cada um dos 3 níveis de dificuldade (a <guilabel
 >Tabela de Recordes</guilabel
@@ -155,8 +150,8 @@
 
 <screenshot>
 <screeninfo
->O botão <guiicon
->Recordes</guiicon
+>O botão <guibutton
+>Recordes</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -164,24 +159,24 @@
 </imageobject>
 <textobject>
 <phrase
->O botão <guiicon
->Recordes</guiicon
+>O botão <guibutton
+>Recordes</guibutton
 ></phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->O botão <guiicon
->Sair</guiicon
+>O botão <guibutton
+>Sair</guibutton
 > <action
 >fecha o aplicativo</action
 >: </para>
 
 <screenshot>
 <screeninfo
->O botão <guiicon
->Sair</guiicon
+>O botão <guibutton
+>Sair</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -189,22 +184,22 @@
 </imageobject>
 <textobject>
 <phrase
->Botão <guiicon
->Sair</guiicon
+>Botão <guibutton
+>Sair</guibutton
 ></phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->O botão <guiicon
->Ajuda</guiicon
+>O botão <guibutton
+>Ajuda</guibutton
 > é diferente, uma vez que ele <action
 > exibe 4 novos botões</action
 >. Estes botões são exibidos ao <action
 >parar a seta do mouse</action
-> sobre o botão <guiicon
->Ajuda</guiicon
+> sobre o botão <guibutton
+>Ajuda</guibutton
 >  e dão acesso ao <guilabel
 >Manual do &blinken;</guilabel
 > (este documento), <guilabel
@@ -217,8 +212,8 @@
 
 <screenshot>
 <screeninfo
->Botão <guiicon
->Ajuda</guiicon
+>Botão <guibutton
+>Ajuda</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -226,8 +221,8 @@
 </imageobject>
 <textobject>
 <phrase
->Botão <guiicon
->Ajuda</guiicon
+>Botão <guibutton
+>Ajuda</guibutton
 ></phrase>
 </textobject>
 </mediaobject>
