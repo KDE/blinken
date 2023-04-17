@@ -3,11 +3,14 @@
  <!ENTITY blinken "<application
 >Blinken</application
 >">
- <!ENTITY kappname "&blinken;">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % French "INCLUDE"
 ><!-- change language only here -->
 ]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 
 <book id="blinken" lang="&language;">
 
@@ -17,15 +20,7 @@
 
 <authorgroup>
 <author
-><firstname
->Danny</firstname
-> <surname
->Allen</surname
-> <affiliation
-> <address
->&Danny.Allen.mail;</address>
-</affiliation>
-</author>
+>&Danny.Allen; &Danny.Allen.mail;</author>
 &traducteurAnneMarieMahfouf; 
 </authorgroup>
 
@@ -40,9 +35,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->26-04-2016</date>
+>10/12/2020</date>
 <releaseinfo
->0.4 (Applications 16.04)</releaseinfo>
+>Applications 20.12.0</releaseinfo>
 
 <abstract>
 <para
@@ -111,8 +106,8 @@
 </screenshot>
 
 <para
->Le bouton <guiicon
->Meilleurs scores</guiicon
+>Le bouton <guibutton
+>Meilleurs scores</guibutton
 > <action
 >ouvre une boîte de dialogue qui affiche la <guilabel
 >table des meilleurs scores</guilabel
@@ -127,8 +122,8 @@
 
 <screenshot>
 <screeninfo
->Le bouton des <guiicon
->meilleurs scores</guiicon
+>Le bouton des <guibutton
+>meilleurs scores</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -136,24 +131,24 @@
 </imageobject>
 <textobject>
 <phrase
-><guiicon
->Le bouton des </guiicon
->meilleurs scores</phrase>
+>Le bouton des <guibutton
+>meilleurs scores</guibutton
+></phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->Le bouton <guiicon
->Quitter</guiicon
+>Le bouton <guibutton
+>Quitter</guibutton
 > <action
 >ferme l'application</action
 > : </para>
 
 <screenshot>
 <screeninfo
->Le bouton <guiicon
->Quitter</guiicon
+>Le bouton <guibutton
+>Quitter</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -161,22 +156,22 @@
 </imageobject>
 <textobject>
 <phrase
->Le bouton <guiicon
->Quitter</guiicon
+>Le bouton <guibutton
+>Quitter</guibutton
 ></phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->Le bouton <guiicon
->Aide</guiicon
+>Le bouton <guibutton
+>Aide</guibutton
 > est spécial, car il <action
 >révèle 4 sous-boutons</action
 >. Ces boutons apparaissent lorsque la souris <action
 >passe au-dessus</action
-> du bouton <guiicon
->Aide</guiicon
+> du bouton <guibutton
+>Aide</guibutton
 >, et donnent accès au <guilabel
 >manuel de &blinken;</guilabel
 > (ce document), et aux boîtes de dialogue <guilabel
@@ -187,8 +182,8 @@
 
 <screenshot>
 <screeninfo
->Le bouton <guiicon
->Aide</guiicon
+>Le bouton <guibutton
+>Aide</guibutton
 ></screeninfo>
 <mediaobject>
 <imageobject>
@@ -196,8 +191,8 @@
 </imageobject>
 <textobject>
 <phrase
->Le bouton<guiicon
->Aide</guiicon
+>Le bouton<guibutton
+>Aide</guibutton
 ></phrase>
 </textobject>
 </mediaobject>
@@ -392,13 +387,13 @@
 <para
 >&blinken; </para>
 <para
->Programme copyright 2005 Albert Astals Cid &Albert.Astals.Cid.mail; and &Danny.Allen; &Danny.Allen.mail; </para>
+>Programme copyright 2005 Albert Astals Cid &Albert.Astals.Cid.mail; et &Danny.Allen; &Danny.Allen.mail; </para>
 <para
 >Contributeurs : </para>
 <itemizedlist>
 <listitem>
 <para
->Steve font par Steve Jordi <email
+>Police Steve par Steve Jordi <email
 >steve@sjordi.com</email
 > </para>
 </listitem>
