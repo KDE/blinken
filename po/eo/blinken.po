@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-02 00:41+0000\n"
-"PO-Revision-Date: 2023-01-04 22:00+0100\n"
+"PO-Revision-Date: 2023-04-18 06:31+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -22,12 +22,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: blinken.cpp:68
 #, kde-format
@@ -58,12 +58,12 @@ msgstr "Lanĉi"
 #: blinken.cpp:235
 #, kde-format
 msgid "Restart"
-msgstr "Relanĉu"
+msgstr "Relanĉi"
 
 #: blinken.cpp:413
 #, kde-format
 msgid "Enter Your Name"
-msgstr "Bonvolu enigi &nomon:"
+msgstr "Enigu Vian Nomon"
 
 #: blinken.cpp:413
 #, kde-format
@@ -74,27 +74,27 @@ msgstr "Nomo:"
 #: blinken.cpp:689
 #, kde-format
 msgid "Restart the game"
-msgstr "Rekomencu la ludon"
+msgstr "Rekomenci la ludon"
 
 #: blinken.cpp:691
 #, kde-format
 msgid "Quit Blinken"
-msgstr "Forigu el blinKen"
+msgstr "Forlasi Blinken"
 
 #: blinken.cpp:692
 #, kde-format
 msgid "View Highscore Table"
-msgstr "Rigardu Rikordan Tabelon"
+msgstr "Rigardi Rikordan Tabelon"
 
 #: blinken.cpp:697
 #, kde-format
 msgid "Show Settings"
-msgstr ""
+msgstr "Montri Agordojn"
 
 #: blinken.cpp:698
 #, kde-format
 msgid "Hide Settings"
-msgstr ""
+msgstr "Kaŝi Agordojn"
 
 #: blinken.cpp:701
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "Premu la klavon por tiu butono"
 #: blinken.cpp:705
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Muskalku iu ajn butonon por ŝanĝi klavon"
+msgstr "Musklaku iun ajn butonon por ŝanĝi klavon"
 
 #: blinken.cpp:711
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Premu klavon por komenci novan ludon"
 #: blinken.cpp:715
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Agordu Malfacilecan Nivelon..."
+msgstr "Agordi Malfacilecan Nivelon..."
 
 #: blinken.cpp:725
 #, kde-format
@@ -159,12 +159,12 @@ msgstr "Venonta sekvenco post 2, 1..."
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Memoru la sekvencon..."
+msgstr "Memori ĉi sekvencon..."
 
 #: blinken.cpp:783
 #, kde-format
 msgid "Repeat the sequence"
-msgstr "Ripetu la sekvencon!"
+msgstr "Ripeti la sekvencon"
 
 #: blinken.cpp:800
 #, kde-format
@@ -191,13 +191,13 @@ msgstr "Nivelo"
 #: blinken.kcfg:9
 #, kde-format
 msgid "Play sounds"
-msgstr "&Ludu sonorojn"
+msgstr "Ludi sonorojn"
 
 #. i18n: ectx: label, entry (customFont), group (general)
 #: blinken.kcfg:13
 #, kde-format
 msgid "Use custom font for status text"
-msgstr "Uzu propran tiparon por stata teksto"
+msgstr "Uzi propran tiparon por stata teksto"
 
 #: highscoredialog.cpp:138
 #, kde-format
@@ -250,7 +250,7 @@ msgstr "Albert Astals Cid"
 #: main.cpp:32
 #, kde-format
 msgid "Coding"
-msgstr "En&kodigo"
+msgstr "Kodado"
 
 #: main.cpp:33
 #, kde-format
