@@ -1,7 +1,7 @@
 # translation of blinken.po to Italian
 #
 # Pino Toscano <toscano.pino@tiscali.it>, 2005, 2006, 2007, 2008, 2009, 2011, 2021.
-# Paolo Zamponi <zapaolo@email.it>, 2022.
+# Paolo Zamponi <feus73@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
