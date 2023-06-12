@@ -18,6 +18,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="de">Blinken</name>
   <name xml:lang="el">Blinken</name>
   <name xml:lang="en-GB">Blinken</name>
+  <name xml:lang="eo">Blinken</name>
   <name xml:lang="es">Blinken</name>
   <name xml:lang="et">Blinken</name>
   <name xml:lang="eu">Blinken</name>
@@ -58,6 +59,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="de">Spiel zum Gedächtnistraining</summary>
   <summary xml:lang="el">Παιχνίδι βελτίωσης της μνήμης</summary>
   <summary xml:lang="en-GB">Memory Enhancement Game</summary>
+  <summary xml:lang="eo">Memorpliboniga Ludo</summary>
   <summary xml:lang="es">Juego para la mejora de la memoria</summary>
   <summary xml:lang="et">Mälu parandamise mäng</summary>
   <summary xml:lang="eu">Memoria hobetzeko aplikazioa</summary>
@@ -142,6 +144,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="de">Blinken spielen</caption>
       <caption xml:lang="el">Παίζω Blinken</caption>
       <caption xml:lang="en-GB">Playing Blinken</caption>
+      <caption xml:lang="eo">Ludante Blinken</caption>
       <caption xml:lang="es">Jugando a Blinken</caption>
       <caption xml:lang="et">Blinkenis mängimine</caption>
       <caption xml:lang="eu">Blinken-ekin jokatzea</caption>
