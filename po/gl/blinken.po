@@ -94,7 +94,7 @@ msgstr "Ver a táboa coas mellores puntuacións"
 #: blinken.cpp:697
 #, kde-format
 msgid "Show Settings"
-msgstr "Mostrar a configuración"
+msgstr "Amosar a configuración"
 
 #: blinken.cpp:698
 #, kde-format
