@@ -63,7 +63,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="eu">Memoria hobetzeko aplikazioa</summary>
   <summary xml:lang="fi">Muistipeli</summary>
   <summary xml:lang="fr">Jeu pour améliorer la mémoire</summary>
-  <summary xml:lang="gl">Xogo para mellorar a memoria</summary>
+  <summary xml:lang="gl">Xogo para mellorar a memoria.</summary>
   <summary xml:lang="hi">एक स्मृती वर्धन का खेल</summary>
   <summary xml:lang="ia">Joco de melioration de memoria</summary>
   <summary xml:lang="id">Permainan Melatih Ingatan</summary>
@@ -147,7 +147,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="eu">Blinken-ekin jokatzea</caption>
       <caption xml:lang="fi">Pelataan Blinkeniä</caption>
       <caption xml:lang="fr">Partie de Blinken en cours</caption>
-      <caption xml:lang="gl">Xogando a Blinken</caption>
+      <caption xml:lang="gl">Xogando a Blinken.</caption>
       <caption xml:lang="hi">ब्लिंकेन खेलना</caption>
       <caption xml:lang="ia">Jocar a Blinken</caption>
       <caption xml:lang="id">Memainkan Blinken</caption>
