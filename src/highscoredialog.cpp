@@ -252,3 +252,5 @@ QString highScoreManager::name(int level, int position) const
 {
 	return m_scores[level][position].second;
 }
+
+#include "moc_highscoredialog.cpp"

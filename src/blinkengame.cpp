@@ -172,3 +172,4 @@ blinkenGame::color blinkenGame::generateColor()
 	return c;
 }
 
+#include "moc_blinkengame.cpp"

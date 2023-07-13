@@ -81,3 +81,4 @@ void soundsPlayer::playEnded()
 	}
 }
 
+#include "moc_soundsplayer.cpp"
