@@ -47,6 +47,11 @@ hooks:
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.blinken
+        bus: session
 package-repositories:
 -   type: apt
     components:
