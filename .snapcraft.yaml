@@ -111,7 +111,7 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
-        - "-usr/share/lintain"
+        - "-usr/share/lintian"
         build-environment: &id005
         - *id001
         - *id002
