@@ -29,13 +29,13 @@ ecm_add_app_icon(blinken_SRCS ICONS ${ICON_SRCS})
 add_executable(blinken ${blinken_SRCS})
 
 target_link_libraries(blinken
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::GuiAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::XmlGui
+    KF6::GuiAddons
     Qt::Svg
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::Crash
+    KF6::DBusAddons
+    KF6::Crash
     ${PHONON_LIBRARIES}
     )
 

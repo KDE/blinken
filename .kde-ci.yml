@@ -13,16 +13,5 @@ Dependencies:
     'frameworks/kcrash': '@latest-kf6'
     'libraries/phonon' : '@latest-kf6'
 
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5']
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kxmlgui': '@stable'
-    'frameworks/kguiaddons': '@stable'
-    'frameworks/kdoctools': '@stable'
-    'frameworks/kdbusaddons': '@stable'
-    'frameworks/kcrash': '@stable'
-    'libraries/phonon' : '@stable'
-
 Options:
   require-passing-tests-on: [ '@all' ]

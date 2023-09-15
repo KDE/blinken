@@ -9,8 +9,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(blinken VERSION ${RELEASE_SERVICE_VERSION})
 
 # minimal Qt requirement
-set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.92.0")
+set(QT_MIN_VERSION "6.5.0")
+set(KF5_MIN_VERSION "5.240.0")
 
 # ECM
 find_package (ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -27,25 +27,18 @@ include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(FeatureSummary)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 
-find_package (Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
+find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
-find_package (KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package (KF6 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
-find_package (Phonon4Qt${QT_MAJOR_VERSION} REQUIRED)
+find_package (Phonon4Qt6 REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.101.0)
+ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.240.0)
 
 add_subdirectory( doc )
 add_subdirectory( src ) 
@@ -57,7 +50,7 @@ add_subdirectory( fonts )
 ########### install files ###############
 
 ki18n_install(po)
-if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+if (KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
 install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
