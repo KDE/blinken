@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2021-01-24 08:13+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -225,17 +225,17 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Poziom ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "Gra doskonaląca pamięć"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -244,32 +244,32 @@ msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "Kod"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr "Danny Allen"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "Projekt, grafika i dźwięk"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Steve Jordi"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr ""

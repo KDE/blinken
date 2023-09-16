@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2022-02-26 11:47+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -223,17 +223,17 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "स्तर ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "Blinken"
 msgstr "ब्लिंकन"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "याददाश्त बढ़ाने का एक खेल"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -242,32 +242,32 @@ msgstr ""
 "© २००५-२००७ अल्बर्ट एस्टल्स सिड\n"
 "SPDX-FileCopyrightText: २००५-२००७ डैनी एलन"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "अलबर्ट एस्टल्स सिड"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "कोडिंग"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr "डैनी एलन"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "ग्राफ़िक्स, डिज़ाइन तथा ध्वनि"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr "स्टीव जोर्डी"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "उसने अपने 'स्टीव' फ़ॉन्ट को 'जीपीएल' में जारी कर दिया ताकि हम सब इस्तेमाल कर सकें"

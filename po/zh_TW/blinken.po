@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2022-12-30 18:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -223,17 +223,17 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "等級 ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "Blinken"
 msgstr "BlinKen"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "加強記憶的遊戲"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -242,32 +242,32 @@ msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "撰寫程式碼"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr "Danny Allen"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "設計、構圖及聲音"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Steve Jordi"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "用 GPL 放出他的 Steve 字型讓我們使用"

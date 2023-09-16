@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2007-08-01 11:02+0000\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -237,18 +237,18 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Узровень ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, fuzzy, kde-format
 #| msgid "blinKen"
 msgid "Blinken"
 msgstr "blinKen"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "Гульня для развіцця памяці"
 
-#: main.cpp:31
+#: main.cpp:28
 #, fuzzy, kde-format
 #| msgid ""
 #| "© 2005 Albert Astals Cid\n"
@@ -260,32 +260,32 @@ msgstr ""
 "© 2005 Альберт Асталс Цыд\n"
 "© 2005 Дэнні Аллен"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Альберт Асталс Цыд"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "Праграмаванне"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr "Дэнні Аллен"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "Дызайн, графічнае афармленне, гукі"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Стыв Джордзі"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "Шрыфт Steve пад ліцэнзіяй GPL"

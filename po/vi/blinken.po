@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2006-05-08 11:18+0200\n"
 "Last-Translator: Trần Thế Trung <tttrung@hotmail.com>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -229,50 +229,50 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Trình độ ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, fuzzy, kde-format
 #| msgid "blinKen"
 msgid "Blinken"
 msgstr "blinKen"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "Một trò chơi để tăng cường trí nhớ"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr ""
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "Mã hoá"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr ""
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "Thiết kế, Đồ hoạ và Âm thanh"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "Phông chữ Steve đã được phân phối tự do dưới giấy phép GPL"

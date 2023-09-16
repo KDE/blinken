@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kappfinder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-02 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2019-12-12 21:31+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ്  <smc-"
@@ -222,17 +222,17 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "നില ?"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "Blinken"
 msgstr "ബ്ലിങ്കണ്‍"
 
-#: main.cpp:31
+#: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "ഓര്‍മ്മശക്തി കൂട്ടുന്ന ഒരു കളി"
 
-#: main.cpp:31
+#: main.cpp:28
 #, fuzzy, kde-format
 #| msgid ""
 #| "© 2005-2007 Albert Astals Cid\n"
@@ -244,32 +244,32 @@ msgstr ""
 "© 2005-2007 അല്‍ബര്‍ട്ട് അസ്താല്സ് സിദ്\n"
 " © 2005-2007 ഡാനി അല്ലന്‍"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "അല്‍ബര്‍ട്ട് അസ്താല്സ് സിദ്"
 
-#: main.cpp:32
+#: main.cpp:29
 #, kde-format
 msgid "Coding"
 msgstr "നിര്‍ദ്ദേശങ്ങളൊരുക്കല്‍"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
 msgstr "ഡാനി അല്ലന്‍"
 
-#: main.cpp:33
+#: main.cpp:30
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "രൂപരേഖ, ചിത്രങ്ങള്‍, ശബ്ദങ്ങള്‍"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
 msgstr "സ്റ്റീവ് ജോര്‍ദി"
 
-#: main.cpp:34
+#: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "അദ്ദേഹത്തിന്റെ 'സ്റ്റീവ്' അക്ഷരരൂപങ്ങള്‍ സ്വതന്ത്രമാക്കിയതിനാല്‍ നമുക്കു് ഉപയോഗിക്കാം "
