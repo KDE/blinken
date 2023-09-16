@@ -20,8 +20,6 @@ set(blinken_SRCS
     soundsplayer.cpp
     soundsplayer.h )
 
-include_directories(${PHONON_INCLUDES})
-
 kconfig_add_kcfg_files(blinken_SRCS settings.kcfgc )
 
 file(GLOB ICON_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/*-apps-blinken.png")
@@ -36,7 +34,7 @@ target_link_libraries(blinken
     Qt::Svg
     KF6::DBusAddons
     KF6::Crash
-    ${PHONON_LIBRARIES}
+    Phonon::phonon4qt6
     )
 
 install(TARGETS blinken EXPORT blinken ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
