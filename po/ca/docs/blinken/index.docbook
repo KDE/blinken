@@ -361,7 +361,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Hi ha altres opcions disponibles al centre de la finestra: <interface
 >Sons</interface
 > i <interface
->Tipus de lletra</interface
+>Lletra</interface
 >. </para>
 
 <itemizedlist>
@@ -374,8 +374,8 @@ SPDX-License-Identifier: GFDL-1.2-only
 <listitem>
 <para
 >Desmarcant la casella de selecció <interface
->Tipus de lletra</interface
->, s'utilitzarà un tipus de lletra estàndard per al text d'estat en comptes del tipus de lletra predeterminat escrit a mà. </para>
+>Lletra</interface
+>, s'utilitzarà una lletra estàndard per al text d'estat en comptes de la lletra predeterminada d'escriptura a mà. </para>
 </listitem>
 </itemizedlist>
 
@@ -395,7 +395,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <itemizedlist>
 <listitem>
 <para
->Tipus de lletra «Steve»: Steve Jordi <email
+>Font «Steve»: Steve Jordi <email
 >steve@sjordi.com</email
 > </para>
 </listitem>
