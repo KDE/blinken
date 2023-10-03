@@ -7,32 +7,33 @@
 # Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
 # Enrique Matias Sanchez (Quique) <cronopios@gmail.com>, 2009.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2011, 2021.
+# SPDX-FileCopyrightText: 2009, 2011, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 # Sofía Priego <spriego@darksylvania.net>, %Y.
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2021-10-17 12:22+0100\n"
+"PO-Revision-Date: 2023-10-02 21:43+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Pablo de Vicente,Rafael Beccar"
+msgstr "Sofía Priego,Pablo de Vicente,Rafael Beccar"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "p.devicente@wanadoo.es,rafael.beccar@kdemail.net"
+msgstr ""
+"spriego@darksylvania.net,p.devicente@wanadoo.es,rafael.beccar@kdemail.net"
 
 #: blinken.cpp:68
 #, kde-format
