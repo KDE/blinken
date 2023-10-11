@@ -7,12 +7,13 @@
 #ifndef SOUNDSPLAYER_H
 #define SOUNDSPLAYER_H
 
-#include <phonon/MediaObject>
-#include <phonon/audiooutput.h>
-
+#include <QMap>
 #include <QTimer>
+#include <QUrl>
 
 #include "blinkengame.h"
+
+class QSoundEffect;
 
 class soundsPlayer : public QObject
 {
@@ -20,20 +21,19 @@ Q_OBJECT
 	public:
 		soundsPlayer();
 		~soundsPlayer() override;
-		
+
 		void play(blinkenGame::color c);
-		
+
 	Q_SIGNALS:
 		void ended();
-		
+
 	private Q_SLOTS:
-		void playEnded();
-		
+		void playingChanged();
+
 	private:
-		QString m_greenSound, m_redSound, m_blueSound, m_yellowSound, m_allSound;
-		Phonon::MediaObject m_mediaObject;
-		Phonon::AudioOutput m_audioOutput;
-		
+		void createEffect(int value, const QString &path);
+		QMap<int, QSoundEffect*> m_soundEffects;
+
 		QTimer m_warnTimer;
 };
 

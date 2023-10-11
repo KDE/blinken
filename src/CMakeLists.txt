@@ -3,7 +3,7 @@
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX BLINKEN VERSION_HEADER blinken_version.h)
 
-set(blinken_SRCS 
+set(blinken_SRCS
     blinken.cpp
     blinkengame.cpp
     blinkengame.h
@@ -31,10 +31,10 @@ target_link_libraries(blinken
     KF6::I18n
     KF6::XmlGui
     KF6::GuiAddons
+    Qt::Multimedia
     Qt::Svg
     KF6::DBusAddons
     KF6::Crash
-    Phonon::phonon4qt6
     )
 
 install(TARGETS blinken EXPORT blinken ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )

@@ -28,24 +28,22 @@ include(ECMSetupVersion)
 include(FeatureSummary)
 include(ECMDeprecationSettings)
 
-find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
+find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Multimedia Widgets Svg)
 
 find_package (KF6 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
-
-find_package (Phonon4Qt6 REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.240.0)
 
 add_subdirectory( doc )
-add_subdirectory( src ) 
-add_subdirectory( images ) 
-add_subdirectory( icons ) 
-add_subdirectory( sounds ) 
-add_subdirectory( fonts ) 
+add_subdirectory( src )
+add_subdirectory( images )
+add_subdirectory( icons )
+add_subdirectory( sounds )
+add_subdirectory( fonts )
 
 ########### install files ###############
 

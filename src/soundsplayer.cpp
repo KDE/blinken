@@ -9,19 +9,15 @@
 #include "settings.h"
 
 #include <QStandardPaths>
+#include <QSoundEffect>
 
 soundsPlayer::soundsPlayer()
-    : m_audioOutput(Phonon::GameCategory)
 {
-	m_audioOutput.setVolume( 0.8f );
-	Phonon::createPath(&m_mediaObject, &m_audioOutput);
-	connect(&m_mediaObject, &Phonon::MediaObject::finished, this, &soundsPlayer::playEnded);
-
-	m_allSound = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("sounds/lose.wav"));
-	m_greenSound = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("sounds/1.wav"));
-	m_redSound = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("sounds/2.wav"));
-	m_blueSound = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("sounds/3.wav"));
-	m_yellowSound = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("sounds/4.wav"));
+	createEffect(blinkenGame::all, QStringLiteral("sounds/lose.wav"));
+	createEffect(blinkenGame::green, QStringLiteral("sounds/1.wav"));
+	createEffect(blinkenGame::red, QStringLiteral("sounds/2.wav"));
+	createEffect(blinkenGame::blue, QStringLiteral("sounds/3.wav"));
+	createEffect(blinkenGame::yellow, QStringLiteral("sounds/4.wav"));
 
 	connect(&m_warnTimer, &QTimer::timeout, this, &soundsPlayer::ended);
 	m_warnTimer.setSingleShot(true);
@@ -35,36 +31,13 @@ void soundsPlayer::play(blinkenGame::color c)
 {
 	if (blinkenSettings::playSounds())
 	{
-		QString soundFile;
-		switch (c)
-		{
-			case blinkenGame::red:
-				soundFile = m_redSound;
-			break;
-			
-			case blinkenGame::green:
-				soundFile = m_greenSound;
-			break;
-			
-			case blinkenGame::blue:
-				soundFile = m_blueSound;
-			break;
-			
-			case blinkenGame::yellow:
-				soundFile = m_yellowSound;
-			break;
-			
-			case blinkenGame::all:
-				soundFile = m_allSound;
-			break;
-			
-			default:
-			break;
+		qDebug() << "play called with color: " << c;
+		if (m_soundEffects.contains(c)) {
+			m_soundEffects.value(c)->play();
 		}
-		if (!soundFile.isEmpty())
+		else
 		{
-			m_mediaObject.setCurrentSource(QUrl::fromLocalFile(soundFile));
-			m_mediaObject.play();
+			qWarning() << "Was asked to play color " << c << " but it's not in my map somehow...";
 		}
 	}
 	else
@@ -73,12 +46,25 @@ void soundsPlayer::play(blinkenGame::color c)
 	}
 }
 
-void soundsPlayer::playEnded()
+void soundsPlayer::playingChanged()
 {
-	if (blinkenSettings::playSounds())
-	{
-		m_warnTimer.start(250);
+	QSoundEffect *effect = qobject_cast<QSoundEffect*>(sender());
+	// We only need to do something if we are now not playing audio.
+	if (!effect->isPlaying()) {
+		if (blinkenSettings::playSounds())
+		{
+			m_warnTimer.start(250);
+		}
 	}
+}
+
+void soundsPlayer::createEffect(int value, const QString &path)
+{
+	QSoundEffect *effect = new QSoundEffect(this);
+	effect->setSource(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, path)));
+	effect->setVolume(0.8f);
+	m_soundEffects.insert(value, effect);
+	connect(effect, &QSoundEffect::playingChanged, this, &soundsPlayer::playingChanged);
 }
 
 #include "moc_soundsplayer.cpp"
