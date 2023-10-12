@@ -16,13 +16,13 @@ SPDX-License-Identifier: GFDL-1.2-only
 
 <bookinfo>
 <title
->El manual de &blinken;</title>
+>Manual de &blinken;</title>
 
 <authorgroup>
 <author
 >&Danny.Allen; &Danny.Allen.mail;</author>
 <othercredit role="translator"
-> <firstname
+><firstname
 >Rocío</firstname
 > <surname
 >Gallego</surname
@@ -33,10 +33,10 @@ SPDX-License-Identifier: GFDL-1.2-only
 ></address
 ></affiliation
 > <contrib
->Traducción</contrib
-> </othercredit
+>Traductora</contrib
+></othercredit
 ><othercredit role="translator"
-> <firstname
+><firstname
 >Santiago</firstname
 > <surname
 >Fernández Sancho</surname
@@ -48,7 +48,21 @@ SPDX-License-Identifier: GFDL-1.2-only
 ></affiliation
 > <contrib
 >Traductor</contrib
-> </othercredit
+></othercredit
+><othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 </authorgroup>
 
@@ -69,7 +83,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 
 <abstract>
 <para
->&blinken; nos introduce en un juego de memoria electrónica de los años 70 para &kde;. </para>
+>&blinken; proporciona un juego de memoria electrónica de los años 70 para &kde;. </para>
 </abstract>
 
 <keywordset>
@@ -78,7 +92,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <keyword
 >kdeedu</keyword>
 <keyword
->Blinken;</keyword>
+>Blinken</keyword>
 <keyword
 >juego</keyword>
 <keyword
@@ -97,17 +111,17 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Introducción</title>
 
 <para
->&blinken; se basa en un juego electrónico que salió en 1978, que desafía a los jugadores a recordar secuencias cuya longitud se va incrementando. Por parte del dispositivo, existen 4 botones de colores diferentes, cada uno con su propio sonido distintivo. Estos botones se iluminan aleatoriamente, creando la secuencia que el jugador debe recordar. Si el jugador recuerda la secuencia de luces en el orden correcto, avanza al siguiente nivel, en el que se presentará una secuencia idéntica con un paso adicional. Si es incorrecta, se pierde el juego y el jugador debe comenzar de nuevo desde el principio. El objetivo es conseguir la mejor puntuación. Cada paso en la secuencia vale un punto, por tanto introducir correctamente una secuencia de 8 luces vale 8 puntos. </para>
+>&blinken; se basa en un juego electrónico que salió en 1978, que desafía a los jugadores a recordar secuencias cuya longitud se va incrementando. Por parte del dispositivo, existen 4 botones de colores diferentes, cada uno con su propio sonido distintivo. Estos botones se iluminan aleatoriamente, creando la secuencia que el jugador debe recordar. Si el jugador recuerda la secuencia de luces en el orden correcto, avanza al siguiente nivel, en el que se presentará una secuencia idéntica con un paso adicional. Si es incorrecta, se pierde el juego y el jugador debe comenzar de nuevo desde el principio. El objetivo es conseguir la mejor puntuación. Cada paso de la secuencia vale un punto, por lo que al introducir correctamente una secuencia de 8 luces se obtienen 8 puntos en la tabla de mejores puntuaciones. </para>
 
 </chapter>
 
 
 <chapter id="using-blinken">
 <title
->Utilizar &blinken;</title>
+>Uso de &blinken;</title>
 
 <para
->La siguiente pantalla representa el inicio de &blinken;, mostrando la interfaz general de la aplicación. La mayor parte de la pantalla lo ocupa el <interface
+>La siguiente pantalla representa a &blinken; tras su inicio, mostrando la interfaz general de la aplicación. La mayor parte de la pantalla la ocupa el <interface
 >dispositivo</interface
 >, con los <interface
 >4 botones de colores</interface
@@ -115,9 +129,9 @@ SPDX-License-Identifier: GFDL-1.2-only
 >contador de puntuación</interface
 >, botón <guibutton
 >Inicio</guibutton
->, &etc;) en el centro de la pantalla. El estado actual de la aplicación se muestra en el <interface
+>, etc.) en el centro de la pantalla. El estado actual de la aplicación se muestra en el <interface
 >trozo de papel</interface
-> bajo el dispositivo. En las esquinas de la aplicación encontramos 3 botones: </para>
+> que hay debajo del dispositivo. En las esquinas de la aplicación encontramos 3 botones: </para>
 
 <screenshot>
 <screeninfo
@@ -138,9 +152,9 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Mejores puntuaciones</guibutton
 > <action
 >abre un diálogo que muestra la tabla de <guilabel
->mejores puntuaciones</guilabel
+>Mejores puntuaciones</guilabel
 ></action
-> para cada uno de los 3 niveles de dificultad (también puede accederse a la tabla <guilabel
+> para cada uno de los 3 niveles de dificultad (también se puede acceder a la tabla <guilabel
 >Mejores puntuaciones</guilabel
 > <action
 >pulsando en el <interface
@@ -195,14 +209,14 @@ SPDX-License-Identifier: GFDL-1.2-only
 >El botón <guibutton
 >Ayuda</guibutton
 > es especial, ya que <action
->muestra 4 sub-botones</action
+>muestra otros 4 botones</action
 >. Estos botones se muestran cuando se <action
->desplaza sobre</action
-> el botón <guibutton
+>sitúa el ratón</action
+> sobre el botón <guibutton
 >Ayuda</guibutton
->, y proporcionan acceso al <guilabel
+> y proporcionan acceso al <guilabel
 >Manual de &blinken;</guilabel
-> (este documento), y a los diálogos <guilabel
+> (este documento), así como a los diálogos <guilabel
 >Acerca de &blinken;</guilabel
 > y <guilabel
 >Acerca de &kde;</guilabel
@@ -227,22 +241,22 @@ SPDX-License-Identifier: GFDL-1.2-only
 </screenshot>
 
 <para
->Para familiarizarse con el funcionamiento del juego, puede interactuar con los <interface
+>Para familiarizarse con el funcionamiento del juego, puedes interactuar con los <interface
 >botones coloreados</interface
-> situados en la pantalla principal. Los botones se iluminarán y generarán un sonido cuando se pulsen. </para>
+> que hay en la pantalla principal. Los botones se iluminarán y generarán un sonido cuando los pulses. </para>
 
 <sect1 id="starting-game">
 <title
 >Iniciar un juego</title>
 
 <para
->Una vez que se haya familiarizado con el funcionamiento de la aplicación, puede comenzar a jugar pulsando el botón <guibutton
+>Una vez que te hayas familiarizado con el funcionamiento de la aplicación, puedes comenzar a jugar pulsando el botón <guibutton
 >Inicio</guibutton
-> situado en el centro de la pantalla. Esto «encenderá» el dispositivo, lo que se muestra iluminando el <interface
+> que hay en el centro de la pantalla. Esto «encenderá» el dispositivo, lo que se muestra iluminando el <interface
 >contador de puntuación</interface
->. A continuación puede <action
+>. A continuación puedes <action
 >elegir el nivel de dificultad</action
-> que desee: </para>
+> que quieras: </para>
 
 <screenshot>
 <screeninfo
@@ -283,9 +297,9 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Introducir una nueva mejor puntuación</title>
 
 <para
->Si tuviera la suerte de alcanzar una de las mejores puntuaciones, se introducirá en la tabla de <guilabel
+>Si tuvieras la suerte de alcanzar una de las mejores puntuaciones, se introducirá en la tabla de <guilabel
 >Mejores puntuaciones</guilabel
->. Un diálogo le pedirá un nombre para asociarlo con su puntuación en la tabla: </para>
+>. Un diálogo te pedirá un nombre para asociarlo con tu puntuación en la tabla: </para>
 
 <screenshot>
 <screeninfo
@@ -302,7 +316,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 </screenshot>
 
 <para
->Solo se mantienen 5 puntuaciones para cada nivel, por tanto ¡no se decepcione si no lo consigue! </para>
+>Solo se mantienen 5 puntuaciones para cada nivel. ¡No te decepciones si no lo consigues! </para>
 
 </sect1>
 
@@ -311,26 +325,26 @@ SPDX-License-Identifier: GFDL-1.2-only
 <title
 >Consejos para jugar</title>
 <para
->&blinken; es el mejor juego de memoria, en el que no necesita tener la mejor memoria para ganar. Estos consejos le ayudarán para conseguir la mejor puntuación: </para>
+>&blinken; es el mejor juego de memoria, aunque no necesitas tener la mejor memoria para ganar. Estos consejos te ayudarán a conseguir la mejor puntuación: </para>
 
 <itemizedlist>
 <listitem>
 <para
->Si tiene altavoces de PC, enciéndalos con el volumen a un nivel adecuado de forma que pueda oír los sonidos en cuanto se enciendan las luces. </para>
+>Si tienes altavoces de PC, enciéndelos con el volumen a un nivel adecuado para que puedas oír los sonidos en cuanto se enciendan las luces. </para>
 </listitem>
 <listitem>
 <para
->Experimente con los métodos de interacción del <link linkend="accessibility"
+>Experimenta con los métodos de interacción del <link linkend="accessibility"
 >teclado</link
-> y del ratón, para comprobar cuál es el que se adecúa mejor a su memoria. </para>
+> y del ratón para comprobar cuál es el que se adapta mejor a tu memoria. </para>
 </listitem>
 <listitem>
 <para
->Intente recordar la secuencia como una lista de colores. </para>
+>Intenta recordar la secuencia como una lista de colores. </para>
 </listitem>
 <listitem>
 <para
->Intente recordar la secuencia como posiciones en la pantalla. </para>
+>Intenta recordar la secuencia como posiciones en la pantalla. </para>
 </listitem>
 </itemizedlist>
 
@@ -343,29 +357,29 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Opciones de accesibilidad</title>
 
 <para
->Para permitir que &blinken; pueda disfrutarse mejor por parte de ciertos usuarios, existen varias opciones de accesibilidad incorporadas en &blinken;. </para>
+>Para permitir que ciertos usuarios puedan disfrutar mejor de &blinken;, el juego incorpora varias opciones de accesibilidad. </para>
 <para
->Para ver y modificar las opciones de accesibilidad de &blinken;, pulse la tecla &Ctrl; (si no se está jugando): </para>
+>Para ver y modificar las opciones de accesibilidad de &blinken;, pulsa la tecla &Ctrl; (si no se está jugando): </para>
 
 <screenshot>
 <screeninfo
->teclas de acceso de &blinken;</screeninfo>
+>Teclas de acceso de &blinken;</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="blinken_accesskeys.png" format="PNG"/>
 </imageobject>
 <textobject>
 <phrase
->teclas de acceso de &blinken;</phrase>
+>Teclas de acceso de &blinken;</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
 <para
->Para volver a la pantalla del juego, pulse la tecla &Ctrl; de nuevo. </para>
+>Para volver a la pantalla del juego, pulsa la tecla &Ctrl; de nuevo. </para>
 
 <para
->Además de utilizar el ratón, &blinken; también permite al usuario utilizar el teclado. </para>
+>Además de usar el ratón, &blinken; también permite utilizar el teclado. </para>
 
 <para
 >Las teclas predeterminadas son <keycap
@@ -379,7 +393,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >. </para>
 
 <para
->Para modificar la configuración de cualquier botón, púlselo utilizando el botón. Entonces se iluminará, esperando una entrada. Pulse la tecla deseada en el teclado para cambiar la tecla que esté asignada. </para>
+>Para modificar la asignación de cualquier botón, púlsalo con el ratón. Entonces se iluminará, esperando una entrada. Pulsa la tecla que prefieras del teclado para cambiar la tecla que hay asignada. </para>
 
 <para
 >Hay otras opciones disponibles en el centro de la ventana: <interface
@@ -399,7 +413,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <para
 >Quitando la marca de <interface
 >Tipos de letra</interface
-> se usará un tipo de letra estándar, utilizado para el texto del estado en lugar del tipo de letra de escritura manual. </para>
+> se usará un tipo de letra estándar para el texto del estado en lugar del tipo de letra de escritura manual. </para>
 </listitem>
 </itemizedlist>
 
@@ -413,7 +427,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <para
 >&blinken; </para>
 <para
->Derechos de autor del programa 2005:  Albert Astals Cid &Albert.Astals.Cid.mail; y &Danny.Allen; &Danny.Allen.mail; </para>
+>Copyright del programa 2005:  Albert Astals Cid &Albert.Astals.Cid.mail; y &Danny.Allen; &Danny.Allen.mail; </para>
 <para
 >Colaboradores: </para>
 <itemizedlist>
@@ -426,7 +440,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 </itemizedlist>
 
 <para
->Derechos de autor de la documentación 2005. &Danny.Allen; &Danny.Allen.mail;- </para>
+>Copyright de la documentación 2005. &Danny.Allen; &Danny.Allen.mail;- </para>
 
 <para
 >Traducido por Rocío Gallego <email
@@ -435,6 +449,10 @@ SPDX-License-Identifier: GFDL-1.2-only
 >santi@kde-es.org</email
 > Mauricio José Adonis Carrasco<email
 >mike.alfa.2007@gmail.com</email
+>.</para
+><para
+>Corregido por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 

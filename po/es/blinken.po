@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2023-10-02 21:43+0100\n"
-"Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
+"PO-Revision-Date: 2023-10-12 00:41+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Reiniciar"
 #: blinken.cpp:413
 #, kde-format
 msgid "Enter Your Name"
-msgstr "Introduzca su nombre"
+msgstr "Introduce tu nombre"
 
 #: blinken.cpp:413
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Salir de Blinken"
 #: blinken.cpp:692
 #, kde-format
 msgid "View Highscore Table"
-msgstr "Ver la tabla de puntuaciones"
+msgstr "Ver las mejores puntuaciones"
 
 #: blinken.cpp:697
 #, kde-format
@@ -120,17 +120,17 @@ msgstr "Nivel aleatorio"
 #: blinken.cpp:704
 #, kde-format
 msgid "Press the key for this button"
-msgstr "Pulse la tecla para este botón"
+msgstr "Pulsa la tecla para este botón"
 
 #: blinken.cpp:705
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Pulse cualquier botón para cambiar su tecla"
+msgstr "Pulsa cualquier botón para cambiar su tecla"
 
 #: blinken.cpp:711
 #, kde-format
 msgid "Press Start to begin"
-msgstr "Pulse «Iniciar» para comenzar"
+msgstr "Pulsa «Iniciar» para comenzar"
 
 #: blinken.cpp:715
 #, kde-format
@@ -165,12 +165,12 @@ msgstr "Siguiente secuencia en 2, 1..."
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Recuerde esta secuencia..."
+msgstr "Recuerda esta secuencia..."
 
 #: blinken.cpp:783
 #, kde-format
 msgid "Repeat the sequence"
-msgstr "Repita la secuencia"
+msgstr "Repite la secuencia"
 
 #: blinken.cpp:800
 #, kde-format
@@ -209,7 +209,7 @@ msgstr "Usar un tipo de letra personalizado para el texto de estado"
 #, kde-format
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
-msgstr "Máximas puntuaciones"
+msgstr "Mejores puntuaciones"
 
 #: highscoredialog.cpp:149
 #, kde-format
@@ -237,7 +237,7 @@ msgstr "Blinken"
 #: main.cpp:28
 #, kde-format
 msgid "A memory enhancement game"
-msgstr "Un juego para mejorar la memoria"
+msgstr "Juego para mejorar la memoria"
 
 #: main.cpp:28
 #, kde-format
