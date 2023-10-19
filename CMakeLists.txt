@@ -38,7 +38,7 @@ find_package (Phonon4Qt6 REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.6  KF 5.240.0)
 
 add_subdirectory( doc )
 add_subdirectory( src ) 
