@@ -22,7 +22,7 @@
 
 int main(int argc, char *argv[])
 {
-	KLocalizedString::setApplicationDomain("blinken");
+	KLocalizedString::setApplicationDomain(QByteArrayLiteral("blinken"));
 
 	QApplication app(argc, argv);
 	KAboutData about(QStringLiteral("blinken"), i18n("Blinken"), QStringLiteral(BLINKEN_VERSION_STRING), i18n("A memory enhancement game"), KAboutLicense::GPL, i18n("© 2005-2007 Albert Astals Cid\nSPDX-FileCopyrightText: 2005-2007 Danny Allen "));
