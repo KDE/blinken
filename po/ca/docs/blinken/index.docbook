@@ -212,9 +212,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <para
 >Una vegada familiaritzat amb el funcionament de l'aplicació, podeu iniciar un joc prement el botó <guibutton
 >Inicia</guibutton
-> al centre de la pantalla. Aquest <quote
->encendrà el dispositiu</quote
->, mostrant el <interface
+> al centre de la pantalla. Aquest «encendrà el dispositiu», mostrant el <interface
 >comptador de la puntuació</interface
 > il·luminat. Llavors podreu <action
 >triar el nivell de dificultat</action
