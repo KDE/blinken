@@ -14,7 +14,7 @@
 
 button::button(blinkenGame::color c) : m_selected(false), m_color(c)
 {
-	KConfigGroup kc(KSharedConfig::openConfig(), "General");
+	KConfigGroup kc(KSharedConfig::openConfig(), QStringLiteral("General"));
 	QString cs = getColorString();
 	
 	switch (c)
@@ -50,7 +50,7 @@ void button::setShortcut(int key)
 	m_key = key;
 	m_selected = false;
 	
-	KConfigGroup kc(KSharedConfig::openConfig(), "General");
+	KConfigGroup kc(KSharedConfig::openConfig(), QStringLiteral("General"));
 	kc.writeEntry(getColorString(), key);
 	kc.sync();
 }
