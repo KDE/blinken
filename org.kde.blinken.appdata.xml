@@ -133,7 +133,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="zh-CN">Blinken 基于一个 1978 年发布的电子游戏设计。该游戏会要求玩家记住越来越长的序列。在游戏机器的面板上有 4 个不同颜色的按钮，每个按钮会发出不同的声音。这些按钮会按随机顺序亮起，玩家必须正确重复该序列才能进入下一关。每一关都会在与前一关完全相同的序列上新增一位。如果玩家输入了错误的顺序，则挑战失败，新游戏必须从头开始挑战新的序列。游戏的目的是夺取高分榜的最高分。序列每增加一位就多一分，成功完成一个 8 位的序列可以得到 8 分。</p>
     <p xml:lang="zh-TW">Blinken 是基於一套 1978 年發行的遊戲而來。該遊戲可以挑戰玩家的記憶力，並不斷增加長度與難度。一開始，有四個不同顏色的按鈕，每個鈕有自己不同的聲音。這些按鈕會隨機亮起，產生一組讓玩家記憶的序列。如果玩家成功記住這樣的序列順序，則可以進到下一關。若是失敗，則要從頭開始。得分越高越好。</p>
   </description>
-  <url type="homepage">https://edu.kde.org/blinken/</url>
+  <url type="homepage">https://apps.kde.org/blinken</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=blinken</url>
   <url type="help">https://docs.kde.org/?application=blinken</url>
   <url type="donation">https://www.kde.org/community/donations/?app=blinken&amp;source=appdata</url>
