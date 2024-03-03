@@ -4,31 +4,32 @@
 #
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Einars Sprugis <einars8@gmail.com>, 2010, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2011-07-06 01:05+0300\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-02-29 11:09+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Viesturs Zariņš"
+msgstr "Viesturs Zariņš, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "viesturs.zarins@mi.lu.lv"
+msgstr "viesturs.zarins@mi.lu.lv, toms.trasuns@posteo.net"
 
 #: blinken.cpp:68
 #, kde-format
@@ -80,12 +81,12 @@ msgstr "Sākt spēli no sākuma"
 #: blinken.cpp:691
 #, kde-format
 msgid "Quit Blinken"
-msgstr "Iziet no Blinken"
+msgstr "Iziet no „Blinken“"
 
 #: blinken.cpp:692
 #, kde-format
 msgid "View Highscore Table"
-msgstr "Apskatīt labāko rezultātu tabulu"
+msgstr "Apskatīt labākos rezultātus"
 
 #: blinken.cpp:697
 #, kde-format
@@ -125,7 +126,7 @@ msgstr "Nospiediet jebkuru pogu, lai mainītu tās taustiņu"
 #: blinken.cpp:711
 #, kde-format
 msgid "Press Start to begin"
-msgstr "Lai sāktu, nospiediet 'Sākt'"
+msgstr "Lai sāktu, nospiediet „Sākt“"
 
 #: blinken.cpp:715
 #, kde-format
@@ -160,7 +161,7 @@ msgstr "Nākamā virkne pēc 2, 1..."
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Iegaumējiet šo virkni"
+msgstr "Iegaumējiet šo virkni..."
 
 #: blinken.cpp:783
 #, kde-format
@@ -235,16 +236,13 @@ msgid "A memory enhancement game"
 msgstr "Atmiņas uzlabošanas spēle"
 
 #: main.cpp:28
-#, fuzzy, kde-format
-#| msgid ""
-#| "© 2005-2007 Albert Astals Cid\n"
-#| "© 2005-2007 Danny Allen"
+#, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
-"© 2005-2007 Albert Astals Cid\n"
-"© 2005-2007 Danny Allen"
+"© 2005—2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005—2007 Danny Allen "
 
 #: main.cpp:29
 #, kde-format
@@ -274,4 +272,4 @@ msgstr "Steve Jordi"
 #: main.cpp:31
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
-msgstr "Izdeva 'Steve' fontu zem GPL licences, lai mēs to varētu izmantot"
+msgstr "Izdeva „Steve“ fontu ar GPL licenci, lai mēs to varētu izmantot"
