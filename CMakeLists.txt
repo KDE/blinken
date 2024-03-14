@@ -10,10 +10,10 @@ project(blinken VERSION ${RELEASE_SERVICE_VERSION})
 
 # minimal Qt requirement
 set(QT_MIN_VERSION "6.5.0")
-set(KF5_MIN_VERSION "5.240.0")
+set(KF_MIN_VERSION "5.240.0")
 
 # ECM
-find_package (ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package (ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
 # where to look first for cmake modules
 set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -30,7 +30,7 @@ include(ECMDeprecationSettings)
 
 find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
 
-find_package (KF6 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package (KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
 )
 
@@ -38,7 +38,7 @@ find_package (Phonon4Qt6 REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.6  KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.6  KF 6.6.0)
 
 add_subdirectory( doc )
 add_subdirectory( src ) 
