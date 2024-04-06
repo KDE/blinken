@@ -7,6 +7,10 @@
  <!ENTITY % Ukrainian "INCLUDE"
 ><!-- change language only here -->
 ]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 
 <book id="blinken" lang="&language;">
 
@@ -422,8 +426,7 @@
 >Юрій Чорноіван <email
 >yurchor@ukr.net</email
 ></para
-> 
-&underFDL; &underGPL; </chapter>
+> &underFDL; &underGPL; </chapter>
 
 &documentation.index;
 </book>
