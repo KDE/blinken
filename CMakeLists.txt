@@ -10,7 +10,7 @@ project(blinken VERSION ${RELEASE_SERVICE_VERSION})
 
 # minimal Qt requirement
 set(QT_MIN_VERSION "6.5.0")
-set(KF_MIN_VERSION "5.240.0")
+set(KF_MIN_VERSION "6.0.0")
 
 # ECM
 find_package (ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -38,7 +38,7 @@ find_package (Phonon4Qt6 REQUIRED)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.6  KF 6.0.0)
+ecm_set_disabled_deprecation_versions(QT 6.7  KF 6.1.0)
 
 add_subdirectory( doc )
 add_subdirectory( src ) 
