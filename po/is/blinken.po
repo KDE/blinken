@@ -1,19 +1,20 @@
 # translation of blinken.po to Icelandic
 #
 # Björgvin Ragnarsson <nifgraup@gmail.com>, 2005.
+# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2005-12-26 05:53+0000\n"
-"Last-Translator: Björgvin Ragnarsson <nifgraup@gmail.com>\n"
-"Language-Team: Icelandic <kde-isl@molar.is>\n"
+"PO-Revision-Date: 2024-04-06 12:58+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -21,12 +22,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Björgvin Ragnarsson"
+msgstr "Björgvin Ragnarsson, Guðmundur Erlingsson"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "nifgraup@gmail.com"
+msgstr "nifgraup@gmail.com, gudmundure@gmail.com"
 
 #: blinken.cpp:68
 #, kde-format
@@ -36,7 +37,7 @@ msgctxt ""
 "that message to 1 and KDE standard font will be used to show the texts, if "
 "not translate it to 0"
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: blinken.cpp:180
 #, kde-format
@@ -46,11 +47,10 @@ msgstr "Hljóð"
 #: blinken.cpp:181
 #, kde-format
 msgid "Font"
-msgstr ""
+msgstr "Letur"
 
 #: blinken.cpp:223
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "Byrja"
@@ -58,16 +58,15 @@ msgstr "Byrja"
 #: blinken.cpp:235
 #, kde-format
 msgid "Restart"
-msgstr "Endurræsa"
+msgstr "Byrja aftur"
 
 #: blinken.cpp:413
 #, kde-format
 msgid "Enter Your Name"
-msgstr "Sláðu inn nafn"
+msgstr "Sláðu inn nafnið þitt"
 
 #: blinken.cpp:413
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "Nafn:"
@@ -75,13 +74,12 @@ msgstr "Nafn:"
 #: blinken.cpp:689
 #, kde-format
 msgid "Restart the game"
-msgstr "Endurræsa leikinn"
+msgstr "Byrja upp á nýtt"
 
 #: blinken.cpp:691
-#, fuzzy, kde-format
-#| msgid "Quit blinKen"
+#, kde-format
 msgid "Quit Blinken"
-msgstr "Hætta í blinKen"
+msgstr "Hætta í Blinken"
 
 #: blinken.cpp:692
 #, kde-format
@@ -91,12 +89,12 @@ msgstr "Skoða stigatöflu"
 #: blinken.cpp:697
 #, kde-format
 msgid "Show Settings"
-msgstr ""
+msgstr "Sýna stillingar"
 
 #: blinken.cpp:698
 #, kde-format
 msgid "Hide Settings"
-msgstr ""
+msgstr "Fela stillingar"
 
 #: blinken.cpp:701
 #, kde-format
@@ -116,57 +114,57 @@ msgstr "Slembið stig"
 #: blinken.cpp:704
 #, kde-format
 msgid "Press the key for this button"
-msgstr ""
+msgstr "Ýttu á lykilinn fyrir þennan hnapp"
 
 #: blinken.cpp:705
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click any button to change its key"
-msgstr "Smelltu á einhvern "
+msgstr "Smelltu á einhvern hnapp til að breyta lyklinum fyrir hann"
 
 #: blinken.cpp:711
-#, fuzzy, kde-format
+#, kde-format
 msgid "Press Start to begin"
-msgstr "Smelltu á Byrja"
+msgstr "Smelltu á Byrja til að byrja"
 
 #: blinken.cpp:715
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Veldu erfiðleikastig"
+msgstr "Stilltu erfiðleikastigið..."
 
 #: blinken.cpp:725
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Næsta röð eftir 3..."
+msgstr "Næsta runa eftir 3..."
 
 #: blinken.cpp:738
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Næsta röð eftir 3, 2..."
+msgstr "Næsta runa eftir 3, 2..."
 
 #: blinken.cpp:742
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Næsta röð eftir 2..."
+msgstr "Næsta runa eftir 2..."
 
 #: blinken.cpp:756
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Næsta röð eftir 3, 2, 1..."
+msgstr "Næsta runa eftir 3, 2, 1..."
 
 #: blinken.cpp:760
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Næsta röð eftir 2, 1..."
+msgstr "Næsta runa eftir 2, 1..."
 
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Mundu þessa röð..."
+msgstr "Mundu þessa runu..."
 
 #: blinken.cpp:783
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repeat the sequence"
-msgstr "Endurtaktu röðina!"
+msgstr "Endurtaka rununa"
 
 #: blinken.cpp:800
 #, kde-format
@@ -184,8 +182,7 @@ msgid "?"
 msgstr "?"
 
 #: blinken.cpp:806
-#, fuzzy, kde-format
-#| msgid "Level"
+#, kde-format
 msgctxt "@label:chooser which level is currently being played"
 msgid "Level"
 msgstr "Stig"
@@ -200,41 +197,36 @@ msgstr "Spila hljóð"
 #: blinken.kcfg:13
 #, kde-format
 msgid "Use custom font for status text"
-msgstr "Nota sérsniðna leturgerð fyrir stöðutexta"
+msgstr "Nota sérsniðið letur í stöðutexta"
 
 #: highscoredialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Highscores"
+#, kde-format
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "Stigatafla"
 
 #: highscoredialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Level 1"
+#, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
-msgstr "Stig 1"
+msgstr "1. stig"
 
 #: highscoredialog.cpp:150
-#, fuzzy, kde-format
-#| msgid "Level 2"
+#, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
-msgstr "Stig 2"
+msgstr "2. stig"
 
 #: highscoredialog.cpp:151
-#, fuzzy, kde-format
-#| msgid "Level ?"
+#, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Stig ?"
 
 #: main.cpp:28
-#, fuzzy, kde-format
-#| msgid "blinKen"
+#, kde-format
 msgid "Blinken"
-msgstr "blinKen"
+msgstr "Blinken"
 
 #: main.cpp:28
 #, kde-format
@@ -247,11 +239,13 @@ msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
+"© 2005-2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
 #: main.cpp:29
 #, kde-format
 msgid "Albert Astals Cid"
-msgstr ""
+msgstr "Albert Astals Cid"
 
 #: main.cpp:29
 #, kde-format
@@ -261,7 +255,7 @@ msgstr "Forritun"
 #: main.cpp:30
 #, kde-format
 msgid "Danny Allen"
-msgstr ""
+msgstr "Danny Allen"
 
 #: main.cpp:30
 #, kde-format
@@ -271,7 +265,7 @@ msgstr "Hönnun, grafík og hljóð"
 #: main.cpp:31
 #, kde-format
 msgid "Steve Jordi"
-msgstr ""
+msgstr "Steve Jordi"
 
 #: main.cpp:31
 #, kde-format
