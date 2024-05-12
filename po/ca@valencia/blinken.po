@@ -131,37 +131,37 @@ msgstr "Premeu Inicia per a començar"
 #: blinken.cpp:715
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Establiu el nivell de dificultat..."
+msgstr "Establiu el nivell de dificultat…"
 
 #: blinken.cpp:725
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Propera seqüència en 3..."
+msgstr "Propera seqüència en 3…"
 
 #: blinken.cpp:738
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Propera seqüència en 3, 2..."
+msgstr "Propera seqüència en 3, 2…"
 
 #: blinken.cpp:742
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Propera seqüència en 2..."
+msgstr "Propera seqüència en 2…"
 
 #: blinken.cpp:756
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Propera seqüència en 3, 2, 1..."
+msgstr "Propera seqüència en 3, 2, 1…"
 
 #: blinken.cpp:760
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Propera seqüència en 2, 1..."
+msgstr "Propera seqüència en 2, 1…"
 
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Recordeu esta seqüència..."
+msgstr "Recordeu esta seqüència…"
 
 #: blinken.cpp:783
 #, kde-format
