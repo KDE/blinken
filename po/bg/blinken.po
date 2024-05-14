@@ -3,20 +3,20 @@
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007.
 # Yasen Pramatarov <yasen@lindeas.com>, 2010, 2011.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2022-06-19 14:22+0200\n"
+"PO-Revision-Date: 2024-05-13 22:08+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -129,37 +129,37 @@ msgstr "Натиснете бутона \"Начало\", за започван�
 #: blinken.cpp:715
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Ниво на трудност..."
+msgstr "Ниво на трудност…"
 
 #: blinken.cpp:725
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Следваща серия в 3..."
+msgstr "Следваща серия в 3…"
 
 #: blinken.cpp:738
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Следваща серия в 3, 2..."
+msgstr "Следваща серия в 3, 2…"
 
 #: blinken.cpp:742
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Следваща серия в 2..."
+msgstr "Следваща серия в 2…"
 
 #: blinken.cpp:756
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Следваща серия в 3, 2, 1..."
+msgstr "Следваща серия в 3, 2, 1…"
 
 #: blinken.cpp:760
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Следваща серия в 2, 1..."
+msgstr "Следваща серия в 2, 1…"
 
 #: blinken.cpp:772
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Запомняне на серията..."
+msgstr "Запомняне на серията…"
 
 #: blinken.cpp:783
 #, kde-format
