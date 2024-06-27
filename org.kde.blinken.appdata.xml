@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC0-1.0
   <id>org.kde.blinken.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
+  <launchable type="desktop-id">org.kde.blinken.desktop</launchable>
   <name>Blinken</name>
   <name xml:lang="ar">فلاش</name>
   <name xml:lang="ast">Blinken</name>
@@ -196,6 +200,8 @@ SPDX-License-Identifier: CC0-1.0
     <binary>blinken</binary>
   </provides>
   <releases>
+    <release version="24.05.1" date="2024-06-13"/>
+    <release version="24.05.0" date="2024-05-23"/>
     <release version="24.02.2" date="2024-04-11"/>
     <release version="24.02.1" date="2024-03-21"/>
     <release version="24.02.0" date="2024-02-28"/>
