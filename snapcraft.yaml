@@ -14,6 +14,10 @@ apps:
         common-id: org.kde.blinken.desktop
         desktop: usr/share/applications/org.kde.blinken.desktop
         command: usr/bin/blinken
+        plugs:
+        - pulseaudio
+        environment:
+          ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
 
 slots:
     session-dbus-interface:
