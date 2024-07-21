@@ -18,7 +18,11 @@ apps:
         - pulseaudio
         environment:
           ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
-
+layouts:
+    "/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib"
+    "/usr/share/alsa":
+        symlink: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -44,6 +48,8 @@ parts:
         - libpulse0
         stage-packages:
         - libpulse0
+        - libasound2-data
+        - libasound2-plugins
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
