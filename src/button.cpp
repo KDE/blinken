@@ -12,26 +12,26 @@
 
 #include <QKeySequence>
 
-button::button(blinkenGame::color c) : m_selected(false), m_color(c)
+button::button(BlinkenGame::Color c) : m_selected(false), m_color(c)
 {
 	KConfigGroup kc(KSharedConfig::openConfig(), QStringLiteral("General"));
 	QString cs = getColorString();
 	
 	switch (c)
 	{
-		case blinkenGame::blue:
+		case BlinkenGame::Blue:
 			m_key = kc.readEntry(cs, int(Qt::Key_3));
 		break;
 		
-		case blinkenGame::yellow:
+		case BlinkenGame::Yellow:
 			m_key = kc.readEntry(cs, int(Qt::Key_1));
 		break;
 		
-		case blinkenGame::red:
+		case BlinkenGame::Red:
 			m_key =kc.readEntry(cs, int(Qt::Key_2));
 		break;
 		
-		case blinkenGame::green:
+		case BlinkenGame::Green:
 			m_key = kc.readEntry(cs, int(Qt::Key_4));
 		break;
 		
@@ -79,16 +79,16 @@ QString button::getColorString() const
 {
 	switch (m_color)
 	{
-		case blinkenGame::blue:
+		case BlinkenGame::Blue:
 			return QStringLiteral("blue");
 		
-		case blinkenGame::yellow:
+		case BlinkenGame::Yellow:
 			return QStringLiteral("yellow");
 		
-		case blinkenGame::red:
+		case BlinkenGame::Red:
 			return QStringLiteral("red");
 		
-		case blinkenGame::green:
+		case BlinkenGame::Green:
 			return QStringLiteral("green");
 		
 		default:

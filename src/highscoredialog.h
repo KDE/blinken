@@ -12,6 +12,7 @@
 #include <QPair>
 #include <QList>
 
+
 class QSvgRenderer;
 
 class myTabWidget;
@@ -24,27 +25,6 @@ class highScoreDialog : private QDialog
 		void showLevel(int level);
 	
 		myTabWidget *m_tw;
-};
-
-class highScoreManager : public QObject
-{
-Q_OBJECT
-	public:
-		highScoreManager();
-		~highScoreManager() override;
-
-		bool scoreGoodEnough(int level, int score);
-		void addScore(int level, int score, const QString &name);
-
-		QList< QPair<int, QString> > scores(int level) const;
-
-		Q_INVOKABLE int score(int level, int position) const;
-		Q_INVOKABLE QString name(int level, int position) const;
-
-	private:
-		void update();
-
-		QList< QPair<int, QString> > m_scores[3];
 };
 
 #endif

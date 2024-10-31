@@ -11,42 +11,42 @@
 
 #include "soundsplayer.h"
 
-blinkenGame::blinkenGame() : m_phase(starting)
+BlinkenGame::BlinkenGame() : m_phase(Starting)
 {
 	m_soundsPlayer = new soundsPlayer;
 	m_waitTimer = new QTimer(this);
-	connect(m_waitTimer, &QTimer::timeout, this, &blinkenGame::waiting);
+	connect(m_waitTimer, &QTimer::timeout, this, &BlinkenGame::waiting);
 }
 
-blinkenGame::~blinkenGame()
+BlinkenGame::~BlinkenGame()
 {
 	delete m_soundsPlayer;
 }
 
-int blinkenGame::level() const
+int BlinkenGame::level() const
 {
 	return m_level;
 }
 
-bool blinkenGame::canType() const
+bool BlinkenGame::canType() const
 {
-	return m_phase == typingTheSequence || m_phase == starting;
+	return m_phase == TypingTheSequence || m_phase == Starting;
 }
 
-blinkenGame::gamePhase blinkenGame::phase() const
+BlinkenGame::GamePhase BlinkenGame::phase() const
 {
 	return m_phase;
 }
 
-int blinkenGame::score() const
+int BlinkenGame::score() const
 {
-	if (m_phase == starting || m_phase == choosingLevel) return 0;
+	if (m_phase == Starting || m_phase == ChoosingLevel) return 0;
 	return m_sequenceLength - 1;
 }
 
-void blinkenGame::clicked(color c)
+void BlinkenGame::clicked(Color c)
 {
-	if (m_phase == starting)
+	if (m_phase == Starting)
 	{
 		m_soundsPlayer -> play(c);
 		return;
@@ -64,21 +64,21 @@ void blinkenGame::clicked(color c)
 	}
 	else
 	{
-		m_soundsPlayer -> play(all);
-		Q_EMIT highlight(all, true);
+		m_soundsPlayer -> play(All);
+		Q_EMIT highlight(All, true);
 		Q_EMIT gameEnded();
-		setPhase(choosingLevel);
+		setPhase(ChoosingLevel);
 	}
 }
 
-void blinkenGame::setPhase(gamePhase p)
+void BlinkenGame::setPhase(GamePhase p)
 {
-	if (p != waiting3 && p != waiting2 && p != waiting1) m_waitTimer -> stop();
+	if (p != Waiting3 && p != Waiting2 && p != Waiting1) m_waitTimer -> stop();
 	m_phase = p;
 	Q_EMIT phaseChanged();
 }
 
-void blinkenGame::start(int level)
+void BlinkenGame::start(int level)
 {
 	m_level = level;
 	m_sequenceLength = 1;
@@ -88,11 +88,11 @@ void blinkenGame::start(int level)
 	m_sequence.clear();
 }
 
-void blinkenGame::nextSound()
+void BlinkenGame::nextSound()
 {
 	if (m_nextColor != m_sequence.constEnd())
 	{
-		color c;
+		Color c;
 		c = *m_nextColor;
 		++m_nextColor;
 		m_soundsPlayer -> play(c);
@@ -100,29 +100,29 @@ void blinkenGame::nextSound()
 	}
 	else
 	{
-		setPhase(typingTheSequence);
+		setPhase(TypingTheSequence);
 		m_nextColor = m_sequence.constBegin();
-		Q_EMIT highlight(none, false);
+		Q_EMIT highlight(None, false);
 		m_soundsPlayer->disconnect();
 	}
 }
 
-void blinkenGame::soundEnded()
+void BlinkenGame::soundEnded()
 {
-	QTimer::singleShot(100, this, &blinkenGame::nextSound);
-	QTimer::singleShot(50, this, &blinkenGame::unhighlight);
+	QTimer::singleShot(100, this, &BlinkenGame::nextSound);
+	QTimer::singleShot(50, this, &BlinkenGame::unhighlight);
 }
 
-void blinkenGame::unhighlight()
+void BlinkenGame::unhighlight()
 {
-	Q_EMIT highlight(none, false);
+	Q_EMIT highlight(None, false);
 }
 
-void blinkenGame::waiting()
+void BlinkenGame::waiting()
 {
-	if (m_phase == waiting1)
+	if (m_phase == Waiting1)
 	{
-		setPhase(blinkenGame::learningTheSequence);
+		setPhase(BlinkenGame::LearningTheSequence);
 		if (m_level == 3) 
 		{
 			m_sequence.clear();
@@ -130,43 +130,43 @@ void blinkenGame::waiting()
 		}
 		else m_sequence.append(generateColor());
 	
-		connect(m_soundsPlayer, &soundsPlayer::ended, this, &blinkenGame::soundEnded);
+		connect(m_soundsPlayer, &soundsPlayer::ended, this, &BlinkenGame::soundEnded);
 		m_nextColor = m_sequence.constBegin();
 		soundEnded();
 	}
-	else if (m_phase == waiting3) setPhase(waiting2);
-	else /* m_phase == waiting2 */ setPhase(waiting1);
+	else if (m_phase == Waiting3) setPhase(Waiting2);
+	else /* m_phase == waiting2 */ setPhase(Waiting1);
 }
 
-void blinkenGame::nextRound()
+void BlinkenGame::nextRound()
 {
-	if (m_level == 1) setPhase(waiting3);
-	else setPhase(waiting2);
+	if (m_level == 1) setPhase(Waiting3);
+	else setPhase(Waiting2);
 	m_waitTimer -> start(1000);
 }
 
-blinkenGame::color blinkenGame::generateColor()
+BlinkenGame::Color BlinkenGame::generateColor()
 {
 	// make the compiler happy :-D
-	color c = none;
+	Color c = None;
 
 	const int r = QRandomGenerator::global()->bounded(1, 5); // rand [1, 5)
 	switch(r)
 	{
 		case 1:
-			c = red;
+			c = Red;
 		break;
 		
 		case 2:
-			c = green;
+			c = Green;
 		break;
 		
 		case 3:
-			c = blue;
+			c = Blue;
 		break;
 		
 		case 4:
-			c = yellow;
+			c = Yellow;
 		break;
 	}
 	return c;

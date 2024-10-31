@@ -37,10 +37,10 @@ Q_OBJECT
 		
 	private Q_SLOTS:
 		void checkHS();
-		void highlight(blinkenGame::color c, bool unhighlight);
+		void highlight(BlinkenGame::Color c, bool unhighlight);
 		void unhighlight();
 		
-		void pressedColor(blinkenGame::color c);
+		void pressedColor(BlinkenGame::Color c);
 
 	private:
 		void startGamePressed();
@@ -81,12 +81,12 @@ Q_OBJECT
 		// use always the non-cool font?
 		bool m_alwaysUseNonCoolFont;
 		
-		blinkenGame::color m_highlighted;
+		BlinkenGame::Color m_highlighted;
 		QTimer *m_unhighlighter;
 		
 		QString m_lastName;
 		
-		blinkenGame m_game;
+		BlinkenGame m_game;
 		
 		KHelpMenu *m_helpMenu;
 		

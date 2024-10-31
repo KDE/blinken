@@ -6,8 +6,18 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
-    'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kguiaddons': '@latest-kf6'
+
+- 'on': ['Android/Qt6']
+  'require':
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kconfigwidgets': '@latest-kf6'
+    'frameworks/kirigami': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest-kf6'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kdoctools': '@latest-kf6'
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'

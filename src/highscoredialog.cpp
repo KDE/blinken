@@ -20,12 +20,11 @@
 
 #include "counter.h"
 #include "settings.h"
+#include "highScoreManager.h"
 
 static const int margin = 15;
 static const int smallMargin = 5;
 static const int namesFontSize = 25;
-
-static QSet<highScoreManager *> s_allHSM;
 
 /* scoresWidget */
 
@@ -64,7 +63,7 @@ void scoresWidget::paintEvent(QPaintEvent *)
 	
 	p.setPen(Qt::black);
 	
-	if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
+	if (BlinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
 	f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
@@ -93,7 +92,7 @@ QSize scoresWidget::calcSize()
 	QPainter p(&dummyPixmap);
 	QFont f;
 	
-	if (blinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
+	if (BlinkenSettings::customFont()) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
 	f.setPointSize(KFontUtils::adaptFontSize(p, QStringLiteral("A"), 1000, namesFontSize, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
@@ -144,7 +143,7 @@ highScoreDialog::highScoreDialog(QWidget *parent, QSvgRenderer *renderer) : QDia
 	connect(buttonBox, &QDialogButtonBox::rejected, this, &highScoreDialog::close);
 	layout()->addWidget(buttonBox);
 
-	highScoreManager hsm;
+	HighScoreManager hsm;
 	
 	m_tw -> addTab(new scoresWidget(nullptr, hsm.scores(0), renderer), i18nc("@title:group High scores Level 1 tab title", "Level 1"));
 	m_tw -> addTab(new scoresWidget(nullptr, hsm.scores(1), renderer), i18nc("@title:group High scores Level 2 tab title", "Level 2"));
@@ -164,93 +163,6 @@ void highScoreDialog::showLevel(int level)
 	if (max.width() < m_tw -> tabBarSizeHint().width() + 5) m_tw -> setMinimumSize(m_tw -> tabBarSizeHint().width() + 5, max.height() + m_tw -> tabBarSizeHint().height() + 5);
 	
 	exec();
-}
-
-/* highScoreManager */
-
-highScoreManager::highScoreManager()
-{
-	s_allHSM << this;
-	update();
-}
-
-highScoreManager::~highScoreManager()
-{
-	s_allHSM.remove(this);
-}
-
-bool highScoreManager::scoreGoodEnough(int level, int score)
-{
-	level--;
-	QList< QPair<int, QString> >::iterator it, itEnd;
-	it = m_scores[level].begin();
-	itEnd = m_scores[level].end();
-	while (it != itEnd && (*it).first >= score) ++it;
-	
-	return (it != itEnd);
-}
-
-void highScoreManager::addScore(int level, int score, const QString &name)
-{
-	level--;
-	QList< QPair<int, QString> >::iterator it, itEnd;
-	it = m_scores[level].begin();
-	itEnd = m_scores[level].end();
-	while (it != itEnd && (*it).first >= score) ++it;
-	
-	if (it != itEnd)
-	{
-		m_scores[level].insert(it, qMakePair(score, name));
-		m_scores[level].erase(--m_scores[level].end());
-		
-		KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(level + 1));
-		int j;
-		for (it = m_scores[level].begin(), j = 1; it != m_scores[level].end(); ++it, j++)
-		{
-			cfg.writeEntry(QStringLiteral("Score%1").arg(j), (*it).first);
-			cfg.writeEntry(QStringLiteral("Name%1").arg(j), (*it).second);
-		}
-		cfg.sync();
-
-		for (highScoreManager *hsm : std::as_const(s_allHSM))
-		{
-			if (hsm != this)
-			{
-				hsm->update();
-			}
-		}
-	}
-}
-
-void highScoreManager::update()
-{
-	for (int i = 0; i < 3; ++i)
-	{
-		m_scores[i].clear();
-	}
-	for (int i = 1; i <= 3; i++)
-	{
-		KConfigGroup cfg(KSharedConfig::openConfig(), QStringLiteral("Level%1").arg(i));
-		for (int j = 1; j <= 5; j++)
-		{
-			m_scores[i-1].append(qMakePair(cfg.readEntry(QStringLiteral("Score%1").arg(j),QVariant(0)).toInt(),cfg.readEntry(QStringLiteral("Name%1").arg(j),QString())));
-		}
-	}
-}
-
-QList< QPair<int, QString> > highScoreManager::scores(int level) const
-{
-	return m_scores[level];
-}
-
-int highScoreManager::score(int level, int position) const
-{
-	return m_scores[level][position].first;
-}
-
-QString highScoreManager::name(int level, int position) const
-{
-	return m_scores[level][position].second;
 }
 
 #include "moc_highscoredialog.cpp"

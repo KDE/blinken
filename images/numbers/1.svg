@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 62.999999 78.000003"
+   xml:space="preserve"
+   sodipodi:docname="1.svg"
+   width="63"
+   height="78"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1" /><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="10.106044"
+   inkscape:cx="31.46632"
+   inkscape:cy="39.134998"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="1911"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer_1" />
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:#E7211A;}
+	.st1{fill:#E7211A;fill-opacity:0;}
+</style>
+<g
+   id="one"
+   transform="matrix(1.8545776,0,0,1.8275539,-37.555196,-31.068416)">
+	<g
+   id="g3091"
+   transform="translate(-16.7872)">
+		<path
+   id="path2994"
+   class="st0"
+   d="m 45.93,42.11 v -7.5 h 7.5 v 7.5 z" />
+		<path
+   id="path2996"
+   class="st0"
+   d="m 45.93,33.32 v -7.5 h 7.5 v 7.5 z" />
+		<path
+   id="path2998"
+   class="st0"
+   d="m 45.93,24.54 v -7.5 h 7.5 v 7.5 z" />
+		<path
+   id="path3000"
+   class="st0"
+   d="m 45.93,50.9 v -7.5 h 7.5 v 7.5 z" />
+		<path
+   id="path2978"
+   class="st0"
+   d="m 37.14,24.54 v -3.75 l 3.75,-3.75 h 3.75 v 7.5 z" />
+		<path
+   id="path3045"
+   class="st0"
+   d="m 45.93,59.68 v -7.5 h 7.5 v 7.5 z" />
+	</g>
+	<path
+   id="path3060"
+   class="st1"
+   d="M 29.04,24.5 V 17 h 7.5 v 7.5 z" />
+	<path
+   id="path3062"
+   class="st1"
+   d="M 20.25,24.5 V 17 h 7.5 v 7.5 z" />
+	<path
+   id="path3058"
+   class="st1"
+   d="m 37.93,24.54 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path2170"
+   class="st1"
+   d="m 46.72,24.54 v -7.5 h 7.5 v 7.5 z" />
+</g>
+</svg>

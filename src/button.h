@@ -12,7 +12,7 @@
 class button
 {
 	public:
-		explicit button(blinkenGame::color c);
+		explicit button(BlinkenGame::Color c);
 		~button();
 	
 		void setShortcut(int key);
@@ -26,7 +26,7 @@ class button
 		
 		bool m_selected;
 		int m_key;
-		blinkenGame::color m_color;
+		BlinkenGame::Color m_color;
 };
 
 #endif

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 600 600"
+   xml:space="preserve"
+   sodipodi:docname="highScore_highlight.svg"
+   width="600"
+   height="600"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1" /><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="1.2924837"
+   inkscape:cx="396.13654"
+   inkscape:cy="306"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="1911"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer_1" />
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:#B73822;}
+	
+		.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#972C23;stroke:#972C23;stroke-width:3.125;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:none;stroke:#972C23;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g
+   id="highscore_hover"
+   transform="matrix(6.6666667,0,0,6.6666667,3761.0667,-336.26667)">
+	<path
+   id="rect2331"
+   class="st0"
+   d="m -554.49,50.44 h 70.66 c 5.34,0 9.67,4.33 9.67,9.67 v 70.66 c 0,5.34 -4.33,9.67 -9.67,9.67 h -70.66 c -5.34,0 -9.67,-4.33 -9.67,-9.67 V 60.11 c 0,-5.34 4.33,-9.67 9.67,-9.67 z" />
+	<g
+   id="g4377"
+   transform="translate(-0.841086,-179.6294)">
+		<path
+   id="path4379"
+   class="st1"
+   d="m -552.03,239.13 h 12.52 c 1.23,0 2.22,0.99 2.22,2.21 v 12.45 c 0,1.22 -0.99,2.21 -2.22,2.21 h -12.52 c -1.23,0 -2.22,-0.99 -2.22,-2.21 v -12.45 c 0,-1.22 0.99,-2.21 2.22,-2.21 z" />
+		<path
+   id="path4381"
+   class="st1"
+   d="m -552.03,266.64 h 12.52 c 1.23,0 2.22,0.99 2.22,2.21 v 12.45 c 0,1.22 -0.99,2.21 -2.22,2.21 h -12.52 c -1.23,0 -2.22,-0.99 -2.22,-2.21 v -12.45 c 0,-1.23 0.99,-2.21 2.22,-2.21 z" />
+		<g
+   id="g4383"
+   transform="translate(-1.25)">
+			<path
+   id="path4385"
+   class="st2"
+   d="m -522.59,247.57 h 36.36" />
+			<path
+   id="path4387"
+   class="st2"
+   d="m -522.59,275.07 h 29.82" />
+			<path
+   id="path4389"
+   class="st2"
+   d="m -522.59,302.57 h 39.27" />
+		</g>
+		<path
+   id="path4391"
+   class="st1"
+   d="m -552.03,294.14 h 12.52 c 1.23,0 2.22,0.99 2.22,2.21 v 12.45 c 0,1.22 -0.99,2.21 -2.22,2.21 h -12.52 c -1.23,0 -2.22,-0.99 -2.22,-2.21 v -12.45 c 0,-1.23 0.99,-2.21 2.22,-2.21 z" />
+	</g>
+</g>
+</svg>

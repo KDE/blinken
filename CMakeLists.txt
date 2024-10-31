@@ -8,6 +8,14 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(blinken VERSION ${RELEASE_SERVICE_VERSION})
 
+option(QML_VERSION_FOR_DESKTOP "enable QML version for desktop" OFF)
+
+if(ANDROID OR QML_VERSION_FOR_DESKTOP)
+    set(QML_VERSION ON)
+else()
+    set(QML_VERSION OFF)
+endif()
+
 # minimal Qt requirement
 set(QT_MIN_VERSION "6.5.0")
 set(KF_MIN_VERSION "6.0.0")
@@ -28,33 +36,57 @@ include(ECMSetupVersion)
 include(FeatureSummary)
 include(ECMDeprecationSettings)
 
-find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets Svg)
+if(ANDROID)
+    include(ECMAddAndroidApk)
+endif()
 
-find_package (KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
-)
+if(QML_VERSION)
+    add_compile_definitions(QML_VERSION)
+    include(ECMQmlModule)
 
-find_package (Phonon4Qt6 REQUIRED)
+    find_package (Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS 
+        Core Quick Gui Qml Multimedia
+    )
+    find_package (KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+        CoreAddons I18n GuiAddons Kirigami 
+    )
+    find_package(KF6Config ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6ConfigWidgets ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6KirigamiAddons 1.0 REQUIRED)
+
+else()
+
+    find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED 
+        Core Widgets Svg Qml
+    )
+    find_package (KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+        CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
+    )
+    find_package (Phonon4Qt6 REQUIRED)
+
+    add_subdirectory( doc )
+endif()
 
 # global include directories
 include_directories (${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.8.0  KF 6.5.0)
 
-add_subdirectory( doc )
-add_subdirectory( src ) 
-add_subdirectory( images ) 
-add_subdirectory( icons ) 
-add_subdirectory( sounds ) 
-add_subdirectory( fonts ) 
+
+add_subdirectory( src )
+add_subdirectory( images )
+add_subdirectory( sounds )
+add_subdirectory( icons )
+add_subdirectory( fonts )
 
 ########### install files ###############
 
 ki18n_install(po)
+
 if (KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
+
 install( FILES README.packagers  DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/ )
 install( FILES org.kde.blinken.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-

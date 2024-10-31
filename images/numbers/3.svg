@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 62.999999 78.000003"
+   xml:space="preserve"
+   sodipodi:docname="3.svg"
+   width="63"
+   height="78"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1" /><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="10.106044"
+   inkscape:cx="31.46632"
+   inkscape:cy="39.134998"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="1911"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer_1" />
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:#E7211A;}
+</style>
+<g
+   id="three"
+   transform="matrix(1.8606025,0,0,1.8288394,-25.992618,-27.816647)">
+	<path
+   id="path4129"
+   class="st0"
+   d="m 22.76,40.29 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4133"
+   class="st0"
+   d="m 22.76,22.71 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4137"
+   class="st0"
+   d="m 31.55,40.29 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4141"
+   class="st0"
+   d="m 31.55,22.71 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4145"
+   class="st0"
+   d="m 40.33,40.29 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4147"
+   class="st0"
+   d="M 40.33,31.5 V 24 h 7.5 v 7.5 z" />
+	<path
+   id="path4149"
+   class="st0"
+   d="m 40.33,22.71 v -7.5 h 3.75 l 3.75,3.75 v 3.75 z" />
+	<path
+   id="path4151"
+   class="st0"
+   d="m 40.33,49.07 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4153"
+   class="st0"
+   d="m 13.97,40.29 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4157"
+   class="st0"
+   d="m 13.97,22.71 v -3.75 l 3.75,-3.75 h 3.75 v 7.5 z" />
+	<path
+   id="path4161"
+   class="st0"
+   d="m 22.76,57.86 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4163"
+   class="st0"
+   d="m 31.55,57.86 v -7.5 h 7.5 v 7.5 z" />
+	<path
+   id="path4165"
+   class="st0"
+   d="m 40.33,57.86 v -7.5 h 7.5 v 3.75 l -3.75,3.75 z" />
+	<path
+   id="path4167"
+   class="st0"
+   d="m 13.97,54.11 v -3.75 h 7.5 v 7.5 h -3.75 z" />
+</g>
+</svg>

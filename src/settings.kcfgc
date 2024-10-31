@@ -1,4 +1,6 @@
 File=blinken.kcfg
-ClassName=blinkenSettings
+ClassName=BlinkenSettings
 Singleton=true
 Mutators=true
+GenerateProperties=true
+QmlRegistration=true

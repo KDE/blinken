@@ -25,6 +25,7 @@
 #include "counter.h"
 #include "number.h"
 #include "highscoredialog.h"
+#include "highScoreManager.h"
 #include "settings.h"
 
 static const double centerX = 2.0;
@@ -36,14 +37,14 @@ static const double ellipseBigAxisY = 2.74;
 static const double nonButtonRibbonX = 150.0;
 static const double nonButtonRibbonY = 125.0;
 
-blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(blinkenGame::none)
+blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralText(false), m_overMenu(false), m_overAboutKDE(false), m_overAboutBlinken(false), m_overSettings(false), m_overManual(false), m_overCentralLetters(false), m_overCounter(false), m_overFont(false), m_overSound(false), m_showPreferences(false), m_updateButtonHighlighting(false), m_highlighted(BlinkenGame::None)
 {
 	m_renderer = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::AppLocalDataLocation, QStringLiteral("images/blinken.svg")));
 	
-	m_buttons[0] = new button(blinkenGame::blue);
-	m_buttons[1] = new button(blinkenGame::yellow);
-	m_buttons[2] = new button(blinkenGame::red);
-	m_buttons[3] = new button(blinkenGame::green);
+	m_buttons[0] = new button(BlinkenGame::Blue);
+	m_buttons[1] = new button(BlinkenGame::Yellow);
+	m_buttons[2] = new button(BlinkenGame::Red);
+	m_buttons[3] = new button(BlinkenGame::Green);
 	
 	m_fillColor = QColor(40, 40, 40);
 	m_fontColor = QColor(126, 126, 126);
@@ -56,9 +57,9 @@ blinken::blinken() : m_overHighscore(false), m_overQuit(false), m_overCentralTex
 	m_unhighlighter = new QTimer(this);
 	connect(m_unhighlighter, &QTimer::timeout, this, &blinken::unhighlight);
 	
-	connect(&m_game, &blinkenGame::gameEnded, this, &blinken::checkHS);
+	connect(&m_game, &BlinkenGame::gameEnded, this, &blinken::checkHS);
 	connect(&m_game, SIGNAL(phaseChanged()), this, SLOT(update()));
-	connect(&m_game, &blinkenGame::highlight, this, &blinken::highlight);
+	connect(&m_game, &BlinkenGame::highlight, this, &blinken::highlight);
 	
 	m_helpMenu = new KHelpMenu(this, KAboutData::applicationData());
 	m_helpMenu->menu(); // ensures the actions are created
@@ -112,16 +113,16 @@ void blinken::paintEvent(QPaintEvent *)
 
 	const auto sz = QSize((int)(width() * xScaleButtons), (int)(height() * yScaleButtons));
 
-	auto getPixmapFor = [this, sz](blinkenGame::color color, const QString& pixmapName) -> QPixmap {
+	auto getPixmapFor = [this, sz](BlinkenGame::Color color, const QString& pixmapName) -> QPixmap {
 		return getPixmap( m_highlighted & color ?
 			QStringLiteral("%1_highlight").arg(pixmapName) :
 			QStringLiteral("%1_normal").arg(pixmapName), sz);
 	};
 
-	p.drawPixmap(QPointF(width() / 1.975, height() / 28.0), getPixmapFor(blinkenGame::red, QStringLiteral("red")));
-	p.drawPixmap(QPointF(width() / 1.975, height() / 2.45), getPixmapFor(blinkenGame::green, QStringLiteral("green")));
-	p.drawPixmap(QPointF(width() / 30.0, height() / 28.0), getPixmapFor(blinkenGame::yellow, QStringLiteral("yellow")));
-	p.drawPixmap(QPointF(width() / 30.0, height() / 2.45), getPixmapFor(blinkenGame::blue, QStringLiteral("blue")));
+	p.drawPixmap(QPointF(width() / 1.975, height() / 28.0), getPixmapFor(BlinkenGame::Red, QStringLiteral("red")));
+	p.drawPixmap(QPointF(width() / 1.975, height() / 2.45), getPixmapFor(BlinkenGame::Green, QStringLiteral("green")));
+	p.drawPixmap(QPointF(width() / 30.0, height() / 28.0), getPixmapFor(BlinkenGame::Yellow, QStringLiteral("yellow")));
+	p.drawPixmap(QPointF(width() / 30.0, height() / 2.45), getPixmapFor(BlinkenGame::Blue, QStringLiteral("blue")));
 
 	drawMenuQuit(p);
 	p.resetTransform();
@@ -157,7 +158,7 @@ void blinken::paintEvent(QPaintEvent *)
 		m_soundRect = QRect(181, 197, 25, 25);
 		m_fontRect = QRect(432, 197, 25, 25);
 		p.drawRect(m_soundRect);
-		if (blinkenSettings::playSounds())
+		if (BlinkenSettings::playSounds())
 		{
 			p.drawLine(186, 202, 201, 217);
 			p.drawLine(186, 217, 201, 202);
@@ -165,7 +166,7 @@ void blinken::paintEvent(QPaintEvent *)
 		if (!m_alwaysUseNonCoolFont)
 		{
 			p.drawRect(m_fontRect);
-			if (blinkenSettings::customFont())
+			if (BlinkenSettings::customFont())
 			{
 				p.drawLine(437, 202, 452, 217);
 				p.drawLine(437, 217, 452, 202);
@@ -219,19 +220,19 @@ void blinken::paintEvent(QPaintEvent *)
 	aux4 = (double)height() / 105.0;
 	switch (m_game.phase())
 	{
-		case blinkenGame::starting:
+		case BlinkenGame::Starting:
 			drawText(p, i18nc("@action:button Start a new game", "Start"), QPointF(aux1, aux2), true, aux3, aux4, &m_centralTextRect, m_overCentralText, true);
 		break;
 		
-		case blinkenGame::choosingLevel:
+		case BlinkenGame::ChoosingLevel:
 			drawLevel(p);
 		break;
 		
-		case blinkenGame::waiting3:
-		case blinkenGame::waiting2:
-		case blinkenGame::waiting1:
-		case blinkenGame::learningTheSequence:
-		case blinkenGame::typingTheSequence:
+		case BlinkenGame::Waiting3:
+		case BlinkenGame::Waiting2:
+		case BlinkenGame::Waiting1:
+		case BlinkenGame::LearningTheSequence:
+		case BlinkenGame::TypingTheSequence:
 			drawText(p, i18n("Restart"), QPointF(aux1, aux2), true, aux3, aux4, &m_centralTextRect, m_overCentralText, true);
 		break;
 	}
@@ -279,7 +280,7 @@ void blinken::keyPressEvent(QKeyEvent *e)
 	}
 	else
 	{
-		if (m_game.phase() == blinkenGame::starting)
+		if (m_game.phase() == BlinkenGame::Starting)
 		{
 			if (e -> key() == Qt::Key_Return || e -> key() == Qt::Key_Enter)
 			{
@@ -287,7 +288,7 @@ void blinken::keyPressEvent(QKeyEvent *e)
 				return;
 			}
 		}
-		else if (m_game.phase() == blinkenGame::choosingLevel)
+		else if (m_game.phase() == BlinkenGame::ChoosingLevel)
 		{
 			if (e -> key() == Qt::Key_1)
 			{
@@ -306,10 +307,10 @@ void blinken::keyPressEvent(QKeyEvent *e)
 			}
 		}
 		
-		if (e -> key() == m_buttons[0] -> key()) pressedColor(blinkenGame::color::blue);
-		else if (e -> key() == m_buttons[1] -> key()) pressedColor(blinkenGame::color::yellow);
-		else if (e -> key() == m_buttons[2] -> key()) pressedColor(blinkenGame::color::red);
-		else if (e -> key() == m_buttons[3] -> key()) pressedColor(blinkenGame::color::green);
+		if (e -> key() == m_buttons[0] -> key()) pressedColor(BlinkenGame::Color::Blue);
+		else if (e -> key() == m_buttons[1] -> key()) pressedColor(BlinkenGame::Color::Yellow);
+		else if (e -> key() == m_buttons[2] -> key()) pressedColor(BlinkenGame::Color::Red);
+		else if (e -> key() == m_buttons[3] -> key()) pressedColor(BlinkenGame::Color::Green);
 	}
 }
 
@@ -325,7 +326,7 @@ void blinken::keyReleaseEvent(QKeyEvent *e)
 
 void blinken::togglePreferences()
 {
-	if (m_game.phase() == blinkenGame::starting || m_game.phase() == blinkenGame::choosingLevel)
+	if (m_game.phase() == BlinkenGame::Starting || m_game.phase() == BlinkenGame::ChoosingLevel)
 	{
 		m_showPreferences = !m_showPreferences;
 		for (int i = 0; i < 4; i++) m_buttons[i] -> setSelected(false);
@@ -349,14 +350,14 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	}
 	else if (m_showPreferences && m_fontRect.contains(e -> pos()) && !m_alwaysUseNonCoolFont)
 	{
-		blinkenSettings::setCustomFont(!blinkenSettings::customFont());
-		blinkenSettings::self()->save();
+		BlinkenSettings::setCustomFont(!BlinkenSettings::customFont());
+		BlinkenSettings::self()->save();
 		update();
 	}
 	else if (m_showPreferences && m_soundRect.contains(e -> pos()))
 	{
-		blinkenSettings::setPlaySounds(!blinkenSettings::playSounds());
-		blinkenSettings::self()->save();
+		BlinkenSettings::setPlaySounds(!BlinkenSettings::playSounds());
+		BlinkenSettings::self()->save();
 		update();
 	}
 	else if (m_overQuit) qApp->quit();
@@ -364,11 +365,11 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	else if (m_overAboutKDE) m_helpMenu -> aboutKDE();
 	else if (m_overSettings) togglePreferences();
 	else if (m_overManual) m_helpMenu -> appHelpActivated();
-	else if (m_game.phase() != blinkenGame::choosingLevel && m_overCentralText)
+	else if (m_game.phase() != BlinkenGame::ChoosingLevel && m_overCentralText)
 	{
 		startGamePressed();
 	}
-	else if (m_game.phase() == blinkenGame::choosingLevel)
+	else if (m_game.phase() == BlinkenGame::ChoosingLevel)
 	{
 		int level = 0;
 		if (m_levelsRect[1].contains(e -> pos())) level = 1;
@@ -385,28 +386,28 @@ void blinken::mousePressEvent(QMouseEvent *e)
 	if (insideGreen(p))
 	{
 		if (m_showPreferences) selectButton(3);
-		else pressedColor(blinkenGame::color::green);
+		else pressedColor(BlinkenGame::Color::Green);
 	}
 	else if (insideBlue(p))
 	{
 		if (m_showPreferences) selectButton(0);
-		else pressedColor(blinkenGame::color::blue);
+		else pressedColor(BlinkenGame::Color::Blue);
 	}
 	else if (insideYellow(p))
 	{
 		if (m_showPreferences) selectButton(1);
-		else pressedColor(blinkenGame::color::yellow);
+		else pressedColor(BlinkenGame::Color::Yellow);
 	}
 	else if (insideRed(p))
 	{
 		if (m_showPreferences) selectButton(2);
-		else pressedColor(blinkenGame::color::red);
+		else pressedColor(BlinkenGame::Color::Red);
 	}
 }
 
 void blinken::checkHS()
 {
-	highScoreManager hsm;
+	HighScoreManager hsm;
 	if (hsm.scoreGoodEnough(m_game.level(), m_game.score()))
 	{
 		bool ok;
@@ -421,12 +422,12 @@ void blinken::checkHS()
 	}
 }
 
-void blinken::highlight(blinkenGame::color c, bool unhighlight)
+void blinken::highlight(BlinkenGame::Color c, bool unhighlight)
 {
 	m_highlighted = c;
 	update();
 	if (unhighlight) m_unhighlighter -> start(250);
-	else if (c == blinkenGame::none)
+	else if (c == BlinkenGame::None)
 	{
 		m_unhighlighter -> stop();
 		updateCursor(mapFromGlobal(QCursor::pos()));
@@ -435,10 +436,10 @@ void blinken::highlight(blinkenGame::color c, bool unhighlight)
 
 void blinken::unhighlight()
 {
-	highlight(blinkenGame::none, false);
+	highlight(BlinkenGame::None, false);
 }
 
-void blinken::pressedColor(blinkenGame::color color)
+void blinken::pressedColor(BlinkenGame::Color color)
 {
 	if (m_game.canType())
 	{
@@ -449,10 +450,10 @@ void blinken::pressedColor(blinkenGame::color color)
 
 void blinken::startGamePressed()
 {
-	highlight(blinkenGame::none, true);
+	highlight(BlinkenGame::None, true);
 	m_overCentralText = false;
 	for(int i = 0; i < 3; i++) m_overLevels[i] = false;
-	m_game.setPhase(blinkenGame::choosingLevel);
+	m_game.setPhase(BlinkenGame::ChoosingLevel);
 	m_updateButtonHighlighting = true;
 }
 
@@ -650,19 +651,19 @@ void blinken::drawScoreAndCounter(QPainter &p)
 	
 	switch (m_game.phase())
 	{
-		case blinkenGame::waiting3:
+		case BlinkenGame::Waiting3:
 			c1 = Qt::red;
 			c2 = Qt::red;
 			c3 = Qt::red;
 		break;
 		
-		case blinkenGame::waiting2:
+		case BlinkenGame::Waiting2:
 			c1 = m_countDownColor;
 			c2 = Qt::red;
 			c3 = Qt::red;
 		break;
 		
-		case blinkenGame::waiting1:
+		case BlinkenGame::Waiting1:
 			c1 = m_countDownColor;
 			c2 = c1;
 			c3 = Qt::red;
@@ -675,7 +676,7 @@ void blinken::drawScoreAndCounter(QPainter &p)
 		break;
 	}
 	
-	counter::paint(p, m_game.phase() != blinkenGame::starting, m_game.score(), true, c1, c2, c3, m_renderer);
+	counter::paint(p, m_game.phase() != BlinkenGame::Starting, m_game.score(), true, c1, c2, c3, m_renderer);
 	
 	p.translate(-268, -110);
 }
@@ -707,15 +708,15 @@ void blinken::drawStatusText(QPainter &p)
 	{
 		switch (m_game.phase())
 		{
-			case blinkenGame::starting:
+			case BlinkenGame::Starting:
 				text = i18n("Press Start to begin");
 			break;
 			
-			case blinkenGame::choosingLevel:
+			case BlinkenGame::ChoosingLevel:
 				text = i18n("Set the Difficulty Level...");
 			break;
 			
-			case blinkenGame::waiting3:
+			case BlinkenGame::Waiting3:
 				if (m_overCentralText)
 				{
 					text = restartText;
@@ -726,7 +727,7 @@ void blinken::drawStatusText(QPainter &p)
 				}
 			break;
 			
-			case blinkenGame::waiting2:
+			case BlinkenGame::Waiting2:
 				if (m_overCentralText)
 				{
 					text = restartText;
@@ -744,7 +745,7 @@ void blinken::drawStatusText(QPainter &p)
 				}
 			break;
 		
-			case blinkenGame::waiting1:
+			case BlinkenGame::Waiting1:
 				if (m_overCentralText)
 				{
 					text = restartText;
@@ -762,7 +763,7 @@ void blinken::drawStatusText(QPainter &p)
 				}
 			break;
 			
-			case blinkenGame::learningTheSequence:
+			case BlinkenGame::LearningTheSequence:
 				if (m_overCentralText)
 				{
 					text = restartText;
@@ -773,7 +774,7 @@ void blinken::drawStatusText(QPainter &p)
 				}
 			break;
 			
-			case blinkenGame::typingTheSequence:
+			case BlinkenGame::TypingTheSequence:
 				if (m_overCentralText)
 				{
 					text = restartText;
@@ -787,7 +788,7 @@ void blinken::drawStatusText(QPainter &p)
 	}
 	
 	QFont f;
-	if (blinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont(QStringLiteral("Steve"));
+	if (BlinkenSettings::customFont() && !m_alwaysUseNonCoolFont) f = QFont(QStringLiteral("Steve"));
 	p.setFont(f);
 	f.setPointSize(KFontUtils::adaptFontSize(p, text, 380, 30, 28, 1, KFontUtils::DoNotAllowWordWrap));
 	p.setFont(f);
@@ -1014,12 +1015,12 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 	
 	switch (m_game.phase())
 	{
-		case blinkenGame::starting:
-		case blinkenGame::waiting3:
-		case blinkenGame::waiting2:
-		case blinkenGame::waiting1:
-		case blinkenGame::learningTheSequence:
-		case blinkenGame::typingTheSequence:
+		case BlinkenGame::Starting:
+		case BlinkenGame::Waiting3:
+		case BlinkenGame::Waiting2:
+		case BlinkenGame::Waiting1:
+		case BlinkenGame::LearningTheSequence:
+		case BlinkenGame::TypingTheSequence:
 			if (m_centralTextRect.contains(p))
 			{
 				if (!m_overCentralText)
@@ -1035,7 +1036,7 @@ void blinken::updateButtonHighlighting(const QPoint &p)
 			}
 		break;
 		
-		case blinkenGame::choosingLevel:
+		case BlinkenGame::ChoosingLevel:
 			for (int i = 0; i < 3; i++)
 			{
 				if (m_levelsRect[i].contains(p))
