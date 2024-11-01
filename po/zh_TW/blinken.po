@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-11-01 00:36+0000\n"
 "PO-Revision-Date: 2022-12-30 18:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw"
 
-#: blinken.cpp:68
+#: blinken.cpp:69
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -39,149 +39,149 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:180
+#: blinken.cpp:181
 #, kde-format
 msgid "Sounds"
 msgstr "聲音"
 
-#: blinken.cpp:181
+#: blinken.cpp:182
 #, kde-format
 msgid "Font"
 msgstr "字型"
 
-#: blinken.cpp:223
+#: blinken.cpp:224
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "開始"
 
-#: blinken.cpp:235
+#: blinken.cpp:236
 #, kde-format
 msgid "Restart"
 msgstr "重新開始"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgid "Enter Your Name"
 msgstr "輸入您的姓名"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "姓名："
 
-#: blinken.cpp:689
+#: blinken.cpp:690
 #, kde-format
 msgid "Restart the game"
 msgstr "重新開始遊戲"
 
-#: blinken.cpp:691
+#: blinken.cpp:692
 #, kde-format
 msgid "Quit Blinken"
 msgstr "離開 BlinKen"
 
-#: blinken.cpp:692
+#: blinken.cpp:693
 #, kde-format
 msgid "View Highscore Table"
 msgstr "顯示最高分紀錄"
 
-#: blinken.cpp:697
+#: blinken.cpp:698
 #, kde-format
 msgid "Show Settings"
 msgstr "顯示設定"
 
-#: blinken.cpp:698
+#: blinken.cpp:699
 #, kde-format
 msgid "Hide Settings"
 msgstr "隱藏設定"
 
-#: blinken.cpp:701
+#: blinken.cpp:702
 #, kde-format
 msgid "2nd Level"
 msgstr "等級 2"
 
-#: blinken.cpp:702
+#: blinken.cpp:703
 #, kde-format
 msgid "1st Level"
 msgstr "等級 1"
 
-#: blinken.cpp:703
+#: blinken.cpp:704
 #, kde-format
 msgid "Random Level"
 msgstr "隨機等級"
 
-#: blinken.cpp:704
+#: blinken.cpp:705
 #, kde-format
 msgid "Press the key for this button"
 msgstr "請輸入此按鈕的按鍵"
 
-#: blinken.cpp:705
+#: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
 msgstr "點選任何按鈕來改變它的按鍵"
 
-#: blinken.cpp:711
+#: blinken.cpp:712
 #, kde-format
 msgid "Press Start to begin"
 msgstr "按「開始」可以開始"
 
-#: blinken.cpp:715
+#: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "設定難度等級..."
 
-#: blinken.cpp:725
+#: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "下一個序列來了，倒數三..."
 
-#: blinken.cpp:738
+#: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "下一個序列來了，倒數三...二..."
 
-#: blinken.cpp:742
+#: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "下一個序列來了，倒數二..."
 
-#: blinken.cpp:756
+#: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "下一個序列來了，倒數三...二...一..."
 
-#: blinken.cpp:760
+#: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "下一個序列來了，倒數二...一..."
 
-#: blinken.cpp:772
+#: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "記住這個序列..."
 
-#: blinken.cpp:783
+#: blinken.cpp:784
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "重覆序列"
 
-#: blinken.cpp:800
+#: blinken.cpp:801
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:801
+#: blinken.cpp:802
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:802
+#: blinken.cpp:803
 #, kde-format
 msgid "?"
 msgstr "?"
 
-#: blinken.cpp:806
+#: blinken.cpp:807
 #, kde-format
 msgctxt "@label:chooser which level is currently being played"
 msgid "Level"
@@ -199,41 +199,41 @@ msgstr "播放聲音"
 msgid "Use custom font for status text"
 msgstr "用自訂的字型顯示狀態"
 
-#: highscoredialog.cpp:138
+#: highscoredialog.cpp:137
 #, kde-format
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "高分榜"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:148
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "等級 1"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:149
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "等級 2"
 
-#: highscoredialog.cpp:151
+#: highscoredialog.cpp:150
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "等級 ?"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "Blinken"
 msgstr "BlinKen"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "加強記憶的遊戲"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -242,32 +242,32 @@ msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen"
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Coding"
 msgstr "撰寫程式碼"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Danny Allen"
 msgstr "Danny Allen"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "設計、構圖及聲音"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Steve Jordi"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "用 GPL 放出他的 Steve 字型讓我們使用"

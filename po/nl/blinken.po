@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-11-01 00:36+0000\n"
 "PO-Revision-Date: 2021-01-03 11:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 "rinsedevries@kde.nl,bramschoenmakers@kde.nl,,kristof.bal@gmail.com,"
 "freekdekruijf@kde.nl"
 
-#: blinken.cpp:68
+#: blinken.cpp:69
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -45,149 +45,149 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:180
+#: blinken.cpp:181
 #, kde-format
 msgid "Sounds"
 msgstr "Geluid"
 
-#: blinken.cpp:181
+#: blinken.cpp:182
 #, kde-format
 msgid "Font"
 msgstr "Lettertype"
 
-#: blinken.cpp:223
+#: blinken.cpp:224
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "Start"
 
-#: blinken.cpp:235
+#: blinken.cpp:236
 #, kde-format
 msgid "Restart"
 msgstr "Herstarten"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgid "Enter Your Name"
 msgstr "Voer je naam in"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "Naam:"
 
-#: blinken.cpp:689
+#: blinken.cpp:690
 #, kde-format
 msgid "Restart the game"
 msgstr "Herstart het spel"
 
-#: blinken.cpp:691
+#: blinken.cpp:692
 #, kde-format
 msgid "Quit Blinken"
 msgstr "Blinken afsluiten"
 
-#: blinken.cpp:692
+#: blinken.cpp:693
 #, kde-format
 msgid "View Highscore Table"
 msgstr "Topscores tonen"
 
-#: blinken.cpp:697
+#: blinken.cpp:698
 #, kde-format
 msgid "Show Settings"
 msgstr "Instellingen tonen"
 
-#: blinken.cpp:698
+#: blinken.cpp:699
 #, kde-format
 msgid "Hide Settings"
 msgstr "Instellingen verbergen"
 
-#: blinken.cpp:701
+#: blinken.cpp:702
 #, kde-format
 msgid "2nd Level"
 msgstr "2e niveau"
 
-#: blinken.cpp:702
+#: blinken.cpp:703
 #, kde-format
 msgid "1st Level"
 msgstr "1e niveau"
 
-#: blinken.cpp:703
+#: blinken.cpp:704
 #, kde-format
 msgid "Random Level"
 msgstr "Willekeurig niveau"
 
-#: blinken.cpp:704
+#: blinken.cpp:705
 #, kde-format
 msgid "Press the key for this button"
 msgstr "Druk op de toets die bij deze knop hoort"
 
-#: blinken.cpp:705
+#: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
 msgstr "Klik op een knop om de sleutel ervan te wijzigen"
 
-#: blinken.cpp:711
+#: blinken.cpp:712
 #, kde-format
 msgid "Press Start to begin"
 msgstr "Druk op Start om te beginnen"
 
-#: blinken.cpp:715
+#: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "Stel de moeilijkheidsgraad in..."
 
-#: blinken.cpp:725
+#: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "Volgende reeks in 3..."
 
-#: blinken.cpp:738
+#: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "Volgende reeks in 3, 2..."
 
-#: blinken.cpp:742
+#: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "Volgende reeks in 2..."
 
-#: blinken.cpp:756
+#: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "Volgende reeks in 3, 2, 1..."
 
-#: blinken.cpp:760
+#: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "Volgende reeks in 2, 1..."
 
-#: blinken.cpp:772
+#: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "Deze reeks onthouden..."
 
-#: blinken.cpp:783
+#: blinken.cpp:784
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "Herhaal de reeks"
 
-#: blinken.cpp:800
+#: blinken.cpp:801
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:801
+#: blinken.cpp:802
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:802
+#: blinken.cpp:803
 #, kde-format
 msgid "?"
 msgstr "?"
 
-#: blinken.cpp:806
+#: blinken.cpp:807
 #, kde-format
 msgctxt "@label:chooser which level is currently being played"
 msgid "Level"
@@ -205,41 +205,41 @@ msgstr "Geluid afspelen"
 msgid "Use custom font for status text"
 msgstr "Aangepast lettertype voor statustekst gebruiken"
 
-#: highscoredialog.cpp:138
+#: highscoredialog.cpp:137
 #, kde-format
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "Topscores"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:148
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "Niveau 1"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:149
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "Niveau 2"
 
-#: highscoredialog.cpp:151
+#: highscoredialog.cpp:150
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Niveau ?"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "Een geheugenspel"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -248,32 +248,32 @@ msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Coding"
 msgstr "Programmeren"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Danny Allen"
 msgstr "Danny Allen"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "Ontwerp, illustraties en geluiden"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Steve Jordi"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr ""

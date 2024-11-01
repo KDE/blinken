@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-11-01 00:36+0000\n"
 "PO-Revision-Date: 2008-07-06 15:13+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sharuzzaman@myrealbox.com"
 
-#: blinken.cpp:68
+#: blinken.cpp:69
 #, fuzzy, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -36,152 +36,152 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:180
+#: blinken.cpp:181
 #, kde-format
 msgid "Sounds"
 msgstr "Bunyi"
 
-#: blinken.cpp:181
+#: blinken.cpp:182
 #, kde-format
 msgid "Font"
 msgstr ""
 
-#: blinken.cpp:223
+#: blinken.cpp:224
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "Mula"
 
-#: blinken.cpp:235
+#: blinken.cpp:236
 #, kde-format
 msgid "Restart"
 msgstr "Ulangmula"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgid "Enter Your Name"
 msgstr "Masukkan Nama Anda"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "Nama:"
 
-#: blinken.cpp:689
+#: blinken.cpp:690
 #, kde-format
 msgid "Restart the game"
 msgstr "Ulang mula permainan"
 
-#: blinken.cpp:691
+#: blinken.cpp:692
 #, fuzzy, kde-format
 #| msgid "Quit blinKen"
 msgid "Quit Blinken"
 msgstr "Keluar blinKen"
 
-#: blinken.cpp:692
+#: blinken.cpp:693
 #, kde-format
 msgid "View Highscore Table"
 msgstr "Lihat Jadual Markah Tertinggi"
 
-#: blinken.cpp:697
+#: blinken.cpp:698
 #, kde-format
 msgid "Show Settings"
 msgstr ""
 
-#: blinken.cpp:698
+#: blinken.cpp:699
 #, kde-format
 msgid "Hide Settings"
 msgstr ""
 
-#: blinken.cpp:701
+#: blinken.cpp:702
 #, kde-format
 msgid "2nd Level"
 msgstr "Aras 2"
 
-#: blinken.cpp:702
+#: blinken.cpp:703
 #, kde-format
 msgid "1st Level"
 msgstr "Aras 1"
 
-#: blinken.cpp:703
+#: blinken.cpp:704
 #, kde-format
 msgid "Random Level"
 msgstr "Paras Rawak"
 
-#: blinken.cpp:704
+#: blinken.cpp:705
 #, kde-format
 msgid "Press the key for this button"
 msgstr "Tekan kekunci untuk butang ini"
 
-#: blinken.cpp:705
+#: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
 msgstr "Klik sebarang butang untuk mengubah kekuncinya"
 
-#: blinken.cpp:711
+#: blinken.cpp:712
 #, fuzzy, kde-format
 msgid "Press Start to begin"
 msgstr "Tekan Mula untuk bermula!"
 
-#: blinken.cpp:715
+#: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "Tetapkan Paras Kesukaran..."
 
-#: blinken.cpp:725
+#: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "Turutan seterusnya dalam 3..."
 
-#: blinken.cpp:738
+#: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "Turutan seterusnya dalam 3, 2..."
 
-#: blinken.cpp:742
+#: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "Turutan seterusnya dalam 2..."
 
-#: blinken.cpp:756
+#: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "Turutan seterusnya dalam 3, 2, 1..."
 
-#: blinken.cpp:760
+#: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "Turutan seterusnya dalam 2, 1..."
 
-#: blinken.cpp:772
+#: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "Ingat turutan ini..."
 
-#: blinken.cpp:783
+#: blinken.cpp:784
 #, fuzzy, kde-format
 msgid "Repeat the sequence"
 msgstr "Ulangi turutan!"
 
-#: blinken.cpp:800
+#: blinken.cpp:801
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:801
+#: blinken.cpp:802
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:802
+#: blinken.cpp:803
 #, kde-format
 msgid "?"
 msgstr "?"
 
-#: blinken.cpp:806
+#: blinken.cpp:807
 #, fuzzy, kde-format
 #| msgid "Level"
 msgctxt "@label:chooser which level is currently being played"
@@ -200,78 +200,78 @@ msgstr "Mainkan bunyi"
 msgid "Use custom font for status text"
 msgstr "Guna font tersendiri untuk teks status"
 
-#: highscoredialog.cpp:138
+#: highscoredialog.cpp:137
 #, fuzzy, kde-format
 #| msgid "Highscores"
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "Markah tertinggi"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:148
 #, fuzzy, kde-format
 #| msgid "Level 1"
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "Aras 1"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Level 2"
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "Aras 2"
 
-#: highscoredialog.cpp:151
+#: highscoredialog.cpp:150
 #, fuzzy, kde-format
 #| msgid "Level ?"
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Aras ?"
 
-#: main.cpp:28
+#: main.cpp:50
 #, fuzzy, kde-format
 #| msgid "blinKen"
 msgid "Blinken"
 msgstr "blinKen"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "Permainan meningkatkan ingatan"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr ""
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Coding"
 msgstr "Aturcara"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Danny Allen"
 msgstr ""
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "Rekaan, Grafik dan Bunyi"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "Steve Jordi"
 msgstr ""
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "Men'GPL'kan font 'Steve' nya supaya kita boleh menggunakannya"

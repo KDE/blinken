@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-11-01 00:36+0000\n"
 "PO-Revision-Date: 2021-05-16 20:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: blinken.cpp:68
+#: blinken.cpp:69
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -37,149 +37,149 @@ msgctxt ""
 msgid "0"
 msgstr "1"
 
-#: blinken.cpp:180
+#: blinken.cpp:181
 #, kde-format
 msgid "Sounds"
 msgstr "소리"
 
-#: blinken.cpp:181
+#: blinken.cpp:182
 #, kde-format
 msgid "Font"
 msgstr "글꼴"
 
-#: blinken.cpp:223
+#: blinken.cpp:224
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "시작"
 
-#: blinken.cpp:235
+#: blinken.cpp:236
 #, kde-format
 msgid "Restart"
 msgstr "다시 시작"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgid "Enter Your Name"
 msgstr "이름을 입력하십시오"
 
-#: blinken.cpp:413
+#: blinken.cpp:414
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
 msgstr "이름:"
 
-#: blinken.cpp:689
+#: blinken.cpp:690
 #, kde-format
 msgid "Restart the game"
 msgstr "게임 다시 시작"
 
-#: blinken.cpp:691
+#: blinken.cpp:692
 #, kde-format
 msgid "Quit Blinken"
 msgstr "Blinken 끝내기"
 
-#: blinken.cpp:692
+#: blinken.cpp:693
 #, kde-format
 msgid "View Highscore Table"
 msgstr "최고 점수 보기"
 
-#: blinken.cpp:697
+#: blinken.cpp:698
 #, kde-format
 msgid "Show Settings"
 msgstr "설정 보기"
 
-#: blinken.cpp:698
+#: blinken.cpp:699
 #, kde-format
 msgid "Hide Settings"
 msgstr "설정 숨기기"
 
-#: blinken.cpp:701
+#: blinken.cpp:702
 #, kde-format
 msgid "2nd Level"
 msgstr "2단계"
 
-#: blinken.cpp:702
+#: blinken.cpp:703
 #, kde-format
 msgid "1st Level"
 msgstr "1단계"
 
-#: blinken.cpp:703
+#: blinken.cpp:704
 #, kde-format
 msgid "Random Level"
 msgstr "무작위 단계"
 
-#: blinken.cpp:704
+#: blinken.cpp:705
 #, kde-format
 msgid "Press the key for this button"
 msgstr "이 단추의 키를 누르십시오"
 
-#: blinken.cpp:705
+#: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
 msgstr "단추를 클릭하면 키를 변경합니다"
 
-#: blinken.cpp:711
+#: blinken.cpp:712
 #, kde-format
 msgid "Press Start to begin"
 msgstr "시작하려면 시작을 누르십시오"
 
-#: blinken.cpp:715
+#: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "난이도 선택..."
 
-#: blinken.cpp:725
+#: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "3초 후에 다음 연주 시작..."
 
-#: blinken.cpp:738
+#: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "3, 2초 후에 다음 연주 시작..."
 
-#: blinken.cpp:742
+#: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "2초 후에 다음 연주 시작..."
 
-#: blinken.cpp:756
+#: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "3, 2, 1초 후에 다음 연주 시작..."
 
-#: blinken.cpp:760
+#: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "2, 1초 후에 다음 연주 시작..."
 
-#: blinken.cpp:772
+#: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "이 연주를 기억하세요..."
 
-#: blinken.cpp:783
+#: blinken.cpp:784
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "따라해 보세요"
 
-#: blinken.cpp:800
+#: blinken.cpp:801
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:801
+#: blinken.cpp:802
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:802
+#: blinken.cpp:803
 #, kde-format
 msgid "?"
 msgstr "?"
 
-#: blinken.cpp:806
+#: blinken.cpp:807
 #, kde-format
 msgctxt "@label:chooser which level is currently being played"
 msgid "Level"
@@ -197,41 +197,41 @@ msgstr "소리 재생"
 msgid "Use custom font for status text"
 msgstr "상태 텍스트 글꼴 사용자 정의"
 
-#: highscoredialog.cpp:138
+#: highscoredialog.cpp:137
 #, kde-format
 msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "최고 점수"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:148
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "1단계"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:149
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "2단계"
 
-#: highscoredialog.cpp:151
+#: highscoredialog.cpp:150
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "?단계"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid "A memory enhancement game"
 msgstr "기억력 향상 게임"
 
-#: main.cpp:28
+#: main.cpp:50
 #, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
@@ -240,32 +240,32 @@ msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Albert Astals Cid"
 msgstr "Albert Astals Cid"
 
-#: main.cpp:29
+#: main.cpp:51
 #, kde-format
 msgid "Coding"
 msgstr "코딩"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Danny Allen"
 msgstr "Danny Allen"
 
-#: main.cpp:30
+#: main.cpp:52
 #, kde-format
 msgid "Design, Graphics and Sounds"
 msgstr "디자인, 그래픽, 소리"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "Steve Jordi"
 msgstr "Steve Jordi"
 
-#: main.cpp:31
+#: main.cpp:53
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
 msgstr "'Steve' 폰트를 GPL로 공개함"
