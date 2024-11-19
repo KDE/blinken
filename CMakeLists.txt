@@ -57,7 +57,7 @@ if(QML_VERSION)
 else()
 
     find_package (Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED 
-        Core Widgets Svg Qml
+        Core Widgets Svg
     )
     find_package (KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
         CoreAddons I18n XmlGui GuiAddons DocTools DBusAddons Crash
