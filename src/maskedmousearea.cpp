@@ -141,3 +141,5 @@ void MaskedMouseArea::hoverLeaveEvent(QHoverEvent *event) {
   Q_UNUSED(event);
   setContainsMouse(false);
 }
+
+#include "moc_maskedmousearea.cpp"
