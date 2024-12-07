@@ -2,7 +2,7 @@ if(QML_VERSION)
     ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX BLINKEN VERSION_HEADER blinken_version.h)
     set(BLINKEN_SRCS
         main.cpp
-        maskedmousearea.cpp
+        maskedmousearea.cpp maskedmousearea.h
         blinkengame.cpp
         soundsplayer.cpp
         highScoreManager.cpp
