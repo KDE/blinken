@@ -174,7 +174,7 @@ Kirigami.AbstractApplicationWindow {
         anchors.centerIn: parent
         height: rootRectangle.height * 0.9
         width: rootRectangle.width * 0.7
-        FormCard.AboutKDE {
+        FormCard.AboutKDEPage {
             anchors.fill: parent
         }
     }
