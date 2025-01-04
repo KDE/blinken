@@ -21,7 +21,6 @@ Dependencies:
     'frameworks/kdoctools': '@latest-kf6'
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'
-    'libraries/phonon' : '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ '@all' ]

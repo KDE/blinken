@@ -7,15 +7,7 @@
 #ifndef SOUNDSPLAYER_H
 #define SOUNDSPLAYER_H
 
-#include <QtSystemDetection>
-
-#ifdef QML_VERSION
 #include <QMediaPlayer>
-#include <QAudioOutput>
-#else
-#include <phonon/MediaObject>
-#include <phonon/audiooutput.h>
-#endif
 
 #include <QTimer>
 
@@ -35,21 +27,12 @@ Q_OBJECT
 		
 	private Q_SLOTS:
 
-#ifdef QML_VERSION
 		void soundEffectPlayEnded();
-#else
-		void playEnded();
-#endif
 	private:
 		void addSoundsFile();
 		QString m_greenSound, m_redSound, m_blueSound, m_yellowSound, m_allSound;
 
-#ifdef QML_VERSION
 		QMediaPlayer m_soundsPlayer;
-#else
-		Phonon::MediaObject m_mediaObject;
-		Phonon::AudioOutput m_audioOutput;
-#endif
 		QTimer m_warnTimer;
 };
 

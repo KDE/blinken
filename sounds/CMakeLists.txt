@@ -6,12 +6,8 @@ set(SOUND_FILES
     lose.wav
 )
 
-if(QML_VERSION)
-    qt_add_resources(blinken "sounds"
-        PREFIX "/"
-        FILES
-            ${SOUND_FILES}
-    )
-else()
-    install( FILES  ${SOUND_FILES} DESTINATION  ${KDE_INSTALL_DATADIR}/blinken/sounds )
-endif()
+qt_add_resources(blinken "sounds"
+    PREFIX "/"
+    FILES
+        ${SOUND_FILES}
+)

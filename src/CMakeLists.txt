@@ -93,9 +93,9 @@ else()
         KF6::GuiAddons
         Qt::Svg
         Qt6::Qml
+        Qt6::Multimedia
         KF6::DBusAddons
         KF6::Crash
-        Phonon::phonon4qt6
     )
 
 endif()
