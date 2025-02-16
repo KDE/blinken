@@ -10,13 +10,13 @@
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
 # obsoleteman <tulliana@gmail.com>, 2007-2008,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 00:36+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2025-02-15 21:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,7 +83,7 @@ msgstr "Ad:"
 #: blinken.cpp:690
 #, kde-format
 msgid "Restart the game"
-msgstr "Oyunu yeniden başlat"
+msgstr "Oyunu Yeniden bBşlat"
 
 #: blinken.cpp:692
 #, kde-format
@@ -138,37 +138,37 @@ msgstr "Başlamak için Başlat’a basın"
 #: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Zorluk Düzeyini Ayarla..."
+msgstr "Zorluk Düzeyini Ayarla…"
 
 #: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Sonraki sıralamaya 3..."
+msgstr "Sonraki sıralamaya 3…"
 
 #: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Sonraki sıralamaya 3, 2..."
+msgstr "Sonraki sıralamaya 3, 2…"
 
 #: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Sonraki sıralamaya 2..."
+msgstr "Sonraki sıralamaya 2…"
 
 #: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Sonraki sıralamaya 3, 2, 1..."
+msgstr "Sonraki sıralamaya 3, 2, 1…"
 
 #: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Sonraki sıralamaya 2,1..."
+msgstr "Sonraki sıralamaya 2, 1…"
 
 #: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Bu sıralamayı anımsa..."
+msgstr "Bu sıralamayı anımsa…"
 
 #: blinken.cpp:784
 #, kde-format
@@ -248,8 +248,8 @@ msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
-"© 2005-2007 Albert Astals Cid\n"
-"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
+"© 2005–2007 Albert Astals Cid\n"
+"SPDX-FileCopyrightText: 2005–2007 Danny Allen "
 
 #: main.cpp:51
 #, kde-format
@@ -279,4 +279,4 @@ msgstr "Steve Jordi"
 #: main.cpp:53
 #, kde-format
 msgid "GPL'ed his 'Steve' font so that we could use it"
-msgstr "Kullanabilelim diye 'Steve' yazıtipini GPL lisansıyla yayınladı"
+msgstr "Kullanabilelim diye “Steve” yazıtipini GPL lisansıyla yayımladı"
