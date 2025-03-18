@@ -1,21 +1,20 @@
-# translation of blinken.po to Spanish
-# Translation of blinken to Spanish
+# Spanish translations for blinken.po package.
 #
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2005.
-# Rafael Beccar <rafael.beccar@kdemail.net>, 2005.
-# Pablo de Vicente <pablo.devicente@gmail.com>, 2006.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Enrique Matias Sanchez (Quique) <cronopios@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2009, 2011, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
-# Sofía Priego <spriego@darksylvania.net>, %Y.
+# SPDX-FileCopyrightText: 2005 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Rafael Beccar <rafael.beccar@kdemail.net>
+# SPDX-FileCopyrightText: 2006 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2009, 2011, 2021 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 00:36+0000\n"
-"PO-Revision-Date: 2023-10-12 00:41+0200\n"
-"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"PO-Revision-Date: 2025-03-17 01:04+0100\n"
+"Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -135,37 +134,37 @@ msgstr "Pulsa «Iniciar» para comenzar"
 #: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Definir el nivel de dificultad..."
+msgstr "Definir el nivel de dificultad…"
 
 #: blinken.cpp:726
 #, kde-format
 msgid "Next sequence in 3..."
-msgstr "Siguiente secuencia en 3..."
+msgstr "Siguiente secuencia en 3…"
 
 #: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "Siguiente secuencia en 3, 2..."
+msgstr "Siguiente secuencia en 3, 2…"
 
 #: blinken.cpp:743
 #, kde-format
 msgid "Next sequence in 2..."
-msgstr "Siguiente secuencia en 2..."
+msgstr "Siguiente secuencia en 2…"
 
 #: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "Siguiente secuencia en 3, 2, 1..."
+msgstr "Siguiente secuencia en 3, 2, 1…"
 
 #: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "Siguiente secuencia en 2, 1..."
+msgstr "Siguiente secuencia en 2, 1…"
 
 #: blinken.cpp:773
 #, kde-format
 msgid "Remember this sequence..."
-msgstr "Recuerda esta secuencia..."
+msgstr "Recuerda esta secuencia…"
 
 #: blinken.cpp:784
 #, kde-format
