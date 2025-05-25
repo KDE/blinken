@@ -121,12 +121,12 @@ msgstr "Premeu la tecla per a este botó"
 #: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Feu clic en qualsevol botó per a canviar la seua tecla"
+msgstr "Cliqueu damunt de qualsevol botó per a canviar la seua tecla"
 
 #: blinken.cpp:712
 #, kde-format
 msgid "Press Start to begin"
-msgstr "Premeu Inicia per a començar"
+msgstr "Premeu «Inicia» per a començar"
 
 #: blinken.cpp:716
 #, kde-format
