@@ -1,11 +1,12 @@
 # Spanish translations for blinken.po package.
+# Copyright (C) 2005-2025 This file is copyright:
+# This file is distributed under the same license as the blinken package.
 #
 # SPDX-FileCopyrightText: 2005 Pablo de Vicente <p.devicente@wanadoo.es>
 # SPDX-FileCopyrightText: 2005 Rafael Beccar <rafael.beccar@kdemail.net>
 # SPDX-FileCopyrightText: 2006 Pablo de Vicente <pablo.devicente@gmail.com>
 # SPDX-FileCopyrightText: 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
-# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
-# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2009 Enrique Matias Sanchez (Quique) <cronopios@gmail.com>
 # SPDX-FileCopyrightText: 2009, 2011, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2023, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 00:36+0000\n"
-"PO-Revision-Date: 2025-03-17 01:07+0100\n"
+"PO-Revision-Date: 2025-06-29 14:27+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
