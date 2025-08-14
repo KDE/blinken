@@ -139,7 +139,7 @@ msgstr "المتتالية التالية في 3..."
 #: blinken.cpp:739
 #, kde-format
 msgid "Next sequence in 3, 2..."
-msgstr "المتتالية التالية في 3 ، 2،..."
+msgstr "المتتالية التالية في 3، 2،..."
 
 #: blinken.cpp:743
 #, kde-format
@@ -149,12 +149,12 @@ msgstr "المتتالية التالية في 2..."
 #: blinken.cpp:757
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
-msgstr "المتتالية التالية في  3 ، 2 ، 1..."
+msgstr "المتتالية التالية في  3، 2، 1..."
 
 #: blinken.cpp:761
 #, kde-format
 msgid "Next sequence in 2, 1..."
-msgstr "المتتالية التالية في 2 ، 1،..."
+msgstr "المتتالية التالية في 2، 1،..."
 
 #: blinken.cpp:773
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "Danny Allen"
 #: main.cpp:52
 #, kde-format
 msgid "Design, Graphics and Sounds"
-msgstr "تصميمٌ ، رسومياتٌ و أصوات"
+msgstr "تصميمٌ، رسومياتٌ و أصوات"
 
 #: main.cpp:53
 #, kde-format
