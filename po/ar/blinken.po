@@ -1,15 +1,15 @@
 # translation of blinken.po to
 # Language AR translations for PACKAGE package.
 # Automatically generated, 2007.
+# SPDX-FileCopyrightText: 2021, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Anas Al-Mousa <anas.ali@gmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007, 2010.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 00:36+0000\n"
-"PO-Revision-Date: 2021-12-11 22:37+0400\n"
+"PO-Revision-Date: 2025-08-20 21:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -250,7 +251,7 @@ msgstr "Albert Astals Cid"
 #: main.cpp:51
 #, kde-format
 msgid "Coding"
-msgstr "تشفير"
+msgstr "برمجة"
 
 #: main.cpp:52
 #, kde-format
