@@ -52,7 +52,7 @@
 
 #include <QGuiApplication>
 #include <QStyleHints>
-#include <qqmlfile.h>
+#include <QQmlFile>
 
 
 MaskedMouseArea::MaskedMouseArea(QQuickItem *parent)
