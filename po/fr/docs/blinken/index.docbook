@@ -109,7 +109,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Le bouton <guibutton
 >Meilleurs scores</guibutton
 > <action
->ouvre une boîte de dialogue qui affiche la <guilabel
+>ouvre une boite de dialogue qui affiche la <guilabel
 >table des meilleurs scores</guilabel
 ></action
 > pour chacun des 3 niveaux de difficulté (la <guilabel
@@ -174,7 +174,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Aide</guibutton
 >, et donnent accès au <guilabel
 >manuel de &blinken;</guilabel
-> (ce document), et aux boîtes de dialogue <guilabel
+> (ce document), et aux boites de dialogue <guilabel
 >À propos de &blinken;</guilabel
 > et <guilabel
 >À propos de &kde;</guilabel
@@ -259,7 +259,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 <para
 >Si vous avez assez de chance pour figurer dans les meilleurs scores, celui-ci sera ajouté dans la table des <guilabel
 >meilleurs scores</guilabel
->. Une boîte de dialogue va vous demander un nom qui sera associé avec votre score dans la table : </para>
+>. Une boite de dialogue va vous demander un nom qui sera associé avec votre score dans la table : </para>
 
 <screenshot>
 <screeninfo
