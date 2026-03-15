@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024-2025 Scarlett Moore <sgmoore@kde.org>
+# SPDX-FileCopyrightText: 2024-2026 Scarlett Moore <sgmoore@kde.org>
 #
 # SPDX-License-Identifier: CC0-1.0
 ---
@@ -14,6 +14,8 @@ apps:
     common-id: org.kde.blinken.desktop
     desktop: usr/share/applications/org.kde.blinken.desktop
     command: usr/bin/blinken
+    plugs:
+      - audio-playback
     environment:
       ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
       QT_MEDIA_BACKEND: "ffmpeg"
