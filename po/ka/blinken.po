@@ -46,7 +46,7 @@ msgstr "ხმები"
 #: blinken.cpp:182
 #, kde-format
 msgid "Font"
-msgstr "შრიფტი"
+msgstr "ფონტი"
 
 #: blinken.cpp:224
 #, kde-format
