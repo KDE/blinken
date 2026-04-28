@@ -116,7 +116,7 @@ msgstr "Stlačte kláves pre toto tlačidlo"
 #: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Kliknite na lubovoľné tlačidlo pre zmenu jeho klávesy"
+msgstr "Kliknite na ľubovoľné tlačidlo pre zmenu jeho klávesy"
 
 #: blinken.cpp:712
 #, kde-format
