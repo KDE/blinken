@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2010-03-12 10:41+0100\n"
-"Last-Translator: Ivo Ugrina <ivo@iugrina.com>\n"
+"PO-Revision-Date: 2026-06-21 23:28+0200\n"
+"Last-Translator: Igor Dobrača <igor.dobraca@skole.hr>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,17 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Renato Pavičić, Ivo Ugrina"
+msgstr "Igor Dobrača, Renato Pavičić, Ivo Ugrina"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "renato@translator-shop.org, ivo@iugrina.com"
+msgstr "igor.dobraca@gmail.com, renato@translator-shop.org, ivo@iugrina.com"
 
 #: blinken.cpp:69
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "Pismo"
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
-msgstr "Započni"
+msgstr "Start"
 
 #: blinken.cpp:236
 #, kde-format
@@ -64,7 +64,7 @@ msgstr "Ponovo pokreni"
 #: blinken.cpp:414
 #, kde-format
 msgid "Enter Your Name"
-msgstr "Unesite vaše ime"
+msgstr "Unesi tvoje ime"
 
 #: blinken.cpp:414
 #, kde-format
@@ -115,22 +115,22 @@ msgstr "Nasumična razina"
 #: blinken.cpp:705
 #, kde-format
 msgid "Press the key for this button"
-msgstr "Pritisnite bilo koju tipku za ovaj gumb"
+msgstr "Pritisni bilo koju tipku za ovaj gumb"
 
 #: blinken.cpp:706
 #, kde-format
 msgid "Click any button to change its key"
-msgstr "Kliknite bilo koji gumb da biste promijenili njegovu tipku"
+msgstr "Klikni bilo koji gumb za promjenu tipke"
 
 #: blinken.cpp:712
 #, kde-format
 msgid "Press Start to begin"
-msgstr "Kliknite \"Započni\"!"
+msgstr "Pritisni Start za početak"
 
 #: blinken.cpp:716
 #, kde-format
 msgid "Set the Difficulty Level..."
-msgstr "Zadajte razinu težine ..."
+msgstr "Zadaj razinu težine..."
 
 #: blinken.cpp:726
 #, kde-format
@@ -165,7 +165,7 @@ msgstr "Zapamti ovaj niz ..."
 #: blinken.cpp:784
 #, kde-format
 msgid "Repeat the sequence"
-msgstr "Ponovi ovaj niz!"
+msgstr "Ponovi niz"
 
 #: blinken.cpp:801
 #, kde-format
@@ -207,25 +207,19 @@ msgid "Highscores"
 msgstr "Najbolji rezultati"
 
 #: highscoredialog.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@title:group level high scores"
-#| msgid "Level %1"
-#| msgid_plural "Level %1"
+#, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
-msgstr "Razina %1"
+msgstr "Razina 1"
 
 #: highscoredialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Level 2"
+#, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "Razina 2"
 
 #: highscoredialog.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@title:group all other level high scores"
-#| msgid "Level ?"
+#, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "Razina ?"
@@ -241,16 +235,13 @@ msgid "A memory enhancement game"
 msgstr "Igra vježbanja memorije"
 
 #: main.cpp:50
-#, fuzzy, kde-format
-#| msgid ""
-#| "© 2005-2007 Albert Astals Cid\n"
-#| "© 2005-2007 Danny Allen"
+#, kde-format
 msgid ""
 "© 2005-2007 Albert Astals Cid\n"
 "SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 msgstr ""
 "© 2005-2007 Albert Astals Cid\n"
-"© 2005-2007 Danny Allen"
+"SPDX-FileCopyrightText: 2005-2007 Danny Allen "
 
 #: main.cpp:51
 #, kde-format
