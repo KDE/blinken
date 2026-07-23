@@ -49,7 +49,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >&FDLNotice;</legalnotice>
 
 <date
->2020-12-10</date>
+>2020–12–10</date>
 <releaseinfo
 >Anwendungen 20.12.0</releaseinfo>
 
@@ -90,7 +90,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 
 <chapter id="using-blinken">
 <title
->Wie man &blinken; benutzt</title>
+>Wie man &blinken; verwendet</title>
 
 <para
 >Hier sehen Sie &blinken; direkt nach dem Programmstart. Der größte Teil wird durch das <interface
@@ -345,7 +345,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Um wieder das normale Spielfeld zu sehen, drücken Sie die &Ctrl;-Taste erneut. </para>
 
 <para
->Neben der Bedienung mit der Maus können Sie auch die Tastatur zum Spielen von &blinken; benutzen. </para>
+>Neben der Bedienung mit der Maus können Sie auch die Tastatur zum Spielen von &blinken; verwenden. </para>
 
 <para
 >Die voreingestellten Tasten sind <keycap
@@ -403,6 +403,10 @@ SPDX-License-Identifier: GFDL-1.2-only
 >Steve</quote
 >-Schriftart: Steve Jordi <email
 >steve@sjordi.com</email
+> </para>
+<para
+>Portierung zu Android: Zhang Hanyang <email
+>hanyangzhang@qq.com</email
 > </para>
 </listitem>
 </itemizedlist>
