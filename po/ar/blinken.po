@@ -198,7 +198,7 @@ msgstr "شغّل الأصوات"
 #: blinken.kcfg:13
 #, kde-format
 msgid "Use custom font for status text"
-msgstr "استخدم خطاً مخصصا لنصّ الحال"
+msgstr "استخدم خطًا مخصصا لنصّ الحال"
 
 #: highscoredialog.cpp:137
 #, kde-format
