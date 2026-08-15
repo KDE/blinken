@@ -153,6 +153,9 @@ SPDX-License-Identifier: CC0-1.0
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=blinken</url>
   <url type="help">https://docs.kde.org/?application=blinken</url>
   <url type="donation">https://www.kde.org/community/donations/?app=blinken&amp;source=appdata</url>
+  <custom>
+    <value key="KDE::mailinglist">kde-edu@kde.org</value>
+  </custom>
   <screenshots>
     <screenshot type="default">
       <caption>Playing Blinken</caption>
