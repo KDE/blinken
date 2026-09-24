@@ -1,0 +1,449 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Russian "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>Руководство пользователя &blinken;</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+><firstname
+>Стас</firstname
+><surname
+>Иванов</surname
+><affiliation
+><address
+><email
+>f0ma@smtp.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>10 декабря 2020 г.</date>
+<releaseinfo
+>Приложения KDE 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>&blinken; - реализация электронной игры на развитие памяти 1970-х для &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Blinken</keyword>
+<keyword
+>игра</keyword>
+<keyword
+>детская</keyword>
+<keyword
+>электронная</keyword>
+<keyword
+>ретро</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<para
+>&blinken; основана на электронной игре, выпущенной в 1978, в которой игрок должен был запоминать последовательности увеличивающийся длины. На передней панели <quote
+>устройства</quote
+> находились 4 кнопки различных цветов, каждой из которых соответствовал определённый звук. Кнопки зажигались в случайной последовательности и задача игрока состояла в том, чтобы повторить её. Если игрок правильно воспроизводил последовательность, он переходил на следующий уровень - к последовательности добавлялся ещё один элемент. Если игрок ошибался, он проигрывал, и должен был начинать игру сначала. Целью игры - получение максимального количества очков. Каждый элемент последовательности даёт одно очко, так что правильно воспроизведенная последовательность из 8 элементов даёт 8 очков. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>Использование &blinken;</title>
+
+<para
+>Так выглядит окно игры сразу после запуска программы. Большую часть экрана занимает <interface
+>устройство</interface
+>, с <interface
+>4 цветными кнопками</interface
+> по бокам и элементами управления игрой (<interface
+>счётчик очков </interface
+>, кнопка<guibutton
+>Старт</guibutton
+> и т.д.) в центре. Текущий статус игры показывается на <interface
+>листе бумаги</interface
+> под <quote
+>устройством</quote
+>. По углам экрана расположены 3 кнопки: </para>
+
+<screenshot>
+<screeninfo
+>Так выглядит экран игры сразу после запуска &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Так выглядит экран игры сразу после запуска &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Рекорды</guibutton
+> <action
+>открывает окно <guilabel
+>Рекорды</guilabel
+></action
+> для каждого из трёх уровней сложности (окно <guilabel
+>Рекорды</guilabel
+> также можно открыть <action
+>щелчком по <interface
+>счётчику очков</interface
+></action
+>): </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Рекорды</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Рекорды</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Выход</guibutton
+> <action
+>завершает программу</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Выход</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Выход</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кнопка <guibutton
+>Справка</guibutton
+> не совсем обычная: при наведении на неё <action
+>появляются 4 дополнительные кнопки</action
+>. Они открывают <guilabel
+>Руководство &blinken;</guilabel
+> (этот документ), <guilabel
+>Показать/Скрыть настройки</guilabel
+>, а также окна <guilabel
+>О программе &blinken;</guilabel
+> и <guilabel
+>О &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Кнопка <guibutton
+>Справка</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Кнопка <guibutton
+>Справка</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Чтобы лучше познакомиться с игрой, пощёлкайте по <interface
+>цветным кнопкам</interface
+> на главном экране игры. Кнопки при нажатии будут подсвечиваться и будет воспроизводится определённый звуковой тон. </para>
+
+<sect1 id="starting-game">
+<title
+>Начало игры</title>
+
+<para
+>После знакомства с интерфейсом приступайте к игре. Нажмите кнопку <guibutton
+>Старт</guibutton
+> в центре экрана. Эта кнопка <quote
+>включит</quote
+> <quote
+>устройство</quote
+>, на нём появится <interface
+>счётчик очков</interface
+> и кнопки <action
+>выбора уровня сложности</action
+>. Выглядеть всё это будет так: </para>
+
+<screenshot>
+<screeninfo
+>Выбор уровня сложности</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Выбор уровня сложности</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>В &blinken; существует 3 уровня сложности: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Уровень 1 - самый лёгкий, на нём у игрока есть достаточно длительные паузы между воспроизведениями последовательностей. </para>
+</listitem>
+<listitem>
+<para
+>Уровень 2 - более сложный, паузы между воспроизведениями сокращаются. </para>
+</listitem>
+<listitem>
+<para
+>Уровень ? - наиболее сложный уровень в &blinken;. Хотя время между воспроизведениями последовательностей такое же, как и на уровне 2, каждый раз воспроизводится новая последовательность, никак не связанная с предыдущей, именно так сделано в оригинальной игре. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>Установление рекорда</title>
+
+<para
+>Если вам повезёт и вы установите новый рекорд, вам будет предложено ввести своё имя. В последствии это имя будет отображаться в окне <guilabel
+>Рекорды</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>Ввод имени игрока</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ввод имени игрока</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Для каждого уровня сохраняются только 5 лучших результатов, так что не расстраивайтесь, если не сможете поставить рекорд! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>Советы</title>
+<para
+>Не обязательно обладать абсолютной памятью, чтобы добиться успеха в &blinken;. Советы приведенные ниже помогут вам добиться лучших результатов: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Если у компьютера есть колонки - включите их достаточно громко, чтобы вы слышали тоновые сигналы раздающиеся одновременно с подсветкой кнопок. </para>
+</listitem>
+<listitem>
+<para
+>Поэксперементируйте с использованием в игре мыши и <link linkend="accessibility"
+>клавиатуры</link
+>, для достижения лучших результатов. </para>
+</listitem>
+<listitem>
+<para
+>Попытайтесь запомнить последовательность цветов. </para>
+</listitem>
+<listitem>
+<para
+>Попытайтесь запомнить последовательность позиций. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>Эргономика</title>
+
+<para
+>Чтобы сделать &blinken; более удобной для пользователей, в ней есть несколько настраиваемых параметров. </para>
+<para
+>Для просмотра и изменения параметров &blinken; нажмите клавишу &Ctrl; (пока непосредственно игра не начата): </para>
+
+<screenshot>
+<screeninfo
+>Клавиши &blinken;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Клавиши &blinken;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Для возврата к основному экрану игры снова нажмите клавишу &Ctrl;. </para>
+
+<para
+>Помимо использования мыши, &blinken; также позволяет играть при помощи клавиатуры. </para>
+
+<para
+>По умолчанию c <interface
+>цветными кнопками</interface
+> связаны клавиши <keycap
+>1</keycap
+>, <keycap
+>2</keycap
+>, <keycap
+>3</keycap
+> и <keycap
+>4</keycap
+>. </para>
+
+<para
+>Для изменения связи клавиши и цветовой кнопки щёлкните на кнопке мышью. Затем нажмите на клавиатуре клавишу, с которой хотите связать эту кнопку. </para>
+
+<para
+>В центре окна доступны такие параметры: <interface
+>Звук</interface
+> и <interface
+>Шрифт</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Если флажок <interface
+>Звук</interface
+> сброшен, все звуковые эффекты в &blinken; будут отключены. </para>
+</listitem>
+<listitem>
+<para
+>Если флажок <interface
+>Шрифт</interface
+> сброшен, для вывода сообщений в игре будет применяться стандартный системный шрифт. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&blinken; </para>
+<para
+>© Альберт Асталс Сид (Albert Astals Cid) &Albert.Astals.Cid.mail; и Дэнни Аллен (Danny Allen) &Danny.Allen.mail;, 2005 </para>
+<para
+>Также вклад внесли: </para>
+<itemizedlist>
+<listitem>
+<para
+>Шрифт "Steve": Стив Джорди (Steve Jordi) <email
+>steve@sjordi.com</email
+> </para>
+<para
+>Порт для Android: Чжан Ханьян (zhang hanyang) <email
+>hanyangzhang@qq.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Документация (с) 2005 Дэнни Аллен (Danny Allen) &Danny.Allen.mail; </para>
+
+<para
+>Перевод на русский: Иванов Стас <email
+>f0ma@smtp.ru</email
+>, редактирование - Николай Шафоростов <email
+>shafff@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->
