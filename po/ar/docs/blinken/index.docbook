@@ -1,0 +1,443 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+ <!ENTITY blinken "<application
+>Blinken</application
+>">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Arabic "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Danny Allen <danny@dannyallen.co.uk>
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<book id="blinken" lang="&language;">
+
+<bookinfo>
+<title
+>دليل فلاش</title>
+
+<authorgroup>
+<author
+>&Danny.Allen; &Danny.Allen.mail;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Danny.Allen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-10</date>
+<releaseinfo
+>التّطبيقات 20.12.0</releaseinfo>
+
+<abstract>
+<para
+>يجلب فلاش لعبة ذاكرة إلكترونية رجعية من سبعينيات القرن العشرين إلى &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>فلاش</keyword>
+<keyword
+>لعبة</keyword>
+<keyword
+>طفل</keyword>
+<keyword
+>إلكتروني</keyword>
+<keyword
+>عتيق</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>تستند فلاش إلى لعبة إلكترونية أصدرت في عام 1978م، والتي تتحدى اللاعبين لتذكر التسلسلات ذات الطول المتزايد. يوجد على وجه الجهاز 4 أزرار ذات ألوان مختلفة، لكل منها صوت مميز خاص بها. تضيء هذه الأزرار بشكل عشوائي، مما يؤدي إلى إنشاء التسلسل الذي يجب أن يتذكره اللاعب بعد ذلك. إذا نجح اللاعب في تذكر تسلسل الأضواء بالترتيب الصحيح، فإنه يتقدم إلى المرحلة التالية، حيث يعرض نفس التسلسل مع حركة إضافية واحدة. إذا لم يتذكر الترتيب الصحيح فستخسر اللعبة، ويجب على اللاعب أن يبدأ مرة أخرى من البداية. الهدف هو الحصول على أعلى درجة - كل حركة في التسلسل تستحق نقطة واحدة، لذا فإن الإدخال الصحيح لتسلسل 8 أضواء يستحق 8 نقاط على جدول الدرجات. </para>
+
+</chapter>
+
+
+<chapter id="using-blinken">
+<title
+>استخدام فلاش</title>
+
+<para
+>هذه هي الشاشة التي تُعرض عند بدء تشغيل فلاش، وتظهر الواجهة العامة للتطبيق. معظم الشاشة يشغلها <interface
+>الجهاز</interface
+>، مع <interface
+>الأزرار الملونة الأربعة</interface
+>، وتكون عناصر تحكم الجهاز (<interface
+>عداد النقاط</interface
+>، زر <guibutton
+>بدء</guibutton
+>، إلخ…) في وسط الشاشة. تُعرض الحالة الحالية للتطبيق على <interface
+>قطعة الورق</interface
+> أسفل الجهاز. في زوايا التطبيق، هناك 3 أزرار: </para>
+
+<screenshot>
+<screeninfo
+>هذه هي الشاشة التي تُعرض عند بدء تشغيل فلاش</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>هذه هي الشاشة التي تُعرض عند بدء تشغيل فلاش</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>زر <guibutton
+>أعلى النتائج</guibutton
+> <action
+>يفتح حوارًا يعرض جدول <guilabel
+>أعلى النتائج</guilabel
+></action
+> لكل من مستويات الصعوبة الثلاثة (يمكن أيضًا الوصول إلى جدول <guilabel
+>أعلى النتائج</guilabel
+> عن طريق <action
+>النقر على <interface
+>عداد النقاط</interface
+>)</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>زر <guibutton
+>أعلى النتائج</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_highscoresbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>زر <guibutton
+>أعلى النتائج</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>زر <guibutton
+>خروج</guibutton
+> <action
+>يغلق التطبيق</action
+>: </para>
+
+<screenshot>
+<screeninfo
+>زر <guibutton
+>خروج</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_quitbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>زر <guibutton
+>خروج</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>زر <guibutton
+>مساعدة</guibutton
+> مميز، إذ <action
+>يكشف عن 4 أزرار فرعية</action
+>. تظهر هذه الأزرار عند <action
+>التحويم</action
+> فوق زر <guibutton
+>مساعدة</guibutton
+>، وتوفر الوصول إلى <guilabel
+>دليل فلاش</guilabel
+> (هذا المستند)، <guilabel
+>إظهار/إخفاء الإعدادات</guilabel
+>، وحواري <guilabel
+>حول فلاش</guilabel
+> و <guilabel
+>حول &kde;</guilabel
+>: </para>
+
+<screenshot>
+<screeninfo
+>زر <guibutton
+>مساعدة</guibutton
+></screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_helpbutton.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>زر <guibutton
+>مساعدة</guibutton
+></phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>للتعرف على آلية عمل اللعبة، يمكنك التفاعل مع <interface
+>الأزرار الملونة</interface
+> أثناء وجودك على الشاشة الرئيسة. ستضيء الأزرار وتصدر نغمة عند الضغط عليها. </para>
+
+<sect1 id="starting-game">
+<title
+>بدء لعبة</title>
+
+<para
+>بمجرد أن تتعرف على آلية عمل التطبيق، يمكن بدء لعبة بالضغط على زر <guibutton
+>بدء</guibutton
+> في وسط الشاشة. هذا <quote
+>يشغل</quote
+> الجهاز، كما يظهر من <interface
+>عداد النقاط</interface
+> المضيء. يمكنك بعد ذلك <action
+>اختيار مستوى الصعوبة</action
+> الذي ترغب في محاولته: </para>
+
+<screenshot>
+<screeninfo
+>اختر مستوى الصعوبة</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>اختر مستوى الصعوبة</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>هناك 3 مستويات في فلاش: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>المستوى 1 هو أسهل مستوى، إذ يمنح أطول فترة استراحة بين كل تشغيل تسلسل. </para>
+</listitem>
+<listitem>
+<para
+>المستوى 2 هو المستوى المتوسط. وهو مطابق للمستوى السابق، لكن بفترة استراحة أقصر بين كل تشغيل تسلسل. </para>
+</listitem>
+<listitem>
+<para
+>المستوى ? هو أصعب مستوى في فلاش. يستخدم توقيتات المستوى 2، لكن كل تسلسل عشوائي كليًا، بدلًا من متابعة التسلسل السابق كما في نمط اللعبة القياسي. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="enter-highscore">
+<title
+>إدخال نتيجة جديدة</title>
+
+<para
+>إذا كنت محظوظًا بما يكفي لتحقيق نتيجة عالية، فسيُدخلها في جدول <guilabel
+>النتائج العالية</guilabel
+>. سيطلب حوار اسمًا لربطه بنتيجتك في الجدول: </para>
+
+<screenshot>
+<screeninfo
+>حوار طلب اسم مستعار للنتيجة العالية</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_nickprompt.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>حوار طلب اسم مستعار للنتيجة العالية</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>تُحفظ 5 نتائج فقط لكل مستوى، فلا تحبط إن لم تنجح! </para>
+
+</sect1>
+
+
+<sect1 id="playing-tips">
+<title
+>نصائح اللعب</title>
+<para
+>فلاش هي لعبة الذاكرة القصوى، لكن لا يلزمك امتلاك ذاكرة قصوى لتنجح. ستساعدك هذه النصائح في سعيك لأفضل نتيجة: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>إذا كان لديك مكبرات صوت للحاسوب، شغّلها بمستوى صوت جيد لتسمع النغمات إلى جانب رؤية الأضواء الوامضة. </para>
+</listitem>
+<listitem>
+<para
+>جرّب طريقتي التفاعل بالفأرة و<link linkend="accessibility"
+>لوحة المفاتيح</link
+> لترى أيها يناسب ذاكرتك أكثر. </para>
+</listitem>
+<listitem>
+<para
+>حاول تذكر التسلسل كقائمة ألوان. </para>
+</listitem>
+<listitem>
+<para
+>حاول تذكر التسلسل كمواقع على الشاشة. </para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>
+
+
+<chapter id="accessibility">
+<title
+>خيارات الوصول</title>
+
+<para
+>لتمكين بعض المستخدمين من الاستمتاع بـ فلاش بسهولة أكبر، توجد عدة خيارات وصول مدمجة في فلاش. </para>
+<para
+>لعرض خيارات وصول فلاش وتعديلها، اضغط مفتاح &Ctrl; (بينما لا تجري لعبة): </para>
+
+<screenshot>
+<screeninfo
+>مفاتيح وصول فلاش</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="blinken_accesskeys.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>مفاتيح وصول فلاش</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>للعودة إلى شاشة اللعبة، اضغط مفتاح &Ctrl; مرة أخرى. </para>
+
+<para
+>إلى جانب استخدام الفأرة، يتيح فلاش للمستخدم أيضًا تشغيل اللعبة باستخدام لوحة المفاتيح. </para>
+
+<para
+>المفاتيح هي <keycap
+>1</keycap
+> و<keycap
+>2</keycap
+> و<keycap
+>3</keycap
+> و<keycap
+>4</keycap
+> مبدئيًا. </para>
+
+<para
+>لتغيير تعيين أي زر، انقر عليه باستخدام الفأرة. سيُبرز بعدها، منتظرًا الإدخال. اضغط المفتاح المطلوب على لوحة المفاتيح لتغيير المفتاح المعين حاليًا. </para>
+
+<para
+>توجد خيارات أخرى متاحة في وسط النافذة: <interface
+>أصوات</interface
+> و<interface
+>خط</interface
+>. </para>
+
+<itemizedlist>
+<listitem>
+<para
+>بإلغاء تحديد خانة الاختيار <interface
+>أصوات</interface
+>، ستُكبت تأثيرات صوت فلاش. </para>
+</listitem>
+<listitem>
+<para
+>بإلغاء تحديد خانة الاختيار <interface
+>خط</interface
+>، سيُستخدم خط قياسي لنص الحالة بدلًا من خط الكتابة اليدوية المبدئي. </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+
+<chapter id="credits">
+<title
+>الحقوق والترخيص</title>
+
+<para
+>فلاش </para>
+<para
+>حقوق نشر البرنامج 2005 ألبرت أستالس سيد &Albert.Astals.Cid.mail; ودانّي ألن &Danny.Allen.mail; </para>
+<para
+>المساهمون: </para>
+<itemizedlist>
+<listitem>
+<para
+>خط "ستيف": ستيف جوردي <email
+>steve@sjordi.com</email
+> </para>
+<para
+>منفذ أندرويد: تشانغ هانيانغ <email
+>hanyangzhang@qq.com</email
+> </para>
+</listitem>
+</itemizedlist>
+
+<para
+>حقوق نشر التوثيق 2005 &Danny.Allen; &Danny.Allen.mail; </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->
