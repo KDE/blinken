@@ -1,3 +1,4 @@
 #! /bin/sh
 $EXTRACTRC *.kcfg >> rc.cpp
-$XGETTEXT *.cpp -o $podir/blinken.pot
+$XGETTEXT `find . -name '*.cpp' -o -name '*.qml'` -o $podir/blinken.pot
+rm -f rc.cpp
