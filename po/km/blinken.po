@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-11-26 00:57+0000\n"
 "PO-Revision-Date: 2009-06-01 11:10+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
 
-#: blinken.cpp:69
+#: blinken.cpp:69 ui/Blinken.qml:200
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -38,7 +38,7 @@ msgctxt ""
 msgid "0"
 msgstr "០"
 
-#: blinken.cpp:181
+#: blinken.cpp:181 ui/Blinken.qml:189
 #, kde-format
 msgid "Sounds"
 msgstr "សំឡេង"
@@ -48,23 +48,23 @@ msgstr "សំឡេង"
 msgid "Font"
 msgstr "ពុម្ពអក្សរ"
 
-#: blinken.cpp:224
+#: blinken.cpp:224 ui/GameOptions.qml:29
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "ចាប់ផ្ដើម"
 
-#: blinken.cpp:236
+#: blinken.cpp:236 ui/GameOptions.qml:169
 #, kde-format
 msgid "Restart"
 msgstr "ចាប់​ផ្ដើម​ឡើង​វិញ"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:137
 #, kde-format
 msgid "Enter Your Name"
 msgstr "បញ្ចូល​ឈ្មោះ​របស់​អ្នក"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:141
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
@@ -120,62 +120,62 @@ msgstr "ចុច​គ្រាប់​ចុច​​សម្រាប់​
 msgid "Click any button to change its key"
 msgstr "ចុច​ប៊ូតុង​ណា​មួយ​ដើម្បី​ផ្លាស់ប្ដូរ​គ្រាប់​ចុច​របស់​វា"
 
-#: blinken.cpp:712
+#: blinken.cpp:712 ui/Blinken.qml:90 ui/Blinken.qml:243
 #, kde-format
 msgid "Press Start to begin"
 msgstr "ចុច​ ចាប់ផ្ដើម ដើម្បី​ចាប់ផ្ដើម"
 
-#: blinken.cpp:716
+#: blinken.cpp:716 ui/Blinken.qml:250
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "កំណត់​កម្រិត​លំបាក..."
 
-#: blinken.cpp:726
+#: blinken.cpp:726 ui/Blinken.qml:258
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "លំដាប់​បន្ទាប់ពី ៣..."
 
-#: blinken.cpp:739
+#: blinken.cpp:739 ui/Blinken.qml:266
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "លំដាប់​បន្ទាប់ពី ៣, ២..."
 
-#: blinken.cpp:743
+#: blinken.cpp:743 ui/Blinken.qml:268
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "លំដាប់​បន្ទាប់ពី ២..."
 
-#: blinken.cpp:757
+#: blinken.cpp:757 ui/Blinken.qml:277
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "លំដាប់​បន្ទាប់ពី ៣, ២, ១..."
 
-#: blinken.cpp:761
+#: blinken.cpp:761 ui/Blinken.qml:279
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "លំដាប់​បន្ទាប់ពី ២, ១...."
 
-#: blinken.cpp:773
+#: blinken.cpp:773 ui/Blinken.qml:286
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "ចងចាំ​លំដាប់​នេះ..."
 
-#: blinken.cpp:784
+#: blinken.cpp:784 ui/Blinken.qml:292
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "ធ្វើ​លំដាប់​នេះ​ម្ដងទៀត"
 
-#: blinken.cpp:801
+#: blinken.cpp:801 ui/GameOptions.qml:100
 #, kde-format
 msgid "2"
 msgstr "២"
 
-#: blinken.cpp:802
+#: blinken.cpp:802 ui/GameOptions.qml:68
 #, kde-format
 msgid "1"
 msgstr "១"
 
-#: blinken.cpp:803
+#: blinken.cpp:803 ui/GameOptions.qml:132
 #, kde-format
 msgid "?"
 msgstr "?"
@@ -193,7 +193,7 @@ msgid "Play sounds"
 msgstr "ចាក់​សំឡេង"
 
 #. i18n: ectx: label, entry (customFont), group (general)
-#: blinken.kcfg:13
+#: blinken.kcfg:13 ui/Blinken.qml:197
 #, kde-format
 msgid "Use custom font for status text"
 msgstr "ប្រើ​ពុម្ពអក្សរ​ផ្ទាល់​ខ្លួន​សម្រាប់​អត្ថបទ​ស្ថានភាព"
@@ -204,25 +204,25 @@ msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "ពិន្ទុ​ខ្ពស់"
 
-#: highscoredialog.cpp:148
+#: highscoredialog.cpp:148 ui/HighScoreLists.qml:65
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "កម្រិត ១"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:149 ui/HighScoreLists.qml:69
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "កម្រិត ២"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:150 ui/HighScoreLists.qml:73
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "កម្រិត ?"
 
-#: main.cpp:50
+#: main.cpp:50 ui/Blinken.qml:16
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-11-26 00:57+0000\n"
 "PO-Revision-Date: 2007-12-30 14:05+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "submanesh@gmail.com, shyamkrishna_bal@yahoo.com"
 
-#: blinken.cpp:69
+#: blinken.cpp:69 ui/Blinken.qml:200
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -39,7 +39,7 @@ msgctxt ""
 msgid "0"
 msgstr "०"
 
-#: blinken.cpp:181
+#: blinken.cpp:181 ui/Blinken.qml:189
 #, kde-format
 msgid "Sounds"
 msgstr "ध्वनि"
@@ -49,24 +49,24 @@ msgstr "ध्वनि"
 msgid "Font"
 msgstr "फन्ट"
 
-#: blinken.cpp:224
+#: blinken.cpp:224 ui/GameOptions.qml:29
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "सुरु गर्नुहोस्"
 
-#: blinken.cpp:236
+#: blinken.cpp:236 ui/GameOptions.qml:169
 #, kde-format
 msgid "Restart"
 msgstr "फेरि सुरु गर्नुहोस्"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:137
 #, kde-format
 msgid "Enter Your Name"
 msgstr "तपाईँको नाम प्रविष्ट गर्नुहोस्"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:141
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
@@ -122,62 +122,62 @@ msgstr "यो बटनका लागि कुञ्जी थिच्न�
 msgid "Click any button to change its key"
 msgstr "यसको कुञ्जी परिवर्तन गर्न कुनै बटन क्लिक गर्नुहोस्"
 
-#: blinken.cpp:712
+#: blinken.cpp:712 ui/Blinken.qml:90 ui/Blinken.qml:243
 #, kde-format
 msgid "Press Start to begin"
 msgstr "सुरुआत गर्न 'सुरु गर्नुहोस्' बटन थिच्नुहोस्"
 
-#: blinken.cpp:716
+#: blinken.cpp:716 ui/Blinken.qml:250
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "कठिनता स्तर सेट गर्नुहोस्..."
 
-#: blinken.cpp:726
+#: blinken.cpp:726 ui/Blinken.qml:258
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "३ मा पछिल्लो अनुक्रम..."
 
-#: blinken.cpp:739
+#: blinken.cpp:739 ui/Blinken.qml:266
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "३, २ मा पछिल्लो अनुक्रम..."
 
-#: blinken.cpp:743
+#: blinken.cpp:743 ui/Blinken.qml:268
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "२ मा पछिल्लो अनुक्रम..."
 
-#: blinken.cpp:757
+#: blinken.cpp:757 ui/Blinken.qml:277
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "३, २, १ मा पछिल्लो अनुक्रम..."
 
-#: blinken.cpp:761
+#: blinken.cpp:761 ui/Blinken.qml:279
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "२, १ मा पछिल्लो अनुक्रम..."
 
-#: blinken.cpp:773
+#: blinken.cpp:773 ui/Blinken.qml:286
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "यो अनुक्रम सम्झनुहोस्..."
 
-#: blinken.cpp:784
+#: blinken.cpp:784 ui/Blinken.qml:292
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "अनुक्रम दोहोर्याउनुहोस्"
 
-#: blinken.cpp:801
+#: blinken.cpp:801 ui/GameOptions.qml:100
 #, kde-format
 msgid "2"
 msgstr "२"
 
-#: blinken.cpp:802
+#: blinken.cpp:802 ui/GameOptions.qml:68
 #, kde-format
 msgid "1"
 msgstr "१"
 
-#: blinken.cpp:803
+#: blinken.cpp:803 ui/GameOptions.qml:132
 #, kde-format
 msgid "?"
 msgstr "?"
@@ -195,7 +195,7 @@ msgid "Play sounds"
 msgstr "ध्वनि बजाउनुहोस्"
 
 #. i18n: ectx: label, entry (customFont), group (general)
-#: blinken.kcfg:13
+#: blinken.kcfg:13 ui/Blinken.qml:197
 #, kde-format
 msgid "Use custom font for status text"
 msgstr "वस्तुस्थिति पाठका लागि अनुकूल फन्ट प्रयोग गर्नुहोस्"
@@ -206,7 +206,7 @@ msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "उच्च प्राप्ताङ्क"
 
-#: highscoredialog.cpp:148
+#: highscoredialog.cpp:148 ui/HighScoreLists.qml:65
 #, fuzzy, kde-format
 #| msgctxt "@title:group first level high scores"
 #| msgid "Level 1"
@@ -214,7 +214,7 @@ msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "स्तर १"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:149 ui/HighScoreLists.qml:69
 #, fuzzy, kde-format
 #| msgctxt "@title:group second level high scores"
 #| msgid "Level 2"
@@ -222,7 +222,7 @@ msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "स्तर २"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:150 ui/HighScoreLists.qml:73
 #, fuzzy, kde-format
 #| msgctxt "@title:group all other level high scores"
 #| msgid "Level ?"
@@ -230,7 +230,7 @@ msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "स्तर ?"
 
-#: main.cpp:50
+#: main.cpp:50 ui/Blinken.qml:16
 #, kde-format
 msgid "Blinken"
 msgstr "झिम्केको"

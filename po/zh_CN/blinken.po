@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-11-26 00:57+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org, yuanjiayj@gmail.com, i@guoyunhe.me, tds00@qq.com"
 
-#: blinken.cpp:69
+#: blinken.cpp:69 ui/Blinken.qml:200
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -37,7 +37,7 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:181
+#: blinken.cpp:181 ui/Blinken.qml:189
 #, kde-format
 msgid "Sounds"
 msgstr "音效"
@@ -47,23 +47,23 @@ msgstr "音效"
 msgid "Font"
 msgstr "字体"
 
-#: blinken.cpp:224
+#: blinken.cpp:224 ui/GameOptions.qml:29
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "开始"
 
-#: blinken.cpp:236
+#: blinken.cpp:236 ui/GameOptions.qml:169
 #, kde-format
 msgid "Restart"
 msgstr "重新开始"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:137
 #, kde-format
 msgid "Enter Your Name"
 msgstr "输入您的名字"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:141
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
@@ -119,62 +119,62 @@ msgstr "请按下此按钮的按键"
 msgid "Click any button to change its key"
 msgstr "点击任意按钮可以改变按键"
 
-#: blinken.cpp:712
+#: blinken.cpp:712 ui/Blinken.qml:90 ui/Blinken.qml:243
 #, kde-format
 msgid "Press Start to begin"
 msgstr "点击开始启动游戏"
 
-#: blinken.cpp:716
+#: blinken.cpp:716 ui/Blinken.qml:250
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "设定难度…"
 
-#: blinken.cpp:726
+#: blinken.cpp:726 ui/Blinken.qml:258
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "下一关马上开始：3…"
 
-#: blinken.cpp:739
+#: blinken.cpp:739 ui/Blinken.qml:266
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "下一关马上开始：3, 2…"
 
-#: blinken.cpp:743
+#: blinken.cpp:743 ui/Blinken.qml:268
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "下一关马上开始：2…"
 
-#: blinken.cpp:757
+#: blinken.cpp:757 ui/Blinken.qml:277
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "下一关马上开始：3, 2, 1…"
 
-#: blinken.cpp:761
+#: blinken.cpp:761 ui/Blinken.qml:279
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "下一关马上开始：2, 1…"
 
-#: blinken.cpp:773
+#: blinken.cpp:773 ui/Blinken.qml:286
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "请记住这一序列…"
 
-#: blinken.cpp:784
+#: blinken.cpp:784 ui/Blinken.qml:292
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "请重复这一序列"
 
-#: blinken.cpp:801
+#: blinken.cpp:801 ui/GameOptions.qml:100
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:802
+#: blinken.cpp:802 ui/GameOptions.qml:68
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:803
+#: blinken.cpp:803 ui/GameOptions.qml:132
 #, kde-format
 msgid "?"
 msgstr "?"
@@ -192,7 +192,7 @@ msgid "Play sounds"
 msgstr "播放声音"
 
 #. i18n: ectx: label, entry (customFont), group (general)
-#: blinken.kcfg:13
+#: blinken.kcfg:13 ui/Blinken.qml:197
 #, kde-format
 msgid "Use custom font for status text"
 msgstr "使用自定义的字体显示状态文本"
@@ -203,25 +203,25 @@ msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "高分榜"
 
-#: highscoredialog.cpp:148
+#: highscoredialog.cpp:148 ui/HighScoreLists.qml:65
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "第 1 关"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:149 ui/HighScoreLists.qml:69
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "第 2 关"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:150 ui/HighScoreLists.qml:73
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
 msgstr "第 ? 关"
 
-#: main.cpp:50
+#: main.cpp:50 ui/Blinken.qml:16
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"

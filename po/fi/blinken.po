@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blinken\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-11-26 00:57+0000\n"
 "PO-Revision-Date: 2021-01-07 11:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "ilpo@iki.fi, mikko.piippo@helsinki.fi, mobemu@gmail.com, translator@legisign."
 "org"
 
-#: blinken.cpp:69
+#: blinken.cpp:69 ui/Blinken.qml:200
 #, kde-format
 msgctxt ""
 "If the Steve font that is used by Blinken by default to show status messages "
@@ -43,7 +43,7 @@ msgctxt ""
 msgid "0"
 msgstr "0"
 
-#: blinken.cpp:181
+#: blinken.cpp:181 ui/Blinken.qml:189
 #, kde-format
 msgid "Sounds"
 msgstr "Äänet"
@@ -53,23 +53,23 @@ msgstr "Äänet"
 msgid "Font"
 msgstr "Fontti"
 
-#: blinken.cpp:224
+#: blinken.cpp:224 ui/GameOptions.qml:29
 #, kde-format
 msgctxt "@action:button Start a new game"
 msgid "Start"
 msgstr "Aloita"
 
-#: blinken.cpp:236
+#: blinken.cpp:236 ui/GameOptions.qml:169
 #, kde-format
 msgid "Restart"
 msgstr "Aloita uudelleen"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:137
 #, kde-format
 msgid "Enter Your Name"
 msgstr "Anna nimesi"
 
-#: blinken.cpp:414
+#: blinken.cpp:414 ui/Blinken.qml:141
 #, kde-format
 msgctxt "@label:textbox refers to the user's name"
 msgid "Name:"
@@ -125,62 +125,62 @@ msgstr "Paina tämän painikkeen näppäintä"
 msgid "Click any button to change its key"
 msgstr "Muuta näppäintä napsauttamalla sen painiketta"
 
-#: blinken.cpp:712
+#: blinken.cpp:712 ui/Blinken.qml:90 ui/Blinken.qml:243
 #, kde-format
 msgid "Press Start to begin"
 msgstr "Aloita painamalla ”Aloita”!"
 
-#: blinken.cpp:716
+#: blinken.cpp:716 ui/Blinken.qml:250
 #, kde-format
 msgid "Set the Difficulty Level..."
 msgstr "Aseta vaikeustaso…"
 
-#: blinken.cpp:726
+#: blinken.cpp:726 ui/Blinken.qml:258
 #, kde-format
 msgid "Next sequence in 3..."
 msgstr "Seuraava sarja 3…"
 
-#: blinken.cpp:739
+#: blinken.cpp:739 ui/Blinken.qml:266
 #, kde-format
 msgid "Next sequence in 3, 2..."
 msgstr "Seuraava sarja 3, 2…"
 
-#: blinken.cpp:743
+#: blinken.cpp:743 ui/Blinken.qml:268
 #, kde-format
 msgid "Next sequence in 2..."
 msgstr "Seuraava sarja 2…"
 
-#: blinken.cpp:757
+#: blinken.cpp:757 ui/Blinken.qml:277
 #, kde-format
 msgid "Next sequence in 3, 2, 1..."
 msgstr "Seuraava sarja 3, 2, 1…"
 
-#: blinken.cpp:761
+#: blinken.cpp:761 ui/Blinken.qml:279
 #, kde-format
 msgid "Next sequence in 2, 1..."
 msgstr "Seuraava sarja 2, 1…"
 
-#: blinken.cpp:773
+#: blinken.cpp:773 ui/Blinken.qml:286
 #, kde-format
 msgid "Remember this sequence..."
 msgstr "Muista tämä sarja…"
 
-#: blinken.cpp:784
+#: blinken.cpp:784 ui/Blinken.qml:292
 #, kde-format
 msgid "Repeat the sequence"
 msgstr "Toista sarja!"
 
-#: blinken.cpp:801
+#: blinken.cpp:801 ui/GameOptions.qml:100
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: blinken.cpp:802
+#: blinken.cpp:802 ui/GameOptions.qml:68
 #, kde-format
 msgid "1"
 msgstr "1"
 
-#: blinken.cpp:803
+#: blinken.cpp:803 ui/GameOptions.qml:132
 #, kde-format
 msgid "?"
 msgstr "?"
@@ -198,7 +198,7 @@ msgid "Play sounds"
 msgstr "Käytä ääniä"
 
 #. i18n: ectx: label, entry (customFont), group (general)
-#: blinken.kcfg:13
+#: blinken.kcfg:13 ui/Blinken.qml:197
 #, kde-format
 msgid "Use custom font for status text"
 msgstr "Käytä tilatekstille omaa fonttia"
@@ -209,19 +209,19 @@ msgctxt "@title:window the highest scores for each level are shown"
 msgid "Highscores"
 msgstr "Ennätykset"
 
-#: highscoredialog.cpp:148
+#: highscoredialog.cpp:148 ui/HighScoreLists.qml:65
 #, kde-format
 msgctxt "@title:group High scores Level 1 tab title"
 msgid "Level 1"
 msgstr "Taso 1"
 
-#: highscoredialog.cpp:149
+#: highscoredialog.cpp:149 ui/HighScoreLists.qml:69
 #, kde-format
 msgctxt "@title:group High scores Level 2 tab title"
 msgid "Level 2"
 msgstr "Taso 2"
 
-#: highscoredialog.cpp:150
+#: highscoredialog.cpp:150 ui/HighScoreLists.qml:73
 #, kde-format
 msgctxt "@title:group High scores Level ? tab tible"
 msgid "Level ?"
@@ -229,7 +229,7 @@ msgstr "Taso 3"
 
 # pmap: =/gen=Blinkenin/
 # pmap: =/elat=Blinkenistä/
-#: main.cpp:50
+#: main.cpp:50 ui/Blinken.qml:16
 #, kde-format
 msgid "Blinken"
 msgstr "Blinken"
